@@ -38,10 +38,11 @@ AI image generators fail on generic names like "Darling in the Franxx suit" or "
 - **Kakashi Hatake:** Padded olive-green tactical flak vest with chest utility pockets, dark-navy breathable fabric face mask covering lower face from nose bridge down to neck, tilted Leaf Village metallic forehead plate, natural silver-grey textured hair, fingerless gloves, calf bandages.
 - **Darling in the Franxx (Mecha Plugsuit):** Form-fitting dark-charcoal neoprene bodysuit, lightweight articulated chest and shoulder plates, orange technical seam piping, mechanical collar.
 
-### C. Known Open Challenges Logged
-1. **Subtle Facial Drift:** Models can slightly alter facial geometry when mapping onto iconic character outfits.
-2. **Body Structure / Scale Mismatch:** Models sometimes default to idealized superhero or standardized proportions rather than strictly preserving the real human's height and torso build.
-- *Future Workarounds to Explore:* 2-step single portrait anchor $\rightarrow$ full turnaround; explicit biometric measurements.
+### C. Known Open Challenges & Backlog Items
+1. **Subtle Facial Drift & Resemblance Retention (HIGH PRIORITY BACKLOG):** Models (Gemini/Imagen/Veo) still substitute generic AI faces or subtly distort unique human landmarks when adapting user photos into stylized characters.
+   - *Status:* Explicitly logged to return to this for deep prompt optimization and benchmark testing. See [`_raw/25_backlog_face_sync_fidelity_with_reference_image.md`](./_raw/25_backlog_face_sync_fidelity_with_reference_image.md).
+2. **Body Structure / Scale Mismatch:** Models sometimes default to idealized superhero proportions rather than strictly preserving real torso/limb scale.
+   - *Explorations:* 2-step pure face transfer prior to wardrobe styling; explicit biometric taxonomy; Flow Ingredient #1 conditioning weighting.
 
 ---
 

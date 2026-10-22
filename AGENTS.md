@@ -16,9 +16,10 @@ This workspace is accessed across different devices, workstations, and conversat
 2. **Context Loading Economy (Never Read Everything):**
    - **Research Directory:** Strictly follow [`research/structure.md`](./research/structure.md). **DO NOT** load `research/raw_contents/` or `research/raw_notes/` (~65k tokens). Only read targeted files in [`research/synthesis/`](./research/synthesis/) on demand.
    - **Discussions Directory:** Read active consolidated summaries in [`discussions/`](./discussions/) (`architecture.md`, `visual_and_style.md`, `characters.md`).
-   - **`discussions/_raw/` (Cold Archive):** **DO NOT** load `discussions/_raw/` by default. It contains all 14 original raw conversational logs, reserved strictly as an audit trail if information seems missing or when deep troubleshooting is needed.
+   - **`discussions/_raw/` (Cold Archive):** **DO NOT** load `discussions/_raw/` by default. It contains all 25 original raw conversational logs, reserved strictly as an audit trail if information seems missing or when deep troubleshooting is needed.
 3. **Always Record Progress in Files:**
    - Any consensus, decision, requirement, or architectural change reached during a chat **MUST be documented in files** before concluding the turn or session.
+   - **Mandatory Raw Discussion Logging:** For every new feature, architectural concept, design decision, or user alignment discussed in chat, the agent **MUST create a corresponding raw discussion file in `discussions/_raw/`** (sequentially numbered, e.g. `16_<topic>.md`) following the established structure before summarizing or concluding. This guarantees that an unedited, complete record of the dialogue and rationale is permanently preserved on disk for auditing and future agents.
    - If work was done in session X (e.g. PC 1) and pushed, session Y (e.g. PC 2) must be able to read the files and immediately resume with identical context and reasoning.
 4. **Never Run Non-Read-Only Git Commands:**
    - Per user rule: Never `git add`, `git commit`, or push unless explicitly requested.
@@ -30,9 +31,9 @@ This workspace is accessed across different devices, workstations, and conversat
 | Phase | Description | Status | Authoritative Output / Specs | Discussion & Logs |
 |---|---|---|---|---|
 | **Phase 1–4** | Comprehensive Research, Synthesis & Validation | ✅ **COMPLETE** | [`research/synthesis/`](./research/synthesis/) | [`research/structure.md`](./research/structure.md), [`research/validation.md`](./research/validation.md) |
-| **Phase 5.1: Visual DNA** | Root Visual Style, Human Bridge, Master Anchor | ✅ **FINALIZED** | [`production_framework/specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md) | [`discussions/visual_and_style.md`](./discussions/visual_and_style.md) |
-| **Phase 5.2: Characters** | Turnaround Anchors, Cosplay Deconstruction, Org Characters | ✅ **FINALIZED** | [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md) | [`discussions/characters.md`](./discussions/characters.md) |
-| **Phase 5.3: Sceneries** | Environments, Spatial Depth, Motivated Lighting | 🟡 **IN PROGRESS** | `production_framework/specs/03_scenery_spec.md` (Drafting) | `discussions/sceneries.md` |
+| **Phase 5.1: Visual DNA** | Root Visual Style, 8 Master Paradigms (Film, Anime, Commercial, Social) | ✅ **FINALIZED** | [`production_framework/specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md) | [`discussions/visual_and_style.md`](./discussions/visual_and_style.md) |
+| **Phase 5.2: Subjects** | Turnaround Anchors, Characters & Hero Products, 2-Step Genesis | ✅ **FINALIZED** | [`02_subject_spec.md`](./production_framework/specs/02_subject_spec.md) & [`02_character_spec.md`](./production_framework/specs/02_character_spec.md) | [`discussions/characters.md`](./discussions/characters.md) |
+| **Phase 5.3: Environments** | Worlds, Commercial Studio Stages, Spatial Depth, Motivated Light | 🟡 **IN PROGRESS** | `production_framework/specs/03_scenery_spec.md` (Drafting) | `discussions/sceneries.md` |
 | **Phase 5.4: Cinematography & Audio** | Kinematics, Lenses, Soundscapes, Dialogue Delivery | ⏳ Pending | `production_framework/specs/04_cinematography_audio_spec.md` | `discussions/cinematography_audio.md` |
 | **Phase 6** | Lean Folder Scaffold & Project Template | ⏳ Pending | `production_template/` | TBD |
 | **Phase 7** | Automated Prompt Generation & Linting Skill | ⏳ Pending | Tooling & Skill code | TBD |
@@ -47,7 +48,7 @@ To prevent token bloat while retaining 100% information control:
 2. **`discussions/` (Active Consolidated Summaries):**
    - High-density active working records capturing why decisions were made, failure modes tested, and empirical AI model glitches discovered (`architecture.md`, `visual_and_style.md`, `characters.md`).
 3. **`discussions/_raw/` (Cold Historical Archive):**
-   - Contains all 14 original, unedited discussion files. Kept on disk for audit trail and deep debugging. Agents do NOT load this folder during routine turns.
+   - Contains all 25 original, sequential discussion files. Kept on disk for audit trail and deep debugging. Agents do NOT load this folder during routine turns.
 4. **`research/` (Knowledge Base & Cold Scrapes):**
    - Organized per [`research/structure.md`](./research/structure.md). `synthesis/` is active on demand; `raw_contents/` and `raw_notes/` remain archived.
 5. **`AGENTS.md` (Cross-Session Ground Truth):**
@@ -158,11 +159,69 @@ To prevent token bloat while retaining 100% information control:
 - **Hypothesis:** Generative primitives (`visual/`, `subjects/`, `environments/`, `kinematics/`, `audio/`) remain 100% shared, but scaffolding should support Project Archetypes (Cinema vs. Commercial vs. Social B-Roll vs. Documentary) so non-movie creators don't face script/actor bloat.
 - **Reference Document:** [`discussions/_raw/15_project_archetypes_and_scope_expansion.md`](./discussions/_raw/15_project_archetypes_and_scope_expansion.md).
 
+### 2026-10-22 — Top-Level Intent Manifest & Living Collaboration Blueprint (Discussion 16)
+- **Consensus Reached:**
+  1. *AI-Friendly Operating System:* Creators do not browse nested subfolders; the AI Agent is the operating system, and the file system is the AI's deterministic memory and prompt assembly line.
+  2. *Top-Level Project Intent (`project_intent.md`):* Sits at project root locking Archetype (Cinema, Commercial, Social, Doc, Music), format, and scope guardrails to prevent model hallucination.
+  3. *Living Collaboration Blueprint (`blueprint.md`):* Active, living scratchpad at project root recording chronological steps: Creator Input $\rightarrow$ Agent Interpretation $\rightarrow$ Actions Taken $\rightarrow$ Next Step. Provides total creator transparency and prevents context loss across agent sessions.
+  4. *Unified Root Project Layout:* `<project_root>/` contains `project_intent.md`, `blueprint.md`, `visual/`, `subjects/`, `environments/`, and `shots/`.
+### 2026-10-22 — Expanding Visual Paradigms to Commercial & Social UGC (Discussion 17)
+- **Consensus Reached:** Expanded `01_visual_spec.md` to 8 Master Style Paradigms by adding:
+  1. *Paradigm 7 (Commercial Tabletop Advertising):* Macro 100mm lens, razor-sharp edge definition, softbox diffusion, metallic rim highlights, high-contrast glossy grading.
+  2. *Paradigm 8 (Social UGC & Mobile Video):* 4K mobile sensor aesthetic, natural ambient daylight, punchy vibrant saturation, banning artificial film halation and anamorphic flares.
+- **Spec Validation:** Successfully tested end-to-end commercial watch simulation (Chrono-X) against all 6 pre-flight linters (105 words, 100% pass) and verified via Photo-First image generation.
+- **Reference Document:** [`discussions/_raw/17_expanding_visual_paradigms_commercial_and_social.md`](./discussions/_raw/17_expanding_visual_paradigms_commercial_and_social.md) and [`production_framework/specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md).
+
+### 2026-10-22 — Testing Visual Spec & Interstellar Optical Side-Profile (Discussion 18)
+- **Consensus Reached:** Tested `01_visual_spec.md` with high-stakes fighter pilot helmet nuclear reflection concept. Successfully proved the Dual-Layer Translation Bridge by translating creator's plain-English *Interstellar* black-hole reference into an anamorphic 3/4 side-profile optical reflection prompt (114 words, 100% linter pass).
+- **Reference Document:** [`discussions/_raw/18_testing_visual_spec_pilot_nuclear_reflection.md`](./discussions/_raw/18_testing_visual_spec_pilot_nuclear_reflection.md).
+
+### 2026-10-22 — Generalizing Characters to Universal Subjects (Discussion 19)
+- **Consensus Reached:** Expanded `02_character_spec.md` into the universal **`subjects/`** specification. Proved that commercial hero products (watches, sneakers, vehicles) suffer from identical drift as human faces and require the exact same 2-Step Turntable Protocol on `#E5E5E5` (Front, 90° profile with crown asymmetry lock, 45° isometric, macro texture).
+- **Reference Documents:** [`discussions/_raw/19_generalizing_characters_to_universal_subjects.md`](./discussions/_raw/19_generalizing_characters_to_universal_subjects.md) and [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md).
+
+### 2026-10-22 — Two-Tier Specification Architecture: Preserving Full Research Depth (Discussion 20)
+- **Consensus Reached:** To prevent loss or compression of rich research tokens, we decoupled into two interconnected specifications:
+  1. *Master Universal Subject Spec ([`02_subject_spec.md`](./production_framework/specs/02_subject_spec.md)):* Governs the `subjects/<subject_id>/` primitive across archetypes, defining Commercial Hero Products, Vehicles, Artifacts, and the 4-panel product turntable on `#E5E5E5`.
+  2. *Deep Character Bible ([`02_character_spec.md`](./production_framework/specs/02_character_spec.md)):* 100% restored and preserved in its full depth (Maya Lin 2-step genesis, facial bone structure, hair, cosplay deconstruction engine, action figure trap fixes, and spoken dialogue syntax).
+- **Reference Documents:** [`discussions/_raw/20_preserving_depth_subject_vs_character_specialization.md`](./discussions/_raw/20_preserving_depth_subject_vs_character_specialization.md), [`production_framework/specs/02_subject_spec.md`](./production_framework/specs/02_subject_spec.md), and [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md).
+
+### 2026-10-22 — Creator UX Intent Rule: Single Hero Shot vs. Profile Turnaround Sheet (Discussion 22)
+- **Consensus Reached:** Codified the rule into `02_character_spec.md` (Section 4.0) and `02_subject_spec.md` (Section 6.0):
+  1. *Default Delivery (Hero Shot):* Unless the creator explicitly uses terms like `"profile"`, `"character profile"`, or `"model sheet"`, the Agent **MUST default to generating a single cinematic Hero Shot (`hero_prompt.txt`)** in an expressive pose with a motivated environment.
+  2. *Conditional Delivery (4-Panel Sheet):* The technical 4-view turnaround sheet on `#E5E5E5` (`turnaround_prompt.txt`) is only generated when explicitly requested by name or during Flow sync mode to produce Ingredient #1.
+- **Reference Document:** [`discussions/_raw/22_creator_intent_hero_image_vs_profile_sheet.md`](./discussions/_raw/22_creator_intent_hero_image_vs_profile_sheet.md), [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md), and [`production_framework/specs/02_subject_spec.md`](./production_framework/specs/02_subject_spec.md).
+
+### 2026-10-22 — Facial Landmark Invariance & Expression Decoupling Engine (Discussion 23)
+- **Consensus Reached:** Solved the Image-to-Character facial drift issue where models substitute generic AI faces or freeze expressions. Enforced:
+  1. *Biological Landmark Invariance:* Mandatory anchoring of zygomatic arches (cheekbones), nose bridge contours, jawline angle, and eyelid folds in the first 20 tokens.
+  2. *Expression Decoupling Engine:* Explicitly separating immutable bone anatomy from mutable expressions (`Retain 100% of the woman's authentic facial bone structure and facial landmarks from the reference photo, but dynamically animate her expression into...`).
+- **Reference Document:** [`discussions/_raw/23_facial_landmark_locking_and_dynamic_expression.md`](./discussions/_raw/23_facial_landmark_locking_and_dynamic_expression.md) and [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md).
+
+### 2026-10-22 — Headshot-to-Full-Body Extrapolation Engine (Discussion 24)
+- **Consensus Reached:** Codified the 4-operation pipeline for face-only reference photos when generating full-body turnaround model sheets:
+  1. *Facial Anchor:* Lock invariant facial bone structure (cheekbones, jaw, nose, eyes) from reference photo.
+  2. *Biometric Body:* Generate realistic musculoskeletal proportions from text description (18–20yo slim female, fair skin).
+  3. *Downward Wardrobe Extrapolation:* Continue the upper collar/textile downwards into matching tailored pleated skirt/trousers, belt, and boots.
+  4. *Explicit Profile Sheet Routing:* When creator explicitly asks for "character profile" or "3/4 panels", route to 4-view turnaround on `#E5E5E5` (`turnaround_prompt.txt`).
+- **Reference Document:** [`discussions/_raw/24_headshot_to_full_body_turnaround_extrapolation.md`](./discussions/_raw/24_headshot_to_full_body_turnaround_extrapolation.md) and [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md).
+
+### 2026-10-22 — Backlog Item: Deep Face Syncing & Likeness Retention (Discussion 25)
+- **Problem Logged:** When a creator provides a reference photo, current multimodal models (Gemini/Imagen/Veo) still exhibit subtle facial drift, idealized AI face substitution, or likeness dilution caused by competing costume/aesthetic tokens.
+- **Decision Reached:** Formally recorded as a high-priority return item. Planned investigations include:
+  1. *Isolated 2-Step Face Transfer:* Locking bare biometric landmarks on a neutral 85mm portrait before styling.
+  2. *Granular Anatomical Biometrics:* Formalizing eyelid creases, epicanthic folds, nasal dorsum, and mandibular angles.
+  3. *Flow Ingredient Conditioning:* Testing Ingredient #1 image conditioning weight against text tokens.
+- **Reference Document:** [`discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md`](./discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md) and [`discussions/characters.md`](./discussions/characters.md).
+
 ---
 
 ## 6. Next Session Handoff & Agenda (Phase 5.3: Sceneries & Environments)
 
 **Status at Session Pause:** Phase 5.1 (`visual/`) and Phase 5.2 (`characters/`) are 100% complete with authoritative specifications in [`production_framework/specs/`](./production_framework/specs/).
+
+### High-Priority Backlog (Future Return Items):
+- ⚠️ **Face Syncing Fidelity with Reference Photo:** Return to solve 1:1 facial likeness retention and generic AI face substitution in image-to-character workflows. (Refer to [`discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md`](./discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md) and [`discussions/characters.md`](./discussions/characters.md)).
 
 ### Immediate Agenda for Next Agent:
 1. **Activate Phase 5.3:** Open discussion on the **`sceneries/`** domain (environmental world-building).

@@ -78,7 +78,7 @@ visual/
 
 ---
 
-## 4. The 6 Master Style Paradigms & Standard Anchors
+## 4. The 8 Master Style Paradigms & Standard Anchors
 
 | Paradigm | Master Style Anchor String | Crucial Failure Mode Guard |
 |---|---|---|
@@ -88,6 +88,8 @@ visual/
 | **4. Stylized 3D CGI** | `Stylized 3D digital animation, soft tactile vinyl and cloth micro-textures, warm subsurface scattering on skin, expressive lighting, miniature cinematic depth of field.` | Keeps characters stylized without uncanny valley realism. |
 | **5. Stop-Motion / Claymation** | `Handcrafted stop-motion clay animation, tactile plasticine clay textures with faint visible fingerprint impressions, physical miniature sets, stepped frame motion.` | Fingerprint and armature keywords force authentic miniature physics. |
 | **6. Vintage Kodachrome 1970s** | `Authentic Kodachrome 64 color film aesthetic, saturated primary reds and yellows, warm retro contrast, subtle edge halation, distinct 1970s film tone.` | Binds color chemistry to historical film emulsion. |
+| **7. Commercial Tabletop Advertising** | `Commercial advertising cinematography, macro 100mm lens, razor-sharp edge definition, studio softbox diffusion with crisp metallic rim highlights, high-contrast glossy color grading, ultra-clean commercial realism.` | Specify softbox diffusion and crisp rim highlights to avoid murky shadows or flat lighting. |
+| **8. Social UGC & Mobile Video** | `High-fidelity 4K mobile video aesthetic, natural ambient daylight, vibrant punchy color saturation, sharp sensor focal clarity, modern creator aesthetic.` | Ban film grain, halation, and anamorphic artifacts to preserve genuine mobile video look. |
 
 ---
 
@@ -102,10 +104,10 @@ visual/
          ┌──────────┼──────────┐
          ▼          ▼          ▼
  ┌──────────────┐ ┌──────────┐ ┌──────────────┐
- │  CHARACTERS  │ │SCENERIES │ │ VIDEO SHOTS  │
- │ Turnarounds  │ │ Concepts │ │ Veo Prompts  │
+ │   SUBJECTS   │ │ENVIRONM. │ │ VIDEO SHOTS  │
+ │ Turnarounds  │ │  Stages  │ │ Veo Prompts  │
  └──────────────┘ └──────────┘ └──────────────┘
 ```
-1. **Characters (`characters/`):** Character Turnaround sheet prompts append the Master Style Anchor on a neutral light-gray (`#E5E5E5`) studio background.
-2. **Sceneries (`sceneries/`):** Environment concept prompts append the Master Style Anchor to lock atmospheric lighting.
-3. **Video Shots (`shots/` / `clips/`):** Injected directly into the Layer 3 position (Tokens 76–120) of each compiled Veo prompt.
+1. **Subjects (`subjects/`):** Model turnaround sheet prompts append the Master Style Anchor on a neutral light-gray (`#E5E5E5`) studio background (for characters and product hero assets).
+2. **Environments (`environments/`):** Environment concept boards, world locations, and commercial studio plinths append the Master Style Anchor to lock atmospheric lighting and reflections.
+3. **Video Shots (`shots/`):** Injected directly into the Layer 3 position (Tokens 81–130) of each compiled Veo prompt.

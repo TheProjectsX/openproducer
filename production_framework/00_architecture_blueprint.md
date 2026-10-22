@@ -1,122 +1,177 @@
 # AI Video Generation Production Architecture Blueprint
 
+**Status:** Authoritative Architectural Standard  
+**Target Engines:** Google Flow (Veo 3.1, Imagen 4, Gemini Omni Flash)  
+**Core Paradigms:** Multipurpose Video Production, AI-Centric Operating System, Mode-Based Execution (`explore`, `propose`, `sync`, `apply`)
+
+---
+
 ## 1. Vision & Core Philosophy
 
-Traditional generative video prompting relies on ephemeral, monolithic chat prompts. This approach inevitably fails in multi-shot narrative production due to:
-- **Identity Drift:** Characters change facial structure, hair, and clothing between cuts.
-- **Lighting & Spatial Inconsistency:** Environments randomly alter lighting directions, color palettes, and scale.
-- **Attention Dilution:** Overly long prompts exceed the diffusion model's high-weight token window (Tokens 1–30), causing neglected instructions and hallucinated artifacts.
-- **Unstructured Asset Management:** Concept art, reference sheets, audio cues, and dialogue lines remain disconnected and un-trackable.
+Traditional generative video tools rely on ephemeral, monolithic chat prompts. In multi-shot video generation, this creates five catastrophic failure modes:
+1. **Identity & Geometry Drift:** Human faces warp, wardrobes mutate, or product logos, buttons, and silhouettes distort between cuts.
+2. **Style & Lighting Drift:** Color saturation, film grain, lighting angles, and render styles shift randomly across shots.
+3. **Attention Dilution:** Prompts exceeding 150 words overwhelm the diffusion attention mechanism, causing ignored instructions and visual artifacts.
+4. **Camera Equipment Hallucination:** Prompting physical gear (e.g. *"on locked tripod"*, *"dolly track"*) prompts Gemini/Veo to literally render physical camera equipment inside the scene.
+5. **Session Disconnection:** Creative decisions made during chat are lost when context windows truncate or when switching devices.
 
-### The File-System-Driven Production Standard
-Rather than generating video directly from ephemeral chat dialog, we architect a **modular, folder-structured production pipeline**. Each creative and technical department in filmmaking—Screenplay, Characters, Sceneries, Cinematography, Soundscape, Storyboards, and Shots—operates as a dedicated directory with explicit data contracts, schemas, reference assets, and automated validation gates.
+### The AI-Centric, File-System-Driven Solution
+In our framework:
+- **The Creator interacts through natural conversation.** They do not need to navigate complex directories.
+- **The AI Agent is the production operating system.**
+- **The File System is the AI's deterministic external memory and modular prompt assembly line.**
+
+Every creative asset—style DNA, invariant subject geometry, 3-plane environment depth, camera kinematics, and acoustic soundscapes—is isolated in predictable files. When compiling a shot, the AI surgically pulls these modular blocks into a pure, front-loaded 100–150 word Veo 3.1 prompt.
+
+---
+
+## 2. The 5 Universal Generative Primitives
+
+Google Flow can generate any video: 15-second sneaker commercials, 9:16 vertical TikTok hooks, high-end anime shorts, nature documentaries, or music visualizers. Despite wildly different aesthetics, **all video archetypes decompose into the exact same 5 generative primitives**:
 
 ```
-┌─────────────────────────────────────────────────────────────────────────────────┐
-│                           PROJECT MASTER MANIFEST                               │
-│                                (project.json)                                   │
-└────────┬───────────────────┬───────────────────┬───────────────────┬────────────┘
+┌──────────────────────────────────────────────────────────────────────────────────┐
+│                             THE 5 GENERATIVE PRIMITIVES                          │
+└────────┬───────────────────┬───────────────────┬───────────────────┬─────────────┘
          │                   │                   │                   │
          ▼                   ▼                   ▼                   ▼
  ┌───────────────┐   ┌───────────────┐   ┌───────────────┐   ┌───────────────┐
- │  01_SCRIPTS   │   │ 02_CHARACTERS │   │  03_SCENERIES │   │04_CINEMATOG.  │
- │ Beat Sheet &  │   │ Identity Lock │   │ World & Light │   │ Optics, Lens  │
- │ Dialogue Lines│   │ Turnarounds   │   │ Geography     │   │ & Camera Move │
+ │  VISUAL DNA   │   │    SUBJECT    │   │  ENVIRONMENT  │   │  KINEMATICS   │
+ │   (visual/)   │   │  (subjects/)  │   │(environments/)│   │   (& OPTICS)  │
+ │ Master Style  │   │  Characters   │   │ Narrative Set │   │ Single Camera │
+ │ Color Science │   │ Products/Cars │   │ Studio Plinth │   │   Motivated   │
+ │ Sensor Profile│   │   Creatures   │   │ Natural Biome │   │  Kinematics   │
  └───────┬───────┘   └───────┬───────┘   └───────┬───────┘   └───────┬───────┘
          │                   │                   │                   │
          └─────────────┐     │     ┌─────────────┘                   │
                        ▼     ▼     ▼                                 │
              ┌─────────────────────────────────┐                     │
-             │       05_SOUNDTRACK_AND_AUDIO   │                     │
-             │ Foley, Ambience, Speech Syntax  │                     │
+             │           ACOUSTICS             │                     │
+             │       Foley, Room Tone,         │                     │
+             │        Speech Delivery          │                     │
              └────────────────┬────────────────┘                     │
                               │                                      │
-                              ▼                                      │
-             ┌─────────────────────────────────┐                     │
-             │         06_STORYBOARDS          │◄────────────────────┘
-             │ Visual Panels & Pacing Layout   │
-             └────────────────┬────────────────┘
-                              │
-                              ▼
-             ┌─────────────────────────────────┐
-             │            07_SHOTS             │
-             │ Veo-JSON Specs, Compiled Prompts│
-             │ Linter Reports, Keyframe Links  │
-             └────────────────┬────────────────┘
-                              │
-                              ▼
-             ┌─────────────────────────────────┐
-             │           08_PIPELINE           │
-             │ Automated Compilers & Linters   │
-             │ Timeline Manifest for Flow      │
-             └─────────────────────────────────┘
+                              ▼                                      ▼
+             ┌─────────────────────────────────────────────────────────┐
+             │                PROMPT ASSEMBLY COMPILER                 │
+             │        Tokens 1–30: Viewport & Primary Subject          │
+             │        Tokens 31–80: Action/Physics & Motivated Light   │
+             │        Tokens 81–130: Master Style & Camera Verb        │
+             │        Trailing: Dedicated Audio Soundscape Block       │
+             └────────────────────────┬────────────────────────────────┘
+                                      │
+                                      ▼
+             ┌─────────────────────────────────────────────────────────┐
+             │               COMPILED VEO 3.1 SHOT UNIT                │
+             │       + Decoupled API Config (16:9/9:16, 1080p, 8s)     │
+             │       + Ingredients #1 & #2 (Reference Turnarounds)     │
+             └─────────────────────────────────────────────────────────┘
+```
+
+1. **Visual DNA (`visual/`):** The locked optical and aesthetic foundation (e.g., 35mm bleach bypass film grain, high-gloss advertising tabletop, 2D hand-drawn cel anime). Injected into every prompt to prevent Style Drift.
+2. **Subject Consistency (`subjects/`):** Rigid identity and physical geometry locking. Whether the subject is an actor (Maya Lin) or a product (Chrono-X luxury watch), it uses the **2-Step Turntable Protocol on `#E5E5E5`** to produce a 4-view reference sheet (Ingredient #1) and a locked 25–40 word verbatim anchor.
+3. **Environmental Staging (`environments/`):** Defines spatial depth and motivated lighting. Supports Narrative Worlds (3-plane depth for parallax), Commercial Studio Sets (infinity cycloramas, submerged plinths), and Biomes.
+4. **Kinematics & Optics:** Dedicated perspective descriptors enforcing the **Single Camera Verb Rule** and strictly banning physical equipment nouns (`tripod`, `dolly`, `crane`).
+5. **Acoustic Soundscapes:** Native dual-stream audio synthesis specifying tactile ASMR foley, diegetic room tone, or delivery-tagged speech, concluding with `, no background music`.
+
+---
+
+## 3. Top-Level Governance: Intent & Living Blueprint
+
+To make the system truly autonomous, transparent, and resilient across multi-session handoffs, the root directory houses two governance documents:
+
+### 3.1 Top-Level Project Intent Manifest (`project_intent.md`)
+The permanent north star locking project archetype, target platform, technical parameters, and architectural guardrails:
+```markdown
+# Project Intent Manifest
+
+- **Project Title:** [Title]
+- **Project Archetype:** [Commercial | Cinema | Social UGC | Documentary | Visualizer]
+- **Target Platform:** [e.g., Instagram Reels, TikTok, YouTube 16:9, Cinema Festival]
+- **Technical Format:** [Aspect Ratio e.g. 9:16 | Resolution e.g. 1080p | Total Duration e.g. 15s]
+- **Primary Objective:** [1-2 sentences capturing core goal]
+
+## Architectural Scope & Guardrails
+- **Subjects Included:** [e.g., 1 Hero Product (`subjects/chrono_watch/`)]
+- **Subjects Excluded:** [e.g., NO human actors, NO character bibles]
+- **Environments Included:** [e.g., 1 Commercial Studio Stage (`environments/dark_water_plinth/`)]
+- **Audio Scope:** [e.g., Pure tactile ASMR (clicks, water splashes, ticking)]
+- **Dialogue Policy:** [STRICTLY NONE | Sentence-case speech with delivery modifiers]
+- **Structure Policy:** [Commercial Hook-Showcase-CTA | 3-Act Beat Sheet | Looping Visualizer]
+```
+
+### 3.2 The Living Collaboration Blueprint (`blueprint.md`)
+An active, chronological scratchpad documenting the step-by-step dialogue between creator and AI. Before ideas are formally serialized into structured folders, they live here:
+```markdown
+### Step [N]: [Milestone Title]
+- **Creator Input:** [Raw transcription of what the creator envisioned]
+- **Agent Interpretation:** [How the Agent mapped this request onto framework primitives]
+- **Actions Taken:** [Concrete files created, updated, or compiled]
+- **Next Step:** [Immediate pending task awaiting creator feedback or execution]
 ```
 
 ---
 
-## 2. Directory Hierarchy & Department Responsibilities
+## 4. The 5 Major Video Archetypes
+
+The framework automatically configures its depth based on the selected Project Archetype:
+
+| Archetype | Primary Subject | Environment / Set | Kinematics Focus | Audio Need | Structural Pacing |
+|---|---|---|---|---|---|
+| **1. Narrative Cinema & Anime** | Human / Stylized Character (`subjects/<char_id>/`) | Cinematic World (`environments/<loc_id>/`) | Storytelling coverage (push-in, over-the-shoulder, tracking) | Dialogue delivery + diegetic foley + room tone | 3-Act Beat Sheet (`structure/beat_sheet.json`) |
+| **2. Commercial & Product Spotlight** | Hero Product / Artifact (`subjects/<prod_id>/`) | Studio Cyclorama, Reflective Plinth, Water Pool | 360° orbital spin, macro slow-motion (120fps) | Tactile ASMR foley (clicks, pours, swooshes, bass drop) | Hook $\rightarrow$ Showcase $\rightarrow$ Call to Action |
+| **3. Social Media & UGC / Hooks** | Creator or Focal Object | Real-world aesthetic locations, vertical 9:16 | Fast whip-pans, dynamic handheld, scroll-stopping hooks | High-energy ambient buzz, tactile ASMR, voiceover | 3-second hook sequence + rapid cuts |
+| **4. Documentary & Nature** | Wildlife, Real Subject, Architecture | Natural biomes, aerial landscapes | Slow telephoto tracking, majestic drone reveals | Raw natural soundscapes (wind, wildlife, water) | Observational timeline beats |
+| **5. Music Video & Abstract** | Abstract geometry, performers, surreal objects | Liquid voids, neon dreamscapes, Brutalist spaces | Continuous flow, stepped motion, rhythmic zooms | Beat-synchronized motion, stylized silence | Rhythmic track timeline |
+
+---
+
+## 5. Unified Project Directory Contract
 
 ```text
 <project_root>/
-├── project.json                      # Master Project Configuration & Specs
+├── project_intent.md                 # LOCKED: Top-level Archetype, Platform, & Scope Guardrails
+├── blueprint.md                      # LIVING: Chronological raw collaboration scratchpad
 │
-├── 01_scripts/                       # Department: Screenplay & Narrative
-│   ├── 00_logline_and_premise.md     # Narrative hook, genre, themes, pacing profile
-│   ├── beat_sheet.json               # 3-Act structural breakdown & duration budgets
-│   ├── scenes/                       # Scene-by-scene screenplay breakdowns
-│   │   ├── scene_01.md
-│   │   └── scene_02.md
-│   └── dialogue_bible.json           # Indexed dialogue lines with delivery modifiers
+├── visual/                           # Department: Visual Style DNA
+│   ├── style_summary.md              # Human-facing description of the look and mood
+│   ├── palette_and_mood.md           # Color values, contrast profile, lighting behaviour
+│   └── technical_anchor.md           # LOCKED Master Style Anchor for Veo injection
 │
-├── 02_characters/                    # Department: Casting & Identity Locking
-│   ├── character_bible.json          # Master cast registry
-│   └── <character_id>/               # Isolated character directory (e.g. arthur/)
-│       ├── profile.md                # Demographics, anatomy, wardrobe textures, voice
-│       ├── verbatim_anchor.txt       # LOCKED Master Anchor String (strictly reused)
-│       ├── turnaround_prompt.txt     # Imagen prompt for 3-angle neutral cyclorama sheet
-│       ├── references/               # Neutral turnaround sheets & prop references
-│       └── rules.md                  # Character-specific failure guards & constraints
+├── subjects/                         # Department: Identity & Geometry Locking
+│   └── <subject_id>/                 # e.g., maya_lin/ or chrono_watch/
+│       ├── profile.md                # Biometrics/Materials, anatomy/dimensions, acoustics
+│       ├── verbatim_anchor.txt       # LOCKED 25–40 word Master Anchor String
+│       ├── hero_prompt.txt           # Step 1 prompt (Canonical Hero Portrait / Product Shot)
+│       ├── turnaround_prompt.txt     # Step 2 prompt (4-view model sheet on #E5E5E5)
+│       ├── rules.md                  # Invariant constraints & anti-warping guards
+│       └── references/
+│           ├── hero_portrait.png     # Approved Step 1 base image
+│           └── turnaround_sheet.png  # Approved Step 2 model sheet (Ingredient #1 in Flow)
 │
-├── 03_sceneries/                     # Department: Production Design & World-Building
-│   ├── location_bible.json           # Master location registry
-│   └── <location_id>/                # Isolated environment directory (e.g. harbor_pier/)
-│       ├── description.md            # Spatial geometry (Foreground, Midground, Background)
-│       ├── lighting_setup.md         # Motivated light sources, temperature, practical fixtures
+├── environments/                     # Department: World Locations OR Commercial Studio Stages
+│   └── <environment_id>/             # e.g., ruined_street/ or dark_water_plinth/
+│       ├── description.md            # Spatial geometry (3-plane depth OR studio stage setup)
+│       ├── lighting_rig.md           # Motivated light sources, temperature, practical fixtures
 │       ├── reference_prompt.txt      # Prompt for environment reference concept board
-│       ├── references/               # Concept keyframes & lighting references
-│       └── acoustic_profile.md       # Room tone, reverb, natural environmental soundscape
+│       ├── acoustic_profile.md       # Room tone, reverb, natural environmental soundscape
+│       └── references/
+│           └── concept_board.png     # Approved environment reference (Ingredient #2 in Flow)
 │
-├── 04_cinematography/                # Department: Camera & Optical Standards
-│   ├── lens_profiles.json            # Focal lengths (14mm to 200mm, anamorphic vs spherical)
-│   ├── camera_movements.json         # Taxonomy of allowed single camera verbs
-│   ├── lighting_presets.json         # Motivated rigs (chiaroscuro, volumetric, soft wrap)
-│   └── film_stocks.json              # Kodak Vision3, Kodachrome, bleach bypass, color palettes
+├── structure/                        # Department: Sequencing & Pacing (Scale-Adaptive)
+│   ├── sequence_manifest.json        # Shot sequencing (Commercial 3-part or Cinema Beat Sheet)
+│   └── dialogue_bible.json           # Spoken lines with delivery tags (Omitted if non-speaking)
 │
-├── 05_soundtrack_and_audio/          # Department: Acoustic Soundscape Engineering
-│   ├── audio_manifest.json           # Sound design hierarchy per scene
-│   ├── foley_library.json            # Physical contact sounds (footfalls, cloth rustle, latches)
-│   ├── ambience_library.json         # Environmental background soundscapes
-│   ├── dialogue_syntax_rules.md      # Speech syntax: verbs, preceding colons, sentence case
-│   └── safety_vocabulary_map.json    # Safe acoustic equivalents to avoid false positives
-│
-├── 06_storyboards/                   # Department: Visual Pacing & Composition
-│   ├── storyboard_manifest.json      # Chronological sequence of visual panels
-│   └── panels/                       # Storyboard panel definitions & concept art
-│       ├── panel_01.json
-│       ├── panel_01.png
-│       ├── panel_02.json
-│       └── panel_02.png
-│
-├── 07_shots/                         # Department: Shot Units & Prompt Compilation
+├── shots/                            # Department: Executable Generation Units
 │   ├── shot_list.json                # Master sequence of all shots (durations, cuts)
 │   └── <shot_id>/                    # Isolated shot package (e.g. SH_01/)
-│       ├── shot_spec.json            # Veo-JSON definition linking character, location, optics
-│       ├── keyframes/                # Frame extraction assets (first_frame / last_frame)
-│       ├── compiled_prompt.txt       # Production-ready front-loaded Veo 3.1 prompt
+│       ├── shot_config.json          # Decoupled API config (aspect_ratio, duration, resolution)
+│       ├── compiled_prompt.txt       # Production-ready 100–150 word Veo 3.1 prompt
+│       ├── keyframes/                # First frame / last frame continuity assets
 │       └── lint_report.json          # Automated L-01 to L-06 quality verification report
 │
-└── 08_pipeline/                      # Department: Tooling & Automation
-    ├── compile_shot.py               # Deterministic JSON -> Prompt compiler
+└── pipeline/                         # Department: Tooling & Automation
+    ├── compile_shot.py               # Deterministic JSON -> Front-loaded prompt compiler
     ├── lint_shot.py                  # Automated 6-point pre-flight quality validator
     ├── chain_continuity.py           # Validates keyframe chaining across sequential shots
     └── export_flow_manifest.py       # Generates scene assembly manifest for Google Flow
@@ -124,67 +179,34 @@ Rather than generating video directly from ephemeral chat dialog, we architect a
 
 ---
 
-## 2. Department Responsibilities & Data Contracts
+## 6. The 4 Operational Modes (OpenSpec Paradigm)
 
-### 2.1 Department 01: Scripts (`01_scripts/`)
-- **Responsibility:** Establishes dramatic structure and temporal pacing.
-- **Key Artifacts:**
-  - `beat_sheet.json`: Allocates shot durations (4s, 6s, 8s) to specific dramatic moments to prevent pacing stagnation.
-  - `dialogue_bible.json`: Centralizes all spoken text, tagging each line with:
-    - `speaker`: Character identifier.
-    - `attribution_verb`: Direct speech trigger (`says`, `whispers`, `shouts`).
-    - `delivery_modifier`: Emotional/physical quality (`with quiet urgency`, `breathless`).
-    - `spoken_line`: Strictly sentence-case text (never ALL CAPS).
+To guarantee complete session independence across devices and conversations, the agent moves through 4 explicit modes:
 
-### 2.2 Department 02: Characters (`02_characters/`)
-- **Responsibility:** Absolute identity, wardrobe, and anatomical locking.
-- **Key Protocols:**
-  - **Verbatim Anchor String:** A locked 25–40 word anatomical and wardrobe description. The compiler pulls this text into every shot involving this character without altering a single syllable.
-  - **Neutral Reference Sheet Standard:** Turnaround sheets generated on neutral off-white/light-grey cycloramas to prevent background contamination during I2V / Ingredients generation.
+```
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│      MODE 1      │       │      MODE 2      │       │      MODE 3      │       │      MODE 4      │
+│     EXPLORE      │ ────► │     PROPOSE      │ ────► │       SYNC       │ ────► │      APPLY       │
+│                  │       │                  │       │     (ALIGN)      │       │                  │
+│ • Lock Intent    │       │ • Beat Breakdown │       │ • Creator Review │       │ • Final Prompts  │
+│ • Set Visual DNA │       │ • Shot Timing    │       │ • Lock Anchors   │       │ • 6-Point Lint   │
+│ • Subject Traits │       │ • Rig Setups     │       │ • Tweak Motions  │       │ • Flow Assets    │
+└──────────────────┘       └──────────────────┘       └──────────────────┘       └──────────────────┘
+```
 
-### 2.3 Department 03: Sceneries (`03_sceneries/`)
-- **Responsibility:** Defining 3D spatial depth, environmental atmosphere, and motivated light.
-- **Key Protocols:**
-  - **Depth Plane Allocation:** Explicitly defines foreground occluders, midground action plane, and background horizons.
-  - **Motivated Lighting Map:** Identifies visible practicals (lamps, neon, fires) and their physical bounce characteristics.
-
-### 2.4 Department 04: Cinematography (`04_cinematography/`)
-- **Responsibility:** Optical physics and kinematic constraints.
-- **Key Protocols:**
-  - **Single Camera Verb Rule:** Enforces exactly one primary motivated camera motion per shot.
-  - **Focal Length Assignment:** Governs field-of-view and background compression (e.g. 24mm anamorphic for landscapes; 85mm prime for emotional close-ups).
-
-### 2.5 Department 05: Soundtrack & Audio (`05_soundtrack_and_audio/`)
-- **Responsibility:** Native dual-stream acoustic soundscape design.
-- **Key Protocols:**
-  - **Acoustic Layering:** Foley + Ambience + Dialogue.
-  - **Music Suppression:** Always enforces `, no background music` in the trailing audio block.
-  - **Acoustic Safety Translation:** Maps trigger words like "screaming" or "police siren" to safe sensory equivalents.
-
-### 2.6 Department 06: Storyboards (`06_storyboards/`)
-- **Responsibility:** Visual pre-visualization and transition planning.
-- **Key Protocols:**
-  - Tracks transition types: Hard Cut, Continuous Action Chaining, Match Cut, Whip Pan.
-  - Generates 16:9 still keyframe compositions via Imagen.
-
-### 2.7 Department 07: Shots (`07_shots/`)
-- **Responsibility:** Executable generation units.
-- **Key Protocols:**
-  - Each shot folder (`SH_01/`, `SH_02/`) contains the complete programmatic specification (`shot_spec.json`) and compiled prompt (`compiled_prompt.txt`).
-  - Pre-flight lint report (`lint_report.json`) must pass all 6 checks (`L-01` through `L-06`) before submission.
-
-### 2.8 Department 08: Pipeline (`08_pipeline/`)
-- **Responsibility:** Automated orchestration and data integration.
-- **Key Tools:**
-  - `compile_shot.py`: Merges data from `characters/`, `sceneries/`, `cinematography/`, and `audio/` into the front-loaded prompt string.
-  - `lint_shot.py`: Runs automated quality assertions.
-  - `export_flow_manifest.py`: Packages assembled shots into Google Flow Scene Builder timeline format.
+1. **Mode 1 (`explore`):** Aligns on concept. Writes `project_intent.md`, `blueprint.md`, and initial domain files in `visual/`, `subjects/`, and `environments/`.
+2. **Mode 2 (`propose`):** Generates structured proposals: 2-step turnaround prompts, spatial setups, and shot breakdown.
+3. **Mode 3 (`sync`):** Creator reviews, provides feedback, and locks Master Anchors and approved reference images (Ingredients).
+4. **Mode 4 (`apply`):** Compiles front-loaded prompts, executes pre-flight linting, and packages assets for Google Flow.
 
 ---
 
-## 3. Next Implementation Milestones
+## 7. Automated Pre-Flight Linting Rules (`lint_shot.py`)
 
-1. **Phase 5.1:** Finalize Folder Schemas & Template Definitions (`project.json`, `shot_spec.json`, `character_bible.json`).
-2. **Phase 5.2:** Build Reusable Template Directory (`production_template/`).
-3. **Phase 5.3:** Implement Core Automation Scripts (`compile_shot.py`, `lint_shot.py`).
-4. **Phase 5.4:** Create End-to-End Reference Production Project (e.g., a complete 3-shot sequence demonstrating the entire file-system workflow).
+Before any prompt is submitted to Google Flow, the pipeline validates it against 6 hard rules:
+- **`L-01` (Word Economy):** Total prompt length must be strictly between 100 and 150 words.
+- **`L-02` (Attention Front-Loading):** Primary subject anchor and camera framing must appear within the first 30 tokens.
+- **`L-03` (No Equipment Nouns):** Zero physical camera hardware nouns (`tripod`, `dolly`, `crane`, `rig`). Only kinematic and perspective adjectives allowed.
+- **`L-04` (Decoupled Configuration):** Zero technical video parameters (`16:9`, `1080p`, `24fps`, `8s`) inside prompt text.
+- **`L-05` (Invariant Subject Verification):** Verbatim anchor string from `subjects/<id>/verbatim_anchor.txt` must appear character-for-character without deviation.
+- **`L-06` (Audio Purity):** Audio block must begin with `Audio:` and conclude with `, no background music`.

@@ -1,8 +1,11 @@
 # Specification: `characters/` Domain (Character Turnaround & Identity Anchors)
 
-**Status:** ✅ FINALIZED  
-**Domain:** `characters/`  
+**Status:** ✅ FINALIZED (Specialized Character Domain Specification)  
+**Parent Universal Specification:** [`02_subject_spec.md`](./02_subject_spec.md)  
+**Domain:** `characters/` (Specialized Human & Stylized Character Domain under `subjects/`)  
 **Target Engines:** Google Flow (Veo 3.1, Imagen 4, Gemini Omni Flash)
+
+> **Architectural Relationship:** This document is the deep, authoritative specification for **Human, Anime, Stylized, and Creature Characters**. For the overarching parent primitive governing commercial hero products, vehicles, and inanimate artifacts, consult the master [`02_subject_spec.md`](./02_subject_spec.md).
 
 ---
 
@@ -19,7 +22,7 @@ The `characters/` domain defines and locks every character's visual, anatomical,
 
 ## 2. Directory Structure & File Contract
 
-Every character in a project is isolated in their own folder under `characters/`:
+Every character in a project is isolated in their own folder under `characters/` (or `subjects/<character_id>/`):
 
 ```text
 characters/
@@ -99,6 +102,12 @@ characters/
 
 ## 4. The Two Production Genesis Workflows
 
+### 4.0 Creator Intent Rule: Single Hero Shot vs. 4-Panel Profile Sheet
+- **Default Delivery (The Hero Shot):** Unless the creator explicitly uses terms like `"character profile"`, `"profile"`, `"turnaround"`, or `"model sheet"`, the Agent **MUST default to generating a single cinematic Hero Shot (`hero_prompt.txt`)** featuring an expressive, iconic character pose placed inside a motivated, atmospheric environment.
+- **Conditional Delivery (The 4-Panel Model Sheet):** The 4-view model turnaround sheet on `#E5E5E5` (`turnaround_prompt.txt`) is reserved strictly for when:
+  1. The creator explicitly asks for a `"profile"`, `"character profile"`, or `"model sheet"`.
+  2. OR the creator approves the hero shot, and the workflow enters Mode 3 (`sync`) to lock the reference asset (Ingredient #1) for Google Flow.
+
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
 │                        WORKFLOW DECISION POINT                         │
@@ -128,10 +137,11 @@ characters/
 
 ### Scenario 1: Creator Supplies Their Own Photo (Image-to-Character)
 When a creator uploads their photo and requests custom wardrobe/cosplay:
-1. **Facial Likeness Constraint:** Treat facial geometry, bone contours, eye shape, and nose bridge as locked hard constraints.
-2. **Full-Body Biological Inheritance:** Anchor the real person's natural body build, shoulder-to-hip proportions, and natural posture from the photo.
-3. **Cosplay Deconstruction Engine:** Automatically expand pop-culture and anime terms into physical garment descriptors (materials, piping, armor plates, collars) to prevent AI hallucination.
-4. **Style Harmonization:** If target is Anime, translate both face and body into unified 2D hand-drawn cel art. If target is Live Action, render a real living actor in tailored movie costume.
+1. **Biological Landmark Invariance (Anti-Drift):** Treat facial bone structure, zygomatic arches (cheekbones), nose bridge contours, jawline angle, and eye socket geometry as locked immutable constraints. Explicitly forbid the model from substituting a generic idealized or cartoon face.
+2. **Expression Decoupling Engine:** Decouple permanent bone geometry from transient emotions. The prompt explicitly commands: *"Retain 100% of the woman's authentic facial bone structure and facial landmarks from the reference photo, but dynamically animate her expression into [smile / wink / smirk / focus]."*
+3. **Full-Body Biological Inheritance & Downward Extrapolation:** Anchor the real person's natural height, musculoskeletal build, shoulder-to-hip proportions, and natural posture. When only a face-only headshot is provided, biometrics (height, slim/athletic build, skin tone, age) are anchored via explicit text descriptors while the visible upper collar/garment is seamlessly extrapolated downward into matching tailored lower pieces (skirt/trousers, belt, footwear) with identical textile weave.
+4. **Cosplay Deconstruction Engine:** Automatically expand pop-culture and anime terms into physical garment descriptors (materials, piping, armor plates, collars) to prevent AI hallucination.
+5. **Style Harmonization:** If target is Anime, translate both face and body into unified 2D hand-drawn cel art. If target is Live Action, render a real living actor in tailored movie costume.
 
 ### Scenario 2: Original Character Creation from Pure Text (2-Step Architecture)
 When creating an original character without a source photo, generating a 4-view sheet in 1 step causes **split token attention** and **facial drift across panels**. The mandatory 2-step pipeline solves this:
@@ -156,7 +166,7 @@ Takes the approved Step 1 image as the reference anchor:
 |---|---|---|---|
 | **1. Ultra-Realistic Live-Action** | 85mm portrait prime lens, natural skin micro-pores, authentic subsurface scattering, organic textile drape. | Solid `#E5E5E5` cyclorama, flat diffuse studio lighting, real human actor in movie wardrobe. | Ban action figures, dolls, plastic ball joints, 3D miniatures. |
 | **2. Traditional 2D Cel Anime** | Hand-drawn cel animation, bold uniform ink lines, flat unshaded color fills, locked 24fps aesthetic. | Classic production model sheet (*settei* / 設定資料), white studio paper, multi-angle line art. | Ban 3D rendering, plastic surfaces, and volumetric CGI lighting (prevents doubled jittery lines). |
-| **3. Stylized 3D CGI** | Stylized proportions, tactile vinyl/felt micro-textures, smooth subsurface scattering, expressive stylized planes. | Digital T-pose / A-pose 3D asset model sheet, neutral gray background. | Keep facial planes stylized to avoid uncanny valley realism. |
+| **3. Stylized 3D CGI** | Stylized proportions, tactile vinyl/felt micro-textures, warm subsurface scattering on skin, expressive stylized planes. | Digital T-pose / A-pose 3D asset model sheet, neutral gray background. | Keep facial planes stylized to avoid uncanny valley realism. |
 | **4. Fantasy Armor & Mecha Suits** | Deconstruct into physical plates: lightweight articulated polycarbonate armor, silicone seals, matte finish. | Multi-angle view revealing rear thrusters, waist articulations, and weapon holsters. | Never say just "mecha suit"; always describe tailored flexible undersuit with articulated composite plates. |
 | **5. Non-Human Creatures / Robots** | Replace human biometrics with creature anatomy (chassis plating, servo joints, reptilian scales, tail length). | Turnaround showing dorsal, lateral, and ventral silhouettes on neutral gray. | Must explicitly constrain tail length, limb counts, and ocular placement across all 4 panels. |
 
