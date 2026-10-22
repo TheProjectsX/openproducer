@@ -153,6 +153,11 @@ To prevent token bloat while retaining 100% information control:
 - **Scoping Consensus:** Multi-character scene staging deferred to Cinematography & Shots (Phase 5.4); character domain focuses strictly on individual identity assets and vocal profiles.
 - **Final Output Document:** Generated authoritative specification [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md) covering file contracts, templates, the 2-step genesis workflow, and the 5-medium adaptation matrix.
 
+### 2026-10-22 — Open Investigation (Scratchpad): Broadening Framework Beyond Cinema (Archetypes)
+- **Insight Logged:** Flow generates all video types (commercials, products, TikTok/reels, documentaries, music visualizers), not just movies.
+- **Hypothesis:** Generative primitives (`visual/`, `subjects/`, `environments/`, `kinematics/`, `audio/`) remain 100% shared, but scaffolding should support Project Archetypes (Cinema vs. Commercial vs. Social B-Roll vs. Documentary) so non-movie creators don't face script/actor bloat.
+- **Reference Document:** [`discussions/_raw/15_project_archetypes_and_scope_expansion.md`](./discussions/_raw/15_project_archetypes_and_scope_expansion.md).
+
 ---
 
 ## 6. Next Session Handoff & Agenda (Phase 5.3: Sceneries & Environments)
@@ -162,6 +167,7 @@ To prevent token bloat while retaining 100% information control:
 ### Immediate Agenda for Next Agent:
 1. **Activate Phase 5.3:** Open discussion on the **`sceneries/`** domain (environmental world-building).
 2. **Key Architectural Questions to Tackle:**
+   - **Cross-Archetype Sceneries:** How `sceneries/` must accommodate both narrative environments (streets, battlefields) AND commercial/studio sets (pedestals, infinity coves, reflective water surfaces) per Discussion 15.
    - **Directory Contract:** Define `sceneries/<location_id>/` (e.g. `environment_summary.md`, `spatial_layers.md`, `lighting_rig.md`, `acoustics.md`, `references/`).
    - **3-Plane Spatial Depth:** How prompts must separate Foreground, Midground, and Background to give Veo 3.1 accurate 3D parallax during camera kinematics.
    - **Motivated Lighting Rigs:** Connecting scene lighting (e.g. cold overcast daylight through smoke, flickering neon practicals) directly to the Master Style Anchor in `01_visual_spec.md`.
@@ -173,6 +179,7 @@ To prevent token bloat while retaining 100% information control:
 - ⛔ **DO NOT** read `research/raw_*` (saves ~65k tokens; consult [`research/structure.md`](./research/structure.md)).
 - ⛔ **DO NOT** read `discussions/_raw/` by default (cold archive for deep troubleshooting only).
 - ✅ Start by reviewing the active summaries in [`discussions/`](./discussions/) and the latest finalized spec [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md).
+
 
 
 
