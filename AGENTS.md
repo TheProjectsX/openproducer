@@ -1,0 +1,178 @@
+# AGENTS.md — Video Generation Skill & Production Framework
+
+## 1. Project Identity & Core Mission
+
+- **Target System:** Google Flow (orchestrating Veo 3.1, Imagen 4, and Gemini Omni Flash).
+- **Core Mission:** To build a structured, file-system-driven video generation research and prompt engineering framework (and eventually an agent skill) that produces **ultra-high-quality prompts and reference assets** that faithfully reflect the human creator's vision.
+- **Guiding Philosophy:** **Lean & Creator-Centric.** Do not over-complicate the production system with bureaucratic abstractions. Every folder, file, and field exists strictly for one purpose: **to directly enrich the prompt fed into Google Flow and ensure visual/audio consistency.**
+
+---
+
+## 2. Multi-Session Continuity & Context Loading Protocol
+
+This workspace is accessed across different devices, workstations, and conversation sessions. Every agent entering this repository **MUST** follow this protocol to conserve context tokens while maintaining total information control:
+
+1. **Read This File First:** `AGENTS.md` is the living ground truth of project status, design decisions, and active roadmap.
+2. **Context Loading Economy (Never Read Everything):**
+   - **Research Directory:** Strictly follow [`research/structure.md`](./research/structure.md). **DO NOT** load `research/raw_contents/` or `research/raw_notes/` (~65k tokens). Only read targeted files in [`research/synthesis/`](./research/synthesis/) on demand.
+   - **Discussions Directory:** Read active consolidated summaries in [`discussions/`](./discussions/) (`architecture.md`, `visual_and_style.md`, `characters.md`).
+   - **`discussions/_raw/` (Cold Archive):** **DO NOT** load `discussions/_raw/` by default. It contains all 14 original raw conversational logs, reserved strictly as an audit trail if information seems missing or when deep troubleshooting is needed.
+3. **Always Record Progress in Files:**
+   - Any consensus, decision, requirement, or architectural change reached during a chat **MUST be documented in files** before concluding the turn or session.
+   - If work was done in session X (e.g. PC 1) and pushed, session Y (e.g. PC 2) must be able to read the files and immediately resume with identical context and reasoning.
+4. **Never Run Non-Read-Only Git Commands:**
+   - Per user rule: Never `git add`, `git commit`, or push unless explicitly requested.
+
+---
+
+## 3. Current Project State & Roadmap
+
+| Phase | Description | Status | Authoritative Output / Specs | Discussion & Logs |
+|---|---|---|---|---|
+| **Phase 1–4** | Comprehensive Research, Synthesis & Validation | ✅ **COMPLETE** | [`research/synthesis/`](./research/synthesis/) | [`research/structure.md`](./research/structure.md), [`research/validation.md`](./research/validation.md) |
+| **Phase 5.1: Visual DNA** | Root Visual Style, Human Bridge, Master Anchor | ✅ **FINALIZED** | [`production_framework/specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md) | [`discussions/visual_and_style.md`](./discussions/visual_and_style.md) |
+| **Phase 5.2: Characters** | Turnaround Anchors, Cosplay Deconstruction, Org Characters | ✅ **FINALIZED** | [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md) | [`discussions/characters.md`](./discussions/characters.md) |
+| **Phase 5.3: Sceneries** | Environments, Spatial Depth, Motivated Lighting | 🟡 **IN PROGRESS** | `production_framework/specs/03_scenery_spec.md` (Drafting) | `discussions/sceneries.md` |
+| **Phase 5.4: Cinematography & Audio** | Kinematics, Lenses, Soundscapes, Dialogue Delivery | ⏳ Pending | `production_framework/specs/04_cinematography_audio_spec.md` | `discussions/cinematography_audio.md` |
+| **Phase 6** | Lean Folder Scaffold & Project Template | ⏳ Pending | `production_template/` | TBD |
+| **Phase 7** | Automated Prompt Generation & Linting Skill | ⏳ Pending | Tooling & Skill code | TBD |
+
+---
+
+## 4. Documentation Architecture: Specifications vs. Discussions vs. Archives
+
+To prevent token bloat while retaining 100% information control:
+1. **`production_framework/specs/` (Authoritative Production Deliverables):**
+   - Clean, standardized specification files produced upon concluding each domain discussion (e.g. `01_visual_spec.md`). Contains the final file contracts, templates, and rules ready for implementation.
+2. **`discussions/` (Active Consolidated Summaries):**
+   - High-density active working records capturing why decisions were made, failure modes tested, and empirical AI model glitches discovered (`architecture.md`, `visual_and_style.md`, `characters.md`).
+3. **`discussions/_raw/` (Cold Historical Archive):**
+   - Contains all 14 original, unedited discussion files. Kept on disk for audit trail and deep debugging. Agents do NOT load this folder during routine turns.
+4. **`research/` (Knowledge Base & Cold Scrapes):**
+   - Organized per [`research/structure.md`](./research/structure.md). `synthesis/` is active on demand; `raw_contents/` and `raw_notes/` remain archived.
+5. **`AGENTS.md` (Cross-Session Ground Truth):**
+   - Living map connecting discussions, specs, and next tasks across PC workstations.
+
+---
+
+## 5. Decision & Discussion Log
+
+### 2026-10-22 — Alignment on Simplicity & Session Handoff
+- **Context:** User clarified that the framework must not be over-complicated. The sole goal is high-quality Flow prompts reflecting creator vision.
+- **Action Taken:** Created `AGENTS.md` as the unified cross-session memory file. Established session handoff logging protocol.
+
+### 2026-10-22 — Mode-Based Skill Architecture (OpenSpec Paradigm)
+- **Consensus Reached:** The skill will be organized into standalone operational modes: `explore`, `propose`, `sync`, `apply`.
+- **Session Independence:** Each mode writes its state and artifacts directly into files. Finishing `explore` in Session 1 allows Session 2 on another PC to immediately pick up `propose` without chat history loss.
+- **Reference Document:** [`discussions/architecture.md`](./discussions/architecture.md).
+
+### 2026-10-22 — Theme & Style Baseline (The Root Visual DNA)
+- **Consensus Reached:** Before characters, sceneries, or shots are designed, the project must establish a single **Theme / Visual Style Baseline** (Ultra-realistic, 3D CGI, 2D Anime, Vintage Film, etc.).
+- **Synchronization Principle:** This baseline produces a locked Master Style Anchor String that is deterministically injected into every prompt (character sheets, scenery boards, video clips) to guarantee visual cohesion across the entire project.
+- **Reference Document:** [`discussions/visual_and_style.md`](./discussions/visual_and_style.md).
+
+### 2026-10-22 — The `visual/` Domain & "Regular Person" Translation Bridge
+- **Consensus Reached:** Name this foundational domain `visual/` containing simple markdown files (`style_summary.md`, `technical_anchor.md`, `palette_and_mood.md`).
+- **Creator UX Principle:** Never force creators to know technical cinematography jargon (e.g. "Kodak 5219", "chiaroscuro", "anamorphic 2x"). The creator describes what they envision in normal human words; the agent confirms in simple terms, then automatically writes the exact, robust, machine-level Flow prompt anchors under the hood.
+- **Reference Document:** [`discussions/visual_and_style.md`](./discussions/visual_and_style.md).
+
+### 2026-10-22 — Google Flow Prompt Translation Mechanics
+- **Consensus Reached:** Flow orchestrates Veo 3.1, which operates on an asymmetric token attention decay curve:
+  1. Tokens 1–30: Viewport framing & primary subject anchor (highest weight).
+  2. Tokens 31–80: Single biomechanical action & motivated lighting vectors.
+  3. Tokens 81–130: Visual style anchor & single camera verb.
+  4. Trailing block: Audio soundscape (`Audio: foley, ambience, no background music`).
+- **Word Economy:** Strictly bounded between 100–150 words.
+- **Reference Document:** [`discussions/visual_and_style.md`](./discussions/visual_and_style.md).
+
+### 2026-10-22 — Discovery: The "Camera Equipment Hallucination Trap"
+- **Critical Empirical Finding:** Writing equipment nouns like `"on locked tripod"` or `"camera on tripod"` causes Gemini / Veo to literally render a physical camera/tripod in the shot pointed at the actor!
+- **Strict Rule Enforced:** NEVER use physical equipment nouns (`tripod`, `dolly track`, `crane rig`). ALWAYS use perspective & kinematic adjectives (`Locked-off eye-level framing, completely static shot with zero camera movement`, `Slow push-in toward subject`).
+- **Reference Document:** [`discussions/visual_and_style.md`](./discussions/visual_and_style.md).
+
+### 2026-10-22 — Decoupling: Configuration Settings vs. Prompt Text
+- **Consensus Reached:** Google Flow, Veo 3.1, and Gemini Omni control technical parameters (`aspect_ratio`, `resolution`, `duration_seconds`, `reference_images`, `last_frame`) strictly via the **configuration object / UI dropdowns**, NOT via prompt text tokens.
+- **Prompt Purity Rule:** Never append `"16:9, 1080p, 24fps, 8s"` inside the text prompt. This wastes token attention and can cause artifacting. The prompt is kept 100% pure creative cinematography; technical specs are tracked in the shot's configuration block.
+- **Reference Document:** [`discussions/visual_and_style.md`](./discussions/visual_and_style.md).
+
+### 2026-10-22 — Simulation: Post-War Aftermath ("Traumatic Aftermath")
+- **Simulation Tested:** Input vibe *"Aftermath of a war fight... semi dramatic effect... post war traumatic effect"* successfully converted through the translation bridge:
+  1. Human-facing explanation in plain English.
+  2. Generated `visual/style_summary.md`, `palette_and_mood.md`, and `technical_anchor.md`.
+  3. Synthesized locked Master Style Anchor string (`Shot on 35mm film stock, organic fine grain, bleach bypass desaturated color grading...`).
+  4. Demonstrated end-to-end 136-word compiled Flow prompt with pure cinema kinematics and zero equipment nouns.
+- **Reference Document:** [`discussions/visual_and_style.md`](./discussions/visual_and_style.md).
+
+### 2026-10-22 — Decision: Photo-First Validation Protocol
+- **Consensus Reached:** Video generation consumes heavy compute credits and has high latency. From now on, all prompt testing, visual style experiments, character looks, and lighting checks will be validated using **Still Photo Generation (Imagen 4 / Nano Banana / Image tools)**.
+- **Production Alignment:** In Google Flow, still photos serve a dual purpose: they cost pennies to test AND become the exact reference images ("Ingredients") uploaded to lock character faces and style before rendering video.
+- **Reference Document:** [`discussions/visual_and_style.md`](./discussions/visual_and_style.md).
+
+### 2026-10-22 — Finalized Specification: `visual/` Domain
+- **Milestone Reached:** Successfully concluded all discussions on visual style, prompt mechanics, and translation bridges.
+- **Final Output Document:** Generated authoritative specification [`production_framework/specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md) covering file contracts, templates, and the 6 master style paradigms.
+
+### 2026-10-22 — Character Turnaround Architecture (User Photo + Custom Wardrobe)
+- **Consensus Reached:** When a creator provides their own photo, the system generates a 4-view character turnaround model sheet on a single image (Front, Side, Back, Face close-up) on a solid neutral light-gray background (`#E5E5E5`).
+- **Strict Facial Lock:** The prompt treats facial geometry, jawline, eye shape, and nose contours as unchangeable hard constraints.
+- **Anime / Cosplay Deconstruction:** Pop-culture references (e.g. "Darling in the Franxx mecha suit", "Kakashi outfit", "Zero Two") are automatically expanded into physical garment descriptors (materials, piping, armor plates, collars) to prevent AI hallucination.
+- **Reference Document:** [`discussions/characters.md`](./discussions/characters.md).
+
+### 2026-10-22 — Discovery & Fix: The "Action Figure" Trap (Natural Human Fit & Style Harmony)
+- **Empirical Finding:** Merely locking the face while asking for a mecha/anime suit causes diffusion models to render a plastic toy/action figure with a human head slapped on it.
+- **The Fix:**
+  1. **Full-Body Biological Inheritance:** Explicitly anchor the real person's natural body build, shoulder-to-hip proportions, and posture from the photo.
+  2. **Wearable Movie Wardrobe:** Describe outfits as tailored, flexible cinematic movie costumes (flexible neoprene, articulated lightweight composite plates conforming to real torso curves, organic fabric drape) rather than rigid toy parts.
+  3. **Strict Toy Banning:** Explicitly ban action figures, plastic ball joints, dolls, and 3D miniatures.
+  4. **Style Harmonization:** If target is Anime, translate both face and body into unified 2D hand-drawn cel art. If target is Live Action, render a living human actor in tailored movie costume.
+- **Reference Document:** [`discussions/characters.md`](./discussions/characters.md).
+
+### 2026-10-22 — Known Open Challenge: Person-to-Character Face & Body Drift
+- **Issue Logged:** In Image-to-Image photo-to-character conversion, models still exhibit:
+  1. *Subtle Facial Drift:* Face geometry/features slightly alter or stylize away from true likeness.
+  2. *Body Structure / Size Inconsistency:* Torso proportions and musculoskeletal scale do not always 1:1 match the real person.
+- **Status:** Logged for deep-dive refinement later (potential solutions: 2-step single portrait anchor -> full turnaround, or explicit biometric descriptors).
+- **Reference Document:** [`discussions/characters.md`](./discussions/characters.md).
+
+### 2026-10-22 — Two-Step Character Genesis & Turnaround Architecture
+- **Consensus Reached:** Solved the 1-step diffusion failure (split token attention causing facial drift across panels from pure text) by instituting a mandatory 2-step architecture:
+  1. *Step 1 (Genesis Hero Shot):* Direct 100% of latent diffusion attention into creating a single, definitive living human persona with locked traits and physical wardrobe materiality.
+  2. *Step 2 (Profile Conversion Sheet):* Convert the approved single image into a 4-view model sheet (Front, Side, Back, Face close-up) rotated on an invisible turntable on a solid `#E5E5E5` studio background.
+- **Simulation Tested:** Successfully verified with original character Maya Lin (35mm war aftermath medic).
+- **Reference Document:** [`discussions/characters.md`](./discussions/characters.md) and [`discussions/_raw/12_two_step_character_genesis_and_turnaround.md`](./discussions/_raw/12_two_step_character_genesis_and_turnaround.md).
+
+### 2026-10-22 — Character Generalizability Across Styles & Edge Case Mitigation
+- **Consensus Reached:** The 2-step character turnaround architecture is medium-agnostic and universally valid across Live-Action, 2D Cel Anime, Stylized 3D CGI, Mecha/Armor, and Non-Human Creatures.
+- **Edge Case Guards Established:**
+  1. *Asymmetry Glitch:* Explicitly bind scars/eyepatches to specific perspective panels (e.g. Panel 2 Left Profile) to prevent bilateral mirroring.
+  2. *Detachable Props:* Strictly enforce empty hands and holstered gear in turnaround sheets; weapons belong in secondary prop sheets.
+- **Reference Document:** [`discussions/characters.md`](./discussions/characters.md) and [`discussions/_raw/13_character_turnaround_generalizability_and_edge_cases.md`](./discussions/_raw/13_character_turnaround_generalizability_and_edge_cases.md).
+
+### 2026-10-22 — Finalized Specification: `characters/` Domain
+- **Milestone Reached:** Successfully concluded all discussions on character creation, reference turnaround sheets, and in-prompt audio direction.
+- **Scoping Consensus:** Multi-character scene staging deferred to Cinematography & Shots (Phase 5.4); character domain focuses strictly on individual identity assets and vocal profiles.
+- **Final Output Document:** Generated authoritative specification [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md) covering file contracts, templates, the 2-step genesis workflow, and the 5-medium adaptation matrix.
+
+---
+
+## 6. Next Session Handoff & Agenda (Phase 5.3: Sceneries & Environments)
+
+**Status at Session Pause:** Phase 5.1 (`visual/`) and Phase 5.2 (`characters/`) are 100% complete with authoritative specifications in [`production_framework/specs/`](./production_framework/specs/).
+
+### Immediate Agenda for Next Agent:
+1. **Activate Phase 5.3:** Open discussion on the **`sceneries/`** domain (environmental world-building).
+2. **Key Architectural Questions to Tackle:**
+   - **Directory Contract:** Define `sceneries/<location_id>/` (e.g. `environment_summary.md`, `spatial_layers.md`, `lighting_rig.md`, `acoustics.md`, `references/`).
+   - **3-Plane Spatial Depth:** How prompts must separate Foreground, Midground, and Background to give Veo 3.1 accurate 3D parallax during camera kinematics.
+   - **Motivated Lighting Rigs:** Connecting scene lighting (e.g. cold overcast daylight through smoke, flickering neon practicals) directly to the Master Style Anchor in `01_visual_spec.md`.
+   - **Reference Mood Boards (Google Flow Ingredients):** Defining the reference image requirements for environments (preventing character or unwanted asset bleed).
+   - **Diegetic Environmental Acoustics:** Standardizing the ambient audio layer (reverberation, room tone, weather foley) for the `Audio:` block.
+   - **Authoritative Deliverable:** Produce [`production_framework/specs/03_scenery_spec.md`](./production_framework/specs/03_scenery_spec.md).
+
+### Quick Agent Ground Rules:
+- ⛔ **DO NOT** read `research/raw_*` (saves ~65k tokens; consult [`research/structure.md`](./research/structure.md)).
+- ⛔ **DO NOT** read `discussions/_raw/` by default (cold archive for deep troubleshooting only).
+- ✅ Start by reviewing the active summaries in [`discussions/`](./discussions/) and the latest finalized spec [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md).
+
+
+

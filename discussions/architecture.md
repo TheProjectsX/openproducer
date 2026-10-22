@@ -1,0 +1,45 @@
+# Discussion Log: Framework Scope & Mode-Based Architecture
+
+**Status:** Consolidated Architecture Record  
+**Topic:** Aligning on Lean Production Structure & OpenSpec-Inspired Modes (`explore`, `propose`, `sync`, `apply`)
+
+---
+
+## 1. Core Philosophy: Lean & Creator-Centric
+
+- **Sole Target:** To generate ultra-high-quality, cinema-grade prompts and reference assets that accurately translate the creator's vision into Google Flow (orchestrating Veo 3.1, Imagen 4, and Gemini Omni Flash).
+- **Anti-Pattern to Avoid:** Over-engineering. Do not create bureaucratic abstractions that distract from prompt quality.
+- **The Core Problem with Chat-Only Prompting:**
+  - One-off prompts cause **identity drift** (characters change faces between shots).
+  - Background lighting, mood, and spatial scales change randomly between cuts (**style drift**).
+  - Spoken dialogue produces burned-in subtitles or robotic letter-by-letter spelling.
+  - Camera movements conflict or warp the 3D space.
+- **The Solution:** A modular folder structure (`visual/`, `characters/`, `sceneries/`, `scripts/`, `clips/`) where each domain houses its assets and rules. When it's time to generate prompts, the system pulls the relevant elements directly into the final Flow prompt.
+
+---
+
+## 2. Mode-Based Skill Architecture (OpenSpec Paradigm)
+
+To guarantee 100% session independence across different PCs and chats, the workflow is organized into four discrete operational modes:
+
+```
+┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
+│      MODE 1      │       │      MODE 2      │       │      MODE 3      │       │      MODE 4      │
+│     EXPLORE      │ ────► │     PROPOSE      │ ────► │       SYNC       │ ────► │      APPLY       │
+│                  │       │                  │       │     (ALIGN)      │       │                  │
+│ • Premise & Vibe │       │ • Beat Breakdown │       │ • Creator Review │       │ • Final Prompts  │
+│ • Character Vibe │       │ • Shot Timing    │       │ • Lock Anchors   │       │ • 6-Point Lint   │
+│ • Lighting/World │       │ • Dialogue Lines │       │ • Tweak Motions  │       │ • Flow Assets    │
+└──────────────────┘       └──────────────────┘       └──────────────────┘       └──────────────────┘
+```
+
+1. **Mode 1 (`explore`):** Unpacks the creator's vision through collaborative brainstorming. Writes `00_concept_brief.md` and initial domain notes.
+2. **Mode 2 (`propose`):** Converts the concept into a complete cinematic production plan (3-act beat sheet, shot list, dialogue lines, proposed verbatim anchors).
+3. **Mode 3 (`sync`):** Creator reviews, provides feedback, and locks character Master Verbatim Anchors and reference turnaround sheets.
+4. **Mode 4 (`apply`):** Compiles production-ready front-loaded Veo prompts, runs pre-flight quality linting, and outputs clean prompt files.
+
+---
+
+## 3. Session Portability Contract
+
+Every mode reads existing files as input and writes tangible artifacts to the folder system as output. If a creator finishes `explore` on PC 1, they can sit down at PC 2, open a new chat, say *"Let's move to propose"*, and the agent immediately resumes without chat history loss.
