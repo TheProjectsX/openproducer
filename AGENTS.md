@@ -16,10 +16,10 @@ This workspace is accessed across different devices, workstations, and conversat
 2. **Context Loading Economy (Never Read Everything):**
    - **Research Directory:** Strictly follow [`research/structure.md`](./research/structure.md). **DO NOT** load `research/raw_contents/` or `research/raw_notes/` (~65k tokens). Only read targeted files in [`research/synthesis/`](./research/synthesis/) on demand.
    - **Discussions Directory:** Read active consolidated summaries in [`discussions/`](./discussions/) (`architecture.md`, `visual_and_style.md`, `characters.md`).
-   - **`discussions/_raw/` (Cold Archive):** **DO NOT** load `discussions/_raw/` by default. It contains all 25 original raw conversational logs, reserved strictly as an audit trail if information seems missing or when deep troubleshooting is needed.
+   - **`discussions/_raw/` (Cold Archive):** **DO NOT** load `discussions/_raw/` by default. It contains all 27 original raw conversational logs, reserved strictly as an audit trail if information seems missing or when deep troubleshooting is needed.
 3. **Always Record Progress in Files:**
    - Any consensus, decision, requirement, or architectural change reached during a chat **MUST be documented in files** before concluding the turn or session.
-   - **Mandatory Raw Discussion Logging:** For every new feature, architectural concept, design decision, or user alignment discussed in chat, the agent **MUST create a corresponding raw discussion file in `discussions/_raw/`** (sequentially numbered, e.g. `16_<topic>.md`) following the established structure before summarizing or concluding. This guarantees that an unedited, complete record of the dialogue and rationale is permanently preserved on disk for auditing and future agents.
+   - **Mandatory Raw Discussion Logging (Feature Updates Only):** Only create a corresponding raw discussion file in `discussions/_raw/` when a **new feature, architectural concept, major specification change, or design decision** is discussed and established. Do NOT create raw files for routine prompt tweaks, minor back-and-forth edits, or casual conversational iterations. This keeps the archive high-signal and uncluttered.
    - If work was done in session X (e.g. PC 1) and pushed, session Y (e.g. PC 2) must be able to read the files and immediately resume with identical context and reasoning.
 4. **Never Run Non-Read-Only Git Commands:**
    - Per user rule: Never `git add`, `git commit`, or push unless explicitly requested.
@@ -48,7 +48,7 @@ To prevent token bloat while retaining 100% information control:
 2. **`discussions/` (Active Consolidated Summaries):**
    - High-density active working records capturing why decisions were made, failure modes tested, and empirical AI model glitches discovered (`architecture.md`, `visual_and_style.md`, `characters.md`).
 3. **`discussions/_raw/` (Cold Historical Archive):**
-   - Contains all 25 original, sequential discussion files. Kept on disk for audit trail and deep debugging. Agents do NOT load this folder during routine turns.
+   - Contains all 27 original, sequential discussion files. Kept on disk for audit trail and deep debugging. Agents do NOT load this folder during routine turns.
 4. **`research/` (Knowledge Base & Cold Scrapes):**
    - Organized per [`research/structure.md`](./research/structure.md). `synthesis/` is active on demand; `raw_contents/` and `raw_notes/` remain archived.
 5. **`AGENTS.md` (Cross-Session Ground Truth):**
@@ -213,6 +213,30 @@ To prevent token bloat while retaining 100% information control:
   2. *Granular Anatomical Biometrics:* Formalizing eyelid creases, epicanthic folds, nasal dorsum, and mandibular angles.
   3. *Flow Ingredient Conditioning:* Testing Ingredient #1 image conditioning weight against text tokens.
 - **Reference Document:** [`discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md`](./discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md) and [`discussions/characters.md`](./discussions/characters.md).
+
+### 2026-10-23 — Apocalyptic Beach Scenery Simulation & Translation Bridge (Discussion 26)
+- **Consensus Reached:** Successfully validated the Dual-Layer Translation Bridge for complex environment direction without creator technical jargon:
+  1. *3-Plane Spatial Parallax:* Layered into Foreground (serene man in shorts), Midground (fleeing beachgoers & reflective glass towers), and Background (fragmenting moon & rising oceanic surge).
+  2. *Equipment Trap Banning:* Purged "drone shot", "someone is capturing", and "camera", replacing with optical geometry (`Wide-angle sideline perspective along a sweeping coastal beach...`).
+  3. *Motivated Catastrophic Light:* Golden-amber incandescent sky glow casting long shadows and reflecting off skyscraper glass facades.
+  4. *Diegetic Audio Formulation:* Synchronized oceanic roar, sonic rumbles, muffled shouts, and wind, terminating with `, no background music`.
+- **Reference Document:** [`discussions/_raw/26_apocalyptic_beach_scenery_simulation.md`](./discussions/_raw/26_apocalyptic_beach_scenery_simulation.md) and [`discussions/sceneries.md`](./discussions/sceneries.md).
+
+### 2026-10-23 — Scenery Refinement: Corner Vantage & Horizon Curvature (Discussion 27)
+- **Consensus Reached:** Refined scenery perspective based on creator feedback:
+  1. *Corner Elevated Vantage:* Replaced sideline beach view with an elevated corner viewpoint capturing the wide curvature of the entire coastline meeting the sea horizon.
+  2. *Character Pose:* Placed in lower foreground seen from behind with hands casually in pockets.
+  3. *Kinetic Vector:* Panicked crowds fleeing inland toward city boardwalk exits away from the rising water.
+  4. *Oceanic Impact:* Moon fragments impacting open water far offshore before mainland landfall.
+  5. *Validation:* Verified via photo-first generation (`apocalyptic_beach_corner_view`).
+- **Reference Document:** [`discussions/_raw/27_scenery_refinement_wide_corner_perspective.md`](./discussions/_raw/27_scenery_refinement_wide_corner_perspective.md) and [`discussions/sceneries.md`](./discussions/sceneries.md).
+
+### 2026-10-23 — Architectural Decoupling: Image Mode vs. Video Mode Prompts
+- **Consensus Reached:** The compiler must strictly distinguish between still image generation and video clip generation based on creator intent:
+  1. *Still Image Prompts (Imagen 4 / Midjourney / Reference Plates):* When a creator asks for an "image", "photo", "still", or "mood board", the prompt compiler outputs pure visual and optical direction (framing, subject, lighting, textures, 35mm aesthetics). It **strictly excludes** camera kinematics (`Slow push-in`, `tracking shot`) and the trailing `Audio:` soundscape block.
+  2. *Video Shot Prompts (Google Flow / Veo 3.1):* When creating video shots, camera kinematics and the synchronized `Audio:` soundscape block are included.
+- **Raw File Retention Policy Clarified:** New `discussions/_raw/` files are reserved strictly for major feature updates and architectural decisions, avoiding clutter for routine prompt tweaks.
+- **Reference Document:** [`discussions/sceneries.md`](./discussions/sceneries.md) and [`production_framework/specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md).
 
 ---
 
