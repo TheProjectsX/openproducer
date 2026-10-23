@@ -20,23 +20,27 @@
 
 ## 2. Mode-Based Skill Architecture (OpenSpec Paradigm)
 
-To guarantee 100% session independence across different PCs and chats, the workflow is organized into four discrete operational modes:
+To guarantee 100% session independence across different PCs and chats, the workflow is organized into five discrete operational modes:
 
 ```
 ┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
 │      MODE 1      │       │      MODE 2      │       │      MODE 3      │       │      MODE 4      │
 │     EXPLORE      │ ────► │     PROPOSE      │ ────► │       SYNC       │ ────► │      APPLY       │
-│                  │       │                  │       │     (ALIGN)      │       │                  │
-│ • Premise & Vibe │       │ • Beat Breakdown │       │ • Creator Review │       │ • Final Prompts  │
-│ • Character Vibe │       │ • Shot Timing    │       │ • Lock Anchors   │       │ • 6-Point Lint   │
-│ • Lighting/World │       │ • Dialogue Lines │       │ • Tweak Motions  │       │ • Flow Assets    │
-└──────────────────┘       └──────────────────┘       └──────────────────┘       └──────────────────┘
+│  (Brainstorming) │       │(Production Plan) │       │ (Lock & Validate)│       │ (Compile & Lint) │
+└─────────▲────────┘       └──────────────────┘       └──────────────────┘       └────────┬─────────┘
+          │                                                                               │
+          │                        ┌──────────────────┐                                   │
+          │                        │      MODE 5      │                                   │
+          └────────────────────────┤     TEMPLATE     │◄──────────────────────────────────┘
+            Hydrates new project   │  (Save / Load)   │  Exports approved production
+            from saved template    └──────────────────┘  as reusable OpenSpec asset
 ```
 
 1. **Mode 1 (`explore`):** Unpacks the creator's vision through collaborative brainstorming. Writes `00_concept_brief.md` and initial domain notes.
 2. **Mode 2 (`propose`):** Converts the concept into a complete cinematic production plan (3-act beat sheet, shot list, dialogue lines, proposed verbatim anchors).
 3. **Mode 3 (`sync`):** Creator reviews, provides feedback, and locks character Master Verbatim Anchors and reference turnaround sheets.
 4. **Mode 4 (`apply`):** Compiles production-ready front-loaded Veo prompts, runs pre-flight quality linting, and outputs clean prompt files.
+5. **Mode 5 (`template`):** OpenSpec-style template management allowing creators to package approved production setups into reusable named templates (`template save <name>`) and instantly hydrate new projects (`template load <name>` or `explore --template <name>`). Uses unique kebab-case identifiers (e.g. `stickfigure-longform`, `tabletop-commercial-15s`).
 
 ---
 

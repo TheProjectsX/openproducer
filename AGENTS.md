@@ -33,8 +33,8 @@ This workspace is accessed across different devices, workstations, and conversat
 | **Phase 1–4** | Comprehensive Research, Synthesis & Validation | ✅ **COMPLETE** | [`research/synthesis/`](./research/synthesis/) | [`research/structure.md`](./research/structure.md), [`research/validation.md`](./research/validation.md) |
 | **Phase 5.1: Visual DNA** | Root Visual Style, 8 Master Paradigms (Film, Anime, Commercial, Social) | ✅ **FINALIZED** | [`production_framework/specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md) | [`discussions/visual_and_style.md`](./discussions/visual_and_style.md) |
 | **Phase 5.2: Subjects** | Turnaround Anchors, Characters & Hero Products, 2-Step Genesis | ✅ **FINALIZED** | [`02_subject_spec.md`](./production_framework/specs/02_subject_spec.md) & [`02_character_spec.md`](./production_framework/specs/02_character_spec.md) | [`discussions/characters.md`](./discussions/characters.md) |
-| **Phase 5.3: Environments** | Worlds, Commercial Studio Stages, Spatial Depth, Motivated Light | 🟡 **IN PROGRESS** | `production_framework/specs/03_scenery_spec.md` (Drafting) | `discussions/sceneries.md` |
-| **Phase 5.4: Cinematography & Audio** | Kinematics, Lenses, Soundscapes, Dialogue Delivery | ⏳ Pending | `production_framework/specs/04_cinematography_audio_spec.md` | `discussions/cinematography_audio.md` |
+| **Phase 5.3: Environments** | Worlds, Commercial Studio Stages, Spatial Depth, Motivated Light | ✅ **FINALIZED** | [`production_framework/specs/03_scenery_spec.md`](./production_framework/specs/03_scenery_spec.md) | [`discussions/sceneries.md`](./discussions/sceneries.md) |
+| **Phase 5.4: Cinematography & Audio** | Kinematics, Lenses, Soundscapes, Dialogue Delivery | ✅ **FINALIZED** | [`production_framework/specs/04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md) | [`discussions/cinematography_audio.md`](./discussions/cinematography_audio.md) |
 | **Phase 6** | Lean Folder Scaffold & Project Template | ⏳ Pending | `production_template/` | TBD |
 | **Phase 7** | Automated Prompt Generation & Linting Skill | ⏳ Pending | Tooling & Skill code | TBD |
 
@@ -236,32 +236,74 @@ To prevent token bloat while retaining 100% information control:
   1. *Still Image Prompts (Imagen 4 / Midjourney / Reference Plates):* When a creator asks for an "image", "photo", "still", or "mood board", the prompt compiler outputs pure visual and optical direction (framing, subject, lighting, textures, 35mm aesthetics). It **strictly excludes** camera kinematics (`Slow push-in`, `tracking shot`) and the trailing `Audio:` soundscape block.
   2. *Video Shot Prompts (Google Flow / Veo 3.1):* When creating video shots, camera kinematics and the synchronized `Audio:` soundscape block are included.
 - **Raw File Retention Policy Clarified:** New `discussions/_raw/` files are reserved strictly for major feature updates and architectural decisions, avoiding clutter for routine prompt tweaks.
-- **Reference Document:** [`discussions/sceneries.md`](./discussions/sceneries.md) and [`production_framework/specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md).
+### 2026-10-23 — Continuous Causal Flow vs. Timestamp Prompting (Veo / Runway / Kling)
+- **Consensus Reached:** Explicitly banned timestamp-based prompting (`0-2s: ... \n 2-4s: ...`).
+  1. *No Internal Clock:* Video diffusion models treat timestamps as literal text tokens, often causing temporal blending glitches or text watermark hallucinations.
+  2. *Causal Narrative Flow:* Video prompts must be structured as a single continuous prose paragraph with transitional adverbs (*"Starting from..."* $\rightarrow$ *"the perspective executes..."* $\rightarrow$ *"quickly snapping into locked focus..."*).
+  3. *Single-Shot Rule:* 5–8s clips must contain a single coherent motion arc; multi-shot storytelling relies on terminal-frame / first-frame chaining.
+- **Reference Document:** [`discussions/sceneries.md`](./discussions/sceneries.md).
+
+### 2026-10-23 — Production-Grade Stick Figure Explainer & Unified Gemini Prompting (Discussion 28)
+- **Consensus Reached:** Creator directed lifting word-count limits and single-paragraph constraints to craft a complete, single copy-paste prompt for Gemini that unifies visuals, camera movements, character choreography, dialogue, and audio soundscapes.
+  1. *Production Explainer Standard:* Elevated 2D stick figure animation into prestige educational/psychological explainers (The Spotlight Effect).
+  2. *Integrated Dialogue Track:* Spoken lines with vocal delivery modifiers and timestamp sync embedded directly alongside visual/foley cues.
+  3. *Validation:* Verified via 9:16 Photo-First keyframe generation (`spotlight_effect_explainer`) and compiled into a single copy-paste prompt for Gemini.
+### 2026-10-23 — High-Speed Commercial Cinematography & Orbital Wrap-Around (Discussion 29)
+- **Consensus Reached:** Solved the commercial multi-angle showcase dilemma (Front $\rightarrow$ Side $\rightarrow$ Back $\rightarrow$ Macro) without triggering jump-cut warping or equipment hallucinations.
+  1. *Continuous Orbital Arc:* Formulated the motion as a single continuous 360-degree wrap-around trajectory with speed ramping rather than discrete jump cuts.
+  2. *Robotic CineBot Emulation:* Stripped mechanical rig nouns to prevent AI hardware hallucinations, prompting pure optical velocity and rotational deceleration.
+  3. *Validation:* Verified via 100mm macro Photo-First generation (`commercial_chrono_cinematography`) and established `discussions/cinematography_audio.md`.
+### 2026-10-23 — Spoken Dialogue Architecture & Natural Lip-Sync Restraint (Discussion 31)
+- **Consensus Reached:** Solved the AI video "Muppet Mouth / Rubber Jaw" distortion by locking a 4-step biomechanical constraint protocol:
+  1. *Viewport Lock:* Mandated locked-off Medium Close-Up (MCU) for spoken dialogue to prevent motion vectors from tearing facial latents.
+  2. *Biomechanical Keywords:* Required explicit mouth kinematics: `minimal jaw displacement`, `subtle lip articulation`, `relaxed jaw`, and `restrained conversational mouth movement`.
+  3. *Punctuation Cadence Hack:* Enforced periods to trigger bilabial resting closures and commas for micro-breaths, limiting lines to 1–2 short sentences.
+### 2026-10-23 — Multi-Track Audio Mixing & Dialogue Balance (Discussion 32)
+- **Consensus Reached:** Codified the 4-tier Virtual Soundboard mix for simultaneous dual-stream audio synthesis:
+  1. *Acoustic Layering:* Tier 1 (Close-mic dialogue) $\rightarrow$ Tier 2 (Tactile Foley SFX) $\rightarrow$ Tier 3 (Ambient room tone) $\rightarrow$ Tier 4 (Background music score).
+  2. *Music Mix Placement:* Solved music drowning out speech by requiring explicit `low-in-the-mix` declarations with named instruments and tempo (e.g. `slow-tempo cello pad and sparse Rhodes piano chords, zero drums`).
+  3. *Validation:* Verified via Photo-First 85mm dialogue render (`diner_dialogue_cinematography`) and recorded in `discussions/cinematography_audio.md`.
+### 2026-10-23 — Upfront Music Scores & The Audio Transition Beat-Drop (Discussion 33)
+- **Consensus Reached:** Tested Mode C (Upfront Score) featuring an acoustic transition (muffled low-pass rain $\rightarrow$ full-frequency explosive synthwave beat-drop) synchronized with camera kinematics and character action.
+  1. *Score Orchestration:* Driving 128 BPM electronic synthwave with 808 kick, metallic snare, analog bassline, and sub-bass drop.
+  2. *Validation:* Verified via 35mm Photo-First generation (`cyberpunk_audio_beatdrop`) and recorded in `discussions/cinematography_audio.md`.
+### 2026-10-23 — Optical Rack Focus (Focal Plane Shift / Focus Pull) (Discussion 34)
+- **Consensus Reached:** Solved the diffusion failure mode where models split screens or freeze focus when asked for a "rack focus".
+  1. *Optical Z-Axis Formula:* Mandated a 3-state formula: Start State (sharp foreground A, creamy circular bokeh background B) $\rightarrow$ Continuous Focal Plane Translation (camera stationary, focal plane pulls deeper) $\rightarrow$ End State (foreground A smoothly defocuses as background B snaps into razor-sharp optical clarity).
+  2. *Validation:* Verified via 85mm Photo-First generation (`rack_focus_simulation_1792767270214.jpg`) and recorded in `discussions/_raw/32_rack_focus_and_unified_grand_simulation.md`.
+### 2026-10-23 — Finalized Specification: `cinematography_audio/` Domain & Master Unified Simulation (Discussion 35)
+- **Milestone Reached:** Successfully synthesized all research findings of Phase 5.4 into a single, master unified prompt:
+  1. *Cinematics & Optics:* 85mm anamorphic prime at f/2.0, locked-off eye-level MCU framing with zero equipment nouns.
+  2. *Anti-Muppet Lip Restraint:* Mandated `relaxed jaw, minimal jaw displacement, subtle lip articulation` and controlled attribution.
+  3. *Punctuation Cadence Hack:* Two short sentences split by a period to force natural bilabial mouth closures.
+  4. *Complete 4-Tier Virtual Soundboard Mix:* Tier 1 (Close-mic dialogue) + Tier 2 (Radio dial click & canvas rustle) + Tier 3 (Subterranean rain & generator hum) + Tier 4 (Low-in-the-mix cello drone & sub-bass pad).
+  5. *Validation:* Verified via Photo-First generation (`grand_cinematography_audio_simulation_1792767365212.jpg`).
+  6. *Authoritative Deliverable:* Produced and finalized [`production_framework/specs/04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md).
 
 ---
 
-## 6. Next Session Handoff & Agenda (Phase 5.3: Sceneries & Environments)
+## 6. Next Session Handoff & Agenda (Phase 6: Scaffolding & Milestone 2)
 
-**Status at Session Pause:** Phase 5.1 (`visual/`) and Phase 5.2 (`characters/`) are 100% complete with authoritative specifications in [`production_framework/specs/`](./production_framework/specs/).
+**Status at Session Pause:** All core specifications for Milestone 1 are **100% COMPLETE**:
+- [`specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md) (8 Master Visual Paradigms)
+- [`specs/02_subject_spec.md`](./production_framework/specs/02_subject_spec.md) (Universal Subjects & Hero Products)
+- [`specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md) (Character Bible & 2-Step Turntables)
+- [`specs/03_scenery_spec.md`](./production_framework/specs/03_scenery_spec.md) (Worlds & Commercial Stages)
+- [`specs/04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md) (Optics, Kinematics & 4-Tier Audio)
 
 ### High-Priority Backlog (Future Return Items):
 - ⚠️ **Face Syncing Fidelity with Reference Photo:** Return to solve 1:1 facial likeness retention and generic AI face substitution in image-to-character workflows. (Refer to [`discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md`](./discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md) and [`discussions/characters.md`](./discussions/characters.md)).
 
-### Immediate Agenda for Next Agent:
-1. **Activate Phase 5.3:** Open discussion on the **`sceneries/`** domain (environmental world-building).
-2. **Key Architectural Questions to Tackle:**
-   - **Cross-Archetype Sceneries:** How `sceneries/` must accommodate both narrative environments (streets, battlefields) AND commercial/studio sets (pedestals, infinity coves, reflective water surfaces) per Discussion 15.
-   - **Directory Contract:** Define `sceneries/<location_id>/` (e.g. `environment_summary.md`, `spatial_layers.md`, `lighting_rig.md`, `acoustics.md`, `references/`).
-   - **3-Plane Spatial Depth:** How prompts must separate Foreground, Midground, and Background to give Veo 3.1 accurate 3D parallax during camera kinematics.
-   - **Motivated Lighting Rigs:** Connecting scene lighting (e.g. cold overcast daylight through smoke, flickering neon practicals) directly to the Master Style Anchor in `01_visual_spec.md`.
-   - **Reference Mood Boards (Google Flow Ingredients):** Defining the reference image requirements for environments (preventing character or unwanted asset bleed).
-   - **Diegetic Environmental Acoustics:** Standardizing the ambient audio layer (reverberation, room tone, weather foley) for the `Audio:` block.
-   - **Authoritative Deliverable:** Produce [`production_framework/specs/03_scenery_spec.md`](./production_framework/specs/03_scenery_spec.md).
+### Immediate Agenda for Next Agent / Session:
+1. **Core JSON Schemas:** Create JSON Schemas validating project metadata (`project_intent`, `visual`, `subject`, `environment`, `shot`, `template_manifest`).
+2. **Milestone 2 (`production_template/`):** Build the universal production folder scaffold and OpenSpec-style template repository (`templates/<template_id>/`).
+3. **Milestone 3 (Python Automation Pipeline):** Implement `compile_shot.py`, `lint_shot.py`, `manage_template.py`.
 
 ### Quick Agent Ground Rules:
 - ⛔ **DO NOT** read `research/raw_*` (saves ~65k tokens; consult [`research/structure.md`](./research/structure.md)).
 - ⛔ **DO NOT** read `discussions/_raw/` by default (cold archive for deep troubleshooting only).
-- ✅ Start by reviewing the active summaries in [`discussions/`](./discussions/) and the latest finalized spec [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md).
+- ✅ Consult the finalized specifications in [`production_framework/specs/`](./production_framework/specs/) as authoritative ground truth.
+
 
 
 

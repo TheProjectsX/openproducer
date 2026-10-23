@@ -89,7 +89,17 @@ environments/
   ```text
   A wide-angle 35mm photograph taken from the corner vantage of a populated city beach on a summer afternoon, as an abrupt cosmic disaster unfolds. In the upper sky, an enormous, terrifyingly detailed moon is hurtling toward Earth at tremendous velocity, shedding fragmented boulders into the upper atmosphere that burn with incandescent golden-fire ionization trails, streaking across the sky without yet impacting the ground. On the far ocean horizon, the gravitational pull causes the sea to swell violently into a massive, rising tidal wall surging toward the coast. On the left side of the frame, modern coastal buildings with reflective glass windows mirror the blazing golden-fiery sky and falling lunar fireballs. On the beach, what was once a normal relaxing afternoon has turned into sheer panic: crowds of beachgoers in swimsuits are frantically running away from the surging water toward the inland promenade and roads, dropping towels, beach bags, and umbrellas in chaotic flight. In stark, emotional contrast, down near the water's edge on the wet sand, a lone man is seen from behind—wearing casual shorts, an unbuttoned shirt, and a sun hat, standing completely still with his hands tucked into his pockets, calmly and serenely staring up at the descending moon. Warm golden-fiery afternoon illumination, dramatic long shadows, photorealistic environmental physics.
   ```
-- **Audit:** Complete physical realism, zero camera motion verbs, zero audio blocks, 100% adherence to creator vision, verified masterwork render (`apocalyptic_beach_true_vision`).
+### Simulation 5: Viral 2D Stick Figure Animation (TikTok / Reels Archetype)
+- **Concept:** Minimalist 2D hand-drawn black ink stick figure on textured cream paper. Demonstrating the Social UGC / Animation archetype for 9:16 vertical storytelling.
+- **Narrative Arc:** The 2 AM Overthinking Dilemma (peaceful sleep interrupted by mischievous brain popping up, leading to an instantaneous snap-upright comic panic).
+- **Video Prompt Architecture (Continuous Causal Flow vs Timestamps):**
+  - Confirmed: AI video models do NOT parse numerical timecodes (`0-2s`, `2-4s`) reliably.
+  - Enforced single continuous cause-and-effect narrative block utilizing transitional adverbs (*"Starting from..."* -> *"Suddenly..."* -> *"immediately snaps..."*).
+- **Compiled 130-Word Prompt:**
+  ```text
+  A 2D minimalist hand-drawn black ink stick figure animation on a seamless warm cream textured sketchbook paper background. In a vertical framing, a simple line-art stick figure lies peacefully asleep in a hand-drawn outline bed under a blanket. Suddenly, a tiny mischievous stickman representing his brain pops up from behind the headboard with a cheeky smirk. The sleeping stick figure immediately snaps bolt upright in the bed, his eyes popping open into huge exaggerated circles with pinpoint pupils in sudden comic panic, as tiny drawn sweat drops fly off his forehead. The perspective holds a steady locked-off eye-level shot with subtle paper jitter. Audio: quiet rhythmic soft snoring, a sudden tiny cartoon squeak as the brain appears, an exaggerated dramatic boom impact as the eyes snap open, no background music.
+  ```
+- **Validation:** 130 words, 100% pre-flight linter pass, validated via 9:16 Photo-First generation (`viral_stickman_animation`).
 
 
 

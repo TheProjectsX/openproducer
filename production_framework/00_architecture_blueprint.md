@@ -179,25 +179,33 @@ The framework automatically configures its depth based on the selected Project A
 
 ---
 
-## 6. The 4 Operational Modes (OpenSpec Paradigm)
+## 6. The 5 Operational Modes (OpenSpec Paradigm)
 
-To guarantee complete session independence across devices and conversations, the agent moves through 4 explicit modes:
+To guarantee complete session independence and rapid production recycling across devices and conversations, the agent moves through 5 explicit modes:
 
 ```
 ┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐       ┌──────────────────┐
 │      MODE 1      │       │      MODE 2      │       │      MODE 3      │       │      MODE 4      │
 │     EXPLORE      │ ────► │     PROPOSE      │ ────► │       SYNC       │ ────► │      APPLY       │
-│                  │       │                  │       │     (ALIGN)      │       │                  │
-│ • Lock Intent    │       │ • Beat Breakdown │       │ • Creator Review │       │ • Final Prompts  │
-│ • Set Visual DNA │       │ • Shot Timing    │       │ • Lock Anchors   │       │ • 6-Point Lint   │
-│ • Subject Traits │       │ • Rig Setups     │       │ • Tweak Motions  │       │ • Flow Assets    │
-└──────────────────┘       └──────────────────┘       └──────────────────┘       └──────────────────┘
+│  (Brainstorming) │       │(Production Plan) │       │ (Lock & Validate)│       │ (Compile & Lint) │
+└─────────▲────────┘       └──────────────────┘       └──────────────────┘       └────────┬─────────┘
+          │                                                                               │
+          │                        ┌──────────────────┐                                   │
+          │                        │      MODE 5      │                                   │
+          └────────────────────────┤     TEMPLATE     │◄──────────────────────────────────┘
+            Hydrates new project   │  (Save / Load)   │  Exports approved production
+            from saved template    └──────────────────┘  as reusable OpenSpec asset
 ```
 
 1. **Mode 1 (`explore`):** Aligns on concept. Writes `project_intent.md`, `blueprint.md`, and initial domain files in `visual/`, `subjects/`, and `environments/`.
 2. **Mode 2 (`propose`):** Generates structured proposals: 2-step turnaround prompts, spatial setups, and shot breakdown.
 3. **Mode 3 (`sync`):** Creator reviews, provides feedback, and locks Master Anchors and approved reference images (Ingredients).
 4. **Mode 4 (`apply`):** Compiles front-loaded prompts, executes pre-flight linting, and packages assets for Google Flow.
+5. **Mode 5 (`template`):** OpenSpec-style template management.
+   - **`template save <template_id>`:** Packages approved visual styles, environmental rigs, and camera blueprints into a reusable local package (`templates/<template_id>/`).
+   - **`template list`:** Enumerates all saved templates on the user's PC.
+   - **`template load <template_id>` (or `explore --template <template_id>`):** Instantly hydrates a fresh workspace with locked intent, visual DNA, and scaffolding, skipping repetitive greenfield discovery.
+   - **Unique Identifiers:** Standardized kebab-case format (e.g. `stickfigure-longform`, `tabletop-commercial-15s`, `midnight-automotive-drift`).
 
 ---
 
