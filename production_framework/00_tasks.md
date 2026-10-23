@@ -15,6 +15,15 @@
   - `shot.schema.json`
   - `template_manifest.schema.json`
 
+## Phase 6: Director's Cut, Temporal Slicing & Multi-Engine Assembly
+- [ ] Establish Director's Scratchbook & Narrative Slicing Architecture (`discussions/directors_cut_and_assembly.md`)
+- [ ] Formalize Temporal Chunking (4s/5s/8s/10s) & Action Budgeting (Word-to-time pacing calculation)
+- [ ] Formalize Continuity Chaining Bridge (`last_frame` terminal frame handoffs & spatial/velocity alignment)
+- [ ] Define Multi-Engine Modality Matrix (Flow Chunks vs. Seedance Monolith vs. Slideshows + ElevenLabs vs. Hybrid)
+- [ ] Formulate Asset & Audio Origin Tracker ("What comes from where" matrix)
+- [ ] Run End-to-End Multi-Clip Slicing & Continuity Simulation
+- [ ] Author Authoritative Specification: `specs/05_directors_cut_assembly_spec.md`
+
 ## Milestone 2: Universal Project Template Directory (`production_template/`)
 - [ ] Build clean, modular scaffold with standard READMEs, templates, and placeholder files for the universal layout:
   - `project_intent.md` (Locked north star manifest)

@@ -31,12 +31,10 @@ This workspace is accessed across different devices, workstations, and conversat
 | Phase | Description | Status | Authoritative Output / Specs | Discussion & Logs |
 |---|---|---|---|---|
 | **Phase 1–4** | Comprehensive Research, Synthesis & Validation | ✅ **COMPLETE** | [`research/synthesis/`](./research/synthesis/) | [`research/structure.md`](./research/structure.md), [`research/validation.md`](./research/validation.md) |
-| **Phase 5.1: Visual DNA** | Root Visual Style, 8 Master Paradigms (Film, Anime, Commercial, Social) | ✅ **FINALIZED** | [`production_framework/specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md) | [`discussions/visual_and_style.md`](./discussions/visual_and_style.md) |
-| **Phase 5.2: Subjects** | Turnaround Anchors, Characters & Hero Products, 2-Step Genesis | ✅ **FINALIZED** | [`02_subject_spec.md`](./production_framework/specs/02_subject_spec.md) & [`02_character_spec.md`](./production_framework/specs/02_character_spec.md) | [`discussions/characters.md`](./discussions/characters.md) |
-| **Phase 5.3: Environments** | Worlds, Commercial Studio Stages, Spatial Depth, Motivated Light | ✅ **FINALIZED** | [`production_framework/specs/03_scenery_spec.md`](./production_framework/specs/03_scenery_spec.md) | [`discussions/sceneries.md`](./discussions/sceneries.md) |
-| **Phase 5.4: Cinematography & Audio** | Kinematics, Lenses, Soundscapes, Dialogue Delivery | ✅ **FINALIZED** | [`production_framework/specs/04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md) | [`discussions/cinematography_audio.md`](./discussions/cinematography_audio.md) |
-| **Phase 6** | Lean Folder Scaffold & Project Template | ⏳ Pending | `production_template/` | TBD |
-| **Phase 7** | Automated Prompt Generation & Linting Skill | ⏳ Pending | Tooling & Skill code | TBD |
+| **Phase 5: Core Domain Primitives** | Visuals, Subjects, Sceneries, Cinematography & Audio | ✅ **FINALIZED** | [`01_visual`](./production_framework/specs/01_visual_spec.md), [`02_subject`](./production_framework/specs/02_subject_spec.md), [`03_scenery`](./production_framework/specs/03_scenery_spec.md), [`04_cinematography_audio`](./production_framework/specs/04_cinematography_audio_spec.md) | [`discussions/`](./discussions/) |
+| **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (5s/8s/10s), Multi-Engine Routing (Flow, Seedance, Slideshow) | 🟡 **IN PROGRESS** (Next Session Agenda) | `production_framework/specs/05_directors_cut_assembly_spec.md` (Pending) | [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) |
+| **Phase 7: Project Scaffolding** | Lean Folder Scaffold & Universal Template | ⏳ Pending | `production_template/` | TBD |
+| **Phase 8: Automation Skill & Linters** | Python Compilers, Linters (L-01 to L-09), Flow Timeline Manifest Export | ⏳ Pending | Tooling & Skill code | TBD |
 
 ---
 
@@ -279,12 +277,22 @@ To prevent token bloat while retaining 100% information control:
   4. *Complete 4-Tier Virtual Soundboard Mix:* Tier 1 (Close-mic dialogue) + Tier 2 (Radio dial click & canvas rustle) + Tier 3 (Subterranean rain & generator hum) + Tier 4 (Low-in-the-mix cello drone & sub-bass pad).
   5. *Validation:* Verified via Photo-First generation (`grand_cinematography_audio_simulation_1792767365212.jpg`).
   6. *Authoritative Deliverable:* Produced and finalized [`production_framework/specs/04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md).
+### 2026-10-23 — Phase 6: Director's Cut, Temporal Slicing & Multi-Engine Assembly (Discussion 36)
+- **Consensus Reached:** Single-shot prompt generation is merely a primitive; a real video production framework requires the human director's assembly desk before final prompt compilation:
+  1. *Script & Narrative Breakdown:* Mathematical word-to-time pacing calculation (~2.2 words per second of human speech; 8–11 spoken words per 5-second clip) to prevent cramming or stretching.
+  2. *Action Budgeting & Temporal Chunking:* Slicing 30s/60s scenes into 4s, 5s, 8s, or 10s clips with exactly one primary action per clip.
+  3. *Continuity Chaining Bridge:* Linking terminal frames (`last_frame`) to next-clip seeds with velocity matching.
+  4. *Multi-Engine Modality Matrix:* Supporting diverse creator pipelines (Flow Native video vs. Seedance long-form monolith vs. Image Slideshow + ElevenLabs vs. Hybrid).
+  5. *Origin Tracker:* Tracking "what comes from where" across visuals, dialogue, Foley, and music.
+  6. *References:* Logged in [`discussions/_raw/33_directors_cut_temporal_slicing_and_multi_engine_pipelines.md`](./discussions/_raw/33_directors_cut_temporal_slicing_and_multi_engine_pipelines.md) and initialized [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md).
 
 ---
 
-## 6. Next Session Handoff & Agenda (Phase 6: Scaffolding & Milestone 2)
+## 6. Next Session Handoff & Agenda (Phase 6: Director's Cut & Assembly Engine)
 
-**Status at Session Pause:** All core specifications for Milestone 1 are **100% COMPLETE**:
+**Status at Session Pause:** Phase 5 (The 4 Foundational Domains) is **100% COMPLETE**. Phase 6 is **INITIALIZED & READY FOR PLANNING**.
+
+### Current Baseline Specifications On Disk:
 - [`specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md) (8 Master Visual Paradigms)
 - [`specs/02_subject_spec.md`](./production_framework/specs/02_subject_spec.md) (Universal Subjects & Hero Products)
 - [`specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md) (Character Bible & 2-Step Turntables)
@@ -295,14 +303,20 @@ To prevent token bloat while retaining 100% information control:
 - ⚠️ **Face Syncing Fidelity with Reference Photo:** Return to solve 1:1 facial likeness retention and generic AI face substitution in image-to-character workflows. (Refer to [`discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md`](./discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md) and [`discussions/characters.md`](./discussions/characters.md)).
 
 ### Immediate Agenda for Next Agent / Session:
-1. **Core JSON Schemas:** Create JSON Schemas validating project metadata (`project_intent`, `visual`, `subject`, `environment`, `shot`, `template_manifest`).
-2. **Milestone 2 (`production_template/`):** Build the universal production folder scaffold and OpenSpec-style template repository (`templates/<template_id>/`).
-3. **Milestone 3 (Python Automation Pipeline):** Implement `compile_shot.py`, `lint_shot.py`, `manage_template.py`.
+1. **Resume Phase 6 Directly:** Open [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) as the working ground truth.
+2. **Execute Phase 6 Workflows:**
+   - **Pillar 1:** Screenplay / script parsing & word-to-time pacing calculation (~2.2 words/sec).
+   - **Pillar 2:** Temporal chunking (4s/5s/8s/10s) and action budgeting (1 action per clip).
+   - **Pillar 3:** Continuity Chaining (`last_frame` handoffs, spatial alignment, velocity matching).
+   - **Pillar 4:** Multi-Engine Modality Matrix (Flow Native vs. Seedance Monolith vs. Slideshows + ElevenLabs vs. Hybrid).
+   - **Pillar 5:** Asset & Audio Origin Tracker ("What comes from where").
+3. **Phase 6 Authoritative Deliverable:** Produce [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
 
 ### Quick Agent Ground Rules:
 - ⛔ **DO NOT** read `research/raw_*` (saves ~65k tokens; consult [`research/structure.md`](./research/structure.md)).
 - ⛔ **DO NOT** read `discussions/_raw/` by default (cold archive for deep troubleshooting only).
-- ✅ Consult the finalized specifications in [`production_framework/specs/`](./production_framework/specs/) as authoritative ground truth.
+- ✅ Start directly with [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) and [`AGENTS.md`](./AGENTS.md).
+
 
 
 
