@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS EXTENSION
+Input Seed / Dependencies: LAST_FRAME of Clip 04
+
+[PROMPT]
+Continuing directly from the initial frame, over-the-shoulder medium perspective looking past Detective David Cross toward the desk. Cross slowly lowers the heavy black receiver away from his ear, placing it down onto the desk cradle with a steady hand. As the receiver rests on the cradle, Cross's gaze drops to a faded yellow manila case file lying flat on the walnut desk, stamped with faded red stencil ink: "COLD CASE - 2006". Slow downward tilt toward the desk file, zero mouth movement. 35mm film texture, warm tungsten lamp glow. Audio: heavy plastic clunk of receiver hitting cradle, soft paper rustle, quiet room tone, no dialogue.

@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_10/image_prompt.txt
+Duration: 12s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: FINAL RESOLVING CUT
+
+[VIDEO PROMPT]
+Starting directly from the initial image, slow and sorrowful camera pull-back moving steadily in reverse across the desolate bedroom floor. The bedroom remains completely undisturbed: the minimalist bed frame lines and the wide-open door frame remain still under the daylight cream void. The small smartphone on the bed mattress glows with an active audio soundwave bar for the first eight seconds. At the ninth second, the waveform collapses into a flat horizontal line, the phone screen fades into a solitary tiny white dot, and the entire scene slowly and completely dissolves into total blackness for the final three seconds. Minimalist 2D vector animation style, crisp line weights. Audio: solemn ambient morning room tone, faint distant rustle of leaves, a haunting solitary piano melody playing a sparse minor chord progression, a mechanical tape stop click, fade to black silence, zero voiceover, zero spoken dialogue.

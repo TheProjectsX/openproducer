@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_01/image_prompt.txt
+Duration: 7s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: ESTABLISHING COMMUTE
+
+[VIDEO PROMPT]
+Starting directly from the initial image, smooth 2D lateral tracking shot moving steadily to the right at constant walking speed. The line of identical minimalist 2D white stick figures with blank circular heads begins walking forward along the horizontal ground line in slow, synchronized, mechanical unison. Each stick figure takes steady, rhythmic walking steps to the right with heads held motionless tilted downward and hands kept completely concealed inside pockets. The camera maintains a stable, continuous side-view framing. Minimalist 2D vector line animation, stark black void background, zero facial animation. An inspiring, deep, warm male motivational voiceover speaks with measured cadence: "Most people spend their entire lives building someone else's dream..." Audio: rhythmic soft footstep thuds on pavement, swelling warm low-in-the-mix grand piano chords and subtle acoustic cello, no harsh noise.

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 7s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CLOSED-LIP / BLANK HEAD WHISPER
+Input Seed / Dependencies: None
+
+[PROMPT]
+Locked-off static medium close-up on the protagonist's blank circular head and upper torso. The circular head remains completely blank with zero eyes, zero nose, and zero mouth; there are no facial features and no mouth animation whatsoever. From an off-screen supernatural audio source behind the protagonist, a chilling, raspy close-mic dry whisper echoes: "You were never the one coming home." As the final whispered syllable ends, the screen instantly snaps to absolute pitch black. Audio: close-mic dry raspy whisper with subtle stereo delay, sudden heavy sub-bass thud on final word, dead silence.

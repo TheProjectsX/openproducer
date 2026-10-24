@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 7s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CLOSED-LIP LISTENER
+Input Seed / Dependencies: Desk Cradle Pin
+
+[PROMPT]
+Locked-off tight medium close-up profile on Detective David Cross leaning down over the desk. The black rotary telephone sits on its cradle on the desk. Cross hovers his face inches above the receiver. Cross's mouth remains firmly closed with locked lips, tense cheek muscles, and zero mouth movement, his eyes wide with horrified dread. Cross does not speak. From the telephone receiver on the desk, an off-screen audio recording in Cross's own exact gravelly voice speaks with calm cadence: "You have ten seconds before you remember." Static camera, no camera drift. Audio: single isolated bell ding, off-screen telephone speaker crackle with Cross's identical gravelly voice, zero vocal speech from on-screen actor, low drone.

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 7s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS EXTENSION
+Input Seed / Dependencies: LAST_FRAME of Clip 08
+
+[PROMPT]
+Continuing directly from the initial frame, slow tracking push moving over Detective David Cross's shoulder toward the pitch-black, rain-streaked window pane beside the desk. Cross stands completely motionless, his actual physical face pale, frozen in horrified shock with closed lips and unblinking eyes. However, in the dark window glass reflection, Cross's reflected face unnervingly stretches into a broad, sinister, malicious grin with gleaming eyes. 35mm anamorphic optics, cold cyan window reflections, rain droplets streaking down dark glass. Audio: steady tactile patter of rain against window glass, deep ominous dissonant cello chord swelling, dead ambient room tone, zero dialogue.

@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Reference Conditioning: Follows Master Base Reference (base_image_prompt.txt)
+Aspect Ratio: 16:9
+Modality: Clip 02 Starting Frame / Answering with Trembling Hand
+
+[IMAGE PROMPT]
+Minimalist 2D vector keyframe, medium close-up 16:9 framing. The protagonist stick figure is seated on the bed, already holding the glowing rectangular smartphone pressed tightly against the side of its blank circular head. The head is filled with solid opaque white and contoured with a clean black vector line, with completely blank facial anatomy (zero eyes, zero mouth). The arm holding the phone is an unbroken pencil-thin black vector stroke terminating in a smooth rounded line-cap with strictly zero individual fingers and zero toes. The glowing phone screen casts an eerie pale blue-white rim light across the stick figure's head and neck against a cream wall revealed from darkness. Crisp flat 2D graphic vector style, high contrast, horrifying suspense, no text, no watermark.

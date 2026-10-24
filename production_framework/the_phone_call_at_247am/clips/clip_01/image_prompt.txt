@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Reference Conditioning: Follows Master Base Reference (base_image_prompt.txt)
+Aspect Ratio: 16:9
+Modality: Clip 01 Starting Frame / Incoming Call "MOM"
+
+[IMAGE PROMPT]
+Minimalist 2D vector keyframe, 16:9 medium close-up framing focused on a black horizontal nightstand line in a dark bedroom. A glowing rectangular smartphone suddenly illuminates with bright pale white light, casting a sharp cone of light upward that reveals a warm cream wall canvas (#F8F6F0) from the deep pitch-black room shadows. On the glowing screen, crisp black vector typography displays "MOM" with a pulsing call icon. In the upper corner, a digital clock reading "02:47 AM" glows faintly. Crisp flat 2D graphic novel vector style, sharp outlines, dramatic chiaroscuro lighting, no text beyond clock and caller ID, no watermark.

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 5s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MACRO INSERT
+Input Seed / Dependencies: None
+
+[PROMPT]
+Locked-off macro 100mm perspective, razor-sharp optical focus on an analog industrial wall clock mounted on peeling seafoam-green plaster. A single horizontal shaft of cold cyan moonlight slices across the grime-covered glass clock face. The black metal clock hands are frozen completely motionless at exactly 2:17 AM. Completely static camera with zero movement, zero camera shake, stable geometry. 35mm organic film grain, high contrast. Audio: eerie dead silence, low subterranean ambient room tone, zero clock ticking sound, no music.

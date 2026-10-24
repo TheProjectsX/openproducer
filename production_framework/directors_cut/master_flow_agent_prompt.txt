@@ -1,0 +1,62 @@
+# GOOGLE FLOW AGENT MODE: MASTER TIMELINE MANIFEST (V2 - DE-CRAMMED & GLITCH-PROOF)
+# Project: The 2:17 AM Dispatch
+# Visual Paradigm: 35mm Neo-Noir Film (Kodak 5219, cyan moonlight, amber tungsten, organic grain)
+# Engine Hard Rules Enforced:
+# 1. Closed-Lip Listener Rule: Locked mouth on listening character when phone speaks.
+# 2. Pre-Materialized Prop Law: Props already grasped from Frame 1; no mid-clip draws.
+# 3. Micro-Beat De-Cramming: 1 camera trajectory, 1 spatial plane, 1 unhurried action per clip.
+
+---
+
+[SCENE 01 - CLIP 01 | DURATION: 7s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: ESTABLISHING]
+Slow eye-level forward tracking perspective moving calmly down a pitch-black, decaying 1980s police station dispatch corridor. Detective David Cross, a weary 42-year-old homicide detective with a chiseled jawline, dark stubble, and haunted hooded eyes, wearing a heavy charcoal wool trench coat and loose dark tie, walks slowly away from the camera into the corridor with both hands resting calmly inside his coat pockets. Both hands remain fully concealed in pockets from start to finish, no handheld props. Cold cyan volumetric moonlight streams through broken Venetian blinds, illuminating floating dust motes and peeling walls. Shot on 35mm film stock, organic fine grain, deep shadow roll-off. Audio: heavy boot steps crunching over broken glass on linoleum, distant howling wind, dead silence, no background music.
+
+---
+
+[SCENE 01 - CLIP 02 | DURATION: 5s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MACRO INSERT]
+Locked-off macro 100mm perspective, razor-sharp optical focus on an analog industrial wall clock mounted on peeling seafoam-green plaster. A single horizontal shaft of cold cyan moonlight slices across the grime-covered glass clock face. The black metal clock hands are frozen completely motionless at exactly 2:17 AM. Completely static camera with zero movement, zero camera shake, stable geometry. 35mm organic film grain, high contrast. Audio: eerie dead silence, low subterranean ambient room tone, zero clock ticking sound, no music.
+
+---
+
+[SCENE 01 - CLIP 03 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MOTIVATED ANGLE]
+Medium perspective looking at a scratched walnut dispatch desk under a glowing warm-amber desk lamp. On the desk, a vintage black rotary telephone suddenly vibrates violently, its mechanical brass bells ringing with a sharp, piercing resonance. In the midground, Detective David Cross stands motionless in the hallway, both hands resting inside his coat pockets, staring down at the vibrating telephone with wide, disbelieving eyes. Cross does not touch the phone or move his hands. Slow subtle descending push toward the desk. 35mm film grain, atmospheric dust. Audio: sharp metallic rotary telephone bells ringing loudly with hollow room reverb, low-frequency dread hum, no dialogue.
+
+---
+
+[SCENE 01 - CLIP 04 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CLOSED-LIP LISTENER]
+Locked-off eye-level medium close-up profile on Detective David Cross. From the very first frame to the last, Cross is already holding the heavy black bakelite telephone receiver firmly pressed against his left ear. Detective Cross listens in stunned silence with firmly closed lips, tight jaw, and zero mouth movement, his eyes staring into the dark shadows. Cross does not speak and his lips remain completely stationary throughout the entire clip. An off-screen telephone receiver speaker emits a faint, raspy distorted whisper: "Don't trust the detective who's coming to find you." Shot on 85mm anamorphic prime lens at f/2.0, shallow depth of field. Audio: telephone line crackle, filtered off-screen whisper from earpiece speaker, zero vocal speech from on-screen actor, faint cello drone.
+
+---
+
+[SCENE 01 - CLIP 05 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS EXTENSION (SEED: LAST_FRAME)]
+Continuing directly from the initial frame, over-the-shoulder medium perspective looking past Detective David Cross toward the desk. Cross slowly lowers the heavy black receiver away from his ear, placing it down onto the desk cradle with a steady hand. As the receiver rests on the cradle, Cross's gaze drops to a faded yellow manila case file lying flat on the walnut desk, stamped with faded red stencil ink: "COLD CASE - 2006". Slow downward tilt toward the desk file, zero mouth movement. 35mm film texture, warm tungsten lamp glow. Audio: heavy plastic clunk of receiver hitting cradle, soft paper rustle, quiet room tone, no dialogue.
+
+---
+
+[SCENE 01 - CLIP 06 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MACRO INSERT]
+Locked-off top-down macro 100mm perspective looking straight down onto the open manila folder on the desk surface. The folder is already open from the first frame. Lying inside is an old black-and-white 8x10 crime scene photograph clearly depicting a younger Detective David Cross standing grim-faced beside a chalk outline on this exact dispatch floor. Completely static framing, razor-sharp focus on the vintage photograph, no moving hands, no morphing elements. 35mm Kodak film stock, deep blacks. Audio: sudden high-pitched discordant violin screech, heavy low-frequency sub-bass thrum, dead silence.
+
+---
+
+[SCENE 01 - CLIP 07 | DURATION: 7s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: SPATIAL LOOP]
+Dynamic linear tracking perspective moving backward in front of Detective David Cross, dressed in his charcoal wool overcoat, as he sprints in panic down the pitch-black corridor toward a glowing green EXIT door. As Cross pushes through the doorway, the perspective snaps into a locked frame: instead of escaping outside, Cross bursts directly back into the exact same dispatch hall, skidding to a bewildered halt right beside the walnut desk. Cold cyan moonlight slicing through blinds. Audio: heavy running boots thudding on linoleum, strained heavy breathing, disorienting spatial audio whoosh, rising metallic tension drone.
+
+---
+
+[SCENE 01 - CLIP 08 | DURATION: 7s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CLOSED-LIP LISTENER]
+Locked-off tight medium close-up profile on Detective David Cross leaning down over the desk. The black rotary telephone sits on its cradle on the desk. Cross hovers his face inches above the receiver. Cross's mouth remains firmly closed with locked lips, tense cheek muscles, and zero mouth movement, his eyes wide with horrified dread. Cross does not speak. From the telephone receiver on the desk, an off-screen audio recording in Cross's own exact gravelly voice speaks with calm cadence: "You have ten seconds before you remember." Static camera, no camera drift. Audio: single isolated bell ding, off-screen telephone speaker crackle with Cross's identical gravelly voice, zero vocal speech from on-screen actor, low drone.
+
+---
+
+[SCENE 01 - CLIP 09 | DURATION: 7s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS EXTENSION (SEED: LAST_FRAME)]
+Continuing directly from the initial frame, slow tracking push moving over Detective David Cross's shoulder toward the pitch-black, rain-streaked window pane beside the desk. Cross stands completely motionless, his actual physical face pale, frozen in horrified shock with closed lips and unblinking eyes. However, in the dark window glass reflection, Cross's reflected face unnervingly stretches into a broad, sinister, malicious grin with gleaming eyes. 35mm anamorphic optics, cold cyan window reflections, rain droplets streaking down dark glass. Audio: steady tactile patter of rain against window glass, deep ominous dissonant cello chord swelling, dead ambient room tone, zero dialogue.
+
+---
+
+[SCENE 01 - CLIP 10 | DURATION: 5s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: PRE-MATERIALIZED PROP & CUTAWAY]
+Low-angle static medium shot looking up at Detective David Cross. From the very first frame, Cross is already holding a snub-nosed black steel revolver firmly in his right hand, aimed directly forward toward the window. Rigid weapon geometry, stable hand anatomy, zero popping objects, no drawing motion. Suddenly, an explosive blinding orange muzzle flash erupts from the gun barrel, illuminating the entire hall in smoke, before the screen instantly cuts to absolute pitch-black void. Audio: deafening gunshot blast, sharp muzzle crack, long hollow acoustic echo decaying into sudden dead silence.
+
+---
+
+[SCENE 01 - CLIP 11 | DURATION: 7s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: TIME JUMP TRANSITION]
+Slow optical push-in perspective across the empty dispatch room bathed in soft, warm golden morning daylight streaming through the broken Venetian blinds, illuminating peaceful drifting dust motes. The station is dead silent and completely empty. The camera slowly pushes in to rest on the walnut desk: beside the silent telephone lies a pristine, brand-new manila case file with bold red stencil ink stamped across the cover: "DETECTIVE DAVID CROSS", stamped with tomorrow's calendar date. 35mm organic fine grain, warm cinematic morning grade. Audio: muffled distant morning police cruiser siren outside, faint officer radio squawk saying "Station's clear... nobody's here.", gentle morning room ambience, no music.

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS EXTENSION
+Input Seed / Dependencies: LAST_FRAME of Clip 02
+
+[PROMPT]
+Continuing directly from the initial frame, smooth 2D lateral tracking shot moving rapidly to the right. The minimalist 2D stick figure protagonist accelerates its pace, walking briskly away from the light cone with hurried footsteps. As it moves right, its blank circular head turns backwards over its shoulder for two seconds, glancing into the dark background, before snapping forward again to hurry along the ground line. Fluid 2D hand-drawn animation, uniform pencil-thin line weight, zero 3D anatomy. Audio: rapid hurried footstep taps on pavement, rising nervous cello drone, whistling wind.

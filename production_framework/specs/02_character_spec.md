@@ -169,6 +169,7 @@ Takes the approved Step 1 image as the reference anchor:
 | **3. Stylized 3D CGI** | Stylized proportions, tactile vinyl/felt micro-textures, warm subsurface scattering on skin, expressive stylized planes. | Digital T-pose / A-pose 3D asset model sheet, neutral gray background. | Keep facial planes stylized to avoid uncanny valley realism. |
 | **4. Fantasy Armor & Mecha Suits** | Deconstruct into physical plates: lightweight articulated polycarbonate armor, silicone seals, matte finish. | Multi-angle view revealing rear thrusters, waist articulations, and weapon holsters. | Never say just "mecha suit"; always describe tailored flexible undersuit with articulated composite plates. |
 | **5. Non-Human Creatures / Robots** | Replace human biometrics with creature anatomy (chassis plating, servo joints, reptilian scales, tail length). | Turnaround showing dorsal, lateral, and ventral silhouettes on neutral gray. | Must explicitly constrain tail length, limb counts, and ocular placement across all 4 panels. |
+| **6. Minimalist 2D Vector Stick Figure** | Pure unbroken pencil-thin black vector line strokes terminating in smooth rounded line-cap ends (`stroke-linecap: round`). Circular head filled with solid opaque white (`#FFFFFF`) and contoured with a clean black vector outline (`#0F172A`). Completely blank facial anatomy. | Flat 4-view model sheet on cream paper canvas (`#F8F6F0`) or `#E5E5E5`: front, left profile, right profile, back. | **Strictly zero individual fingers, zero human hands, zero toes, no knuckles, no fleshy anatomical details.** Pure unbroken continuous line limbs with rounded line-cap ends. |
 
 ---
 
@@ -177,11 +178,14 @@ Takes the approved Step 1 image as the reference anchor:
 1. **The "Action Figure Trap" Guard:**
    - *Cause:* Diffusion models associate words like "model sheet", "mecha suit", and "standing pose" with collectible toys.
    - *Directives:* Explicitly enforce: `Real living human being wearing tailored cinematic movie wardrobe. Not an action figure, not a plastic toy, not a doll, no plastic ball joints, not a 3D miniature, no mannequin poses.`
-2. **The Asymmetry / Mirroring Glitch Guard:**
+2. **The "Hand & Feet Flesh Mutancy" Guard (Viral Stick Figures):**
+   - *Cause:* Diffusion models trigger biological human anatomy latent weights when words like "hands", "fingers", or "feet" are used on 2D vector stick figures, rendering mutated 6-finger fleshy clusters or knobby joints.
+   - *Directives:* Explicitly mandate: `Pure unbroken 2D vector line limbs with smooth rounded line-cap ends. Strictly zero individual fingers, zero human hands, zero toes, zero knuckles, and zero fleshy anatomical details. Uniform stroke thickness from shoulder to tip.`
+3. **The Asymmetry / Mirroring Glitch Guard:**
    - *Cause:* Diffusion models mirror scars, eyepatches, or mechanical arms to both sides or flip them across profile views.
    - *Directives:* Explicitly bind asymmetric traits to the specific panel in `turnaround_prompt.txt`:
      `Panel 2: Left side profile showing the diagonal scar across the left cheekbone (the right side of the face remains completely unscarred and clear).`
-3. **The Detachable Prop Hallucination Guard:**
+4. **The Detachable Prop Hallucination Guard:**
    - *Cause:* Loose handheld weapons warp, float, or vanish across panels.
    - *Directives:* Strictly enforce empty hands in model sheets:
      `Hands in relaxed open standing posture, empty hands, sidearms and knives securely holstered at hip utility belt.`

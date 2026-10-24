@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MACRO INSERT
+Input Seed / Dependencies: Pre-Opened File Pin
+
+[PROMPT]
+Locked-off top-down macro 100mm perspective looking straight down onto the open manila folder on the desk surface. The folder is already open from the first frame. Lying inside is an old black-and-white 8x10 crime scene photograph clearly depicting a younger Detective David Cross standing grim-faced beside a chalk outline on this exact dispatch floor. Completely static framing, razor-sharp focus on the vintage photograph, no moving hands, no morphing elements. 35mm Kodak film stock, deep blacks. Audio: sudden high-pitched discordant violin screech, heavy low-frequency sub-bass thrum, dead silence.

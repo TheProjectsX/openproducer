@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CLOSED-LIP LISTENER
+Input Seed / Dependencies: Pre-Materialized Receiver Pin
+
+[PROMPT]
+Locked-off eye-level medium close-up profile on Detective David Cross. From the very first frame to the last, Cross is already holding the heavy black bakelite telephone receiver firmly pressed against his left ear. Detective Cross listens in stunned silence with firmly closed lips, tight jaw, and zero mouth movement, his eyes staring into the dark shadows. Cross does not speak and his lips remain completely stationary throughout the entire clip. An off-screen telephone receiver speaker emits a faint, raspy distorted whisper: "Don't trust the detective who's coming to find you." Shot on 85mm anamorphic prime lens at f/2.0, shallow depth of field. Audio: telephone line crackle, filtered off-screen whisper from earpiece speaker, zero vocal speech from on-screen actor, faint cello drone.

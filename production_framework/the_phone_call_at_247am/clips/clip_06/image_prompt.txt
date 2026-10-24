@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Reference Conditioning: Follows Master Base Reference (base_image_prompt.txt)
+Aspect Ratio: 16:9
+Modality: Clip 06 Starting Frame / The Entity Outside Window
+
+[IMAGE PROMPT]
+Minimalist 2D vector keyframe, wide 16:9 framing. In the dark bedroom, the protagonist stick figure stands holding the glowing phone, beginning to turn toward a vertical window frame outlined in crisp black vector lines. On the other side of the glass, standing completely motionless in the infinite pitch-black night void, is an unnervingly tall, elongated 2D stick figure. The entity has disproportionately long slender black vector limbs with rounded line-cap ends (strictly zero fingers, zero toes), an elongated torso, and an oversized circular head filled with solid opaque white and contoured with a thick black outline, devoid of any facial features. Flat 2D vector graphic novel art, high contrast, uncanny horror, no text, no watermark.

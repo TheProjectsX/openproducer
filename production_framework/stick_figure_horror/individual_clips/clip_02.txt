@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED ANGLE
+Input Seed / Dependencies: None
+
+[PROMPT]
+Slow linear push-in perspective across the dark street. In the center of the frame, a tall, slender street lamp casts a sharp conical pool of glowing pale amber light onto the pavement. Standing completely stationary inside the pool of light is a second, slightly taller 2D stick figure with an elongated torso and arms, a completely blank circular head with zero facial features, facing directly toward the camera. In the foreground, the walking protagonist stick figure halts its footsteps, standing frozen in silhouette. Minimalist 2D line art, stark dramatic lighting, high contrast. Audio: sudden faint low-frequency atmospheric dread hum, footsteps abruptly stopping, distant night ambience, no dialogue.

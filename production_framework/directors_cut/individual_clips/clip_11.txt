@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 7s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: TIME JUMP TRANSITION
+Input Seed / Dependencies: Morning Light Transition
+
+[PROMPT]
+Slow optical push-in perspective across the empty dispatch room bathed in soft, warm golden morning daylight streaming through the broken Venetian blinds, illuminating peaceful drifting dust motes. The station is dead silent and completely empty. The camera slowly pushes in to rest on the walnut desk: beside the silent telephone lies a pristine, brand-new manila case file with bold red stencil ink stamped across the cover: "DETECTIVE DAVID CROSS", stamped with tomorrow's calendar date. 35mm organic fine grain, warm cinematic morning grade. Audio: muffled distant morning police cruiser siren outside, faint officer radio squawk saying "Station's clear... nobody's here.", gentle morning room ambience, no music.

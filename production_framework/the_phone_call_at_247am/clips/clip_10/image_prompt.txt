@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Reference Conditioning: Follows Master Base Reference (base_image_prompt.txt)
+Aspect Ratio: 16:9
+Modality: Clip 10 Starting Frame / Next Morning Empty Room
+
+[IMAGE PROMPT]
+Minimalist 2D vector keyframe, wide 16:9 morning interior perspective. Clean off-white and warm cream canvas background (#F8F6F0) softly illuminated by pale morning daylight. In the left background, the black vector outline of the front door stands wide open into an empty hallway. The minimalist black linear bed frame is completely empty: mattress surface undisturbed, pillow in place, but Rakib is gone. On the center of the bed line sits a single rectangular smartphone glowing faintly with a dormant white screen. Clean flat 2D graphic novel vector style, crisp black outlines, haunting mournful stillness, no text, no watermark.

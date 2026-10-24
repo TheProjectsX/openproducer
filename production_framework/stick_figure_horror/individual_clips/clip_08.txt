@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED PUSH
+Input Seed / Dependencies: None
+
+[PROMPT]
+Slow push-in perspective on the tall stranger 2D stick figure standing in the room. The stranger slowly and deliberately raises its right pencil-thin arm, extending its straight linear hand to point directly past the protagonist toward the opposite wall behind him. The arm extends smoothly and locks in place with rigid mechanical precision. Zero facial features, completely blank circular head, perfectly stable 2D line art, no morphing. Audio: faint tactile creak of moving wood, rising high-pitched violin tension screech, deep silence.

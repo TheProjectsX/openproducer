@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Reference Conditioning: Follows Master Base Reference (base_image_prompt.txt)
+Aspect Ratio: 16:9
+Modality: Clip 09 Starting Frame / Door Cracking Open
+
+[IMAGE PROMPT]
+Minimalist 2D vector keyframe, wide 16:9 eye-level interior perspective. The vertical door panel line begins to unlatch and crack open slightly into the room. Beyond the widening door gap lies an endless, suffocating pitch-black void (#000000). Subtle faint ambient cream lines trace the floor and bedroom walls. The doorway is completely empty, with no human figures visible. Crisp flat 2D graphic novel vector style, high-contrast chiaroscuro, horrifying suspense, no text, no watermark.

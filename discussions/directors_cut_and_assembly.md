@@ -1,6 +1,6 @@
 # Discussion Log: Director's Cut, Temporal Slicing & Multi-Engine Assembly
 
-**Status:** 🟡 ACTIVE WORKING DOCUMENT (Phase 6 Entry Point)  
+**Status:** 🟡 UNDER DEVELOPMENT (Active Phase 6 Working Document)  
 **Target Specification:** [`../production_framework/specs/05_directors_cut_assembly_spec.md`](../production_framework/specs/05_directors_cut_assembly_spec.md)  
 **Raw Archive Reference:** [`_raw/33_directors_cut_temporal_slicing_and_multi_engine_pipelines.md`](./_raw/33_directors_cut_temporal_slicing_and_multi_engine_pipelines.md)
 
@@ -28,11 +28,84 @@ The **`directors_cut/` & `assembly/`** domain elevates the framework from isolat
 
 ---
 
-## 2. Active Roadmap for Phase 6 Resumption
+## 2. Progress & Architectural Decisions (Active)
 
-When resuming work in Phase 6:
-1. **Step 1: Planning Alignment:** Define the Director's Scratchbook format (`scratchbook.md` or `script_breakdown.md`) and word-to-time pacing calculation.
-2. **Step 2: Slicing & Splicing Mechanics:** Formalize the chunking algorithm (5s/8s/10s) and action budgeting rules.
-3. **Step 3: Multi-Engine Pipeline Contracts:** Define output formats for Flow vs. Seedance vs. Image Slideshows + ElevenLabs.
-4. **Step 4: Empirical Simulation:** Run an end-to-end test slicing a 30-to-60 second multi-clip sequence with continuity chaining.
-5. **Step 5: Authoritative Specification:** Generate `specs/05_directors_cut_assembly_spec.md`.
+### Step 0: The Creator Intake Interactivity Rule
+- **The Rule:** The exact same plot can be an 18-second fast reel or a 2-minute moody slow-burn. If pacing, duration, or clip budget are not explicitly stated, the Agent **must pause and directly ask the creator** before slicing or generating prompts.
+- **The 4 Tempo Archetypes:**
+  1. *Hyper / Viral (3–4s clips):* 4–8 words/clip, rapid cuts, punchy hook-driven payoffs.
+  2. *Dynamic Commercial (5s clips):* 8–11 words/clip, motivated cuts, balanced storytelling.
+  3. *Dramatic Cinema (8s clips):* 14–18 words/clip, breath-paced cuts, emotional tension.
+  4. *Atmospheric Slow-Burn (10s clips):* 18–22 words/clip, lingering camera, meditative immersion.
+
+### Pillar 1: Mathematical Word-to-Time Pacing
+- **Speech Rate Standard:** Conversational speech averages 130–150 words per minute ($\approx 2.2$ words per second).
+- **Buffer Rule:** Every dialogue clip requires **0.8s to 1.2s of breathing buffer** (silence before speech starts and after it concludes) to avoid clipping at boundaries or causing auctioneer mouth movements.
+
+### Pillar 2: Action Budgeting & The Single-Motion Law
+- **Diffusion Collapse Prevention:** Video diffusion models choke when multiple sequential actions are requested in one clip.
+- **Law:** Each clip is strictly budgeted for:
+  - **ONE** primary biomechanical motion.
+  - **ONE** continuous camera kinematic vector (or static lock).
+- Any story beat with $K$ sequential actions must be sliced into at least $K$ clips.
+
+### Pillar 3: The Director's Scratchbook Schema (`scratchbook.md`)
+The living production ledger compiled before generating shot prompt files:
+- `Clip ID`
+- `Target Duration` (3s/5s/8s/10s)
+- `Story Beat & Dramatic Goal`
+- `Spoken Dialogue / VO` (word count verified)
+- `Single Budgeted Action`
+- `Camera Kinematics`
+- `Chaining Dependency` (`last_frame` from predecessor, match cut, or establishing)
+
+### Pillar 3: The Master Subject DNA Injection Protocol & Continuity Chaining
+- **The Mutation Glitch:** Never use loose pronouns (*"he"*, *"the figure"*) in subsequent clips; diffusion models will mutate silhouettes (e.g. skinny stick figure turning muscular, or character wardrobe shifting).
+- **Verbatim DNA Injection:** Every clip prompt featuring a subject must deterministically inject the **exact verbatim Subject Anchor String** from `subjects/<id>/` into early tokens (tokens 10–35), explicitly locking musculoskeletal build, line-weight, wardrobe, and anti-mutation guardrails.
+- **The Two Transition Modes:**
+  1. *Mode 1: Continuous Shot Extension:* Uses `last_frame` of Clip $N$ as the start frame seed of Clip $N+1$, with explicit velocity matching and continuity prompt syntax (*"Continuing directly from the initial frame..."*).
+  2. *Mode 2: Motivated Cut / Angle Change:* Governed by Verbatim DNA Injection + Shared `#E5E5E5` Ingredient Pin + 180° Screen Direction rule + Motivated Light Vector continuity.
+
+### Pillar 4: Default Google Flow Baseline & Dynamic Modality Switches
+- **Default Baseline:** The system ALWAYS defaults to standard **Google Flow Native** (sliced Veo video clips, native in-clip spoken dialogue, foley SFX, and ambient score). No complex setup required upfront.
+- **Dynamic Modality Switches (Mid-production or post-generation overrides):**
+  1. *Visual Override (`images`):* *"Use images instead of videos"* $\rightarrow$ Strips camera kinematics and audio, formats into still photo plates (Imagen 4 / Midjourney) for slideshows or storyboards.
+  2. *Assembly Override (`monolithic`):* *"Give me a single prompt for long-form"* $\rightarrow$ Fuses separate clip beats into a single continuous long-take choreography prompt (Seedance / Sora).
+  3. *Dialogue Override (`elevenlabs`):* *"Use ElevenLabs for dialogue, give me the scripts"* $\rightarrow$ Strips spoken dialogue audio from the Veo prompt (prevents double-speech clashes) and outputs an isolated, delivery-formatted `dialogue_scripts.md` manifest with timing buffers.
+  4. *Music Override (`external`):* *"I will add my own background music"* $\rightarrow$ Strips score synthesis from the `Audio:` block (`zero background music, no score`), leaving pure diegetic foley and room tone.
+- **Full Composability:** Any switch can be triggered alone or combined (e.g. Sliced Veo video + ElevenLabs dialogue scripts + External music).
+
+### Pillar 5: The Origin Tracker & Output Manifest (`origin_manifest.md`)
+- The assembly ledger mapping each asset to its source engine (Veo 3.1, Imagen 4, ElevenLabs, external audio) and conditioning dependency (`#E5E5E5` turnaround sheet, `last_frame` seed, or voice profile).
+
+---
+
+## 4. Empirical Diffusion Glitches & Architectural Hard Fixes (Discussion 38)
+
+Testing real-world Flow generations of *The 2:17 AM Dispatch* revealed 3 fatal diffusion bugs:
+1. **Accidental Lip-Sync Glitch:** Quoting dialogue while an actor is on screen in MCU forces the actor's lips to move even if the audio is an incoming telephone whisper.
+   - *Fix: The Closed-Lip Listener Rule:* Explicitly declare `"lips remain firmly closed, zero mouth movement"` on listening characters, and attribute speech to `"off-screen telephone receiver speaker"`.
+2. **Prop Popping & Hand Morphing Glitch:** Asking an actor to draw a gun or carry casual props mid-action triggers severe occlusion confusion.
+   - *Fix: Pre-Materialized Prop Law:* Objects must be declared `"already firmly grasped from Frame 1 to Frame End"` with stability tokens, and drawing transitions must be sliced into cutaways rather than animated in one shot.
+3. **Temporal Multi-Event Cramming:** Slicing into 8s is meaningless if 4–5 sequential beats (door + walk + turn + clock) are packed into one prompt.
+   - *Fix: Micro-Beat De-Cramming Law:* $1 \text{ Clip} = 1 \text{ Camera Trajectory} + 1 \text{ Spatial Plane} + 1 \text{ Micro-Action}$. Secondary storytelling beats (e.g. wall clock) must be isolated macro insert shots.
+
+---
+
+## 5. Active Roadmap: Phase 6 Completion Agenda
+
+1. [x] **Step 0 & Pillar 1:** Creator Intake Interactivity & Word-to-Time Pacing Math.
+2. [x] **Pillar 2:** Action Budgeting & Single-Motion Law.
+3. [x] **Pillar 3 & Continuity:** Master Subject DNA Injection & Continuity Chaining Bridge.
+4. [x] **Pillar 4 & 5:** Default Flow Baseline, Dynamic Modality Switches & Origin Tracker.
+5. [x] **Step 4: Empirical Simulation:** Run initial end-to-end test.
+6. [x] **Step 6: Prompt De-Cramming & Glitch Remediation:** Re-sliced into 11 unhurried micro-clips enforcing Closed-Lip Listener, Pre-Materialized Props, and Micro-Beat De-Cramming across all prompt files (`master_flow_agent_prompt.txt` V2, `individual_clips/`, `scratchbook.md`).
+7. [x] **Step 7: Specification & Manifest Update:** Updated [`production_framework/specs/05_directors_cut_assembly_spec.md`](../production_framework/specs/05_directors_cut_assembly_spec.md) with Sections 4.2, 5.3, 5.4, and pre-flight linters L-12 and L-13.
+8. [x] **Step 8: Cross-Medium Validation (Stick Figure Horror):** Proved the generalizability of all 3 laws on *The Uncanny Reflection* (10-clip 2D minimalist horror sequence & Photo-First keyframe generation). Fully documented in [`_raw/39_simulation_stick_figure_horror_and_blank_head_rule.md`](./_raw/39_simulation_stick_figure_horror_and_blank_head_rule.md).
+9. [x] **Step 9: Image-First Video Production Pipeline (The 9-5 Rat Race):** Formalized the 2-step workflow (generating still image keyframe prompt first, then generating Image-to-Video motion prompt from that seed) with audio-visual motivational contrast. Fully documented in [`_raw/40_image_first_video_production_workflow.md`](./_raw/40_image_first_video_production_workflow.md).
+
+
+
+
+
+

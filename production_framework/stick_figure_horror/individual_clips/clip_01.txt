@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: ESTABLISHING
+Input Seed / Dependencies: None
+
+[PROMPT]
+Smooth lateral 2D tracking shot moving right at constant walking speed. A minimalist 2D hand-drawn uniform-line-weight stick figure with a blank circular head and zero facial features walks alone along a thin horizontal ground line from left to right. The background is a stark pitch-black void, with faint distant foggy street mist. The stick figure takes slow, rhythmic, unhurried walking steps across the screen with empty hands swinging naturally at its sides. 2D vector animation style, crisp line edges, zero 3D shading, zero facial details. Audio: soft tactile footstep thuds on concrete, lonely cold wind whistling through an empty street, no background music.

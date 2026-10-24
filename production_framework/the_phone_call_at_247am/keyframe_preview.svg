@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Screen glow filter -->
+    <filter id="phone-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12" result="blur1" />
+      <feGaussianBlur in="SourceGraphic" stdDeviation="25" result="blur2" />
+      <feMerge>
+        <feMergeNode in="blur2" />
+        <feMergeNode in="blur1" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Radial light cone revealing the warm white/cream room from darkness -->
+    <radialGradient id="light-reveal" cx="35%" cy="70%" r="65%" fx="33%" fy="72%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1.0" />
+      <stop offset="25%" stop-color="#F8F6F0" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#E5E0D5" stop-opacity="0.7" />
+      <stop offset="75%" stop-color="#2D3139" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#0A0B0E" stop-opacity="1.0" />
+    </radialGradient>
+
+    <!-- Smartphone beam gradient -->
+    <linearGradient id="phone-beam" x1="0%" y1="100%" x2="40%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.6" />
+      <stop offset="30%" stop-color="#BAE6FD" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.0" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Ambient Background: Deep Dark Shadow at the edges, illuminated Cream/Off-White in the light cone -->
+  <rect width="1920" height="1080" fill="url(#light-reveal)" />
+
+  <!-- 2. Minimalist Digital Clock Display (Top Right, in shadow) -->
+  <text x="1750" y="90" font-family="'Courier New', monospace" font-size="28" font-weight="bold" fill="#64748B" letter-spacing="4" text-anchor="end">02:47 AM</text>
+  <circle cx="1775" cy="80" r="4" fill="#EF4444" opacity="0.8" />
+
+  <!-- 3. Minimalist Architectural Lines (Black / Dark Slate Vector Lines) -->
+  <g stroke="#1E293B" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Horizon / Floor Line -->
+    <line x1="80" y1="880" x2="1840" y2="880" stroke-width="4" stroke="#0F172A" />
+
+    <!-- Closed Bedroom Door Line-Art (Left Background, entering shadow) -->
+    <rect x="220" y="280" width="220" height="600" rx="3" fill="#0F172A" fill-opacity="0.25" stroke="#1E293B" />
+    <!-- Door Latch -->
+    <circle cx="400" cy="580" r="6" fill="#334155" />
+    <line x1="395" y1="580" x2="425" y2="580" stroke="#0F172A" stroke-width="4.5" />
+    <!-- Circular Peephole -->
+    <circle cx="330" cy="460" r="8" fill="#0A0B0E" stroke="#1E293B" stroke-width="3" />
+
+    <!-- Window Frame (Right Background, cloaked in darkness) -->
+    <g opacity="0.35">
+      <rect x="1450" y="320" width="260" height="420" rx="4" fill="none" stroke="#475569" />
+      <line x1="1580" y1="320" x2="1580" y2="740" stroke="#475569" />
+      <line x1="1450" y1="530" x2="1710" y2="530" stroke="#475569" />
+    </g>
+  </g>
+
+  <!-- 4. Foreground Minimalist Furniture (Crisp Black Lines on Cream Canvas) -->
+  <g stroke="#0F172A" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Bed Frame Minimal Lines -->
+    <!-- Headboard / Backrest -->
+    <line x1="720" y1="620" x2="720" y2="880" stroke-width="5" />
+    <line x1="700" y1="620" x2="740" y2="620" stroke-width="4" />
+    <!-- Mattress / Bed Surface -->
+    <line x1="720" y1="780" x2="1360" y2="780" stroke-width="5.5" />
+    <!-- Pillow outline with subtle white fill -->
+    <path d="M 730 770 Q 770 725 840 770 Z" fill="#FFFFFF" stroke="#0F172A" stroke-width="4" />
+    <!-- Footboard Leg -->
+    <line x1="1360" y1="780" x2="1360" y2="880" stroke-width="5" />
+
+    <!-- Bedside Nightstand Table -->
+    <line x1="520" y1="750" x2="680" y2="750" stroke-width="4.5" />
+    <line x1="540" y1="750" x2="540" y2="880" stroke-width="4" />
+    <line x1="660" y1="750" x2="660" y2="880" stroke-width="4" />
+  </g>
+
+  <!-- 5. Smartphone Volumetric Screen Light Beam -->
+  <polygon points="575,740 635,740 750,380 470,380" fill="url(#phone-beam)" />
+
+  <!-- 6. Smartphone Device & Incoming Call Screen -->
+  <!-- Glowing Screen Rect -->
+  <rect x="580" y="736" width="44" height="14" rx="3" fill="#38BDF8" filter="url(#phone-glow)" />
+  <!-- Pulse Wave Rings -->
+  <circle cx="602" cy="743" r="28" fill="none" stroke="#0284C7" stroke-width="2" opacity="0.6" />
+  <circle cx="602" cy="743" r="48" fill="none" stroke="#0284C7" stroke-width="1.5" opacity="0.3" />
+
+  <!-- Caller ID Callout Card -->
+  <g transform="translate(480, 610)">
+    <rect x="0" y="0" width="240" height="75" rx="8" fill="#FFFFFF" stroke="#0F172A" stroke-width="2.5" />
+    <text x="120" y="30" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="700" fill="#64748B" text-anchor="middle" letter-spacing="2">INCOMING CALL</text>
+    <text x="120" y="58" font-family="'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="900" fill="#0F172A" text-anchor="middle" letter-spacing="5">MOM</text>
+    <circle cx="28" cy="38" r="8" fill="#16A34A" />
+    <circle cx="212" cy="38" r="8" fill="#DC2626" />
+  </g>
+
+  <!-- 7. Protagonist Stick Figure (Rakib) — STRICT NO-FINGERS / NO-ANATOMY VECTOR SPEC -->
+  <g stroke="#0F172A" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- Torso: Single clean black vector line -->
+    <line x1="860" y1="602" x2="890" y2="730" stroke-width="6" />
+
+    <!-- Left Arm: Clean bent line terminating in a smooth rounded cap on mattress (NO fingers) -->
+    <path d="M 865 640 L 820 710 L 800 780" fill="none" stroke-width="6" />
+
+    <!-- Right Arm: Pure unbroken line reaching forward toward phone with smooth rounded tip (NO fingers, NO digits) -->
+    <path d="M 865 640 L 770 660 L 685 690" fill="none" stroke-width="6" />
+
+    <!-- Legs on Bed: Pure simple strokes terminating in smooth rounded ends (NO toes, NO realistic feet) -->
+    <path d="M 890 730 L 980 770 L 1100 778" fill="none" stroke-width="6" />
+    <path d="M 890 730 L 950 775 L 1060 780" fill="none" stroke-width="5.5" opacity="0.8" />
+
+    <!-- Blank Circular Head: Solid white fill + matching black outline -->
+    <circle cx="860" cy="560" r="42" fill="#FFFFFF" stroke="#0F172A" stroke-width="6" />
+  </g>
+
+  <!-- 8. Subtle Lighting Highlight on Head & Torso from Phone -->
+  <path d="M 822 545 A 42 42 0 0 1 845 522" fill="none" stroke="#38BDF8" stroke-width="3" stroke-linecap="round" opacity="0.8" />
+
+  <!-- 9. Caption Label -->
+  <text x="960" y="1030" font-family="'Helvetica Neue', Arial, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle" letter-spacing="3">THE PHONE CALL AT 2:47 AM • STRICT ZERO-FINGER VECTOR DNA</text>
+</svg>

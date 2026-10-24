@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_01/image_prompt.txt
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: ESTABLISHING HOOK
+
+[VIDEO PROMPT]
+Starting directly from the initial image, slow and subtle linear camera push-in advancing toward the glowing phone on the nightstand line. The rectangular smartphone screen pulses rhythmically with bright flashes of pale white light, each flash illuminating the warm cream wall behind it before dimming momentarily. The stark letters "MOM" and the glowing call receiver icon pulse steadily in place with crisp geometric ripples vibrating outward against the tabletop line. The surrounding bedroom shadows remain motionless and dark. Minimalist 2D vector animation style, crisp line weights, clean geometric motion. Audio: loud rhythmic electronic smartphone ringtone echoing sharply inside a quiet room, crisp mechanical vibration buzzes rattling against wood, swelling eerie synth undertone, zero voiceover, zero spoken dialogue.

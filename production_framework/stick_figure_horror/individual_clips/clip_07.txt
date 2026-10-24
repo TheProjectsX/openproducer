@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: REVERSE INTERIOR CUT
+Input Seed / Dependencies: Shared Interior Vector Anchor
+
+[PROMPT]
+Reverse static wide interior perspective looking across the minimalist 2D living room. In the far dim corner of the room, standing beside a minimalist line-art standing lamp, the identical tall stranger 2D stick figure is already standing completely motionless, its blank circular head facing directly at the protagonist. Both figures are rendered in razor-sharp 2D pencil-thin line weights against a pitch-black background. Completely static camera, zero motion, frozen suspense. Audio: sudden discordance in low strings, sharp sub-bass drop, eerie hollow room tone, zero spoken speech.

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED ANGLE
+Input Seed / Dependencies: Shared Dispatch Stage Anchor
+
+[PROMPT]
+Medium perspective looking at a scratched walnut dispatch desk under a glowing warm-amber desk lamp. On the desk, a vintage black rotary telephone suddenly vibrates violently, its mechanical brass bells ringing with a sharp, piercing resonance. In the midground, Detective David Cross stands motionless in the hallway, both hands resting inside his coat pockets, staring down at the vibrating telephone with wide, disbelieving eyes. Cross does not touch the phone or move his hands. Slow subtle descending push toward the desk. 35mm film grain, atmospheric dust. Audio: sharp metallic rotary telephone bells ringing loudly with hollow room reverb, low-frequency dread hum, no dialogue.

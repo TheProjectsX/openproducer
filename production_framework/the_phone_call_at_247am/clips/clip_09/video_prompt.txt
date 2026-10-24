@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_09/image_prompt.txt
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED SPATIAL CUT
+
+[VIDEO PROMPT]
+Starting directly from the initial image, slow and creeping camera push-in advancing steadily toward the opening door frame. The vertical black vector door line smoothly swings inward on its hinges until it stands wide open at 90 degrees. Behind the open door reveals an infinite, pitch-black void of absolute darkness, completely swallowing the camera's path. The bedroom floor line remains crisp and steady. As the camera glides through the doorway, total blackness fills the entire screen. Minimalist 2D vector animation style, uniform line weights. Audio: slow, agonizingly long wooden door creak vibrating through the room, followed by a heavy acoustic bass drop, a sudden gust of icy air, and complete silence, zero voiceover, zero spoken dialogue.

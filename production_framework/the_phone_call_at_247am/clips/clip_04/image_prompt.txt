@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Reference Conditioning: Follows Master Base Reference (base_image_prompt.txt)
+Aspect Ratio: 16:9
+Modality: Clip 04 Starting Frame / Peephole Fisheye POV
+
+[IMAGE PROMPT]
+Minimalist 2D vector POV keyframe, 16:9 perspective viewed through a circular peephole lens with heavy black circular vignette masking the outer edges. Inside the illuminated circular view, sharp black perspective vector lines depict an empty hallway receding into an infinite pitch-black void. A single faint overhead circular light casts a cone of pale cream tone across the floorboards. The hallway is completely empty: zero figures, zero movement, eerie desolation. Crisp flat 2D graphic vector style, high contrast, horrifying emptiness, no text, no watermark.

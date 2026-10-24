@@ -1,0 +1,24 @@
+# GOOGLE FLOW AGENT MODE: MASTER MANIFEST (IMAGE-FIRST PIPELINE)
+# Project: The 9-5 Rat Race (Motivational Contrast)
+# Visual Paradigm: Stylized 2D Minimalist Hand-Drawn Animation (Pitch-black background, uniform pencil-thin white line art)
+# Workflow: Generate Still Images 1 & 2 as Starting Frames -> Run Image-to-Video Prompts
+
+---
+
+### STEP 1: GENERATE STARTING FRAME PLATES (IMAGE PROMPTS)
+
+[IMAGE 01 - COMMUTE KEYFRAME | ASPECT: 16:9 | RESOLUTION: 1080p]
+Minimalist 2D hand-drawn animation style, stark pitch-black background, high contrast, clean uniform pencil-thin white line art. A single-file queue of identical minimalist white stick figures with blank circular heads and zero facial features stands in profile, facing toward the right along a straight horizontal white ground line. All stick figures have their blank heads tilted slightly downward in weary, mechanical unison, with both hands resting motionless inside their coat pockets. In the background, tall geometric minimalist skyscraper wireframes rise into the darkness, with a single slender streetlamp casting a narrow vertical cone of pale amber light across the center pavement. Stylized 2D vector art, Don Hertzfeldt meets Limbo aesthetic, razor-sharp clean line edges, zero 3D shading, zero gradients, zero human facial features.
+
+[IMAGE 02 - CUBICLE KEYFRAME | ASPECT: 16:9 | RESOLUTION: 1080p]
+Minimalist 2D hand-drawn animation style, stark pitch-black background, high contrast, clean uniform pencil-thin white line art. A side-profile view of a lone minimalist white stick figure with a blank circular head and zero facial features, sitting hunched forward on a simple minimalist chair at a small rectangular office desk. On the desk rests a glowing vintage CRT computer monitor casting a soft square pool of pale white light onto the stick figure's face and hands resting on a keyboard. In the dim background, clean vertical and horizontal wireframe dividers suggest an endless grid of identical empty office cubicles, with a simple circular clock outline mounted on the wall. Stylized 2D vector graphic, Limbo meets Don Hertzfeldt aesthetic, razor-sharp clean white strokes on absolute black, zero 3D rendering, zero facial features.
+
+---
+
+### STEP 2: VIDEO CLIP GENERATION (IMAGE-TO-VIDEO PROMPTS)
+
+[SCENE 01 - CLIP 01 | DURATION: 7s | ASPECT: 16:9 | RESOLUTION: 1080p | INPUT: IMAGE 01]
+Starting directly from the initial image, smooth 2D lateral tracking shot moving steadily to the right at constant walking speed. The line of identical minimalist 2D white stick figures with blank circular heads begins walking forward along the horizontal ground line in slow, synchronized, mechanical unison. Each stick figure takes steady, rhythmic walking steps to the right with heads held motionless tilted downward and hands kept completely concealed inside pockets. The camera maintains a stable, continuous side-view framing. Minimalist 2D vector line animation, stark black void background, zero facial animation. An inspiring, deep, warm male motivational voiceover speaks with measured cadence: "Most people spend their entire lives building someone else's dream..." Audio: rhythmic soft footstep thuds on pavement, swelling warm low-in-the-mix grand piano chords and subtle acoustic cello, no harsh noise.
+
+[SCENE 01 - CLIP 02 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | INPUT: IMAGE 02]
+Starting directly from the initial image, slow and subtle linear camera push-in toward the stick figure sitting at the desk. The minimalist 2D white stick figure moves its slender pencil-thin linear arms with repetitive, mechanical typing motions, fingers tapping rhythmically against the keyboard. The stick figure's blank circular head remains tilted downward, illuminated by the steady pale glow of the computer monitor, with completely blank facial features and zero mouth movement. The surrounding cubicle grid lines remain sharp, stable, and rigid. An inspiring, warm, resonant male motivational voiceover concludes the thought with emotional conviction: "...until they finally realize the door was never locked." Audio: crisp rhythmic mechanical keyboard typing clicks, an uplifting cinematic grand piano chord progression resolving with a swelling, hopeful acoustic cello and warm Rhodes chords, fade to black.

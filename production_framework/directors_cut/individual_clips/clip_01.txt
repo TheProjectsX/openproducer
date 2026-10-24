@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 7s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: ESTABLISHING
+Input Seed / Dependencies: None
+
+[PROMPT]
+Slow eye-level forward tracking perspective moving calmly down a pitch-black, decaying 1980s police station dispatch corridor. Detective David Cross, a weary 42-year-old homicide detective with a chiseled jawline, dark stubble, and haunted hooded eyes, wearing a heavy charcoal wool trench coat and loose dark tie, walks slowly away from the camera into the corridor with both hands resting calmly inside his coat pockets. Both hands remain fully concealed in pockets from start to finish, no handheld props. Cold cyan volumetric moonlight streams through broken Venetian blinds, illuminating floating dust motes and peeling walls. Shot on 35mm film stock, organic fine grain, deep shadow roll-off. Audio: heavy boot steps crunching over broken glass on linoleum, distant howling wind, dead silence, no background music.

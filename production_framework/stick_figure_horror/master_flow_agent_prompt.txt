@@ -1,0 +1,56 @@
+# GOOGLE FLOW AGENT MODE: MASTER TIMELINE MANIFEST
+# Project: The Uncanny Reflection (Stick Figure Horror)
+# Visual Paradigm: Stylized 2D Minimalist Animation (Pitch-black background, stark uniform pencil-thin white/black vector lines, dramatic spotlight cones, high contrast, Limbo aesthetic)
+# Invariant DNA:
+# - Protagonist: Minimalist 2D hand-drawn uniform pencil-thin white line stick figure, blank circular head, zero facial features, no clothing, no muscular build, no 3D rendering.
+# - Stranger: Slightly taller elongated 2D stick figure with extended pencil-thin arms, blank circular head, motionless posture, zero facial features.
+
+---
+
+[SCENE 01 - CLIP 01 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: ESTABLISHING]
+Smooth lateral 2D tracking shot moving right at constant walking speed. A minimalist 2D hand-drawn uniform-line-weight stick figure with a blank circular head and zero facial features walks alone along a thin horizontal ground line from left to right. The background is a stark pitch-black void, with faint distant foggy street mist. The stick figure takes slow, rhythmic, unhurried walking steps across the screen with empty hands swinging naturally at its sides. 2D vector animation style, crisp line edges, zero 3D shading, zero facial details. Audio: soft tactile footstep thuds on concrete, lonely cold wind whistling through an empty street, no background music.
+
+---
+
+[SCENE 01 - CLIP 02 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MOTIVATED ANGLE]
+Slow linear push-in perspective across the dark street. In the center of the frame, a tall, slender street lamp casts a sharp conical pool of glowing pale amber light onto the pavement. Standing completely stationary inside the pool of light is a second, slightly taller 2D stick figure with an elongated torso and arms, a completely blank circular head with zero facial features, facing directly toward the camera. In the foreground, the walking protagonist stick figure halts its footsteps, standing frozen in silhouette. Minimalist 2D line art, stark dramatic lighting, high contrast. Audio: sudden faint low-frequency atmospheric dread hum, footsteps abruptly stopping, distant night ambience, no dialogue.
+
+---
+
+[SCENE 01 - CLIP 03 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS EXTENSION (SEED: LAST_FRAME)]
+Continuing directly from the initial frame, smooth 2D lateral tracking shot moving rapidly to the right. The minimalist 2D stick figure protagonist accelerates its pace, walking briskly away from the light cone with hurried footsteps. As it moves right, its blank circular head turns backwards over its shoulder for two seconds, glancing into the dark background, before snapping forward again to hurry along the ground line. Fluid 2D hand-drawn animation, uniform pencil-thin line weight, zero 3D anatomy. Audio: rapid hurried footstep taps on pavement, rising nervous cello drone, whistling wind.
+
+---
+
+[SCENE 01 - CLIP 04 | DURATION: 5s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MOTIVATED CUT]
+Static medium shot looking back down the dark pavement. Standing under the very next pool of pale streetlight is the tall, slender stranger stick figure. It is now towering much closer in the frame, standing perfectly rigid with arms pinned straight down at its sides, its blank circular head tilted slightly down staring directly at the viewer. Zero movement, unnerving complete stillness, stable 2D line geometry. Pitch-black background, stark vector lighting. Audio: sudden loud metallic bass thud, hollow acoustic void, absolute eerie silence, no music.
+
+---
+
+[SCENE 01 - CLIP 05 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: INTERIOR CUT]
+Static interior wide shot of a minimalist 2D line-art house entryway. The protagonist 2D stick figure sprints in panic from the left side of the frame into the room and immediately pulls a vertical solid black door line shut behind it. A clean horizontal lock line snaps into place across the door boundary. The protagonist rests its back flat against the closed door line, chest expanding and contracting with heavy simulated breaths. Minimalist 2D architectural lines on black background, crisp uniform line weights. Audio: frantic sprinting footsteps, loud heavy door slam, sharp mechanical deadbolt latch click.
+
+---
+
+[SCENE 01 - CLIP 06 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS EXTENSION (SEED: LAST_FRAME)]
+Continuing directly from the initial frame, slow subtle push-in toward the protagonist 2D stick figure resting against the closed door line. The stick figure stands with its back against the door for three seconds, head drooping down in temporary relief. Then, slowly and hesitantly, the protagonist rotates its blank circular head and slender linear torso around to face into the dark living room, sensing something is wrong. Pure 2D hand-drawn line art, zero facial features, completely blank head. Audio: deep trembling breath exhale, low ominous cello chord swelling, absolute silence.
+
+---
+
+[SCENE 01 - CLIP 07 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: REVERSE CUT]
+Reverse static wide interior perspective looking across the minimalist 2D living room. In the far dim corner of the room, standing beside a minimalist line-art standing lamp, the identical tall stranger 2D stick figure is already standing completely motionless, its blank circular head facing directly at the protagonist. Both figures are rendered in razor-sharp 2D pencil-thin line weights against a pitch-black background. Completely static camera, zero motion, frozen suspense. Audio: sudden discordance in low strings, sharp sub-bass drop, eerie hollow room tone, zero spoken speech.
+
+---
+
+[SCENE 01 - CLIP 08 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MOTIVATED CUT]
+Slow push-in perspective on the tall stranger 2D stick figure standing in the room. The stranger slowly and deliberately raises its right pencil-thin arm, extending its straight linear hand to point directly past the protagonist toward the opposite wall behind him. The arm extends smoothly and locks in place with rigid mechanical precision. Zero facial features, completely blank circular head, perfectly stable 2D line art, no morphing. Audio: faint tactile creak of moving wood, rising high-pitched violin tension screech, deep silence.
+
+---
+
+[SCENE 01 - CLIP 09 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MIRROR MOTIVATED CUT]
+Over-the-shoulder medium perspective looking past the protagonist 2D stick figure toward a tall, rectangular vertical mirror line mounted on the wall. Inside the reflective mirror frame, the living room furniture, the floor line, and the pointing stranger in the background are clearly reflected in crisp white lines—but the protagonist's own reflection is completely absent, showing empty space where he should be standing. The protagonist stands frozen in shock. 2D vector surrealism, high contrast. Audio: sudden hollow acoustic whoosh, eerie reversed cymbal swell, dead silence.
+
+---
+
+[SCENE 01 - CLIP 10 | DURATION: 7s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CLOSED-LIP / BLANK HEAD WHISPER]
+Locked-off static medium close-up on the protagonist's blank circular head and upper torso. The circular head remains completely blank with zero eyes, zero nose, and zero mouth; there are no facial features and no mouth animation whatsoever. From an off-screen supernatural audio source behind the protagonist, a chilling, raspy close-mic dry whisper echoes: "You were never the one coming home." As the final whispered syllable ends, the screen instantly snaps to absolute pitch black. Audio: close-mic dry raspy whisper with subtle stereo delay, sudden heavy sub-bass thud on final word, dead silence.

@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Reference Conditioning: Follows Master Base Reference (base_image_prompt.txt)
+Aspect Ratio: 16:9
+Modality: Clip 05 Starting Frame / Sister Warning Text
+
+[IMAGE PROMPT]
+Minimalist 2D vector macro top-down keyframe, 16:9 framing centered directly over a smartphone screen resting on a dark surface. The phone screen illuminates with bright pale white light, displaying a messaging UI with a header reading "SISTER" and a text message bubble containing stark, crisp black vector typography: "PLEASE DON'T OPEN THE DOOR!". Delicate concentric vibration ripples emanate outward from the phone edges. The screen light spills onto the surrounding dark surface in high contrast chiaroscuro. Crisp flat 2D graphic novel vector style, razor-sharp UI linework, chilling suspense, no other text, no watermark.

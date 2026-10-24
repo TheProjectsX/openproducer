@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 7s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: SPATIAL LOOP
+Input Seed / Dependencies: None
+
+[PROMPT]
+Dynamic linear tracking perspective moving backward in front of Detective David Cross, dressed in his charcoal wool overcoat, as he sprints in panic down the pitch-black corridor toward a glowing green EXIT door. As Cross pushes through the doorway, the perspective snaps into a locked frame: instead of escaping outside, Cross bursts directly back into the exact same dispatch hall, skidding to a bewildered halt right beside the walnut desk. Cold cyan moonlight slicing through blinds. Audio: heavy running boots thudding on linoleum, strained heavy breathing, disorienting spatial audio whoosh, rising metallic tension drone.

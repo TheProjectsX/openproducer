@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: INTERIOR CUT
+Input Seed / Dependencies: None
+
+[PROMPT]
+Static interior wide shot of a minimalist 2D line-art house entryway. The protagonist 2D stick figure sprints in panic from the left side of the frame into the room and immediately pulls a vertical solid black door line shut behind it. A clean horizontal lock line snaps into place across the door boundary. The protagonist rests its back flat against the closed door line, chest expanding and contracting with heavy simulated breaths. Minimalist 2D architectural lines on black background, crisp uniform line weights. Audio: frantic sprinting footsteps, loud heavy door slam, sharp mechanical deadbolt latch click.

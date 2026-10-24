@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4 / VideoFX / Midjourney)
+Purpose: Starting Frame Keyframe (Ingredient #1 for Video Generation)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE CREATION PROMPT]
+Minimalist 2D hand-drawn animation style, stark pitch-black background, high contrast, clean uniform pencil-thin white line art. A side-profile view of a lone minimalist white stick figure with a blank circular head and zero facial features, sitting hunched forward on a simple minimalist chair at a small rectangular office desk. On the desk rests a glowing vintage CRT computer monitor casting a soft square pool of pale white light onto the stick figure's face and hands resting on a keyboard. In the dim background, clean vertical and horizontal wireframe dividers suggest an endless grid of identical empty office cubicles, with a simple circular clock outline mounted on the wall. Stylized 2D vector graphic, Limbo meets Don Hertzfeldt aesthetic, razor-sharp clean white strokes on absolute black, zero 3D rendering, zero facial features.

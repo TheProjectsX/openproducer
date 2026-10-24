@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Reference Conditioning: Follows Master Base Reference (base_image_prompt.txt)
+Aspect Ratio: 16:9
+Modality: Clip 07 Starting Frame / Head Tilt & Blackout
+
+[IMAGE PROMPT]
+Minimalist 2D vector keyframe, medium close-up 16:9 framing on the tall entity outside the window pane. The entity's oversized white-filled circular head with a heavy black vector outline begins an unnatural mechanical tilt toward a 45-degree angle in the pitch darkness. In the reflection of the glass, the interior bedroom is faintly visible with the protagonist stick figure standing frozen in terror. Flat 2D vector graphic novel art, high contrast, uncanny supernatural dread, no text, no watermark.

@@ -1,0 +1,9 @@
+[BASE STYLE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Modality: Master Style Reference Anchor / Ingredient #1 (Universal Visual DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Visual Paradigm: Stylized 2D Vector Stick Figure Horror (Fingerless Vector Art & Light-Reveal Cream Canvas)
+
+[BASE STYLE IMAGE PROMPT]
+Master 2D vector stick figure visual style reference anchor, 16:9 cinematic framing. A warm, clean off-white cream paper-textured background canvas (#F8F6F0) illuminated by a motivated directional cone of soft light, falling off into deep atmospheric pitch-black shadows (#0A0B0E) in unlit regions. A minimalist 2D stick figure stands centered in an idle pose: limbs and torso are pure, unbroken, pencil-thin solid black vector strokes (#0F172A) terminating in smooth rounded line-cap ends; strictly zero individual fingers, zero human hands, zero toes, zero knuckles, and zero fleshy anatomical details. The circular head is filled with solid opaque white (#FFFFFF) and contoured with a clean black vector outline matching the thickness of the limbs, completely devoid of eyes, nose, or mouth. Clean geometric black architectural vector lines ground the floor plane. Pristine flat 2D vector art, razor-sharp outlines, high-contrast chiaroscuro lighting, viral stick figure horror aesthetic, no text, no watermark.

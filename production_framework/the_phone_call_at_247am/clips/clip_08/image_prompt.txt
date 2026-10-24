@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Reference Conditioning: Follows Master Base Reference (base_image_prompt.txt)
+Aspect Ratio: 16:9
+Modality: Clip 08 Starting Frame / Latch Rotating in Blackness
+
+[IMAGE PROMPT]
+Minimalist 2D vector macro keyframe, 16:9 framing focused tightly on a door latch mechanism. In an almost pitch-black void (#0A0B0E), faint thin cream vector lines outline the edge of a vertical door panel and a horizontal metallic lever handle latch. The latch handle is horizontal at rest. There are zero figures in frame. Crisp flat 2D graphic novel vector style, razor-sharp metallic line definition, suffocating claustrophobic darkness, no text, no watermark.

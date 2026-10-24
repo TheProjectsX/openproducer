@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_03/image_prompt.txt
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: SPATIAL CUT (DOOR FOCUS)
+
+[VIDEO PROMPT]
+Starting directly from the initial image, slow and subtle linear camera push-in advancing steadily toward the closed vertical door line. The crisp black vector outlines of the door frame, latch, and peephole remain firmly anchored and rigid. Exactly three distinct, rhythmic visual vibration ripples pulse softly across the door surface at measured intervals, vibrating into the dark room. The surrounding pitch-black shadows remain still and heavy. Minimalist 2D vector animation style, uniform line weights. Audio: three heavy, muffled, deliberate knocks echoing on solid wood (thud... thud... thud...), followed by deep chilling reverberation and a rising discordant cello drone, zero voiceover, zero spoken dialogue.

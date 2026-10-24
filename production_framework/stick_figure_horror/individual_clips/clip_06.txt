@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS EXTENSION
+Input Seed / Dependencies: LAST_FRAME of Clip 05
+
+[PROMPT]
+Continuing directly from the initial frame, slow subtle push-in toward the protagonist 2D stick figure resting against the closed door line. The stick figure stands with its back against the door for three seconds, head drooping down in temporary relief. Then, slowly and hesitantly, the protagonist rotates its blank circular head and slender linear torso around to face into the dark living room, sensing something is wrong. Pure 2D hand-drawn line art, zero facial features, completely blank head. Audio: deep trembling breath exhale, low ominous cello chord swelling, absolute silence.

@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_07/image_prompt.txt
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED CLIMAX CUT
+
+[VIDEO PROMPT]
+Starting directly from the initial image, slow and ominous camera push-in advancing toward the window. The tall entity's elongated body remains motionless, but its oversized white-filled circular head slowly tilts 45 degrees to the side in a smooth, mechanical motion with zero facial features. Exactly three seconds in, every light source and ambient vector line abruptly snaps off in an instant electrical pop frame, plunging the entire screen into complete, suffocating, 100% pitch-black void (#000000) for the remainder of the clip. Minimalist 2D vector animation style, high-impact sudden blackout. Audio: high-pitched violin screech bending downward, an unsettling bone-crack click, loud electrical power breaker pop (snap-thud), instantaneous cut to complete dead silence, zero voiceover, zero spoken dialogue.

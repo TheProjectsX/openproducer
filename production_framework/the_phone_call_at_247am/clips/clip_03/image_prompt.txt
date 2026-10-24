@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Reference Conditioning: Follows Master Base Reference (base_image_prompt.txt)
+Aspect Ratio: 16:9
+Modality: Clip 03 Starting Frame / Three Knocks on Door
+
+[IMAGE PROMPT]
+Minimalist 2D vector keyframe, 16:9 perspective wide shot facing a closed vertical door frame in the dark bedroom. The door is rendered in clean, crisp black vector lines (#0F172A) with a circular peephole and a metallic horizontal latch handle, set against a warm cream canvas faintly revealed by ambient shadow. At the center of the wooden door line, subtle thin vector ripple shockwave rings emanate outward into the air. Crisp flat 2D graphic vector style, high-contrast chiaroscuro, chilling horror suspense, no figures in frame, no text, no watermark.

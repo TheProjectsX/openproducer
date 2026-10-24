@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_06/image_prompt.txt
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED PAN & REVEAL
+
+[VIDEO PROMPT]
+Starting directly from the initial image, smooth 2D lateral pan gliding from the stick figure across the room to center directly on the vertical window frame. As the camera centers on the window, the towering, unnervingly tall stick figure on the outside of the glass pane remains completely frozen and motionless in the pitch-black void, its elongated slender black vector arms hanging unnaturally at its sides. The entity's oversized white-filled circular head stares directly through the glass, devoid of any facial features or motion. Faint ambient wind ripples past the window line. Minimalist 2D vector animation style, crisp line weights. Audio: sudden cold whoosh of air, sharp floorboard creak, a rising terrifying metallic screech that resolves into a bone-chilling sub-bass drone, zero voiceover, zero spoken dialogue.

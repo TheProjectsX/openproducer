@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MIRROR MOTIVATED CUT
+Input Seed / Dependencies: None
+
+[PROMPT]
+Over-the-shoulder medium perspective looking past the protagonist 2D stick figure toward a tall, rectangular vertical mirror line mounted on the wall. Inside the reflective mirror frame, the living room furniture, the floor line, and the pointing stranger in the background are clearly reflected in crisp white lines—but the protagonist's own reflection is completely absent, showing empty space where he should be standing. The protagonist stands frozen in shock. 2D vector surrealism, high contrast. Audio: sudden hollow acoustic whoosh, eerie reversed cymbal swell, dead silence.

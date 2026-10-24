@@ -32,9 +32,9 @@ This workspace is accessed across different devices, workstations, and conversat
 |---|---|---|---|---|
 | **Phase 1–4** | Comprehensive Research, Synthesis & Validation | ✅ **COMPLETE** | [`research/synthesis/`](./research/synthesis/) | [`research/structure.md`](./research/structure.md), [`research/validation.md`](./research/validation.md) |
 | **Phase 5: Core Domain Primitives** | Visuals, Subjects, Sceneries, Cinematography & Audio | ✅ **FINALIZED** | [`01_visual`](./production_framework/specs/01_visual_spec.md), [`02_subject`](./production_framework/specs/02_subject_spec.md), [`03_scenery`](./production_framework/specs/03_scenery_spec.md), [`04_cinematography_audio`](./production_framework/specs/04_cinematography_audio_spec.md) | [`discussions/`](./discussions/) |
-| **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (5s/8s/10s), Multi-Engine Routing (Flow, Seedance, Slideshow) | 🟡 **IN PROGRESS** (Next Session Agenda) | `production_framework/specs/05_directors_cut_assembly_spec.md` (Pending) | [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) |
+| **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (5s/8s/10s), Multi-Engine Routing, Micro-Beat De-Cramming | 🟡 **UNDER DEVELOPMENT** | [`05_directors_cut_assembly`](./production_framework/specs/05_directors_cut_assembly_spec.md) | [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) |
 | **Phase 7: Project Scaffolding** | Lean Folder Scaffold & Universal Template | ⏳ Pending | `production_template/` | TBD |
-| **Phase 8: Automation Skill & Linters** | Python Compilers, Linters (L-01 to L-09), Flow Timeline Manifest Export | ⏳ Pending | Tooling & Skill code | TBD |
+| **Phase 8: Automation Skill & Linters** | Python Compilers, Linters (L-01 to L-11), Flow Timeline Manifest Export | ⏳ Pending | Tooling & Skill code | TBD |
 
 ---
 
@@ -277,45 +277,89 @@ To prevent token bloat while retaining 100% information control:
   4. *Complete 4-Tier Virtual Soundboard Mix:* Tier 1 (Close-mic dialogue) + Tier 2 (Radio dial click & canvas rustle) + Tier 3 (Subterranean rain & generator hum) + Tier 4 (Low-in-the-mix cello drone & sub-bass pad).
   5. *Validation:* Verified via Photo-First generation (`grand_cinematography_audio_simulation_1792767365212.jpg`).
   6. *Authoritative Deliverable:* Produced and finalized [`production_framework/specs/04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md).
-### 2026-10-23 — Phase 6: Director's Cut, Temporal Slicing & Multi-Engine Assembly (Discussion 36)
-- **Consensus Reached:** Single-shot prompt generation is merely a primitive; a real video production framework requires the human director's assembly desk before final prompt compilation:
-  1. *Script & Narrative Breakdown:* Mathematical word-to-time pacing calculation (~2.2 words per second of human speech; 8–11 spoken words per 5-second clip) to prevent cramming or stretching.
-  2. *Action Budgeting & Temporal Chunking:* Slicing 30s/60s scenes into 4s, 5s, 8s, or 10s clips with exactly one primary action per clip.
-  3. *Continuity Chaining Bridge:* Linking terminal frames (`last_frame`) to next-clip seeds with velocity matching.
-  4. *Multi-Engine Modality Matrix:* Supporting diverse creator pipelines (Flow Native video vs. Seedance long-form monolith vs. Image Slideshow + ElevenLabs vs. Hybrid).
-  5. *Origin Tracker:* Tracking "what comes from where" across visuals, dialogue, Foley, and music.
-  6. *References:* Logged in [`discussions/_raw/33_directors_cut_temporal_slicing_and_multi_engine_pipelines.md`](./discussions/_raw/33_directors_cut_temporal_slicing_and_multi_engine_pipelines.md) and initialized [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md).
+### 2026-10-24 — Phase 6: Creator Intake Interactivity & Temporal Action Budgeting (Discussion 34)
+- **Consensus Reached:** Codified the Golden Intake Rule: never assume runtime or pacing.
+  1. *Intake Interview:* If pacing is ambiguous, Agent directly asks for target length, tempo archetype (Hyper 3–4s, Dynamic 5s, Dramatic 8s, Atmospheric 10s), and clip budget.
+  2. *Mathematical Speech Velocity:* Natural conversational pacing (~2.2 words/sec) with mandatory 0.8s–1.2s silence buffers before and after speech.
+  3. *The Single-Motion Law:* Exactly ONE primary biomechanical action and ONE continuous camera trajectory per clip to eliminate diffusion collapse.
+  4. *Director's Scratchbook Schema (`scratchbook.md`):* Unified pre-production ledger mapping beats, words, actions, and chaining.
+- **Reference Document:** [`discussions/_raw/34_narrative_pacing_intake_and_temporal_slicing.md`](./discussions/_raw/34_narrative_pacing_intake_and_temporal_slicing.md).
+
+### 2026-10-24 — Master Subject DNA Invariance & Multi-Clip Continuity Chaining (Discussion 35)
+- **Consensus Reached:** Solved multi-clip subject mutation (e.g. skinny stick figure turning muscular, or character wardrobe shifting):
+  1. *Verbatim DNA Injection:* Every clip prompt featuring a subject must inject the exact immutable Subject Anchor String into tokens 10–35. Banned loose pronouns (*"he"*, *"the figure"*).
+  2. *Mode 1 (Continuous Shot Extension):* Uses `last_frame` seed + velocity matching + *"Continuing directly from the initial frame..."* syntax.
+  3. *Mode 2 (Motivated Cut / Angle Change):* Preserves shared `#E5E5E5` ingredient pin, 180° screen direction, and identical motivated lighting vectors.
+- **Reference Document:** [`discussions/_raw/35_subject_dna_invariance_and_continuity_chaining.md`](./discussions/_raw/35_subject_dna_invariance_and_continuity_chaining.md).
+
+### 2026-10-24 — Default Google Flow Baseline & Dynamic Modality Switches (Discussion 36)
+- **Consensus Reached:** Default to standard Google Flow Native (sliced Veo video + native audio), with non-destructive mid-production switches:
+  1. *Visual Override (`images`):* Strips kinematics & audio for still photography plates (Imagen 4 / Midjourney).
+  2. *Assembly Override (`monolithic`):* Fuses separate beats into a single continuous long-take prompt (Seedance / Sora).
+  3. *Dialogue Override (`elevenlabs`):* Strips dialogue audio from Veo prompt (prevents double-speech) and outputs clean `dialogue_scripts.md` manifest with timing buffers.
+  4. *Music Override (`external`):* Purges score synthesis from `Audio:` (`zero background music, no score`), leaving pure diegetic foley and room tone.
+- **Reference Document:** [`discussions/_raw/36_default_flow_and_dynamic_modality_switches.md`](./discussions/_raw/36_default_flow_and_dynamic_modality_switches.md).
+
+### 2026-10-24 — Empirical Simulation & Finalized Specification (Discussion 37 & Deliverables)
+- **Milestone Reached:** Successfully tested the full Director's Cut engine on *The 2:17 AM Dispatch* (10-clip 80s psychological noir mystery):
+  1. *Dual Delivery Output:* Formatted into both single copy-paste `master_flow_agent_prompt.txt` (for Google Flow Agent Mode) AND individual clip files (`clip_01.txt` ... `clip_10.txt`) for manual timeline users.
+  2. *Photo-First Validation:* Verified visual style, subject DNA, and lighting vector via 35mm neo-noir keyframe generation (`detective_dispatch_keyframe`).
+  3. *Dynamic Switch Verified:* Tested ElevenLabs dialogue manifest generation (`dialogue_scripts.md`) and external music muting.
+  4. *Authoritative Deliverable:* Produced and finalized [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+
+### 2026-10-24 — Empirical Diffusion Glitches: Prop Popping, Mouth Sync & Micro-Beats (Discussion 38)
+- **Problem Discovered in Real Generations:** Testing *The 2:17 AM Dispatch* in Google Flow revealed:
+  1. *Accidental Lip-Sync:* Quoted dialogue while actor's face is on screen causes the model to animate the actor's lips, even if dialogue is an incoming phone whisper.
+  2. *Prop Popping / Hand Morphing:* Mid-clip actions like drawing a revolver or casual flashlight carrying cause severe occlusion confusion and shape warping.
+  3. *Temporal Multi-Event Cramming:* Packing 4–5 beats (door + corridor + head turn + clock) into 8 seconds creates frantic temporal warping and motion artifacts.
+- **Architectural Laws Established to Fix:**
+  1. *Closed-Lip Listener Rule:* Mandatory `"lips remain firmly closed, zero mouth movement"` on listening characters, attributing voice to off-screen speaker.
+  2. *Pre-Materialized Prop Law:* Props must be declared `"already firmly grasped from Frame 1 to Frame End"`. Drawing weapons is strictly a cutaway edit, never a continuous diffusion animation.
+  3. *Micro-Beat De-Cramming Law:* $1 \text{ Clip} = 1 \text{ Camera Trajectory} + 1 \text{ Spatial Plane} + 1 \text{ Micro-Action}$. Secondary storytelling beats (e.g. wall clock) must be isolated macro insert shots.
+- **Reference Document:** [`discussions/_raw/38_empirical_glitches_prop_popping_mouth_sync_and_micro_beat_decramming.md`](./discussions/_raw/38_empirical_glitches_prop_popping_mouth_sync_and_micro_beat_decramming.md) and [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md).
 
 ---
 
-## 6. Next Session Handoff & Agenda (Phase 6: Director's Cut & Assembly Engine)
+## 6. Current Agenda (Phase 6: Director's Cut & Assembly Engine — UNDER DEVELOPMENT)
 
-**Status at Session Pause:** Phase 5 (The 4 Foundational Domains) is **100% COMPLETE**. Phase 6 is **INITIALIZED & READY FOR PLANNING**.
+**Status:** 🟡 **UNDER DEVELOPMENT** (Active empirical testing, prompt de-cramming & physical glitch remediation).
 
-### Current Baseline Specifications On Disk:
-- [`specs/01_visual_spec.md`](./production_framework/specs/01_visual_spec.md) (8 Master Visual Paradigms)
-- [`specs/02_subject_spec.md`](./production_framework/specs/02_subject_spec.md) (Universal Subjects & Hero Products)
-- [`specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md) (Character Bible & 2-Step Turntables)
-- [`specs/03_scenery_spec.md`](./production_framework/specs/03_scenery_spec.md) (Worlds & Commercial Stages)
-- [`specs/04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md) (Optics, Kinematics & 4-Tier Audio)
+### Remediations Executed:
+1. **Re-Sliced into 11 Unhurried Micro-Clips:**
+   - Multi-event cramming eliminated: 1 camera trajectory, 1 spatial focus, 1 micro-action per clip.
+   - 2:17 AM wall clock separated into a dedicated macro insert shot ([`clip_02.txt`](./production_framework/directors_cut/individual_clips/clip_02.txt)).
+2. **Closed-Lip Listener Rule Enforced:**
+   - In Clips 04 and 08, Cross's lips are explicitly locked closed (`"firmly closed lips, tight jaw, zero mouth movement, does not speak"`) and dialogue attributed to off-screen earpiece speaker, ending accidental lip-syncing.
+3. **Pre-Materialized Prop Law Enforced:**
+   - Revolver in Clip 10 is declared pre-grasped from Frame 1; flashlight carrying eliminated in Clip 01 in favor of hands in pockets.
+### 2026-10-24 — Cross-Medium Validation: Stick Figure Psychological Horror (Discussion 39)
+- **Consensus Reached:** Tested all 3 laws on stylized 2D animation (*The Uncanny Reflection* — 10 micro-clips $\times$ 5s–7s):
+  1. *Closed-Lip / Blank-Head Rule:* Stick figures feature blank circular heads with zero mouth/facial features; supernatural whisper is strictly off-screen audio, preventing facial deformation.
+  2. *Pre-Materialized & Prop-Free:* Handled purely with minimalist linear vector strokes; doors are clean vertical line boundaries, eliminating object popping.
+  3. *Micro-Beat De-Cramming:* Sliced into 10 unhurried micro-moments (e.g. stranger pointing arm is an isolated 6-second gesture).
+  4. *Photo-First Validation:* Generated keyframe (`stick_horror_keyframe`).
+  5. *Deliverables:* Created [`production_framework/stick_figure_horror/`](./production_framework/stick_figure_horror/) with `master_flow_agent_prompt.txt`, `individual_clips/`, `scratchbook.md`, and `origin_manifest.md`.
+### 2026-10-24 — Image-First Video Production Pipeline & Motivational Rat Race (Discussion 40)
+- **Consensus Reached:** Solved raw Text-to-Video noise hallucinations by formalizing the 2-step Image-First Video Production Pipeline:
+  1. *Step 1 (Still Keyframe Prompt):* Generates pure optical starting frame plate (`image_prompt.txt`) via Imagen 4 / Midjourney / VideoFX, locking composition, lighting, and stick figure silhouettes with 100% precision.
+  2. *Step 2 (Image-to-Video Motion Prompt):* Feeds the generated still as the initial starting frame (`video_prompt.txt`), animating pure camera kinematics, unhurried micro-actions, and audio.
+  3. *Motivational Contrast Tested:* 2-clip *9-5 Rat Race* sequence contrasting mundane mechanical visuals (endless commute + cubicle typing) with an uplifting, warm, deep motivational voiceover and swelling grand piano / Rhodes chords.
+  4. *Deliverables:* Created [`production_framework/rat_race_stick_figure/`](./production_framework/rat_race_stick_figure/) with `clip_01/` (`image_prompt.txt` + `video_prompt.txt`), `clip_02/`, `master_flow_agent_prompt.txt`, `scratchbook.md`, and `origin_manifest.md`.
+- **Reference Document:** [`discussions/_raw/40_image_first_video_production_workflow.md`](./discussions/_raw/40_image_first_video_production_workflow.md).
 
-### High-Priority Backlog (Future Return Items):
-- ⚠️ **Face Syncing Fidelity with Reference Photo:** Return to solve 1:1 facial likeness retention and generic AI face substitution in image-to-character workflows. (Refer to [`discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md`](./discussions/_raw/25_backlog_face_sync_fidelity_with_reference_image.md) and [`discussions/characters.md`](./discussions/characters.md)).
+### 2026-10-24 — Stick Figure Fingerless Vector Standard & Gemini 3.8 Flash TTS Syntax (Discussion 41)
+- **Consensus Reached:** Solved two critical empirical roadblocks during end-to-end production of *The Phone Call at 2:47 AM*:
+  1. *Hand & Feet Flesh Mutancy Glitch:* Diffusion models graft realistic 6-fingered fleshy clusters or knobby joints onto stick figures when prompts mention hands/feet. Enforced the **Strict Fingerless Vector Standard**: pure unbroken 2D line strokes ending in smooth rounded line-caps (`stroke-linecap: round`), with mandatory negative constraints (`strictly zero individual fingers, zero human hands, zero toes, zero knuckles`).
+  2. *Light-Reveal Cream Canvas:* Replaced flat black voids and corporate whiteboards with a warm cream/off-white paper canvas (`#F8F6F0`) revealed dynamically under motivated light cones, falling off into deep pitch-black shadows (`#0A0B0E`). Head standard locked: solid white fill (`#FFFFFF`) with matching black contour (`#0F172A`).
+  3. *Google AI Studio Gemini 3.8 Flash TTS Bracket Reading Bug:* Discovered that square brackets `[...]` are NOT stripped or parsed as tags by Gemini TTS, but read aloud verbatim. Codified the **Angle Bracket `< >` Syntax Standard**: `<short pause>`, `<long pause>`, `<whisper>` ... `</whisper>`, `<gasp>`, `<sigh>`, routing narrator tone into System Instructions. Added pre-flight linter **L-14**.
+  4. *60-Second Viral Retention Pacing:* Compressed the bloated 3m45s timeline into a high-retention 62-second cut (138 words at ~2.2 words/sec, zero dead air) mapped to 10 high-impact micro-clips (`clip_01` to `clip_10`).
+  5. *Deliverables:* Created [`production_framework/the_phone_call_at_247am/`](./production_framework/the_phone_call_at_247am/) with `base_image_prompt.txt`, `narrator_script.md`, `scratchbook.md`, `keyframe_preview.svg`, `clips/clip_01/` to `clip_10/`, and `master_flow_agent_prompt.txt`.
+- **Reference Document:** [`discussions/_raw/41_stick_figure_fingerless_vector_dna_and_gemini_tts_syntax.md`](./discussions/_raw/41_stick_figure_fingerless_vector_dna_and_gemini_tts_syntax.md).
 
-### Immediate Agenda for Next Agent / Session:
-1. **Resume Phase 6 Directly:** Open [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) as the working ground truth.
-2. **Execute Phase 6 Workflows:**
-   - **Pillar 1:** Screenplay / script parsing & word-to-time pacing calculation (~2.2 words/sec).
-   - **Pillar 2:** Temporal chunking (4s/5s/8s/10s) and action budgeting (1 action per clip).
-   - **Pillar 3:** Continuity Chaining (`last_frame` handoffs, spatial alignment, velocity matching).
-   - **Pillar 4:** Multi-Engine Modality Matrix (Flow Native vs. Seedance Monolith vs. Slideshows + ElevenLabs vs. Hybrid).
-   - **Pillar 5:** Asset & Audio Origin Tracker ("What comes from where").
-3. **Phase 6 Authoritative Deliverable:** Produce [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
 
-### Quick Agent Ground Rules:
-- ⛔ **DO NOT** read `research/raw_*` (saves ~65k tokens; consult [`research/structure.md`](./research/structure.md)).
-- ⛔ **DO NOT** read `discussions/_raw/` by default (cold archive for deep troubleshooting only).
-- ✅ Start directly with [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) and [`AGENTS.md`](./AGENTS.md).
+
+
+
 
 
 

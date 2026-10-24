@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_02/image_prompt.txt
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED ANGLE CUT
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off static medium close-up framing with zero camera movement. The stick figure is holding the glowing rectangular phone firmly against the side of its blank circular head from the very first frame to the last; rigid prop geometry, strictly zero fingers, no prop drawing motion. The slender black arm holding the phone exhibits subtle, rhythmic micro-vibrations of intense trembling. The stick figure's white-filled circular head remains completely blank with firmly closed lips and zero facial movement, perfectly frozen in mounting dread. Faint pale phone light flickers across the cream wall. Minimalist 2D vector animation style, uniform line weights. Audio: sharp call-connect click, followed by eerie telephone receiver static line hiss, a deep discordant violin drone swelling slowly in volume, zero voiceover, zero spoken dialogue.

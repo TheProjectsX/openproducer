@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 5s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: PRE-MATERIALIZED PROP & CUTAWAY
+Input Seed / Dependencies: Pre-Materialized Revolver Pin
+
+[PROMPT]
+Low-angle static medium shot looking up at Detective David Cross. From the very first frame, Cross is already holding a snub-nosed black steel revolver firmly in his right hand, aimed directly forward toward the window. Rigid weapon geometry, stable hand anatomy, zero popping objects, no drawing motion. Suddenly, an explosive blinding orange muzzle flash erupts from the gun barrel, illuminating the entire hall in smoke, before the screen instantly cuts to absolute pitch-black void. Audio: deafening gunshot blast, sharp muzzle crack, long hollow acoustic echo decaying into sudden dead silence.

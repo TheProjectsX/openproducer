@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 5s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED JUMP CUT
+Input Seed / Dependencies: None
+
+[PROMPT]
+Static medium shot looking back down the dark pavement. Standing under the very next pool of pale streetlight is the tall, slender stranger stick figure. It is now towering much closer in the frame, standing perfectly rigid with arms pinned straight down at its sides, its blank circular head tilted slightly down staring directly at the viewer. Zero movement, unnerving complete stillness, stable 2D line geometry. Pitch-black background, stark vector lighting. Audio: sudden loud metallic bass thud, hollow acoustic void, absolute eerie silence, no music.

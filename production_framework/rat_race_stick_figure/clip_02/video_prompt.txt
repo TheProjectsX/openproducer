@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_02/image_prompt.txt
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CUBICLE GRIND
+
+[VIDEO PROMPT]
+Starting directly from the initial image, slow and subtle linear camera push-in toward the stick figure sitting at the desk. The minimalist 2D white stick figure moves its slender pencil-thin linear arms with repetitive, mechanical typing motions, fingers tapping rhythmically against the keyboard. The stick figure's blank circular head remains tilted downward, illuminated by the steady pale glow of the computer monitor, with completely blank facial features and zero mouth movement. The surrounding cubicle grid lines remain sharp, stable, and rigid. An inspiring, warm, resonant male motivational voiceover concludes the thought with emotional conviction: "...until they finally realize the door was never locked." Audio: crisp rhythmic mechanical keyboard typing clicks, an uplifting cinematic grand piano chord progression resolving with a swelling, hopeful acoustic cello and warm Rhodes chords, fade to black.

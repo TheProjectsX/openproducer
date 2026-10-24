@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_08/image_prompt.txt
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MACRO SUSPENSE INSERT
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off static macro framing on the horizontal door latch with zero camera movement. In the pitch-black darkness, the faint white vector outline of the metallic door handle slowly and mechanically begins rotating downward by itself. It turns downward in three distinct, calculated mechanical stages: 15 degrees, pause, 30 degrees, pause, and finally fully down to 45 degrees where the internal latch bolt slides back into the door frame line. The surrounding darkness remains heavy and motionless. Minimalist 2D vector animation style, crisp line weights. Audio: three slow, heavy, visceral metallic latch clicks (click... click... click...) echoing with chilling clarity through silence, followed by a sudden sub-bass rumble, zero voiceover, zero spoken dialogue.

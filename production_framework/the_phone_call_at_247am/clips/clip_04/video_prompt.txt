@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_04/image_prompt.txt
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED POV CUT
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off static circular peephole POV framing with zero camera movement. Inside the circular fish-eye lens aperture, the empty hallway perspective lines remain completely desolate, motionless, and still under the faint overhead cream light pool. The far background hallway recedes into impenetrable pitch-black darkness. No figure appears, no shadows shift; total, unnerving absence of life. Minimalist 2D vector animation style, crisp perspective vectors, stable vignette border. Audio: hollow, muffled silence inside an empty corridor, distant faint ambient wind draft, a deep single piano note chiming once with long decaying resonance, zero voiceover, zero spoken dialogue.

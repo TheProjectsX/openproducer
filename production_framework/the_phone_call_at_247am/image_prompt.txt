@@ -1,0 +1,8 @@
+[IMAGE CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Imagen 4) / Midjourney v6
+Aspect Ratio: 16:9
+Modality: Photo-First Reference Keyframe / Ingredient #1
+Visual Paradigm: Stylized 2D Vector Stick Figure Horror (Fingerless Vector Art & Light-Reveal Cream Canvas)
+
+[IMAGE PROMPT]
+Minimalist 2D vector stick figure keyframe, 16:9 cinematic side-profile perspective. Clean off-white cream paper-textured background canvas revealed under dramatic directional light, falling off into deep pitch-black shadow in unlit corners. A minimalist 2D stick figure with clean unbroken pencil-thin black vector line limbs sits upright on a simple horizontal black linear bed frame, leaning on one elbow. The arms and legs are pure continuous solid black line strokes with smooth rounded line-cap ends; strictly zero individual fingers, zero human hands, zero toes, no knuckles, no fleshy anatomical details. The stick figure's circular head is filled with solid opaque white and contoured with a clean black vector outline matching the thickness of its limbs, with a completely blank face. On a black minimalist bedside table line, a glowing rectangular smartphone emits an upward cone of pale light illuminating the figure and surrounding cream wall. In the shadowed background, thin black vector lines outline a bedroom door and window frame. High contrast chiaroscuro lighting, crisp flat 2D graphic novel vector style, no text, no watermark.

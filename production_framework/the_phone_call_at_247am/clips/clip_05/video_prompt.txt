@@ -1,0 +1,11 @@
+[VIDEO CONFIGURATION SETTINGS]
+Target Tool: Google Flow (Veo 3.1)
+Generation Mode: Image-to-Video (I2V)
+Input Starting Frame: Generated from clip_05/image_prompt.txt
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MACRO TEXT INSERT
+
+[VIDEO PROMPT]
+Starting directly from the initial image, slow and creeping top-down camera push-in tightening closer onto the warning text "PLEASE DON'T OPEN THE DOOR!". The message text remains razor-sharp, stable, and completely unmoving on the glowing white screen. A subtle, trembling micro-vibration ripples across the message bubble outline as the phone vibrates against the surface. The pale screen light softly casts flickering geometric reflection lines into the surrounding darkness. Minimalist 2D vector animation style, crisp UI vectors. Audio: two sharp, sudden smartphone haptic vibration buzzes (bzzzt... bzzzt...), followed by an icy sub-bass drop and a high-pitched discordant violin sustain, zero voiceover, zero spoken dialogue.
