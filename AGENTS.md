@@ -32,7 +32,8 @@ This workspace is accessed across different devices, workstations, and conversat
 |---|---|---|---|---|
 | **Phase 1–4** | Comprehensive Research, Synthesis & Validation | ✅ **COMPLETE** | [`research/synthesis/`](./research/synthesis/) | [`research/structure.md`](./research/structure.md), [`research/validation.md`](./research/validation.md) |
 | **Phase 5: Core Domain Primitives** | Visuals, Subjects, Sceneries, Cinematography & Audio | ✅ **FINALIZED** | [`01_visual`](./production_framework/specs/01_visual_spec.md), [`02_subject`](./production_framework/specs/02_subject_spec.md), [`03_scenery`](./production_framework/specs/03_scenery_spec.md), [`04_cinematography_audio`](./production_framework/specs/04_cinematography_audio_spec.md) | [`discussions/`](./discussions/) |
-| **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (5s/8s/10s), Multi-Engine Routing, Micro-Beat De-Cramming | 🟡 **UNDER DEVELOPMENT** | [`05_directors_cut_assembly`](./production_framework/specs/05_directors_cut_assembly_spec.md) | [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) |
+| **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (4s/6s/8s/10s), Multi-Character Clean Singles, Spatial Handoffs, Dynamic J/L Audio Bridges, Pluggable Styles | ✅ **FINALIZED** | [`05_directors_cut_assembly`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`styles/`](./production_framework/styles/) | [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) |
+
 | **Phase 7: Project Scaffolding** | Lean Folder Scaffold & Universal Template | ⏳ Pending | `production_template/` | TBD |
 | **Phase 8: Automation Skill & Linters** | Python Compilers, Linters (L-01 to L-11), Flow Timeline Manifest Export | ⏳ Pending | Tooling & Skill code | TBD |
 
@@ -355,6 +356,59 @@ To prevent token bloat while retaining 100% information control:
   4. *60-Second Viral Retention Pacing:* Compressed the bloated 3m45s timeline into a high-retention 62-second cut (138 words at ~2.2 words/sec, zero dead air) mapped to 10 high-impact micro-clips (`clip_01` to `clip_10`).
   5. *Deliverables:* Created [`production_framework/the_phone_call_at_247am/`](./production_framework/the_phone_call_at_247am/) with `base_image_prompt.txt`, `narrator_script.md`, `scratchbook.md`, `keyframe_preview.svg`, `clips/clip_01/` to `clip_10/`, and `master_flow_agent_prompt.txt`.
 - **Reference Document:** [`discussions/_raw/41_stick_figure_fingerless_vector_dna_and_gemini_tts_syntax.md`](./discussions/_raw/41_stick_figure_fingerless_vector_dna_and_gemini_tts_syntax.md).
+
+### 2026-10-24 — Dialogue-First Timing Loop & 3-Tier Image-First Pipeline (Discussion 42)
+- **Consensus Reached:** Solved speech-to-video desynchronization and visual drift during Director's Cut assembly:
+  1. *Dialogue-First Timing Feedback Loop:* Default to generating dialogue/narrator script first $\rightarrow$ creator generates audio in Gemini TTS / ElevenLabs and inputs actual timestamps/durations $\rightarrow$ video clips are sliced with exact temporal precision to fit real audio. The Agent explicitly asks the creator if they prefer Dialogue-First or Both Together.
+  2. *The 3-Tier Image-First Pipeline:* Mandated `base_image_prompt.txt` (Tier 1 master style/DNA) $\rightarrow$ `clips/clip_XX/image_prompt.txt` (Tier 2 clip keyframe starting plate) $\rightarrow$ `clips/clip_XX/video_prompt.txt` (Tier 3 Image-to-Video motion prompt) to eliminate visual and character drift across multi-clip sequences.
+  3. *Three Dialogue Modalities Formalized:* Native Flow In-Clip Dialogue, ElevenLabs Character Dubbing (`dialogue_scripts.md`), and Gemini 3.8 Flash TTS Narrator (`narrator_script.md` with Angle Bracket `< >` syntax).
+  4. *Updated Specs:* Fully integrated into [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+- **Reference Document:** [`discussions/_raw/42_dialogue_first_timing_loop_and_three_tier_image_first_pipeline.md`](./discussions/_raw/42_dialogue_first_timing_loop_and_three_tier_image_first_pipeline.md).
+
+### 2026-10-24 — Flow Native Durations, Pacing Profiles & Context Shift Rule (Discussion 43)
+- **Consensus Reached:** Solved scenery stagnation, duration mismatches, and multi-context blending in Director's Cut assembly:
+  1. *Google Flow Native Durations Locked:* Slicing calculations and linters strictly enforce Flow custom lengths: `[4s, 6s, 8s, 10s]`. All arbitrary intermediate lengths (3s, 5s, 7s) purged.
+  2. *Creator Pacing Profiles:* Added creator intake choice between Dynamic Sync (4s–6s cuts, tight sync, frequent inserts) and Slow-Burn Monologue (8s–10s takes, atmospheric continuous camera kinematics).
+  3. *The Mandatory Context Shift Rule:* No matter which pacing style is selected, whenever the narrative script undergoes a contextual shift (location, action shock, revelation, speaker shift), the visual context MUST cut to a new shot. An AI video cannot linger on stale visuals across narrative shifts.
+  4. *The Anti-Stagnation Law & Visual Beat Archetypes:* Avoid sticking too long in a single visual viewpoint. Type A (Scene Shot, 4s–10s), Type B (Macro Insert, 4s/6s/8s), and Type C (Graphic / Text Plate, 4s/6s/8s) dynamically timed to narrative weight and line length.
+  5. *Updated Specs:* Fully integrated into [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+- **Reference Document:** [`discussions/_raw/43_flow_native_lengths_pacing_modes_and_context_shift_rule.md`](./discussions/_raw/43_flow_native_lengths_pacing_modes_and_context_shift_rule.md).
+
+### 2026-10-24 — Spatial Continuity, Multi-Character Clean Singles & Dynamic Audio Bridges (Discussion 44)
+- **Consensus Reached & Staged:** Established three core directorial systems, documented in raw discussion and staged in [`Dump.md`](./Dump.md) pending spec implementation:
+  1. *Spatial Continuity Handoffs:* Explicitly defining Clip $N$ Spatial Exit State and Clip $N+1$ Spatial Entry State, enforcing the 180° Screen Direction rule.
+  2. *Multi-Character "Clean Single" Standard:* Banned dirty Over-the-Shoulder (OTS) shots to eliminate melting shoulders and identity bleeding; using clean Medium Close-Ups with complementary 15° eyelines and wide two-shot establishing plates.
+  3. *Dynamic Context-Driven Audio Transitions:* J-Cuts (audio anticipatory pre-roll on incoming disruption) and L-Cuts (whispers/revelations decaying into the subsequent cut).
+  4. *Staging Scratchpad Created:* Staged into [`Dump.md`](./Dump.md) (to be consumed into `05_directors_cut_assembly_spec.md` and deleted afterwards).
+- **Reference Document:** [`discussions/_raw/44_spatial_continuity_handoffs_multi_character_staging_and_dynamic_audio_bridges.md`](./discussions/_raw/44_spatial_continuity_handoffs_multi_character_staging_and_dynamic_audio_bridges.md) and [`Dump.md`](./Dump.md).
+
+### 2026-10-24 — Multi-Variation Synthesis, Pluggable Styles & Universal Stick DNA (Discussion 45)
+- **Consensus Reached & Staged:** Cross-checked external YouTube/animation video prompting research (`MIGRATION_PROPOSAL.md` & `PDFCrossCheck.md`) and codified core architectural boundaries into [`Dump.md`](./Dump.md):
+  1. *Pluggable Style Registry Scaffolding:* Approved for creation (`production_framework/styles/`). Strictly avoids "style on top of style" combinatorics by defining Universal Base Mediums (Live-Action, Commercial Tabletop, Universal Stick Figure) with genre/mood driven by lighting and kinematics.
+  2. *Universal Stick Figure DNA:* Unified standard (`vector_stick_figure.md`) featuring unbroken lines, rounded line-caps, solid white circular head (`#FFFFFF`) with black contour (`#0F172A`), serving horror, comedy, and explainer formats alike.
+  3. *Lean Causal Palette:* Adopted closed-set prop bounding (defining permitted props to eliminate AI clutter) with lightweight syntax.
+  4. *Core Scope Retained:* Strictly focused on Google Flow (Veo 3.1); parked multi-engine chapters; excluded thumbnails/branding from video generation scope; retained Veo's 4-tier unified soundboard paragraph over rigid 3-track metadata tags.
+  5. *Dynamic Narrative Scripting Principles:* Adapts dynamically to project archetype (no forcing hooks on cinema); uses Directorial Hook Instructions ("Zero Preamble", open cognitive loop) over rigid templates; flexible speech baselines (`2.0–2.2 wps` drama vs. `2.5–2.7 wps` explainer) with post-audio script compression loop.
+  6. *All Staged in Dump.md:* Pending remaining research before creating final Phase 6 directories and consuming into specs.
+- **Reference Document:** [`discussions/_raw/45_multi_variation_synthesis_pluggable_styles_and_universal_stick_dna.md`](./discussions/_raw/45_multi_variation_synthesis_pluggable_styles_and_universal_stick_dna.md) and [`Dump.md`](./Dump.md).
+
+### 2026-10-24 — Consumption of Dump.md & Finalization of Phase 6 Spec (Director's Cut)
+- **Milestone Reached:** Successfully cross-checked with industry video continuity research, consumed all staged research from `Dump.md` into authoritative specifications, and deleted `Dump.md`:
+  1. *Lean Causal Palette:* Integrated Section 4.5 closed-set prop bounding into [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+  2. *Spatial Continuity Handoffs:* Integrated Section 5.6 defining Clip $N$ Spatial Exit State, Clip $N+1$ Spatial Entry State, 180° Screen Direction rule, and eyeline elevation matching.
+  3. *Multi-Character Clean Singles:* Integrated Section 5.7 banning dirty OTS shots; using Wide Establishing Plates + Clean Singles with complementary 15° eyelines and speaker/listener decoupling.
+  4. *Dynamic Context-Driven Audio Transitions:* Integrated Section 6.5 J-Cuts (sound anticipates cut) and L-Cuts (sound lingers across cut) for Native Flow audio and external narration/dialogue stems.
+  5. *Linter L-15:* Added Screen Direction & Eyeline Consistency Linter.
+  6. *Pluggable Style Registry Scaffolding:* Created [`production_framework/styles/`](./production_framework/styles/) with Universal Base Mediums ([`live_action_cinema.md`](./production_framework/styles/live_action_cinema.md), [`commercial_tabletop.md`](./production_framework/styles/commercial_tabletop.md), [`vector_stick_figure.md`](./production_framework/styles/vector_stick_figure.md)).
+  7. *Temporary Scratchpad Consumed:* Deleted `Dump.md` cleanly.
+- **Reference Document:** [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) and [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+
+
+
+
+
+
+
 
 
 

@@ -23,14 +23,26 @@ The `directors_cut/` & `assembly/` domain elevates the production framework from
 
 The identical plot can manifest as an 18-second fast reel or a 2-minute slow-burn cinematic. If pacing parameters are not explicitly stated, the Agent **MUST straight up ask the creator first-hand** before generating prompts or slicing clips.
 
-### 2.1 The 4 Tempo Profiles
+### 2.1 Google Flow Native Duration Standard
+Google Flow (Veo 3.1) natively and strictly supports custom generation durations of **4s, 6s, 8s, and 10s**. Arbitrary intermediate durations (3s, 5s, 7s) are strictly prohibited in Flow Native compilation.
 
-| Tempo Profile | Baseline Clip Duration | Pacing Density | Spoken Words / Clip | Narrative Function |
-|---|---|---|---|---|
-| **1. Hyper / Viral** | `3s – 4s` | Rapid cuts, instant hooks | 4 – 8 words | High-energy social reels, TikTok, punchy product hooks |
-| **2. Dynamic Commercial** | `5s` | Engaging momentum, motivated cuts | 8 – 11 words | Commercial campaigns, brand films, music visualizers |
-| **3. Dramatic Cinema** | `6s – 8s` | Deliberate tension, emotional weight | 12 – 16 words | Short films, narrative dramas, psychological thrillers |
-| **4. Atmospheric Slow-Burn** | `10s` | Meditative, lingering takes | 16 – 20 words | World-building, arthouse cinema, environmental doc |
+| Flow Native Duration | Recommended Word Limit | Max Spoken Duration | Pacing Density & Narrative Function |
+|---|---|---|---|
+| **4 Seconds** | 6 – 8 words | 2.5s – 3.0s | Rapid hooks, macro cutaways, kinetic text plates, punchy viral payoffs |
+| **6 Seconds** | 10 – 12 words | 4.0s – 4.5s | Motivated actions, standard dialogue sentences, balanced commercial beats |
+| **8 Seconds** | 14 – 16 words | 5.5s – 6.5s | Dramatic tension, multi-sentence dialogue, deliberate camera kinematics |
+| **10 Seconds** | 18 – 20 words | 7.5s – 8.5s | Arthouse slow-burn, philosophical monologues, lingering environmental immersion |
+
+### 2.2 Creator Pacing Style Intake (Dynamic Sync vs. Slow-Burn Monologue)
+If pacing density is not pre-defined by the creator, the Agent **MUST present the pacing choice**:
+1. **Dynamic Sync (4s – 6s Cuts):** Rapid scene transitions, tight audio synchronization, and frequent cutaway inserts (Macro inserts, Graphic/Text plates). Ideal for short-form reels, horror hooks, and viral retention.
+2. **Slow-Burn Monologue (8s – 10s Takes):** Atmospheric, unhurried takes featuring continuous optical camera movements (slow creeping push-in) with zero rush. Ideal for philosophical essays, soliloquies, character introspection, and cinematic world-building.
+
+### 2.3 Dialogue-First Timing Loop vs. Dual Generation Intake Rule
+When producing content with external voiceover or dialogue (Gemini TTS, ElevenLabs), generating video prompts and audio scripts simultaneously based on theoretical pacing (~2.2 words/sec) frequently causes desynchronization due to dynamic emotional pauses and vocal inflections.
+- **The Golden Intake Question:** If the creator has not specified the generation pathway, the Agent **MUST explicitly ask**:
+  1. **Dialogue-First (Default & Recommended):** The Agent generates the dialogue/narrator script first. The creator generates the voice track (in Gemini TTS or ElevenLabs) and inputs actual timestamps/durations. The Agent then slices the video clips with 100% mathematical precision to fit the real recorded audio.
+  2. **Both Together (Optional Fast Mode):** The Agent outputs both dialogue scripts and video clip prompts simultaneously using theoretical speech velocity (~2.2 words/sec).
 
 ---
 
@@ -40,20 +52,20 @@ The identical plot can manifest as an 18-second fast reel or a 2-minute slow-bur
 Human conversational speech naturally flows at **130 to 150 words per minute**:
 $$\text{Speech Velocity} \approx 2.17 \text{ to } 2.50 \text{ words per second} \quad (\text{Production Baseline: } 2.2 \text{ words/sec})$$
 
-### 3.2 Spoken Word Limits by Duration
+### 3.2 Spoken Word Limits by Flow Duration
 
 | Clip Duration | Absolute Max Words | Recommended Sweet Spot | Max Spoken Duration | Guaranteed Buffer |
 |---|---|---|---|---|
-| **3 Seconds** | 6 words | 3 – 5 words | 1.8s – 2.2s | $\ge 0.8\text{s}$ |
 | **4 Seconds** | 8 words | 5 – 7 words | 2.2s – 3.0s | $\ge 1.0\text{s}$ |
-| **5 Seconds** | 11 words | 7 – 9 words | 3.2s – 4.0s | $\ge 1.0\text{s}$ |
-| **8 Seconds** | 18 words | 12 – 15 words | 5.0s – 6.5s | $\ge 1.5\text{s}$ |
-| **10 Seconds** | 22 words | 16 – 20 words | 7.0s – 8.5s | $\ge 1.5\text{s}$ |
+| **6 Seconds** | 12 words | 9 – 11 words | 4.0s – 4.8s | $\ge 1.2\text{s}$ |
+| **8 Seconds** | 18 words | 13 – 16 words | 5.5s – 6.5s | $\ge 1.5\text{s}$ |
+| **10 Seconds** | 22 words | 17 – 20 words | 7.5s – 8.5s | $\ge 1.5\text{s}$ |
 
 ### 3.3 The Punctuation Breathing Buffer Rule
 Every clip containing spoken dialogue **must preserve at least 0.8s to 1.5s of total silence buffer** (split between pre-roll silence before the first word and post-roll silence after the last word). Characters must never speak on Frame 1 or conclude speech on the terminal frame.
 
 ---
+
 
 ## 4. Pillar 2: Action Budgeting & The Single-Motion Law
 
@@ -72,7 +84,35 @@ $$\mathbf{1 \text{ Clip}} = \mathbf{1 \text{ Camera Trajectory}} + \mathbf{1 \te
 - Every clip must be stripped down to a single calm, unhurried, focused micro-event.
 - Secondary narrative beats (such as an analog wall clock, environmental detail, or prop) **must be isolated into dedicated macro cutaway inserts** rather than compounded into the main subject action.
 
+### 4.3 The Mandatory Context Shift Rule
+Regardless of whether the creator selected a dynamic sync or slow-burn monologue pacing style:
+> **"Whenever the narrative script undergoes a contextual shift, the visual context MUST change."**
+
+A prompt cannot attempt to retain a stale visual context when the story has crossed a narrative boundary. An immediate visual cut is required upon:
+1. **Spatial Boundary Shift:** Transitioning from room interior to hallway, or wide room to close prop.
+2. **Action / Causality Shock:** Shifting from listening to sudden knocks or movement.
+3. **Dialogue / Revelation Shock:** A chilling phrase or supernatural whisper interrupting dialogue.
+4. **Speaker / Entity Shift:** Switching from the on-screen subject to an external or phone voice.
+
+### 4.4 The 3 Visual Beat Archetypes & The Anti-Stagnation Law
+The overriding visual law is **The Anti-Stagnation Law (View Refresh Principle)**: *Never linger too long in a single visual angle or static viewpoint.* Visual rhythm must refresh dynamically based on plot weight.
+
+1. **Type A: Scene Shot (4s, 6s, 8s, 10s):** Primary subject action in motivated environment with a single continuous optical trajectory.
+2. **Type B: Macro Insert (4s, 6s, or 8s):** Isolated physical prop or environmental reaction (e.g. peephole, vibrating deadbolt, clock face, smartphone screen). Duration adapts to plot context (4s for rapid tactile shock; 6s–8s for lingering suspense or complex physical action).
+3. **Type C: Graphic / Text Plate (4s, 6s, or 8s):** Stylized 2D kinetic typography or graphic art displaying critical spoken lines on the locked canvas texture. Duration scales with text length and delivery cadence (4s for punchy 4–6 word hooks; 6s–8s for longer multi-sentence revelations with breathing room), guaranteeing pristine letterforms without splitting character latents.
+
+### 4.5 Lean Causal Palette (Prop Bounding Guardrail)
+To prevent video diffusion models from hallucinating random background clutter, extra props, or mutating items between cuts, shots with complex physical props include an explicit **closed-set prop inventory**:
+```text
+Permitted Props: [alarm clock, ceramic coffee mug, smartphone]
+Negative Prompt Clause: ... strictly zero objects or props not listed in Permitted Props, no random background clutter.
+```
+*Rule:* The syntax is kept lightweight and creator-friendly, avoiding heavy programmatic schema overhead while providing a hard boundary for diffusion latents.
+
 ---
+
+
+
 
 ## 5. Pillar 3: Multi-Clip Continuity Chaining & Subject DNA Invariance
 
@@ -116,7 +156,68 @@ Video diffusion models lack rigid-body physics. Prompting an actor to *pull a gu
   2. Drawing transitions must be sliced into cutaways: Shot A (hand drops to holster) $\rightarrow$ Shot B (tight cutaway, weapon is *already drawn*).
   3. Characters walking or transitioning through doors must have their hands clearly resting in pockets or visibly empty throughout the clip.
 
+### 5.5 The 3-Tier Image-First Visual Production Pipeline
+Direct Text-to-Video generation across multi-clip sequences triggers severe style drift, character mutancy, line-weight inconsistency, and hallucinated scene geometry. To ensure 100% visual coherence, production follows a mandatory 3-tier hierarchical workflow:
+
+```
+[TIER 1: MASTER BASE REFERENCE] ─── base_image_prompt.txt (Ingredient #1)
+• Generated FIRST to establish master visual DNA:
+  - Universal style paradigm, color grading, lighting vectors, canvas texture
+  - Subject/character biometrics (e.g. fingerless vector lines, white-filled head)
+  - Architectural rules and negative prompt constraints
+       │
+       ▼
+[TIER 2: CLIP KEYFRAME STARTING PLATES] ─── clips/clip_XX/image_prompt.txt
+• Generated for each clip, visually conditioned on Tier 1.
+• Locks exact camera perspective, composition, prop layout, and subject poses for that specific beat.
+       │
+       ▼
+[TIER 3: IMAGE-TO-VIDEO MOTION PROMPTS] ─── clips/clip_XX/video_prompt.txt
+• Fed into Veo 3.1 with the Tier 2 image as the input starting frame seed.
+• Prompt opens with: "Starting directly from the initial image..."
+• Budgeted strictly for 1 unhurried micro-motion and 1 camera vector (Single-Motion Law).
+• Audio block focuses on diegetic foley and atmospheric score (zero dialogue tokens when external audio is used).
+### 5.6 Spatial Continuity & The "Entry / Exit State" Handoff Architecture
+Video diffusion models treat each clip as an isolated pass and will randomly flip character orientation across cuts without explicit boundaries. Every multi-clip sequence must define explicit spatial handoffs:
+
+1. **Clip $N$ Spatial Exit State:** Declare the terminating vector and gaze:
+   > *"Camera concludes its push-in on a locked medium close-up, the subject staring fixedly toward the screen-right edge."*
+2. **Clip $N+1$ Spatial Entry State:** Declare the inherited perspective:
+   > *"Starting directly from an angle looking screen-left, framing the closed apartment doorway that the subject was gazing toward..."*
+3. **The 180-Degree Screen Direction Rule:**
+   - If Character A is framed screen-left looking Screen-Right, the object or partner they interact with **MUST be framed screen-right looking Screen-Left**.
+   - Tracked in metadata: `Screen Direction: Left-to-Right` vs. `Right-to-Left (Complementary)`.
+4. **Eyeline Elevation Matching:** If a subject looks down toward a table or phone, the subsequent macro cut must be explicitly prompted from a high-angle / top-down elevation to match the spatial geometry.
+
+### 5.7 Multi-Character Staging (The "Clean Single" Standard)
+In video diffusion, Over-The-Shoulder (OTS) shots suffer from the **"Melting Shoulder" Glitch** (foreground shoulders warping into background bodies) and **Identity Bleed** (features blending between characters). Two-character dialogue is governed by three rules:
+
+```
+[ESTABLISHING PHASE] Wide Two-Shot Establishing Plate (Type A Scene Shot)
+• Shows Character A and Character B together in the physical room.
+• Distance prevents tight facial artifacts.
+       │
+       ▼
+[DIALOGUE PHASE: SHOT-REVERSE-SHOT VIA CLEAN SINGLES]
+┌──────────────────────────────────────┬──────────────────────────────────────┐
+│ SHOT A: CHARACTER A (SPEAKER)        │ SHOT B: CHARACTER B (LISTENER)       │
+├──────────────────────────────────────┼──────────────────────────────────────┤
+│ • Clean Medium Close-Up of A only    │ • Clean Medium Close-Up of B only    │
+│ • Framed screen-left                 │ • Framed screen-right                │
+│ • Eyeline: looking ~15° off-camera   │ • Eyeline: looking ~15° off-camera   │
+│   toward screen-right                │   toward screen-left                 │
+│ • Zero foreground shoulder / limbs   │ • Zero foreground shoulder / limbs   │
+│ • Active natural lip articulation &  │ • Mandatory Closed-Lip Listener Rule:│
+│   spoken dialogue tokens             │   firmly closed lips, zero mouth     │
+│                                      │   movement, reacts with eyes/jaw     │
+└──────────────────────────────────────┴──────────────────────────────────────┘
+```
+1. **Clean Singles Only:** Ban dirty OTS shots. Isolate each actor in a clean MCU with complementary 15° eyelines so 100% of diffusion tokens focus on a single character's DNA.
+2. **Speaker vs. Listener Decoupling:** Active dialogue is budgeted only to the speaker. The listener clip strictly enforces the Closed-Lip Listener Rule.
+
 ---
+
+
 
 ## 6. Pillar 4: Default Flow Baseline & Dynamic Modality Switches
 
@@ -142,26 +243,62 @@ The production framework operates on a **Flow Native Baseline** by default, but 
 ### Switch Transformation Rules:
 1. **`visual_mode: images`:** Strips temporal kinematics and audio blocks; outputs high-detail photography prompts for Imagen 4 or Midjourney.
 2. **`assembly_mode: monolithic`:** Fuses individual clip beats into a single continuous long-take paragraph with smooth transitional adverbs for Seedance, Sora, or Minimax.
-3. **`dialogue_engine: elevenlabs`:** Strips spoken dialogue quotes from the Veo prompt (prevents double-speech clashes); generates an isolated, cue-timed `dialogue_scripts.md` manifest with voice IDs and delivery emotion modifiers.
+3. **`dialogue_engine` Modality Switching:**
+   - **`native_flow` (Default):** Embedded in-clip dialogue with anti-muppet lip restraints (`subtle lip articulation, relaxed jaw`) and Closed-Lip Listener rule if off-screen/phone audio.
+   - **`elevenlabs`:** Strips spoken dialogue quotes from video prompts (prevents double-speech audio); generates `dialogue_scripts.md` cue sheet with pre-roll/post-roll silence buffers and voice profiles.
+   - **`gemini_tts`:** Strips speech quotes from video prompts (pure foley and score); generates `narrator_script.md` using official **Angle Bracket `< >` syntax** (`<short pause>`, `<long pause>`, `<whisper>...</whisper>`, `<sigh>`) with System Instructions for narrator persona. Strictly bans square brackets `[...]` to avoid TTS reading tags aloud.
 4. **`music_engine: external`:** Purges score prompts from the `Audio:` block (`zero background music, no score`), leaving pure diegetic foley and spatial room tone.
+
+### 6.5 Dynamic Context-Driven Audio Transitions (J-Cuts, L-Cuts & Sound Bridges)
+Audio must rarely cut synchronously on the exact video frame boundary (straight cuts feel robotic and unnatural). Transitions use **0.5s to 2.0s split-edit overlaps** to mimic human perceptual flow:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                 DYNAMIC CONTEXT-DRIVEN SPLIT-EDIT OVERLAPS                  │
+├──────────────────────────────────────┬──────────────────────────────────────┤
+│ J-CUT (INCOMING DISRUPTION)          │ L-CUT (ECHOING REVELATION)           │
+├──────────────────────────────────────┼──────────────────────────────────────┤
+│ • Next audio leads visual cut.       │ • Outgoing audio lingers across cut. │
+│ • Trigger: Sudden shock (knocking,   │ • Trigger: Chilling whisper, phone   │
+│   alarm, phone ringing, explosion).  │   voice, emotional dialogue line.    │
+│ • Mechanics: Sound starts 1.0s–1.5s  │ • Mechanics: Audio from Clip N bleeds│
+│   BEFORE video cuts to the source.   │   into Clip N+1, decaying naturally. │
+└──────────────────────────────────────┴──────────────────────────────────────┘
+```
+
+#### Dual-Execution Mechanics:
+1. **In Native Flow Prompts (In-Clip Veo Audio):**
+   - *J-Cut Prompt Syntax (Clip $N$):* `"Audio: in the final 1.5 seconds, three sudden loud concussive door knocks impact sharply from the right channel."` (Video cuts to door in Clip $N+1$ while sound is already reverberating).
+   - *L-Cut Prompt Syntax (Clip $N+1$):* `"Audio: the eerie hollow telephone whisper from the previous moment echoes and decays over ambient room tone, zero on-screen speech."`
+2. **In External Speech & Narration (Gemini 3.8 Flash TTS / ElevenLabs):**
+   - *J-Cut Narration Pre-Lap:* In `narrator_script.md` or timeline cue sheets, the narrator's next sentence or sound cue begins **0.5s to 1.5s before the visual edit**, pulling viewer attention forward into the next scene.
+   - *L-Cut Narration Post-Hang:* The narrator's final words or whisper tails linger for 0.5s–1.0s over the incoming visual B-roll or macro insert before room tone takes over.
 
 ---
 
+
 ## 7. Pillar 5: Output Delivery Architecture
 
-Every assembled production outputs a unified file directory supporting both **Google Flow Agent Mode** (one-paste master) and **Manual Timeline Mode** (individual clip cards):
+Every assembled production outputs a unified file directory supporting both **Google Flow Agent Mode** (one-paste master), **Image-First Workflows**, and **Manual Timeline Mode** (individual clip cards):
 
 ```
-shots/ (or directors_cut/)
-├── scratchbook.md                   ◄── Director's Pacing Ledger (Beats, Words, Actions)
+shots/ (or production_framework/<project_id>/)
+├── base_image_prompt.txt            ◄── [Tier 1] Master Style & Subject DNA Reference Anchor Plate
+├── scratchbook.md                   ◄── Director's Pacing Ledger (Beats, Words, Actions, Timing)
 ├── master_flow_agent_prompt.txt     ◄── Single copy-paste file for Google Flow AGENT MODE
-├── individual_clips/                ◄── Dedicated folder with isolated files for MANUAL MODE
-│   ├── clip_01.txt
-│   ├── clip_02.txt
-│   └── clip_XX.txt
-├── dialogue_scripts.md              ◄── (Conditional) ElevenLabs voice manifest if activated
-└── origin_manifest.md               ◄── Ledger mapping assets to engine origins
+├── narrator_script.md               ◄── (Conditional) Gemini 3.8 Flash TTS script with < > syntax
+├── dialogue_scripts.md              ◄── (Conditional) ElevenLabs character cue sheet manifest
+├── origin_manifest.md               ◄── Ledger mapping assets to engine origins
+└── clips/ (or individual_clips/)    ◄── Dedicated folder with isolated files for MANUAL MODE
+    ├── clip_01/
+    │   ├── image_prompt.txt         ◄── [Tier 2] Starting Keyframe Plate (Conditioned on Tier 1)
+    │   └── video_prompt.txt         ◄── [Tier 3] Image-to-Video Motion & Audio Prompt
+    ├── clip_02/
+    │   ├── image_prompt.txt
+    │   └── video_prompt.txt
+    └── clip_XX/
 ```
+
 
 
 ### 7.1 Individual Clip File Contract (`individual_clips/clip_XX.txt`)
@@ -196,4 +333,6 @@ Every assembled production must pass these 5 assembly-level linters before deliv
 | **L-12** | **Closed-Lip Listener Linter** | If dialogue is from off-screen/phone/radio, prompt must explicitly declare on-screen actor's lips firmly closed with zero mouth movement. | Quoted off-screen dialogue present without explicit closed-lip constraint on visible actor. |
 | **L-13** | **Pre-Materialized Prop Linter** | Handheld props must be declared already grasped from Frame 1 to Frame End; zero mid-clip draws. | Prompt includes verbs like *"draws gun"*, *"pulls out lighter"*, or dynamic prop materialization. |
 | **L-14** | **Gemini TTS Angle Bracket Linter** | For external Google AI Studio (Gemini 3.8 Flash TTS) scripts: inline cues must strictly use Angle Brackets (`<short pause>`, `<whisper>`); zero square brackets (`[...]`) permitted in transcript. | Any square bracket cue (`[...]`) or editorial header present in the verbatim TTS transcript text. |
+| **L-15** | **Screen Direction & Eyeline Linter** | In Mode 2 cuts between conversing characters or related props, complementary 180° screen direction and eyeline vectors must be preserved across cuts. | Screen directions flip across the 180° axis without an establishing spatial reset. |
+
 

@@ -103,6 +103,25 @@ Testing real-world Flow generations of *The 2:17 AM Dispatch* revealed 3 fatal d
 7. [x] **Step 7: Specification & Manifest Update:** Updated [`production_framework/specs/05_directors_cut_assembly_spec.md`](../production_framework/specs/05_directors_cut_assembly_spec.md) with Sections 4.2, 5.3, 5.4, and pre-flight linters L-12 and L-13.
 8. [x] **Step 8: Cross-Medium Validation (Stick Figure Horror):** Proved the generalizability of all 3 laws on *The Uncanny Reflection* (10-clip 2D minimalist horror sequence & Photo-First keyframe generation). Fully documented in [`_raw/39_simulation_stick_figure_horror_and_blank_head_rule.md`](./_raw/39_simulation_stick_figure_horror_and_blank_head_rule.md).
 9. [x] **Step 9: Image-First Video Production Pipeline (The 9-5 Rat Race):** Formalized the 2-step workflow (generating still image keyframe prompt first, then generating Image-to-Video motion prompt from that seed) with audio-visual motivational contrast. Fully documented in [`_raw/40_image_first_video_production_workflow.md`](./_raw/40_image_first_video_production_workflow.md).
+10. [x] **Step 10: Stick Figure Vector DNA & Gemini TTS Syntax (Discussion 41):** Codified the Fingerless Vector Standard (`stroke-linecap: round`), Light-Reveal Cream Canvas (`#F8F6F0`), and Google AI Studio Gemini 3.8 Flash TTS Angle Bracket `< >` syntax standard to prevent bracket reading bugs.
+11. [x] **Step 11: Dialogue-First Timing Loop & 3-Tier Image-First Pipeline (Discussion 42):**
+    - *Dialogue-First Workflow:* Default to generating dialogue/narrator script first $\rightarrow$ creator gets actual audio duration/timestamps $\rightarrow$ video clips are sliced with exact temporal precision. AI asks if creator prefers both together.
+    - *3-Tier Image-First Pipeline:* `base_image_prompt.txt` (Tier 1 master style/DNA) $\rightarrow$ `clips/clip_XX/image_prompt.txt` (Tier 2 clip keyframe starting plate) $\rightarrow$ `clips/clip_XX/video_prompt.txt` (Tier 3 Image-to-Video motion prompt).
+12. [x] **Step 12: Flow Native Durations, Pacing Profiles & Context Shift Rule (Discussion 43):**
+    - *Flow Native Custom Lengths Locked:* `[4s, 6s, 8s, 10s]` strictly enforced; arbitrary lengths purged.
+    - *Creator Pacing Profiles:* Creator selects between Dynamic Sync (4s–6s cuts, high retention, frequent inserts) and Slow-Burn Monologue (8s–10s takes, atmospheric continuous kinematics).
+    - *The Anti-Stagnation Law & Visual Beat Archetypes:* Avoid sticking too long in a single visual viewpoint. Type A (Scene Shot, 4s–10s), Type B (Macro Insert, 4s/6s/8s), and Type C (Graphic / Text Plate, 4s/6s/8s) dynamically timed based on plot context and narrative weight.
+13. [x] **Step 13: Final Phase 6 Synthesis & Spec Consolidation (Discussions 44 & 45):**
+    - *Lean Causal Palette:* Added Section 4.5 closed-set prop bounding to eliminate AI clutter.
+    - *Spatial Continuity Handoffs:* Added Section 5.6 defining Clip $N$ Spatial Exit State, Clip $N+1$ Spatial Entry State, 180° Screen Direction rule, and eyeline elevation matching.
+    - *Multi-Character Staging:* Added Section 5.7 banning dirty OTS; using Wide Establishing Plates + Clean Singles with complementary 15° eyelines and speaker/listener decoupling.
+    - *Dynamic Context-Driven Audio Transitions:* Added Section 6.5 J-Cuts (sound anticipates cut) and L-Cuts (sound lingers across cut) for Native Flow audio and external narration/dialogue stems.
+    - *Linter L-15:* Added Screen Direction & Eyeline Consistency Linter.
+    - *Pluggable Style Registry Scaffolding:* Created `production_framework/styles/` with Universal Base Mediums (`live_action_cinema.md`, `commercial_tabletop.md`, `vector_stick_figure.md`).
+    - *Consumed & Deleted Dump.md:* Cleaned up temporary staging file.
+
+
+
 
 
 

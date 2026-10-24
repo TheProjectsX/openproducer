@@ -16,13 +16,14 @@
   - `template_manifest.schema.json`
 
 ## Phase 6: Director's Cut, Temporal Slicing & Multi-Engine Assembly
-- [ ] Establish Director's Scratchbook & Narrative Slicing Architecture (`discussions/directors_cut_and_assembly.md`)
-- [ ] Formalize Temporal Chunking (4s/5s/8s/10s) & Action Budgeting (Word-to-time pacing calculation)
-- [ ] Formalize Continuity Chaining Bridge (`last_frame` terminal frame handoffs & spatial/velocity alignment)
-- [ ] Define Multi-Engine Modality Matrix (Flow Chunks vs. Seedance Monolith vs. Slideshows + ElevenLabs vs. Hybrid)
-- [ ] Formulate Asset & Audio Origin Tracker ("What comes from where" matrix)
-- [ ] Run End-to-End Multi-Clip Slicing & Continuity Simulation
-- [ ] Author Authoritative Specification: `specs/05_directors_cut_assembly_spec.md`
+- [x] Establish Director's Scratchbook & Narrative Slicing Architecture (`discussions/directors_cut_and_assembly.md`)
+- [x] Formalize Temporal Chunking (4s/6s/8s/10s) & Action Budgeting (Word-to-time pacing calculation)
+- [x] Formalize Continuity Chaining Bridge (`last_frame` terminal frame handoffs, spatial entry/exit states & 180° rule)
+- [x] Define Multi-Engine Modality Matrix (Flow Chunks vs. Slideshows + ElevenLabs / Gemini TTS vs. Hybrid)
+- [x] Formulate Asset & Audio Origin Tracker ("What comes from where" matrix)
+- [x] Run End-to-End Multi-Clip Slicing & Continuity Simulation (Detective Noir, Stick Horror, Rat Race, Phone Call at 2:47 AM)
+- [x] Author Authoritative Specification: `specs/05_directors_cut_assembly_spec.md` & `styles/` Registry
+
 
 ## Milestone 2: Universal Project Template Directory (`production_template/`)
 - [ ] Build clean, modular scaffold with standard READMEs, templates, and placeholder files for the universal layout:
