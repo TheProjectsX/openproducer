@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED MACRO INSERT
+Input Seed / Dependencies: Generated from clips/clip_10/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off static macro framing on the video progress bar and timestamp text. The horizontal red scrubber line advances steadily from left to right across the screen. In the third second, the text "SAVED RECORDING — 03:12:00 AM (2 MIN AGO)" flashes once with stark inverted black-and-white contrast, emphasizing the chilling discovery. The phone bezel remains completely rigid and still. Crisp 2D vector animation. Audio: high-frequency digital glitch beep, low distorted bass swell, complete silence underneath, zero dialogue.

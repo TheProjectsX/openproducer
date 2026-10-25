@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 20]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Live security camera view of the front door opening inwards. Monochromatic gray paper canvas background (#E2E0D8). The vertical front door panel has swung inward 45 degrees, revealing an infinite pitch-black darkness beyond the threshold. On the hallway floorboards, two dark glistening wet footprint impressions are newly visible leading inward from the door. In the corner, the red indicator dot blinks beside "LIVE FEED — 03:14:21 AM". Terrifying negative space, high contrast vector lines.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, colorful exterior, lights, shoes, clutter, blurry lines.

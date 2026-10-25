@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: SPATIAL EYELINE MATCH
+Input Seed / Dependencies: Generated from clips/clip_05/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, eye-level locked-off static POV framing looking directly at the closed wooden bedroom door. The camera inherits the Spatial Entry State from Clip 04, framing the door facing screen-right. For the entire six seconds, the door and brass latch remain completely motionless in the dead silence, while a subtle faint ambient draft causes an imperceptible flicker in the ambient room shadow. Crisp 2D vector graphic noir. Audio: complete, suffocating dead silence, faint distant hum of building pipes, slow sub-bass atmospheric heartbeat drone, zero dialogue.

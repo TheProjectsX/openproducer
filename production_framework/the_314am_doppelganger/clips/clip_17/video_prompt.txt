@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 4s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: TYPE C KINETIC GRAPHIC TEXT PLATE
+Input Seed / Dependencies: Generated from clips/clip_17/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off static graphic plate framing. The bold black vector typography "WHO IS SITTING IN THIS BED RIGHT NOW?" remains centered on the cream paper canvas. In the second second, the entire text flashes once with sharp inverted monochromatic expansion, then returns to stark black text as a sudden sub-bass sonic drop shudders through the frame. The horizontal lifeline line below remains flat and still. Pristine 2D graphic art. Audio: visceral, concussive sub-bass drop impact, sudden dead stop in sound, suffocating silence, zero spoken dialogue.

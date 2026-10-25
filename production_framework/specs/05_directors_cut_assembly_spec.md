@@ -1,6 +1,6 @@
 # Specification: `directors_cut/` & `assembly/` Domain (Temporal Slicing & Multi-Engine Assembly)
 
-**Status:** 🟡 UNDER DEVELOPMENT (Active Iteration & Empirical Validation)  
+**Status:** ✅ FINALIZED & EMPIRICALLY VALIDATED (Discussion 46)  
 **Domain:** `directors_cut/` / `assembly/`  
 **Target Engines:** Google Flow (Veo 3.1, Imagen 4, Gemini Omni Flash), Seedance/Sora, ElevenLabs
 
@@ -42,7 +42,14 @@ If pacing density is not pre-defined by the creator, the Agent **MUST present th
 When producing content with external voiceover or dialogue (Gemini TTS, ElevenLabs), generating video prompts and audio scripts simultaneously based on theoretical pacing (~2.2 words/sec) frequently causes desynchronization due to dynamic emotional pauses and vocal inflections.
 - **The Golden Intake Question:** If the creator has not specified the generation pathway, the Agent **MUST explicitly ask**:
   1. **Dialogue-First (Default & Recommended):** The Agent generates the dialogue/narrator script first. The creator generates the voice track (in Gemini TTS or ElevenLabs) and inputs actual timestamps/durations. The Agent then slices the video clips with 100% mathematical precision to fit the real recorded audio.
+     *The Hard Pause Rule:* When Dialogue-First is selected, the Agent **MUST STOP** after delivering the script and Tier 1 master reference plate. Slicing clips or generating video prompts before the creator supplies recorded audio durations/timestamps is strictly prohibited.
   2. **Both Together (Optional Fast Mode):** The Agent outputs both dialogue scripts and video clip prompts simultaneously using theoretical speech velocity (~2.2 words/sec).
+
+### 2.4 The Creator Alignment & Confirmation Gate (The "Extra Instructions" Check)
+The Agent must NEVER prematurely rush into file creation or prompt compilation immediately upon receiving intake answers.
+- **The Protocol:** After the creator selects their foundational choices (Pacing Profile, Generation Pathway, Pluggable Style), the Agent **MUST present a concise alignment summary** and explicitly prompt:
+  > *"Here is our confirmed production setup: [Summary]. Before we begin, do you have any specific creative notes, character details, tonal constraints, or extra instructions you want to add? Reply with your notes or confirm to start the process."*
+- **The Confirmation Gate:** The Agent is **strictly prohibited** from generating files, writing scripts, or compiling prompts until the creator provides their extra instructions and gives explicit confirmation to proceed.
 
 ---
 
@@ -246,7 +253,7 @@ The production framework operates on a **Flow Native Baseline** by default, but 
 3. **`dialogue_engine` Modality Switching:**
    - **`native_flow` (Default):** Embedded in-clip dialogue with anti-muppet lip restraints (`subtle lip articulation, relaxed jaw`) and Closed-Lip Listener rule if off-screen/phone audio.
    - **`elevenlabs`:** Strips spoken dialogue quotes from video prompts (prevents double-speech audio); generates `dialogue_scripts.md` cue sheet with pre-roll/post-roll silence buffers and voice profiles.
-   - **`gemini_tts`:** Strips speech quotes from video prompts (pure foley and score); generates `narrator_script.md` using official **Angle Bracket `< >` syntax** (`<short pause>`, `<long pause>`, `<whisper>...</whisper>`, `<sigh>`) with System Instructions for narrator persona. Strictly bans square brackets `[...]` to avoid TTS reading tags aloud.
+   - **`gemini_tts`:** Strips speech quotes from video prompts (pure foley and score); generates `narrator_script.md` using official **Angle Bracket `< >` syntax** (`<short pause>`, `<long pause>`, `<whisper>...</whisper>`, `<sigh>`) with System Instructions for narrator persona. Strictly bans square brackets `[...]` to avoid TTS reading tags aloud. *Line-Break Formatting Rule:* Pause tags must NEVER be appended to the end of a sentence line (`name. <long pause>`), as the tokenizer will speak the tag words; sentences must terminate with a period and newline (`.\n`), with pause tags placed on their own isolated lines (`<long pause>\n`).
 4. **`music_engine: external`:** Purges score prompts from the `Audio:` block (`zero background music, no score`), leaving pure diegetic foley and spatial room tone.
 
 ### 6.5 Dynamic Context-Driven Audio Transitions (J-Cuts, L-Cuts & Sound Bridges)
@@ -332,7 +339,7 @@ Every assembled production must pass these 5 assembly-level linters before deliv
 | **L-11** | **Equipment Noun Purge** | Strict zero-tolerance for physical camera hardware nouns (`tripod`, `dolly track`, `crane arm`). | Any equipment noun present in prompt text. |
 | **L-12** | **Closed-Lip Listener Linter** | If dialogue is from off-screen/phone/radio, prompt must explicitly declare on-screen actor's lips firmly closed with zero mouth movement. | Quoted off-screen dialogue present without explicit closed-lip constraint on visible actor. |
 | **L-13** | **Pre-Materialized Prop Linter** | Handheld props must be declared already grasped from Frame 1 to Frame End; zero mid-clip draws. | Prompt includes verbs like *"draws gun"*, *"pulls out lighter"*, or dynamic prop materialization. |
-| **L-14** | **Gemini TTS Angle Bracket Linter** | For external Google AI Studio (Gemini 3.8 Flash TTS) scripts: inline cues must strictly use Angle Brackets (`<short pause>`, `<whisper>`); zero square brackets (`[...]`) permitted in transcript. | Any square bracket cue (`[...]`) or editorial header present in the verbatim TTS transcript text. |
+| **L-14** | **Gemini TTS Formatting & Retention Linter** | Inline cues must strictly use Angle Brackets (`<short pause>`, `<whisper>`); zero square brackets (`[...]`); pause tags must NEVER be appended to the end of a sentence line (`name. <long pause>`), but must occupy standalone lines; zero consecutive `<long pause>` tags to prevent dead air. | Any square bracket cue (`[...]`), trailing end-of-line pause tag, or bloated pause cluster present in script. |
 | **L-15** | **Screen Direction & Eyeline Linter** | In Mode 2 cuts between conversing characters or related props, complementary 180° screen direction and eyeline vectors must be preserved across cuts. | Screen directions flip across the 180° axis without an establishing spatial reset. |
 
 

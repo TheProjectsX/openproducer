@@ -1,0 +1,10 @@
+[TIER 1: MASTER BASE REFERENCE PROMPT — THE 3:14 AM DOPPELGÄNGER]
+Target Engine: Google Flow / Imagen 4 (Master Ingredient #1)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[MASTER IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Interior of a dark bedroom at 3:14 AM. Warm cream textured paper canvas background (#F8F6F0) visible only within a motivated directional light cone, surrounded by deep suffocating pitch-black void shadow (#0A0B0E). In the center of the frame, a lone figure sits upright in a minimalist vector bed frame, paralyzed in palpable fear and tense dread: the character is a 2D vector stick figure with unbroken solid black limbs ending in smooth rounded line-caps (strictly zero individual fingers, zero human hands, zero knuckles) and a geometric circular head filled with solid opaque white (#FFFFFF) outlined in clean black vector contour (#0F172A). The figure’s posture conveys intense terror: shoulders hunched upward toward the neck in rigid frozen paralysis, circular head tilted down in frozen shock, both rounded arms raised in front of the chest holding a small glowing rectangular smartphone with trembling rigidity. The smartphone screen projects a stark, harsh white-cyan cone of light directly upward, intensely illuminating the front of the hunched stick torso and casting sharp dramatic shadows backward. In the background shadow, the closed bedroom door stands ominous with clean architectural vector line edges. Flat 2D vector graphic art, high contrast ink noir, intense claustrophobic emotional tension, pristine negative space.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, individual digits, fleshy hands, fingernails, knuckles, realistic toes, skin pores, realistic eyes, realistic nose, realistic mouth, realistic hair, gradient shading, complex textures, airbrushing, colorful clutter, modern bedroom mess, doll, action figure.

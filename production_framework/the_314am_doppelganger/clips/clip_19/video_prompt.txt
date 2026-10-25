@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTEXT SHIFT LIVE FEED
+Input Seed / Dependencies: Generated from clips/clip_19/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off static high-angle security camera perspective looking at the apartment front door. The red "LIVE" indicator dot in the upper corner blinks rhythmically once per second. For the first four seconds, the front door remains locked and stationary in dead quiet. At the fifth second, the brass circular door handle begins to slowly rotate downward. Clean 2D graphic art. Audio: low ominous electrical hum, sudden subtle metallic latch jiggle (`click`), rising high-pitch tension string note, zero dialogue.

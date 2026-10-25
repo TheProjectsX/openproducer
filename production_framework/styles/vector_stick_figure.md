@@ -16,6 +16,12 @@
 * **Head Standard:** Perfect geometric circle filled with solid opaque white (`#FFFFFF`) and contoured with a clean black vector outline matching limb stroke thickness. Zero eyes, nose, or mouth by default.
 * **Props in Hand:** When holding an object (smartphone, mug), the rounded limb tip merely touches or rests against the prop. Zero fingers wrapping around objects.
 
+### 2.1 Character Personality & Period Silhouette Differentiation
+While strictly respecting the fingerless vector rule, stick figures express individual professions, historical periods, and personalities through silhouette accessories:
+* **Headwear & Eyewear:** Distinctive period hats (e.g. Soviet Ushanka trapper hat with ear-flaps, fedora), vintage wire-rim round spectacles, and oversized vintage headphones resting cleanly on the circular head contour.
+* **Outerwear Contours:** Minimalist black vector outerwear outlines (heavy winter coat with shearling collar, trenchcoat hem, utility belts) draped over the torso to convey cold-weather bulk or professional uniform.
+* **Posture & Gesture:** Posture communicates state of mind (methodical, disciplined, hunched against blizzard, or frozen in dread).
+
 ---
 
 ## 3. Canvas & Environment Adaptability

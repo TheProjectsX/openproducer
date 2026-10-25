@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 11]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Tight medium close-up of the protagonist in bed frozen in sudden, acute terror. Warm cream paper canvas background (#F8F6F0) sharply lit from below by the intense spotlight cone of the phone, framed by pitch-black bedroom shadow (#0A0B0E). The protagonist, a minimalist 2D vector stick figure with unbroken solid black limbs ending in smooth rounded line-caps (zero individual fingers, zero human hands) and a clean geometric solid white circular head (#FFFFFF) contoured in black (#0F172A), has jerked rigid: shoulders are pulled violently upward in panic, head tilted downward in horrified shock, both rounded limbs clutching the glowing phone with visible trembling rigidity. Intense claustrophobic fear, pristine 2D art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fleshy hands, knuckles, facial features, smiling, relaxed posture.

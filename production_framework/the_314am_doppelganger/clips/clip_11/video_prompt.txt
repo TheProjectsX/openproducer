@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: SHOCK REACTION CUT
+Input Seed / Dependencies: Generated from clips/clip_11/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, eye-level fast subtle punch-in camera focusing on the seated figure's frozen posture. Permitted Props: [platform bed frame, cotton blanket, smartphone]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, snaps completely motionless in acute physiological shock: their shoulders lock rigid, and their rounded arms holding the glowing phone shudder with subtle high-tension micro-vibrations from Frame 1 to Frame End. Minimalist 2D vector graphic noir. Audio: sharp, choked gasp of air caught in throat, intense sub-bass heartbeat pulse thumping heavily in chest (`thump... thump`), dead apartment silence, zero dialogue.

@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 13]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Security camera night-vision perspective of the apartment hallway. Monochromatic gray and white paper canvas background (#E2E0D8). Stepping through the open bedroom doorway into the corridor is a figure identical to the protagonist: a minimalist 2D vector stick figure with unbroken solid black limbs ending in smooth rounded line-caps (strictly zero individual fingers, zero human hands) and a clean geometric solid white circular head (#FFFFFF) contoured in black (#0F172A). The figure has the exact same musculoskeletal height, build, and posture, standing in the doorway preparing to walk down the hall. Upper-left timestamp reads: "RECORDING PLAYBACK — 03:12:08 AM". Stark 2D graphic art, chilling double silhouette.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fleshy hands, face, mouth, eyes, monster features, colorful clothing.

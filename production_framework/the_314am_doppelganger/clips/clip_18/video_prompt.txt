@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 4s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: SHARP MACRO HAPTIC SHOCK
+Input Seed / Dependencies: Generated from clips/clip_18/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, top-down locked-off static macro framing on the smartphone screen. At the first second, the phone vibrates violently with two sharp physical lateral shudder pulses, accompanied by the bright green "LIVE CAMERA ACTIVE" banner sliding into view. At the third second, the phone screen cuts sharply to an active live camera angle. Minimalist 2D vector animation. Audio: two sharp, visceral haptic vibration buzzes shaking through physical hands (`BZZZT... BZZZT`), followed by an urgent double electronic ping chime, zero dialogue.

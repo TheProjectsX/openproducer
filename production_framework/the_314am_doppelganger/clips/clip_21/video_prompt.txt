@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: SPATIAL CONTINUITY RESET
+Input Seed / Dependencies: Generated from clips/clip_21/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, eye-level locked-off static wide bedroom shot with zero camera drift. Permitted Props: [platform bed frame, cotton blanket, smartphone, wooden bedroom door]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, remains frozen in bed, clutching the glowing smartphone with both arms from Frame 1 to Frame End: their white circular head stares screen-right at the closed bedroom door in rigid terror, shoulders hunched, with closed lips and zero facial motion. Across the room, the closed wooden door stands motionless in deep shadow. Pristine 2D vector graphic noir. Audio: dead quiet room tone, faint cold draft whistling softly beneath the doorframe, zero spoken dialogue.

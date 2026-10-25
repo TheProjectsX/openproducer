@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 08]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. POV view of the hallway security camera night-vision feed. Monochromatic muted gray and white vector paper canvas background (#E2E0D8) framed by dark hallway shadows. Linear architectural one-point perspective looking straight down an empty apartment corridor. At the far end of the hallway is the closed bedroom door, framed by crisp vertical door jamb lines (#0F172A). On the floor are minimalist linear floorboard seams. In the upper-left corner of the camera feed, green vector digital text reads: "HALLWAY CAM 1 — NIGHT VISION". In the lower-left, a digital timestamp reads: "REC 03:12:00 AM". The hallway is completely empty and still. Sharp 2D vector lines, stark security camera aesthetic.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human figures, monsters, shadows, clutter, colorful walls, noisy video compression.

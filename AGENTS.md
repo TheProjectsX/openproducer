@@ -32,7 +32,7 @@ This workspace is accessed across different devices, workstations, and conversat
 |---|---|---|---|---|
 | **Phase 1–4** | Comprehensive Research, Synthesis & Validation | ✅ **COMPLETE** | [`research/synthesis/`](./research/synthesis/) | [`research/structure.md`](./research/structure.md), [`research/validation.md`](./research/validation.md) |
 | **Phase 5: Core Domain Primitives** | Visuals, Subjects, Sceneries, Cinematography & Audio | ✅ **FINALIZED** | [`01_visual`](./production_framework/specs/01_visual_spec.md), [`02_subject`](./production_framework/specs/02_subject_spec.md), [`03_scenery`](./production_framework/specs/03_scenery_spec.md), [`04_cinematography_audio`](./production_framework/specs/04_cinematography_audio_spec.md) | [`discussions/`](./discussions/) |
-| **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (4s/6s/8s/10s), Multi-Character Clean Singles, Spatial Handoffs, Dynamic J/L Audio Bridges, Pluggable Styles | ✅ **FINALIZED** | [`05_directors_cut_assembly`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`styles/`](./production_framework/styles/) | [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) |
+| **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (4s/6s/8s/10s), Multi-Character Clean Singles, Spatial Handoffs, Dynamic J/L Audio Bridges, Pluggable Styles | ⏳ **IN VALIDATION** (Simulation in Creation/Review) | [`05_directors_cut_assembly`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`styles/`](./production_framework/styles/) | [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md), [Discussion 49](./discussions/_raw/49_simulation_the_314am_doppelganger.md) |
 
 | **Phase 7: Project Scaffolding** | Lean Folder Scaffold & Universal Template | ⏳ Pending | `production_template/` | TBD |
 | **Phase 8: Automation Skill & Linters** | Python Compilers, Linters (L-01 to L-11), Flow Timeline Manifest Export | ⏳ Pending | Tooling & Skill code | TBD |
@@ -402,6 +402,35 @@ To prevent token bloat while retaining 100% information control:
   6. *Pluggable Style Registry Scaffolding:* Created [`production_framework/styles/`](./production_framework/styles/) with Universal Base Mediums ([`live_action_cinema.md`](./production_framework/styles/live_action_cinema.md), [`commercial_tabletop.md`](./production_framework/styles/commercial_tabletop.md), [`vector_stick_figure.md`](./production_framework/styles/vector_stick_figure.md)).
   7. *Temporary Scratchpad Consumed:* Deleted `Dump.md` cleanly.
 - **Reference Document:** [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md) and [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+
+### 2026-10-25 — Directorial Learnings: TTS Trailing Tag Bug, Anti-Dead-Air Law & Stick Silhouette (Discussion 47)
+- **Empirical Directorial Learnings Codified:** Following testing of the 1994 Dispatch and Station 42 narratives, the stories were scrapped per creator direction while four permanent architectural rules were cemented:
+  1. *The Dialogue-First Hard Pause Rule:* Slicing video prompts without real recorded audio duration breaks the Dialogue-First contract. The Agent must hard-pause at Stage 1 (`narrator_script.md` + Tier 1 base plate) until creator inputs recorded durations.
+  2. *Trailing Tag Tokenizer Glitch (Gemini 3.8 Flash TTS):* Appending pause tags directly to sentence tails (`name. <long pause>`) forces the model to read the tag aloud. Mandated isolated line-break formatting (`.\n<long pause>\n`). Codified into Linter **L-14**.
+  3. *The Anti-Dead-Air Law:* Over-tagging scripts with artificial `<long pause>` tags creates retention-destroying dead air. Modern neural TTS punctuation (commas, periods, line-breaks) provides organic ~0.3s–0.5s breathing. Dynamic Sync pacing requires relentless momentum (~135–145 wpm / ~2.2–2.4 wps), reserving pause tags strictly for high-impact climax moments.
+  4. *Stick Figure Personality & Silhouette DNA:* Fingerless stick figures can express rich historical/occupational identities (Soviet Ushanka hats, wire-rim spectacles, heavy wool coat collars, utility belts) without violating the Fingerless Vector Standard (`stroke-linecap: round`). Added Section 2.1 to [`production_framework/styles/vector_stick_figure.md`](./production_framework/styles/vector_stick_figure.md).
+- **Reference Documents:** [`discussions/_raw/47_gemini_tts_trailing_tag_bug_and_anti_dead_air_law.md`](./discussions/_raw/47_gemini_tts_trailing_tag_bug_and_anti_dead_air_law.md) and [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+
+### 2026-10-25 — The Creator Alignment & Confirmation Gate (Discussion 48)
+- **Protocol Rule Enforced (Section 2.4):** After collecting the answers to the 3 core intake questions (Pacing, Pathway, Style), the Agent must NEVER immediately start churning out files or compiling prompts.
+  1. *Alignment Summary:* Present a concise summary of the confirmed choices.
+  2. *The "Extra Instructions" Check:* Explicitly ask the creator if they want to add any custom creative constraints, character lore, visual preferences, or extra instructions before execution.
+  3. *The Confirmation Gate:* Freeze execution until the creator has had the floor to provide extra notes and explicitly confirmed to proceed.
+- **Reference Document:** [`discussions/_raw/48_creator_intake_confirmation_gate.md`](./discussions/_raw/48_creator_intake_confirmation_gate.md) and [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+
+### 2026-10-25 — Phase 06 Simulation: The 3:14 AM Doppelgänger (Discussion 49)
+- **Active Simulation in Creation & Validation:** Executing end-to-end production on *The 3:14 AM Doppelgänger* through Step 0 Intake & Section 2.4 Confirmation Gate:
+  1. *Creator Custom Instructions Baked In:* Enforced Anti-Dead-Air Law (purged artificial `<long pause>` tags for seamless ~140 wpm / ~2.3 wps momentum) and encoded expressive fear/tension biomechanics (hunched frozen shoulders, trembling arm rigidity, stark upward smartphone light cone).
+  2. *Stage 1 Deliverables:* Created [`production_framework/the_314am_doppelganger/`](./production_framework/the_314am_doppelganger/) with Tier 1 `base_image_prompt.txt` and high-retention 3-chunk `narrator_script.md`.
+  3. *Stage 2 Assembly Prompts Staged (SRT Integration):* Ingested 40-cue master `audio.srt` (135.08s runtime). Sliced narrative into **22 Flow-native clips** (`[4s, 6s, 8s, 10s]`, totaling 136s runtime with 0.92s breathing dissolve buffer).
+  4. *Individual Dual-Tier Clips:* Generated `clips/clip_01/` to `clip_22/` with Tier 2 keyframe plates (`image_prompt.txt`) and Tier 3 motion/audio prompts (`video_prompt.txt`, 100–150 words).
+  5. *Master Deliverables & Linters:* Generated `master_flow_agent_prompt.txt` (Flow Agent Mode manifest) and `origin_manifest.md` (asset lineage tracker). Verified 100% pre-flight compliance across linters L-07 through L-15.
+  6. *Validation Status:* **Simulation execution is currently underway by the creator.** Phase 06 remains in active validation until all clips/results are evaluated, iterated, and confirmed by the creator.
+- **Reference Documents:** [`discussions/_raw/49_simulation_the_314am_doppelganger.md`](./discussions/_raw/49_simulation_the_314am_doppelganger.md) and [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+
+
+
+
 
 
 

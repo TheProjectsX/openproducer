@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 07]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Top-down macro view of the glowing rectangular smartphone screen displaying a smart home security camera loading window. Warm cream paper canvas background (#F8F6F0) framed by deep black phone bezels (#0F172A). Centered on the screen is a dark rectangular camera feed box with a thin circular vector loading indicator in the center. Above it, minimalist text reads: "CONNECTING TO HALLWAY CAM 1...". Below, a video player timeline bar is visible with timestamp "03:14:02 AM". Crisp typographic 2D vector art, high contrast.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, colorful app icons, messy UI, broken screen, fingerprints, colorful gradients.

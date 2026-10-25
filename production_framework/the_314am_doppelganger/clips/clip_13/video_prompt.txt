@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_13/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off static high-angle security camera perspective looking down the corridor. The doppelgänger, an identical minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, steps fully through the bedroom doorway and walks forward in a smooth, steady, unhurried walk cycle along the center hallway floorboards toward the foreground camera. His circular head is filled with solid opaque white (#FFFFFF) with a black contour (#0F172A), facing straight ahead. Immaculate 2D vector line weights. Audio: slow rhythmic footsteps padding across wooden floorboards (`thud... thud... thud`), ambient electrical room drone, discordant violin string scrape, zero dialogue.
