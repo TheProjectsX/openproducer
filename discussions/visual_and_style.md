@@ -56,3 +56,14 @@ Veo 3.1 parses prompts with an asymmetric attention curve:
   > `"Shot on 35mm film stock, organic fine grain, bleach bypass desaturated color grading, muted earth and rubble tones, soft overcast daylight diffused through heavy grey smoke, shallow depth of field, solemn cinematic realism."`
 - **Resulting Pure Creative Prompt (136 words):**
   > `Wide establishing tracking shot of a shattered urban street littered with collapsed concrete buildings, twisted rebar, and smoking rubble piles. In the midground, a dazed, exhausted soldier with torn camouflage uniform and ash-smudged face sits motionless against a scorched brick wall, staring into the distance. Black crows circle slowly overhead against a bleak, overcast sky as thick plumes of grey smoke drift through the hollowed-out window frames. Shot on 35mm film stock, organic fine grain, bleach bypass desaturated color grading, muted earth and rubble tones, soft overcast daylight diffused through heavy grey smoke, shallow depth of field, solemn cinematic realism. Slow, solemn lateral tracking glide from left to right. Audio: distant smoldering embers crackle, mournful crow caws echoing in the cold air, low hollow wind through broken ruins, faint labored breathing, no background music.`
+
+---
+
+## 5. Architectural Theory: The "Medium vs. Dialect" Inheritance Model (Future Roadmap)
+
+To avoid combinatorial file bloat when expanding into infinite sub-styles (e.g. Ghibli vs. Ufotable vs. 90s Cel in Anime, or Noir vs. Kurzgesagt vs. Xiao Xiao in Stick Figures):
+1. **Layer 1: Root Medium (Physics & Negative Bounds):** Universal base file setting immutable physics (e.g. banning 3D volume in 2D cel, banning fingers in vector stick figure).
+2. **Layer 2: Aesthetic Dialect (Descriptor Overrides):** Targeted 20–30 token strings describing line weight, color chemistry, and school-specific rendering.
+3. **Layer 3: Lighting & Palette Modulation:** Dynamic scene-by-scene mood vectors.
+* *Note:* Preserved for future system expansion; no sub-style files or modifications created at present. Full taxonomy documented in [`discussions/_raw/50_medium_vs_dialect_inheritance_model_for_styles.md`](./_raw/50_medium_vs_dialect_inheritance_model_for_styles.md).
+
