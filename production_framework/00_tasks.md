@@ -21,8 +21,8 @@
 - [x] Formalize Continuity Chaining Bridge (`last_frame` terminal frame handoffs, spatial entry/exit states & 180° rule)
 - [x] Define Multi-Engine Modality Matrix (Flow Chunks vs. Slideshows + ElevenLabs / Gemini TTS vs. Hybrid)
 - [x] Formulate Asset & Audio Origin Tracker ("What comes from where" matrix)
-- [ ] Complete End-to-End Multi-Clip Slicing & Continuity Simulation (*The 3:14 AM Doppelgänger* — active simulation currently being created & evaluated by creator)
-- [ ] Authoritative Specification Validation: Finalize `specs/05_directors_cut_assembly_spec.md` sign-off upon completing simulation
+- [x] Complete End-to-End Multi-Clip Slicing & Continuity Simulation (*The 3:14 AM Doppelgänger* — verified & validated by creator testing)
+- [x] Authoritative Specification Validation: Finalize `specs/05_directors_cut_assembly_spec.md` sign-off upon completing style registry integration and phase cleanup
 
 
 ## Milestone 2: Universal Project Template Directory (`production_template/`)

@@ -342,4 +342,16 @@ Every assembled production must pass these 5 assembly-level linters before deliv
 | **L-14** | **Gemini TTS Formatting & Retention Linter** | Inline cues must strictly use Angle Brackets (`<short pause>`, `<whisper>`); zero square brackets (`[...]`); pause tags must NEVER be appended to the end of a sentence line (`name. <long pause>`), but must occupy standalone lines; zero consecutive `<long pause>` tags to prevent dead air. | Any square bracket cue (`[...]`), trailing end-of-line pause tag, or bloated pause cluster present in script. |
 | **L-15** | **Screen Direction & Eyeline Linter** | In Mode 2 cuts between conversing characters or related props, complementary 180° screen direction and eyeline vectors must be preserved across cuts. | Screen directions flip across the 180° axis without an establishing spatial reset. |
 
+---
+
+## 9. Empirical Validation Sign-Off & Style Registry Linkage
+
+* **Authoritative Style Engine:** Fully integrated with the 8-Medium [Pluggable Style Registry](../styles/) (`production_framework/styles/`) implementing the 3-Tier Medium vs. Dialect architecture.
+* **Empirical Simulation Validation:** Formally validated and signed off through the end-to-end production of *The 3:14 AM Doppelgänger* ([`production_framework/the_314am_doppelganger/`](../the_314am_doppelganger/)), proving:
+  1. Exact mathematical SRT dialogue slicing across 22 Flow-native clips.
+  2. The Dialogue-First Hard Pause Rule and Anti-Dead-Air pacing (~140 wpm).
+  3. Pre-materialized closed-set prop bounding (L-13) and linters L-07 through L-15.
+  4. Dynamic J-Cut & L-Cut native Veo audio transitions.
+* **Specification Sign-off:** ✅ **COMPLETE & LOCKED FOR PRODUCTION SCALABILITY**.
+
 
