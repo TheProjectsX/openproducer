@@ -1,0 +1,96 @@
+# MASTER IMAGES PROMPT: SOFTWARE FRAMEWORK INTRO
+# Target System: Imagen 4 / Google Flow (Image Mode) / Midjourney
+# Aspect Ratio: 16:9 | Resolution: 1080p
+# Purpose: Generate all Tier 1 and Tier 2 reference/keyframe images in sequence
+
+================================================================================
+TIER 1: MASTER REFERENCE ASSET (INGREDIENT #1)
+================================================================================
+Target Engine: Imagen 4 / Google Flow
+Input Reference: Upload creator photo as [IMAGE 1]
+
+[IMAGE PROMPT]
+Cinematic live-action film still of a real living technical director seated at a minimalist workstation in a modern dark-slate studio suite. In the center of the frame, the presenter sits in a relaxed, authoritative posture at a sleek matte-black desk:
+Facial Biometrics & Likeness: Strictly preserve 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Authentic living human face with sharp natural gaze toward the camera, subtle confident micro-expression, natural skin pores and biological subsurface scattering. Real living human being, zero AI waxy glaze, zero facial distortion, not an altered face.
+Anatomical Scale & Wardrobe: Realistic adult human anatomical proportions, strictly natural 1:7.5 head-to-body scale ratio, natural shoulder width proportional to torso height. Dressed in a tailored, minimalist matte-black technical overshirt over a fitted charcoal-grey crewneck undershirt, with clean structured seams and natural fabric drape conforming to real body mechanics. Empty hands resting naturally on the edge of the desk.
+Environment & Motivated Lighting: High-end minimalist software studio with dark textured acoustic walls. On the desk, a sleek curved ultra-wide OLED monitor displays a dark-mode IDE with clean code syntax and video timeline tracks, casting a subtle soft cool fill light across the desk surface. In the background, a warm amber practical lamp provides a soft, atmospheric rim light along the presenter's shoulders and jawline. 
+Visual Style: Shot on 35mm film stock, 85mm portrait prime lens, shallow depth of field with creamy background bokeh, razor-sharp optical focus on the presenter's face, organic fine grain, authentic high-contrast cinematic color grading.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, manga drawing, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead effect, caricature proportions, dwarfism, shrunken torso, chibi anatomy, distorted neck, deformed fingers, extra limbs, waxy airbrushed skin, messy cables, colorful toy clutter, blurry.
+
+================================================================================
+TIER 2: CLIP KEYFRAME PLATES (CLIPS 01 TO 08)
+================================================================================
+
+--------------------------------------------------------------------------------
+CLIP 01 KEYFRAME PLATE — THE CORE CRISIS (HOOK)
+--------------------------------------------------------------------------------
+[IMAGE PROMPT]
+Cinematic live-action film still of a real living male technical director in a dark-slate minimalist dev studio, seated at a sleek matte-black workstation. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Natural 1:7.5 adult head-to-body scale ratio. Wearing a tailored matte-black technical overshirt over a dark charcoal crewneck. The presenter looks directly toward the camera with an intense, serious gaze. In front of him, a curved ultra-wide OLED monitor casts a soft cool blue glow on his hands resting near a mechanical keyboard, while a warm amber practical light softly rims his shoulders and jaw against the dark acoustic wall behind him. Photorealistic 35mm film still, 85mm portrait prime lens, shallow depth of field, sharp focus on eyes, fine cinematic film grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, messy cables, blurry.
+
+--------------------------------------------------------------------------------
+CLIP 02 KEYFRAME PLATE — THE MACRO PAIN (TIMELINE SCRUB)
+--------------------------------------------------------------------------------
+[IMAGE PROMPT]
+Cinematic live-action film still of the technical director seated at the matte-black studio workstation, framed in a balanced medium shot. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Dressed in the same tailored matte-black technical overshirt. The presenter looks directly toward the camera with an open, explanatory gesture toward the curved ultra-wide OLED monitor beside him. On the monitor screen, a dense video editing timeline displays fragmented cut slices, red error warnings, and misaligned audio waveform stems. Sharp optical focus on the presenter's face, with the glitched software UI casting soft cyan and red accents across his forearm and desk surface. Warm amber practical light rims his silhouette against the dark acoustic wall. Photorealistic 35mm film still, 50mm cine prime lens, fine cinematic grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, blurry.
+
+--------------------------------------------------------------------------------
+CLIP 03 KEYFRAME PLATE — THE FRAMEWORK SHIFT (SOLUTION REVEAL)
+--------------------------------------------------------------------------------
+[IMAGE PROMPT]
+Cinematic live-action film still of the technical director in the modern minimalist dark studio, leaning slightly forward with elbows on the matte-black desk in an assertive, deliberate posture. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Wearing the same tailored matte-black technical overshirt over charcoal crewneck. Relaxed open hands rest beside a minimalist mechanical keyboard. Direct, engaging eye contact with the camera, calm confident facial expression. Behind him, the curved OLED display glows with a clean terminal workspace, casting subtle cool light across his forearms, balanced by the warm amber practical rim light contouring his silhouette. Shot on 35mm film stock, 85mm prime lens, shallow depth of field, sharp focus on eyes, rich shadow grading.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, blurry.
+
+--------------------------------------------------------------------------------
+CLIP 04 KEYFRAME PLATE — SOFTWARE ARCHITECTURE (TERMINAL INSERT)
+--------------------------------------------------------------------------------
+[IMAGE PROMPT]
+Cinematic live-action film still of the technical director seated at the matte-black desk in a 3/4 side-profile view, beside a glowing vertical code monitor. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Dressed in the same tailored matte-black technical overshirt. The presenter turns his head toward the camera lens with a composed, deliberate expression, fingers resting lightly on a mechanical keyboard. The monitor screen displays a clean dark-mode terminal showing green validation checkmarks labeled `[PASS] L-01: Word Budget` and `[PASS] L-15: Continuity`. The emerald terminal glow casts subtle specular highlights across his jawline and hands, balanced by a warm amber practical rim light along his back and dark acoustic studio wall. Photorealistic 35mm film still, 50mm cine prime lens, shallow depth of field, fine grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, blurry.
+
+--------------------------------------------------------------------------------
+CLIP 05 KEYFRAME PLATE — TECHNICAL ENGINE & INVARIANCE
+--------------------------------------------------------------------------------
+[IMAGE PROMPT]
+Cinematic live-action film still of the technical director seated at the dark studio desk in a 3/4 side profile view. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Dressed in the same tailored matte-black technical overshirt over charcoal crewneck. The presenter looks toward the camera while making a measured, open-handed explanatory gesture toward the glowing dual-monitor array beside him. On the monitors, glowing node-based video continuity trees and audio alignment meters glow softly in the shallow background. Balanced lighting with warm amber rim along his jawline and back, complemented by soft cool screen reflection on his chest and desk. Shot on 35mm film stock, 85mm prime lens, shallow depth of field, authentic fine grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, blurry.
+
+--------------------------------------------------------------------------------
+CLIP 06 KEYFRAME PLATE — THE EMPIRICAL BENCHMARK
+--------------------------------------------------------------------------------
+[IMAGE PROMPT]
+Cinematic live-action film still of the technical director seated at the matte-black studio workstation, framed in a composed medium shot. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Dressed in the same tailored matte-black technical overshirt over charcoal crewneck. The presenter looks directly toward the viewer with a satisfied, authoritative expression, gesturing subtly toward the ultra-wide curved display beside him. On the monitor, a pristine digital video timeline shows eight seamlessly aligned clip blocks with bright green render cache bars and synchronized audio tracks, while the playback window shows smooth cinema playback. Sharp optical focus on the presenter's face, with the blue and green screen glow reflecting faintly on his hands and desk. Warm amber rim lighting along his back against the dark studio wall. Photorealistic 35mm film still, 50mm prime lens, fine grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, blurry.
+
+--------------------------------------------------------------------------------
+CLIP 07 KEYFRAME PLATE — THE PRODUCTION CLIMAX
+--------------------------------------------------------------------------------
+[IMAGE PROMPT]
+Cinematic live-action film still of the technical director in the modern minimalist dark studio, framed in a tight medium close-up. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Wearing the same tailored matte-black technical overshirt. Looking directly into the camera lens with unwavering focus and genuine professional conviction. The ambient room lighting has subtly dimmed into rich darkness, leaving a stark, motivated amber rim light tracing his cheek and shoulder, and a gentle soft white fill from the desk terminal highlighting his eyes. Photorealistic 35mm film still, 85mm portrait prime lens, ultra-shallow depth of field, creamy shadow falloff, authentic cinematic grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted face, waxy skin, blurry.
+
+--------------------------------------------------------------------------------
+CLIP 08 KEYFRAME PLATE — THE DIRECTOR'S CALL-TO-ACTION (OUTRO)
+--------------------------------------------------------------------------------
+[IMAGE PROMPT]
+Cinematic live-action film still of the technical director seated at the matte-black workstation in the minimalist dark studio suite, framed in a composed medium shot. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Wearing the same tailored matte-black technical overshirt over charcoal crewneck. The presenter sits with upright posture, hands resting calmly clasped on the dark desk beside his keyboard, looking into the lens with a confident, welcoming half-smile. On the curved OLED monitor behind him, a clean green status line reads `PRODUCTION READY: 100% PASS`. Deep cinematic shadow, warm amber rim light contouring the presenter's shoulders and chair. Photorealistic 35mm film still, 85mm prime lens, shallow depth of field, fine film grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, waxy skin, blurry.

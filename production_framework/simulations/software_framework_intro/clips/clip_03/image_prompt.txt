@@ -1,0 +1,12 @@
+[CONFIGURATION SETTINGS]
+Engine: Google Flow / Imagen 4 (Tier 2 Keyframe Plate)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Clip ID: clip_03
+Target Shot Type: Medium Close-Up / Presenter Reaction Cut
+
+[KEYFRAME IMAGE PROMPT]
+Cinematic live-action film still of the technical director in the modern minimalist dark studio, leaning slightly forward with elbows on the matte-black desk in an assertive, deliberate posture. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Wearing the same tailored matte-black technical overshirt over charcoal crewneck. Relaxed open hands rest beside a minimalist mechanical keyboard. Direct, engaging eye contact with the camera, calm confident facial expression. Behind him, the curved OLED display glows with a clean terminal workspace, casting subtle cool light across his forearms, balanced by the warm amber practical rim light contouring his silhouette. Shot on 35mm film stock, 85mm prime lens, shallow depth of field, sharp focus on eyes, rich shadow grading.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, blurry.

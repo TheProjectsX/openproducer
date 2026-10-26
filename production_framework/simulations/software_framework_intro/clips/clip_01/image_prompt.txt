@@ -1,0 +1,12 @@
+[CONFIGURATION SETTINGS]
+Engine: Google Flow / Imagen 4 (Tier 2 Keyframe Plate)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Clip ID: clip_01
+Target Shot Type: Medium Close-Up Establishing Presenter
+
+[KEYFRAME IMAGE PROMPT]
+Cinematic live-action film still of a real living male technical director in a dark-slate minimalist dev studio, seated at a sleek matte-black workstation. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Natural 1:7.5 adult head-to-body scale ratio. Wearing a tailored matte-black technical overshirt over a dark charcoal crewneck. The presenter looks directly toward the camera with an intense, serious gaze. In front of him, a curved ultra-wide OLED monitor casts a soft cool blue glow on his hands resting near a mechanical keyboard, while a warm amber practical light softly rims his shoulders and jaw against the dark acoustic wall behind him. Photorealistic 35mm film still, 85mm portrait prime lens, shallow depth of field, sharp focus on eyes, fine cinematic film grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, messy cables, blurry.

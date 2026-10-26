@@ -1,0 +1,352 @@
+# MASTER IMAGES PROMPT: THE 3:14 AM DOPPELGÄNGER
+# Target System: Imagen 4 / Google Flow (Image Mode)
+# Aspect Ratio: 16:9 | Resolution: 1080p
+# Pluggable Style: Minimalist 2D Vector Graphic Noir (vector_stick_figure.md)
+
+================================================================================
+TIER 1: MASTER BASE REFERENCE ASSET (INGREDIENT #1)
+================================================================================
+[TIER 1: MASTER BASE REFERENCE PROMPT — THE 3:14 AM DOPPELGÄNGER]
+Target Engine: Google Flow / Imagen 4 (Master Ingredient #1)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[MASTER IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Interior of a dark bedroom at 3:14 AM. Warm cream textured paper canvas background (#F8F6F0) visible only within a motivated directional light cone, surrounded by deep suffocating pitch-black void shadow (#0A0B0E). In the center of the frame, a lone figure sits upright in a minimalist vector bed frame, paralyzed in palpable fear and tense dread: the character is a 2D vector stick figure with unbroken solid black limbs ending in smooth rounded line-caps (strictly zero individual fingers, zero human hands, zero knuckles) and a geometric circular head filled with solid opaque white (#FFFFFF) outlined in clean black vector contour (#0F172A). The figure’s posture conveys intense terror: shoulders hunched upward toward the neck in rigid frozen paralysis, circular head tilted down in frozen shock, both rounded arms raised in front of the chest holding a small glowing rectangular smartphone with trembling rigidity. The smartphone screen projects a stark, harsh white-cyan cone of light directly upward, intensely illuminating the front of the hunched stick torso and casting sharp dramatic shadows backward. In the background shadow, the closed bedroom door stands ominous with clean architectural vector line edges. Flat 2D vector graphic art, high contrast ink noir, intense claustrophobic emotional tension, pristine negative space.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, individual digits, fleshy hands, fingernails, knuckles, realistic toes, skin pores, realistic eyes, realistic nose, realistic mouth, realistic hair, gradient shading, complex textures, airbrushing, colorful clutter, modern bedroom mess, doll, action figure.
+
+================================================================================
+TIER 2: CLIP KEYFRAME PLATES (CLIPS 01 TO 22)
+================================================================================
+
+--------------------------------------------------------------------------------
+CLIP_01 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 01]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Macro shot of a minimalist wooden nightstand in a pitch-black bedroom at night. Warm cream textured paper canvas background (#F8F6F0) framed by pitch-black void shadow (#0A0B0E). Resting horizontally on the nightstand is a modern rectangular smartphone with a clean black vector outline (#0F172A). The smartphone screen is completely dark and unlit, resting silent in the darkness. Pristine 2D vector graphic art, sharp edges, clean negative space.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, messy desk, clutter, wires, charging cables, blurry lines, colorful bedroom decorations.
+
+--------------------------------------------------------------------------------
+CLIP_02 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 02]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Medium shot of a minimalist platform bed in a dark bedroom at 3:14 AM. Warm cream paper canvas background (#F8F6F0) visible within the stark conical light cone projected from the glowing smartphone on the nightstand on screen-right. Under a simple black vector blanket line, a stick figure character with a solid opaque white circular head (#FFFFFF) outlined in clean black vector ink (#0F172A) begins to lift their head in darkness, waking up. All architectural lines and furniture are drawn in crisp uniform black strokes. Sharp 2D graphic art, deep pitch shadows (#0A0B0E).
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, individual digits, fleshy hands, fingernails, knuckles, realistic eyes, airbrush, complex gradients.
+
+--------------------------------------------------------------------------------
+CLIP_03 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 03]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Top-down macro close-up of the glowing rectangular smartphone screen. Warm cream paper canvas background (#F8F6F0) visible on the glass surface. Centered on the upper portion of the screen is a clean black vector smart home notification banner containing bold geometric uppercase vector text: "MOTION DETECTED IN HALLWAY". Above the banner, the small minimalist digital clock reads "03:14 AM". In the lower corners of the phone glass, two smooth rounded black vector line tips rest lightly against the phone bezel, strictly zero fingers. Pristine 2D graphic art, razor-sharp vector typography.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fingernails, knuckles, blurry text, misspelled words, colorful gradients, cracked glass.
+
+--------------------------------------------------------------------------------
+CLIP_04 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 04]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Medium shot of the protagonist sitting upright in bed at 3:14 AM. Warm cream paper canvas background (#F8F6F0) visible only within the sharp triangular light cone cast upward by the phone screen, surrounded by deep pitch-black shadow (#0A0B0E). The protagonist, a minimalist 2D vector stick figure with unbroken solid black limbs ending in smooth rounded line-caps (zero individual fingers, zero human hands) and a solid opaque white circular head (#FFFFFF) contoured in black (#0F172A), sits rigid in bed: shoulders are raised and hunched upward toward the neck in palpable tension, with the circular white head tilted down in frozen dread toward the glowing phone held before the chest. Crisp 2D graphic art, high emotional tension.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fleshy hands, knuckles, mouth, eyes, relaxed posture, colorful bedroom.
+
+--------------------------------------------------------------------------------
+CLIP_05 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 05]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. POV shot looking screen-right from the bed toward the closed bedroom door across the dark room. Warm cream paper canvas background (#F8F6F0) visible only along the bottom floorboards and door frame contours, surrounded by heavy pitch-black shadow (#0A0B0E). The bedroom door is drawn in clean vertical black vector lines (#0F172A) with a simple brass door latch handle on the right edge. The door is firmly closed, standing dead still in the dark silence. High-contrast 2D art, intense suspenseful negative space.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, open door, colorful wallpaper, messy floor, shoes, blurry lines.
+
+--------------------------------------------------------------------------------
+CLIP_06 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 06]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Medium close-up profile of the protagonist seated in bed holding the glowing smartphone. Warm cream paper canvas background (#F8F6F0) sharply lit from below by the stark screen glow, surrounded by deep pitch-black shadow (#0A0B0E). The protagonist, a minimalist 2D vector stick figure with unbroken solid black limbs ending in smooth rounded line-caps (strictly zero individual fingers, zero human hands) and a clean geometric solid white circular head (#FFFFFF) contoured in black (#0F172A), holds the phone firmly with their left rounded arm while the right rounded arm tip is poised half an inch above the notification banner, preparing to tap the screen. Clean 2D graphic art, intense suspense.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fleshy hands, knuckles, fingernails, mouth, eyes, relaxed shoulders.
+
+--------------------------------------------------------------------------------
+CLIP_07 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 07]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Top-down macro view of the glowing rectangular smartphone screen displaying a smart home security camera loading window. Warm cream paper canvas background (#F8F6F0) framed by deep black phone bezels (#0F172A). Centered on the screen is a dark rectangular camera feed box with a thin circular vector loading indicator in the center. Above it, minimalist text reads: "CONNECTING TO HALLWAY CAM 1...". Below, a video player timeline bar is visible with timestamp "03:14:02 AM". Crisp typographic 2D vector art, high contrast.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, colorful app icons, messy UI, broken screen, fingerprints, colorful gradients.
+
+--------------------------------------------------------------------------------
+CLIP_08 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 08]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. POV view of the hallway security camera night-vision feed. Monochromatic muted gray and white vector paper canvas background (#E2E0D8) framed by dark hallway shadows. Linear architectural one-point perspective looking straight down an empty apartment corridor. At the far end of the hallway is the closed bedroom door, framed by crisp vertical door jamb lines (#0F172A). On the floor are minimalist linear floorboard seams. In the upper-left corner of the camera feed, green vector digital text reads: "HALLWAY CAM 1 — NIGHT VISION". In the lower-left, a digital timestamp reads: "REC 03:12:00 AM". The hallway is completely empty and still. Sharp 2D vector lines, stark security camera aesthetic.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human figures, monsters, shadows, clutter, colorful walls, noisy video compression.
+
+--------------------------------------------------------------------------------
+CLIP_09 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 09]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Medium shot of the protagonist seated in bed holding the glowing phone, seen from a front 3/4 angle. Warm cream paper canvas background (#F8F6F0) sharply illuminated by the phone screen spotlight cone, framed by pitch-black bedroom shadow (#0A0B0E). The protagonist, a minimalist 2D vector stick figure with unbroken solid black limbs ending in smooth rounded line-caps (zero individual fingers, zero human hands) and a clean geometric solid white circular head (#FFFFFF) contoured in black (#0F172A), begins to lower both rounded arms an inch toward the blanket, shoulders relaxing slightly in premature relief. Crisp 2D graphic art, high contrast.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fleshy hands, knuckles, mouth, eyes, nose, relaxed smile, colorful clutter.
+
+--------------------------------------------------------------------------------
+CLIP_10 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 10]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Extreme macro close-up view of the bottom scrubber bar on the glowing smartphone screen. Warm cream paper canvas background (#F8F6F0) framed by black vector borders (#0F172A). A horizontal red video progress bar is visible across the lower third of the screen. Directly above the scrubber timeline is bold, razor-sharp black vector text displaying: "SAVED RECORDING — 03:12:00 AM". To the right, a smaller text indicator reads: "(2 MIN AGO)". Crisp 2D typographic vector art, high contrast.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, blurry text, misspelled numbers, colorful gradients, cracked screen.
+
+--------------------------------------------------------------------------------
+CLIP_11 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 11]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Tight medium close-up of the protagonist in bed frozen in sudden, acute terror. Warm cream paper canvas background (#F8F6F0) sharply lit from below by the intense spotlight cone of the phone, framed by pitch-black bedroom shadow (#0A0B0E). The protagonist, a minimalist 2D vector stick figure with unbroken solid black limbs ending in smooth rounded line-caps (zero individual fingers, zero human hands) and a clean geometric solid white circular head (#FFFFFF) contoured in black (#0F172A), has jerked rigid: shoulders are pulled violently upward in panic, head tilted downward in horrified shock, both rounded limbs clutching the glowing phone with visible trembling rigidity. Intense claustrophobic fear, pristine 2D art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fleshy hands, knuckles, facial features, smiling, relaxed posture.
+
+--------------------------------------------------------------------------------
+CLIP_12 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 12]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. High-angle security camera perspective of the empty apartment hallway under gray night vision (#E2E0D8). At the far end of the corridor, the closed bedroom door is centered between crisp vertical black vector door jambs (#0F172A). The hallway floorboards are drawn in sharp linear perspective. In the upper-left corner of the video frame, a green vector digital indicator reads: "RECORDING PLAYBACK — 03:12:02 AM". The door latch is beginning to turn downward. Stark 2D vector graphic noir art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, colorful hallway, carpet, shoes, messy decor, blurry lines.
+
+--------------------------------------------------------------------------------
+CLIP_13 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 13]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Security camera night-vision perspective of the apartment hallway. Monochromatic gray and white paper canvas background (#E2E0D8). Stepping through the open bedroom doorway into the corridor is a figure identical to the protagonist: a minimalist 2D vector stick figure with unbroken solid black limbs ending in smooth rounded line-caps (strictly zero individual fingers, zero human hands) and a clean geometric solid white circular head (#FFFFFF) contoured in black (#0F172A). The figure has the exact same musculoskeletal height, build, and posture, standing in the doorway preparing to walk down the hall. Upper-left timestamp reads: "RECORDING PLAYBACK — 03:12:08 AM". Stark 2D graphic art, chilling double silhouette.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fleshy hands, face, mouth, eyes, monster features, colorful clothing.
+
+--------------------------------------------------------------------------------
+CLIP_14 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 14]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Medium shot of the apartment front entrance hallway under gray night vision (#E2E0D8). On screen-right is the heavy front apartment door with clean black vertical vector outlines and a circular metal deadbolt lock mechanism. The doppelgänger stick figure stands in side profile facing the door, raising a rounded solid black vector limb (strictly zero individual fingers) toward the circular deadbolt turn-knob. Timestamp in the upper corner reads: "RECORDING PLAYBACK — 03:12:16 AM". High contrast 2D graphic art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, individual digits, fleshy hands, fingernails, knuckles, modern lock keypad.
+
+--------------------------------------------------------------------------------
+CLIP_15 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 15]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Night-vision hallway view of the front door cracked open into absolute blackness. Monochromatic gray paper canvas background (#E2E0D8). The vertical front door panel is swung open 45 degrees, revealing a total pitch-black void beyond the threshold. The slender black silhouette of the doppelgänger stick figure has stepped through into the exterior dark, with a rounded black limb holding the outer door edge to pull it shut. Upper-left timestamp reads: "RECORDING PLAYBACK — 03:12:22 AM". Pristine 2D vector lines, stark negative space.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fleshy hands, shoes, street lights outside, colorful hallway.
+
+--------------------------------------------------------------------------------
+CLIP_16 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 16]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Extreme close-up of the protagonist's circular white head and shoulders sitting in bed. Warm cream paper canvas background (#F8F6F0) starkly illuminated by the cold blue-white phone spotlight from below, surrounded by deep suffocating pitch-black shadow (#0A0B0E). The protagonist, a minimalist 2D vector stick figure with unbroken solid black limbs ending in smooth rounded line-caps (zero individual fingers, zero human hands) and a solid opaque white circular head (#FFFFFF) contoured with a clean uniform black outline (#0F172A), is frozen in existential terror: shoulders are hunched rigidly upward, head bowed over the phone, with both arms trembling in acute dread. High contrast, visceral emotional fear, pristine 2D vector line art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fleshy hands, knuckles, facial features, eyes, mouth, nose, relaxed posture.
+
+--------------------------------------------------------------------------------
+CLIP_17 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 17]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Type C Kinetic Text Plate. Textured warm cream paper canvas background (#F8F6F0) framed by a heavy solid black vector border (#0F172A). Centered on the canvas are bold, minimalist black vector letters in crisp mid-century gothic typography: "WHO IS SITTING IN THIS BED RIGHT NOW?". Below the text is a thin horizontal vector lifeline that flatlines into a straight unbroken stroke. Razor-sharp typographic 2D art, extreme contrast, zero characters, zero clutter.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, colorful gradients, handwritten cursive, blurry fonts, human faces, clutter.
+
+--------------------------------------------------------------------------------
+CLIP_18 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 18]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Top-down macro close-up of the glowing rectangular smartphone screen held by two smooth rounded black vector line tips. Warm cream paper canvas background (#F8F6F0). Across the top of the screen, an emergency bright neon-green vector notification banner drops down over the gray video playback window, displaying bold black uppercase text: "LIVE CAMERA ACTIVE — FRONT HALLWAY". The phone bezel has subtle concentric vector vibration ripple arcs on both sides, suggesting a violent physical haptic buzz. Crisp 2D vector graphic noir.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, fleshy hands, knuckles, fingernails, colorful icons, cracked screen.
+
+--------------------------------------------------------------------------------
+CLIP_19 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 19]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. High-angle security camera perspective of the apartment entrance hallway under live night-vision feed. Monochromatic muted gray and white paper canvas background (#E2E0D8). The heavy apartment front door stands on screen-right, completely closed. On the floorboards, crisp vector perspective lines converge toward the door. In the upper-left corner of the camera feed, a blinking red vector circle is visible next to bold digital text: "LIVE FEED — 03:14:15 AM". The hallway is dead silent and waiting. Razor-sharp 2D vector line art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, colorful hallway, shoes, carpet, clutter, blurry lines, noisy compression.
+
+--------------------------------------------------------------------------------
+CLIP_20 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 20]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Live security camera view of the front door opening inwards. Monochromatic gray paper canvas background (#E2E0D8). The vertical front door panel has swung inward 45 degrees, revealing an infinite pitch-black darkness beyond the threshold. On the hallway floorboards, two dark glistening wet footprint impressions are newly visible leading inward from the door. In the corner, the red indicator dot blinks beside "LIVE FEED — 03:14:21 AM". Terrifying negative space, high contrast vector lines.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, colorful exterior, lights, shoes, clutter, blurry lines.
+
+--------------------------------------------------------------------------------
+CLIP_21 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 21]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Wide interior bedroom angle looking across the dark room toward the closed bedroom door. Warm cream textured paper canvas background (#F8F6F0). In the left foreground, the protagonist stick figure sits bolt upright in the platform bed frame under a cotton blanket, illuminated from below by an upward triangular cone of bright white light from the smartphone they are clutching with both arms. Their unbroken black vector limbs terminate in smooth rounded line-caps with strictly zero fingers, zero human hands, zero knuckles. Their solid white circular head (#FFFFFF) with a crisp black contour (#0F172A) is turned screen-right toward the closed bedroom door at the far end of the room. The wooden door is surrounded by deep pitch-black void shadows (#0A0B0E). Stark chiaroscuro, extreme psychological dread, clean vector linework.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, human fingers, realistic hands, detailed face, colorful room, clutter, blurry edges.
+
+--------------------------------------------------------------------------------
+CLIP_22 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 22]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector graphic noir animation style. Extreme low-angle macro view focusing on the floorboards and bottom seam of the closed wooden bedroom door. Warm cream textured paper canvas floor (#F8F6F0) with clean black vector plank lines. The closed door rises up in deep pitch-black void shadow (#0A0B0E), with a narrow slit of stark white light glowing from beneath the horizontal door gap. The brass door latch is faintly visible in the upper shadow. Immaculate flat graphic vector linework, high contrast chiaroscuro, heavy psychological suspense, empty floor in the foreground.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, people, limbs, faces, shoes, clutter, blurry lines, messy artifacts.

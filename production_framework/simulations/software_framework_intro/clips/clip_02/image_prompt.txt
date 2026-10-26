@@ -1,0 +1,12 @@
+[CONFIGURATION SETTINGS]
+Engine: Google Flow / Imagen 4 (Tier 2 Keyframe Plate)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Clip ID: clip_02
+Target Shot Type: Medium Shot / Presenter with Glitched Timeline Display
+
+[KEYFRAME IMAGE PROMPT]
+Cinematic live-action film still of the technical director seated at the matte-black studio workstation, framed in a balanced medium shot. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Dressed in the same tailored matte-black technical overshirt. The presenter looks directly toward the camera with an open, explanatory gesture toward the curved ultra-wide OLED monitor beside him. On the monitor screen, a dense video editing timeline displays fragmented cut slices, red error warnings, and misaligned audio waveform stems. Sharp optical focus on the presenter's face, with the glitched software UI casting soft cyan and red accents across his forearm and desk surface. Warm amber practical light rims his silhouette against the dark acoustic wall. Photorealistic 35mm film still, 50mm cine prime lens, fine cinematic grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, blurry.

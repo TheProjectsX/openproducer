@@ -1,0 +1,18 @@
+[TIER 1: MASTER BASE REFERENCE PROMPT — SOFTWARE FRAMEWORK INTRO]
+Target Engine: Google Flow / Imagen 4 (Master Ingredient #1)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[MASTER IMAGE PROMPT]
+Cinematic live-action film still of a real living technical director seated at a minimalist workstation in a modern dark-slate studio suite. In the center of the frame, the presenter sits in a relaxed, authoritative posture at a sleek matte-black desk:
+
+Facial Biometrics & Likeness: Strictly preserve 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Authentic living human face with sharp natural gaze toward the camera, subtle confident micro-expression, natural skin pores and biological subsurface scattering. Real living human being, zero AI waxy glaze, zero facial distortion, not an altered face.
+
+Anatomical Scale & Wardrobe: Realistic adult human anatomical proportions, strictly natural 1:7.5 head-to-body scale ratio, natural shoulder width proportional to torso height. Dressed in a tailored, minimalist matte-black technical overshirt over a fitted charcoal-grey crewneck undershirt, with clean structured seams and natural fabric drape conforming to real body mechanics. Empty hands resting naturally on the edge of the desk.
+
+Environment & Motivated Lighting: High-end minimalist software studio with dark textured acoustic walls. On the desk, a sleek curved ultra-wide OLED monitor displays a dark-mode IDE with clean code syntax and video timeline tracks, casting a subtle soft cool fill light across the desk surface. In the background, a warm amber practical lamp provides a soft, atmospheric rim light along the presenter's shoulders and jawline. 
+
+Visual Style: Shot on 35mm film stock, 85mm portrait prime lens, shallow depth of field with creamy background bokeh, razor-sharp optical focus on the presenter's face, organic fine grain, authentic high-contrast cinematic color grading.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, manga drawing, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead effect, caricature proportions, dwarfism, shrunken torso, chibi anatomy, distorted neck, deformed fingers, extra limbs, waxy airbrushed skin, messy cables, colorful toy clutter, blurry.

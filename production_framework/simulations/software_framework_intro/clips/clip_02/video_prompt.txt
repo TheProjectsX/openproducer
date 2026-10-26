@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 4s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition: PERSPECTIVE CUT / WORKSTATION MEDIUM SHOT
+Dependencies: Initialized from clips/clip_02/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off medium framing of the technical director seated beside the glowing ultra-wide monitor. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the second second, the presenter raises his open left hand toward the glitched editing timeline on the screen, holding direct eye contact with the viewer. With relaxed jaw and subtle restrained lip articulation, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "Creators waste four hours editing a thirty-second clip." His lips close naturally into a resting state on the final syllable, zero jaw warping. Completely static camera framing with zero drift. Shot on 35mm film stock, 50mm prime lens, soft amber rim lighting against dark acoustic backdrop. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, quiet room tone, zero background music.

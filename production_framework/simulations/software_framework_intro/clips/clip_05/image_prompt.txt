@@ -1,0 +1,12 @@
+[CONFIGURATION SETTINGS]
+Engine: Google Flow / Imagen 4 (Tier 2 Keyframe Plate)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Clip ID: clip_05
+Target Shot Type: Medium 3/4 Shot / Technical Demonstration
+
+[KEYFRAME IMAGE PROMPT]
+Cinematic live-action film still of the technical director seated at the dark studio desk in a 3/4 side profile view. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Dressed in the same tailored matte-black technical overshirt over charcoal crewneck. The presenter looks toward the camera while making a measured, open-handed explanatory gesture toward the glowing dual-monitor array beside him. On the monitors, glowing node-based video continuity trees and audio alignment meters glow softly in the shallow background. Balanced lighting with warm amber rim along his jawline and back, complemented by soft cool screen reflection on his chest and desk. Shot on 35mm film stock, 85mm prime lens, shallow depth of field, authentic fine grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, blurry.

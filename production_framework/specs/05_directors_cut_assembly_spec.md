@@ -51,16 +51,49 @@ The Agent must NEVER prematurely rush into file creation or prompt compilation i
   > *"Here is our confirmed production setup: [Summary]. Before we begin, do you have any specific creative notes, character details, tonal constraints, or extra instructions you want to add? Reply with your notes or confirm to start the process."*
 - **The Confirmation Gate:** The Agent is **strictly prohibited** from generating files, writing scripts, or compiling prompts until the creator provides their extra instructions and gives explicit confirmation to proceed.
 
+### 2.5 Dynamic Narrative Tempo & Hybrid Pacing (No Rigid Durations)
+Narrative duration and speech velocity cannot be treated as a static default. Different stories and beats demand radically different tempos:
+1. **Slow-Burn / Spooky Dread (1.8 – 2.2 WPS):** Atmospheric psychological horror, eerie soliloquies, deliberate pauses to give the viewer the full emotional weight.
+2. **High-Velocity / Hyped Pacing (2.6 – 3.0 WPS):** High-energy explainers, intense action, frantic escapes, viral retention.
+3. **The Hybrid Pacing Arc:** Stories that transition dynamically across beats (e.g. starting slow and atmospheric, accelerating into breathless panic during the climax, and dropping back into silence for the chill payoff).
+- **Rule:** Durations adapt dynamically per clip beat based on emotional intensity rather than a flat mathematical constant.
+
+### 2.6 Perspective & The Creator Agency Protocol (The Non-Imposition Law)
+1. **2nd-Person Immersive Staging (`"Suppose you woke up at 2 AM..."`):** Powerful psychological technique for pulling the viewer directly into the protagonist's shoes.
+2. **The Non-Imposition Law (Respecting Authored Intent):**
+   - **Scenario A (Creator supplies a Rough Plot / Premise / Concept):** The AI Agent is actively empowered to propose the immersive 2nd-person perspective, draft dialogue, and structure the narrative arc.
+   - **Scenario B (Creator supplies an Authored Script / Walkthrough / Draft):** If the creator has already provided a script or detailed walkthrough, **the AI MUST NOT impose or rewrite their narrative voice**. The creator has already put deliberate thought into their words. The AI's role is strictly limited to measuring clip durations, suggesting pacing adjustments, and slicing into visual clips, never rewriting their creative expression.
+
+### 2.7 Dynamic Hook Governing Rules (Banning Static Templates)
+1. **No Mad-Libs Templates:** Banish rigid, copy-paste formulas (e.g. fill-in-the-blank `"Have you ever felt like [X]?"`).
+2. **The Three Dynamic Hook Rules:**
+   - *Immediate In Medias Res (Zero Warm-up):* Plunge directly into a sensory event, physical action, or high-stakes choice within the first 3 seconds. Zero introductory filler (`"In this video..."`).
+   - *Disruption of Everyday Equilibrium:* Break an ordinary expectation immediately (`"You lock your front door every night. But tonight, the lock turns from the other side."`).
+   - *Contextual Organic Generation:* Hook phrasing must be generated organically from the creator's exact plot stakes and genre rather than a generic template.
+
+
 ---
 
 ## 3. Pillar 1: Mathematical Word-to-Time Pacing Calculation
 
-### 3.1 Speech Velocity Standard
-Human conversational speech naturally flows at **130 to 150 words per minute**:
-$$\text{Speech Velocity} \approx 2.17 \text{ to } 2.50 \text{ words per second} \quad (\text{Production Baseline: } 2.2 \text{ words/sec})$$
+### 3.1 Dual-Track Speech Velocity Standard
+Speech velocity depends directly on the generation pathway:
+- **Pathway A (Native In-Video Audio — Veo 3.1):** Slow, deliberate cadence with pre/post-roll silence buffers:
+  $$\text{Native Velocity} \approx 1.20 \text{ to } 1.50 \text{ words per second} \quad (\text{Production Baseline: } 1.3 \text{ words/sec})$$
+- **Pathway B (External Narration — ElevenLabs / Gemini TTS):** Conversational human speech:
+  $$\text{External Velocity} \approx 2.17 \text{ to } 2.50 \text{ words per second} \quad (\text{Production Baseline: } 2.2 \text{ words/sec})$$
 
 ### 3.2 Spoken Word Limits by Flow Duration
 
+#### Pathway A: Native In-Video Audio (Veo 3.1)
+| Clip Duration | Absolute Max Words | Recommended Sweet Spot | Max Spoken Duration | Guaranteed Buffer |
+|---|---|---|---|---|
+| **4 Seconds** | 6 words | 3 – 5 words | 2.0s – 2.5s | $\ge 1.5\text{s}$ |
+| **6 Seconds** | 10 words | 7 – 9 words | 3.5s – 4.5s | $\ge 1.5\text{s}$ |
+| **8 Seconds** | 14 words | 11 – 13 words | 5.0s – 6.0s | $\ge 2.0\text{s}$ |
+| **10 Seconds** | 19 words | 15 – 18 words | 6.5s – 7.5s | $\ge 2.5\text{s}$ |
+
+#### Pathway B: External Narration (ElevenLabs / Gemini TTS)
 | Clip Duration | Absolute Max Words | Recommended Sweet Spot | Max Spoken Duration | Guaranteed Buffer |
 |---|---|---|---|---|
 | **4 Seconds** | 8 words | 5 – 7 words | 2.2s – 3.0s | $\ge 1.0\text{s}$ |
@@ -69,7 +102,7 @@ $$\text{Speech Velocity} \approx 2.17 \text{ to } 2.50 \text{ words per second} 
 | **10 Seconds** | 22 words | 17 – 20 words | 7.5s – 8.5s | $\ge 1.5\text{s}$ |
 
 ### 3.3 The Punctuation Breathing Buffer Rule
-Every clip containing spoken dialogue **must preserve at least 0.8s to 1.5s of total silence buffer** (split between pre-roll silence before the first word and post-roll silence after the last word). Characters must never speak on Frame 1 or conclude speech on the terminal frame.
+Every clip containing spoken dialogue **must preserve at least 1.0s to 1.5s of total silence buffer** (split between pre-roll silence before the first word and post-roll silence after the last word). Characters must never speak on Frame 1 or conclude speech on the terminal frame. Enforced via Linters **L-01** (External TTS) and **L-16** (Native Veo).
 
 ---
 
@@ -101,12 +134,30 @@ A prompt cannot attempt to retain a stale visual context when the story has cros
 3. **Dialogue / Revelation Shock:** A chilling phrase or supernatural whisper interrupting dialogue.
 4. **Speaker / Entity Shift:** Switching from the on-screen subject to an external or phone voice.
 
-### 4.4 The 3 Visual Beat Archetypes & The Anti-Stagnation Law
-The overriding visual law is **The Anti-Stagnation Law (View Refresh Principle)**: *Never linger too long in a single visual angle or static viewpoint.* Visual rhythm must refresh dynamically based on plot weight.
+### 4.4 The 4-Beat Visual Rhythm & The Anti-Stagnation Law
+The overriding visual law is **The Anti-Stagnation Law (View Refresh Principle)**: *Never linger too long in a single visual angle or static viewpoint.* To solve "talking head fatigue" and eliminate lip-sync drag, sequential cuts cycle through the standardized **4-Beat Visual Rhythm**:
 
-1. **Type A: Scene Shot (4s, 6s, 8s, 10s):** Primary subject action in motivated environment with a single continuous optical trajectory.
-2. **Type B: Macro Insert (4s, 6s, or 8s):** Isolated physical prop or environmental reaction (e.g. peephole, vibrating deadbolt, clock face, smartphone screen). Duration adapts to plot context (4s for rapid tactile shock; 6s–8s for lingering suspense or complex physical action).
-3. **Type C: Graphic / Text Plate (4s, 6s, or 8s):** Stylized 2D kinetic typography or graphic art displaying critical spoken lines on the locked canvas texture. Duration scales with text length and delivery cadence (4s for punchy 4–6 word hooks; 6s–8s for longer multi-sentence revelations with breathing room), guaranteeing pristine letterforms without splitting character latents.
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                      THE 4-BEAT VISUAL RHYTHM LOOP                     │
+├──────────────────────┬─────────────┬───────────────────────────────────┤
+│ BEAT 1: GROUNDED     │ 3 – 5s      │ Physical activity in environment; │
+│         ACTION       │             │ zero direct-to-camera address     │
+├──────────────────────┼─────────────┼───────────────────────────────────┤
+│ BEAT 2: DIRECT FOCAL │ 2 – 3s      │ Face MCU / core punchline only;   │
+│                      │             │ tight lip-sync isolated here      │
+├──────────────────────┼─────────────┼───────────────────────────────────┤
+│ BEAT 3: CUTAWAY /    │ 2 – 4s      │ Macro prop, screen UI, or metaphor│
+│         MACRO INSERT │             │ speech continues off-screen       │
+├──────────────────────┼─────────────┼───────────────────────────────────┤
+│ BEAT 4: REACTION /   │ 1 – 2s      │ Silent breath, micro-expression,  │
+│         ATMOSPHERE   │             │ head turn; audio decay buffer     │
+└──────────────────────┴─────────────┴───────────────────────────────────┘
+```
+- **Beat 1: Grounded Action (3–5s):** The subject is engaged in physical activity within the environment (walking, adjusting a device, opening a door). Zero direct address.
+- **Beat 2: Direct Focal (2–3s):** The camera cuts straight to the subject's face/MCU for the **single core thesis statement or punchline**. This is the *only* clip where tight lip-sync is required.
+- **Beat 3: Cutaway / Metaphor / Macro Insert (2–4s):** The visual cuts away to a relevant physical object, environmental reaction, or UI screen while the voiceover/speech continues in the soundscape. Lip-sync burden drops to zero.
+- **Beat 4: Reaction Beat (1–2s):** A silent breath, micro-expression, subtle head turn, or visual punchline before the next rhythm cycles.
 
 ### 4.5 Lean Causal Palette (Prop Bounding Guardrail)
 To prevent video diffusion models from hallucinating random background clutter, extra props, or mutating items between cuts, shots with complex physical props include an explicit **closed-set prop inventory**:
@@ -115,6 +166,19 @@ Permitted Props: [alarm clock, ceramic coffee mug, smartphone]
 Negative Prompt Clause: ... strictly zero objects or props not listed in Permitted Props, no random background clutter.
 ```
 *Rule:* The syntax is kept lightweight and creator-friendly, avoiding heavy programmatic schema overhead while providing a hard boundary for diffusion latents.
+
+### 4.6 The 4 Match-Cut Timeline Handoffs (NLE Snapping Standards)
+To prevent AI video sequences from feeling like disjointed slideshows, cuts between clips specify standardized match-cut tags for seamless straight cuts or 0.5s dissolves in CapCut, Premiere, or DaVinci:
+1. `[MATCH-ON-POSE]`: Clip $N$ ends with the subject reaching, turning, or leaning; Clip $N+1$ initiates in an identical bodily posture from a complementary angle (e.g. 45° profile to frontal).
+2. `[MATCH-ON-PROP]`: The camera centers on a shared physical anchor (e.g. smartphone, coffee mug, keycard). The cut pivots around that physical anchor while changing the background.
+3. `[MATCH-ON-SHAPE]`: Graphic / geometric continuity (e.g. a round alarm clock in Clip $N$ cuts directly to a round full moon or security camera lens in Clip $N+1$).
+4. `[MATCH-ON-TONE]`: Exposure and color temperature lock (matching luminance and dominant HSL palettes across cuts so the transition does not flash or strobe).
+
+### 4.7 The 30° Cinematic Contrast & Anti-Jump-Cut Law
+Cutting consecutively between two slightly different Medium Shots of the same subject produces a severe, jittery **AI Jump-Cut** because diffusion models cannot lock exact millimeter chair placement and shoulder angles across separately generated plates.
+- **The 30° Law:** Any straight cut on the same character **MUST shift camera perspective by at least 30 degrees** and/or change focal distance (e.g. Frontal Medium Shot $\rightarrow$ 45° Side Close-Up $\rightarrow$ Screen Macro Insert).
+- **Continuous Alignment Alternative:** If identical framing is required across consecutive clips, the pipeline **MUST use `last_frame` chaining** (feeding the terminal frame of Clip $N$ as the starting seed of Clip $N+1$) rather than generating independent image plates. Enforced via Linter **L-19**.
+
 
 ---
 
@@ -249,7 +313,13 @@ The production framework operates on a **Flow Native Baseline** by default, but 
 
 ### Switch Transformation Rules:
 1. **`visual_mode: images`:** Strips temporal kinematics and audio blocks; outputs high-detail photography prompts for Imagen 4 or Midjourney.
-2. **`assembly_mode: monolithic`:** Fuses individual clip beats into a single continuous long-take paragraph with smooth transitional adverbs for Seedance, Sora, or Minimax.
+2. **`assembly_mode: monolithic` (Long-Form Single-Take Engines):** For 10–15s engines (Seedance 2.0, Sora, Minimax), fuses individual sliced beats into a single continuous long-take prompt structured with chronological timestamps and transitional kinematics:
+   ```text
+   [00:00-00:04] Grounded Action & Establishing: [Subject DNA] in [Environment], [Action 1], [Camera vector 1].
+   [00:04-00:08] Direct Focus & Core Beat: [Subject] transitions seamlessly to [Action 2], camera smoothly pulls in to MCU.
+   [00:08-00:12] Continuous Reaction & Resolution: [Subject] settles into [Action 3], camera stabilizes into static wide framing.
+   Audio: SFX: [...]; Ambience: [...]; Dialogue: [...]; Music: [...].
+   ```
 3. **`dialogue_engine` Modality Switching:**
    - **`native_flow` (Default):** Embedded in-clip dialogue with anti-muppet lip restraints (`subtle lip articulation, relaxed jaw`) and Closed-Lip Listener rule if off-screen/phone audio.
    - **`elevenlabs`:** Strips spoken dialogue quotes from video prompts (prevents double-speech audio); generates `dialogue_scripts.md` cue sheet with pre-roll/post-roll silence buffers and voice profiles.
@@ -292,11 +362,12 @@ Every assembled production outputs a unified file directory supporting both **Go
 shots/ (or production_framework/<project_id>/)
 ├── base_image_prompt.txt            ◄── [Tier 1] Master Style & Subject DNA Reference Anchor Plate
 ├── scratchbook.md                   ◄── Director's Pacing Ledger (Beats, Words, Actions, Timing)
-├── master_flow_agent_prompt.txt     ◄── Single copy-paste file for Google Flow AGENT MODE
-├── narrator_script.md               ◄── (Conditional) Gemini 3.8 Flash TTS script with < > syntax
-├── dialogue_scripts.md              ◄── (Conditional) ElevenLabs character cue sheet manifest
+├── master_images_prompt.txt         ◄── Master manifest for ALL IMAGE generation (Tier 1 & Tier 2 plates)
+├── master_videos_prompt.txt         ◄── Master manifest for ALL VIDEO generation (Tier 3 Veo prompts)
+├── narrator_script.md               ◄── (Conditional) TTS script with word-to-time pacing
+├── dialogue_scripts.md              ◄── (Conditional) Character cue sheet manifest
 ├── origin_manifest.md               ◄── Ledger mapping assets to engine origins
-└── clips/ (or individual_clips/)    ◄── Dedicated folder with isolated files for MANUAL MODE
+└── clips/                           ◄── Dedicated folder with isolated files for MANUAL MODE
     ├── clip_01/
     │   ├── image_prompt.txt         ◄── [Tier 2] Starting Keyframe Plate (Conditioned on Tier 1)
     │   └── video_prompt.txt         ◄── [Tier 3] Image-to-Video Motion & Audio Prompt
@@ -341,6 +412,11 @@ Every assembled production must pass these 5 assembly-level linters before deliv
 | **L-13** | **Pre-Materialized Prop Linter** | Handheld props must be declared already grasped from Frame 1 to Frame End; zero mid-clip draws. | Prompt includes verbs like *"draws gun"*, *"pulls out lighter"*, or dynamic prop materialization. |
 | **L-14** | **Gemini TTS Formatting & Retention Linter** | Inline cues must strictly use Angle Brackets (`<short pause>`, `<whisper>`); zero square brackets (`[...]`); pause tags must NEVER be appended to the end of a sentence line (`name. <long pause>`), but must occupy standalone lines; zero consecutive `<long pause>` tags to prevent dead air. | Any square bracket cue (`[...]`), trailing end-of-line pause tag, or bloated pause cluster present in script. |
 | **L-15** | **Screen Direction & Eyeline Linter** | In Mode 2 cuts between conversing characters or related props, complementary 180° screen direction and eyeline vectors must be preserved across cuts. | Screen directions flip across the 180° axis without an establishing spatial reset. |
+| **L-16** | **Native Veo 3.1 Word Budget Linter** | In Pathway A (Native Flow Audio), word counts must not exceed native thresholds (Max 5w for 4s, Max 9w for 6s, Max 13w for 8s, Max 18w for 10s). | Spoken word count exceeds native Veo 3.1 speech velocity (~1.2-1.5 wps). |
+| **L-17** | **Anti-Subtitle Invariant Linter** | Any prompt containing narrative context or script lines MUST include the negative subtitle clause (`subtitles, closed captions, burned-in text, lower thirds, watermark`). | Missing anti-subtitle negative clause. |
+| **L-18** | **3-Track Structured Audio Syntax Linter** | The trailing audio block MUST adhere to structured semicolon-delimited syntax (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`). | Audio block is unstructured run-on text. |
+| **L-19** | **30° Cinematic Contrast & Anti-Jump-Cut Linter** | Sequential cuts of the same subject must shift perspective by $\ge 30^\circ$, change focal length, or chain via `last_frame`. | Consecutive similar medium shots of identical character without 30° shift or `last_frame` chaining. |
+| **L-20** | **Authored Voice Preservation Linter** | If creator provides an authored script, the compiler is strictly forbidden from rewriting the narrative perspective into 2nd person. | Author's narrative voice or script overwritten by AI without explicit permission. |
 
 ---
 

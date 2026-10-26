@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition: PERSPECTIVE CUT / TIMELINE BENCHMARK
+Dependencies: Initialized from clips/clip_06/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, medium framing of the technical director seated at the workstation with the rendered timeline interface visible on the display. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the second second, the presenter gives a subtle nod toward the playing timeline, then returns his gaze directly to the camera lens. With a relaxed jaw, restrained lip articulation, and minimal jaw displacement, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "What used to take an entire afternoon now compiles and renders in ten minutes flat." Natural facial muscle articulation with clean resting closure between clauses, zero jaw warping. Slow subtle lateral optical tracking slide to the right. Shot on 35mm film stock, 50mm prime lens, soft amber rim lighting against dark acoustic wall. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, quiet room tone, zero background music.

@@ -1,0 +1,12 @@
+[CONFIGURATION SETTINGS]
+Engine: Google Flow / Imagen 4 (Tier 2 Keyframe Plate)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Clip ID: clip_08
+Target Shot Type: Medium Shot / Outro & Call-to-Action
+
+[KEYFRAME IMAGE PROMPT]
+Cinematic live-action film still of the technical director seated at the matte-black workstation in the minimalist dark studio suite, framed in a composed medium shot. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Wearing the same tailored matte-black technical overshirt over charcoal crewneck. The presenter sits with upright posture, hands resting calmly clasped on the dark desk beside his keyboard, looking into the lens with a confident, welcoming half-smile. On the curved OLED monitor behind him, a clean green status line reads `PRODUCTION READY: 100% PASS`. Deep cinematic shadow, warm amber rim light contouring the presenter's shoulders and chair. Photorealistic 35mm film still, 85mm prime lens, shallow depth of field, fine film grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, waxy skin, blurry.

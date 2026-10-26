@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition: RESOLUTION / OUTRO CLOSURE
+Dependencies: Initialized from clips/clip_08/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, medium framing of the technical director seated at the minimalist workstation. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the second second, the presenter clasps his hands gently together on the desk surface, holding steady eye contact with the viewer. With a relaxed jaw, restrained lip articulation, and minimal jaw displacement, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "Stop prompting blindly. Start directing with engineering precision." His mouth closes naturally on the final syllable, settling into a serene resting expression. Slow, smooth optical pull-back widening the composition into a serene final studio tableau. Shot on 35mm film stock, 85mm prime lens, soft warm amber rim lighting against dark slate acoustic backdrop. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, quiet room tone, zero background music.

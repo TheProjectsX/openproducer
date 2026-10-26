@@ -1,0 +1,12 @@
+[CONFIGURATION SETTINGS]
+Engine: Google Flow / Imagen 4 (Tier 2 Keyframe Plate)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Clip ID: clip_06
+Target Shot Type: Medium Shot / Presenter with Assembled Timeline Playback
+
+[KEYFRAME IMAGE PROMPT]
+Cinematic live-action film still of the technical director seated at the matte-black studio workstation, framed in a composed medium shot. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Dressed in the same tailored matte-black technical overshirt over charcoal crewneck. The presenter looks directly toward the viewer with a satisfied, authoritative expression, gesturing subtly toward the ultra-wide curved display beside him. On the monitor, a pristine digital video timeline shows eight seamlessly aligned clip blocks with bright green render cache bars and synchronized audio tracks, while the playback window shows smooth cinema playback. Sharp optical focus on the presenter's face, with the blue and green screen glow reflecting faintly on his hands and desk. Warm amber rim lighting along his back against the dark studio wall. Photorealistic 35mm film still, 50mm prime lens, fine grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, blurry.

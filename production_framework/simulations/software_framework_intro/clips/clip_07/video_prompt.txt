@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition: PERSPECTIVE CUT / CLIMAX DELIVERY
+Dependencies: Initialized from clips/clip_07/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, tight medium close-up of the technical director in the darkened studio suite. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the second second, the presenter gives a slow, subtle affirmative nod of conviction, maintaining an unbroken direct gaze into the camera lens. With a relaxed jaw, restrained lip articulation, and minimal mandibular movement, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "Upload-ready cinema directly from code. No hallucinations, no manual patching." Authentic mouth and cheek micro-movement with natural bilabial closures, zero facial distortion. Continuous slow creeping optical push-in toward the presenter's eyes. Shot on 35mm film stock, 85mm prime lens, dramatic warm amber rim lighting against deep black-slate background. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, quiet room tone, zero background music.

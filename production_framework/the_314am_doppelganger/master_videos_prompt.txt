@@ -1,4 +1,4 @@
-# GOOGLE FLOW AGENT MODE: MASTER TIMELINE MANIFEST
+# MASTER VIDEOS PROMPT: THE 3:14 AM DOPPELGÄNGER
 # Project: The 3:14 AM Doppelgänger
 # Target Engine: Google Flow (Veo 3.1 & Imagen 4)
 # Audio Master: audio.srt (Exact Recorded Duration: 135.08 Seconds / 02:15.08 across 40 Cues)

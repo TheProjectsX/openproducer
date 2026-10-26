@@ -1,0 +1,12 @@
+[CONFIGURATION SETTINGS]
+Engine: Google Flow / Imagen 4 (Tier 2 Keyframe Plate)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Clip ID: clip_04
+Target Shot Type: Medium 3/4 Shot / Presenter with Terminal Output
+
+[KEYFRAME IMAGE PROMPT]
+Cinematic live-action film still of the technical director seated at the matte-black desk in a 3/4 side-profile view, beside a glowing vertical code monitor. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Dressed in the same tailored matte-black technical overshirt. The presenter turns his head toward the camera lens with a composed, deliberate expression, fingers resting lightly on a mechanical keyboard. The monitor screen displays a clean dark-mode terminal showing green validation checkmarks labeled `[PASS] L-01: Word Budget` and `[PASS] L-15: Continuity`. The emerald terminal glow casts subtle specular highlights across his jawline and hands, balanced by a warm amber practical rim light along his back and dark acoustic studio wall. Photorealistic 35mm film still, 50mm cine prime lens, shallow depth of field, fine grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted hands, extra fingers, waxy skin, blurry.

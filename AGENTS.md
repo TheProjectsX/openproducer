@@ -489,14 +489,44 @@ To prevent token bloat while retaining 100% information control:
   3. *Dynamic Hook Principles:* Banned mad-libs templates in favor of dynamic rules (immediate in medias res, broken equilibrium, organic contextual phrasing).
 - **Reference Document:** [`dump.md`](./dump.md).
 
-### 2026-10-26 — Session Wrap-up & Next Session Handoff
-- **Scope Trimming:** Officially discarded Topic 3 (Thumbnails & Channel Branding) by creator directive to prevent marketing bloat and preserve lean production focus.
-- **Active Staging:** Staged Domain 1 (Subject Likeness) and Domain 2 (Script & Dynamic Hooks) in [`dump.md`](./dump.md).
-- **Next Session Agenda:**
-  1. Review & finalize **Domain 4 (Directorial Slicing & Visual Rhythm)**: 4-beat visual rhythm and match-cut timeline handoffs.
-  2. Review & finalize **Domain 5 (Audio Engineering & Decoupling)**: 3-track audio separation (`SFX`, `Ambient`, `Music`) and `(REFERENCE ONLY)` script headers.
-  3. Migrate approved items from [`dump.md`](./dump.md) into authoritative specifications ([`02_character_spec.md`](./production_framework/specs/02_character_spec.md), [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md)).
-  4. Proceed to Milestone 1 Schemas and Milestone 2 Scaffolding.
+### 2026-10-26 — Dual-Image Cosplay Translation & Simulation 2 (Discussion 52)
+- **Simulation 1 Validated (Dual-Reference Cosplay / Pose & Attire Translation):**
+  1. *Material Translation Engine:* Prompted translation of 2D anime pose, hairstyle, and wardrobe from `[IMAGE 2]` into real-world physical movie fabrics (textile weave, gravity drape, stitched seams) and soft human hair follicles with fine flyaways.
+  2. *Facial Landmark Isolation:* Strictly isolated `[IMAGE 1]` to facial bone structure, zygomatic arches, nose bridge, eyes, and skin pores, preventing clothing or hair bleed from the real person.
+  3. *Anatomical Scale Lock:* Enforced 1:7.5 adult anatomical scale to eliminate cartoon bobblehead distortion.
+- **Simulation 2 Field Tested & Marked Failed (Empirical Glitches Discovered):**
+  1. *Status:* ❌ Marked Failed per creator field testing in Google Flow. Parked for future overhaul.
+  2. *Empirical Discovery 1 (Veo 3.1 Native Speech Velocity Glitch):* The 2.2 words/sec pacing is invalid for Veo 3.1 native in-video audio. Veo speaks at $\approx 1.2$–$1.5$ words/sec with mandatory ~1.0s pre/post buffers. Word counts of 15 words in 6s or 8 words in 4s caused dialogue cutoff and duration overflow. Real native budgets must be slashed to: 4s = 3–5 words, 6s = 7–9 words, 8s = 11–13 words.
+  3. *Empirical Discovery 2 (Face Match Degradation / Prompt Over-Description):* Long paragraphs detailing facial bone structures cause diffusion models to synthesize faces from text tokens, overriding the reference image `[IMAGE 1]` latents. Requires Lean Reference Anchoring (`The exact same person from [IMAGE 1]...`).
+  4. *Empirical Discovery 3 (Visual Jitter / Jump-Cut Trap):* Synthesizing independent image plates for consecutive medium shots of the same character causes jarring posture/angle jumps. Requires strict 30° Cinematic Contrast cuts or Flow `last_frame` chaining.
+  5. *Deliverables Preserved:* Preserved under [`production_framework/simulations/software_framework_intro/`](./production_framework/simulations/software_framework_intro/) with decoupled `master_images_prompt.txt` and `master_videos_prompt.txt`.
+- **Architectural Enhancement: Dual Decoupled Master Prompts Standard:**
+  1. *The Separation:* Consolidated prompt manifests are now strictly decoupled into two dedicated files:
+     - `master_images_prompt.txt`: Contains ONLY image generation prompts (Tier 1 Ingredient #1 + Tier 2 keyframe plates for all clips).
+     - `master_videos_prompt.txt`: Contains ONLY video generation prompts (Tier 3 Veo prompts with durations, configs, and audio blocks).
+  2. *Refactored Across Codebase:* Implemented in [`production_framework/simulations/software_framework_intro/`](./production_framework/simulations/software_framework_intro/), upgraded [`production_framework/the_314am_doppelganger/`](./production_framework/the_314am_doppelganger/), and locked into [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+- **Reference Documents:** [`discussions/_raw/52_simulation_software_framework_intro_and_dual_image_translation.md`](./discussions/_raw/52_simulation_software_framework_intro_and_dual_image_translation.md) and [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+
+### 2026-10-26 — Domain 05: Audio Engineering & Decoupling Codification (Discussion 53)
+- **Milestone Reached:** Fully researched, synthesized, and codified Domain 05 into authoritative specifications ([`04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md) and [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md)):
+  1. *Dual-Track Speech Velocity Standard:* Formalized decoupling between Pathway A (Native Veo 3.1: $\approx 1.2$–$1.5$ wps; 4s=3–5w, 6s=7–9w, 8s=11–13w) and Pathway B (External TTS: $\approx 2.2$ wps; 4s=6–8w, 6s=10–12w, 8s=14–16w), with mandatory $\ge 1.0\text{s}$ pre/post-roll silence buffers to eliminate dialogue clipping.
+  2. *Semicolon-Delimited 3-Track Audio Prompt Standard:* Structured Veo trailing audio blocks into frequency-separated channels: `Audio: SFX: [Foley]; Ambience: [Room Tone]; Dialogue: [Spoken words | None]; Music: [Directive].`
+  3. *The `(REFERENCE ONLY)` Non-Render Guardrail:* Encapsulated narrative context and backstory into non-render headers combined with mandatory negative subtitle tokens to eliminate burned-in text and watermark hallucinations.
+  4. *Multi-Track Stem Assembly Architecture (`audio_stems.md`):* Standardized 4-track timeline layout (A1: Dialogue, A2: Foley SFX, A3: Spatial Ambience Bed, A4: Score Bed ducked by -14dB).
+  5. *Linters Enforced:* Added L-16 (Native Veo Word Budget), L-17 (Anti-Subtitle Invariant), and L-18 (3-Track Semicolon Syntax).
+  6. *Dump Staging Consumed:* Domain 5 in [`dump.md`](./dump.md) marked as fully consumed and finalized.
+### 2026-10-26 — Finalizing Staging Cleanup & 100% Spec Consumption (Discussion 54)
+- **Milestone Reached:** Fully finalized, verified, and consumed 100% of staged concepts from `dump.md` into the authoritative specifications, and cleanly purged `dump.md` from disk:
+  1. *Domain 1 (Subject Likeness) in [`02_character_spec.md`](./production_framework/specs/02_character_spec.md):* Codified Lean Reference Anchoring (Rule 9) banning text over-description to keep 95%+ latent attention on `[IMAGE 1]`; 2-Step Angle Normalizer; 1:7.5 scale ratio; Expression Decoupling Engine.
+  2. *Domain 2 (Script & Dynamic Hooks) in [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md):* Codified Dynamic Narrative Tempo (Section 2.5); The Non-Imposition Law (Section 2.6) strictly protecting creator's authored script; Dynamic Hook Rules (Section 2.7) banning mad-libs formulas.
+  3. *Domain 4 (Directorial Slicing & Visual Rhythm) in [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md):* Codified the 4-Beat Visual Rhythm (Section 4.4); 4 Match-Cut Timeline Handoffs (Section 4.6); 30° Cinematic Contrast & Anti-Jump-Cut Law (Section 4.7); Timestamped Monolithic Prompt Syntax for long-take engines (Section 6.2).
+  4. *Domain 5 (Audio Engineering) in [`04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md):* Codified Dual-Track Velocity Standards, 3-Track Semicolon Audio Syntax, `(REFERENCE ONLY)` non-render headers, and multi-track stems.
+  5. *Linters Enforced:* Added Linters L-16 through L-20.
+  6. *Scratchpad Purged:* `dump.md` permanently deleted.
+- **Reference Documents:** [`discussions/_raw/54_finalizing_staging_cleanup_and_all_domains_consumption.md`](./discussions/_raw/54_finalizing_staging_cleanup_and_all_domains_consumption.md), [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md), [`production_framework/specs/04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md), and [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+
+
+
 
 
 

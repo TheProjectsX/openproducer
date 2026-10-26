@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 4s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition: PERSPECTIVE CUT / TERMINAL ARCHITECTURE
+Dependencies: Initialized from clips/clip_04/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, 3/4 medium framing of the technical director seated beside the vertical code display. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the first second, the presenter turns his head from the green terminal text to address the camera directly. With a relaxed jaw and restrained, precise lip articulation, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "A deterministic file-system architecture with automated linters." Mouth finishes cleanly into a closed resting posture on the last syllable. Continuous slow optical push-in toward the presenter's face. Shot on 35mm film stock, 50mm prime lens, soft amber rim lighting against dark acoustic backdrop. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, subtle keyboard tap, quiet room tone, zero background music.

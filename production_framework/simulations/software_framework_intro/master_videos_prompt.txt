@@ -1,0 +1,86 @@
+# MASTER VIDEOS PROMPT: SOFTWARE FRAMEWORK INTRO (NATIVE IN-VIDEO AUDIO)
+# Target System: Google Flow (Video Mode) / Veo 3.1
+# Generation Pathway: Pathway A (Pure Native Dual-Stream Audio & Video)
+# Aspect Ratio: 16:9 | Resolution: 1080p | Native Durations: 4s & 6s
+# Master Acoustic Anchor Key: Consistent, calm, resonant low-pitched baritone voice with measured, authoritative technical cadence and warm chest resonance.
+# Biomechanical Restraint Protocol: Relaxed jaw, minimal mandibular displacement (5–8mm), restrained lip articulation, resting closures on punctuation (Anti-Muppet Mouth).
+
+================================================================================
+CLIP 01 (6s) — THE CORE CRISIS (HOOK)
+================================================================================
+Duration: 6s | Aspect: 16:9 | Resolution: 1080p
+Input Keyframe Image: Generated from master_images_prompt.txt (Clip 01 Keyframe Plate)
+Transition: ESTABLISHING SCENE
+
+[VEO VIDEO PROMPT]
+Starting directly from the initial image, medium close-up framing of the technical director seated at the dark studio workstation. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the first second, the presenter raises his head from the glowing monitor, locking a calm, steady gaze with the camera lens. With a relaxed jaw, minimal jaw displacement, and subtle restrained lip articulation, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "AI video generation has a fatal flaw. Prompts are chaos, faces mutate, and lip-sync slips." Mouth closes naturally into a resting position between pauses, zero facial distortion. Continuous slow optical push-in toward his eyes. Shot on 35mm film stock, 85mm prime lens, soft amber rim lighting against dark slate backdrop. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, quiet room tone, low workstation fan hum, zero background music.
+
+================================================================================
+CLIP 02 (4s) — THE MACRO PAIN (TIMELINE SCRUB)
+================================================================================
+Duration: 4s | Aspect: 16:9 | Resolution: 1080p
+Input Keyframe Image: Generated from master_images_prompt.txt (Clip 02 Keyframe Plate)
+Transition: PERSPECTIVE CUT / WORKSTATION MEDIUM SHOT
+
+[VEO VIDEO PROMPT]
+Starting directly from the initial image, locked-off medium framing of the technical director seated beside the glowing ultra-wide monitor. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the second second, the presenter raises his open left hand toward the glitched editing timeline on the screen, holding direct eye contact with the viewer. With relaxed jaw and subtle restrained lip articulation, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "Creators waste four hours editing a thirty-second clip." His lips close naturally into a resting state on the final syllable, zero jaw warping. Completely static camera framing with zero drift. Shot on 35mm film stock, 50mm prime lens, soft amber rim lighting against dark acoustic backdrop. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, quiet room tone, zero background music.
+
+================================================================================
+CLIP 03 (6s) — THE FRAMEWORK SHIFT (SOLUTION REVEAL)
+================================================================================
+Duration: 6s | Aspect: 16:9 | Resolution: 1080p
+Input Keyframe Image: Generated from master_images_prompt.txt (Clip 03 Keyframe Plate)
+Transition: PERSPECTIVE CUT / SUBJECT CONTINUITY
+
+[VEO VIDEO PROMPT]
+Starting directly from the initial image, locked-off eye-level medium close-up of the technical director seated at the matte-black studio workstation. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the second second, the presenter leans forward slightly toward the camera lens, resting his open palms beside the keyboard with confident purpose. With a relaxed jaw and restrained, natural lip articulation, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "So we stopped guessing. We built an engineering-grade production framework for Google Flow." Natural mandibular movement with clean resting closure between sentences, zero facial distortion. Locked-off static camera framing with zero movement or drift. Shot on 35mm film stock, 85mm prime lens, soft amber rim lighting against dark acoustic wall. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, quiet studio room tone, low workstation fan hum, zero background music.
+
+================================================================================
+CLIP 04 (4s) — SOFTWARE ARCHITECTURE (TERMINAL INSERT)
+================================================================================
+Duration: 4s | Aspect: 16:9 | Resolution: 1080p
+Input Keyframe Image: Generated from master_images_prompt.txt (Clip 04 Keyframe Plate)
+Transition: PERSPECTIVE CUT / TERMINAL ARCHITECTURE
+
+[VEO VIDEO PROMPT]
+Starting directly from the initial image, 3/4 medium framing of the technical director seated beside the vertical code display. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the first second, the presenter turns his head from the green terminal text to address the camera directly. With a relaxed jaw and restrained, precise lip articulation, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "A deterministic file-system architecture with automated linters." Mouth finishes cleanly into a closed resting posture on the last syllable. Continuous slow optical push-in toward the presenter's face. Shot on 35mm film stock, 50mm prime lens, soft amber rim lighting against dark acoustic backdrop. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, subtle keyboard tap, quiet room tone, zero background music.
+
+================================================================================
+CLIP 05 (6s) — TECHNICAL ENGINE & INVARIANCE
+================================================================================
+Duration: 6s | Aspect: 16:9 | Resolution: 1080p
+Input Keyframe Image: Generated from master_images_prompt.txt (Clip 05 Keyframe Plate)
+Transition: PERSPECTIVE CUT / MOTIVATED EXPLANATION
+
+[VEO VIDEO PROMPT]
+Starting directly from the initial image, 3/4 medium framing of the technical director at the dark workstation. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the second second, the presenter raises his right hand in an articulate explanatory gesture toward the glowing continuity monitors, then returns his gaze directly to the camera lens. With a relaxed jaw, restrained lip articulation, and minimal jaw displacement, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "Locking biometric facial invariance, mathematical dialogue pacing, and terminal-frame video continuity." Natural bilabial closures between words, zero facial distortion. Smooth slow lateral optical tracking slide to the right. Shot on 35mm film stock, 85mm prime lens, soft amber rim lighting against dark acoustic wall. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, subtle fabric rustle from sleeve, quiet studio room tone, zero background music.
+
+================================================================================
+CLIP 06 (6s) — THE EMPIRICAL BENCHMARK
+================================================================================
+Duration: 6s | Aspect: 16:9 | Resolution: 1080p
+Input Keyframe Image: Generated from master_images_prompt.txt (Clip 06 Keyframe Plate)
+Transition: PERSPECTIVE CUT / TIMELINE BENCHMARK
+
+[VEO VIDEO PROMPT]
+Starting directly from the initial image, medium framing of the technical director seated at the workstation with the rendered timeline interface visible on the display. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the second second, the presenter gives a subtle nod toward the playing timeline, then returns his gaze directly to the camera lens. With a relaxed jaw, restrained lip articulation, and minimal jaw displacement, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "What used to take an entire afternoon now compiles and renders in ten minutes flat." Natural facial muscle articulation with clean resting closure between clauses, zero jaw warping. Slow subtle lateral optical tracking slide to the right. Shot on 35mm film stock, 50mm prime lens, soft amber rim lighting against dark acoustic wall. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, quiet room tone, zero background music.
+
+================================================================================
+CLIP 07 (6s) — THE PRODUCTION CLIMAX
+================================================================================
+Duration: 6s | Aspect: 16:9 | Resolution: 1080p
+Input Keyframe Image: Generated from master_images_prompt.txt (Clip 07 Keyframe Plate)
+Transition: PERSPECTIVE CUT / CLIMAX DELIVERY
+
+[VEO VIDEO PROMPT]
+Starting directly from the initial image, tight medium close-up of the technical director in the darkened studio suite. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the second second, the presenter gives a slow, subtle affirmative nod of conviction, maintaining an unbroken direct gaze into the camera lens. With a relaxed jaw, restrained lip articulation, and minimal mandibular movement, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "Upload-ready cinema directly from code. No hallucinations, no manual patching." Authentic mouth and cheek micro-movement with natural bilabial closures, zero facial distortion. Continuous slow creeping optical push-in toward the presenter's eyes. Shot on 35mm film stock, 85mm prime lens, dramatic warm amber rim lighting against deep black-slate background. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, quiet room tone, zero background music.
+
+================================================================================
+CLIP 08 (6s) — THE DIRECTOR'S CALL-TO-ACTION (OUTRO)
+================================================================================
+Duration: 6s | Aspect: 16:9 | Resolution: 1080p
+Input Keyframe Image: Generated from master_images_prompt.txt (Clip 08 Keyframe Plate)
+Transition: RESOLUTION / OUTRO CLOSURE
+
+[VEO VIDEO PROMPT]
+Starting directly from the initial image, medium framing of the technical director seated at the minimalist workstation. Retain 100% of authentic facial bone structure, jawline, and skin micro-textures from [IMAGE 1] in tailored black technical overshirt. During the second second, the presenter clasps his hands gently together on the desk surface, holding steady eye contact with the viewer. With a relaxed jaw, restrained lip articulation, and minimal jaw displacement, the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "Stop prompting blindly. Start directing with engineering precision." His mouth closes naturally on the final syllable, settling into a serene resting expression. Slow, smooth optical pull-back widening the composition into a serene final studio tableau. Shot on 35mm film stock, 85mm prime lens, soft warm amber rim lighting against dark slate acoustic backdrop. Audio: consistent close-mic resonant low-pitched baritone vocal delivery with warm chest presence, quiet room tone, zero background music.

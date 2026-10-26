@@ -134,27 +134,38 @@ A locked-off eye-level medium close-up of [Subject description]. Shot on an 85mm
 
 ---
 
-## 6. The 4-Tier Virtual Soundboard Mix
+---
 
-Video prompts synthesize sound natively in Google Flow. Audio prompts must balance all sonic elements using an explicit multi-track desk hierarchy:
+## 6. The 3-Track Structured Audio Syntax & Virtual Soundboard Mix
+
+Video prompts synthesize sound natively in Google Flow (Veo 3.1). Trailing audio blocks must not be written as loose, run-on sentences. They must adhere to the standardized, semicolon-delimited **3-Track Virtual Soundboard Hierarchy**:
+
+$$\mathbf{Audio:\ SFX:\ [Foley];\ Ambience:\ [Room\ Tone];\ Dialogue:\ [Spoken\ Attribution\ |\ None];\ Music:\ [Score\ Directive].}$$
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│  TIER 1: Spoken Dialogue (Foreground Primary)            │
-│  Clear, close-mic vocal presence; warm timbre            │
-├──────────────────────────────────────────────────────────┤
-│  TIER 2: Tactile Physical Foley SFX                      │
-│  Contact audio (metal clicks, cloth rustle, ice settling)│
-├──────────────────────────────────────────────────────────┤
-│  TIER 3: Environmental Spatial Ambience                  │
-│  Room tone, rain drumming, wind howl, 60Hz generator hum │
-├──────────────────────────────────────────────────────────┤
-│  TIER 4: Background Music Score                          │
-│  Mode A (Dialogue-Protected) | Mode B (Upfront) | Mode C │
-└──────────────────────────────────────────────────────────┘
+┌────────────────────────────────────────────────────────────────────────┐
+│                   3-TRACK AUDIO PROMPT ARCHITECTURE                    │
+├────────────────────┬───────────────────────────────────────────────────┤
+│ 1. SFX (Foley)     │ High-frequency tactile impacts & physical contact │
+│                    │ (metal clicks, cloth rustle, keyboard clatter)    │
+├────────────────────┼───────────────────────────────────────────────────┤
+│ 2. Ambience (Bed)  │ Low-frequency & broadband spatial acoustic space  │
+│                    │ (60Hz server hum, quiet room tone, rain on glass) │
+├────────────────────┼───────────────────────────────────────────────────┤
+│ 3. Dialogue (Voice)│ Mid-frequency vocal band (300Hz–3.5kHz) with      │
+│                    │ locked Acoustic Anchor Key & biomechanical limits │
+├────────────────────┼───────────────────────────────────────────────────┤
+│ 4. Music (Score)   │ Mode A (Dialogue-Protected) | Mode B (Upfront)    │
+│                    │ Mode C (Diegetic: no background music)            │
+└────────────────────┴───────────────────────────────────────────────────┘
 ```
 
-### 6.1 Music Operating Modes
+### 6.1 Standard Production Prompt Trailing Audio Example
+```text
+Audio: SFX: tactile mechanical keyboard keystrokes, soft ceramic mug set down on desk; Ambience: low steady hum of workstation cooling fans, quiet studio room tone; Dialogue: the presenter speaks in his consistent, calm, resonant low-pitched baritone voice: "Stop prompting blindly. Start directing with engineering precision." with relaxed jaw and resting mouth closure; Music: no background music, zero score.
+```
+
+### 6.2 Music Operating Modes
 
 #### Mode A: Dialogue-Protected Score (Subtle Bed)
 - **Constraint:** Must not compete with human speech frequencies (300Hz–3kHz).
@@ -164,24 +175,94 @@ Video prompts synthesize sound natively in Google Flow. Audio prompts must balan
 - **Constraint:** Music is the primary emotional driver; visuals synchronize to tempo.
 - **Mandatory Directive:** Must specify exact BPM, rhythm, instrumentation, and dynamic transitions (e.g., `driving 128 BPM electronic synthwave track featuring a punchy 808 kick, pulsing bassline, and deep sub-bass drop`).
 
-#### Mode C: Pure Diegetic Cinema (No Music)
-- **Constraint:** Absolute acoustic realism; zero score.
-- **Mandatory Directive:** End audio section with the strict terminator: `no background music`.
+#### Mode C: Pure Diegetic Cinema (No Music / Multi-Stem Clean Master)
+- **Constraint:** Absolute acoustic realism; zero score (essential for post-production stem mixing in NLEs).
+- **Mandatory Directive:** End audio section with the strict terminator: `no background music, zero score`.
 
 ---
 
-## 7. Pre-Flight Linters (Cinematography & Audio)
+## 7. Dual-Track Speech Velocity & Temporal Budgeting
 
-Before compiling prompts into Flow, the linter enforces three automated validation gates:
+Generative audio engines operate on radically different speech velocities. Treating native video audio and external neural TTS with the same word rate causes severe dialogue cutoff and duration overflow.
+
+### 7.1 Velocity Standards by Audio Pathway
+
+| Audio Synthesis Pathway | Speech Velocity | Recommended Word Sweet Spot | Absolute Max Words | Guaranteed Silence Buffer |
+|---|---|---|---|---|
+| **Pathway A: Native In-Video Audio (Veo 3.1)** | **$\approx 1.2$ to $1.5$ Words/Sec**<br>*(Deliberate, unhurried cadence)* | • **4s Clip:** 3 – 5 words<br>• **6s Clip:** 7 – 9 words<br>• **8s Clip:** 11 – 13 words<br>• **10s Clip:** 15 – 18 words | • 4s: 6 words<br>• 6s: 10 words<br>• 8s: 14 words<br>• 10s: 19 words | **$\ge 1.0\text{s}$ Pre-roll**<br>**$\ge 1.0\text{s}$ Post-roll** |
+| **Pathway B: External Narration (ElevenLabs / Gemini TTS)** | **$\approx 2.17$ to $2.50$ Words/Sec**<br>*(Conversational human pacing)* | • **4s Clip:** 5 – 7 words<br>• **6s Clip:** 9 – 11 words<br>• **8s Clip:** 13 – 16 words<br>• **10s Clip:** 17 – 20 words | • 4s: 8 words<br>• 6s: 12 words<br>• 8s: 18 words<br>• 10s: 22 words | **$\ge 0.5\text{s}$ Pre-roll**<br>**$\ge 0.5\text{s}$ Post-roll** |
+
+### 7.2 The Pre/Post-Roll Silence Buffer Rule
+Every dialogue clip—regardless of pathway—**must preserve dedicated silence buffers**:
+1. **Pre-Roll Silence:** Zero speech on Frame 1. Character takes a micro-breath before speaking (~0.5s–1.0s).
+2. **Post-Roll Silence:** Speech concludes at least 0.8s–1.2s prior to the terminal cut. Characters must never speak across the cut boundary.
+
+---
+
+## 8. The `(REFERENCE ONLY)` Non-Render Guardrail (Anti-Subtitle Glitch)
+
+### 8.1 The Burned-In Text Failure Mode
+When scene backstory, character motivations, or dialogue scripts are injected into visual prompts without containment, diffusion models frequently hallucinate and burn **literal yellow/white subtitles, lower-third banners, captions, or watermark text** directly into the video pixels.
+
+### 8.2 The Non-Render Wrapper Standard
+All directorial context and script notes embedded in prompt text must be encapsulated inside the **Reference-Only Header**:
+
+```text
+[SCENE BEAT CONTEXT (REFERENCE ONLY — DO NOT RENDER SUBTITLES OR WORDS ON SCREEN)]:
+Subject realizes the security feed timestamp is from two minutes in the past.
+```
+
+### 8.3 Mandatory Anti-Subtitle Negative Invariant
+Every video prompt must include the mandatory negative clause:
+```text
+NEGATIVE PROMPT: subtitles, closed captions, burned-in text, lower thirds, speech bubbles, watermark, floating words, typography, status overlay, text artifacts.
+```
+
+---
+
+## 9. Multi-Track Stem Assembly Architecture (`audio_stems.md`)
+
+When videos are exported from Flow for professional assembly in timeline editing software (CapCut, Premiere Pro, DaVinci Resolve), the project exports a standardized **Audio Stem Manifest** (`audio_stems.md`):
+
+```markdown
+# Audio Stem Assembly Manifest
+**Project:** [project_id]  
+**Master Frame Rate:** 24 fps | **Audio Sample Rate:** 48 kHz / 24-bit WAV
+
+## Timeline Track Hierarchy:
+- **Track A1 (Dialogue Master):** Primary voice track (Native Veo extracted audio OR external TTS stems). Normalized to -14 LUFS (Online) / -23 LUFS (Broadcast).
+- **Track A2 (Foley SFX):** Discrete contact sound effects aligned to visual contact keyframes (footsteps, mechanical switches, paper rustle).
+- **Track A3 (Spatial Ambience):** Continuous, unbroken room tone / atmospheric bed bridging cuts and preventing dead-air dropouts.
+- **Track A4 (Score / Music Bed):** Background score with automatic sidechain compression ducking (-14dB attenuation during Track A1 vocal activity).
+```
+
+---
+
+## 10. Pre-Flight Linters (Cinematography & Audio)
+
+Before compiling prompts into Google Flow, the automated validator enforces these validation gates:
 
 ### Rule L-07: Equipment Noun Prohibition
 - **Check:** Prompt MUST NOT contain any of: `tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`.
 - **Error Message:** `L-07 VIOLATION: Hardware noun detected. Replace with kinematic trajectory directive.`
 
 ### Rule L-08: Dialogue Biomechanical Restraint Enforcement
-- **Check:** Any prompt containing spoken dialogue (`"..."`) MUST include at least two biomechanical restraint tokens (`minimal jaw displacement`, `subtle lip articulation`, `relaxed jaw`, `subtle mouth movement`).
+- **Check:** Any prompt containing spoken dialogue (`"..."`) MUST include at least two biomechanical restraint tokens (`minimal jaw displacement`, `subtle lip articulation`, `relaxed jaw`, `subtle mouth movement`, `resting mouth closure`).
 - **Error Message:** `L-08 VIOLATION: Dialogue detected without biomechanical mouth restraint tokens. Risk of Muppet Mouth distortion.`
 
 ### Rule L-09: Dialogue & Audio Clutter Conflict
-- **Check:** If spoken dialogue is present, Tier 4 music MUST NOT contain energetic rhythm words (`heavy drums`, `fast tempo`, `upbeat beat`, `drum beat`) without the `low-in-the-mix` modifier.
+- **Check:** If spoken dialogue is present, music directives MUST NOT contain energetic rhythm words (`heavy drums`, `fast tempo`, `upbeat beat`, `drum beat`) without the `low-in-the-mix` modifier.
 - **Error Message:** `L-09 VIOLATION: Aggressive music detected during dialogue. Protect vocal clarity with Mode A (Dialogue-Protected) or Mode C.`
+
+### Rule L-16: Native Veo 3.1 Word Budget Linter
+- **Check:** If generation pathway is Pathway A (Native Flow Audio), word counts must not exceed native thresholds (Max 5w for 4s, Max 9w for 6s, Max 13w for 8s, Max 18w for 10s).
+- **Error Message:** `L-16 VIOLATION: Spoken word count exceeds native Veo 3.1 speech velocity (~1.2-1.5 wps). Risk of mid-sentence dialogue clipping.`
+
+### Rule L-17: Anti-Subtitle Invariant Linter
+- **Check:** Any prompt containing narrative context or script lines MUST include the negative subtitle clause (`subtitles, closed captions, burned-in text, lower thirds, watermark`).
+- **Error Message:** `L-17 VIOLATION: Missing anti-subtitle negative clause. Risk of burned-in caption hallucinations.`
+
+### Rule L-18: 3-Track Structured Audio Syntax Linter
+- **Check:** The trailing audio block MUST adhere to structured semicolon-delimited syntax (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`).
+- **Error Message:** `L-18 VIOLATION: Audio block is unstructured. Enforce 3-track structured audio syntax.`
+

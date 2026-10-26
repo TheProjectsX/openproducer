@@ -1,0 +1,12 @@
+[CONFIGURATION SETTINGS]
+Engine: Google Flow / Imagen 4 (Tier 2 Keyframe Plate)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Clip ID: clip_07
+Target Shot Type: Tight Medium Close-Up / Climax Delivery
+
+[KEYFRAME IMAGE PROMPT]
+Cinematic live-action film still of the technical director in the modern minimalist dark studio, framed in a tight medium close-up. Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, nose bridge, eye shape, and natural skin micro-textures from [IMAGE 1]. Strictly natural 1:7.5 adult anatomical scale. Wearing the same tailored matte-black technical overshirt. Looking directly into the camera lens with unwavering focus and genuine professional conviction. The ambient room lighting has subtly dimmed into rich darkness, leaving a stark, motivated amber rim light tracing his cheek and shoulder, and a gentle soft white fill from the desk terminal highlighting his eyes. Photorealistic 35mm film still, 85mm portrait prime lens, ultra-shallow depth of field, creamy shadow falloff, authentic cinematic grain.
+
+[NEGATIVE PROMPT]
+anime, 2D illustration, cel animation, cartoon, 3D CGI render, plastic figurine, action figure, doll, plastic ball joints, mannequin, oversized head, bobblehead, caricature proportions, distorted face, waxy skin, blurry.
