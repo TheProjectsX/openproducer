@@ -469,4 +469,35 @@ To prevent token bloat while retaining 100% information control:
   4. *Phase 6 Specification Finalized & Locked:* Updated [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md) with Section 9 formally signing off on *The 3:14 AM Doppelgänger* simulation validation and style engine linkage.
   5. *Phase 6 Status:* Officially marked **FINALIZED & VALIDATED** in `00_tasks.md` and `AGENTS.md`. Ready to advance to Milestone 1 Schemas / Phase 7 Scaffolding.
 
+### 2026-10-26 — Creator Field Validation: 10–15 Min Production vs. 3–4 Hour Manual Baseline
+- **Empirical Confirmation:** Creator conducted hands-on field testing of both end-to-end productions (*The 3:14 AM Doppelgänger* and *The Phone Call at 2:47 AM*).
+- **Time Reduction:** End-to-end assembly workflow (downloading clips, importing into editing software, micro-trimming on timeline, and exporting) clocked in at **10–15 minutes total**, compared to the 3–4 hour traditional manual workflow for a 60-second video.
+- **Output Quality:** Validated as upload-worthy out-of-the-box with effortless timeline snapping, fully proving the Dialogue-First timing loop, pre/post-roll silence buffers, and 3-Tier Image-First clipping pipeline.
+
+### 2026-10-26 — Solving Angled Photo Extrapolation, Facial Distortion & The Bobblehead Glitch (Discussion 51)
+- **Consensus Reached:** Solved real-world image-to-character glitches:
+  1. *The 2-Step Angle Normalizer:* For angled/neck-turned selfies, never ask for de-rotation, wardrobe change, and full-body generation at once. Generate a neutral frontal alignment plate on `#E5E5E5` first, then activate the character.
+  2. *Head-to-Body 1:7.5 Ratio Lock:* Enforced explicit biological adult scale and negative prompts to kill the bobblehead/caricature glitch.
+  3. *Expression Decoupling Engine:* Decouple invariant bone structure from transient facial muscles to allow natural winks/smiles without warping.
+  4. *Creator Zero-Burden Rule:* The multimodal agent inspects photos and injects technical tokens under the hood; the creator never types biometric jargon.
+- **Reference Documents:** [`discussions/_raw/51_solving_angled_photo_extrapolation_and_face_distortion.md`](./discussions/_raw/51_solving_angled_photo_extrapolation_and_face_distortion.md) and [`dump.md`](./dump.md).
+
+### 2026-10-26 — Script, Narrative & Dynamic Hook Architecture
+- **Consensus Reached:**
+  1. *Dynamic Narrative Tempo:* Banned rigid static durations. Pacing adapts to emotional beats: slow-burn dread (1.8–2.2 WPS), high-velocity action (2.6–3.0 WPS), or hybrid arcs.
+  2. *The Non-Imposition Law (Creator Agency):* 2nd-person perspective (`"Suppose you woke up at 2 AM..."`) can be proposed when the creator provides a rough plot/concept. If the creator provides an authored script or walkthrough, the AI **must never impose or rewrite their words**.
+  3. *Dynamic Hook Principles:* Banned mad-libs templates in favor of dynamic rules (immediate in medias res, broken equilibrium, organic contextual phrasing).
+- **Reference Document:** [`dump.md`](./dump.md).
+
+### 2026-10-26 — Session Wrap-up & Next Session Handoff
+- **Scope Trimming:** Officially discarded Topic 3 (Thumbnails & Channel Branding) by creator directive to prevent marketing bloat and preserve lean production focus.
+- **Active Staging:** Staged Domain 1 (Subject Likeness) and Domain 2 (Script & Dynamic Hooks) in [`dump.md`](./dump.md).
+- **Next Session Agenda:**
+  1. Review & finalize **Domain 4 (Directorial Slicing & Visual Rhythm)**: 4-beat visual rhythm and match-cut timeline handoffs.
+  2. Review & finalize **Domain 5 (Audio Engineering & Decoupling)**: 3-track audio separation (`SFX`, `Ambient`, `Music`) and `(REFERENCE ONLY)` script headers.
+  3. Migrate approved items from [`dump.md`](./dump.md) into authoritative specifications ([`02_character_spec.md`](./production_framework/specs/02_character_spec.md), [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md)).
+  4. Proceed to Milestone 1 Schemas and Milestone 2 Scaffolding.
+
+
+
 

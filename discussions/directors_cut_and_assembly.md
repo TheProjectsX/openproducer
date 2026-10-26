@@ -126,14 +126,14 @@ Testing real-world Flow generations of *The 2:17 AM Dispatch* revealed 3 fatal d
     - Validated 3-Tier Image-First Pipeline (`base_image_prompt.txt`, `clips/clip_01/` to `clip_14/` image and video prompts).
     - Verified 100% pre-flight compliance across Linters L-07 through L-15.
     - Empirically validated Tier 1 reference plate via Photo-First image generation (`station_42_base.jpg`).
-15. [ ] **Step 15: Dialogue-First Simulation with Real SRT (The 3:14 AM Doppelgänger — Discussion 49):**
-    - Executing end-to-end production on *The 3:14 AM Doppelgänger* through Step 0 Intake & Section 2.4 Confirmation Gate.
+15. [x] **Step 15: Dialogue-First Simulation with Real SRT (The 3:14 AM Doppelgänger & The Phone Call at 2:47 AM):**
+    - Executing end-to-end production on *The 3:14 AM Doppelgänger* (Discussion 49) and *The Phone Call at 2:47 AM*.
     - Ingested 40-cue master `audio.srt` (135.08s runtime).
     - Sliced narrative into **22 Flow-native clips** (`[4s, 6s, 8s, 10s]`, totaling 136s runtime with 0.92s breathing dissolve buffer).
     - Generated all 22 dual-tier prompt pairs (`clips/clip_01/` to `clip_22/`), `master_flow_agent_prompt.txt`, and `origin_manifest.md`.
     - Enforced Anti-Dead-Air Law (~140 wpm momentum) and expressive fear/tension biomechanics (hunched shoulders, rigid trembling limbs).
     - Pre-flight linters L-07 through L-15 passed.
-    - **Current Status:** Simulation is actively being generated and evaluated by the creator. Validation of Phase 06 remains open until creator completes generation and approves the findings.
+    - **Empirical Creator Validation:** Confirmed upload-worthy results across both productions. Total creator workflow time (downloading generated video, importing into NLE, minimal micro-trimming, and exporting) reduced from traditional 3–4 hours down to **10–15 minutes total**, validating the Dialogue-First timing loop and multi-clip assembly architecture.
 
 
 
