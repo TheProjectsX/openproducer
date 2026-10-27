@@ -1,0 +1,14 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Resolution: 1080p
+Aspect Ratio: 16:9
+Starting Seed: keyframe_04.png
+
+[VIDEO PROMPT]
+Starting directly from the initial image positioned behind the character, the young man from [IMAGE 1] glances at the illuminated trading monitors before smoothly turning his head over his left shoulder to face directly toward the camera. Large, bold, stylized floating text animates across the upper screen: "আজই চলে আসুন ট্রেডিং-এ!". Looking into the optical axis with restrained lip movement and calm facial articulation, he delivers the satirical line: "তো দেরি কেনো। আজই চলে আসুন ট্রেডিং-এ, আর নিজের সব ব্যালেন্স খালি করুন!" The camera holds a steady three-quarter over-the-back angle before executing a fast lateral whip-pan blur out on the final beat.
+
+[NEGATIVE PROMPT]
+blurry, distorted facial features, wide jaw flapping, camera equipment, tripod, cartoon, low fidelity, illegible runes, messy text, overexposure.
+
+[AUDIO SPECIFICATION]
+Audio: SFX: Gentle chair swivel pivot sound, concluding with a fast optical whoosh transition on the final second; Ambience: Warm studio acoustic tone; Dialogue: Enthusiastic satirical male voice proclaims "তো দেরি কেনো। আজই চলে আসুন ট্রেডিং-এ, আর নিজের সব ব্যালেন্স খালি করুন!"; Music: Playful mock-inspirational corporate jingle swelling briefly before cutting sharply on the whip-pan.

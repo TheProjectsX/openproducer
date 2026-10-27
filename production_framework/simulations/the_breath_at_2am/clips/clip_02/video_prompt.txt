@@ -9,8 +9,8 @@ initial_frame: clips/clip_02/image_prompt.txt
 
 [VIDEO PROMPT]
 (REFERENCE ONLY: 'the only illumination coming from the muted blue glow of your television screen.')
-Continuing directly from the initial frame, the perspective executes a slow, deliberate linear push-in along the glowing cool-blue light cone emitted by the television screen. The low-angle framing tracks smoothly past the linear floorboard vectors toward the base of the sofa, where the blue ambient light gently flickers against the pitch-black shadows of the silent living room.
+Continuing directly from the initial frame, the perspective executes a subtle, creeping push-in while maintaining the upward low-angle framing on the single sofa and the towering dark ceiling. The stick figure remains seated motionless on the center cushion, with the black vector cat resting calmly perched on the sofa backrest directly behind. The cool-blue television light cone gently flickers, casting stark graphic shadows, while the upper pitch-black ceiling void remains vast, motionless, and heavy with quiet suspense.
 Audio: SFX: Subtle CRT cathode ray static crackle; Ambience: Oppressive late-night room silence; Dialogue: None; Music: None.
 
 [NEGATIVE PROMPT]
-tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+cat disappearing, missing cat, multiple sofas, two couches, separate sofa, empty sofa, secondary chair, camera tilting down, looking at floor, floorboards close-up, downward angle, tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.

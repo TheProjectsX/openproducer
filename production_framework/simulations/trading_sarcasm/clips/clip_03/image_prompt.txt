@@ -1,0 +1,10 @@
+[IMAGE CONFIGURATION]
+Aspect Ratio: 16:9
+Resolution: 1080p
+Conditioning: [IMAGE 1] (Tier 1 Hero Character)
+
+[IMAGE PROMPT]
+Medium full shot of the young man from [IMAGE 1] with textured spiked hair and dark casual crewneck, captured in the natural motion of sitting down onto a deep charcoal-gray fabric couch. Exactly one sofa exists in the room, positioned horizontally across the midground. His hands rest casually at his sides as his body lowers onto the center cushion. The cozy minimalist apartment studio features warm hardwood flooring, a small potted monstera plant in the deep background, and soft evening ambient light streaming from a side window balanced by warm practical lamps. Balanced cinematic composition, authentic textile wrinkles, grounded natural shadows beneath the sofa base.
+
+[NEGATIVE PROMPT]
+multiple sofas, two couches, second chair, floating body, distorted legs, distorted feet, blurry face, subtitles, captions, cartoon, 3D render.

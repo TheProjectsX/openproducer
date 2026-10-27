@@ -173,7 +173,7 @@ To prevent AI video sequences from feeling like disjointed slideshows, cuts betw
 1. `[MATCH-ON-POSE]`: Clip $N$ ends with the subject reaching, turning, or leaning; Clip $N+1$ initiates in an identical bodily posture from a complementary angle (e.g. 45° profile to frontal).
 2. `[MATCH-ON-PROP]`: The camera centers on a shared physical anchor (e.g. smartphone, coffee mug, keycard). The cut pivots around that physical anchor while changing the background.
 3. `[MATCH-ON-SHAPE]`: Graphic / geometric continuity (e.g. a round alarm clock in Clip $N$ cuts directly to a round full moon or security camera lens in Clip $N+1$).
-4. `[MATCH-ON-TONE]`: Exposure and color temperature lock (matching luminance and dominant HSL palettes across cuts so the transition does not flash or strobe).
+4. `[MATCH-ON-TONE]`: Exposure and color temperature lock governed by the 3-Value Exposure Key (IRE), Dominant Kelvin, and Black Point Anchor from `visual/palette_and_mood.md` so transitions never flash, strobe, or jump in brightness across cuts.
 
 ### 4.7 The 30° Cinematic Contrast & Anti-Jump-Cut Law
 Cutting consecutively between two slightly different Medium Shots of the same subject produces a severe, jittery **AI Jump-Cut** because diffusion models cannot lock exact millimeter chair placement and shoulder angles across separately generated plates.
@@ -308,6 +308,44 @@ In video diffusion, Over-The-Shoulder (OTS) shots suffer from the **"Melting Sho
 ```
 1. **Clean Singles Only:** Ban dirty OTS shots. Isolate each actor in a clean MCU with complementary 15° eyelines so 100% of diffusion tokens focus on a single character's DNA.
 2. **Speaker vs. Listener Decoupling:** Active dialogue is budgeted only to the speaker. The listener clip strictly enforces the Closed-Lip Listener Rule.
+3. **9:16 Vertical Staging Adaptation (Z-Axis Depth Two-Shots & Vertical Clean Singles):**
+   - **The Horizontal Two-Shot Glitch:** In 9:16 vertical viewports, side-by-side two-shots force characters to shrink into tiny distant figures or cause bodies to be severed by frame edges.
+   - **Z-Axis Depth Two-Shot:** When two characters must appear in the same frame, arrange them along the Z-axis (depth) rather than horizontal X-axis:
+     - *Foreground Anchor:* Character A positioned lower-left ($Y \in [45\%, 75\%]$, $X \in [5\%, 40\%]$) in waist-up or chest-up profile.
+     - *Midground Subject:* Character B positioned upper-center/right ($Y \in [20\%, 55\%]$, $X \in [45\%, 80\%]$) looking down/toward Character A.
+   - **Vertical Clean Singles:** Dialogue cuts between characters must center the single character vertically within the Central 60% Action Safe Zone ($Y \in [15\%, 75\%]$), maintaining complementary 15° eyelines (Screen-Left eyeline for A, Screen-Right eyeline for B).
+
+### 5.8 Multi-Character Physical Interaction & Action/Combat De-Collision Protocol
+When two actors or creatures physically engage in the same frame (martial arts, handshakes, dance, sword clashes), video diffusion models frequently trigger the **"Limb Fusion Glitch"**—melding arms together, swapping clothing textures, or hallucinating mutated intermediate anatomy. Physical interaction is governed by three mandatory safeguards:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│             THE 3-CLIP KULESHOV ACTION SLICING FORMULA (COMBAT / IMPACT)    │
+├──────────────────────────────────────┬──────────────────────────────────────┤
+│ CLIP 1: WIND-UP & LAUNCH (4s)        │ • Medium or Wide Shot                │
+│                                      │ • Character A initiates strike toward│
+│                                      │   screen-right with clear trajectory │
+│                                      │ • Clear negative space between actors│
+├──────────────────────────────────────┼──────────────────────────────────────┤
+│ CLIP 2: IMPACT MACRO INSERT (4s)     │ • Extreme Close-Up (ECU)             │
+│                                      │ • Isolated impact point (blade clash │
+│                                      │   sparks, fist landing, foot skid)   │
+│                                      │ • Eliminates multi-limb confusion by │
+│                                      │   excluding full bodies from frame   │
+├──────────────────────────────────────┼──────────────────────────────────────┤
+│ CLIP 3: RECOIL & FOLLOW-THROUGH (4s) │ • Medium / Full Shot                 │
+│                                      │ • Character B reels back / collapses │
+│                                      │ • Character A in follow-through pose │
+│                                      │ • Re-establishes physical separation │
+└──────────────────────────────────────┴──────────────────────────────────────┘
+```
+
+1. **The Multi-Limb Fusion Ban:** Continuous, complex multi-second physical grappling in a single unbroken take is strictly prohibited. Physical engagements must be sliced into discrete cinematic beats using the 3-Clip Kuleshov Formula above.
+2. **High-Contrast Silhouette Separation:**
+   - Any two characters sharing an interaction frame **MUST exhibit polar-opposite luminance, color, or silhouette values** (e.g. Character A in white combat tunic with sleek profile on screen-left vs. Character B in matte-black armored trench coat with broad silhouette on screen-right).
+   - Never prompt two interacting characters in identical dark suits or identical uniforms; the diffusion model cannot differentiate their limbs during motion.
+3. **Pre-Composited Tier 2 Action Keyframe:**
+   - When a shared two-shot action frame is required, it must first be generated and approved as a Tier 2 still image plate (`image_prompt.txt`) using `[IMAGE 1]` (Character A), `[IMAGE 2]` (Environment), and `[IMAGE 3]` (Character B) to lock clean bodily separation before feeding into Veo as a single starting frame.
 
 ---
 
@@ -434,6 +472,19 @@ Starting directly from the initial image, [Viewport framing & primary subject]. 
 [Banned motion glitches, morphing, tripod, camera rig, subtitles...]
 ```
 
+### 7.2 The On-Demand Packaging Suite (Strict Non-Imposition: Only on Explicit Request)
+**The Core Demand Law (No Demand, No Prompt):** The Packaging Suite is **STRICTLY ON-DEMAND**. The agent and prompt compiler **MUST NEVER** generate thumbnail, cover frame, or loop bridge prompts by default during routine video assembly. If the creator does not explicitly ask for a thumbnail or promotional asset (e.g. asking *"create a thumbnail prompt"*, *"give me a vertical cover frame"*, or passing `--with-thumbnail`), **zero packaging files are created**.
+
+When explicitly requested by the creator:
+1. **High-CTR Cover Frame & Thumbnail Generator (16:9 & 9:16):**
+   - Conditioned directly on `[IMAGE 1]` (Primary Subject Turnaround) and `visual/technical_anchor.md`.
+   - **The Rule-of-Thirds & 40% Negative Space Law:** The subject is framed strictly on the left or right vertical third, leaving 40% of the frame as clean, high-contrast negative space reserved for YouTube thumbnail typography, title overlays, or platform sticker graphics.
+   - **Emotionally Motivated Keyframe:** Requires high-stakes expressive engagement (intense dread, astonishment, awe, dramatic focus) rather than a passive neutral pose.
+   - Output File: `packaging/thumbnail_prompt.txt` (16:9) and/or `packaging/cover_prompt.txt` (9:16).
+2. **The Seamless Infinite Loop Bridge (`packaging/loop_bridge.txt`):**
+   - Designed for short-form viral algorithms (TikTok, YouTube Shorts, Instagram Reels) where infinite loop replay multiplies retention scores.
+   - Formulates the terminal camera vector and subject posture of the final clip (`clip_final/video_prompt.txt`) to physically and optically snap into Frame 1 of `clip_01/image_prompt.txt` via `[MATCH-ON-POSE]` or a continuous 360°/elevation reset.
+
 ---
 
 ## 8. Master Pre-Flight Linters (Authoritative Registry L-01 to L-18)
@@ -456,7 +507,7 @@ Every assembled production must pass these 18 authoritative pre-flight linters b
 | **L-12** | **30° Cinematic Contrast** | Consecutive cuts of same subject must shift angle by $\ge 30^\circ$, change focal length, or chain via `last_frame`. | Consecutive similar cuts without 30° shift (AI jump-cut trap). |
 | **L-13** | **180° Screen Direction & Clean Singles** | Conversational cuts preserve complementary 15° eyelines and use Clean Singles (**dirty OTS shots strictly banned**). | Dirty OTS shot or eyeline reversal across 180° axis. |
 | **L-14** | **Dual-Track Speech Word Budget** | Native Flow (`Pathway A`) $\le \{5, 9, 13, 18\}$ words for $\{4\text{s}, 6\text{s}, 8\text{s}, 10\text{s}\}$; External TTS (`Pathway B`) $\le \{8, 12, 18, 22\}$ words; $\text{Clip Duration} - \text{SRT Cue Duration} \ge 1.0\text{s}$ silence buffer. | Spoken words exceed duration ceiling or lack 1.0s buffer. |
-| **L-15** | **Anti-Muppet Biomechanical Restraint** | Spoken dialogue uses preceding colon (`says, [modifier]: "..."`), strict sentence case, and $\ge 2$ restraint tokens (`relaxed jaw, minimal jaw displacement, subtle lip articulation`). | Dialogue without restraint tokens or using ALL CAPS. |
+| **L-15** | **Anti-Muppet & Phonetic Normalization** | Spoken dialogue uses preceding colon (`says, [modifier]: "..."`), strict sentence case, $\ge 2$ restraint tokens (`relaxed jaw, minimal jaw displacement, subtle lip articulation`), and all numbers/symbols/acronyms in Pathway A written phonetically as spoken English words (`"three fourteen"`, `"twenty-four frames"`). | Dialogue without restraint tokens, ALL CAPS words, or containing unexpanded numeric digits (`\d+`) in spoken quotes. |
 | **L-16** | **Closed-Lip Listener Rule** | Off-screen/phone/narrator speech over visible actor mandates `firmly closed lips, tight jaw, zero mouth movement`. | Visible actor lacking closed-lip restraint during external speech. |
 | **L-17** | **Structured 4-Field Audio Syntax** | Trailing audio block follows `Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...` with music suppression over dialogue. | Audio block is unstructured or contains aggressive score over dialogue. |
 | **L-18** | **Gemini TTS Script & Non-Imposition** | `narrator_script.md` isolates `< >` tags on standalone lines (`.\n<long pause>\n`), zero square brackets, zero consecutive `<long pause>` dead air, and never rewrites creator's authored script into 2nd person. | Square brackets, inline pause tags, or overwriting creator's authored voice. |

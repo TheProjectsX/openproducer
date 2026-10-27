@@ -18,11 +18,11 @@ initial_frame: clips/clip_01/image_prompt.txt
 
 [VIDEO PROMPT]
 (REFERENCE ONLY: 'You are sitting in the dark of your living room at 2 a.m.,')
-Starting from the initial frame, locked-off wide eye-level framing remains completely static. The stick figure remains seated motionless on the linear sofa silhouette under the flickering muted blue illumination of the television screen. The subtle atmospheric light cone casts long graphic drop shadows across the empty floorboards while the apartment room stands dead still.
+Starting from the initial frame, locked-off wide eye-level framing remains completely static on the single sofa. The stick figure remains seated motionless on the center cushion under the flickering muted blue illumination of the television screen, while the black vector cat rests calmly perched on the sofa backrest directly behind. The subtle atmospheric light cone casts long graphic drop shadows across the empty floorboards while the apartment room stands dead still.
 Audio: SFX: Faint 60Hz cathode television electronic hum; Ambience: Dead quiet late-night apartment room tone; Dialogue: None; Music: None.
 
 [NEGATIVE PROMPT]
-tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+multiple sofas, two couches, separate sofa, empty sofa, secondary chair, tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
 
 ================================================================================
 CLIP 02 (Flow Duration: 6s | Audio SRT: 00:06.26 – 00:11.12)
@@ -38,11 +38,11 @@ initial_frame: clips/clip_02/image_prompt.txt
 
 [VIDEO PROMPT]
 (REFERENCE ONLY: 'the only illumination coming from the muted blue glow of your television screen.')
-Continuing directly from the initial frame, the perspective executes a slow, deliberate linear push-in along the glowing cool-blue light cone emitted by the television screen. The low-angle framing tracks smoothly past the linear floorboard vectors toward the base of the sofa, where the blue ambient light gently flickers against the pitch-black shadows of the silent living room.
+Continuing directly from the initial frame, the perspective executes a subtle, creeping push-in while maintaining the upward low-angle framing on the single sofa and the towering dark ceiling. The stick figure remains seated motionless on the center cushion, with the black vector cat resting calmly perched on the sofa backrest directly behind. The cool-blue television light cone gently flickers, casting stark graphic shadows, while the upper pitch-black ceiling void remains vast, motionless, and heavy with quiet suspense.
 Audio: SFX: Subtle CRT cathode ray static crackle; Ambience: Oppressive late-night room silence; Dialogue: None; Music: None.
 
 [NEGATIVE PROMPT]
-tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+cat disappearing, missing cat, multiple sofas, two couches, separate sofa, empty sofa, secondary chair, camera tilting down, looking at floor, floorboards close-up, downward angle, tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
 
 ================================================================================
 CLIP 03 (Flow Duration: 6s | Audio SRT: 00:11.82 – 00:16.12)
@@ -78,11 +78,11 @@ initial_frame: clips/clip_04/image_prompt.txt
 
 [VIDEO PROMPT]
 (REFERENCE ONLY: 'Your cat, perched on the back of the sofa, suddenly sits bolt upright.')
-Starting from the initial frame, the perspective executes a subtle upward pedestal tilt while maintaining focused framing on the sofa back. The sleek black vector cat silhouette suddenly snaps bolt upright from a relaxed posture, its spine arching rigid and its alert ears swiveling backward in instant tension as it stares straight into the darkness above.
+Continuing directly from the initial frame, locked-off medium framing holds strictly on the single sofa. The stick figure remains seated motionless on the center cushion. On the top backrest of the exact same sofa directly behind the human's head, the black vector cat silhouette suddenly snaps bolt upright into rigid alert tension, arching its back and swiveling its ears upward to stare straight into the ceiling void overhead.
 Audio: SFX: Soft microscopic fabric tension of cat claws tensing on sofa upholstery; Ambience: Low eerie room silence; Dialogue: None; Music: None.
 
 [NEGATIVE PROMPT]
-tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+multiple sofas, two couches, separate sofa, empty sofa, secondary chair, sitting elsewhere, tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
 
 ================================================================================
 CLIP 05 (Flow Duration: 4s | Audio SRT: 00:22.94 – 00:25.78)
@@ -138,11 +138,11 @@ initial_frame: clips/clip_07/image_prompt.txt
 
 [VIDEO PROMPT]
 (REFERENCE ONLY: 'Its head is tilted up, tracking something invisible')
-Continuing directly from the initial frame, the perspective executes a creeping slow upward pan along the sofa back. The black vector cat's head smoothly tilts further backward in slow motion, its dilated black saucer eyes tracking an unseen entity moving steadily across the darkness of the ceiling plane directly overhead.
+Continuing directly from the initial frame, locked-off framing holds steady on the single sofa. The seated stick figure remains paralyzed in place. Perched directly behind on the same backrest, the black vector cat's head smoothly tilts further backward in slow motion, its solid black saucer eyes tracking an unseen path across the opaque pitch-black ceiling void overhead. The upper ceiling remains completely black and empty.
 Audio: SFX: Faint dry throat swallow; Ambience: Ominous low night room tone; Dialogue: None; Music: None.
 
 [NEGATIVE PROMPT]
-tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+multiple sofas, two couches, separate sofa, empty sofa, secondary furniture, walking creatures on ceiling, tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
 
 ================================================================================
 CLIP 08 (Flow Duration: 4s | Audio SRT: 00:36.28 – 00:40.24)
@@ -178,11 +178,11 @@ initial_frame: clips/clip_09/image_prompt.txt
 
 [VIDEO PROMPT]
 (REFERENCE ONLY: 'toward you, step by step, left then right.')
-Starting from the initial frame, stationary locked-off eye-level MCU holds focus on the stick figure and cat. The stick figure remains paralyzed in terror while the black cat's head perched on the sofa back micro-pivots methodically in synchronized increments: tilting left, then slowly right, tracking unseen footsteps pacing across the ceiling directly overhead.
+Starting from the initial frame, stationary locked-off MCU holds on the sofa. The stick figure remains completely paralyzed with zero motion, retaining a featureless solid white circular head with zero facial features. On the sofa backrest, the black vector cat slowly turns its head from left to right, tracking empty black air overhead. The ceiling overhead remains an opaque, solid pitch-black void (#0A0B0E) with strictly zero light, zero transparency, and zero walking creatures. The room remains dark and quiet.
 Audio: SFX: Microscopic ceiling joist stress groan overhead; Ambience: Heavy dead room silence; Dialogue: None; Music: None.
 
 [NEGATIVE PROMPT]
-tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+walking creature, animal on ceiling, cat on ceiling, transparent ceiling, glass ceiling, skylight, footsteps, bright room, illuminated ceiling, daylight, facial expressions, eyebrows, mouth, eyes on stick figure, facial features, multiple sofas, tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
 
 ================================================================================
 CLIP 10 (Flow Duration: 6s | Audio SRT: 00:46.54 – 00:51.92)
@@ -237,12 +237,12 @@ intended_engine: Google Flow (Veo 3.1)
 initial_frame: clips/clip_12/image_prompt.txt
 
 [VIDEO PROMPT]
-(REFERENCE ONLY: 'Then, two inches above your crown, you hear')
-Starting from the initial frame, the camera perspective executes a very slow, creeping macro push-in toward the top curvature of the stick figure's white circular head. The stick figure remains frozen in place with zero bodily movement while the suffocating pitch-black shadow void hangs motionless just two inches above the scalp.
+(REFERENCE ONLY: 'Then, two inches above your crown, you feel')
+Starting from the initial frame, locked-off macro framing holds motionless on the top curvature of the stick figure's solid white circular head. The stick figure remains completely stationary with zero movement. Directly above the scalp, the upper frame remains an empty, flat, solid pitch-black void (#0A0B0E) hanging in utter stillness. There are strictly zero organic silhouettes, zero noses, and zero faces in the darkness.
 Audio: SFX: Faint microscopic air displacement; Ambience: Suffocating near-vacuum tone; Dialogue: None; Music: Low ominous bowed cello drone and sub-bass vibration beginning to swell underneath.
 
 [NEGATIVE PROMPT]
-tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+nose, human nose, monster nose, face profile, silhouette of face, facial features, nostrils, lips, chin, pareidolia, face emerging from darkness, monster face, organism, organic curves in shadow, tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
 
 ================================================================================
 CLIP 13 (Flow Duration: 8s | Audio SRT: 01:01.54 – 01:07.98 | THE CLIMAX & CLIFFHANGER)
@@ -257,9 +257,9 @@ intended_engine: Google Flow (Veo 3.1)
 initial_frame: clips/clip_13/image_prompt.txt
 
 [VIDEO PROMPT]
-(REFERENCE ONLY: 'the quiet, deliberate sound of someone drawing a sharp, shallow breath.')
-Continuing directly from the initial frame, locked-off macro framing holds rigidly on the crown of the stick figure's head. The stick figure remains completely paralyzed with zero motion. At timestamp 04.5s, the darkness two inches above the scalp subtly ripples as a deliberate, razor-sharp intake of breath displaces the cold air, followed by a sudden hard cut to pure black at frame 08.0s.
-Audio: SFX: Quiet, deliberate, razor-sharp human inhalation drawn directly overhead at 04.5s; Ambience: Absolute vacuum drop; Dialogue: None; Music: Explosive crescendo of screeching dissonant horror strings, bowed waterphone, and accelerating sub-bass pulse surging to maximum volume right before cutting dead to black.
+(REFERENCE ONLY: 'the hair on your scalp stir... as something... exhales.')
+Continuing directly from the initial frame, locked-off macro framing holds rigidly on the stick figure's white circular head in side profile. The stick figure remains completely paralyzed. At timestamp 04.5s, the stick figure gives a sudden microscopic shudder—its circular head dropping two millimeters in sheer instinctive dread. The pitch-black shadow void (#0A0B0E) above the crown remains completely empty and featureless black, with strictly zero visible monsters, zero faces, and zero noses. Followed by a sudden hard cut to pure black at frame 08.0s.
+Audio: SFX: Microscopic whisper of cold air stirring hair at 03.5s, followed by a chilling, prolonged, slow close-mic exhalation overhead at 04.5s trailing into the black silence; Ambience: Absolute vacuum drop; Dialogue: None; Music: Explosive crescendo of screeching dissonant horror strings, bowed waterphone, and accelerating sub-bass pulse surging to maximum volume right before cutting dead to black.
 
 [NEGATIVE PROMPT]
-tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+giant monster, monster, beast, creature, giant nose, monster nose, nostrils, face in shadow, exhaling face, realistic face, demon, alien, pareidolia, mouth, teeth in darkness, organic shapes, tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.

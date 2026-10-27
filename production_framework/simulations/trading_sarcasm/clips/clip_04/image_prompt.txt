@@ -1,0 +1,10 @@
+[IMAGE CONFIGURATION]
+Aspect Ratio: 16:9
+Resolution: 1080p
+Conditioning: [IMAGE 1] (Tier 1 Hero Character)
+
+[IMAGE PROMPT]
+Rear three-quarter medium shot positioned behind the young man from [IMAGE 1]. His back and shoulders clad in the dark crewneck occupy the right foreground, showcasing the clean lines of his textured upward-spiked hair. He sits in front of a modern trading desk where a dual-monitor setup glows softly with complex trading data. His torso begins a slight rotational turn back toward the camera over his left shoulder. Atmospheric studio lighting with cool ambient backlight defining his silhouette and warm rim lighting outlining his ear and jaw contour. Moody cinematic atmosphere with rich black levels and subtle photographic grain.
+
+[NEGATIVE PROMPT]
+subtitles, watermark, distorted ears, twisted neck, unnatural anatomy, cartoon, bright daylight, extra arms, blurry textures.

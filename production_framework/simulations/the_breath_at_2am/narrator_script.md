@@ -41,8 +41,8 @@ You can’t see anything in the shadows above, but as the cat’s gaze stops dir
 <short pause>
 the air around you turns ice cold.
 <short pause>
-Then, two inches above your crown,
-<whisper>you hear the quiet, deliberate sound of someone drawing a sharp, shallow breath.</whisper>
+Then, two inches above your crown, you feel the hair on your scalp stir...
+<whisper>as something... exhales.</whisper>
 ```
 
 ---
@@ -64,7 +64,7 @@ Step by step. Left, then right.
 
 You can't see anything in the shadows above, but as the cat's gaze stops directly overhead... the air around you turns ice cold.
 
-Then, two inches above your crown... you hear the quiet, deliberate sound of someone drawing a sharp, shallow breath.
+Then, two inches above your crown... you feel the hair on your scalp stir... as something... exhales...
 ```
 
 ---
@@ -81,8 +81,8 @@ Then, two inches above your crown... you hear the quiet, deliberate sound of som
 | **Beat 06** | Kinetic cadence (step by step) | *"Step by step. Left, then right."* | 7 words | ~3.0s | 1 Clip (4s) |
 | **Beat 07** | Shadows above; cat gaze stops overhead | *"You can’t see anything in the shadows above, but as the cat’s gaze stops directly overhead,"* | 16 words | ~7.0s | 2 Clips (4s + 6s) |
 | **Beat 08** | Ice cold chill; freeze reaction | *"the air around you turns ice cold."* | 7 words | ~3.0s | 1 Clip (4s) |
-| **Beat 09** | Crown close-up; the shallow breath climax | *"Then, two inches above your crown, you hear the quiet, deliberate sound of someone drawing a sharp, shallow breath."* | 20 words | ~9.0s | 2 Clips (6s + 6s) |
-| **Total** | **End-to-End Narrative** | **Full 108-word script** | **108 words** | **~49–55s** | **~13 Clips (~64s total)** |
+| **Beat 09** | Crown close-up; the hair-stir & exhalation climax | *"Then, two inches above your crown, you feel the hair on your scalp stir... as something... exhales."* | 18 words | ~8.5s | 2 Clips (6s + 8s) |
+| **Total** | **End-to-End Narrative** | **Full 106-word script** | **106 words** | **~48–54s** | **~13 Clips (~64s total)** |
 
 ---
 

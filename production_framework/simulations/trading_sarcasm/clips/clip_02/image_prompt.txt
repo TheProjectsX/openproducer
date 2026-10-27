@@ -1,0 +1,10 @@
+[IMAGE CONFIGURATION]
+Aspect Ratio: 16:9
+Resolution: 1080p
+Conditioning: [IMAGE 1] (Tier 1 Hero Character)
+
+[IMAGE PROMPT]
+Over-the-shoulder medium shot angled toward a sleek modern workstation. The young man from [IMAGE 1] with dark textured spiked hair and dark crewneck is seated in the foreground right, his left hand resting on the sleek desk edge. Directly in his forward line of sight is a high-resolution dark-mode laptop monitor displaying luminous downward-plummeting red stock and crypto candlestick charts with jagged trendlines. The cool crimson screen glow washes subtly over his side profile and hands. Deep moody shadows define the room, with warm golden tungsten accent lamps softly glowing out of focus in the background. High-fidelity cinematic realism, rich atmospheric contrast.
+
+[NEGATIVE PROMPT]
+subtitles, watermarks, cartoon, distorted fingers, extra fingers, bright daylight, overexposed screen, green upward charts, messy trash, cheap office.

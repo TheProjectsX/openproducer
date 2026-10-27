@@ -7,11 +7,11 @@ clip_id: clip_02
 duration: 6s
 ingredient_slot_allocation:
   [IMAGE 1]: base_image_prompt.txt (Lone Stick Figure #FFFFFF head, #0F172A limbs)
-  [IMAGE 2]: Living Room Low Angle Stage (Floorboards, TV Screen Outline)
-  [IMAGE 3]: None
+  [IMAGE 2]: Living Room Low Angle Upward Stage (Sofa & Overhead Ceiling Void)
+  [IMAGE 3]: 2D Vector Black Cat Silhouette (Resting on sofa back)
 
 [IMAGE PROMPT]
-High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Low-angle perspective looking across the wooden floorboards toward a glowing rectangular television screen vector silhouette emitting a bright cool-blue volumetric light cone. The blue beam casts long sharp graphic shadows behind the edge of a minimalist sofa where a lone stick figure with a solid white circular head (#FFFFFF) and unbroken black vector limbs sits motionless in the dark room. Pitch-black shadows (#0A0B0E) shroud the surrounding walls and ceiling. Crisp unbroken vector lines terminating in rounded line-caps, uniform stroke weight, flat graphic novel styling.
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). EXACTLY ONE SOFA IN THE ROOM. Low-angle perspective looking upward toward a single minimalist linear sofa. The lone stick figure with a solid white circular head (#FFFFFF) and unbroken black vector limbs is seated frozen on the center cushion. Directly behind its head, the sleek 2D black vector cat is perched in a resting posture on the top backrest of the EXACT SAME sofa. A glowing rectangular television screen vector silhouette emits a bright cool-blue volumetric light cone cutting upward through the darkness. The entire upper half of the frame is dominated by an oppressive, vast pitch-black ceiling void (#0A0B0E) hanging in heavy suspense. Crisp unbroken vector lines terminating in rounded line-caps, uniform stroke weight, zero extra sofas, flat graphic novel styling.
 
 [NEGATIVE PROMPT]
-photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+missing cat, cat disappearing, camera looking at floor, downward tilt, floorboards close-up, multiple sofas, two couches, separate sofa, empty sofa, secondary chair, sitting elsewhere, photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

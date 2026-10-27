@@ -7,11 +7,11 @@ clip_id: clip_12
 duration: 6s
 ingredient_slot_allocation:
   [IMAGE 1]: base_image_prompt.txt (Stick Figure Crown Macro)
-  [IMAGE 2]: Pitch-Black Ceiling Shadow Void
+  [IMAGE 2]: Pitch-Black Flat Ceiling Shadow Void
   [IMAGE 3]: None
 
 [IMAGE PROMPT]
-High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Extreme close-up framed tightly from behind on the top hemisphere of the stick figure's solid white circular head (#FFFFFF), contoured with a crisp uniform black vector outline (#0F172A). Just two inches above the curvature of the crown, the frame is dominated by an impenetrable, suffocating pitch-black shadow void (#0A0B0E). Muted cool-blue television light illuminates the lower edge of the head, casting a faint cold halo against the cream paper canvas. Pure graphic novel vector illustration, stark horror tension, flat 2D art.
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Extreme close-up framed squarely from behind on the top hemisphere of the stick figure's solid white circular head (#FFFFFF) in lower frame. Across the upper frame, exactly two inches above the scalp, the entire top section is a flat, uniform, geometric horizontal block of pure impenetrable pitch-black void (#0A0B0E). The shadow is a flat solid black fill with a straight horizontal boundary, completely empty with zero organic contours. Crisp uniform black vector outline, flat 2D graphic art.
 
 [NEGATIVE PROMPT]
-photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+nose, human nose, monster nose, face profile, silhouette of face, facial features, nostrils, lips, chin, pareidolia, face emerging from darkness, monster face, organism, organic curves in shadow, photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

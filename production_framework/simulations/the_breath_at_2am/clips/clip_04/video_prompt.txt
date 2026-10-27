@@ -9,8 +9,8 @@ initial_frame: clips/clip_04/image_prompt.txt
 
 [VIDEO PROMPT]
 (REFERENCE ONLY: 'Your cat, perched on the back of the sofa, suddenly sits bolt upright.')
-Starting from the initial frame, the perspective executes a subtle upward pedestal tilt while maintaining focused framing on the sofa back. The sleek black vector cat silhouette suddenly snaps bolt upright from a relaxed posture, its spine arching rigid and its alert ears swiveling backward in instant tension as it stares straight into the darkness above.
+Continuing directly from the initial frame, locked-off medium framing holds strictly on the single sofa. The stick figure remains seated motionless on the center cushion. On the top backrest of the exact same sofa directly behind the human's head, the black vector cat silhouette suddenly snaps bolt upright into rigid alert tension, arching its back and swiveling its ears upward to stare straight into the ceiling void overhead.
 Audio: SFX: Soft microscopic fabric tension of cat claws tensing on sofa upholstery; Ambience: Low eerie room silence; Dialogue: None; Music: None.
 
 [NEGATIVE PROMPT]
-tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+multiple sofas, two couches, separate sofa, empty sofa, secondary chair, sitting elsewhere, tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.

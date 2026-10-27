@@ -8,10 +8,10 @@ duration: 6s
 ingredient_slot_allocation:
   [IMAGE 1]: base_image_prompt.txt (Lone Stick Figure #FFFFFF head, #0F172A limbs)
   [IMAGE 2]: Living Room Empty Stage Plate (Linear sofa, #F8F6F0 canvas, TV blue cone)
-  [IMAGE 3]: None
+  [IMAGE 3]: 2D Vector Black Cat Silhouette (Resting on sofa back)
 
 [IMAGE PROMPT]
-High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). In a pitch-black living room at 2:00 AM, a lone stick figure sits frozen on a minimalist linear sofa silhouette. The stick figure has pure unbroken solid black vector limbs terminating in rounded line-caps with strictly zero fingers or hands, and a solid white circular head (#FFFFFF) with a uniform black contour and zero facial features. A single motivated cool-blue volumetric light cone from a low television screen cuts through the darkness, casting stark graphic drop shadows across the floorboards while leaving the upper ceiling in total pitch-black (#0A0B0E) suspense. Clean unbroken line strokes, uniform stroke weight, flat graphic 2D aesthetic.
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). EXACTLY ONE SOFA IN THE ROOM. In a pitch-black living room at 2:00 AM, a lone stick figure sits frozen on the center of a minimalist linear sofa silhouette. Directly behind the stick figure's shoulders, a sleek 2D black vector cat is perched resting peacefully on the top backrest of the EXACT SAME sofa. The stick figure has pure unbroken solid black vector limbs terminating in rounded line-caps with strictly zero fingers or hands, and a solid white circular head (#FFFFFF) with a uniform black contour and zero facial features. A single motivated cool-blue volumetric light cone from a low television screen cuts through the darkness, casting stark graphic drop shadows across the floorboards while leaving the upper ceiling in total pitch-black (#0A0B0E) suspense. Clean unbroken vector lines, flat graphic 2D aesthetic.
 
 [NEGATIVE PROMPT]
-photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+multiple sofas, two couches, separate sofa, empty sofa, secondary chair, sitting elsewhere, photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

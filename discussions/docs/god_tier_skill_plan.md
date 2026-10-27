@@ -66,7 +66,7 @@ flowchart TD
      - **`L-14` Dual-Track Speech Word Budget & Silence Buffer:**
        - Native Flow (`Pathway A`): $\le \{5, 9, 13, 18\}$ words for $\{4\text{s}, 6\text{s}, 8\text{s}, 10\text{s}\}$.
        - External TTS (`Pathway B`): $\le \{8, 12, 18, 22\}$ words; $\text{Clip Duration} - \text{SRT Cue Duration} \ge 1.0\text{s}$ total silence buffer ($\ge 0.4\text{s}$ pre-roll, $\ge 0.6\text{s}$ post-roll).
-     - **`L-15` Anti-Muppet Biomechanical Restraint & Sentence Case:** Spoken lines use preceding colon (`says, [modifier]: "..."`), strict sentence case (no ALL CAPS words), and $\ge 2$ restraint tokens (`relaxed jaw, minimal jaw displacement, subtle lip articulation`).
+     - **`L-15` Anti-Muppet Restraint & Phonetic Normalization:** Spoken lines use preceding colon (`says, [modifier]: "..."`), strict sentence case (no ALL CAPS words), $\ge 2$ restraint tokens (`relaxed jaw, minimal jaw displacement, subtle lip articulation`), and mandatory phonetic word expansion for digits/symbols/acronyms in Pathway A (`"three fourteen"`, `"twenty-four frames"`).
      - **`L-16` Closed-Lip Listener Rule:** Off-screen/phone/narrator speech while a character's face is visible mandates `firmly closed lips, tight jaw, zero mouth movement`.
      - **`L-17` Structured 4-Field Audio Syntax:** Trailing audio follows `Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...` with music suppression over dialogue.
      - **`L-18` Gemini TTS Script Formatting & Non-Imposition Law:** `narrator_script.md` isolates `< >` tags on standalone lines (`.\n<long pause>\n`), bans `[...]` brackets, and never rewrites creator's authored voice into 2nd person.

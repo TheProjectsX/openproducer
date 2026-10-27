@@ -8,9 +8,9 @@ intended_engine: Google Flow (Veo 3.1)
 initial_frame: clips/clip_12/image_prompt.txt
 
 [VIDEO PROMPT]
-(REFERENCE ONLY: 'Then, two inches above your crown, you hear')
-Starting from the initial frame, the camera perspective executes a very slow, creeping macro push-in toward the top curvature of the stick figure's white circular head. The stick figure remains frozen in place with zero bodily movement while the suffocating pitch-black shadow void hangs motionless just two inches above the scalp.
+(REFERENCE ONLY: 'Then, two inches above your crown, you feel')
+Starting from the initial frame, locked-off macro framing holds motionless on the top curvature of the stick figure's solid white circular head. The stick figure remains completely stationary with zero movement. Directly above the scalp, the upper frame remains an empty, flat, solid pitch-black void (#0A0B0E) hanging in utter stillness. There are strictly zero organic silhouettes, zero noses, and zero faces in the darkness.
 Audio: SFX: Faint microscopic air displacement; Ambience: Suffocating near-vacuum tone; Dialogue: None; Music: Low ominous bowed cello drone and sub-bass vibration beginning to swell underneath.
 
 [NEGATIVE PROMPT]
-tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+nose, human nose, monster nose, face profile, silhouette of face, facial features, nostrils, lips, chin, pareidolia, face emerging from darkness, monster face, organism, organic curves in shadow, tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.

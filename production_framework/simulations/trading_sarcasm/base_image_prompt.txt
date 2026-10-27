@@ -1,0 +1,14 @@
+================================================================================
+TIER 1: MASTER CHARACTER & STYLE BASE IMAGE PROMPT
+================================================================================
+[IMAGE CONFIGURATION]
+Aspect Ratio: 16:9
+Resolution: 1080p
+Conditioning: [IMAGE 1] (Creator Photo)
+Output Asset: references/base_image.jpg
+
+[IMAGE PROMPT]
+Cinematic 16:9 portrait of a young South Asian man in a modern dim creator studio, retaining 100% of his authentic facial bone structure, jawline, and natural skin tone from [IMAGE 1]. He has stylishly voluminous textured dark hair styled with trendy upward spikes. He wears a minimalist charcoal-black casual creator crewneck sweater with clean tailored seams. In the background, warm tungsten accent lamps and dark acoustic foam panels create rich separation and depth. Soft 45-degree diffused softbox key lighting highlights authentic skin micro-texture and fine hair strands. Natural, confident expression, sharp 35mm optical depth of field with realistic gentle bokeh, zero grain, high-fidelity photographic realism.
+
+[NEGATIVE PROMPT]
+blurry, cartoon, 3D render, anime, altered facial features, different jawline, shifted skin tone, pale skin, unnaturally darkened skin, messy unkempt hair, flat hair, bald, graphic logos on shirt, cluttered background, harsh direct flash, over-saturation, watermarks, subtitles, text.

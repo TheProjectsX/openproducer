@@ -1,0 +1,14 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Resolution: 1080p
+Aspect Ratio: 16:9
+Starting Seed: keyframe_02.png
+
+[VIDEO PROMPT]
+Starting directly from the initial image, the young man from [IMAGE 1] sits at his desk while glowing crimson candlestick charts pulse downward on the laptop monitor. Dynamic, luminous red floating text flashes across the upper portion of the frame: "শান্তির জীবন ➡️ জাহান্নাম!". Beginning immediately at frame 1, his voice delivers sharp sarcastic dialogue: "জ্বী হ্যা, শুধু Trading এ পারে আপনার শান্তির জীবনকে জাহান্নাম বানাতে!" As he speaks, his right hand gestures animatedly toward the crashing chart. At second 5, his right hand moves decisively and rapidly directly toward the camera lens in a playful palm-forward slap motion, completely covering the optical glass and blacking out the frame to create a seamless lens-wipe transition cut.
+
+[NEGATIVE PROMPT]
+illegible letters, messy distorted fonts, green rising charts, smiling face, cartoon, tripod, studio gear, distorted anatomy, extra fingers.
+
+[AUDIO SPECIFICATION]
+Audio: SFX: Rapid mechanical keyboard tapping, mouse clicks, ending with an abrupt physical palm slap against glass at second 5.5; Ambience: Low hum of computer cooling fans in quiet room; Dialogue: Energetic sarcastic male voice immediately speaks "জ্বী হ্যা, শুধু Trading এ পারে আপনার শান্তির জীবনকে জাহান্নাম বানাতে!"; Music: Comical fast-paced descending synth arpeggio ducked beneath dialogue.

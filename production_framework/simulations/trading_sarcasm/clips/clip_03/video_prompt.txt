@@ -1,0 +1,14 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Resolution: 1080p
+Aspect Ratio: 16:9
+Starting Seed: keyframe_03.png
+
+[VIDEO PROMPT]
+Starting directly from the initial image, the young man from [IMAGE 1] with textured spiked hair smoothly completes his motion of sitting down into the center cushion of the single dark fabric sofa. Bold stylized floating kinetic text animates in mid-air in the upper third: "আজকে ডিপোজিট করবেন, তো কালকেই ব্যালেন্স জিরো!". As his back rests against the sofa rear cushion, he maintains relaxed facial muscles and restrained lip articulation, delivering sarcastic deadpan dialogue: "আজকে ডিপোজিট করবেন, তো কালকেই ব্যালেন্স জিরো!" A smooth optical camera push-in glides slowly forward toward his eye line, keeping the studio balanced. Exactly one sofa in the room, zero secondary furniture.
+
+[NEGATIVE PROMPT]
+multiple sofas, two couches, secondary chair, sliding feet, moonwalking, floating body, muppet mouth, wide rubber jaw, distorted text, illegible letters, cartoon, equipment.
+
+[AUDIO SPECIFICATION]
+Audio: SFX: Realistic soft sofa fabric compression as body sits, gentle clothing rustle; Ambience: Quiet evening apartment room tone; Dialogue: Sarcastic dry male voice delivers "আজকে ডিপোজিট করবেন, তো কালকেই ব্যালেন্স জিরো!" with relaxed ironic cadence; Music: Subtle ironic acoustic guitar plucks with wide stereo spacing.

@@ -41,6 +41,41 @@ The `cinematography_audio/` domain governs the behavior of the virtual camera in
 | **Portrait Prime** | `85mm` | Compressed background perspective, creamy subject-isolating bokeh | High-stakes dialogue, character close-ups, emotional beats |
 | **Macro Prime** | `100mm` | Extreme 1:1 magnification, razor-thin focal plane, edge-to-edge sharpness | Commercial tabletop luxury, mechanical timepieces, liquid physics |
 
+### 2.3 9:16 Vertical Viewport Framing Scales & Mobile UI Safe-Zone Geometry
+
+In short-form mobile video (TikTok, YouTube Shorts, Instagram Reels), traditional widescreen 16:9 framing fails because on-screen platform UI elements occlude substantial viewport area, and narrow horizontal FOV distorts standard compositions.
+
+#### The Mobile UI "Danger Zones" vs. Central 60% Safe Zone:
+```
+┌────────────────────────────────────────────────────────┐ Y = 0%
+│     TOP 15% DANGER ZONE (Header UI, Search, Badges)    │
+├────────────────────────────────────────────────────────┤ Y = 15%
+│                                              │ R       │
+│                                              │ I       │
+│        CENTRAL 60% VERTICAL ACTION SAFE ZONE │ G 15%   │
+│   (All facial anatomy, focal action, and     │ H       │
+│    critical props MUST reside in this zone)  │ T       │
+│                                              │         │
+│                                              │ U       │
+│                                              │ I       │
+├────────────────────────────────────────────────────────┤ Y = 75%
+│   BOTTOM 25% DANGER ZONE (Captions, Sound Marquee,     │
+│   Account Handles, Description Text & CTAs)            │
+└────────────────────────────────────────────────────────┘ Y = 100%
+X = 0%                                         X = 85%   X = 100%
+```
+
+#### Vertical Safe-Zone Production Rules:
+1. **The Central 60% Action Safe-Zone Law:**
+   - Coordinates: Bounded vertically between **$Y = 15\%$ and $Y = 75\%$**, and horizontally between **$X = 5\%$ and $X = 85\%$**.
+   - All primary facial anatomy, eyes, hero products, and focal movements must stay inside this envelope.
+   - Positive Prompt Syntax: `"Framed strictly within the central vertical 60% action safe zone, eye-level centered composition, clear top and bottom negative margins."`
+2. **Vertical Framing Scale Standards:**
+   - **Vertical ECU:** Macro detail (eye, watch dial) centered vertically at $Y \approx 40\%–50\%$.
+   - **Vertical MCU (Dialogue):** Chest-up centered portrait; head crown sits cleanly below the $15\%$ top threshold, eyes locked at the $35\%–40\%$ vertical line, chest terminating above the $75\%$ bottom threshold.
+   - **Vertical MS (Action/Prop):** Waist-up framing; actor's hands and held props operate strictly between $Y = 40\%$ and $Y = 65\%$.
+   - **Vertical Full Figure (WS):** Head-to-toe figure centered with generous top/bottom margins ($15\%$ headroom above hair, $25\%$ margin below feet) to prevent platform captions from amputating feet or ankles.
+
 ---
 
 ## 3. Kinematic Trajectory Engine & Rules
@@ -61,6 +96,14 @@ Diffusion engines treat physical hardware words as visible geometry. Including e
 | `drone shot` / `aerial drone` | `High-altitude bird's-eye perspective tracking downward` |
 | `gimbal` / `steadicam` | `Smooth floating eye-level tracking camera maintaining perfect stability` |
 | `camera rig` / `shaky cam` | `Visceral handheld camera cadence with subtle organic drift` |
+
+### 3.3 Aspect-Ratio-Aware Kinematics (Vertical 9:16 vs. Widescreen 16:9 Trajectories)
+1. **The Horizontal Whip-Pan Glitch in 9:16:**
+   - In 9:16 vertical aspect ratios, rapid horizontal panning produces severe motion blur, parallax warping, and vertical tearing due to the narrow horizontal FOV. Rapid horizontal pans are strictly forbidden in 9:16 prompts.
+2. **Vertical-Native Kinematic Vocabulary:**
+   - **Vertical Pedestal Elevation:** `Smooth continuous vertical elevation sweep rising from waist level to eye line`.
+   - **Z-Axis Linear Push / Pull:** `Smooth linear forward push-in along the central optical Z-axis directly toward the subject's face`.
+   - **Vertical Tilt Glide:** `Slow deliberate upward tilt tracking subject posture`.
 
 ---
 
@@ -131,6 +174,20 @@ Diffusion models over-index on speech presence tokens, exaggerating jaw movement
 ```text
 A locked-off eye-level medium close-up of [Subject description]. Shot on an 85mm portrait prime lens at f/2.0 with shallow depth of field. The camera remains completely stationary, maintaining sharp focus on their face. The jaw is completely relaxed. With subtle, restrained lip articulation and minimal jaw displacement, they speak in a [tone: calm, measured / cold, hushed / tense] undertone: "[Sentence one.] [Sentence two.]" The mouth opens subtly without wide stretching, closing naturally into a resting position between pauses, accompanied by subtle eye micro-expressions. Audio: SFX: [Tactile Foley]; Ambience: [Ambient Room Tone]; Dialogue: [Character vocal delivery]; Music: [Score Directive / None].
 ```
+
+### 5.4 Phonetic Dialogue Normalization Law (Preventing Viseme Stutter)
+Video diffusion engines (Veo 3.1) synthesize spoken lip articulation directly from text tokens using phoneme-to-viseme mapping. Written digits, numeric abbreviations, and symbols (`"3:14 AM"`, `"1994"`, `"24fps"`, `"$500"`, `"AI"`, `"API"`) cause the viseme generator to stutter, drop syllables, or articulate awkward letter-by-letter mouth flapping.
+
+#### The Phonetic Expansion Rules (Enforced under Linter L-15):
+1. **Spoken Dialogue Expansion (`Pathway A`):** In all spoken dialogue quotes, numbers, times, currencies, and technical acronyms **MUST be written out phonetically as spoken English words**:
+   - `"3:14 AM"` $\longrightarrow$ `"three fourteen in the morning"`
+   - `"$500"` $\longrightarrow$ `"five hundred dollars"`
+   - `"1994"` $\longrightarrow$ `"nineteen ninety-four"`
+   - `"24fps"` $\longrightarrow$ `"twenty-four frames per second"`
+   - `"AI"` $\longrightarrow$ `"A I"` (or `"artificial intelligence"`)
+   - `"%100"` $\longrightarrow$ `"one hundred percent"`
+2. **Visual Prop Purity:** Numbers and symbols displayed on physical objects in the visual prompt (alarm clocks, phone screens, street signs) maintain their exact numeric formatting:
+   > *Example:* Visual prompt states `"digital alarm clock display glowing 03:14 AM"`, while the character's spoken dialogue states `"It was three fourteen in the morning."`
 
 ---
 

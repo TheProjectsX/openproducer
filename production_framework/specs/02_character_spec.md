@@ -155,6 +155,17 @@ When a creator uploads their photo and requests custom wardrobe, cosplay, or tal
 6. **Full-Body Biological Inheritance & Downward Extrapolation:** Anchor natural height, musculoskeletal build, and posture. When only a face headshot is provided, upper collar/garment traits are seamlessly extrapolated downward into matching tailored lower pieces (trousers/skirt, belt, footwear) with identical textile weave.
 7. **Cosplay Deconstruction Engine:** Automatically expand pop-culture and anime terms into physical garment descriptors (materials, piping, armor plates, collars) to prevent AI hallucination.
 8. **Style Harmonization:** If target is Anime, translate both face and body into unified 2D hand-drawn cel art. If target is Live Action, render a real living actor in tailored movie costume.
+9. **Universal Relative Melanin & Complexion Parity Law (Cross-Source / Multi-Reference Translation):**
+   - *The Empirical Glitch:* When translating an anime pose or multi-image reference (`[IMAGE 2]`) onto a real model (`[IMAGE 1]`), diffusion models frequently alter skin tone, misinterpret dark anime cell-shading as dark skin pigmentation (melanin), or trigger diversity priors that shift the character's race.
+   - *The Relative Parity Formula:* Never hardcode static skin colors (e.g. "fair" or "tan"). Always bind directly to `[IMAGE 1]` using relative parity syntax across all visible anatomy:
+     `"Lock 100% biometric identity from [IMAGE 1]. Mirror the exact same skin tone, natural melanin level, undertones, and biological ethnicity of the person in [IMAGE 1]. All visible skin (face, neck, ears, hands, arms) must be an identical 1:1 match to [IMAGE 1]—neither lightened, darkened, nor altered in ethnicity."`
+   - *Mandatory Negative Anchor:* `mismatched skin tone from [IMAGE 1], altered skin tone, shifted complexion, lightened skin, darkened skin, race drift, ethnicity change, mismatched neck and face color, different race from [IMAGE 1]`.
+10. **The "Facial Mask Only" & Hair Decoupling Protocol (Grafting Identity onto Existing Poses/Characters):**
+    - *The Empirical Glitch:* When transferring identity onto an existing pose or character from `[IMAGE 2]`, copying the full head wipes out the iconic hairstyle, haircut, and hair color of `[IMAGE 2]`, replacing it with the real model's haircut.
+    - *Decoupled Hair vs. Facial Mask Architecture:*
+      1. **Hairstyle Inheritance from `[IMAGE 2]` Only:** The character retains 100% of the exact hairstyle, haircut, bangs, hair length, and hair color from the character in `[IMAGE 2]`, translated into realistic, individual fine organic hair strands with natural specular sheen and physical volume. Strictly forbid using the hairstyle or hair color from `[IMAGE 1]`.
+      2. **Facial Mask Graft from `[IMAGE 1]` Only:** Graft ONLY the facial features (cheekbones, eye contours, nose bridge, lips, jawline) and relative skin tone/melanin from `[IMAGE 1]` onto the face.
+    - *Mandatory Negative Anchor:* `hair from [IMAGE 1], haircut from [IMAGE 1], wrong hair color, altered hairstyle, mismatched hair from [IMAGE 2]`.
 
 ### Scenario 2: Original Character Creation from Pure Text (2-Step Architecture)
 When creating an original character without a source photo, generating a 4-view sheet in 1 step causes **split token attention** and **facial drift across panels**. The mandatory 2-step pipeline solves this:

@@ -59,6 +59,14 @@ visual/
 ## 2. Contrast & Shadow Profile
 - **Contrast Ratio:** [e.g., High-contrast dramatic low-key | Soft low-contrast overcast]
 - **Shadow Roll-off:** [e.g., Preserved shadow detail with subtle silver grain | Deep velvety crushed blacks]
+
+## 3. The 3-Value Exposure & Kelvin Continuity Anchor (`[MATCH-ON-TONE]`)
+Across multi-clip sequences, diffusion engines (Imagen 4 / Veo 3.1) shift exposure brightness and color temperature when cutting between macro inserts and wide room plates. To eliminate jarring screen strobing and exposure jumps, every project defines this immutable 3-value anchor:
+- **Exposure Key (IRE):** [e.g., Low-Key 15% IRE | Standard Balanced 45% IRE | High-Key 70% IRE]
+- **Dominant Color Temperature (Kelvin):** [e.g., 3200K Warm Tungsten | 5600K Clean Daylight | 6500K Cool OLED Cyan]
+- **Black Point & Dynamic Floor:** [e.g., Crushed Pitch Black `#0A0B0E` | Lifted Matte Film Shadow `#181920`]
+- **Master Tone Invariant String:**
+  > `Exposure key: [e.g., low-key 15% IRE], dominant color temperature: [e.g., 3200K warm incandescent], black point floor: [e.g., #0A0B0E], zero exposure strobing across cuts.`
 ```
 
 ### 3.3 `visual/technical_anchor.md` (Authoritative Flow Anchor)

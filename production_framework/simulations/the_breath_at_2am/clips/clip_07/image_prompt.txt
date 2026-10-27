@@ -7,11 +7,11 @@ clip_id: clip_07
 duration: 6s
 ingredient_slot_allocation:
   [IMAGE 1]: 2D Vector Black Cat Silhouette (Tilted side-profile)
-  [IMAGE 2]: Living Room Sofa Back Stage
-  [IMAGE 3]: base_image_prompt.txt (Stick Figure Head Profile in Foreground)
+  [IMAGE 2]: Living Room Single Sofa Stage (Single linear couch only)
+  [IMAGE 3]: base_image_prompt.txt (Stick Figure Head Profile on Same Couch)
 
 [IMAGE PROMPT]
-High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Medium close-up side-profile of the sleek black vector cat perched atop the linear sofa backrest. The cat's head is tilted backward at an acute sixty-degree angle, with whiskers tensed and alert pointed ears drawn back, tracking an invisible path across the dark ceiling plane overhead. The edge of the stick figure's solid white circular head (#FFFFFF) is visible in the lower foreground bathed in cool-blue television light. Upper frame dissolves into deep pitch-black shadows (#0A0B0E). Clean uniform vector strokes terminating in rounded line-caps, flat graphic novel art.
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). EXACTLY ONE SOFA IN THE ROOM. Medium close-up side-profile framing the stick figure seated on the sofa, with the sleek black vector cat perched directly on the backrest cushion immediately behind the stick figure's solid white circular head (#FFFFFF). The cat's head is tilted backward at an acute sixty-degree angle toward the ceiling void overhead. Faint cool-blue television light illuminates the front contours. Upper frame is pure pitch-black shadow (#0A0B0E). Clean uniform vector strokes, zero extra sofas, zero secondary furniture, flat 2D graphic novel art.
 
 [NEGATIVE PROMPT]
-photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+multiple sofas, two couches, separate sofa, empty sofa, secondary furniture, sitting elsewhere, photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

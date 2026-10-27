@@ -1,0 +1,10 @@
+[IMAGE CONFIGURATION]
+Aspect Ratio: 16:9
+Resolution: 1080p
+Conditioning: [IMAGE 1] (Tier 1 Hero Character)
+
+[IMAGE PROMPT]
+Front-facing medium close-up of the young man from [IMAGE 1] with stylishly textured upward spiked hair, wearing a clean charcoal-black creator crewneck. He looks directly forward into the camera lens with a deadpan, mock-serious confident expression and relaxed facial muscles. Positioned center-frame in a polished modern studio workspace with soft dark acoustic panels and a faint warm ambient rim light accentuating his shoulders. Professional softbox key lighting provides clean, flattering illumination with rich natural micro-contrast and realistic skin pores. Sharp optical focus on his eyes, shallow depth of field gently blurring the studio backdrop.
+
+[NEGATIVE PROMPT]
+subtitles, captions, text, watermark, distorted hands, smiling widely, open mouth, asymmetric eyes, cartoon, low resolution, motion blur, direct harsh camera flash.

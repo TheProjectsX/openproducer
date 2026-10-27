@@ -7,11 +7,11 @@ clip_id: clip_04
 duration: 6s
 ingredient_slot_allocation:
   [IMAGE 1]: base_image_prompt.txt (Lone Stick Figure #FFFFFF head, #0F172A limbs)
-  [IMAGE 2]: Living Room Sofa Back Stage
-  [IMAGE 3]: 2D Vector Black Cat Silhouette (Alert upright posture)
+  [IMAGE 2]: Living Room Single Sofa Stage (Single linear couch only)
+  [IMAGE 3]: 2D Vector Black Cat Silhouette (Alert posture on sofa back)
 
 [IMAGE PROMPT]
-High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Medium shot centered on the backrest of a linear sofa silhouette where a sleek 2D black vector domestic cat sits bolt upright in rigid alert posture. The cat has pointed ears pivoted backward, a curved tail, and smooth solid black vector contours. Below the sofa back, the solid white circular head (#FFFFFF) of the seated stick figure is visible in profile against the muted blue television light cone. Pitch-black shadows (#0A0B0E) engulf the upper room. Clean unbroken vector lines terminating in rounded line-caps, flat graphic aesthetic.
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). EXACTLY ONE SOFA IN THE ROOM. Medium shot centered on a single minimalist linear sofa. The lone stick figure with a solid white circular head (#FFFFFF) is seated directly on the center cushions of this sofa. Perched directly on the top backrest of the EXACT SAME sofa, directly behind the stick figure's shoulders, a sleek 2D black vector cat sits in a low relaxed posture with alert ears. Muted blue television light cuts across the sofa from the side. Upper frame is an opaque pitch-black ceiling void (#0A0B0E). Crisp unbroken vector lines, zero extra sofas, zero secondary chairs, flat graphic aesthetic.
 
 [NEGATIVE PROMPT]
-photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+multiple sofas, two couches, separate sofa, empty sofa, secondary chair, sitting on another couch, photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

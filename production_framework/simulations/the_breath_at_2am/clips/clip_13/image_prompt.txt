@@ -7,11 +7,11 @@ clip_id: clip_13
 duration: 8s
 ingredient_slot_allocation:
   [IMAGE 1]: base_image_prompt.txt (Stick Figure Head Crown Profile)
-  [IMAGE 2]: Pitch-Black Shadow Void with Air Ripple Distortion
+  [IMAGE 2]: Pitch-Black Flat Empty Ceiling Void
   [IMAGE 3]: None
 
 [IMAGE PROMPT]
-High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Macro side-profile framing the crown of the stick figure's solid white circular head (#FFFFFF) in razor-sharp vector outline. Exactly two inches above the top of the scalp, within the deep pitch-black shadow void (#0A0B0E), the darkness subtly warps with faint, delicate vector ripple contours indicating an invisible breathing presence suspended in mid-air. Cool-blue television screen illumination grazes the brow line. Limbs remain strictly fingerless with zero fleshy details, clean uniform stroke weight throughout, flat 2D graphic art, chilling psychological horror climax.
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Macro side-profile framing the crown of the stick figure's solid white circular head (#FFFFFF) in lower frame. Directly above the scalp, the entire upper half of the frame is an empty, flat, impenetrable pitch-black void (#0A0B0E). Strictly zero visible entities, zero monsters, zero faces, zero noses, and zero creatures. Cool-blue television illumination grazes the brow line. Limbs remain strictly fingerless with zero fleshy details, clean uniform stroke weight throughout, flat 2D graphic art, chilling psychological horror climax.
 
 [NEGATIVE PROMPT]
-photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+giant monster, monster, beast, creature, giant nose, monster nose, nostrils, face in shadow, exhaling face, realistic face, demon, alien, pareidolia, mouth, teeth in darkness, organic shapes, photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
