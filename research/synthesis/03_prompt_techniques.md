@@ -1,22 +1,17 @@
 # 03. Prompting Techniques & Cinematographic Control
 
-## 1. Temporal Sequencing: Timestamp Prompting
+## 1. Temporal Sequencing: Sequential Beat Prose
 
-Veo 3.1 supports internal temporal choreography within a single generation clip (typically 6–8 seconds) using structured timestamp brackets. This allows creators to direct subtle multi-beat action without triggering the spatial averaging failure mode:
+Veo 3.1 supports internal temporal choreography within a single generation clip (4–10 seconds) using natural sequential beat prose rather than rigid clock timestamps (which risk on-screen digit burn-in or temporal stutter):
 
-### Timestamp Syntax Rules
-- Use square brackets with explicit minute:second format: `[00:00-00:03]`, `[00:03-00:06]`, `[00:06-00:08]`.
-- Divide an 8-second clip into **maximum 2 to 3 beats**.
+### Beat Sequencing Rules
+- Use natural temporal transition conjunctions: "Initially...", "Next...", "Then...", "As...", "Finally...".
+- Divide a single clip into **maximum 2 to 3 beats**.
 - Ensure action transitions flow logically without requiring discontinuous jump cuts.
 
-### Timestamp Prompt Example
+### Sequential Prompt Example
 ```text
-Medium shot of a tired watchmaker at his wooden workbench. 
-[00:00-00:03] He peers through his brass jeweler's loupe, holding a tiny gear steady with tweezers.
-[00:03-00:06] He gently sets the gear into the pocket watch mechanism and releases his breath.
-[00:06-00:08] He slowly looks up toward the camera, a faint satisfied smile forming on his lips.
-Camera holds static on a locked tripod. Warm tungsten desk lamp lighting, shallow depth of field. 
-Audio: precise metallic ticking, faint exhale of breath, soft room tone.
+Medium shot of a tired watchmaker at his wooden workbench. Initially, he peers through his brass jeweler's loupe, holding a tiny gear steady with tweezers. He then gently sets the gear into the pocket watch mechanism and slowly looks up toward the frame with a faint, satisfied smile. Locked-off eye-level static framing with zero camera movement. Warm tungsten desk lamp lighting, shallow depth of field. Audio: SFX: precise metallic ticking, faint exhale of breath; Ambience: soft quiet room tone; Dialogue: None; Music: None.
 ```
 
 ---
@@ -85,17 +80,17 @@ In AI diffusion, failing to specify lighting causes the model to default to flat
 ```
 CAMERA MOTIONS
 ├── STATIONARY
-│   ├── Locked-Off Tripod      -> Zero camera movement; subject moves inside frame
-│   └── Stationary Pan / Tilt  -> Pivot horizontally or vertically on fixed axis
-├── DYNAMIC MOUNT
-│   ├── Slow Dolly-In / Push   -> Moves physically toward subject (intensifying drama)
-│   ├── Dolly-Back / Pull-Out  -> Moves physically away (revealing context/isolation)
-│   ├── Lateral Trucking       -> Glides laterally along rails parallel to movement
-│   ├── Crane / Jib Arc        -> Vertical boom sweep up or down
-│   └── Steadicam Follow       -> Smooth gliding operator movement behind or ahead
+│   ├── Locked-Off Static Framing  -> Zero camera movement; subject moves inside frame
+│   └── Stationary Pan / Tilt      -> Pivot horizontally or vertically on fixed axis
+├── DYNAMIC OPTICAL GLIDE
+│   ├── Slow Camera Push-In        -> Moves physically toward subject (intensifying drama)
+│   ├── Slow Camera Pull-Out       -> Moves physically away (revealing context/isolation)
+│   ├── Lateral Tracking Glide     -> Glides laterally parallel to movement
+│   ├── Vertical Elevation Sweep   -> Vertical optical boom sweep up or down
+│   └── Smooth Tracking Follow     -> Smooth stabilized operator glide behind or ahead
 └── ORGANIC / FREE
-    ├── Handheld Follow        -> Natural micro-jitters, kinetic urgency, documentary
-    └── Low-Altitude FPV Drone -> Fluid high-speed aerial flight through space
+    ├── Handheld Follow            -> Natural micro-jitters, kinetic urgency, documentary
+    └── Low-Altitude Aerial Glide  -> Fluid high-speed aerial flight through space
 ```
 
 ### 4.2 Speed Modifiers
@@ -125,4 +120,4 @@ Directing color palette and film grain texture transforms digital sterility into
 | Negative prompts with "no" / "don't" (e.g. `no blur, don't show car`) | Describe desired positive state: `sharp focus, empty street` | Diffusion models often fixate on the noun following "no", causing hallucination. |
 | Vague buzzwords (`photorealistic, 8k, hyper-detail, masterpiece`) | Technical specs (`35mm anamorphic, motivated key light, shallow DoF`) | Buzzwords pollute token attention; optical terms trigger high-fidelity latent representations. |
 | ALL CAPS dialogue (`says: "STOP RUNNING"`) | Sentence case (`says: "Stop running"`) | Veo 3.1 spells capitalized words letter-by-letter as acronyms (S-T-O-P). |
-| Compounding camera moves (`pan left while zooming out and dollying`) | Single camera verb (`Slow dolly-in toward subject`) | Conflicting optical instructions cause spatial warping and perspective shearing. |
+| Compounding camera moves (`pan left while zooming out and dollying`) | Single camera verb (`Slow camera push-in toward subject`) | Conflicting optical instructions cause spatial warping and perspective shearing. |

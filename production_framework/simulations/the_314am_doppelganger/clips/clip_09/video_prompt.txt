@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS SHOT EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_09/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, eye-level slow creeping push-in camera advancing gradually toward the seated figure. Permitted Props: [platform bed frame, cotton blanket, smartphone]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, lets out a slow, visible exhalation: their shoulders drop downward by one inch in premature relief, and their rounded limbs begin to lower the glowing smartphone down toward the blanket. Clean 2D graphic noir art. Audio: SFX: audible soft sigh exhalation of relief, rustling fabric of blanket; Ambience: steady quiet room tone; Dialogue: None; Music: None.

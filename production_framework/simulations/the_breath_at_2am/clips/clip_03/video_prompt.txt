@@ -1,0 +1,16 @@
+[CONFIGURATION SETTINGS]
+clip_id: clip_03
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_03/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'You live alone. The apartment is dead quiet.')
+Starting from the initial frame, locked-off macro framing remains completely stationary on the digital wall clock. The cool-blue digital numerals '02:00' glow steadily against the pitch-black background void, completely frozen in time, while the surrounding darkness hangs in heavy, suffocating apartment silence with zero visual movement or disturbance.
+Audio: SFX: Faint rhythmic digital capacitor click; Ambience: Cavernous dead apartment silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.

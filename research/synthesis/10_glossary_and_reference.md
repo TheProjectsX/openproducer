@@ -30,25 +30,25 @@
 
 ### L
 - **Last Frame (`last_frame`):** The terminal frame of a video clip, often extracted and fed as the `first_frame` of the subsequent clip to achieve temporal action chaining.
-- **Locked-Off Tripod:** Completely stationary camera framing with zero optical movement, ideal for dialogue scenes and dialogue lip-sync stability.
+- **Locked-Off Static Framing:** Completely stationary camera perspective with zero optical movement (`locked-off eye-level static framing, zero camera movement`), ideal for dialogue scenes and lip-sync stability without invoking banned equipment nouns like `"tripod"`.
 
 ### M
 - **Match Cut:** A cinematic transition where the visual composition or geometry at the end of Shot A matches the geometry at the start of Shot B.
 - **Motivated Lighting:** Lighting that appears to originate from a logical, physical source within the narrative world (e.g., a window, desk lamp, or campfire).
 
 ### O
-- **One Action Rule:** Restricting each 4–8 second generation prompt to a single continuous physical action to prevent temporal averaging and visual warping.
+- **One Action Rule:** Restricting each 4–10 second generation prompt to a single continuous physical action to prevent temporal averaging and visual warping.
 
 ### P
 - **Practicals:** Visible in-frame light fixtures (neon signs, floor lamps, candles, monitor screens).
 
 ### S
 - **Scene Builder:** The AI-native non-linear timeline workspace inside Google Flow used to sequence, trim, transition, and assemble generated clips into a completed film.
-- **Shot / Reverse-Shot:** The classic cinematic editing technique of alternating over-the-shoulder medium close-ups between two conversing characters to guarantee dialogue lip-sync fidelity.
+- **Shot / Reverse-Shot (Clean Singles):** The cinematic editing technique of alternating isolated, clean single-subject medium close-ups with complementary 15° off-axis eyelines between two conversing characters (strictly avoiding dirty Over-The-Shoulder / OTS framing, which causes shoulder melting and identity bleed).
 - **Single Camera Verb Rule:** Restricting each prompt to exactly one motivated camera movement (e.g., "slow push-in") to prevent conflicting 3D spatial vectors.
 
 ### T
-- **Timestamp Prompting:** Structuring an 8-second prompt into 2–3 chronological beats using minute:second brackets (e.g., `[00:00-00:03] ... [00:03-00:08] ...`).
+- **Temporal Clip Slicing (Replacing Timestamp Prompting):** Slicing multi-beat actions into discrete 4s, 6s, 8s, or 10s atomic clips rather than writing inline `[00:00-00:03]` timestamp brackets inside a single prompt (which Veo 3.1 either ignores or burns into the video as literal text watermarks).
 
 ### V
 - **Veo-JSON:** The standardized JSON schema for representing cinematic shot parameters programmatically in agent pipelines.
@@ -65,38 +65,40 @@
 
 1. FORMULA (PURE CINEMATIC PROMPT):
    [Shot Type] + [Subject with Verbatim Anchor] + [Action] + [Context & Lighting] 
-   + [Single Camera Verb] + [Dialogue in Quotes] + Audio: [Ambience, Foley, No Music]
+   + [Single Camera Verb] + [Dialogue in Quotes] 
+   + Audio: SFX: [Primary Foley]; Ambience: [Ambient Room Tone]; Dialogue: [Spoken Line or None]; Music: [Directive or None].
    (DO NOT append technical resolution/aspect/duration tokens into the prompt string).
 
 2. LENGTH:
-   100 - 150 Words (3 to 6 sentences). Never under 60 words; never over 180 words.
+   100 - 150 Words for standalone T2V (75 - 150 Words for Image-to-Video).
 
 3. CONFIGURATION CHANNEL (API Config / Flow UI Dropdowns, NOT in prompt):
    • Aspect Ratios: 16:9 or 9:16
    • Resolutions: 720p (draft), 1080p (master), 4k (select models)
-   • Durations: 4s, 6s, or 8s
-   • Reference Images: Up to 3 Ingredients (Character, Prop, Style)
+   • Durations: 4s, 6s, 8s, or 10s
+   • Reference Images: Up to 3 Ingredients (Ingredient #1: Subject Turnaround, Ingredient #2: Empty Stage Environment, Ingredient #3: Secondary Subject / Prop)
    • Keyframe Endpoints: first_frame, last_frame (interpolation)
 
-4. DIALOGUE RULES:
-   • Format: says, [modifier]: "[Spoken text in sentence case]"
+4. DIALOGUE & LIP-RESTRAINT RULES:
+   • Format: speaking with natural subtle lip articulation and relaxed jaw, says, [modifier]: "[Spoken text in sentence case]"
    • Colon before quote is MANDATORY (prevents subtitle burn-in).
    • NEVER use CAPS LOCK in spoken quotes (words will be spelled out letter-by-letter).
-   • Limit to 1-2 short sentences (3-6s speaking time).
+   • Keep non-speaking listeners explicitly silent: "firmly closed lips, zero mouth movement".
 
 5. MULTI-SPEAKER CONVERSATIONS:
    • NEVER generate two talking characters in one clip (failure rate > 60%).
-   • ALWAYS use Shot / Reverse-Shot coverage across two separate clips.
+   • ALWAYS use Clean Single Shot / Reverse-Shot coverage across separate clips (never OTS).
 
 6. FORBIDDEN PATTERNS:
    • DO NOT use "(thats where the camera is)" -> DEPRECATED.
+   • DO NOT use "[00:00-00:03]" timestamps inside atomic clip prompts.
    • DO NOT chain compound camera moves (e.g. "pan and zoom and dolly").
    • DO NOT prompt for "pure white background" (triggers diagonal black lines).
-   • DO NOT use negative "no/don't" visual prompts (describe positive desired state).
+   • DO NOT use negative "no/don't" visual prompts in positive prose (describe positive desired state).
    • DO NOT use camera equipment nouns ("tripod", "camera on tripod", "dolly track", "crane rig"); use perspective descriptors ("locked-off eye-level framing, completely static shot", "slow push-in") to prevent the model from rendering physical camera props in the room.
 
-7. AUDIO SUPPRESSION:
-   • ALWAYS append ", no background music" in the Audio block to avoid generic scores.
+7. STRUCTURED AUDIO & SUPPRESSION:
+   • ALWAYS structure the trailing Audio block with semicolon-separated layers and append "; no background music, no cinematic score." to avoid unwanted musical swells.
 ================================================================================
 ```
 

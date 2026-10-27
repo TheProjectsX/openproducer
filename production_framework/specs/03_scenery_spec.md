@@ -13,10 +13,10 @@ The `environments/` domain defines, stages, and locks the spatial geometry, moti
 ### The Core Environmental Principles:
 1. **The 3-Plane Spatial Parallax Law:** Every environment must be explicitly layered into **Foreground**, **Midground**, and **Background**. When the camera moves in AI video, this forces the diffusion latent space to compute authentic multi-speed 3D parallax instead of 2D card warping.
 2. **Motivated Lighting & Atmospheric Medium:** Light never exists in an empty vacuum. All illumination must originate from an identifiable physical vector (e.g. low-angle sunset, stage spotlights, overhead commercial softboxes) scattering through a tangible atmospheric medium (mist, dust motes, sea spray, or haze).
-3. **The "Empty Stage" Reference Protocol (Google Flow Ingredient #2):** For multi-shot continuity, reference plates stored in `environments/<id>/references/` must strictly depict the **Empty Stage** (architecture, materials, and lighting with zero human characters or hero products). This prevents subject bleed into downstream shots.
+3. **The "Empty Stage" Reference Protocol (Google Flow Ingredient #2 / `[IMAGE 2]`):** For multi-shot continuity, reference plates stored in `environments/<id>/references/empty_stage.png` must strictly depict the **Empty Stage** (architecture, materials, and lighting with zero human characters or hero products). During **Tier 2 Keyframe Compositing**, `[IMAGE 2]` (Empty Stage) is combined with `[IMAGE 1]` (Primary Subject) and `[IMAGE 3]` (Secondary Subject/Prop) to generate a single pre-composited starting frame for Tier 3 Veo 3.1 video generation—eliminating subject and `#E5E5E5` background bleed across shots.
 4. **Architectural Decoupling (Image Mode vs. Video Mode):**
    - **Still Image Prompts (Imagen 4 / FLUX / Midjourney):** Uncapped descriptive depth focusing on classical concept art depth (Repoussoir foreground, atmospheric perspective, staffage scale, and optical lens specs). Strictly bans camera motion verbs and audio blocks.
-   - **Video Shot Prompts (Google Flow / Veo 3.1):** Continuous causal flow (100–150 words standard, or structured multi-section explainer format), single camera trajectory, and dedicated trailing `Audio:` soundscapes ending with `, no background music`.
+   - **Video Shot Prompts (Google Flow / Veo 3.1):** Continuous causal flow (100–150 words standard T2V, or 75–150 words Tier 3 I2V), single camera trajectory, and dedicated trailing 4-field `Audio:` soundscapes (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`) per Linter `L-17`.
 
 ---
 
@@ -132,11 +132,11 @@ A locked, concise 25–40 word string deterministically injected into video shot
 
 ---
 
-## 5. Pre-Flight Environment Linting Checklist
+## 5. Pre-Flight Environment Linting Checklist (Master Registry Mapping)
 
-Before generating environment plates or compiling video prompts, the environment package must satisfy:
-- [x] **E-01 (Empty Stage Verification):** The reference prompt and image in `references/` contain zero human actors, faces, or hero products.
-- [x] **E-02 (3-Plane Depth Separation):** Prompt explicitly defines foreground, midground, and background elements.
-- [x] **E-03 (Motivated Light Source):** Light has a clear physical source; no generic "good lighting" tokens.
-- [x] **E-04 (No Equipment Nouns):** Zero camera hardware nouns (`tripod`, `dolly track`, `drone`); only perspective and kinematic adjectives allowed.
-- [x] **E-05 (Diegetic Audio Purity):** Audio block starts with `Audio:` and terminates with `, no background music`.
+Before generating environment plates or compiling video prompts, the environment package must satisfy the authoritative Master Linters:
+- **L-08 (Empty Stage & 3-Plane Environment):** The reference prompt and image in `references/empty_stage.png` contain zero human actors, faces, or hero products; prompt explicitly defines motivated foreground, midground, and background planes.
+- **L-03 (Equipment Noun Ban):** Zero camera hardware nouns (`tripod`, `dolly track`, `drone`); only perspective and kinematic adjectives allowed in positive prompts.
+- **L-04 (Config Decoupling):** Zero technical configuration specs (`16:9`, `1080p`) inside creative prompt text.
+- **L-17 (Structured 4-Field Audio Syntax):** Environment acoustic profiles follow semicolon-delimited syntax (`Audio: SFX: None; Ambience: [Room Tone]; Dialogue: None; Music: None`).
+

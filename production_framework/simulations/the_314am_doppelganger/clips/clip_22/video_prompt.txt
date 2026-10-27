@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: L-CUT CLIMACTIC DISSOLVE TO BLACK
+Input Seed / Dependencies: Generated from clips/clip_22/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, low-angle slow creeping push-in moving forward toward the bottom seam of the closed bedroom door. Permitted Props: [wooden bedroom door with brass latch, minimalist floorboards]. In the stillness of the dark room, the wooden door panel shudders with subtle vibrations as heavy weight approaches from the opposite side. Suddenly, beneath the narrow lighted crack of the closed door, dark glistening wet footprint impressions seep onto the bedroom floorboards. The camera continues its slow forward glide into the darkness as the frame gradually dissolves into pure pitch-black void. Immaculate 2D vector graphic noir. Audio: SFX: wet heavy footsteps padding rhythmically on floorboards outside, heavy floorboard creak against door, ominous brass latch rattle; Ambience: corridor stillness echoing into silence; Dialogue: None; Music: None.

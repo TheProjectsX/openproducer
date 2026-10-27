@@ -1,0 +1,16 @@
+[CONFIGURATION SETTINGS]
+clip_id: clip_13
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_13/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'the quiet, deliberate sound of someone drawing a sharp, shallow breath.')
+Continuing directly from the initial frame, locked-off macro framing holds rigidly on the crown of the stick figure's head. The stick figure remains completely paralyzed with zero motion. At timestamp 04.5s, the darkness two inches above the scalp subtly ripples as a deliberate, razor-sharp intake of breath displaces the cold air, followed by a sudden hard cut to pure black at frame 08.0s.
+Audio: SFX: Quiet, deliberate, razor-sharp human inhalation drawn directly overhead at 04.5s; Ambience: Absolute vacuum drop; Dialogue: None; Music: Explosive crescendo of screeching dissonant horror strings, bowed waterphone, and accelerating sub-bass pulse surging to maximum volume right before cutting dead to black.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.

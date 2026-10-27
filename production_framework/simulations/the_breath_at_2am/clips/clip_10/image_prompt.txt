@@ -1,0 +1,17 @@
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+intended_engine: Imagen 4 / Midjourney / VideoFX
+medium: Vector Stick Figure (minimalist_noir)
+clip_id: clip_10
+duration: 6s
+ingredient_slot_allocation:
+  [IMAGE 1]: 2D Vector Black Cat Silhouette (Vertical upward lock)
+  [IMAGE 2]: Low-Angle Sofa Void Stage
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Low-angle perspective looking straight up past the top of the sofa backrest into the ceiling darkness. The sleek black vector cat silhouette is seen from below, its head locked at a ninety-degree vertical angle, gaze frozen unblinkingly at a single focal point directly overhead. Faint ambient cool-blue light grazes the cat's vector contours while the upper three-quarters of the frame consists of a pure, impenetrable pitch-black shadow void (#0A0B0E). Clean uniform black vector outlines, crisp graphic novel tension, flat 2D art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

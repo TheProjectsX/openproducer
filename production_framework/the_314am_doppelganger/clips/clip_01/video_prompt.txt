@@ -1,9 +1,0 @@
-[CONFIGURATION SETTINGS]
-Duration: 6s
-Aspect Ratio: 16:9
-Resolution: 1080p
-Transition / Chop: ESTABLISHING MACRO
-Input Seed / Dependencies: Generated from clips/clip_01/image_prompt.txt
-
-[VIDEO PROMPT]
-Starting directly from the initial image, locked-off static macro framing on the unlit smartphone on the nightstand. For the first two seconds, the room remains in absolute pitch darkness. Exactly at the third second, the rectangular smartphone screen abruptly flares alive with an intense, stark white-cyan OLED spotlight glow, cutting sharply through the dark void and projecting a clean geometric light cone onto the cream wall behind it. The phone does not vibrate or ring. Minimalist 2D vector graphic art, high contrast noir aesthetic. Audio: dead room silence for two seconds, followed by an abrupt, subtle electrical screen wake chime, then the low hum of quiet room ambience, zero vibration buzz, zero spoken dialogue.

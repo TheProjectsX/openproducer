@@ -19,7 +19,7 @@ Despite state-of-the-art capabilities in Veo 3.1 and Google Flow, generative vid
 - **Manifestation:** Veo 3.1 excels at photorealism but frequently introduces doubled ink lines, jittering edge artifacts, and unintentional 3D volumetric shading into traditional 2D cartoon or anime styles.
 - **Root Cause:** 3.1’s latent space is heavily weighted toward physical light transport (subsurface scattering, raytracing, micro-textures).
 - **Workaround:**
-  - Enforce explicit flat-shading constraints: *"Traditional 2D hand-drawn cel animation, flat unshaded color fills, bold clean uniform ink outlines, 24fps locked anime aesthetic, zero 3D rendering, zero volumetric lighting."*
+  - Enforce explicit flat-shading constraints: *"Traditional 2D hand-drawn cel animation, flat unshaded color fills, bold clean uniform ink outlines, stepped animation timing on twos, cel-shaded anime aesthetic, zero 3D rendering, zero volumetric lighting."*
   - Alternatively, route stylized animation tasks to baseline Veo 3 or specialized animation pipelines.
 
 ### 2.3 Audio-Safety Filter False Positives (API Preview / Enterprise)

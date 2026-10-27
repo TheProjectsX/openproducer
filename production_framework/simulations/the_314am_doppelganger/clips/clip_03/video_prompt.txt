@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: DEDICATED MACRO UI INSERT
+Input Seed / Dependencies: Generated from clips/clip_03/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, top-down locked-off static macro framing on the glowing smartphone screen. The notification card with clean black typography "MOTION DETECTED IN HALLWAY" pulses with subtle, slow brightness expansion for the first three seconds. At the fourth second, a subtle yellow warning dot beside the text blinks twice in rapid cadence. The rounded black vector line tips holding the edges remain completely still. Crisp 2D vector animation, high contrast graphic noir. Audio: SFX: subtle digital notification pulse ping; Ambience: deep quiet late-night room tone; Dialogue: None; Music: None.

@@ -1,0 +1,17 @@
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+intended_engine: Imagen 4 / Midjourney / VideoFX
+medium: Vector Stick Figure (minimalist_noir)
+clip_id: clip_09
+duration: 6s
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Stick Figure Seated & Black Cat on Sofa)
+  [IMAGE 2]: Living Room Medium Stage
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Medium close-up framing the lone stick figure seated frozen on the linear sofa, seen in three-quarter profile. The stick figure has a solid white circular head (#FFFFFF) and unbroken black vector limbs (#0F172A) resting completely rigid on the cushions. Directly behind the stick figure's shoulder on the sofa backrest, the black vector cat's head is tilted vertically toward the ceiling, its ears twitching methodically. Stark cool-blue volumetric light cone from the television screen cuts horizontally, casting pitch-black graphic drop shadows (#0A0B0E). Flat graphic line art, uniform stroke weight.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

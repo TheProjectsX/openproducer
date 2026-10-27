@@ -14,7 +14,7 @@
   - Background lighting, mood, and spatial scales change randomly between cuts (**style drift**).
   - Spoken dialogue produces burned-in subtitles or robotic letter-by-letter spelling.
   - Camera movements conflict or warp the 3D space.
-- **The Solution:** A modular folder structure (`visual/`, `characters/`, `sceneries/`, `scripts/`, `clips/`) where each domain houses its assets and rules. When it's time to generate prompts, the system pulls the relevant elements directly into the final Flow prompt.
+- **The Solution:** A modular folder structure (`project_intent.md`, `blueprint.md`, `visual/`, `subjects/`, `environments/`, `structure/`, `shots/`) where each domain houses its assets and rules. When it's time to generate prompts, the system pulls the relevant elements directly into the final Flow prompt.
 
 ---
 
@@ -36,7 +36,7 @@ To guarantee 100% session independence across different PCs and chats, the workf
             from saved template    └──────────────────┘  as reusable OpenSpec asset
 ```
 
-1. **Mode 1 (`explore`):** Unpacks the creator's vision through collaborative brainstorming. Writes `00_concept_brief.md` and initial domain notes.
+1. **Mode 1 (`explore`):** Unpacks the creator's vision through collaborative brainstorming. Writes `project_intent.md`, `blueprint.md`, and initial domain notes.
 2. **Mode 2 (`propose`):** Converts the concept into a complete cinematic production plan (3-act beat sheet, shot list, dialogue lines, proposed verbatim anchors).
 3. **Mode 3 (`sync`):** Creator reviews, provides feedback, and locks character Master Verbatim Anchors and reference turnaround sheets.
 4. **Mode 4 (`apply`):** Compiles production-ready front-loaded Veo prompts, runs pre-flight quality linting, and outputs clean prompt files.

@@ -2,7 +2,7 @@
 
 ## 1. Multi-Clip Narrative Architecture
 
-Generative video models do not generate full multi-minute movies in a single pass. Professional AI filmmaking operates identically to traditional film production: stories are broken down into **individual cinematic shots (4, 6, or 8 seconds)**, generated independently, and assembled sequentially.
+Generative video models do not generate full multi-minute movies in a single pass. Professional AI filmmaking operates identically to traditional film production: stories are broken down into **individual cinematic shots (4, 6, 8, or 10 seconds)**, generated independently, and assembled sequentially.
 
 ```
                            [ LOGLINE / PREMISE ]
@@ -36,11 +36,12 @@ Generative video models do not generate full multi-minute movies in a single pas
 
 | Desired Film Length | Recommended Shot Count | Clip Duration Strategy | Narrative Rhythm |
 |---|---|---|---|
-| **15 Seconds** (Teaser / Social) | 2 to 3 Shots | Shot 1 (6s) + Shot 2 (5s) + Shot 3 (4s) | Rapid hook $\rightarrow$ intense peak $\rightarrow$ title punch |
+| **15 Seconds** (Teaser / Social) | 2 to 3 Shots | Shot 1 (6s) + Shot 2 (6s) + Shot 3 (4s) | Rapid hook $\rightarrow$ intense peak $\rightarrow$ title punch |
 | **30 Seconds** (Commercial / Trailer) | 4 to 6 Shots | Mix of 4s, 6s, and 8s clips | Establishing (8s) $\rightarrow$ Action beats (4-6s) $\rightarrow$ Dialogue (6s) $\rightarrow$ Outro (6s) |
 | **60 Seconds** (Short Film) | 8 to 12 Shots | Full dynamic range (4s to 8s) | Full cinematic dramatic arc with varied shot sizes and coverage |
 
 ### Temporal Allocation per Shot Type
+- **10-Second Clips:** Extended continuous takes, contemplative cinematic sequences, slow tracking glides, multi-phrase dialogue.
 - **8-Second Clips:** Establishing shots, slow atmospheric landscape reveals, complex dialogue delivery, slow dramatic push-ins.
 - **6-Second Clips:** Standard character interaction, medium shots, two-shots, moderate camera tracking.
 - **4-Second Clips:** High-speed kinetic action, impact moments, rapid sports moves, urgent crash-zooms.
@@ -97,9 +98,9 @@ TRANSITION PARADIGMS
 
 ### Protocol: Continuous Action Chaining (Last Frame $\rightarrow$ First Frame)
 When a scene requires uninterrupted temporal action longer than 8 seconds (e.g., a character walking continuously through a corridor):
-1. **Render Shot 1 (00:00 – 00:08):** Prompt: *"Arthur walks down the corridor away from the camera. Steadicam follow behind him..."*
+1. **Render Shot 1 (00:00 – 00:08):** Prompt: *"Arthur walks down the corridor away from the camera. Smooth camera tracking glide follow behind him..."*
 2. **Terminal Frame Extraction:** Extract exact frame at $t=07.96$s.
-3. **Render Shot 2 (00:08 – 00:16):** Set `image=terminal_frame_shot_1`. Prompt: *"Steadicam continues following Arthur as he reaches the heavy metal door at the corridor end and reaches his hand to the handle..."*
+3. **Render Shot 2 (00:08 – 00:16):** Set `image=terminal_frame_shot_1`. Prompt: *"Camera continues smooth tracking glide behind Arthur as he reaches the heavy metal door at the corridor end and reaches his hand to the handle..."*
 4. **Assembly:** Drop both clips into Google Flow Scene Builder timeline; snap with zero transition overlap for seamless playback.
 
 ---
@@ -123,7 +124,7 @@ To maintain deterministic structure across automated agent workflows, shot lists
       "duration_seconds": 8,
       "framing": "Wide Establishing Shot",
       "lens": "24mm anamorphic",
-      "camera_movement": "Slow lateral truck from right to left",
+      "camera_movement": "Slow lateral tracking glide from right to left",
       "lighting": "Golden hour rim light, misty dawn atmosphere",
       "subject": "arthur",
       "action": "Arthur stands on the wet wooden pier, looking out over the misty ocean harbor.",
@@ -133,7 +134,7 @@ To maintain deterministic structure across automated agent workflows, shot lists
         "foley": "Creaking wet wood planks",
         "negative": "no background music"
       },
-      "compiled_veo_prompt": "Wide establishing shot of Arthur, a 42-year-old weathered maritime captain with salt-and-pepper beard, wearing a navy-blue wool peacoat and cream cable-knit turtleneck, standing on a wet wooden pier looking out over the misty ocean harbor. Golden hour rim lighting, morning sea mist. Slow lateral truck from right to left. Audio: ocean water lapping wooden pillars, distant mournful foghorn, creaking wet wood, no background music. 16:9, 1080p, 24fps, 8s."
+      "compiled_veo_prompt": "Wide establishing shot of Arthur, a 42-year-old weathered maritime captain with salt-and-pepper beard, wearing a navy-blue wool peacoat and cream cable-knit turtleneck, standing on a wet wooden pier looking out over the misty ocean harbor. Golden hour rim lighting, morning sea mist. Slow lateral tracking glide from right to left. Audio: SFX: creaking wet wood planks; Ambience: ocean water lapping wooden pillars, distant mournful foghorn; Dialogue: None; Music: None."
     }
   ]
 }

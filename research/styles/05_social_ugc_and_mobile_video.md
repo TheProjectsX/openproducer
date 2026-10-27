@@ -71,7 +71,7 @@ Social mobile video operates under completely different kinematic rules than tra
 
 ### A. The 9:16 Vertical Field of View
 * Vertical framing restricts horizontal background information and heavily prioritizes **vertical body language, facial micro-expressions, and foreground hand interactions**.
-* Always declare `Aspect Ratio: 9:16` in configuration headers and front-load `Vertical 9:16 smartphone video` in prompt tokens.
+* Always declare `Aspect Ratio: 9:16` in the decoupled configuration header (`L-04`) and front-load vertical torso framing and mobile sensor optics in prompt tokens (never write `9:16` or `4K` inside the positive creative prompt text).
 
 ### B. High-Converting Mobile Camera Actions
 1. **The Casual Arm's-Length Selfie Push:** Subtle, natural drift inward as the creator emphasizes an exciting point.

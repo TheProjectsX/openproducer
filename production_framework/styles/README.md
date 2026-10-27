@@ -37,11 +37,11 @@ This directory serves as the authoritative, pluggable visual style engine for th
 | [`live_action_cinema.md`](./live_action_cinema.md) | `live_action_cinema` | 35mm Anamorphic Film, natural skin pores, organic fine grain, circular bokeh | `fincher_bleach_bypass`, `wes_anderson_pastel_planar`, `nolan_70mm_imax` |
 | [`commercial_tabletop.md`](./commercial_tabletop.md) | `commercial_tabletop` | 100mm Macro f/2.8, studio octabank softbox, razor-sharp edge bevels, zero dust | `luxury_macro_watch`, `techwear_hardware`, `nordic_minimalist_cosmetic` |
 | [`vector_stick_figure.md`](./vector_stick_figure.md) | `vector_stick_figure` | Minimalist 2D vector graphic art, unbroken black limbs, rounded line-caps, white circular head | `minimalist_noir`, `kurzgesagt_infographic`, `action_smear_xiao_xiao`, `anatomical_stick_with_hands` |
-| [`traditional_2d_anime.md`](./traditional_2d_anime.md) | `traditional_2d_anime` | Hand-drawn cel animation, 2-tone cel shading, 24fps stepped timing on twos | `ghibli_pastoral`, `shinkai_urban_twilight`, `trigger_neon_sakuga`, `ufotable_digital_compositing`, `kyoani_delicate_drama`, `90s_retro_cel`, `chibi_deformed` |
+| [`traditional_2d_anime.md`](./traditional_2d_anime.md) | `traditional_2d_anime` | Hand-drawn cel animation, 2-tone cel shading, stepped animation timing on twos | `ghibli_pastoral`, `shinkai_urban_twilight`, `trigger_neon_sakuga`, `ufotable_digital_compositing`, `kyoani_delicate_drama`, `90s_retro_cel`, `chibi_deformed` |
 | [`stylized_3d_cgi.md`](./stylized_3d_cgi.md) | `stylized_3d_cgi` | Stylized digital 3D geometry, tactile micro-textures, peach-fuzz SSS translucency | `pixar_feature`, `spider_verse_comic_hybrid`, `dreamworks_comedic_cgi`, `pop_mart_vinyl_art_toy`, `retro_ps1_lowpoly` |
 | [`stop_motion_claymation.md`](./stop_motion_claymation.md) | `stop_motion_claymation` | Miniature tabletop diorama, sculpted plasticine with visible thumbprints, 12fps stepped cadence | `aardman_plasticine_comedy`, `laika_dark_fantasy`, `wes_anderson_felted_puppet`, `tactile_papercraft_cutout` |
 | [`vintage_retro_film.md`](./vintage_retro_film.md) | `vintage_retro_film` | 35mm chemical emulsion, gate weave, organic silver halide grain, natural halation | `kodachrome_64`, `super_8mm_home_movie`, `vhs_camcorder_tape`, `technicolor_3strip`, `silent_orthochromatic_1920s` |
-| [`social_ugc_video.md`](./social_ugc_video.md) | `social_ugc_video` | Vertical 9:16 smartphone 4K sensor, casual handheld breathing micro-wobble, daylight | `direct_talking_head`, `pov_unboxing_asmr`, `lifestyle_travel_reel`, `street_vox_pop` |
+| [`social_ugc_video.md`](./social_ugc_video.md) | `social_ugc_video` | Handheld mobile CMOS sensor aesthetic, casual handheld breathing micro-wobble, natural daylight | `direct_talking_head`, `pov_unboxing_asmr`, `lifestyle_travel_reel`, `street_vox_pop` |
 
 ---
 
@@ -54,4 +54,4 @@ When compiling a Google Flow Veo 3.1 video prompt (100–150 words):
    * If creator provided **zero dialect customization**: Inject the verbatim **Section 1 Master Style Anchor String** into Tokens 81–130.
    * If creator specified a **dialect** (e.g. *"Studio Ghibli style"*): Substitute/augment Tokens 81–130 with the matched **Dialect Descriptor** from Section 2.
 3. **Step 3 (Bind Negative Prompt):** Append the Base Medium's mandatory negative prompt clause (`Section 7`) combined with any dialect-specific negative tokens to the configuration object.
-4. **Step 4 (Attach Native Foley Soundboard):** Generate trailing `Audio: [foley action cues], no background music` using the vocabulary from `Section 6`.
+4. **Step 4 (Attach Native Foley Soundboard):** Generate trailing `Audio: SFX: [primary foley]; Ambience: [ambient room tone]; Dialogue: [spoken line or None]; Music: None.` using the 4-field semicolon syntax (`L-17`) and vocabulary from `Section 6`.

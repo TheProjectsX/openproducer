@@ -36,7 +36,7 @@ When the creator requests a specific 3D animation studio, aesthetic dialect, or 
 * **Dialect Negatives:** `rough textures, fingerprints, dust, scratches, realistic human anatomy, 2D flat drawing, gritty urban grunge.`
 
 ### E. `retro_ps1_lowpoly` (Nostalgic 1990s Low-Poly Video Game CGI)
-* **Dialect Descriptor:** `Retro 1990s PS1 low-poly 3D graphics, visible polygonal mesh faces, faceted geometric surfaces, crunchy 320x240 render resolution, pixelated low-resolution texture maps, unlit vertex shading, affine texture warping with zero perspective correction, retro CRT monitor scanlines, vintage nostalgic 3D game aesthetic.`
+* **Dialect Descriptor:** `Retro 1990s PS1 low-poly 3D graphics, visible polygonal mesh faces, faceted geometric surfaces, crunchy retro low-polygon rasterized rendering, pixelated low-resolution texture maps, unlit vertex shading, affine texture warping with zero perspective correction, retro CRT monitor scanlines, vintage nostalgic 3D game aesthetic.`
 * **Kinematics:** Stiff rigid joint rotation, stepped walk cycle with zero fluid interpolation, fixed low-angle third-person tracking camera.
 * **Dialect Negatives:** `modern 4K raytracing, smooth high-poly curves, subsurface scattering, ambient occlusion, realistic lighting.`
 
@@ -64,12 +64,11 @@ When the creator requests a specific 3D animation studio, aesthetic dialect, or 
 ---
 
 ## 6. Tactile Audio Foley Soundboard (Google Veo 3.1)
-All Veo 3D animated prompts must pair physical materiality with satisfying, hyper-tactile sound design:
-* **Soft / Rubber / Gelatinous Materials:** `Squishy gelatinous boop-squelch, soft rubbery squeak, satisfying plop, bouncy elastic thud`.
-* **Mechanical & Toy Foley:** `Crisp mechanical brass gear click, satisfying micro-switch snap, smooth ratchet turn, tiny clockwork ticking`.
-* **Fabrics & Surfaces:** `Soft wool knit fabric rustle, tactile footsteps on polished wooden parquet, smooth ceramic clink`.
-* **Character Vocal Foley:** `Soft surprised gasp, curious high-pitch robot electronic chirp, warm gentle chuckle, cute sigh`.
-* **Music Suppression Rule:** Always enforce `, no background music` or `, clean foley only` to prevent Veo from drowning delicate tactile Foley under an unwanted symphonic score.
+All Veo 3D animated prompts must pair physical materiality with satisfying, hyper-tactile sound design structured in 4-part semicolon syntax:
+* **Soft / Rubber / Gelatinous Materials:** `Audio: SFX: Squishy gelatinous boop-squelch, soft rubbery squeak, satisfying plop, bouncy elastic thud; Ambience: Subtle studio room tone; Dialogue: None; Music: None.`
+* **Mechanical & Toy Foley:** `Audio: SFX: Crisp mechanical brass gear click, satisfying micro-switch snap, tiny clockwork ticking; Ambience: Quiet room tone; Dialogue: None; Music: None.`
+* **Fabrics & Character Vocal Foley:** `Audio: SFX: Soft wool knit fabric rustle, tactile footsteps on wooden parquet; Ambience: Cozy domestic room tone; Dialogue: Soft curious electronic chirp; Music: None.`
+* **Music Suppression Rule:** Always enforce `Music: None.` over dialogue to prevent Veo from drowning delicate tactile Foley under an unwanted symphonic score.
 
 ---
 

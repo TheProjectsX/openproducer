@@ -1,0 +1,17 @@
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+intended_engine: Imagen 4 / Midjourney / VideoFX
+medium: Vector Stick Figure (minimalist_noir)
+clip_id: clip_08
+duration: 4s
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Stick Figure from behind)
+  [IMAGE 2]: High-Angle Ceiling Void Stage
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Upward high-angle perspective positioned just behind the stick figure's shoulders, looking past the solid white circular head (#FFFFFF) toward the vast empty ceiling plane overhead. The ceiling is engulfed in an impenetrable pitch-black shadow void (#0A0B0E), faintly intersected by faint diagonal vector light rays and dust motes illuminated by the muted blue television glow below. Unbroken black vector lines terminating in rounded line-caps, strictly zero human hands or fingers, crisp graphic novel silhouette styling, suffocating psychological horror atmosphere.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

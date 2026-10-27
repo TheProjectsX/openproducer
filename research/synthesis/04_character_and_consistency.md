@@ -25,17 +25,25 @@ Google Flow and Veo 3.1 solve identity drift through the **"Ingredients" referen
                │                            │                            │
                ▼                            ▼                            ▼
       [ INGREDIENT 01 ]            [ INGREDIENT 02 ]            [ INGREDIENT 03 ]
-      Character Anchor             Wardrobe / Prop Key          Style / Lighting Bible
-      • Neutral Studio Lighting    • Key handheld artifact      • Color palette reference
-      • Solid Grey Background      • Weapon / Vehicle / Watch   • Grain & lens profile
-      • 3-Angle Turnaround         • Material & texture lock    • Atmospheric tone
+      Subject / Character Key      Empty Stage Environment      Secondary Subject / Prop Key
+      • Neutral Studio Lighting    • Zero people or hero items  • Key handheld artifact / prop
+      • Solid #E5E5E5 Background   • 3-Plane spatial stage      • Secondary character sheet
+      • 4-Panel Turnaround         • Motivated lighting rig     • Material & texture lock
                │                            │                            │
                └────────────────────────────┼────────────────────────────┘
                                             │
                                             ▼
                        ┌─────────────────────────────────────────┐
-                       │      VEO 3.1 GENERATION PIPELINE        │
-                       │  (Latent Identity Locked via Keys)     │
+                       │   TIER 2: PRE-COMPOSITED KEYFRAME GEN   │
+                       │  (Imagen 4 Stitches [IMAGE 1..3] into   │
+                       │     1 Unified Starting Frame Plate)     │
+                       └────────────────────┬────────────────────┘
+                                            │ (Single First-Frame Seed)
+                                            ▼
+                       ┌─────────────────────────────────────────┐
+                       │   TIER 3: VEO 3.1 MOTION & AUDIO GEN    │
+                       │  (100% Latent Focus on Physics & Voice; │
+                       │    Zero Multi-Sheet Identity Bleed)     │
                        └────────────────────┬────────────────────┘
                                             │
                       ┌─────────────────────┴─────────────────────┐
@@ -47,10 +55,10 @@ Google Flow and Veo 3.1 solve identity drift through the **"Ingredients" referen
 
 ### 2.1 The Reference Sheet Standard (Imagen 4 Generation)
 Before generating any video clips, generate high-resolution static reference sheets using Imagen 4:
-- **Background Rule:** Generate against a **solid neutral light-grey or off-white seamless cyclorama studio background**.  
+- **Background Rule:** Generate against a **solid neutral light-grey studio background (`#E5E5E5`)**.  
   *Why:* If the character reference image contains an environmental background (e.g., trees or city buildings), Veo’s spatial encoder will bleed those background elements into target video shots, causing visual artifacts.
 - **Lighting Rule:** Use flat, neutral, high-CRI soft studio lighting to illuminate all facial planes evenly without harsh directional shadows.
-- **Framing:** Generate a 3-way character turnaround: Frontal View, Three-Quarter View, and Profile View.
+- **Framing:** Generate a 4-panel character turnaround model sheet: Panel 1: Full-body Front View, Panel 2: Full-body Profile View (Side), Panel 3: Full-body Back View, Panel 4: Close-up Portrait (Head & Shoulders).
 
 ---
 
@@ -84,10 +92,10 @@ To execute a 4-shot sequence with complete character and prop locking:
 
 | Shot ID | Framing | Verbatim Character Anchor | Action Variable | Setting & Lighting Variable | Audio Block |
 |---|---|---|---|---|---|
-| **SH_01** | `Wide Shot, slow lateral track` | `[Arthur Anchor String]` | Walks slowly along the wooden harbor pier with hands deep in coat pockets. | Misty dawn harbor, cold desaturated blue hour light, damp wooden planks. | `Audio: gentle harbor water lapping, distant foghorn, creaking wood.` |
-| **SH_02** | `Medium Close-Up, locked tripod` | `[Arthur Anchor String]` | Pauses, exhales visible vapor, and looks up toward the horizon. | Same harbor pier, soft morning mist, golden dawn light cresting horizon. | `Audio: soft ocean breeze, measured breath exhale, faint seabirds.` |
-| **SH_03** | `Extreme Close-Up, slow push-in` | `[Arthur Anchor String]` | Eyes narrow with quiet resolve; a faint smile forms on his weathered face. | Close focus on eyes, warm golden rim light on cheek and beard. | `Audio: quiet wind rustle, heart-rate pulse hum, zero music.` |
-| **SH_04** | `Medium Shot, handheld follow` | `[Arthur Anchor String]` | Unzips heavy coat, reaches inside, and speaks: *"The tide is turning."* | Walking onto fishing vessel deck, bright morning sunlight. | `Audio: footsteps on metal deck, ship engine idling, Arthur's deep resonant voice.` |
+| **SH_01** | `Wide Shot, slow lateral track glide` | `[Arthur Anchor String]` | Walks slowly along the wooden harbor pier with hands deep in coat pockets. | Misty dawn harbor, cold desaturated blue hour light, damp wooden planks. | `Audio: SFX: creaking wood; Ambience: gentle harbor water lapping, distant foghorn; Dialogue: None; Music: None.` |
+| **SH_02** | `Medium Close-Up, locked-off static framing` | `[Arthur Anchor String]` | Pauses, exhales visible vapor, and looks up toward the horizon. | Same harbor pier, soft morning mist, golden dawn light cresting horizon. | `Audio: SFX: measured breath exhale; Ambience: soft ocean breeze, faint seabirds; Dialogue: None; Music: None.` |
+| **SH_03** | `Extreme Close-Up, slow push-in` | `[Arthur Anchor String]` | Eyes narrow with quiet resolve; a faint smile forms on his weathered face. | Close focus on eyes, warm golden rim light on cheek and beard. | `Audio: SFX: subtle fabric rustle; Ambience: quiet wind rustle; Dialogue: None; Music: None.` |
+| **SH_04** | `Medium Shot, handheld follow` | `[Arthur Anchor String]` | Unzips heavy coat, reaches inside, and speaks with relaxed jaw: *"The tide is turning."* | Walking onto fishing vessel deck, bright morning sunlight. | `Audio: SFX: footsteps on metal deck; Ambience: ship engine idling; Dialogue: Arthur says in a deep resonant voice: "The tide is turning."; Music: None.` |
 
 ---
 

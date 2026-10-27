@@ -32,10 +32,10 @@ Veo 3.1 parses dialogue strings using deterministic semantic triggers. Deviating
 
 ### 2.1 The Dialogue Syntax Formula
 
-$$\mathbf{Attribution\ Verb} + \mathbf{Delivery\ Modifier} + \mathbf{:\ "Exact\ Spoken\ Words\ in\ Quotes"}$$
+$$\mathbf{Attribution\ Verb} + \mathbf{Biomechanical\ Restraint} + \mathbf{Delivery\ Modifier} + \mathbf{:\ "Exact\ Spoken\ Words\ in\ Quotes"}$$
 
 ```text
-The character says, calmly and measuredly: "We have reached the end of the line."
+The character speaks with relaxed jaw and subtle lip articulation, saying calmly and measuredly: "We have reached the end of the line."
 ```
 
 ### 2.2 Critical Dialogue Rules
@@ -46,7 +46,8 @@ The character says, calmly and measuredly: "We have reached the end of the line.
 | **Speech Attribution Verbs** | Use direct communicative verbs (`says`, `asks`, `whispers`, `shouts`, `mutters`, `replies`). | Model fails to bind vocal track to facial armature. |
 | **Preceding Colon (`:`)** | Place a colon directly before the opening quotation mark (`says: "..."`). | Prevents the model from generating hardcoded text subtitles or caption banners across the bottom of the video. |
 | **Delivery Modifiers** | Place emotional and acoustic adverbs before the quote (`whispers, trembling with fear: "..."`). | Directs character micro-expressions, brow tension, mouth kinematics, and vocal breathiness. |
-| **Length Limitation** | Limit speech to **1 to 2 short sentences** (3 to 6 seconds total speaking time). | Overly long dialogue exceeds the 8-second generation window, causing lip-sync drift or words getting cut off mid-syllable. |
+| **Speech Velocity Limits** | Strict word count ceilings: `4s = 3–5 words`, `6s = 7–9 words`, `8s = 11–13 words`, `10s = 15–18 words`. | Exceeding limits forces rapid speech, lip-sync desynchronization, or truncated mid-syllable clipping. |
+| **Biomechanical Restraints** | Always mandate `relaxed jaw, subtle lip articulation, controlled mouth kinematics`. | Eliminates the "Muppet mouth" failure mode where diffusion models flap jaws open cartoonishly. |
 | **Sentence Case Mandatory** | **NEVER USE ALL CAPS IN SPOKEN DIALOGUE.** | **Severe Glitch:** Veo spells capitalized words letter-by-letter. Writing `"STOP"` will cause the character to pronounce *"S-T-O-P"*. Use sentence case: `"Stop"`. |
 
 ---
@@ -65,19 +66,19 @@ To depict conversations with 100% fidelity, break dialogue scenes into classic c
 ```
 [ CHARACTER A SPEAKS ]                       [ CHARACTER B REPLIES ]
      Clip 01 (6s)                                 Clip 02 (6s)
-• Over-the-shoulder framing of A             • Over-the-shoulder framing of B
-• Character A delivers Line 1                • Character B delivers Line 2
-• Character B visible in soft foreground     • Character A visible in soft foreground
+• Clean Single MCU of Character A            • Clean Single MCU of Character B
+• Character A delivers Line 1 (7-9 words)    • Character B delivers Line 2 (7-9 words)
+• Partner completely outside viewport        • Partner completely outside viewport
 ```
 
 #### Clip 01: Character A Speaks
 ```text
-Over-the-shoulder medium close-up shot looking past Sarah's shoulder at Marcus sitting across the diner booth. Marcus leans forward slightly and says, with quiet urgency: "They know we have the drive." Warm amber diner lighting, shallow depth of field. Audio: faint coffee cup clinking, low diner background chatter, Marcus's clear measured baritone voice, no background music. 16:9, 1080p, 24fps, 6s.
+Medium close-up clean single of Marcus sitting in a dark leather diner booth. Marcus leans forward slightly, speaking with relaxed jaw and subtle lip articulation, saying with quiet urgency: "They know we have the drive." Soft tungsten overhead pendant lighting, shallow depth of field with creamy bokeh. Locked-off static framing. Audio: SFX: faint coffee cup clinking; Ambience: low diner background chatter; Dialogue: Marcus says with quiet urgency: "They know we have the drive."; Music: None.
 ```
 
 #### Clip 02: Character B Replies
 ```text
-Over-the-shoulder medium close-up shot looking past Marcus's shoulder at Sarah. Sarah holds a ceramic mug, her expression hardening, and she replies, firmly: "Then we leave tonight." Warm amber diner lighting, shallow depth of field. Audio: distant kitchen hum, Sarah's steady resolute voice, no background music. 16:9, 1080p, 24fps, 6s.
+Medium close-up clean single of Sarah across the diner table. Sarah holds a ceramic coffee mug, her expression hardening, speaking with relaxed jaw and subtle lip movement as she replies firmly: "Then we leave tonight." Warm amber diner sidelight, shallow depth of field. Locked-off static framing. Audio: SFX: ceramic mug contact with saucer; Ambience: distant diner kitchen hum; Dialogue: Sarah replies firmly: "Then we leave tonight."; Music: None.
 ```
 
 ---
@@ -97,7 +98,7 @@ Always place soundscape directions at the conclusion of the prompt under a dedic
 
 ### 4.2 Comprehensive Audio Prompt Example
 ```text
-[Visual and Action Prompt Body] ... Audio: heavy rain drumming rhythmically on corrugated metal roofing, distant low thunder rumble, puddle splash under running boots, ragged breathing, no background music.
+[Visual and Action Prompt Body] ... Audio: SFX: puddle splash under running boots, ragged breath exhalations; Ambience: heavy rain drumming rhythmically on corrugated metal roofing, distant low thunder rumble; Dialogue: None; Music: None.
 ```
 
 ---

@@ -16,7 +16,7 @@ This workspace is accessed across different devices, workstations, and conversat
 2. **Context Loading Economy (Never Read Everything):**
    - **Research Directory:** Strictly follow [`research/structure.md`](./research/structure.md). **DO NOT** load `research/raw_contents/` or `research/raw_notes/` (~65k tokens). Only read targeted files in [`research/synthesis/`](./research/synthesis/) on demand.
    - **Discussions Directory:** Read active consolidated summaries in [`discussions/`](./discussions/) (`architecture.md`, `visual_and_style.md`, `characters.md`).
-   - **`discussions/_raw/` (Cold Archive):** **DO NOT** load `discussions/_raw/` by default. It contains all 27 original raw conversational logs, reserved strictly as an audit trail if information seems missing or when deep troubleshooting is needed.
+   - **`discussions/_raw/` (Cold Archive):** **DO NOT** load `discussions/_raw/` by default. It contains all 57+ original raw conversational logs, reserved strictly as an audit trail if information seems missing or when deep troubleshooting is needed.
 3. **Always Record Progress in Files:**
    - Any consensus, decision, requirement, or architectural change reached during a chat **MUST be documented in files** before concluding the turn or session.
    - **Mandatory Raw Discussion Logging (Feature Updates Only):** Only create a corresponding raw discussion file in `discussions/_raw/` when a **new feature, architectural concept, major specification change, or design decision** is discussed and established. Do NOT create raw files for routine prompt tweaks, minor back-and-forth edits, or casual conversational iterations. This keeps the archive high-signal and uncluttered.
@@ -35,7 +35,7 @@ This workspace is accessed across different devices, workstations, and conversat
 | **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (4s/6s/8s/10s), Multi-Character Clean Singles, Spatial Handoffs, Dynamic J/L Audio Bridges, Pluggable Styles | ✅ **FINALIZED & VALIDATED** | [`05_directors_cut_assembly`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`styles/`](./production_framework/styles/) | [`discussions/directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md), [Discussion 49](./discussions/_raw/49_simulation_the_314am_doppelganger.md) |
 
 | **Phase 7: Project Scaffolding** | Lean Folder Scaffold & Universal Template | ⏳ Pending | `production_template/` | TBD |
-| **Phase 8: Automation Skill & Linters** | Python Compilers, Linters (L-01 to L-11), Flow Timeline Manifest Export | ⏳ Pending | Tooling & Skill code | TBD |
+| **Phase 8: Automation Skill & Linters** | Node.js / npx Tooling Suite (`@theprojectsx/video-skill`), Master Linters (L-01 to L-18), Flow Timeline Manifest Export | ⏳ Pending | Tooling & Skill code | TBD |
 
 ---
 
@@ -321,14 +321,14 @@ To prevent token bloat while retaining 100% information control:
 
 ---
 
-## 6. Current Agenda (Phase 6: Director's Cut & Assembly Engine — UNDER DEVELOPMENT)
+## 6. Phase 6 Deliverables: Director's Cut & Assembly Engine (✅ FINALIZED & VALIDATED)
 
-**Status:** 🟡 **UNDER DEVELOPMENT** (Active empirical testing, prompt de-cramming & physical glitch remediation).
+**Status:** ✅ **COMPLETED & VALIDATED** (All core domain primitives, assembly specifications, pluggable style plugins, and empirical simulations fully codified, harmonized, and locked).
 
 ### Remediations Executed:
 1. **Re-Sliced into 11 Unhurried Micro-Clips:**
    - Multi-event cramming eliminated: 1 camera trajectory, 1 spatial focus, 1 micro-action per clip.
-   - 2:17 AM wall clock separated into a dedicated macro insert shot ([`clip_02.txt`](./production_framework/directors_cut/individual_clips/clip_02.txt)).
+   - 2:17 AM wall clock separated into a dedicated macro insert shot ([`clip_02.txt`](./production_framework/simulations/directors_cut/individual_clips/clip_02.txt)).
 2. **Closed-Lip Listener Rule Enforced:**
    - In Clips 04 and 08, Cross's lips are explicitly locked closed (`"firmly closed lips, tight jaw, zero mouth movement, does not speak"`) and dialogue attributed to off-screen earpiece speaker, ending accidental lip-syncing.
 3. **Pre-Materialized Prop Law Enforced:**
@@ -339,13 +339,13 @@ To prevent token bloat while retaining 100% information control:
   2. *Pre-Materialized & Prop-Free:* Handled purely with minimalist linear vector strokes; doors are clean vertical line boundaries, eliminating object popping.
   3. *Micro-Beat De-Cramming:* Sliced into 10 unhurried micro-moments (e.g. stranger pointing arm is an isolated 6-second gesture).
   4. *Photo-First Validation:* Generated keyframe (`stick_horror_keyframe`).
-  5. *Deliverables:* Created [`production_framework/stick_figure_horror/`](./production_framework/stick_figure_horror/) with `master_flow_agent_prompt.txt`, `individual_clips/`, `scratchbook.md`, and `origin_manifest.md`.
+  5. *Deliverables:* Created [`production_framework/simulations/stick_figure_horror/`](./production_framework/simulations/stick_figure_horror/) with `master_flow_agent_prompt.txt`, `individual_clips/`, `scratchbook.md`, and `origin_manifest.md`.
 ### 2026-10-24 — Image-First Video Production Pipeline & Motivational Rat Race (Discussion 40)
 - **Consensus Reached:** Solved raw Text-to-Video noise hallucinations by formalizing the 2-step Image-First Video Production Pipeline:
   1. *Step 1 (Still Keyframe Prompt):* Generates pure optical starting frame plate (`image_prompt.txt`) via Imagen 4 / Midjourney / VideoFX, locking composition, lighting, and stick figure silhouettes with 100% precision.
   2. *Step 2 (Image-to-Video Motion Prompt):* Feeds the generated still as the initial starting frame (`video_prompt.txt`), animating pure camera kinematics, unhurried micro-actions, and audio.
   3. *Motivational Contrast Tested:* 2-clip *9-5 Rat Race* sequence contrasting mundane mechanical visuals (endless commute + cubicle typing) with an uplifting, warm, deep motivational voiceover and swelling grand piano / Rhodes chords.
-  4. *Deliverables:* Created [`production_framework/rat_race_stick_figure/`](./production_framework/rat_race_stick_figure/) with `clip_01/` (`image_prompt.txt` + `video_prompt.txt`), `clip_02/`, `master_flow_agent_prompt.txt`, `scratchbook.md`, and `origin_manifest.md`.
+  4. *Deliverables:* Created [`production_framework/simulations/rat_race_stick_figure/`](./production_framework/simulations/rat_race_stick_figure/) with `clip_01/` (`image_prompt.txt` + `video_prompt.txt`), `clip_02/`, `master_flow_agent_prompt.txt`, `scratchbook.md`, and `origin_manifest.md`.
 - **Reference Document:** [`discussions/_raw/40_image_first_video_production_workflow.md`](./discussions/_raw/40_image_first_video_production_workflow.md).
 
 ### 2026-10-24 — Stick Figure Fingerless Vector Standard & Gemini 3.8 Flash TTS Syntax (Discussion 41)
@@ -354,7 +354,7 @@ To prevent token bloat while retaining 100% information control:
   2. *Light-Reveal Cream Canvas:* Replaced flat black voids and corporate whiteboards with a warm cream/off-white paper canvas (`#F8F6F0`) revealed dynamically under motivated light cones, falling off into deep pitch-black shadows (`#0A0B0E`). Head standard locked: solid white fill (`#FFFFFF`) with matching black contour (`#0F172A`).
   3. *Google AI Studio Gemini 3.8 Flash TTS Bracket Reading Bug:* Discovered that square brackets `[...]` are NOT stripped or parsed as tags by Gemini TTS, but read aloud verbatim. Codified the **Angle Bracket `< >` Syntax Standard**: `<short pause>`, `<long pause>`, `<whisper>` ... `</whisper>`, `<gasp>`, `<sigh>`, routing narrator tone into System Instructions. Added pre-flight linter **L-14**.
   4. *60-Second Viral Retention Pacing:* Compressed the bloated 3m45s timeline into a high-retention 62-second cut (138 words at ~2.2 words/sec, zero dead air) mapped to 10 high-impact micro-clips (`clip_01` to `clip_10`).
-  5. *Deliverables:* Created [`production_framework/the_phone_call_at_247am/`](./production_framework/the_phone_call_at_247am/) with `base_image_prompt.txt`, `narrator_script.md`, `scratchbook.md`, `keyframe_preview.svg`, `clips/clip_01/` to `clip_10/`, and `master_flow_agent_prompt.txt`.
+  5. *Deliverables:* Created [`production_framework/simulations/the_phone_call_at_247am/`](./production_framework/simulations/the_phone_call_at_247am/) with `base_image_prompt.txt`, `narrator_script.md`, `scratchbook.md`, `keyframe_preview.svg`, `clips/clip_01/` to `clip_10/`, and `master_flow_agent_prompt.txt`.
 - **Reference Document:** [`discussions/_raw/41_stick_figure_fingerless_vector_dna_and_gemini_tts_syntax.md`](./discussions/_raw/41_stick_figure_fingerless_vector_dna_and_gemini_tts_syntax.md).
 
 ### 2026-10-24 — Dialogue-First Timing Loop & 3-Tier Image-First Pipeline (Discussion 42)
@@ -375,22 +375,22 @@ To prevent token bloat while retaining 100% information control:
 - **Reference Document:** [`discussions/_raw/43_flow_native_lengths_pacing_modes_and_context_shift_rule.md`](./discussions/_raw/43_flow_native_lengths_pacing_modes_and_context_shift_rule.md).
 
 ### 2026-10-24 — Spatial Continuity, Multi-Character Clean Singles & Dynamic Audio Bridges (Discussion 44)
-- **Consensus Reached & Staged:** Established three core directorial systems, documented in raw discussion and staged in [`Dump.md`](./Dump.md) pending spec implementation:
+- **Consensus Reached & Staged:** Established three core directorial systems, documented in raw discussion and staged in `dump.md` pending spec implementation:
   1. *Spatial Continuity Handoffs:* Explicitly defining Clip $N$ Spatial Exit State and Clip $N+1$ Spatial Entry State, enforcing the 180° Screen Direction rule.
   2. *Multi-Character "Clean Single" Standard:* Banned dirty Over-the-Shoulder (OTS) shots to eliminate melting shoulders and identity bleeding; using clean Medium Close-Ups with complementary 15° eyelines and wide two-shot establishing plates.
   3. *Dynamic Context-Driven Audio Transitions:* J-Cuts (audio anticipatory pre-roll on incoming disruption) and L-Cuts (whispers/revelations decaying into the subsequent cut).
-  4. *Staging Scratchpad Created:* Staged into [`Dump.md`](./Dump.md) (to be consumed into `05_directors_cut_assembly_spec.md` and deleted afterwards).
-- **Reference Document:** [`discussions/_raw/44_spatial_continuity_handoffs_multi_character_staging_and_dynamic_audio_bridges.md`](./discussions/_raw/44_spatial_continuity_handoffs_multi_character_staging_and_dynamic_audio_bridges.md) and [`Dump.md`](./Dump.md).
+  4. *Staging Scratchpad Created:* Staged into `dump.md` (to be consumed into `05_directors_cut_assembly_spec.md` and deleted afterwards).
+- **Reference Document:** [`discussions/_raw/44_spatial_continuity_handoffs_multi_character_staging_and_dynamic_audio_bridges.md`](./discussions/_raw/44_spatial_continuity_handoffs_multi_character_staging_and_dynamic_audio_bridges.md) and `dump.md`.
 
 ### 2026-10-24 — Multi-Variation Synthesis, Pluggable Styles & Universal Stick DNA (Discussion 45)
-- **Consensus Reached & Staged:** Cross-checked external YouTube/animation video prompting research (`MIGRATION_PROPOSAL.md` & `PDFCrossCheck.md`) and codified core architectural boundaries into [`Dump.md`](./Dump.md):
+- **Consensus Reached & Staged:** Cross-checked external YouTube/animation video prompting research (`MIGRATION_PROPOSAL.md` & `PDFCrossCheck.md`) and codified core architectural boundaries into `dump.md`:
   1. *Pluggable Style Registry Scaffolding:* Approved for creation (`production_framework/styles/`). Strictly avoids "style on top of style" combinatorics by defining Universal Base Mediums (Live-Action, Commercial Tabletop, Universal Stick Figure) with genre/mood driven by lighting and kinematics.
   2. *Universal Stick Figure DNA:* Unified standard (`vector_stick_figure.md`) featuring unbroken lines, rounded line-caps, solid white circular head (`#FFFFFF`) with black contour (`#0F172A`), serving horror, comedy, and explainer formats alike.
   3. *Lean Causal Palette:* Adopted closed-set prop bounding (defining permitted props to eliminate AI clutter) with lightweight syntax.
   4. *Core Scope Retained:* Strictly focused on Google Flow (Veo 3.1); parked multi-engine chapters; excluded thumbnails/branding from video generation scope; retained Veo's 4-tier unified soundboard paragraph over rigid 3-track metadata tags.
   5. *Dynamic Narrative Scripting Principles:* Adapts dynamically to project archetype (no forcing hooks on cinema); uses Directorial Hook Instructions ("Zero Preamble", open cognitive loop) over rigid templates; flexible speech baselines (`2.0–2.2 wps` drama vs. `2.5–2.7 wps` explainer) with post-audio script compression loop.
   6. *All Staged in Dump.md:* Pending remaining research before creating final Phase 6 directories and consuming into specs.
-- **Reference Document:** [`discussions/_raw/45_multi_variation_synthesis_pluggable_styles_and_universal_stick_dna.md`](./discussions/_raw/45_multi_variation_synthesis_pluggable_styles_and_universal_stick_dna.md) and [`Dump.md`](./Dump.md).
+- **Reference Document:** [`discussions/_raw/45_multi_variation_synthesis_pluggable_styles_and_universal_stick_dna.md`](./discussions/_raw/45_multi_variation_synthesis_pluggable_styles_and_universal_stick_dna.md) and `dump.md`.
 
 ### 2026-10-24 — Consumption of Dump.md & Finalization of Phase 6 Spec (Director's Cut)
 - **Milestone Reached:** Successfully cross-checked with industry video continuity research, consumed all staged research from `Dump.md` into authoritative specifications, and deleted `Dump.md`:
@@ -421,7 +421,7 @@ To prevent token bloat while retaining 100% information control:
 ### 2026-10-25 — Phase 06 Simulation: The 3:14 AM Doppelgänger (Discussion 49)
 - **Active Simulation in Creation & Validation:** Executing end-to-end production on *The 3:14 AM Doppelgänger* through Step 0 Intake & Section 2.4 Confirmation Gate:
   1. *Creator Custom Instructions Baked In:* Enforced Anti-Dead-Air Law (purged artificial `<long pause>` tags for seamless ~140 wpm / ~2.3 wps momentum) and encoded expressive fear/tension biomechanics (hunched frozen shoulders, trembling arm rigidity, stark upward smartphone light cone).
-  2. *Stage 1 Deliverables:* Created [`production_framework/the_314am_doppelganger/`](./production_framework/the_314am_doppelganger/) with Tier 1 `base_image_prompt.txt` and high-retention 3-chunk `narrator_script.md`.
+  2. *Stage 1 Deliverables:* Created [`production_framework/simulations/the_314am_doppelganger/`](./production_framework/simulations/the_314am_doppelganger/) with Tier 1 `base_image_prompt.txt` and high-retention 3-chunk `narrator_script.md`.
   3. *Stage 2 Assembly Prompts Staged (SRT Integration):* Ingested 40-cue master `audio.srt` (135.08s runtime). Sliced narrative into **22 Flow-native clips** (`[4s, 6s, 8s, 10s]`, totaling 136s runtime with 0.92s breathing dissolve buffer).
   4. *Individual Dual-Tier Clips:* Generated `clips/clip_01/` to `clip_22/` with Tier 2 keyframe plates (`image_prompt.txt`) and Tier 3 motion/audio prompts (`video_prompt.txt`, 100–150 words).
   5. *Master Deliverables & Linters:* Generated `master_flow_agent_prompt.txt` (Flow Agent Mode manifest) and `origin_manifest.md` (asset lineage tracker). Verified 100% pre-flight compliance across linters L-07 through L-15.
@@ -480,14 +480,14 @@ To prevent token bloat while retaining 100% information control:
   2. *Head-to-Body 1:7.5 Ratio Lock:* Enforced explicit biological adult scale and negative prompts to kill the bobblehead/caricature glitch.
   3. *Expression Decoupling Engine:* Decouple invariant bone structure from transient facial muscles to allow natural winks/smiles without warping.
   4. *Creator Zero-Burden Rule:* The multimodal agent inspects photos and injects technical tokens under the hood; the creator never types biometric jargon.
-- **Reference Documents:** [`discussions/_raw/51_solving_angled_photo_extrapolation_and_face_distortion.md`](./discussions/_raw/51_solving_angled_photo_extrapolation_and_face_distortion.md) and [`dump.md`](./dump.md).
+- **Reference Documents:** [`discussions/_raw/51_solving_angled_photo_extrapolation_and_face_distortion.md`](./discussions/_raw/51_solving_angled_photo_extrapolation_and_face_distortion.md) and `dump.md`.
 
 ### 2026-10-26 — Script, Narrative & Dynamic Hook Architecture
 - **Consensus Reached:**
   1. *Dynamic Narrative Tempo:* Banned rigid static durations. Pacing adapts to emotional beats: slow-burn dread (1.8–2.2 WPS), high-velocity action (2.6–3.0 WPS), or hybrid arcs.
   2. *The Non-Imposition Law (Creator Agency):* 2nd-person perspective (`"Suppose you woke up at 2 AM..."`) can be proposed when the creator provides a rough plot/concept. If the creator provides an authored script or walkthrough, the AI **must never impose or rewrite their words**.
   3. *Dynamic Hook Principles:* Banned mad-libs templates in favor of dynamic rules (immediate in medias res, broken equilibrium, organic contextual phrasing).
-- **Reference Document:** [`dump.md`](./dump.md).
+- **Reference Document:** `dump.md`.
 
 ### 2026-10-26 — Dual-Image Cosplay Translation & Simulation 2 (Discussion 52)
 - **Simulation 1 Validated (Dual-Reference Cosplay / Pose & Attire Translation):**
@@ -504,7 +504,7 @@ To prevent token bloat while retaining 100% information control:
   1. *The Separation:* Consolidated prompt manifests are now strictly decoupled into two dedicated files:
      - `master_images_prompt.txt`: Contains ONLY image generation prompts (Tier 1 Ingredient #1 + Tier 2 keyframe plates for all clips).
      - `master_videos_prompt.txt`: Contains ONLY video generation prompts (Tier 3 Veo prompts with durations, configs, and audio blocks).
-  2. *Refactored Across Codebase:* Implemented in [`production_framework/simulations/software_framework_intro/`](./production_framework/simulations/software_framework_intro/), upgraded [`production_framework/the_314am_doppelganger/`](./production_framework/the_314am_doppelganger/), and locked into [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+  2. *Refactored Across Codebase:* Implemented in [`production_framework/simulations/software_framework_intro/`](./production_framework/simulations/software_framework_intro/), upgraded [`production_framework/simulations/the_314am_doppelganger/`](./production_framework/simulations/the_314am_doppelganger/), and locked into [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
 - **Reference Documents:** [`discussions/_raw/52_simulation_software_framework_intro_and_dual_image_translation.md`](./discussions/_raw/52_simulation_software_framework_intro_and_dual_image_translation.md) and [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
 
 ### 2026-10-26 — Domain 05: Audio Engineering & Decoupling Codification (Discussion 53)
@@ -514,7 +514,7 @@ To prevent token bloat while retaining 100% information control:
   3. *The `(REFERENCE ONLY)` Non-Render Guardrail:* Encapsulated narrative context and backstory into non-render headers combined with mandatory negative subtitle tokens to eliminate burned-in text and watermark hallucinations.
   4. *Multi-Track Stem Assembly Architecture (`audio_stems.md`):* Standardized 4-track timeline layout (A1: Dialogue, A2: Foley SFX, A3: Spatial Ambience Bed, A4: Score Bed ducked by -14dB).
   5. *Linters Enforced:* Added L-16 (Native Veo Word Budget), L-17 (Anti-Subtitle Invariant), and L-18 (3-Track Semicolon Syntax).
-  6. *Dump Staging Consumed:* Domain 5 in [`dump.md`](./dump.md) marked as fully consumed and finalized.
+  6. *Dump Staging Consumed:* Domain 5 in `dump.md` marked as fully consumed and finalized.
 ### 2026-10-26 — Finalizing Staging Cleanup & 100% Spec Consumption (Discussion 54)
 - **Milestone Reached:** Fully finalized, verified, and consumed 100% of staged concepts from `dump.md` into the authoritative specifications, and cleanly purged `dump.md` from disk:
   1. *Domain 1 (Subject Likeness) in [`02_character_spec.md`](./production_framework/specs/02_character_spec.md):* Codified Lean Reference Anchoring (Rule 9) banning text over-description to keep 95%+ latent attention on `[IMAGE 1]`; 2-Step Angle Normalizer; 1:7.5 scale ratio; Expression Decoupling Engine.
@@ -524,6 +524,51 @@ To prevent token bloat while retaining 100% information control:
   5. *Linters Enforced:* Added Linters L-16 through L-20.
   6. *Scratchpad Purged:* `dump.md` permanently deleted.
 - **Reference Documents:** [`discussions/_raw/54_finalizing_staging_cleanup_and_all_domains_consumption.md`](./discussions/_raw/54_finalizing_staging_cleanup_and_all_domains_consumption.md), [`production_framework/specs/02_character_spec.md`](./production_framework/specs/02_character_spec.md), [`production_framework/specs/04_cinematography_audio_spec.md`](./production_framework/specs/04_cinematography_audio_spec.md), and [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+
+### 2026-10-27 — Strategic Sequencing, Root Hygiene & Node.js Tooling Pivot
+- **Root Documentation Relocation:** Created `discussions/docs/` and cleanly moved all root-level audit and proposal documents (`PROJECT_AUDIT_AND_COMPILE_READINESS.md`, `PROJECT_AUDIT_CROSS_CHECK_AND_ADDENDUM.md`, `MIGRATION_PROPOSAL.md`, `PDFCrossCheck.md`) into `discussions/docs/`, preserving `AGENTS.md` as the sole markdown file at repository root.
+- **Strategic Prioritization (Foundational Fixes First):** User confirmed to prioritize resolving all foundational spec contradictions, style plugin completions, and synthesis sanitizations before proceeding with project folder scaffolding and automated linting.
+- **Tooling Architecture Pivot (Node.js / `npx`):** Decided on Node.js / `npx` CLI (`@theprojectsx/video-skill`) for zero-dependency universal execution across dev environments (`npx video-skill lint`, `npx video-skill compile`, `npx video-skill slice`).
+- **Master Plan Document Created:** Formulated and committed authoritative step-by-step roadmap at [`discussions/docs/god_tier_skill_plan.md`](./discussions/docs/god_tier_skill_plan.md).
+
+### 2026-10-27 — Full Execution: Foundation Harmonization, Synthesis Sanitization & Simulation Consolidation (Phases 1–5)
+- **Foundational Execution Completed:** Successfully executed all non-tooling/non-scaffolding phases of the master plan:
+  1. *Phase 1 (Specification Harmonization & Unified Linter Registry):*
+     - Established Master Unified Linter Registry (`L-01` to `L-18`) across `00_architecture_blueprint.md`, `03_scenery_spec.md`, `04_cinematography_audio_spec.md`, and `05_directors_cut_assembly_spec.md`.
+     - Harmonized `02_character_spec.md` Scenario 1: cleanly delineated Workflow 1A (Text-Only Genesis: full anatomical descriptors) vs. Workflow 1B (Image-Conditioned Genesis: Rule 9 Lean Reference Anchoring).
+     - Standardized `05_directors_cut_assembly_spec.md`: synchronized speech velocity limits to `{4s: 3-5w, 6s: 7-9w, 8s: 11-13w, 10s: 15-18w}`, locked canonical `.txt` headers (`[IMAGE CONFIGURATION]`, `[IMAGE PROMPT]`, `[CONFIGURATION SETTINGS]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`), and clarified editorial 4-beat rhythm.
+     - Purged Over-The-Shoulder (OTS) framing and camera equipment verbs from `04_cinematography_audio_spec.md` recipes (`upward elevation sweep`, `optical contra-zoom (zolly)`).
+     - Connected `01_visual_spec.md` to `styles/` and added `vector_stick_figure` to Section 4.
+  2. *Phase 2 (Pluggable Style Registry Hardening):*
+     - Completed `vector_stick_figure.md` with 7 standard sections, 4 verified dialects, Dialect Negative Override for `anatomical_stick_with_hands`, and canonical semicolon audio soundboard.
+     - Restructured `social_ugc_video.md`, `live_action_cinema.md`, `vintage_retro_film.md`, `stylized_3d_cgi.md`, `traditional_2d_anime.md`, `commercial_tabletop.md`, and `stop_motion_claymation.md`. Purged all config tokens (`9:16`, `4K`, `320x240`, `24fps`), replaced hardware nouns with pure kinematics, and upgraded all Section 6 soundboards to semicolon 4-part syntax.
+  3. *Phase 3 (Active Knowledge Base Sanitization):*
+     - Cleaned `research/synthesis/` files (`01`, `02`, `03`, `04`, `05`, `06`, `07`, `09`) and `validation.md`: purged tripod/dolly nouns, clock bracket timestamps, OTS framing, and inline configuration appending in compiler code. Added 10s duration support.
+     - Created `research/styles/README.md` with authority banner directing agents to `production_framework/styles/`.
+  4. *Phase 4 (Flagship Simulation Audio Upgrade):*
+     - Upgraded all 22 clip video prompts and `master_videos_prompt.txt` in *The 3:14 AM Doppelgänger* to canonical 4-part semicolon syntax (`Audio: SFX: ...; Ambience: ...; Dialogue: None; Music: None.`).
+  5. *Phase 5 (Workspace & Link Hygiene):*
+     - Moved all 5 loose simulation directories (`directors_cut`, `rat_race_stick_figure`, `stick_figure_horror`, `the_314am_doppelganger`, `the_phone_call_at_247am`) into `production_framework/simulations/`.
+     - Atomically updated all internal links across `AGENTS.md`, `05_directors_cut_assembly_spec.md`, `discussions/directors_cut_and_assembly.md`, and Discussion 49.
+     - Purged dead `dump.md` links and updated Section 6 status header to `COMPLETED & VALIDATED`.
+- **Reference Documents:** [`discussions/docs/god_tier_skill_plan.md`](./discussions/docs/god_tier_skill_plan.md) and [`discussions/docs/PROJECT_AUDIT_CROSS_CHECK_AND_ADDENDUM.md`](./discussions/docs/PROJECT_AUDIT_CROSS_CHECK_AND_ADDENDUM.md).
+
+### 2026-10-27 — Independent Audit #02, Cross-File Synchronization & Pre-Composited Tier 2 Protocol (Discussion 55)
+- **Cross-File Linting & Structure Synchronization:** Resolved all non-functional cross-file mismatches across `00_architecture_blueprint.md`, `00_tasks.md`, `01_visual_spec.md`, `02_character_spec.md`, `03_scenery_spec.md`, `05_directors_cut_assembly_spec.md`, `production_framework/styles/*.md`, `discussions/*.md`, and `research/`.
+- **3-Ingredient Slot Allocation & Pre-Composited Tier 2 Protocol (`L-06` Upgrade):**
+  1. *Multi-Ingredient Indexing in Tier 2 (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`):* Codified the Universal 3-Ingredient Slot Allocation Matrix in `05_directors_cut_assembly_spec.md` (Section 5.5) and `02_character_spec.md` (`L-06`), binding `[IMAGE 1]` (Primary Subject), `[IMAGE 2]` (Empty Stage Environment), and `[IMAGE 3]` (Secondary Subject or Hero Prop) during Tier 2 still keyframe generation, with a deterministic text fallback (`verbatim_anchor.txt`) for 4+ asset wide establishing shots.
+  2. *Single-Seed Tier 3 Handoff:* Enforced that Tier 3 Veo 3.1 video prompts receive **only the single pre-composited Tier 2 keyframe (or `LAST_FRAME`)** as their starting frame seed—never raw `#E5E5E5` turnaround sheets—eliminating studio background bleed and multi-character identity merging during video synthesis.
+- **Reference Documents:** [`discussions/_raw/55_three_ingredient_slot_allocation_and_precomposited_tier2.md`](./discussions/_raw/55_three_ingredient_slot_allocation_and_precomposited_tier2.md) and [`discussions/docs/POST_CLEANUP_AUDIT_02.md`](./discussions/docs/POST_CLEANUP_AUDIT_02.md).
+
+### 2026-10-27 — Empirical Simulation: The Breath at 2:00 AM (Discussion 56)
+- **Dialogue-First End-to-End Simulation Executed:** Successfully completed full pre-production and directorial slicing for *The Breath at 2:00 AM* under the Vector Stick Figure (`minimalist_noir`) style:
+  1. *SRT Audio Synchronization:* Ingested creator's 20-cue recorded SRT track (67.98s runtime). Sliced narrative into 13 Flow-native clips (`4s`, `6s`, and an `8s` climax take, totaling 74s raw footage / 68s timeline cut).
+  2. *Intense Horror Cliffhanger Score Bed:* Implemented custom creator sound direction across 4-part semicolon audio blocks: Clips 01–11 dead score silence, Clip 12 low dissonant bowed cello drone & sub-bass swell, and Clip 13 explosive crescendo of screeching dissonant horror strings, bowed waterphone, and accelerating sub-bass pulse surging to maximum tension right before cutting dead to black.
+  3. *Pre-Composited Tier 2 Protocol & Decoupled Manifests:* Validated 3-ingredient slot indexing (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`) in Tier 2 image prompts, single-seed Tier 3 keyframe handoffs, and delivered decoupled `master_images_prompt.txt`, `master_videos_prompt.txt`, `scratchbook.md`, `origin_manifest.md`, `audio_stems.md`, and individual `clips/clip_01/` to `clip_13/`.
+  4. *Linters Enforced:* 100% pre-flight compliance across Linters L-01 through L-18.
+- **Reference Deliverables:** [`production_framework/simulations/the_breath_at_2am/`](./production_framework/simulations/the_breath_at_2am/).
+
+
 
 
 

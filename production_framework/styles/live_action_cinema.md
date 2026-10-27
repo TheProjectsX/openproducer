@@ -26,7 +26,7 @@ When the creator requests a specific directorial style, color timing, or cinemat
 
 ### C. `nolan_70mm_imax` (Monumental Large-Format Cinema)
 * **Dialect Descriptor:** `Shot on 70mm IMAX film, Panavision spherical glass, monumental scale, hyper-naturalistic dynamic range, neutral color timing, authentic atmospheric haze, pristine photographic clarity.`
-* **Kinematics:** Majestic forward helicopter/drone glide emulation, expansive slow tilt, towering low-angle hero framing.
+* **Kinematics:** Majestic forward elevated sweeping aerial glide emulation, expansive slow tilt, towering low-angle hero framing.
 * **Dialect Negatives:** `heavy film scratches, extreme vintage vignette, artificial digital bloom, distorted fish-eye.`
 
 ---
@@ -52,9 +52,9 @@ When the creator requests a specific directorial style, color timing, or cinemat
 ---
 
 ## 6. Native Cinematic Audio Foley Soundboard (Google Veo 3.1)
-* **Biological & Movement Foley:** `Organic fabric rustle, tactile leather sole footsteps on pavement, subtle human breath intake`.
-* **Atmospheric Room Tone:** `Natural room tone, distant low city rumble, subtle air ventilation hum, quiet exterior wind breeze`.
-* **Music Suppression Rule:** Always enforce `, no background music` or `, clean foley only` to prevent unwanted soundtrack synthesis over dialogue/actions.
+* **Biological & Movement Foley:** `Audio: SFX: Organic fabric rustle, tactile leather sole footsteps on pavement, subtle human breath intake; Ambience: Natural room tone; Dialogue: None; Music: None.`
+* **Atmospheric Room Tone:** `Audio: SFX: None; Ambience: Distant low city rumble, subtle air ventilation hum, quiet exterior wind breeze; Dialogue: None; Music: Low subtle orchestral bed.`
+* **Music Suppression Rule:** Always enforce `Music: None.` over dialogue to prevent unwanted soundtrack synthesis over dialogue/actions.
 
 ---
 

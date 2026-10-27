@@ -1,9 +1,0 @@
-[CONFIGURATION SETTINGS]
-Duration: 6s
-Aspect Ratio: 16:9
-Resolution: 1080p
-Transition / Chop: INTENSE PSYCHOLOGICAL REACTION
-Input Seed / Dependencies: Generated from clips/clip_16/image_prompt.txt
-
-[VIDEO PROMPT]
-Starting directly from the initial image, eye-level locked-off tight MCU profile framing with zero camera drift. Permitted Props: [platform bed frame, cotton blanket, smartphone]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, remains paralyzed in suspended horror: their chest line heaves up and down with rapid, shallow panic breathing, while their rounded arms holding the glowing phone shudder with visible terror tremors from Frame 1 to Frame End. Circular head is held frozen with zero facial movement. Clean 2D graphic noir art. Audio: rapid shallow ragged breathing sounds, loud muffled heartbeat pulsing heavily in ears (`thump-thump... thump-thump`), rising discordant violin screech, zero spoken dialogue.

@@ -29,7 +29,7 @@ The `cinematography_audio/` domain governs the behavior of the virtual camera in
 | **MS** | Medium Shot | Waist up to head | Action delivery, physical tool/prop interaction |
 | **WS** | Wide Shot | Full human figure from head to toe with immediate space | Subject-environment relationship, physical staging |
 | **EWS** | Extreme Wide Shot | Landscape dominates; human/vehicle is small | Vast scale, isolation, epic world establishment |
-| **OTS** | Over-the-Shoulder | Foreground shoulder/head framing secondary subject | Conversational geography, spatial confrontation |
+| **Clean Single** | Eye-level MCU / CU | Isolated framing of one character with motivated 15° eyeline | Dialogue clarity, strictly banning dirty OTS shots to eliminate melting shoulders & identity bleed (Linter `L-13`) |
 
 ### 2.2 Prime Lens Focal Length Directory
 
@@ -57,7 +57,7 @@ Diffusion engines treat physical hardware words as visible geometry. Including e
 |---|---|
 | `on a tripod` / `locked on tripod` | `Locked-off eye-level framing, completely static shot with zero camera movement` |
 | `dolly track` / `camera on dolly` | `Smooth linear push-in toward the subject` or `smooth lateral tracking shot` |
-| `crane rig` / `jib arm` | `Fluid vertical crane-up sweeping diagonally above the subject` |
+| `crane rig` / `jib arm` | `Fluid vertical elevation sweep rising diagonally above the subject` |
 | `drone shot` / `aerial drone` | `High-altitude bird's-eye perspective tracking downward` |
 | `gimbal` / `steadicam` | `Smooth floating eye-level tracking camera maintaining perfect stability` |
 | `camera rig` / `shaky cam` | `Visceral handheld camera cadence with subtle organic drift` |
@@ -77,14 +77,14 @@ Diffusion engines treat physical hardware words as visible geometry. Including e
 - **Use Case:** High-speed motorsport, combat pursuit, athletic sprints.
 - **Formula:**
   ```text
-  Shot on a 24mm anamorphic prime lens at f/2.8 with dramatic shallow depth of field. The sequence initiates in an extreme low-angle tracking shot positioned mere inches above the ground, tracking parallel at high velocity alongside [Subject Component], with [Environmental Particles: water spray/sparks/smoke] violently exploding into frame. The camera executes a fluid, dynamic crane-up and lateral rotational whip across [Subject Body], stabilizing into a low-angle leading perspective tracking backward at matched speed as [Lighting Flares] reflect off the surface.
+  Shot on a 24mm anamorphic prime lens at f/2.8 with dramatic shallow depth of field. The sequence initiates in an extreme low-angle tracking shot positioned mere inches above the ground, tracking parallel at high velocity alongside [Subject Component], with [Environmental Particles: water spray/sparks/smoke] violently exploding into frame. The camera executes a fluid, dynamic upward elevation sweep and lateral rotational whip across [Subject Body], stabilizing into a low-angle leading perspective tracking backward at matched speed as [Lighting Flares] reflect off the surface.
   ```
 
-### Recipe 3: The Hitchcock Dolly Zoom (Vertigo Effect / Zolly)
+### Recipe 3: The Hitchcock Contra-Zoom (Vertigo Effect / Zolly)
 - **Use Case:** Psychological terror, cosmic dread, earth-shattering narrative revelations.
 - **Formula:**
   ```text
-  Shot on a 35mm anamorphic prime lens at f/2.0 with shallow depth of field. The sequence initiates in a medium close-up framing locked onto [Subject Face/Object], keeping [Subject] locked at the exact same size and viewport framing throughout. The camera executes a dramatic optical dolly zoom vertigo effect: the perspective physically tracks backward smoothly while rapidly zooming in with telephoto optical compression, causing the background [Vault/Environment] to violently stretch, warp, and expand backward into terrifying, boundless perspective scale.
+  Shot on a 35mm anamorphic prime lens at f/2.0 with shallow depth of field. The sequence initiates in a medium close-up framing locked onto [Subject Face/Object], keeping [Subject] locked at the exact same size and viewport framing throughout. The camera executes a dramatic optical contra-zoom (zolly) vertigo effect: the perspective physically tracks backward smoothly while rapidly zooming in with telephoto optical compression, causing the background [Vault/Environment] to violently stretch, warp, and expand backward into terrifying, boundless perspective scale.
   ```
 
 ### Recipe 4: The Optical Rack Focus (Z-Axis Focal Pull)
@@ -129,7 +129,7 @@ Diffusion models over-index on speech presence tokens, exaggerating jaw movement
 
 ### 5.3 Standard Production Dialogue Template
 ```text
-A locked-off eye-level medium close-up of [Subject description]. Shot on an 85mm portrait prime lens at f/2.0 with shallow depth of field. The camera remains completely stationary, maintaining sharp focus on their face. The jaw is completely relaxed. With subtle, restrained lip articulation and minimal jaw displacement, they speak in a [tone: calm, measured / cold, hushed / tense] undertone: "[Sentence one.] [Sentence two.]" The mouth opens subtly without wide stretching, closing naturally into a resting position between pauses, accompanied by subtle eye micro-expressions. Audio: [Tactile Foley], [Ambient Room Tone], [Character close-mic vocal delivery], [Background Music Directive].
+A locked-off eye-level medium close-up of [Subject description]. Shot on an 85mm portrait prime lens at f/2.0 with shallow depth of field. The camera remains completely stationary, maintaining sharp focus on their face. The jaw is completely relaxed. With subtle, restrained lip articulation and minimal jaw displacement, they speak in a [tone: calm, measured / cold, hushed / tense] undertone: "[Sentence one.] [Sentence two.]" The mouth opens subtly without wide stretching, closing naturally into a resting position between pauses, accompanied by subtle eye micro-expressions. Audio: SFX: [Tactile Foley]; Ambience: [Ambient Room Tone]; Dialogue: [Character vocal delivery]; Music: [Score Directive / None].
 ```
 
 ---
@@ -238,31 +238,37 @@ When videos are exported from Flow for professional assembly in timeline editing
 
 ---
 
-## 10. Pre-Flight Linters (Cinematography & Audio)
+## 10. Authoritative Pre-Flight Linters (Cinematography & Audio)
 
-Before compiling prompts into Google Flow, the automated validator enforces these validation gates:
+Before compiling prompts into Google Flow, the automated validator enforces these validation gates from the Master `L-01` to `L-18` Registry:
 
-### Rule L-07: Equipment Noun Prohibition
-- **Check:** Prompt MUST NOT contain any of: `tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`.
-- **Error Message:** `L-07 VIOLATION: Hardware noun detected. Replace with kinematic trajectory directive.`
+### Rule L-03: Equipment Noun Prohibition
+- **Check:** Creative positive prompt MUST NOT contain any hardware nouns: `tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`. (Note: `NEGATIVE PROMPT:` clauses and audio frequency words like "drone of fluorescent lights" are strictly exempt).
+- **Error Message:** `L-03 VIOLATION: Hardware noun detected in positive prompt. Replace with pure optical/kinematic trajectory directive.`
 
-### Rule L-08: Dialogue Biomechanical Restraint Enforcement
-- **Check:** Any prompt containing spoken dialogue (`"..."`) MUST include at least two biomechanical restraint tokens (`minimal jaw displacement`, `subtle lip articulation`, `relaxed jaw`, `subtle mouth movement`, `resting mouth closure`).
-- **Error Message:** `L-08 VIOLATION: Dialogue detected without biomechanical mouth restraint tokens. Risk of Muppet Mouth distortion.`
+### Rule L-05: Anti-Subtitle & Non-Render Guardrail
+- **Check:** Any prompt containing narrative context or script lines MUST wrap context in `(REFERENCE ONLY — DO NOT RENDER...)` and include the negative subtitle clause (`subtitles, closed captions, burned-in text, lower thirds, watermark`).
+- **Error Message:** `L-05 VIOLATION: Missing anti-subtitle negative clause. Risk of burned-in caption hallucinations.`
 
-### Rule L-09: Dialogue & Audio Clutter Conflict
-- **Check:** If spoken dialogue is present, music directives MUST NOT contain energetic rhythm words (`heavy drums`, `fast tempo`, `upbeat beat`, `drum beat`) without the `low-in-the-mix` modifier.
-- **Error Message:** `L-09 VIOLATION: Aggressive music detected during dialogue. Protect vocal clarity with Mode A (Dialogue-Protected) or Mode C.`
+### Rule L-13: 180° Screen Direction & Clean Singles (OTS Ban)
+- **Check:** Multi-character dialogue scenes must maintain complementary 15° eyelines and use Clean Singles. Dirty OTS shots are strictly banned.
+- **Error Message:** `L-13 VIOLATION: Dirty OTS shot detected. Risk of melting shoulders and character bleed. Replace with Clean Single framing.`
 
-### Rule L-16: Native Veo 3.1 Word Budget Linter
-- **Check:** If generation pathway is Pathway A (Native Flow Audio), word counts must not exceed native thresholds (Max 5w for 4s, Max 9w for 6s, Max 13w for 8s, Max 18w for 10s).
-- **Error Message:** `L-16 VIOLATION: Spoken word count exceeds native Veo 3.1 speech velocity (~1.2-1.5 wps). Risk of mid-sentence dialogue clipping.`
+### Rule L-14: Dual-Track Speech Word Budget & Silence Buffer
+- **Check:** Spoken dialogue word count must not exceed speech velocity limits:
+  - Native Flow (`Pathway A`): Max 5w for 4s, Max 9w for 6s, Max 13w for 8s, Max 18w for 10s.
+  - External TTS (`Pathway B`): Max 8w for 4s, Max 12w for 6s, Max 18w for 8s, Max 22w for 10s; $\text{Clip Duration} - \text{SRT Cue Duration} \ge 1.0\text{s}$ total silence buffer.
+- **Error Message:** `L-14 VIOLATION: Dialogue word count exceeds speech velocity. Risk of mid-sentence dialogue clipping.`
 
-### Rule L-17: Anti-Subtitle Invariant Linter
-- **Check:** Any prompt containing narrative context or script lines MUST include the negative subtitle clause (`subtitles, closed captions, burned-in text, lower thirds, watermark`).
-- **Error Message:** `L-17 VIOLATION: Missing anti-subtitle negative clause. Risk of burned-in caption hallucinations.`
+### Rule L-15: Dialogue Biomechanical Restraint Enforcement
+- **Check:** Any prompt containing spoken dialogue (`"..."`) MUST include at least two biomechanical restraint tokens (`minimal jaw displacement`, `subtle lip articulation`, `relaxed jaw`, `subtle mouth movement`, `resting mouth closure`) and colon before quotes.
+- **Error Message:** `L-15 VIOLATION: Dialogue detected without biomechanical mouth restraint tokens. Risk of Muppet Mouth distortion.`
 
-### Rule L-18: 3-Track Structured Audio Syntax Linter
-- **Check:** The trailing audio block MUST adhere to structured semicolon-delimited syntax (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`).
-- **Error Message:** `L-18 VIOLATION: Audio block is unstructured. Enforce 3-track structured audio syntax.`
+### Rule L-16: Closed-Lip Listener Rule
+- **Check:** When off-screen/phone audio or narrator voiceover plays over an on-screen subject, prompt MUST include `firmly closed lips, tight jaw, zero mouth movement`.
+- **Error Message:** `L-16 VIOLATION: Visible subject during off-screen audio lacks closed-lip restraint. Risk of lip desync animation.`
+
+### Rule L-17: Structured 4-Field Audio Syntax & Music Protection
+- **Check:** The trailing audio block MUST adhere to structured semicolon-delimited syntax (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`). If spoken dialogue is present, energetic rhythm words (`heavy drums`, `fast tempo`) are banned without `low-in-the-mix`.
+- **Error Message:** `L-17 VIOLATION: Audio block is unstructured or contains aggressive score over dialogue. Enforce 4-field semicolon audio syntax.`
 

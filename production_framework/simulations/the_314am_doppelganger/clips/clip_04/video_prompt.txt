@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: MOTIVATED FEAR REACTION
+Input Seed / Dependencies: Generated from clips/clip_04/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, low-angle slow creeping push-in camera advancing gradually toward the seated figure. Permitted Props: [minimalist platform bed frame, cotton blanket, smartphone]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, sits up slowly to a vertical posture in bed, locking their shoulders in rigid tension. The upward spotlight from the glowing phone illuminates the front of their stick torso, while their white circular head (#FFFFFF) slowly turns to face screen-right toward the door. Minimalist 2D vector graphic art. Audio: SFX: subtle fabric rustle, sudden tense sharp intake of breath; Ambience: suffocating quiet, low sub-bass atmospheric drone; Dialogue: None; Music: None.

@@ -1,6 +1,6 @@
 # Discussion Log: Cinematography & Audio Domain
 
-**Status:** 🟡 IN PROGRESS (Phase 5.4 Active Working Document)  
+**Status:** ✅ **FINALIZED** (Authoritative Specification Locked in `04_cinematography_audio_spec.md`)  
 **Target Specification:** [`../production_framework/specs/04_cinematography_audio_spec.md`](../production_framework/specs/04_cinematography_audio_spec.md)  
 
 ---
@@ -11,15 +11,15 @@ The **`cinematography_audio/`** domain governs the physical behavior of the virt
 
 ### The Two Foundational Pillars:
 1. **Pillar 1: Cinematography & Optics:**
-   - Standardizing shot framing scales (ECU, CU, MCU, MS, WS, EWS, OTS).
+   - Standardizing shot framing scales (ECU, CU, MCU, MS, WS, EWS, and Clean Singles with 15° off-axis eyelines; dirty OTS banned per `L-13`).
    - Establishing camera angles and psychological perspective (Eye-level, Low-angle hero, Bird's-eye, Dutch tilt).
    - Mapping lens optics and focal compression (16mm ultra-wide, 35mm street, 50mm human-eye, 85mm portrait, 100mm macro).
-   - Codifying kinematic trajectory rules (Single Camera Verb, Speed Ramping, Zero Equipment Nouns).
-2. **Pillar 2: Native Audio & Spoken Dialogue (Pending):**
-   - Tactile ASMR Foley.
-   - Ambient environmental room tone beds.
-   - Spoken dialogue syntax with emotional delivery modifiers.
-   - The Audio Purity Terminator (`no background music`).
+   - Codifying kinematic trajectory rules (Single Camera Verb, Speed Ramping, Zero Equipment Nouns per `L-03`).
+2. **Pillar 2: Native Audio & Spoken Dialogue (Finalized):**
+   - Structured 4-field semicolon syntax (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...` per `L-17`).
+   - Tactile ASMR Foley and ambient environmental room tone beds.
+   - Spoken dialogue syntax with emotional delivery modifiers and Anti-Muppet biomechanical jaw restraints (`L-15`).
+   - Music suppression over spoken dialogue (`Music: None`).
 
 ---
 
@@ -59,31 +59,31 @@ The **`cinematography_audio/`** domain governs the physical behavior of the virt
 - **Audit:** 100% continuous robotic trajectory, zero equipment nouns, 100mm macro optics, verified via Photo-First generation (`commercial_chrono_cinematography`).
 - **Reference:** [`_raw/29_commercial_cinematography_high_speed_orbit.md`](./_raw/29_commercial_cinematography_high_speed_orbit.md).
 
-### Simulation 2: High-Speed Automotive Pursuit & Drift (Wheel-to-Hood Crane Tracking)
+### Simulation 2: High-Speed Automotive Pursuit & Drift (Ground-to-Hood Rising Arc Tracking)
 - **Concept:** High-octane 10-second automotive night sequence. A matte black supercar drifting across a rain-slicked runway at high speed.
 - **Cinematic Mechanics Tested:** 
   1. *Extreme Low-Angle Ground Skim (Tarmac Proximity):* Lens placed mere inches above the wet asphalt, parallel-tracking the spinning front left wheel, glowing brake calipers, and water rooster tails.
-  2. *Fluid Kinetic Crane-Up & Whip-Arc:* As the car counter-steers into an aggressive sideways power-slide, the camera smoothly sweeps upward and arcs diagonally over the front fender and hood through billowing tire smoke.
+  2. *Fluid Kinetic Rising Sweep & Whip-Arc:* As the car counter-steers into an aggressive sideways power-slide, the camera smoothly sweeps upward and arcs diagonally over the front fender and hood through billowing tire smoke.
   3. *Stabilized Heroic Leading Shot:* Camera settles into a high-speed tracking position directly in front of the drifting vehicle, capturing anamorphic headlight flares cutting through mist.
   4. *Optics:* 24mm anamorphic lens at f/2.8, 180° motion shutter, shallow focal depth.
 - **Compiled Prompt:**
   ```text
-  A cinematic night automotive action video of a sleek matte black supercar drifting at high speed across a rain-slicked wet asphalt runway. Shot on a 24mm anamorphic prime lens at f/2.8 with dramatic shallow depth of field and a 180-degree shutter angle for visceral motion blur. The sequence initiates in an extreme low-angle tracking shot positioned mere inches above the wet ground, tracking parallel at high velocity alongside the spinning front wheel, with water spray violently exploding off the rubber tire and glowing orange-hot carbon-ceramic brake calipers visible behind the carbon-fiber spokes. As the car counter-steers aggressively into a wide sideways power-slide drift, the camera executes a fluid, dynamic crane-up and lateral rotational whip across the front quarter panel and hood, cutting through billowing clouds of illuminated white tire smoke. The camera smoothly stabilizes into a low-angle leading perspective directly in front of the drifting vehicle, tracking backward at matched speed as horizontal LED headlights cast brilliant anamorphic flares through the rain mist and reflect off the glossy wet tarmac. Gritty cinematic realism, dark moody atmosphere with distant purple and cyan runway light towers. Audio: a visceral screaming roar of a high-revving twin-turbo engine, high-pitched mechanical turbo spool whine, deafening tire rubber friction screeching across wet asphalt, heavy water spray hissing against the undercarriage, and a deep resonant exhaust backfire crack, no background music.
+  A cinematic night automotive action video of a sleek matte black supercar drifting at high speed across a rain-slicked wet asphalt runway. Shot on a 24mm anamorphic prime lens at f/2.8 with dramatic shallow depth of field and a 180-degree shutter angle for visceral motion blur. The sequence initiates in an extreme low-angle tracking shot positioned mere inches above the wet ground, tracking parallel at high velocity alongside the spinning front wheel, with water spray violently exploding off the rubber tire and glowing orange-hot carbon-ceramic brake calipers visible behind the carbon-fiber spokes. As the car counter-steers aggressively into a wide sideways power-slide drift, the camera executes a fluid, dynamic rising sweep and lateral rotational whip across the front quarter panel and hood, cutting through billowing clouds of illuminated white tire smoke. The camera smoothly stabilizes into a low-angle leading perspective directly in front of the drifting vehicle, tracking backward at matched speed as horizontal LED headlights cast brilliant anamorphic flares through the rain mist and reflect off the glossy wet tarmac. Gritty cinematic realism, dark moody atmosphere with distant purple and cyan runway light towers. Audio: SFX: visceral screaming roar of a high-revving twin-turbo engine, high-pitched mechanical turbo spool whine, deafening tire rubber friction screeching across wet asphalt, and a deep resonant exhaust backfire crack; Ambience: heavy water spray hissing against the undercarriage; Dialogue: None; Music: None.
   ```
 - **Audit:** Zero equipment nouns, fluid ground-to-lead trajectory, 24mm anamorphic optics, verified via Photo-First generation (`automotive_drift_cinematography`).
 
-### Simulation 3: Sci-Fi Discovery Reveal (The Hitchcock Dolly Zoom / Vertigo Effect)
+### Simulation 3: Sci-Fi Discovery Reveal (The Hitchcock Contra-Zoom / Vertigo Effect)
 - **Concept:** Epic sci-fi first-contact discovery sequence. An astronaut in an EVA suit discovering a colossal alien megastructure.
 - **Cinematic Mechanics Tested:**
-  1. *The Dolly Zoom (Zolly / Vertigo Effect):* Camera physically tracks backward while rapidly zooming in with focal length compression.
+  1. *The Optical Contra-Zoom (Vertigo Effect):* Camera physically tracks backward while rapidly zooming in with focal length compression.
   2. *Scale & Perspective Invariance:* The astronaut's helmet stays locked at the exact same size and framing, while the background vault and towering alien monolith warp, stretch, and expand outward into terrifying cosmic infinity.
   3. *Specular Optical Reflection:* Glowing cyan and amber hieroglyphs reflecting dynamically across the curved gold helmet visor.
   4. *Diegetic Audio:* Heavy, rapid helmet breathing, radio static crackle, rising alien harmonic hum, deep sub-bass cosmic shockwave.
 - **Compiled Prompt:**
   ```text
-  A cinematic sci-fi discovery sequence of an astronaut in a weathered white EVA space suit discovering an ancient extraterrestrial megastructure inside a colossal subterranean vault. Shot on a 35mm anamorphic prime lens at f/2.0 with shallow depth of field. The sequence initiates in a medium close-up framing locked onto the astronaut's gold-tinted helmet visor, where wide, terrified human eyes are visible through the glass reflecting pulsing cyan and amber alien glyphs. The camera executes a dramatic, visceral dolly zoom vertigo effect: the perspective physically tracks backward smoothly while rapidly zooming in with telephoto optical compression, keeping the astronaut's helmet locked at the exact same size in the foreground while the background alien arches and colossal glowing monolith violently stretch, warp, and expand backward into terrifying, boundless cosmic scale. Volumetric shafts of light cut through swirling stardust and cold mist. Audio: rapid heavy human breathing echoed inside the enclosed helmet suit, faint radio static crackle, a rising harmonic alien frequency hum, and a deep sub-bass cosmic shockwave rumble, no background music.
+  A cinematic sci-fi discovery sequence of an astronaut in a weathered white EVA space suit discovering an ancient extraterrestrial megastructure inside a colossal subterranean vault. Shot on a 35mm anamorphic prime lens at f/2.0 with shallow depth of field. The sequence initiates in a medium close-up framing locked onto the astronaut's gold-tinted helmet visor, where wide, terrified human eyes are visible through the glass reflecting pulsing cyan and amber alien glyphs. The camera executes a dramatic, visceral optical contra-zoom vertigo effect: the perspective physically tracks backward smoothly while rapidly zooming in with telephoto optical compression, keeping the astronaut's helmet locked at the exact same size in the foreground while the background alien arches and colossal glowing monolith violently stretch, warp, and expand backward into terrifying, boundless cosmic scale. Volumetric shafts of light cut through swirling stardust and cold mist. Audio: SFX: rapid heavy human breathing echoed inside the enclosed helmet suit, faint radio static crackle; Ambience: rising harmonic alien frequency hum, deep sub-bass cosmic shockwave rumble; Dialogue: None; Music: None.
   ```
-- **Audit:** 100% optical dolly zoom translation, zero equipment nouns, verified via Photo-First generation (`scifi_reveal_dolly_zoom`).
+- **Audit:** 100% optical contra-zoom translation, zero equipment nouns, verified via Photo-First generation (`scifi_reveal_dolly_zoom`).
 
 ---
 
@@ -173,7 +173,7 @@ A locked-off eye-level medium close-up of a [subject description]. The camera re
      - *Tier 4 (Music Score):* Low-in-the-mix, slow-tempo melancholic cello drone and subtle sub-bass synth pad, zero drums or percussion, leaving voice frequencies completely clean and uncluttered.
 - **Compiled Prompt:**
   ```text
-  A cinematic masterpiece, locked-off eye-level medium close-up of a battle-tested female commander in a weathered dark canvas jacket inside a dimly lit underground command bunker at night. Shot on an 85mm anamorphic prime lens at f/2.0 with dramatic shallow depth of field. The camera remains completely stationary, maintaining tack-sharp focus on her face as warm directional tungsten lamplight carves her defined jawline against blurred cold cyan indicator lights in the background. Her jaw is completely relaxed. With subtle, restrained lip articulation and minimal jaw displacement, she looks firmly across the table and speaks in a calm, measured undertone: "The northern line held. Prepare the convoy for dawn." Her mouth opens subtly without wide stretching, closing naturally into a resting position between sentences, accompanied by subtle eye micro-expressions. Audio: the crisp, heavy mechanical click of a military radio frequency dial turning, subtle canvas fabric rustle, heavy rain drumming rhythmically against overhead glass skylights, the commander's clear close-mic vocal delivery, underlaid with a low-in-the-mix, slow-tempo melancholic cello drone and deep ambient sub-bass synth pad, zero drums or percussion.
+  Locked-off eye-level medium close-up of a battle-tested female commander in a weathered dark canvas jacket inside a dimly lit underground command bunker at night. Shot on an 85mm anamorphic prime lens at f/2.0 with dramatic shallow depth of field. The camera remains completely stationary, maintaining tack-sharp focus on her face as warm directional tungsten lamplight carves her defined jawline against blurred cold cyan indicator lights in the background. Her jaw is completely relaxed. With subtle, restrained lip articulation and minimal jaw displacement, she looks firmly across the table and speaks in a calm, measured undertone: "The northern line held. Prepare the convoy for dawn." Her mouth opens subtly without wide stretching, closing naturally into a resting position between sentences, accompanied by subtle eye micro-expressions. Audio: SFX: crisp heavy mechanical click of a military radio frequency dial turning, subtle canvas fabric rustle; Ambience: heavy rain drumming rhythmically against overhead glass skylights; Dialogue: Commander speaks in a calm, measured undertone: "The northern line held. Prepare the convoy for dawn."; Music: low-in-the-mix slow-tempo melancholic cello drone and deep ambient sub-bass synth pad, zero drums or percussion.
   ```
 - **Audit:** 100% compliant with all Phase 5.4 findings (optics, zero equipment nouns, biomechanical mouth restraint, 4-tier virtual soundboard), verified via Photo-First generation (`grand_cinematography_audio_simulation`).
 

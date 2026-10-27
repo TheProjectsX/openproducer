@@ -22,10 +22,10 @@ The `characters/` domain defines and locks every character's visual, anatomical,
 
 ## 2. Directory Structure & File Contract
 
-Every character in a project is isolated in their own folder under `characters/` (or `subjects/<character_id>/`):
+Every character in a project is isolated in their own folder under the unified `subjects/` directory (`subjects/<character_id>/`, with `characters/<character_id>/` supported as a domain alias):
 
 ```text
-characters/
+subjects/
 └── <character_id>/                  # e.g., maya_lin/ or elena_vance/
     ├── profile.md                   # Human-readable demographics, biometrics, wardrobe, and vocal profile
     ├── verbatim_anchor.txt          # LOCKED 25–40 word Master Anchor String for video prompts
@@ -41,7 +41,7 @@ characters/
 
 ## 3. Standard File Templates
 
-### 3.1 `characters/<character_id>/profile.md` (Human Review & Trait Bible)
+### 3.1 `subjects/<character_id>/profile.md` (Human Review & Trait Bible)
 
 ```markdown
 # Character Profile: [CHARACTER_NAME]
@@ -70,7 +70,7 @@ characters/
 - **Delivery Cadence:** [e.g., Calm, quiet, clipped military cadence under pressure]
 ```
 
-### 3.2 `characters/<character_id>/verbatim_anchor.txt` (Authoritative Flow String)
+### 3.2 `subjects/<character_id>/verbatim_anchor.txt` (Authoritative Flow String)
 
 > **Rule:** Must be strictly bounded between 25–40 words. Contains zero buzzwords. Injected verbatim into Tokens 1–30 of video prompts.
 
@@ -80,7 +80,7 @@ characters/
 *Example:*
 > `Maya Lin, a 28-year-old lean athletic female combat medic with weary hazel eyes, a faint diagonal scar on her left cheekbone, messy tied-back dark wavy hair, wearing a distressed olive-green canvas tactical flak vest over a faded charcoal undershirt.`
 
-### 3.3 `characters/<character_id>/rules.md` (Invariant & Safety Directives)
+### 3.3 `subjects/<character_id>/rules.md` (Invariant & Safety Directives)
 
 ```markdown
 # Character Rules & Invariant Constraints: [CHARACTER_NAME]
@@ -137,18 +137,24 @@ characters/
 
 ### Scenario 1: Creator Supplies Their Own Photo (Image-to-Character)
 When a creator uploads their photo and requests custom wardrobe, cosplay, or talking-head generation:
-1. **Zero Manual Biometric Writing:** The creator is never required to write technical facial descriptions. The multimodal AI Agent extracts facial landmarks and injects anatomical guardrails under the hood.
-2. **Biological Landmark Invariance (Anti-Drift):** Treat facial bone structure, zygomatic arches (cheekbones), nose bridge contours, jawline angle, and eye socket geometry as locked immutable constraints. Explicitly forbid the model from substituting a generic idealized, waxy, or cartoon face.
-3. **Expression Decoupling Engine (Clean Winks & Smiles):** Decouple permanent bone geometry from transient emotions. The prompt explicitly commands: *"Retain 100% of the authentic facial bone structure, jawline contours, cheekbones, and nose bridge from the reference image without alteration. Dynamic expression: while strictly preserving authentic biological landmarks, the face naturally articulates into a relaxed subtle smile with naturally lifted cheeks, left eye playfully winking while the right eye maintains its authentic shape and iris color. Real living human face, subtle micro-expression, not an exaggerated caricature, no frozen grimace."*
+1. **Zero Manual Biometric Writing:** The creator is never required to write technical facial descriptions. The multimodal AI Agent inspects photos and applies anatomical guardrails under the hood.
+2. **Biological Landmark Invariance vs. Lean Reference Anchoring (Linter `L-06`):**
+   - *Text-Conditioned Genesis (No Photo Supplied):* The prompt injects full anatomical bone structure descriptors (zygomatic arches, nose bridge contours, jawline angle).
+   - *Image-Conditioned Genesis (`[IMAGE 1]` Attached):* Writing lengthy paragraphs describing facial bones backfires by splitting token attention—the text tokens compete with and override the reference image's latent representation, synthesizing a generic AI face. The prompt MUST use **Lean Reference Anchoring**:
+     `The exact same person from [IMAGE 1], retaining 100% identical authentic facial features, likeness, and natural skin from the reference photo without modification.`
+     This allows the image reference to retain 95%+ latent attention weight.
+   - *Multi-Ingredient Indexing in Tier 2 Keyframe Compositing (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`):* When compositing a clip's starting keyframe (`clips/clip_XX/image_prompt.txt`) using Google Flow's 3 Ingredient slots (`[IMAGE 1]` = Primary Character Turnaround, `[IMAGE 2]` = Empty Stage Environment, `[IMAGE 3]` = Secondary Character or Hero Prop), explicitly bind each slot by index without re-describing locked facial bones:
+     `The exact same person from [IMAGE 1] positioned screen-left, holding the exact object from [IMAGE 3], set inside the exact environment from [IMAGE 2]...`
+     Once the Tier 2 keyframe is generated, pass **only that single pre-composited keyframe** into Tier 3 Veo 3.1 video generation to prevent multi-sheet identity bleed.
+3. **Expression Decoupling Engine (Clean Winks & Smiles):** Decouple permanent bone geometry from transient emotions. When animating expressions from `[IMAGE 1]`, combine Lean Reference Anchoring with dynamic muscle vectors:
+   `The exact same person from [IMAGE 1], retaining 100% identical authentic facial likeness and bone structure from the reference photo. Dynamic expression: while strictly preserving authentic biological landmarks, the face naturally articulates into a relaxed subtle smile with naturally lifted cheeks and soft eye creases. Real living human face, subtle micro-expression, not an exaggerated caricature, no frozen grimace.`
 4. **The 1:7.5 Head-to-Body Anatomical Ratio Lock (Anti-Bobblehead):** Prevent oversized heads and compressed bodies by injecting strict scale constraints: *"Realistic adult human anatomical proportions, strictly natural 1:7.5 head-to-body scale ratio, natural shoulder width proportional to torso height."* Mandate negative prompt clause: `oversized head, giant face, bobblehead, caricature, dwarfism, shrunken torso, chibi proportions, cartoon anatomy, macro face`.
 5. **The 2-Step Angle Normalizer (For Posed / Neck-Tilted Photos):** If the source image is non-frontal (angled 3/4, tilted head, turned neck), NEVER attempt to simultaneously un-rotate the head, extrapolate a full body, change clothes, and animate expressions in one step.
    - *Step 1A (Pose Normalization):* Generate a clean, eye-level frontal headshot portrait on `#E5E5E5` whose sole goal is straightening head angle and locking 1:1 facial likeness with zero wardrobe or expression changes.
    - *Step 1B (Character Activation):* Condition on the straightened Step 1A plate to generate full-body tailoring, dynamic expressions, and environment staging.
-6. **Full-Body Biological Inheritance & Downward Extrapolation:** Anchor natural height, musculoskeletal build, and posture. When only a face headshot is provided, biometrics are anchored via text descriptors while the visible upper collar/garment is seamlessly extrapolated downward into matching tailored lower pieces (trousers/skirt, belt, footwear) with identical textile weave.
+6. **Full-Body Biological Inheritance & Downward Extrapolation:** Anchor natural height, musculoskeletal build, and posture. When only a face headshot is provided, upper collar/garment traits are seamlessly extrapolated downward into matching tailored lower pieces (trousers/skirt, belt, footwear) with identical textile weave.
 7. **Cosplay Deconstruction Engine:** Automatically expand pop-culture and anime terms into physical garment descriptors (materials, piping, armor plates, collars) to prevent AI hallucination.
 8. **Style Harmonization:** If target is Anime, translate both face and body into unified 2D hand-drawn cel art. If target is Live Action, render a real living actor in tailored movie costume.
-9. **Lean Reference Anchoring (Anti-Over-Description):** When an image reference is supplied as `[IMAGE 1]`, writing lengthy paragraphs in text describing facial bone structures, cheekbone contours, or nose bridges backfires by splitting token attention—the text tokens compete with and override the reference image's latent representation, synthesizing a generic AI face. The prompt MUST use lean referential anchoring (`The exact same person from [IMAGE 1], retaining 100% identical authentic facial features, likeness, and natural skin from the reference photo without modification`) letting the image reference retain 95%+ latent attention weight.
-
 
 ### Scenario 2: Original Character Creation from Pure Text (2-Step Architecture)
 When creating an original character without a source photo, generating a 4-view sheet in 1 step causes **split token attention** and **facial drift across panels**. The mandatory 2-step pipeline solves this:
@@ -172,7 +178,7 @@ Takes the approved Step 1 image as the reference anchor:
 | Visual Medium / Paradigm | Step 1 (Genesis Hero Adaptation) | Step 2 (Profile Model Sheet Adaptation) | Mandatory Guardrails |
 |---|---|---|---|
 | **1. Ultra-Realistic Live-Action** | 85mm portrait prime lens, natural skin micro-pores, authentic subsurface scattering, organic textile drape. | Solid `#E5E5E5` cyclorama, flat diffuse studio lighting, real human actor in movie wardrobe. | Ban action figures, dolls, plastic ball joints, 3D miniatures. |
-| **2. Traditional 2D Cel Anime** | Hand-drawn cel animation, bold uniform ink lines, flat unshaded color fills, locked 24fps aesthetic. | Classic production model sheet (*settei* / 設定資料), white studio paper, multi-angle line art. | Ban 3D rendering, plastic surfaces, and volumetric CGI lighting (prevents doubled jittery lines). |
+| **2. Traditional 2D Cel Anime** | Hand-drawn cel animation, bold uniform ink lines, flat unshaded color fills, stepped animation timing on twos. | Classic production model sheet (*settei* / 設定資料), neutral light-gray (`#E5E5E5`) or warm off-white (`#F8F6F0`) studio paper, multi-angle line art. | Ban 3D rendering, plastic surfaces, pure `#FFFFFF` white backgrounds, and volumetric CGI lighting (prevents doubled jittery lines and scanline tearing). |
 | **3. Stylized 3D CGI** | Stylized proportions, tactile vinyl/felt micro-textures, warm subsurface scattering on skin, expressive stylized planes. | Digital T-pose / A-pose 3D asset model sheet, neutral gray background. | Keep facial planes stylized to avoid uncanny valley realism. |
 | **4. Fantasy Armor & Mecha Suits** | Deconstruct into physical plates: lightweight articulated polycarbonate armor, silicone seals, matte finish. | Multi-angle view revealing rear thrusters, waist articulations, and weapon holsters. | Never say just "mecha suit"; always describe tailored flexible undersuit with articulated composite plates. |
 | **5. Non-Human Creatures / Robots** | Replace human biometrics with creature anatomy (chassis plating, servo joints, reptilian scales, tail length). | Turnaround showing dorsal, lateral, and ventral silhouettes on neutral gray. | Must explicitly constrain tail length, limb counts, and ocular placement across all 4 panels. |
@@ -192,14 +198,20 @@ Takes the approved Step 1 image as the reference anchor:
    - *Cause:* Diffusion models mirror scars, eyepatches, or mechanical arms to both sides or flip them across profile views.
    - *Directives:* Explicitly bind asymmetric traits to the specific panel in `turnaround_prompt.txt`:
      `Panel 2: Left side profile showing the diagonal scar across the left cheekbone (the right side of the face remains completely unscarred and clear).`
-4. **The Detachable Prop Hallucination Guard:**
+4. **The Detachable Prop Hallucination Guard (Linter `L-07`):**
    - *Cause:* Loose handheld weapons warp, float, or vanish across panels.
    - *Directives:* Strictly enforce empty hands in model sheets:
      `Hands in relaxed open standing posture, empty hands, sidearms and knives securely holstered at hip utility belt.`
-4. **Dialogue Syntax Formula (Veo 3.1 Dual-Stream Audio):**
+5. **Dialogue Syntax Formula & Biomechanical Restraint (Linters `L-14` & `L-15`):**
    - Spoken speech is directed via natural language tokens without UI dropdown dependencies:
-     $$\mathbf{[Character\ Name]\ says,\ [delivery\ modifier]:\ [Spoken\ words\ in\ sentence\ case,\ max\ 15\text{--}20\ words].}$$
-   - *Rule:* Never use ALL CAPS in spoken dialogue (causes Veo to spell letter-by-letter). Always use a preceding colon.
+     $$\mathbf{[Character\ Name]\ says,\ [modifier\ +\ biomechanical\ restraint]:\ "[Spoken\ words\ in\ sentence\ case,\ capped\ by\ duration]}."$$
+   - *Biomechanical Restraint Tokens:* Spoken lines MUST include $\ge 2$ restraint tokens (e.g. `relaxed jaw, minimal jaw displacement, subtle lip articulation`) to defeat the Muppet Mouth glitch.
+   - *Native Veo Duration Word Ceilings (Pathway A):*
+     - `4s` $\le$ **3–5 words** (max 6)
+     - `6s` $\le$ **7–9 words** (max 10)
+     - `8s` $\le$ **11–13 words** (max 14)
+     - `10s` $\le$ **15–18 words** (max 19)
+   - *Rules:* Never use ALL CAPS in spoken dialogue (causes Veo to spell letter-by-letter). Always place a colon before quoted speech. Always ensure words are enclosed in double quotes.
 
 ---
 

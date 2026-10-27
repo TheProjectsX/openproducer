@@ -1,0 +1,265 @@
+# MASTER VIDEOS PROMPT MANIFEST: The Breath at 2:00 AM
+# Target Engine: Google Flow (Veo 3.1 - Image-to-Video Mode)
+# Style Medium: Vector Stick Figure (minimalist_noir)
+# Total Clips: 13 Flow-Native Clips (Total Footage: 74s / Timeline Cut: 68s)
+# Linters Enforced: L-01 through L-18 (100% Pre-Flight Certified)
+
+================================================================================
+CLIP 01 (Flow Duration: 6s | Audio SRT: 00:00.42 – 00:06.26)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_01
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_01/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'You are sitting in the dark of your living room at 2 a.m.,')
+Starting from the initial frame, locked-off wide eye-level framing remains completely static. The stick figure remains seated motionless on the linear sofa silhouette under the flickering muted blue illumination of the television screen. The subtle atmospheric light cone casts long graphic drop shadows across the empty floorboards while the apartment room stands dead still.
+Audio: SFX: Faint 60Hz cathode television electronic hum; Ambience: Dead quiet late-night apartment room tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 02 (Flow Duration: 6s | Audio SRT: 00:06.26 – 00:11.12)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_02
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_02/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'the only illumination coming from the muted blue glow of your television screen.')
+Continuing directly from the initial frame, the perspective executes a slow, deliberate linear push-in along the glowing cool-blue light cone emitted by the television screen. The low-angle framing tracks smoothly past the linear floorboard vectors toward the base of the sofa, where the blue ambient light gently flickers against the pitch-black shadows of the silent living room.
+Audio: SFX: Subtle CRT cathode ray static crackle; Ambience: Oppressive late-night room silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 03 (Flow Duration: 6s | Audio SRT: 00:11.82 – 00:16.12)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_03
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_03/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'You live alone. The apartment is dead quiet.')
+Starting from the initial frame, locked-off macro framing remains completely stationary on the digital wall clock. The cool-blue digital numerals '02:00' glow steadily against the pitch-black background void, completely frozen in time, while the surrounding darkness hangs in heavy, suffocating apartment silence with zero visual movement or disturbance.
+Audio: SFX: Faint rhythmic digital capacitor click; Ambience: Cavernous dead apartment silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 04 (Flow Duration: 6s | Audio SRT: 00:17.24 – 00:22.16)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_04
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_04/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'Your cat, perched on the back of the sofa, suddenly sits bolt upright.')
+Starting from the initial frame, the perspective executes a subtle upward pedestal tilt while maintaining focused framing on the sofa back. The sleek black vector cat silhouette suddenly snaps bolt upright from a relaxed posture, its spine arching rigid and its alert ears swiveling backward in instant tension as it stares straight into the darkness above.
+Audio: SFX: Soft microscopic fabric tension of cat claws tensing on sofa upholstery; Ambience: Low eerie room silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 05 (Flow Duration: 4s | Audio SRT: 00:22.94 – 00:25.78)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_05
+duration_seconds: 4
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_05/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'Its pupils dilate into black saucers.')
+Continuing directly from the initial frame, stationary locked-off macro framing holds on the cat's face. The cat's pupils smoothly and rapidly expand from thin vertical slits into massive, solid black circular saucers, reflecting the faint cool-blue glow of the television screen in complete, paralyzed feline stillness.
+Audio: SFX: Subtle biological feline eyelid blink; Ambience: Suffocating silent room tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 06 (Flow Duration: 4s | Audio SRT: 00:26.76 – 00:30.60)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_06
+duration_seconds: 4
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_06/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'It isn't looking at you, the window or the hallway.')
+Starting from the initial frame, the perspective executes a slow horizontal drift across the room, capturing the stick figure on the sofa, the dark window frame, and the open hallway. The black vector cat maintains an unwavering upward gaze toward the ceiling, utterly refusing to look at the human, the window, or the doorway.
+Audio: SFX: Soft wooden floorboard settling creak; Ambience: Deep domestic apartment stillness; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 07 (Flow Duration: 6s | Audio SRT: 00:31.64 – 00:36.28)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_07
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_07/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'Its head is tilted up, tracking something invisible')
+Continuing directly from the initial frame, the perspective executes a creeping slow upward pan along the sofa back. The black vector cat's head smoothly tilts further backward in slow motion, its dilated black saucer eyes tracking an unseen entity moving steadily across the darkness of the ceiling plane directly overhead.
+Audio: SFX: Faint dry throat swallow; Ambience: Ominous low night room tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 08 (Flow Duration: 4s | Audio SRT: 00:36.28 – 00:40.24)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_08
+duration_seconds: 4
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_08/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'that is drifting slowly across the ceiling, directly')
+Starting from the initial frame, the camera perspective executes a slow upward push toward the ceiling darkness. The empty pitch-black shadows loom vast overhead while faint cool-blue television light ripples subtly across the empty ceiling void, conveying the creeping presence of an unseen entity drifting closer.
+Audio: SFX: Subtle acoustic draught across upper void; Ambience: Low unsettling room stillness; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 09 (Flow Duration: 6s | Audio SRT: 00:40.24 – 00:45.70)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_09
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_09/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'toward you, step by step, left then right.')
+Starting from the initial frame, stationary locked-off eye-level MCU holds focus on the stick figure and cat. The stick figure remains paralyzed in terror while the black cat's head perched on the sofa back micro-pivots methodically in synchronized increments: tilting left, then slowly right, tracking unseen footsteps pacing across the ceiling directly overhead.
+Audio: SFX: Microscopic ceiling joist stress groan overhead; Ambience: Heavy dead room silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 10 (Flow Duration: 6s | Audio SRT: 00:46.54 – 00:51.92)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_10
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_10/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'You can't see anything in the shadows above, but as the cat's gaze stops directly overhead,')
+Starting from the initial frame, the perspective executes a slow vertical push straight upward toward the ceiling void. The black vector cat's head suddenly halts all tracking movement, freezing rigidly locked at a ninety-degree vertical angle, staring unblinkingly at the empty pitch-black space directly above the viewer's head.
+Audio: SFX: Absolute acoustic drop into dead silence; Ambience: Chilling vacuum stillness; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 11 (Flow Duration: 4s | Audio SRT: 00:52.32 – 00:55.28)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_11
+duration_seconds: 4
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_11/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'the air around you turns ice cold.')
+Continuing directly from the initial frame, locked-off MCU framing holds on the stick figure. The stick figure's shoulders visibly stiffen and lock in sudden shock as delicate white vector frosty vapor swirls subtly upward from its posture into the cold blue television beam, shivering in the freezing air.
+Audio: SFX: Subtle brittle crackle of rapid frost crystallization; Ambience: Freezing atmospheric draught; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 12 (Flow Duration: 6s | Audio SRT: 00:56.24 – 01:01.54)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_12
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_12/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'Then, two inches above your crown, you hear')
+Starting from the initial frame, the camera perspective executes a very slow, creeping macro push-in toward the top curvature of the stick figure's white circular head. The stick figure remains frozen in place with zero bodily movement while the suffocating pitch-black shadow void hangs motionless just two inches above the scalp.
+Audio: SFX: Faint microscopic air displacement; Ambience: Suffocating near-vacuum tone; Dialogue: None; Music: Low ominous bowed cello drone and sub-bass vibration beginning to swell underneath.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.
+
+================================================================================
+CLIP 13 (Flow Duration: 8s | Audio SRT: 01:01.54 – 01:07.98 | THE CLIMAX & CLIFFHANGER)
+================================================================================
+[CONFIGURATION SETTINGS]
+clip_id: clip_13
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_13/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'the quiet, deliberate sound of someone drawing a sharp, shallow breath.')
+Continuing directly from the initial frame, locked-off macro framing holds rigidly on the crown of the stick figure's head. The stick figure remains completely paralyzed with zero motion. At timestamp 04.5s, the darkness two inches above the scalp subtly ripples as a deliberate, razor-sharp intake of breath displaces the cold air, followed by a sudden hard cut to pure black at frame 08.0s.
+Audio: SFX: Quiet, deliberate, razor-sharp human inhalation drawn directly overhead at 04.5s; Ambience: Absolute vacuum drop; Dialogue: None; Music: Explosive crescendo of screeching dissonant horror strings, bowed waterphone, and accelerating sub-bass pulse surging to maximum volume right before cutting dead to black.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.

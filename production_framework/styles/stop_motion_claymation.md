@@ -60,12 +60,10 @@ When the creator requests a specific stop-motion studio, material medium, or art
 ---
 
 ## 6. Tactile Stop-Motion Audio Foley Soundboard (Google Veo 3.1)
-All Veo stop-motion prompts must pair miniature visuals with tactile, micro-mechanical Foley:
-* **Clay & Plasticine Foley:** `Subtle tactile plasticine squish, soft clay crease squelch, tiny suction pop, miniature rubbery thud`.
-* **Armature & Mechanical Foley:** `Tiny metallic ball-and-socket joint click, subtle wire ratchet creak, delicate mechanical puppet articulation click`.
-* **Miniature Set Foley:** `Tiny cardboard box rustle, soft miniature wooden floorboard creak, twig snap, cotton wool whoosh, tea kettle whistle`.
-* **Puppet Movement Foley:** `Soft muffled fabric rustle of tiny tweed vest, miniature footsteps padding on felt moss, soft curious gasp`.
-* **Music Suppression Rule:** Always enforce `, no background music` or `, clean foley only` to allow micro-Foley to shine.
+All Veo stop-motion prompts must enforce the canonical 4-part semicolon audio syntax:
+* **Audio Anchor Template:** `Audio: SFX: [tactile miniature effects]; Ambience: [miniature room tone]; Dialogue: [spoken line or None]; Music: None.`
+* **Tactile Foley Bank:** `Audio: SFX: subtle tactile plasticine squish, tiny metallic ball-and-socket joint click, miniature wooden floorboard creak, soft fabric rustle of tweed vest; Ambience: quiet cozy room tone; Dialogue: None; Music: None.`
+* **Music Suppression Rule:** Always enforce `; Music: None.` to allow micro-Foley to shine.
 
 ---
 

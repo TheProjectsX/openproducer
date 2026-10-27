@@ -1,0 +1,16 @@
+[CONFIGURATION SETTINGS]
+clip_id: clip_12
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_12/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'Then, two inches above your crown, you hear')
+Starting from the initial frame, the camera perspective executes a very slow, creeping macro push-in toward the top curvature of the stick figure's white circular head. The stick figure remains frozen in place with zero bodily movement while the suffocating pitch-black shadow void hangs motionless just two inches above the scalp.
+Audio: SFX: Faint microscopic air displacement; Ambience: Suffocating near-vacuum tone; Dialogue: None; Music: Low ominous bowed cello drone and sub-bass vibration beginning to swell underneath.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.

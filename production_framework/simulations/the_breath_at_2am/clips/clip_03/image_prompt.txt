@@ -1,0 +1,17 @@
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+intended_engine: Imagen 4 / Midjourney / VideoFX
+medium: Vector Stick Figure (minimalist_noir)
+clip_id: clip_03
+duration: 6s
+ingredient_slot_allocation:
+  [IMAGE 1]: Digital Wall Clock Hero Prop ("02:00" in blue LCD)
+  [IMAGE 2]: Pitch-Black Apartment Shadow Wall
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Macro eye-level framing centered on a sleek minimalist digital wall clock mounted against a pitch-black shadow wall (#0A0B0E). The clock face displays the glowing cool-blue LCD digital numerals '02:00' formed from crisp geometric vector lines. The faint blue luminescent glow weakly illuminates the immediate wall texture and minimalist molding lines while the surrounding apartment room fades into an oppressive, suffocating dark void. Crisp sharp vector contours, clean graphic novel illustration, uniform stroke weight throughout, flat 2D graphic art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

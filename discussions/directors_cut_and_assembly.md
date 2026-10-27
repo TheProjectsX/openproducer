@@ -1,6 +1,6 @@
 # Discussion Log: Director's Cut, Temporal Slicing & Multi-Engine Assembly
 
-**Status:** 🟡 UNDER DEVELOPMENT (Active Phase 6 Working Document)  
+**Status:** ✅ **COMPLETED & VALIDATED** (Authoritative Specification Locked in `05_directors_cut_assembly_spec.md`)  
 **Target Specification:** [`../production_framework/specs/05_directors_cut_assembly_spec.md`](../production_framework/specs/05_directors_cut_assembly_spec.md)  
 **Raw Archive Reference:** [`_raw/33_directors_cut_temporal_slicing_and_multi_engine_pipelines.md`](./_raw/33_directors_cut_temporal_slicing_and_multi_engine_pipelines.md)
 
@@ -32,15 +32,15 @@ The **`directors_cut/` & `assembly/`** domain elevates the framework from isolat
 
 ### Step 0: The Creator Intake Interactivity Rule
 - **The Rule:** The exact same plot can be an 18-second fast reel or a 2-minute moody slow-burn. If pacing, duration, or clip budget are not explicitly stated, the Agent **must pause and directly ask the creator** before slicing or generating prompts.
-- **The 4 Tempo Archetypes:**
-  1. *Hyper / Viral (3–4s clips):* 4–8 words/clip, rapid cuts, punchy hook-driven payoffs.
-  2. *Dynamic Commercial (5s clips):* 8–11 words/clip, motivated cuts, balanced storytelling.
-  3. *Dramatic Cinema (8s clips):* 14–18 words/clip, breath-paced cuts, emotional tension.
-  4. *Atmospheric Slow-Burn (10s clips):* 18–22 words/clip, lingering camera, meditative immersion.
+- **The 4 Tempo Archetypes (Dual-Track Speech Velocity per `L-14`):**
+  1. *Hyper / Viral (4s clips):* $\le 5$ words (Pathway A Native Veo) / $\le 8$ words (Pathway B External TTS), rapid cuts, punchy hook-driven payoffs.
+  2. *Dynamic Commercial (6s clips):* $\le 9$ words (Pathway A Native Veo) / $\le 12$ words (Pathway B External TTS), motivated cuts, balanced storytelling.
+  3. *Dramatic Cinema (8s clips):* $\le 13$ words (Pathway A Native Veo) / $\le 18$ words (Pathway B External TTS), breath-paced cuts, emotional tension.
+  4. *Atmospheric Slow-Burn (10s clips):* $\le 18$ words (Pathway A Native Veo) / $\le 22$ words (Pathway B External TTS), lingering camera, meditative immersion.
 
 ### Pillar 1: Mathematical Word-to-Time Pacing
-- **Speech Rate Standard:** Conversational speech averages 130–150 words per minute ($\approx 2.2$ words per second).
-- **Buffer Rule:** Every dialogue clip requires **0.8s to 1.2s of breathing buffer** (silence before speech starts and after it concludes) to avoid clipping at boundaries or causing auctioneer mouth movements.
+- **Dual-Track Speech Rate Standard:** Pathway A (Native Flow / Veo Lip-Sync) operates at 1.2–1.5 words per second; Pathway B (External TTS / ElevenLabs / Gemini TTS) operates at ~2.2 words per second (130–150 wpm).
+- **Buffer Rule (`L-14`):** Every dialogue clip requires **at least 1.0s to 1.5s of total silence buffer** (split between pre-roll and post-roll silence) to avoid clipping at boundaries or causing auctioneer mouth movements.
 
 ### Pillar 2: Action Budgeting & The Single-Motion Law
 - **Diffusion Collapse Prevention:** Video diffusion models choke when multiple sequential actions are requested in one clip.
@@ -52,7 +52,7 @@ The **`directors_cut/` & `assembly/`** domain elevates the framework from isolat
 ### Pillar 3: The Director's Scratchbook Schema (`scratchbook.md`)
 The living production ledger compiled before generating shot prompt files:
 - `Clip ID`
-- `Target Duration` (3s/5s/8s/10s)
+- `Target Duration` (4s/6s/8s/10s)
 - `Story Beat & Dramatic Goal`
 - `Spoken Dialogue / VO` (word count verified)
 - `Single Budgeted Action`
@@ -100,7 +100,7 @@ Testing real-world Flow generations of *The 2:17 AM Dispatch* revealed 3 fatal d
 4. [x] **Pillar 4 & 5:** Default Flow Baseline, Dynamic Modality Switches & Origin Tracker.
 5. [x] **Step 4: Empirical Simulation:** Run initial end-to-end test.
 6. [x] **Step 6: Prompt De-Cramming & Glitch Remediation:** Re-sliced into 11 unhurried micro-clips enforcing Closed-Lip Listener, Pre-Materialized Props, and Micro-Beat De-Cramming across all prompt files (`master_flow_agent_prompt.txt` V2, `individual_clips/`, `scratchbook.md`).
-7. [x] **Step 7: Specification & Manifest Update:** Updated [`production_framework/specs/05_directors_cut_assembly_spec.md`](../production_framework/specs/05_directors_cut_assembly_spec.md) with Sections 4.2, 5.3, 5.4, and pre-flight linters L-12 and L-13.
+7. [x] **Step 7: Specification & Manifest Update:** Updated [`production_framework/specs/05_directors_cut_assembly_spec.md`](../production_framework/specs/05_directors_cut_assembly_spec.md) with Sections 4.2, 5.3, 5.4, and pre-flight linters (now unified in `L-01` to `L-18`).
 8. [x] **Step 8: Cross-Medium Validation (Stick Figure Horror):** Proved the generalizability of all 3 laws on *The Uncanny Reflection* (10-clip 2D minimalist horror sequence & Photo-First keyframe generation). Fully documented in [`_raw/39_simulation_stick_figure_horror_and_blank_head_rule.md`](./_raw/39_simulation_stick_figure_horror_and_blank_head_rule.md).
 9. [x] **Step 9: Image-First Video Production Pipeline (The 9-5 Rat Race):** Formalized the 2-step workflow (generating still image keyframe prompt first, then generating Image-to-Video motion prompt from that seed) with audio-visual motivational contrast. Fully documented in [`_raw/40_image_first_video_production_workflow.md`](./_raw/40_image_first_video_production_workflow.md).
 10. [x] **Step 10: Stick Figure Vector DNA & Gemini TTS Syntax (Discussion 41):** Codified the Fingerless Vector Standard (`stroke-linecap: round`), Light-Reveal Cream Canvas (`#F8F6F0`), and Google AI Studio Gemini 3.8 Flash TTS Angle Bracket `< >` syntax standard to prevent bracket reading bugs.
@@ -116,7 +116,7 @@ Testing real-world Flow generations of *The 2:17 AM Dispatch* revealed 3 fatal d
     - *Spatial Continuity Handoffs:* Added Section 5.6 defining Clip $N$ Spatial Exit State, Clip $N+1$ Spatial Entry State, 180° Screen Direction rule, and eyeline elevation matching.
     - *Multi-Character Staging:* Added Section 5.7 banning dirty OTS; using Wide Establishing Plates + Clean Singles with complementary 15° eyelines and speaker/listener decoupling.
     - *Dynamic Context-Driven Audio Transitions:* Added Section 6.5 J-Cuts (sound anticipates cut) and L-Cuts (sound lingers across cut) for Native Flow audio and external narration/dialogue stems.
-    - *Linter L-15:* Added Screen Direction & Eyeline Consistency Linter.
+    - *Linter L-13 (formerly L-15):* Added 180° Screen Direction & Clean Singles Linter.
     - *Pluggable Style Registry Scaffolding:* Created `production_framework/styles/` with Universal Base Mediums (`live_action_cinema.md`, `commercial_tabletop.md`, `vector_stick_figure.md`).
     - *Consumed & Deleted Dump.md:* Cleaned up temporary staging file.
 14. [x] **Step 14: End-to-End Simulation & Empirical Validation (Discussion 46):**

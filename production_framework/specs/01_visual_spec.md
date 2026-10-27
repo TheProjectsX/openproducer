@@ -71,25 +71,30 @@ visual/
 
 ## Engine Directives & Safety Rules
 1. **Forbidden Buzzwords:** Never include "photorealistic, 8k, hyper-detailed, masterpiece" (dilutes token attention).
-2. **Viewport Directives (No Equipment Nouns):** Never write "tripod", "camera on tripod", "dolly track", or "crane rig". Always use perspective descriptors ("locked-off eye-level framing, completely static shot", "slow push-in", "lateral tracking glide") to prevent the model from rendering physical camera hardware inside the scene.
-3. **Decoupling Rule:** Do NOT append technical specs ("16:9, 1080p, 24fps, 8s") into prompt text. These belong strictly in the Flow/API configuration block.
-4. **Audio Rule:** Dedicated `Audio:` block with mandatory `, no background music` suppression clause.
+2. **Viewport Directives (No Equipment Nouns):** Never write "tripod", "camera on tripod", "dolly track", or "crane rig". Always use perspective descriptors ("locked-off eye-level framing, completely static shot", "slow push-in", "lateral tracking glide") to prevent the model from rendering physical camera hardware inside the scene (Linter `L-03`).
+3. **Decoupling Rule:** Do NOT append technical specs ("16:9, 1080p, 24fps, 8s") into prompt text. These belong strictly in the Flow/API configuration block (Linter `L-04`). Creative stepped cadence (e.g. "on twos", "stepped frame motion") is whitelisted.
+4. **Structured Audio Rule:** Dedicated `Audio:` block strictly follows the semicolon-delimited 4-field syntax (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`) per Linter `L-17`.
 ```
 
 ---
 
-## 4. The 8 Master Style Paradigms & Standard Anchors
+## 4. The 8 Universal Base Mediums & Pluggable Styles Architecture
 
-| Paradigm | Master Style Anchor String | Crucial Failure Mode Guard |
+The visual domain operates on the **3-Tier Pluggable Style Engine** defined in [`production_framework/styles/`](../styles/README.md):
+$$\text{Base Medium (Styles Folder)} \longrightarrow \text{Dialect Variation} \longrightarrow \text{Project Overrides (visual/)}$$
+
+The 8 authoritative Base Mediums and their Default Master Style Anchors:
+
+| Medium Plugin | Default Master Style Anchor String | Crucial Failure Mode Guard |
 |---|---|---|
-| **1. Ultra-Realistic 35mm Film** | `Shot on 35mm film stock, organic fine grain, bleach bypass desaturated color grading, muted earth tones, soft diffused lighting, shallow depth of field, solemn cinematic realism.` | Avoid digital buzzwords; use optical/film terms. |
-| **2. Ultra-Realistic Digital Cinema** | `Shot on Arri Alexa 65, pristine optical clarity, circular creamy bokeh, sharp edge-to-edge resolution, neutral color roll-off, naturalistic motivated lighting.` | Specify sensor & lighting to avoid plastic AI skin. |
-| **3. Traditional 2D Cel Anime** | `Traditional 2D hand-drawn cel animation, flat unshaded color fills, bold uniform clean ink outlines, locked 24fps anime aesthetic, zero 3D rendering, zero volumetric shading.` | Must forbid 3D rendering to prevent doubled jittery lines. |
-| **4. Stylized 3D CGI** | `Stylized 3D digital animation, soft tactile vinyl and cloth micro-textures, warm subsurface scattering on skin, expressive lighting, miniature cinematic depth of field.` | Keeps characters stylized without uncanny valley realism. |
-| **5. Stop-Motion / Claymation** | `Handcrafted stop-motion clay animation, tactile plasticine clay textures with faint visible fingerprint impressions, physical miniature sets, stepped frame motion.` | Fingerprint and armature keywords force authentic miniature physics. |
-| **6. Vintage Kodachrome 1970s** | `Authentic Kodachrome 64 color film aesthetic, saturated primary reds and yellows, warm retro contrast, subtle edge halation, distinct 1970s film tone.` | Binds color chemistry to historical film emulsion. |
-| **7. Commercial Tabletop Advertising** | `Commercial advertising cinematography, macro 100mm lens, razor-sharp edge definition, studio softbox diffusion with crisp metallic rim highlights, high-contrast glossy color grading, ultra-clean commercial realism.` | Specify softbox diffusion and crisp rim highlights to avoid murky shadows or flat lighting. |
-| **8. Social UGC & Mobile Video** | `High-fidelity 4K mobile video aesthetic, natural ambient daylight, vibrant punchy color saturation, sharp sensor focal clarity, modern creator aesthetic.` | Ban film grain, halation, and anamorphic artifacts to preserve genuine mobile video look. |
+| **1. Live-Action Cinema** ([`live_action_cinema.md`](../styles/live_action_cinema.md)) | `Shot on 35mm film stock, organic fine grain, natural dynamic range, Panavision C-Series anamorphic prime lens, subtle optical halation around warm incandescent highlights, natural skin texture with visible biological pores, shallow depth of field, creamy circular bokeh, cinematic color grading, rich authentic shadows.` | Avoid digital buzzwords; use optical/film terms. Never use hardware nouns (`tripod`, `drone`). |
+| **2. Traditional 2D Cel Anime** ([`traditional_2d_anime.md`](../styles/traditional_2d_anime.md)) | `Traditional 2D hand-drawn cel animation, crisp clean uniform dark ink outlines, classic 2-tone cel shading with distinct shadow boundaries, flat vibrant color fills, hand-painted scenic anime background art, stepped animation timing on twos, flat 2D graphic anime aesthetic.` | Must forbid 3D rendering to prevent doubled jittery lines. |
+| **3. Stylized 3D CGI** ([`stylized_3d_cgi.md`](../styles/stylized_3d_cgi.md)) | `Stylized 3D digital character animation, soft rounded geometric forms, warm subsurface scattering on skin, tactile micro-textures on clothing and surfaces, warm three-point volumetric studio lighting, RenderMan global illumination, soft contact ambient occlusion shadows, creamy circular bokeh, cinematic 3D CGI render aesthetic.` | Keeps characters stylized without uncanny valley realism. |
+| **4. Stop-Motion / Claymation** ([`stop_motion_claymation.md`](../styles/stop_motion_claymation.md)) | `Handcrafted stop-motion claymation, sculpted plasticine clay characters with visible tactile surface thumbprint impressions, matte non-glossy finish, miniature tabletop diorama set, macro 100mm lens, shallow depth of field, warm overhead practical studio spotlights, 12fps stop-motion stepped animation timing on twos, tangible physical puppet craft aesthetic.` | Fingerprint and armature keywords force authentic miniature physics. |
+| **5. Vintage & Retro Film** ([`vintage_retro_film.md`](../styles/vintage_retro_film.md)) | `Shot on 35mm archival chemical film stock, authentic organic silver halide grain, natural warm analog color science, subtle mechanical gate weave, soft optical halation around warm incandescent highlights, natural edge vignetting, rich velvety black shadows, nostalgic archival film print aesthetic.` | Binds color chemistry to historical film emulsion without sepia mud. |
+| **6. Commercial Tabletop Advertising** ([`commercial_tabletop.md`](../styles/commercial_tabletop.md)) | `Shot on 100mm macro lens, f/2.8, razor-sharp edge definition, studio softbox diffusion lighting with pristine metallic rim reflections, micro-detail surface textures, ultra-clean studio stage, dynamic high-contrast commercial color grading, zero dust, commercial product showcase aesthetic.` | Specify softbox diffusion and crisp rim highlights to avoid murky shadows. |
+| **7. Social UGC & Mobile Video** ([`social_ugc_video.md`](../styles/social_ugc_video.md)) | `Modern smartphone mobile sensor video aesthetic, natural ambient daylight, casual handheld arm-length framing with subtle organic breathing micro-wobble, sharp edge-to-edge sensor definition, vibrant punchy daylight saturation, zero film grain, authentic unpolished social media creator aesthetic.` | Ban film grain, halation, and anamorphic artifacts to preserve genuine mobile video look. Config specs (`9:16`, `4K`) kept out of prompt text. |
+| **8. Vector Stick Figure** ([`vector_stick_figure.md`](../styles/vector_stick_figure.md)) | `Minimalist 2D vector line-art animation. Limbs and torso are pure unbroken solid black vector strokes terminating in smooth rounded line-cap ends; strictly zero individual fingers, zero human hands, zero toes, zero knuckles, and zero fleshy details. The circular head is filled with solid opaque white (#FFFFFF) and contoured with a clean uniform black outline (#0F172A), completely devoid of facial features. Crisp graphic novel vector style, sharp outlines, uniform stroke weight throughout, flat 2D graphic art.` | Strict fingerless limb bounding prevents horrific AI multi-finger mutancy. |
 
 ---
 

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_02/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, eye-level slow tracking camera advancing forward toward the bed. Permitted Props: [minimalist platform bed frame, cotton blanket, smartphone, nightstand]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, raises their solid white circular head (#FFFFFF) from the pillow and extends a single rounded black limb out from beneath the blanket edge toward the glowing phone on the nightstand, lifting the phone toward their chest. Minimalist 2D vector graphic art. Audio: SFX: soft organic fabric rustle of bedsheets moving; Ambience: faint distant air hum, high-frequency digital screen drone; Dialogue: None; Music: None.

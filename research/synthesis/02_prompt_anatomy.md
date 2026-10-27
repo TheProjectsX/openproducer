@@ -61,7 +61,7 @@ Avoid generic archetypes ("a warrior", "a scientist"). Provide concrete attribut
 - **Costume & Materiality:** Exact garments, weave/fabric type (worsted wool, distressed leather, ripstop nylon), color values, weathering/distress (frayed cuffs, salt stains, grease marks).
 
 ### Layer 3: Action & Biomechanical Dynamics (The Kinematics)
-- **The One Action Rule:** Bounded within 4–8 seconds, prompt **one single primary movement**. Compound narratives (*"he stands up, walks to the window, turns around, and talks"*) collapse into visual averaging or warping.
+- **The One Action Rule:** Bounded within 4–10 seconds, prompt **one single primary movement**. Compound narratives (*"he stands up, walks to the window, turns around, and talks"*) collapse into visual averaging or warping.
 - **Biomechanical Precision:** Replace subjective adverbs with physical mechanics:
   - *Do not write:* "walks angrily"
   - *Write:* "strides aggressively forward, chest squared, fists clenched at sides, heels slamming hard into the concrete"
@@ -76,10 +76,10 @@ Avoid generic archetypes ("a warrior", "a scientist"). Provide concrete attribut
 
 ### Layer 5: Camera Movement (The Optics)
 - **The Single Camera Verb Rule:** Never combine competing movements (e.g., *"zoom in while dollying back and panning left"*). Lock onto one clean, motivated cinematic movement:
-  - `Slow push-in / Dolly-in` (intensifies drama/tension)
-  - `Slow pull-out / Dolly-back` (reveals context/isolation)
-  - `Lateral tracking / Trucking shot` (travels alongside motion)
-  - `Locked-off tripod shot` (stable; essential for dialogue clarity)
+  - `Slow camera push-in / forward optical glide` (intensifies drama/tension)
+  - `Slow camera pull-out / backward optical glide` (reveals context/isolation)
+  - `Lateral tracking glide` (travels alongside motion)
+  - `Locked-off static framing` (stable; essential for dialogue clarity)
   - `Handheld follow` (documentary realism, subtle jitter)
   - `Slow orbital arc` (rotates around focal point)
 
@@ -110,7 +110,7 @@ Avoid generic archetypes ("a warrior", "a scientist"). Provide concrete attribut
 A common anti-pattern in unofficial prompt guides is appending `"Aspect ratio: 16:9, Resolution: 1080p, Frame rate: 24fps, Duration: 8s"` inside the prompt string. 
 
 In official Google systems (Google Flow, Gemini API, and Vertex AI), **diffusion models do not parse resolution, aspect ratio, or duration from text tokens**:
-- **Configuration Channel (`config` / UI Dropdowns):** Governs physical pixel matrix allocation (`16:9` / `9:16`), spatial resolution (`720p` / `1080p` / `4k`), temporal clip bounds (`4s` / `6s` / `8s`), reference image inputs (`reference_images`), and keyframe endpoints (`first_frame`, `last_frame`).
+- **Configuration Channel (`config` / UI Dropdowns):** Governs physical pixel matrix allocation (`16:9` / `9:16`), spatial resolution (`720p` / `1080p` / `4k`), temporal clip bounds (`4s` / `6s` / `8s` / `10s`), reference image inputs (`reference_images`), and keyframe endpoints (`first_frame`, `last_frame`).
 - **Prompt Text Channel:** Must remain **100% pure cinematic direction** (Framing + Subject + Action + Setting + Style + Camera Kinematics + Audio). 
 
 Appending technical specs inside the text string dilutes the token attention budget, wastes words, and risks the model attempting to render on-screen text or artificial letterboxing.

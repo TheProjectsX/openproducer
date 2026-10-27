@@ -36,7 +36,7 @@ All technical specifications, API invocation patterns, prompt formulas, cinemato
 
 | Parameter / Capability | Documented Value | Source Citations | Verification Status | Operational Notes |
 |---|---|---|---|---|
-| **Supported Durations** | 4s, 6s, 8s | `src1_gemini_api_veo.md`<br>`src5_meta_framework.md` | ✅ **VERIFIED** | 8s maximum duration per generation block. 4s and 6s recommended for fast kinetic actions to prevent temporal averaging. |
+| **Supported Durations** | 4s, 6s, 8s, 10s | `src1_gemini_api_veo.md`<br>`src5_meta_framework.md` | ✅ **VERIFIED** | Up to 10s native duration per generation block. 4s and 6s recommended for fast kinetic actions to prevent temporal averaging; 8s/10s for extended dialogue and atmospheric takes. |
 | **Supported Resolutions** | 720p, 1080p | `src1_gemini_api_veo.md`<br>`src5_meta_framework.md` | ✅ **VERIFIED** | 720p for rapid composition drafting; 1080p for production masters. |
 | **Supported Aspect Ratios** | 16:9, 9:16 | `src1_gemini_api_veo.md`<br>`src5_meta_framework.md` | ✅ **VERIFIED** | 16:9 for landscape/cinema; 9:16 for vertical mobile format. |
 | **Frame Rate** | 24 fps | `src5_meta_framework.md`<br>`src8_gcloud_blog_veo31.md` | ✅ **VERIFIED** | Hardcoded cinematic baseline. Prompts requesting 60fps are ignored or cause jitter. |
@@ -52,7 +52,7 @@ All technical specifications, API invocation patterns, prompt formulas, cinemato
 - **Source 6 (Prompting Guide v4.0):** Recommends appending parenthetical spatial notes: `(thats where the camera is)` to anchor perspective.
 - **Source 5 (Meta Framework v3.0, Jan 2026):** Explicitly marks this syntax as a **BREAKING DEPRECATION**:  
   *"The '(thats where the camera is)' camera positioning syntax is deprecated; use standard cinematography terms instead."*
-- **Cross-Source Consensus:** Google Cloud Enterprise Guide (`src3`) and Google DeepMind (`src4`) emphasize formal cinematographic terminology (`Medium close-up`, `Eye-level locked tripod`, `Low-angle tracking shot`).
+- **Cross-Source Consensus:** Google Cloud Enterprise Guide (`src3`) and Google DeepMind (`src4`) emphasize formal cinematographic terminology (`Medium close-up`, `Locked-off eye-level static framing`, `Low-angle tracking shot`).
 - **Resolution:** **DEPRECATED.** Synthesis files strictly mandate standard industry cinematography vocabulary and forbid parenthetical hints.
 
 ---
@@ -72,7 +72,7 @@ All technical specifications, API invocation patterns, prompt formulas, cinemato
   `Subject + Context + Action + Style + Camera + Composition + Ambiance + Audio`
 - **Algorithmic Analysis:** Both structures agree on the fundamental physical reality of diffusion models: **tokens appearing at the start of the prompt carry the highest attention weight**.
 - **Resolution:** **HYBRID FRONT-LOADED PRODUCTION STANDARD.**  
-  `[Shot Framing] + [Subject & Biomechanics] + [Environment & Lighting] + [Camera Movement] + [Dialogue] + Audio: [Ambience, Foley, No Music]`  
+  `[Shot Framing & Primary Subject] + [Biomechanical Action & 3-Plane Lighting] + [Master Style Anchor & Single Camera Verb] + [Dialogue] + Audio: SFX: [Primary Foley]; Ambience: [Ambient Room Tone]; Dialogue: [Attribution or None]; Music: [Directive or None].`  
   This hybrid places framing and subject immediately into the high-weight zone (Tokens 1–30), relegating acoustic design and constraints to the trailing buffer where they belong.
 
 ---
@@ -95,7 +95,7 @@ All technical specifications, API invocation patterns, prompt formulas, cinemato
 | **Pure White Background Glitch** | High-frequency luminance clipping in diffusion latent space creating diagonal black scanlines. | Prompt for *"soft cream gradient studio cove"* or *"neutral off-white cyclorama"* instead of pure white. | ✅ **VERIFIED** |
 | **The CAPS LOCK Dialogue Trap** | Speech tokenizer reads uppercase text as acronyms (e.g. "STOP" pronounced "S-T-O-P"). | Strict sentence case on all dialogue strings; use emotional modifiers for volume/yelling. | ✅ **VERIFIED** |
 | **Audio-Safety False Positives** | Sensitive heuristic filters aborting API jobs on dramatic vocabulary ("screaming", "police sirens"). | Soften audio vocabulary to indirect observational descriptions ("emergency vehicle flashers", "authoritative voice"). | ✅ **VERIFIED** |
-| **2D Line Flicker (Veo 3.1)** | Photoreal physics engine attempting raytracing on flat lines. | Enforce explicit flat cel-shading constraints: *"flat unshaded color fills, locked 24fps 2D anime, zero 3D shading"*. | ✅ **VERIFIED** |
+| **2D Line Flicker (Veo 3.1)** | Photoreal physics engine attempting raytracing on flat lines. | Enforce explicit flat cel-shading constraints: *"flat unshaded color fills, stepped animation timing on twos, 2D cel anime, zero 3D shading"*. | ✅ **VERIFIED** |
 | **Compounding Camera Warping** | Multiple competing camera moves (e.g., pan + zoom + dolly) tearing 3D geometry. | Strict enforcement of Single Camera Verb Rule. | ✅ **VERIFIED** |
 | **Unwanted Orchestral Swell** | Model defaulting to dramatic musical background score. | Explicitly append `no background music, clean diegetic audio only` in `Audio:` block. | ✅ **VERIFIED** |
 
@@ -106,4 +106,4 @@ All technical specifications, API invocation patterns, prompt formulas, cinemato
 The synthesis knowledge base is **fully certified for autonomous agent consumption**:
 1. **Machine Readability:** High-density, unambiguous terminology, deterministic formulas, JSON schemas, and Python compiler implementations.
 2. **End-to-End Pipeline:** Directly bridges human user communication (premise/logline) $\rightarrow$ Beat Sheet $\rightarrow$ Storyboard Panels $\rightarrow$ Cinematic Shot List $\rightarrow$ Compiled Veo 3.1 Generation Prompts.
-3. **Safety & Linting:** 6-point pre-flight linter (`L-01` to `L-06`) ready to be embedded as automated validation hooks in the future Antigravity skill.
+3. **Safety & Linting:** Comprehensive 18-point pre-flight linter (`L-01` to `L-18`) codified to be embedded as automated validation hooks across the production pipeline.

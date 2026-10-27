@@ -1,0 +1,120 @@
+# MASTER VIDEOS PROMPT: THE 3:14 AM DOPPELGÄNGER
+# Project: The 3:14 AM Doppelgänger
+# Target Engine: Google Flow (Veo 3.1 & Imagen 4)
+# Audio Master: audio.srt (Exact Recorded Duration: 135.08 Seconds / 02:15.08 across 40 Cues)
+# Pacing Profile: Dynamic Sync (22 High-Retention Flow-Native Clips | Total Runtime: 136s)
+# Visual Paradigm: Pluggable Style `vector_stick_figure` (Minimalist 2D Vector Graphic Noir)
+# Visual DNA: Warm cream textured paper canvas (#F8F6F0) emerging under motivated upward phone spotlight cones falling off into deep pitch-black void shadow (#0A0B0E). Night-vision security feeds rendered in stark monochromatic line plates with subtle vector scanlines.
+# Subject DNA Standard: Pure unbroken black vector strokes terminating in smooth rounded line-caps (stroke-linecap: round), strictly zero fingers, zero human hands, zero knuckles. Head is a geometric circle filled with solid opaque white (#FFFFFF) with a clean black contour (#0F172A). Posture conveys acute physiological dread (hunched shoulders, rigid tremors).
+# Permitted Props: [minimalist platform bed frame, cotton blanket, modern rectangular smartphone, minimalist nightstand, wooden bedroom door with brass latch, hallway security camera unit, apartment front door with deadbolt].
+# Negative Constraints: photorealistic, 3D render, CGI, human fingers, realistic hands, detailed face, colorful room, clutter, blurry edges.
+
+---
+
+[SCENE 01 - CLIP 01 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: ESTABLISHING MACRO | AUDIO CUE: 00:00.00 – 00:06.00 (CUES 1–3)]
+Starting directly from the initial image, locked-off static macro framing on the unlit smartphone on the nightstand. For the first two seconds, the room remains in absolute pitch darkness. Exactly at the third second, the rectangular smartphone screen abruptly flares alive with an intense, stark white-cyan OLED spotlight glow, cutting sharply through the dark void and projecting a clean geometric light cone onto the cream wall behind it. The phone does not vibrate or ring. Minimalist 2D vector graphic art, high contrast noir aesthetic. Audio: SFX: abrupt subtle electrical screen wake chime; Ambience: dead quiet room tone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 02 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION | AUDIO CUE: 00:06.00 – 00:14.00 (CUES 3–4)]
+Starting directly from the initial image, eye-level slow tracking camera advancing forward toward the bed. Permitted Props: [minimalist platform bed frame, cotton blanket, smartphone, nightstand]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, raises their solid white circular head (#FFFFFF) from the pillow and extends a single rounded black limb out from beneath the blanket edge toward the glowing phone on the nightstand, lifting the phone toward their chest. Minimalist 2D vector graphic art. Audio: SFX: soft organic fabric rustle of bedsheets moving; Ambience: faint distant air hum, high-frequency digital screen drone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 03 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: DEDICATED MACRO UI INSERT | AUDIO CUE: 00:14.00 – 00:20.00 (CUES 5–7)]
+Starting directly from the initial image, top-down locked-off static macro framing on the glowing smartphone screen. The notification card with clean black typography "MOTION DETECTED IN HALLWAY" pulses with subtle, slow brightness expansion for the first three seconds. At the fourth second, a subtle yellow warning dot beside the text blinks twice in rapid cadence. The rounded black vector line tips holding the edges remain completely still. Crisp 2D vector animation, high contrast graphic noir. Audio: SFX: subtle digital notification pulse ping; Ambience: deep quiet late-night room tone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 04 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MOTIVATED FEAR REACTION | AUDIO CUE: 00:20.00 – 00:26.00 (CUES 7–8)]
+Starting directly from the initial image, low-angle slow creeping push-in camera advancing gradually toward the seated figure. Permitted Props: [minimalist platform bed frame, cotton blanket, smartphone]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, sits up slowly to a vertical posture in bed, locking their shoulders in rigid tension. The upward spotlight from the glowing phone illuminates the front of their stick torso, while their white circular head (#FFFFFF) slowly turns to face screen-right toward the door. Minimalist 2D vector graphic art. Audio: SFX: subtle fabric rustle, sudden tense sharp intake of breath; Ambience: suffocating quiet, low sub-bass atmospheric drone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 05 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: SPATIAL EYELINE MATCH | AUDIO CUE: 00:26.00 – 00:32.00 (CUES 8–9)]
+Starting directly from the initial image, eye-level locked-off static POV framing looking directly at the closed wooden bedroom door. The camera inherits the Spatial Entry State from Clip 04, framing the door facing screen-right. For the entire six seconds, the door and brass latch remain completely motionless in the dead silence, while a subtle faint ambient draft causes an imperceptible flicker in the ambient room shadow. Crisp 2D vector graphic noir. Audio: SFX: slow sub-bass heartbeat pulse; Ambience: suffocating dead silence, faint distant hum of building pipes; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 06 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MOTIVATED ACTION SINGLE | AUDIO CUE: 00:32.00 – 00:38.00 (CUES 10–12)]
+Starting directly from the initial image, eye-level locked-off medium close-up profile shot with zero camera drift. Permitted Props: [smartphone, bed frame, cotton blanket]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, depresses their right rounded limb tip down onto the glowing notification banner with a single firm tap at the second second. The white circular head (#FFFFFF) remains rigidly motionless with shoulders locked in tense dread. Clean 2D graphic noir art. Audio: SFX: subtle digital glass tap pop, low electronic UI click chime, steady breathing sound; Ambience: quiet bedroom silence; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 07 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTEXT SHIFT APP TRANSITION | AUDIO CUE: 00:38.00 – 00:44.00 (CUES 12–13)]
+Starting directly from the initial image, top-down locked-off static macro framing on the phone screen. The circular vector buffering ring rotates clockwise in smooth continuous geometric animation for the first four seconds. At the fifth second, the buffering ring snaps away and the black camera feed rectangle resolves into a clean gray night-vision video frame. Crisp 2D vector graphic art. Audio: SFX: low digital connection static pulse, subtle electronic beep chime on frame resolution; Ambience: high-frequency loading drone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 08 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: SPATIAL BOUNDARY SHIFT (HALLWAY FEED) | AUDIO CUE: 00:44.00 – 00:50.00 (CUES 13–16)]
+Starting directly from the initial image, locked-off static high-angle security camera perspective looking down the empty apartment corridor. For the entire six seconds, the corridor remains dead still: the closed bedroom door at the far end does not move, the floorboards remain undisturbed, and the subtle gray night-vision vector scanlines drift imperceptibly across the frame. In the corner, the digital timestamp advances cleanly second-by-second. Pristine 2D vector graphic art. Audio: SFX: quiet electrical line static; Ambience: low mechanical security camera hum, dead apartment corridor silence; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 09 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS SHOT EXTENSION | AUDIO CUE: 00:50.00 – 00:56.00 (CUES 16–18)]
+Starting directly from the initial image, eye-level slow creeping push-in camera advancing gradually toward the seated figure. Permitted Props: [platform bed frame, cotton blanket, smartphone]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, lets out a slow, visible exhalation: their shoulders drop downward by one inch in premature relief, and their rounded limbs begin to lower the glowing smartphone down toward the blanket. Clean 2D graphic noir art. Audio: SFX: audible soft sigh exhalation of relief, rustling fabric of blanket; Ambience: steady quiet room tone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 10 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MOTIVATED MACRO INSERT | AUDIO CUE: 00:56.00 – 01:02.00 (CUES 18–19)]
+Starting directly from the initial image, locked-off static macro framing on the video progress bar and timestamp text. The horizontal red scrubber line advances steadily from left to right across the screen. In the third second, the text "SAVED RECORDING — 03:12:00 AM (2 MIN AGO)" flashes once with stark inverted black-and-white contrast, emphasizing the chilling discovery. The phone bezel remains completely rigid and still. Crisp 2D vector animation. Audio: SFX: high-frequency digital glitch beep, low distorted bass swell; Ambience: complete late-night silence; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 11 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: SHOCK REACTION CUT | AUDIO CUE: 01:02.00 – 01:08.00 (CUES 20–21)]
+Starting directly from the initial image, eye-level fast subtle punch-in camera focusing on the seated figure's frozen posture. Permitted Props: [platform bed frame, cotton blanket, smartphone]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, snaps completely motionless in acute physiological shock: their shoulders lock rigid, and their rounded arms holding the glowing phone shudder with subtle high-tension micro-vibrations from Frame 1 to Frame End. Minimalist 2D vector graphic noir. Audio: SFX: sharp choked gasp of air caught in throat, intense sub-bass heartbeat pulse; Ambience: dead apartment silence; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 12 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTEXT SHIFT RECORDING PLAYBACK | AUDIO CUE: 01:08.00 – 01:14.00 (CUES 22–23)]
+Starting directly from the initial image, locked-off static high-angle security camera perspective looking down the corridor. At the second second of the recorded clip, the bedroom door latch clicks downward, and the wooden bedroom door swings open slowly into the dark corridor, revealing a sliver of darkness inside the bedroom frame. Subtle gray night-vision vector scanlines drift across the frame. Crisp 2D vector animation. Audio: SFX: mechanical metallic door latch click, slow eerie wooden door creak; Ambience: dead corridor silence, low ominous atmospheric drone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 13 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION | AUDIO CUE: 01:14.00 – 01:22.00 (CUES 23–25)]
+Starting directly from the initial image, locked-off static high-angle security camera perspective looking down the corridor. The doppelgänger, an identical minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, steps fully through the bedroom doorway and walks forward in a smooth, steady, unhurried walk cycle along the center hallway floorboards toward the foreground camera. His circular head is filled with solid opaque white (#FFFFFF) with a black contour (#0F172A), facing straight ahead. Immaculate 2D vector line weights. Audio: SFX: slow rhythmic footsteps padding across wooden floorboards; Ambience: electrical room drone, rising discordant ambient tension drone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 14 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: MOTIVATED CUT | AUDIO CUE: 01:22.00 – 01:28.00 (CUES 25–28)]
+Starting directly from the initial image, eye-level locked-off medium shot with zero camera drift. Permitted Props: [apartment front door, deadbolt lock]. The doppelgänger, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, touches the circular deadbolt knob with rounded limb tip at the second second, turning the lock mechanism ninety degrees. A heavy metallic deadbolt slide mechanism is heard retracting. Clean 2D vector graphic art. Audio: SFX: heavy mechanical metallic deadbolt click and slide, subtle brass latch release; Ambience: dead silent room tone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 15 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION | AUDIO CUE: 01:28.00 – 01:34.00 (CUES 28–29)]
+Starting directly from the initial image, eye-level locked-off static view of the apartment entrance. The doppelgänger figure pulls the front door smoothly closed from the outside: the door panel swings shut into the frame, the deadbolt latch clicks firmly into place with a hollow thud at the third second, and the figure disappears completely into the exterior darkness. The corridor returns to total motionless gray silence for the remaining three seconds. Crisp 2D vector graphic art. Audio: SFX: sudden cold gust of exterior wind, heavy front door shutting and latching securely; Ambience: utter silence; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 16 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: INTENSE PSYCHOLOGICAL REACTION | AUDIO CUE: 01:34.00 – 01:40.00 (CUES 29–31)]
+Starting directly from the initial image, eye-level locked-off tight MCU profile framing with zero camera drift. Permitted Props: [platform bed frame, cotton blanket, smartphone]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, remains paralyzed in suspended horror: their chest line heaves up and down with rapid, shallow panic breathing, while their rounded arms holding the glowing phone shudder with visible terror tremors from Frame 1 to Frame End. Circular head is held frozen with zero facial movement. Clean 2D graphic noir art. Audio: SFX: rapid shallow ragged breathing sounds, loud muffled heartbeat pulsing heavily; Ambience: rising atmospheric tension drone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 17 | DURATION: 4s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: TYPE C KINETIC GRAPHIC TEXT PLATE | AUDIO CUE: 01:40.00 – 01:44.00 (CUES 31–32)]
+Starting directly from the initial image, locked-off static graphic plate framing. The bold black vector typography "WHO IS SITTING IN THIS BED RIGHT NOW?" remains centered on the cream paper canvas. In the second second, the entire text flashes once with sharp inverted monochromatic expansion, then returns to stark black text as a sudden sub-bass sonic drop shudders through the frame. The horizontal lifeline line below remains flat and still. Pristine 2D graphic art. Audio: SFX: visceral concussive sub-bass drop impact; Ambience: sudden dead stop into suffocating silence; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 18 | DURATION: 4s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: SHARP MACRO HAPTIC SHOCK | AUDIO CUE: 01:44.00 – 01:48.00 (CUES 33–34)]
+Starting directly from the initial image, top-down locked-off static macro framing on the smartphone screen. At the first second, the phone vibrates violently with two sharp physical lateral shudder pulses, accompanied by the bright green "LIVE CAMERA ACTIVE" banner sliding into view. At the third second, the phone screen cuts sharply to an active live camera angle. Minimalist 2D vector animation. Audio: SFX: two sharp visceral haptic vibration buzzes, urgent double electronic ping chime; Ambience: quiet room tone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 19 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTEXT SHIFT LIVE FEED | AUDIO CUE: 01:48.00 – 01:54.00 (CUES 34–36)]
+Starting directly from the initial image, locked-off static high-angle security camera perspective looking at the apartment front door. The red "LIVE" indicator dot in the upper corner blinks rhythmically once per second. For the first four seconds, the front door remains locked and stationary in dead quiet. At the fifth second, the brass circular door handle begins to slowly rotate downward. Clean 2D graphic art. Audio: SFX: sudden subtle metallic latch jiggle; Ambience: low ominous electrical hum, rising high-pitch tension drone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 20 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION | AUDIO CUE: 01:54.00 – 02:00.00 (CUES 36–37)]
+Starting directly from the initial image, locked-off static high-angle live camera perspective looking at the front door. The heavy front door slowly swings wide open into the hallway on its hinges, pushed from the outside pitch-black void. As the door opens fully, a faint waft of cold air draft causes the door to shudder slightly. Nobody is visible in the opening, but the red LIVE dot blinks continuously in the corner. Immaculate 2D vector graphic noir. Audio: SFX: deep wooden door creak, sudden whoosh of icy cold exterior air, two wet heavy footsteps padding onto entryway wood; Ambience: dead corridor quiet; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 21 | DURATION: 6s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: SPATIAL CONTINUITY RESET | AUDIO CUE: 02:00.00 – 02:06.00 (CUES 37–39)]
+Starting directly from the initial image, eye-level locked-off static wide bedroom shot with zero camera drift. Permitted Props: [platform bed frame, cotton blanket, smartphone, wooden bedroom door]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, remains frozen in bed, clutching the glowing smartphone with both arms from Frame 1 to Frame End: their white circular head stares screen-right at the closed bedroom door in rigid terror, shoulders hunched, with closed lips and zero facial motion. Across the room, the closed wooden door stands motionless in deep shadow. Pristine 2D vector graphic noir. Audio: SFX: faint cold draft whistling softly beneath doorframe; Ambience: dead quiet room tone; Dialogue: None; Music: None.
+
+---
+
+[SCENE 01 - CLIP 22 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: L-CUT CLIMACTIC DISSOLVE TO BLACK | AUDIO CUE: 02:06.00 – 02:16.00 (CUES 39–40)]
+Starting directly from the initial image, low-angle slow creeping push-in moving forward toward the bottom seam of the closed bedroom door. Permitted Props: [wooden bedroom door with brass latch, minimalist floorboards]. In the stillness of the dark room, the wooden door panel shudders with subtle vibrations as heavy weight approaches from the opposite side. Suddenly, beneath the narrow lighted crack of the closed door, dark glistening wet footprint impressions seep onto the bedroom floorboards. The camera continues its slow forward glide into the darkness as the frame gradually dissolves into pure pitch-black void. Immaculate 2D vector graphic noir. Audio: SFX: wet heavy footsteps padding rhythmically on floorboards outside, heavy floorboard creak against door, ominous brass latch rattle; Ambience: corridor stillness echoing into silence; Dialogue: None; Music: None.

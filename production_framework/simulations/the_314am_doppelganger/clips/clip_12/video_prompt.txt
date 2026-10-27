@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTEXT SHIFT RECORDING PLAYBACK
+Input Seed / Dependencies: Generated from clips/clip_12/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off static high-angle security camera perspective looking down the corridor. At the second second of the recorded clip, the bedroom door latch clicks downward, and the wooden bedroom door swings open slowly into the dark corridor, revealing a sliver of darkness inside the bedroom frame. Subtle gray night-vision vector scanlines drift across the frame. Crisp 2D vector animation. Audio: SFX: mechanical metallic door latch click, slow eerie wooden door creak; Ambience: dead corridor silence, low ominous atmospheric drone; Dialogue: None; Music: None.

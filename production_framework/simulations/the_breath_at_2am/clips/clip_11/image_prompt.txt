@@ -1,0 +1,17 @@
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+intended_engine: Imagen 4 / Midjourney / VideoFX
+medium: Vector Stick Figure (minimalist_noir)
+clip_id: clip_11
+duration: 4s
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Stick Figure MCU Torso & Head)
+  [IMAGE 2]: Cold Living Room Void Stage
+  [IMAGE 3]: Frost Vector Vapor Element
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Tight medium close-up framing the upper torso and solid white circular head (#FFFFFF) of the stick figure. Pure unbroken black vector strokes terminate in rounded line-caps, with shoulders hunched rigid in sudden freezing shock. Delicate swirling white vector lines representing frosty breath vapor curl upward from the stick figure into the cool-blue television light cone. The pitch-black ceiling shadow (#0A0B0E) hangs immediately above the scalp. Minimalist graphic styling, uniform vector stroke weight, flat 2D graphic art, suffocating psychological dread.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

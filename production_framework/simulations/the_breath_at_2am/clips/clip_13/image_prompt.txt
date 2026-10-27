@@ -1,0 +1,17 @@
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+intended_engine: Imagen 4 / Midjourney / VideoFX
+medium: Vector Stick Figure (minimalist_noir)
+clip_id: clip_13
+duration: 8s
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Stick Figure Head Crown Profile)
+  [IMAGE 2]: Pitch-Black Shadow Void with Air Ripple Distortion
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Macro side-profile framing the crown of the stick figure's solid white circular head (#FFFFFF) in razor-sharp vector outline. Exactly two inches above the top of the scalp, within the deep pitch-black shadow void (#0A0B0E), the darkness subtly warps with faint, delicate vector ripple contours indicating an invisible breathing presence suspended in mid-air. Cool-blue television screen illumination grazes the brow line. Limbs remain strictly fingerless with zero fleshy details, clean uniform stroke weight throughout, flat 2D graphic art, chilling psychological horror climax.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

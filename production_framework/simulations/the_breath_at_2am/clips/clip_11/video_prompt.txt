@@ -1,0 +1,16 @@
+[CONFIGURATION SETTINGS]
+clip_id: clip_11
+duration_seconds: 4
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_11/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'the air around you turns ice cold.')
+Continuing directly from the initial frame, locked-off MCU framing holds on the stick figure. The stick figure's shoulders visibly stiffen and lock in sudden shock as delicate white vector frosty vapor swirls subtly upward from its posture into the cold blue television beam, shivering in the freezing air.
+Audio: SFX: Subtle brittle crackle of rapid frost crystallization; Ambience: Freezing atmospheric draught; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.

@@ -1,0 +1,260 @@
+# MASTER IMAGES PROMPT MANIFEST: The Breath at 2:00 AM
+# Target Engine: Imagen 4 / Midjourney / VideoFX (Still Keyframe Plates)
+# Style Medium: Vector Stick Figure (minimalist_noir)
+# Total Plates: 1 Master DNA Plate + 13 Clip Keyframe Plates
+
+================================================================================
+TIER 1: MASTER STYLE & SUBJECT DNA PLATE (Ingredient #1 Anchor)
+================================================================================
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+intended_engine: Imagen 4 / Midjourney / VideoFX
+medium: Vector Stick Figure (minimalist_noir)
+primary_subject: Lone Stick Figure (#FFFFFF head, #0F172A fingerless vector limbs)
+secondary_subject: 2D Vector Black Cat (Dilated black saucer pupils, perched on sofa back)
+environment: 2:00 AM Living Room Void (Cool-blue TV light cone, cream canvas #F8F6F0, pitch-black ceiling #0A0B0E)
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation on a warm cream paper canvas (#F8F6F0). In a pitch-black living room at 2:00 AM, a lone stick figure sits frozen on a minimalist linear sofa silhouette. The stick figure has pure unbroken solid black vector limbs terminating in rounded line-caps with strictly zero fingers or hands, and a solid white circular head (#FFFFFF) with a uniform black contour and zero facial features. Perched on the sofa back, a sleek 2D black vector cat silhouette sits bolt upright with tilted head, gazing straight up into the ceiling void with large dilated solid black circular pupils. A single motivated cool-blue volumetric light cone from a low television screen cuts through the darkness, casting stark graphic drop shadows while leaving the upper ceiling in total pitch-black (#0A0B0E) suspense. Crisp clean vector lines, uniform stroke weight, flat graphic aesthetic.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+================================================================================
+TIER 2: CLIP KEYFRAME PLATES (01 TO 13)
+================================================================================
+
+--------------------------------------------------------------------------------
+CLIP 01 KEYFRAME PLATE (Flow Duration: 6s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_01
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Lone Stick Figure #FFFFFF head, #0F172A limbs)
+  [IMAGE 2]: Living Room Empty Stage Plate (Linear sofa, #F8F6F0 canvas, TV blue cone)
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). In a pitch-black living room at 2:00 AM, a lone stick figure sits frozen on a minimalist linear sofa silhouette. The stick figure has pure unbroken solid black vector limbs terminating in rounded line-caps with strictly zero fingers or hands, and a solid white circular head (#FFFFFF) with a uniform black contour and zero facial features. A single motivated cool-blue volumetric light cone from a low television screen cuts through the darkness, casting stark graphic drop shadows across the floorboards while leaving the upper ceiling in total pitch-black (#0A0B0E) suspense. Clean unbroken line strokes, uniform stroke weight, flat graphic 2D aesthetic.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 02 KEYFRAME PLATE (Flow Duration: 6s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_02
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Lone Stick Figure #FFFFFF head, #0F172A limbs)
+  [IMAGE 2]: Living Room Low Angle Stage (Floorboards, TV Screen Outline)
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Low-angle perspective looking across the wooden floorboards toward a glowing rectangular television screen vector silhouette emitting a bright cool-blue volumetric light cone. The blue beam casts long sharp graphic shadows behind the edge of a minimalist sofa where a lone stick figure with a solid white circular head (#FFFFFF) and unbroken black vector limbs sits motionless in the dark room. Pitch-black shadows (#0A0B0E) shroud the surrounding walls and ceiling. Crisp unbroken vector lines terminating in rounded line-caps, uniform stroke weight, flat graphic novel styling.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 03 KEYFRAME PLATE (Flow Duration: 6s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_03
+ingredient_slot_allocation:
+  [IMAGE 1]: Digital Wall Clock Hero Prop ("02:00" in blue LCD)
+  [IMAGE 2]: Pitch-Black Apartment Shadow Wall
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Macro eye-level framing centered on a sleek minimalist digital wall clock mounted against a pitch-black shadow wall (#0A0B0E). The clock face displays the glowing cool-blue LCD digital numerals '02:00' formed from crisp geometric vector lines. The faint blue luminescent glow weakly illuminates the immediate wall texture and minimalist molding lines while the surrounding apartment room fades into an oppressive, suffocating dark void. Crisp sharp vector contours, clean graphic novel illustration, uniform stroke weight throughout, flat 2D graphic art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 04 KEYFRAME PLATE (Flow Duration: 6s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_04
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Lone Stick Figure #FFFFFF head, #0F172A limbs)
+  [IMAGE 2]: Living Room Sofa Back Stage
+  [IMAGE 3]: 2D Vector Black Cat Silhouette (Alert upright posture)
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Medium shot centered on the backrest of a linear sofa silhouette where a sleek 2D black vector domestic cat sits bolt upright in rigid alert posture. The cat has pointed ears pivoted backward, a curved tail, and smooth solid black vector contours. Below the sofa back, the solid white circular head (#FFFFFF) of the seated stick figure is visible in profile against the muted blue television light cone. Pitch-black shadows (#0A0B0E) engulf the upper room. Clean unbroken vector lines terminating in rounded line-caps, flat graphic aesthetic.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 05 KEYFRAME PLATE (Flow Duration: 4s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_05
+ingredient_slot_allocation:
+  [IMAGE 1]: 2D Vector Black Cat Silhouette (Stylized head)
+  [IMAGE 2]: Pitch-Black Shadow Void
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Extreme macro close-up centered on the stylized head of the black vector cat silhouette. The cat's large circular eyes are rendered in crisp graphic vector lines, with the solid black pupils dilated fully into massive dark circular saucers that occupy the entire iris, reflecting a faint pinpoint glint of cool-blue television light. The surrounding living room environment is shrouded in deep pitch-black shadows (#0A0B0E). Razor-sharp vector outlines, uniform stroke weight, flat graphic art, bleak psychological horror aesthetic.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 06 KEYFRAME PLATE (Flow Duration: 4s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_06
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Stick Figure Seated & Black Cat on Sofa)
+  [IMAGE 2]: Living Room Spatial Stage (Window left, Hallway right)
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Wide-angle interior perspective establishing spatial triangulation: a lone stick figure with a solid white circular head (#FFFFFF) seated on a linear sofa in foreground, a tall rectangular dark window outline to the left, and an open doorway leading to a pitch-black hallway to the right. Perched on the sofa, the black vector cat silhouette sits rigid with head tilted sharply upward toward the ceiling, completely ignoring the window, the hallway, and the human. Crisp uniform vector strokes (#0F172A), deep pitch-black shadow void (#0A0B0E), flat graphic illustration.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 07 KEYFRAME PLATE (Flow Duration: 6s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_07
+ingredient_slot_allocation:
+  [IMAGE 1]: 2D Vector Black Cat Silhouette (Tilted side-profile)
+  [IMAGE 2]: Living Room Sofa Back Stage
+  [IMAGE 3]: base_image_prompt.txt (Stick Figure Head Profile in Foreground)
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Medium close-up side-profile of the sleek black vector cat perched atop the linear sofa backrest. The cat's head is tilted backward at an acute sixty-degree angle, with whiskers tensed and alert pointed ears drawn back, tracking an invisible path across the dark ceiling plane overhead. The edge of the stick figure's solid white circular head (#FFFFFF) is visible in the lower foreground bathed in cool-blue television light. Upper frame dissolves into deep pitch-black shadows (#0A0B0E). Clean uniform vector strokes terminating in rounded line-caps, flat graphic novel art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 08 KEYFRAME PLATE (Flow Duration: 4s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_08
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Stick Figure from behind)
+  [IMAGE 2]: High-Angle Ceiling Void Stage
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Upward high-angle perspective positioned just behind the stick figure's shoulders, looking past the solid white circular head (#FFFFFF) toward the vast empty ceiling plane overhead. The ceiling is engulfed in an impenetrable pitch-black shadow void (#0A0B0E), faintly intersected by faint diagonal vector light rays and dust motes illuminated by the muted blue television glow below. Unbroken black vector lines terminating in rounded line-caps, strictly zero human hands or fingers, crisp graphic novel silhouette styling, suffocating psychological horror atmosphere.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 09 KEYFRAME PLATE (Flow Duration: 6s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_09
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Stick Figure Seated & Black Cat on Sofa)
+  [IMAGE 2]: Living Room Medium Stage
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Medium close-up framing the lone stick figure seated frozen on the linear sofa, seen in three-quarter profile. The stick figure has a solid white circular head (#FFFFFF) and unbroken black vector limbs (#0F172A) resting completely rigid on the cushions. Directly behind the stick figure's shoulder on the sofa backrest, the black vector cat's head is tilted vertically toward the ceiling, its ears twitching methodically. Stark cool-blue volumetric light cone from the television screen cuts horizontally, casting pitch-black graphic drop shadows (#0A0B0E). Flat graphic line art, uniform stroke weight.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 10 KEYFRAME PLATE (Flow Duration: 6s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_10
+ingredient_slot_allocation:
+  [IMAGE 1]: 2D Vector Black Cat Silhouette (Vertical upward lock)
+  [IMAGE 2]: Low-Angle Sofa Void Stage
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Low-angle perspective looking straight up past the top of the sofa backrest into the ceiling darkness. The sleek black vector cat silhouette is seen from below, its head locked at a ninety-degree vertical angle, gaze frozen unblinkingly at a single focal point directly overhead. Faint ambient cool-blue light grazes the cat's vector contours while the upper three-quarters of the frame consists of a pure, impenetrable pitch-black shadow void (#0A0B0E). Clean uniform black vector outlines, crisp graphic novel tension, flat 2D art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 11 KEYFRAME PLATE (Flow Duration: 4s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_11
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Stick Figure MCU Torso & Head)
+  [IMAGE 2]: Cold Living Room Void Stage
+  [IMAGE 3]: Frost Vector Vapor Element
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Tight medium close-up framing the upper torso and solid white circular head (#FFFFFF) of the stick figure. Pure unbroken black vector strokes terminate in rounded line-caps, with shoulders hunched rigid in sudden freezing shock. Delicate swirling white vector lines representing frosty breath vapor curl upward from the stick figure into the cool-blue television light cone. The pitch-black ceiling shadow (#0A0B0E) hangs immediately above the scalp. Minimalist graphic styling, uniform vector stroke weight, flat 2D graphic art, suffocating psychological dread.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 12 KEYFRAME PLATE (Flow Duration: 6s)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_12
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Stick Figure Crown Macro)
+  [IMAGE 2]: Pitch-Black Ceiling Shadow Void
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Extreme close-up framed tightly from behind on the top hemisphere of the stick figure's solid white circular head (#FFFFFF), contoured with a crisp uniform black vector outline (#0F172A). Just two inches above the curvature of the crown, the frame is dominated by an impenetrable, suffocating pitch-black shadow void (#0A0B0E). Muted cool-blue television light illuminates the lower edge of the head, casting a faint cold halo against the cream paper canvas. Pure graphic novel vector illustration, stark horror tension, flat 2D art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
+
+--------------------------------------------------------------------------------
+CLIP 13 KEYFRAME PLATE (Flow Duration: 8s - CLIMAX & CLIFFHANGER)
+--------------------------------------------------------------------------------
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+clip_id: clip_13
+ingredient_slot_allocation:
+  [IMAGE 1]: base_image_prompt.txt (Stick Figure Head Crown Profile)
+  [IMAGE 2]: Pitch-Black Shadow Void with Air Ripple Distortion
+  [IMAGE 3]: None
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation keyframe on a warm cream paper canvas (#F8F6F0). Macro side-profile framing the crown of the stick figure's solid white circular head (#FFFFFF) in razor-sharp vector outline. Exactly two inches above the top of the scalp, within the deep pitch-black shadow void (#0A0B0E), the darkness subtly warps with faint, delicate vector ripple contours indicating an invisible breathing presence suspended in mid-air. Cool-blue television screen illumination grazes the brow line. Limbs remain strictly fingerless with zero fleshy details, clean uniform stroke weight throughout, flat 2D graphic art, chilling psychological horror climax.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.

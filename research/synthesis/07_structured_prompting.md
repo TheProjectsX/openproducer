@@ -35,7 +35,7 @@ The **Veo-JSON Framework** provides a standardized schema for representing cinem
   ],
   "properties": {
     "shot_id": { "type": "string", "pattern": "^SH_[0-9]{2}$" },
-    "duration_seconds": { "type": "integer", "enum": [4, 6, 8] },
+    "duration_seconds": { "type": "integer", "enum": [4, 6, 8, 10] },
     "framing": { "type": "string" },
     "subject": {
       "type": "object",
@@ -115,14 +115,11 @@ An agent uses the following deterministic algorithmic pipeline to compile a `Veo
                │
                ▼
    [ 6. COMPILE AUDIO BLOCK ]
-   " Audio: {audio.ambience}, {audio.foley}" + (", no background music." if music_suppression else ".")
+   " Audio: SFX: {audio.foley}; Ambience: {audio.ambience}; Dialogue: None; Music: None."
                │
                ▼
-   [ 7. APPEND CONSTRAINTS ]
-   " 16:9, 1080p, 24fps, {duration_seconds}s."
-               │
-               ▼
-[ OUTPUT: Compliant Veo 3.1 Prompt String ]
+[ OUTPUT: Compliant Veo 3.1 Prompt String (Pure Creative Cinematography) ]
+(Note: Resolution, Aspect Ratio, and Duration are passed to API GenerateVideosConfig, NEVER appended to prompt text)
 ```
 
 ### Python Implementation of Compiler
@@ -138,46 +135,48 @@ def compile_veo_prompt(shot: dict) -> str:
     parts.append(f", set in {shot['environment']}. {shot['lighting']}.")
     
     # 4. Camera & Optics
-    cam_str = f" {shot['camera_movement']}."
-    if "optics" in shot:
+    style_str = f" {shot['optics']['style_anchor']}" if "optics" in shot and "style_anchor" in shot["optics"] else ""
+    cam_str = f"{style_str} {shot['camera_movement']}."
+    if "optics" in shot and ("lens" in shot["optics"] or "film_stock" in shot["optics"]):
         opt = shot["optics"]
         cam_str += f" {opt.get('lens', '')}, {opt.get('film_stock', '')}."
     parts.append(cam_str)
     
-    # 5. Dialogue
+    # 5. Dialogue (Biomechanical Lip Restraints L-15)
     dlg = shot["action"].get("dialogue")
     if dlg and dlg.get("spoken_line"):
         spk = dlg.get("speaker", "The character")
         verb = dlg.get("attribution_verb", "says")
-        mod = dlg.get("delivery_modifier", "measuredly")
+        mod = dlg.get("delivery_modifier", "in a calm, measured undertone")
         line = dlg.get("spoken_line", "")
         # Enforce sentence case on spoken dialogue
         line = line[0].upper() + line[1:] if line else ""
-        parts.append(f" {spk} {verb}, {mod}: \"{line}\".")
+        parts.append(f" With a relaxed jaw, minimal jaw displacement, and subtle lip articulation, {spk} {verb}, {mod}: \"{line}\"")
         
-    # 6. Audio
+    # 6. Audio (Canonical 4-Field Semicolon Syntax L-17)
     aud = shot["audio"]
-    music_clause = ", no background music." if aud.get("music_suppression", True) else "."
-    parts.append(f" Audio: {aud.get('ambience', '')}, {aud.get('foley', '')}{music_clause}")
+    music_str = "None" if aud.get("music_suppression", True) else aud.get("music", "None")
+    dlg_str = f'{dlg.get("speaker", "Character")} {dlg.get("attribution_verb", "says")}, {dlg.get("delivery_modifier", "measuredly")}: "{dlg.get("spoken_line")}"' if (dlg and dlg.get("spoken_line")) else "None"
+    parts.append(f" Audio: SFX: {aud.get('foley', 'None')}; Ambience: {aud.get('ambience', 'None')}; Dialogue: {dlg_str}; Music: {music_str}.")
     
-    # 7. Constraints
-    parts.append(f" 16:9, 1080p, 24fps, {shot['duration_seconds']}s.")
-    
+    # NOTE: Technical constraints (aspect_ratio, resolution, duration_seconds) are passed
+    # strictly in GenerateVideosConfig, NOT appended to prompt text (Decoupling Principle).
     compiled = "".join(parts).strip()
     return " ".join(compiled.split())  # Normalize whitespace
 ```
 
 ---
 
-## 4. Pre-Flight Quality Linter (Agent Verification Checklist)
+## 4. Pre-Flight Quality Linter (Master Registry L-01 to L-18)
 
-Before submitting any compiled prompt to the API or rendering tool, the orchestrating agent must run this automated 6-point lint check:
+Before submitting any compiled prompt to the API or rendering tool, the orchestrating agent validates prompts against the Master Unified Linter Registry (`L-01` to `L-18`) detailed in [`production_framework/specs/05_directors_cut_assembly_spec.md`](../../production_framework/specs/05_directors_cut_assembly_spec.md#8-master-pre-flight-linters-authoritative-registry-l-01-to-l-18). Key single-shot baseline checks include:
 
 | Check # | Lint Rule | Verification Test | Auto-Fix Protocol |
 |---|---|---|---|
-| **L-01** | **Front-Loading Verification** | Does the prompt open with shot type or subject within the first 15 words? | Prepend framing and subject; move setting/context downstream. |
-| **L-02** | **Word Economy Boundary** | Is the total word count between 80 and 160 words? | If < 80, expand lighting/foley; if > 160, prune redundant adverbs. |
-| **L-03** | **One Action Rule** | Are there compound conjunctions ("and then", "after that", "subsequently") in the action clause? | Split into multiple sequential shots. |
-| **L-04** | **Single Camera Verb** | Are there multiple conflicting camera verbs (e.g. "dolly and zoom and pan")? | Restrict to the single dominant motivated camera movement. |
-| **L-05** | **Dialogue Syntax & Casing** | Are there quotes? Is there a preceding colon? Are there ANY all-caps words in dialogue? | Enforce `says, [modifier]: "[Text]"`; convert ALL CAPS to sentence case. |
-| **L-06** | **Audio Suppression** | Does the `Audio:` block explicitly specify `no background music`? | Append `, no background music.` to audio block. |
+| **L-01** | **Word Economy** | Is the standalone T2V body strictly 100–150 words (or Tier 3 I2V body strictly 75–150 words)? | If below floor, expand 3-plane lighting/foley; if > 150, prune redundant adverbs. |
+| **L-02** | **Attention Front-Loading** | Do viewport framing and primary subject anchor appear within Tokens 1–30? | Prepend framing and subject; move setting/context downstream. |
+| **L-03** | **Equipment Noun Ban** | Are there zero physical camera hardware nouns (`tripod`, `dolly`, `crane`, `rig`, `gimbal`) in the positive prompt? | Replace hardware nouns with pure optical/kinematic trajectory verbs. |
+| **L-04** | **Config Decoupling** | Are there zero technical config specs (`16:9`, `9:16`, `1080p`, `4K`, `24fps`) in positive prompt text? | Strip config specs to the configuration header (`on twos`, `12fps` cadence whitelisted). |
+| **L-10** | **Single-Motion & Clock Ban** | Is the clip restricted to 1 primary biomechanical action, 1 camera vector, and zero `[00:00]` clock brackets? | Slice compound actions into sequential clips; replace clock brackets with causal flow. |
+| **L-15** | **Anti-Muppet Dialogue Restraint** | Does spoken dialogue use a preceding colon (`says, [modifier]: "..."`), sentence case, and $\ge 2$ jaw restraint tokens? | Inject `relaxed jaw, minimal jaw displacement, subtle lip articulation`; convert ALL CAPS to sentence case. |
+| **L-17** | **Structured 4-Field Audio** | Does the trailing audio block follow `Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`? | Reformat into semicolon-delimited 4-field syntax with `Music: None` over dialogue. |

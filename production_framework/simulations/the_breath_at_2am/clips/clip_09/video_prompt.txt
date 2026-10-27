@@ -1,0 +1,16 @@
+[CONFIGURATION SETTINGS]
+clip_id: clip_09
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+frame_rate: 24fps
+intended_engine: Google Flow (Veo 3.1)
+initial_frame: clips/clip_09/image_prompt.txt
+
+[VIDEO PROMPT]
+(REFERENCE ONLY: 'toward you, step by step, left then right.')
+Starting from the initial frame, stationary locked-off eye-level MCU holds focus on the stick figure and cat. The stick figure remains paralyzed in terror while the black cat's head perched on the sofa back micro-pivots methodically in synchronized increments: tilting left, then slowly right, tracking unseen footsteps pacing across the ceiling directly overhead.
+Audio: SFX: Microscopic ceiling joist stress groan overhead; Ambience: Heavy dead room silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+tripod, camera rig, dolly track, cranes, mechanical hardware, spoken voiceover, talking mouth, moving lips, mouth speech, subtitles, captions, text overlay, watermarks, 3D shadows, gradient shading, human skin, individual fingers, realistic eyes, blurry artifacts.

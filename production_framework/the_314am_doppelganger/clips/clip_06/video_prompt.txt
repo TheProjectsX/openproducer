@@ -1,9 +1,0 @@
-[CONFIGURATION SETTINGS]
-Duration: 6s
-Aspect Ratio: 16:9
-Resolution: 1080p
-Transition / Chop: MOTIVATED ACTION SINGLE
-Input Seed / Dependencies: Generated from clips/clip_06/image_prompt.txt
-
-[VIDEO PROMPT]
-Starting directly from the initial image, eye-level locked-off medium close-up profile shot with zero camera drift. Permitted Props: [smartphone, bed frame, cotton blanket]. The protagonist, a minimalist 2D vector stick figure whose limbs and torso are pure unbroken black vector strokes terminating in smooth rounded line-caps, with strictly zero individual fingers, zero human hands, and zero knuckles, depresses their right rounded limb tip down onto the glowing notification banner with a single firm tap at the second second. The white circular head (#FFFFFF) remains rigidly motionless with shoulders locked in tense dread. Clean 2D graphic noir art. Audio: subtle digital glass tap pop, low electronic UI click chime, steady breathing sound, zero dialogue.

@@ -64,7 +64,7 @@ Google Flow can generate any video: 15-second sneaker commercials, 9:16 vertical
              ┌─────────────────────────────────────────────────────────┐
              │               COMPILED VEO 3.1 SHOT UNIT                │
              │       + Decoupled API Config (16:9/9:16, 1080p, 8s)     │
-             │       + Ingredients #1 & #2 (Reference Turnarounds)     │
+             │       + Pre-Composited Tier 2 Keyframe (from Ingr. 1–3) │
              └─────────────────────────────────────────────────────────┘
 ```
 
@@ -72,7 +72,7 @@ Google Flow can generate any video: 15-second sneaker commercials, 9:16 vertical
 2. **Subject Consistency (`subjects/`):** Rigid identity and physical geometry locking. Whether the subject is an actor (Maya Lin) or a product (Chrono-X luxury watch), it uses the **2-Step Turntable Protocol on `#E5E5E5`** to produce a 4-view reference sheet (Ingredient #1) and a locked 25–40 word verbatim anchor.
 3. **Environmental Staging (`environments/`):** Defines spatial depth and motivated lighting. Supports Narrative Worlds (3-plane depth for parallax), Commercial Studio Sets (infinity cycloramas, submerged plinths), and Biomes.
 4. **Kinematics & Optics:** Dedicated perspective descriptors enforcing the **Single Camera Verb Rule** and strictly banning physical equipment nouns (`tripod`, `dolly`, `crane`).
-5. **Acoustic Soundscapes:** Native dual-stream audio synthesis specifying tactile ASMR foley, diegetic room tone, or delivery-tagged speech, concluding with `, no background music`.
+5. **Acoustic Soundscapes:** Native dual-stream audio synthesis formatted in the 4-field semicolon syntax (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`) per Linter `L-17`.
 
 ---
 
@@ -118,10 +118,10 @@ The framework automatically configures its depth based on the selected Project A
 
 | Archetype | Primary Subject | Environment / Set | Kinematics Focus | Audio Need | Structural Pacing |
 |---|---|---|---|---|---|
-| **1. Narrative Cinema & Anime** | Human / Stylized Character (`subjects/<char_id>/`) | Cinematic World (`environments/<loc_id>/`) | Storytelling coverage (push-in, over-the-shoulder, tracking) | Dialogue delivery + diegetic foley + room tone | 3-Act Beat Sheet (`structure/beat_sheet.json`) |
+| **1. Narrative Cinema & Anime** | Human / Stylized Character (`subjects/<char_id>/`) | Cinematic World (`environments/<loc_id>/`) | Storytelling coverage (push-in, clean singles with 15° eyelines, tracking) | Dialogue delivery + diegetic foley + room tone | 3-Act Beat Sheet (`structure/beat_sheet.json`) |
 | **2. Commercial & Product Spotlight** | Hero Product / Artifact (`subjects/<prod_id>/`) | Studio Cyclorama, Reflective Plinth, Water Pool | 360° orbital spin, macro slow-motion (120fps) | Tactile ASMR foley (clicks, pours, swooshes, bass drop) | Hook $\rightarrow$ Showcase $\rightarrow$ Call to Action |
 | **3. Social Media & UGC / Hooks** | Creator or Focal Object | Real-world aesthetic locations, vertical 9:16 | Fast whip-pans, dynamic handheld, scroll-stopping hooks | High-energy ambient buzz, tactile ASMR, voiceover | 3-second hook sequence + rapid cuts |
-| **4. Documentary & Nature** | Wildlife, Real Subject, Architecture | Natural biomes, aerial landscapes | Slow telephoto tracking, majestic drone reveals | Raw natural soundscapes (wind, wildlife, water) | Observational timeline beats |
+| **4. Documentary & Nature** | Wildlife, Real Subject, Architecture | Natural biomes, aerial landscapes | Slow telephoto tracking, majestic high-altitude bird's-eye sweeping reveals | Raw natural soundscapes (wind, wildlife, water) | Observational timeline beats |
 | **5. Music Video & Abstract** | Abstract geometry, performers, surreal objects | Liquid voids, neon dreamscapes, Brutalist spaces | Continuous flow, stepped motion, rhythmic zooms | Beat-synchronized motion, stylized silence | Rhythmic track timeline |
 
 ---
@@ -151,30 +151,38 @@ The framework automatically configures its depth based on the selected Project A
 │
 ├── environments/                     # Department: World Locations OR Commercial Studio Stages
 │   └── <environment_id>/             # e.g., ruined_street/ or dark_water_plinth/
-│       ├── description.md            # Spatial geometry (3-plane depth OR studio stage setup)
+│       ├── summary.md                # Human-readable world description, geography, or studio notes
+│       ├── spatial_layers.md         # Prescriptive Foreground, Midground, and Background planes
 │       ├── lighting_rig.md           # Motivated light sources, temperature, practical fixtures
-│       ├── reference_prompt.txt      # Prompt for environment reference concept board
-│       ├── acoustic_profile.md       # Room tone, reverb, natural environmental soundscape
+│       ├── acoustics.md              # Diegetic room tone, reverberation profile, ambient soundscape
+│       ├── master_anchor.txt         # LOCKED 25–40 word environmental anchor string
+│       ├── reference_prompt.txt      # Prompt for empty stage reference plate
 │       └── references/
-│           └── concept_board.png     # Approved environment reference (Ingredient #2 in Flow)
+│           └── empty_stage.png       # Approved empty stage reference (Ingredient #2 in Flow)
 │
 ├── structure/                        # Department: Sequencing & Pacing (Scale-Adaptive)
 │   ├── sequence_manifest.json        # Shot sequencing (Commercial 3-part or Cinema Beat Sheet)
 │   └── dialogue_bible.json           # Spoken lines with delivery tags (Omitted if non-speaking)
 │
-├── shots/                            # Department: Executable Generation Units
-│   ├── shot_list.json                # Master sequence of all shots (durations, cuts)
-│   └── <shot_id>/                    # Isolated shot package (e.g. SH_01/)
-│       ├── shot_config.json          # Decoupled API config (aspect_ratio, duration, resolution)
-│       ├── compiled_prompt.txt       # Production-ready 100–150 word Veo 3.1 prompt
-│       ├── keyframes/                # First frame / last frame continuity assets
-│       └── lint_report.json          # Automated L-01 to L-06 quality verification report
+├── shots/                            # Department: Director's Cut & Executable Clip Units
+│   ├── base_image_prompt.txt         # [Tier 1] Master Style & Subject DNA Reference Anchor Plate
+│   ├── scratchbook.md                # Director's Pacing Ledger (Beats, Words, Actions, Timing)
+│   ├── master_images_prompt.txt      # Master manifest for ALL IMAGE generation (Tier 1 & Tier 2 plates)
+│   ├── master_videos_prompt.txt      # Master manifest for ALL VIDEO generation (Tier 3 Veo prompts)
+│   ├── narrator_script.md            # (Conditional) TTS script with word-to-time pacing
+│   ├── dialogue_scripts.md           # (Conditional) Character cue sheet manifest
+│   ├── origin_manifest.md            # Ledger mapping assets to engine origins & L-01..L-18 audit
+│   ├── lint_report.json              # Automated L-01 to L-18 pre-flight verification report
+│   └── clips/                        # Isolated clip packages (e.g. clip_01/, clip_02/)
+│       └── <clip_id>/
+│           ├── image_prompt.txt      # [Tier 2] Starting Keyframe Plate (Conditioned on Tier 1)
+│           └── video_prompt.txt      # [Tier 3] Image-to-Video Motion & Audio Prompt (75–150w)
 │
-└── pipeline/                         # Department: Tooling & Automation
-    ├── compile_shot.py               # Deterministic JSON -> Front-loaded prompt compiler
-    ├── lint_shot.py                  # Automated 6-point pre-flight quality validator
-    ├── chain_continuity.py           # Validates keyframe chaining across sequential shots
-    └── export_flow_manifest.py       # Generates scene assembly manifest for Google Flow
+└── pipeline/                         # Department: Node.js CLI Tooling (`npx @theprojectsx/video-skill`)
+    ├── compile.js                    # Deterministic JSON/Markdown -> Front-loaded prompt compiler
+    ├── lint.js                       # Automated 18-point (L-01 to L-18) pre-flight quality validator
+    ├── chain.js                      # Validates keyframe & last_frame continuity chaining across clips
+    └── export.js                     # Generates Google Flow Scene Builder & NLE timeline manifests
 ```
 
 ---
@@ -209,12 +217,11 @@ To guarantee complete session independence and rapid production recycling across
 
 ---
 
-## 7. Automated Pre-Flight Linting Rules (`lint_shot.py`)
+## 7. Master Pre-Flight Linters (Authoritative Registry L-01 to L-18)
 
-Before any prompt is submitted to Google Flow, the pipeline validates it against 6 hard rules:
-- **`L-01` (Word Economy):** Total prompt length must be strictly between 100 and 150 words.
-- **`L-02` (Attention Front-Loading):** Primary subject anchor and camera framing must appear within the first 30 tokens.
-- **`L-03` (No Equipment Nouns):** Zero physical camera hardware nouns (`tripod`, `dolly`, `crane`, `rig`). Only kinematic and perspective adjectives allowed.
-- **`L-04` (Decoupled Configuration):** Zero technical video parameters (`16:9`, `1080p`, `24fps`, `8s`) inside prompt text.
-- **`L-05` (Invariant Subject Verification):** Verbatim anchor string from `subjects/<id>/verbatim_anchor.txt` must appear character-for-character without deviation.
-- **`L-06` (Audio Purity):** Audio block must begin with `Audio:` and conclude with `, no background music`.
+Before any prompt is submitted to Google Flow, the pipeline validates it against the authoritative 18-rule registry defined in [`specs/05_directors_cut_assembly_spec.md`](specs/05_directors_cut_assembly_spec.md#8-master-pre-flight-linters-authoritative-registry-l-01-to-l-18):
+- **Universal Prompt Purity:** `L-01` (Word Economy: 100–150w T2V, 75–150w Tier 3 I2V), `L-02` (Attention Front-Loading: Tokens 1–30), `L-03` (Equipment Noun Ban in positive prompt), `L-04` (Decoupled Configuration; stepped cadence whitelisted), `L-05` (Anti-Subtitle & Non-Render Guardrail).
+- **Subject, Prop & Environment Integrity:** `L-06` (Subject DNA Verbatim vs. Lean Reference Anchor), `L-07` (Pre-Materialized Prop Guard), `L-08` (Empty Stage & 3-Plane Environment).
+- **Temporal Slicing & Kinematics:** `L-09` (Flow Native Duration Lock: `{4s, 6s, 8s, 10s}`), `L-10` (Single-Motion De-Cramming & Clock Bracket Ban), `L-11` (Continuity Chaining Syntax), `L-12` (30° Contrast & Anti-Jump-Cut), `L-13` (180° Screen Direction & Clean Singles; OTS Ban).
+- **Audio, Dialogue & Scripting:** `L-14` (Dual-Track Speech Word Budget & $\ge 1.0\text{s}$ Buffer), `L-15` (Anti-Muppet Biomechanical Restraints & Sentence Case), `L-16` (Closed-Lip Listener Rule), `L-17` (Structured 4-Field Audio Syntax), `L-18` (Gemini TTS Tag Formatting & Non-Imposition Law).
+

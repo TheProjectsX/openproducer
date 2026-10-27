@@ -26,17 +26,17 @@ When the creator requests a specific historical era, chemical emulsion, or analo
 * **Dialect Negatives:** `smooth digital steadicam, gimbal stabilization, 60fps, sharp 4K edges, modern digital noise, clean video.`
 
 ### C. `vhs_camcorder_tape` (1980s–1990s Analog Magnetic Videotape)
-* **Dialect Descriptor:** `1980s VHS home video recording, authentic magnetic tape tracking distortion lines across bottom edge, analog RGB color bleeding, low-light interlaced video noise, subtle CRT television phosphor glow, green glowing digital on-screen timestamp in bottom corner [OCT 24 1987], nostalgic 4:3 CRT format, genuine analog videotape texture.`
+* **Dialect Descriptor:** `1980s VHS home video recording, authentic magnetic tape tracking distortion lines across bottom edge, analog RGB color bleeding, low-light interlaced video noise, subtle CRT television phosphor glow, analog phosphorescent CRT display artifacts, genuine analog magnetic videotape texture.`
 * **Kinematics:** Optical zoom-in and zoom-out lens stepping, naturalistic shoulder-mounted handheld movement, magnetic tape ghosting trails behind rapid action.
 * **Dialect Negatives:** `celluloid film grain, film scratches, sepia, black and white, modern 16:9 widescreen, 4K resolution, cinematic color grade.`
 
 ### D. `technicolor_3strip` (1950s Golden Age Hollywood Melodrama)
 * **Dialect Descriptor:** `1950s Technicolor 3-strip dye transfer cinematography, hyper-saturated vivid primary colors, striking cyan and ruby red hues, theatrical high-key Hollywood studio lighting, flawless porcelain makeup, deep rich black shadows, classic Hollywood melodrama aesthetic, pristine archival film print.`
-* **Kinematics:** Slow deliberate crane-like camera glide, majestic panning, stately theatrical character blocking.
+* **Kinematics:** Slow deliberate elevated sweeping camera glide, majestic panning, stately theatrical character blocking.
 * **Dialect Negatives:** `desaturated gritty bleach bypass, handheld camera shake, digital video, modern muted grading, contemporary clothing.`
 
 ### E. `silent_orthochromatic_1920s` (Early Silent Orthochromatic Film)
-* **Dialect Descriptor:** `1920s early silent film aesthetic, orthochromatic black-and-white silver nitrate film stock, hand-cranked camera with 16fps variable frame rate, prominent projector gate flicker, vertical celluloid scratches and dust motes, deep black circular vignette, dramatic German Expressionist chiaroscuro lighting.`
+* **Dialect Descriptor:** `1920s early silent film aesthetic, orthochromatic black-and-white silver nitrate film stock, staccato 16fps variable frame cadence, prominent projector gate flicker, vertical celluloid scratches and dust motes, deep black circular vignette, dramatic German Expressionist chiaroscuro lighting.`
 * **Kinematics:** Staccato, slightly hurried 16fps hand-cranked character movement, jerky physical pantomime acting, static locked-off framing.
 * **Dialect Negatives:** `color, smooth 24fps cinema, modern digital clean blacks, sound dialogue, modern lighting.`
 
@@ -68,12 +68,11 @@ When the creator requests a specific historical era, chemical emulsion, or analo
 ---
 
 ## 6. Lo-Fi Archival Foley Soundboard (Google Veo 3.1)
-All Veo historical video prompts must reflect band-limited, period-grounded acoustics:
-* **Projector & Celluloid Soundscape:** `Rhythmic 16mm film projector mechanical whir, gentle film gate clatter, low optical soundtrack hiss, faint crackle and dust pop`.
-* **Magnetic Tape / VHS Soundscape:** `Analog magnetic tape hiss, muffled low-frequency audio hum, subtle warble on pitch (wow and flutter), muffled handheld condenser mic audio`.
-* **Period Machine & Vehicle Foley:** `Rumbling carbureted V8 engine, mechanical typewriter carriage return bell, rotary telephone mechanical bell chime, tactile Bakelite switch click`.
-* **Band-Limited Acoustics:** `Band-limited AM radio frequency response (300Hz–3kHz), muffled bass, rolled-off treble, lo-fi archival audio`.
-* **Music Suppression Rule:** Always enforce `, no background music` or `, clean foley only` to prevent modern digital music synthesis.
+All Veo historical video prompts must reflect band-limited, period-grounded acoustics structured in 4-part semicolon syntax:
+* **Projector & Celluloid Soundscape:** `Audio: SFX: Gentle film gate clatter, faint dust crackle; Ambience: Rhythmic 16mm film projector mechanical whir, low optical soundtrack hiss; Dialogue: None; Music: None.`
+* **Magnetic Tape / VHS Soundscape:** `Audio: SFX: Magnetic tape transport click; Ambience: Analog tape hiss, muffled low-frequency audio hum, subtle wow and flutter; Dialogue: None; Music: None.`
+* **Period Machine & Vehicle Foley:** `Audio: SFX: Rotary telephone mechanical bell chime, typewriter carriage return bell; Ambience: Distant carbureted V8 engine rumble; Dialogue: None; Music: None.`
+* **Band-Limited Voice & Music Protection:** `Audio: SFX: None; Ambience: Band-limited AM radio room tone; Dialogue: [Spoken words in sentence case]; Music: None.`
 
 ---
 

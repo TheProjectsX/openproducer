@@ -16,7 +16,7 @@ When the creator requests a specific commercial advertising style, the compiler 
 
 ### A. `luxury_macro_watch` (High-End Horology / Jewelry Showcase)
 * **Dialect Descriptor:** `Shot on 100mm macro lens, f/2.8, razor-sharp edge definition, brushed surgical 316L steel bevels, anti-reflective sapphire crystal reflections, studio octabank softbox diffusion, pristine linear metallic rim highlights, dark matte stage, luxury timepiece commercial aesthetic.`
-* **Kinematics:** Continuous 360-degree orbital rotation, robotic cine-bot precision, slow creeping push-in on watch dial face.
+* **Kinematics:** Continuous 360-degree orbital rotation, ultra-precise motorized trajectory, slow creeping push-in on watch dial face.
 * **Dialect Negatives:** `fingerprints, dust, smudges, scratched metal, motion blur, cheap plastic.`
 
 ### B. `techwear_hardware` (Cyberpunk / Modern Consumer Tech Advertising)
@@ -46,14 +46,15 @@ When the creator requests a specific commercial advertising style, the compiler 
 
 ## 5. Kinematic Grammar
 * **Motion Style:** Precision mechanical rotation, smooth continuous 360-degree orbital arcs, controlled high-speed linear tracking with smooth deceleration.
-* **Camera Kinematics:** Pure optical trajectory emulation (robotic cine-bot precision, locked macro focal shifts). Banned all mechanical rig nouns.
+* **Camera Kinematics:** Pure optical trajectory emulation (ultra-precise motorized trajectory, locked macro focal shifts). Banned all mechanical rig nouns.
 
 ---
 
 ## 6. Native Commercial Audio Foley Soundboard (Google Veo 3.1)
-* **Mechanical & Surface Foley:** `Crisp satisfying metallic bezel click, smooth magnetic latch snap, soft tactile weighted knob turn, pristine ceramic clink`.
-* **Studio Atmosphere:** `Dead quiet studio acoustic room tone, subtle electronic charge hum, clean product foley`.
-* **Music Suppression Rule:** Always enforce `, no background music` or `, clean foley only` (commercial ad music is added during final post-production mix).
+All Veo commercial prompts must enforce the canonical 4-part semicolon audio syntax:
+* **Audio Anchor Template:** `Audio: SFX: [clean tactile effects]; Ambience: [studio room tone]; Dialogue: [spoken line or None]; Music: None.`
+* **Studio Foley Bank:** `Audio: SFX: crisp satisfying metallic bezel click, smooth magnetic latch snap, soft tactile weighted knob turn, pristine ceramic clink; Ambience: dead quiet studio acoustic room tone, subtle electronic charge hum; Dialogue: None; Music: None.`
+* **Music Suppression Rule:** Always enforce `; Music: None.` (commercial ad music is added during final post-production mix).
 
 ---
 

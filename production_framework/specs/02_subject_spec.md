@@ -14,7 +14,7 @@ The `subjects/` domain defines and locks the visual, geometric, material, and ac
 ### The Universal Subject Principle:
 Whether a video features a human actor, an animated protagonist, a luxury dive watch, a running shoe, a sports car, or a fantasy creature, **Google Flow (Veo 3.1) treats them using the exact same underlying generative mechanics**:
 
-1. **Visual Anchor Key (Ingredient #1):** A clean, multi-angle 4-view model sheet generated on a seamless neutral light-gray background (`#E5E5E5`), uploaded into Google Flow as **Ingredient #1**.
+1. **Visual Anchor Key (Ingredient #1 / `[IMAGE 1]`):** A clean, multi-angle 4-view model sheet generated on a seamless neutral light-gray background (`#E5E5E5`). Bound as `[IMAGE 1]` (or `[IMAGE 3]` for secondary props/subjects) during **Tier 2 Keyframe Compositing (Imagen 4)** so that Tier 3 video generation receives a single pre-composited starting frame free of `#E5E5E5` background bleed.
 2. **Text Anchor Key (Verbatim Anchor String):** A locked 25–40 word Master Anchor string deterministically injected into Tokens 1–30 of every downstream Veo video prompt.
 3. **Acoustic Anchor Key:** Standardized voice delivery tags (for speaking characters) OR tactile ASMR foley signatures (for physical products).
 

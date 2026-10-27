@@ -31,18 +31,18 @@
   - `blueprint.md` (Living collaboration scratchpad)
   - `visual/` (Visual DNA & Master Style Anchor)
   - `subjects/` (Characters & Hero Products with 2-step turntable sheets on #E5E5E5)
-  - `environments/` (Worlds & Commercial Studio Stages)
+  - `environments/` (Worlds & Commercial Studio Stages: `summary.md`, `spatial_layers.md`, `lighting_rig.md`, `acoustics.md`, `master_anchor.txt`)
   - `structure/` (Scale-adaptive pacing: Commercial Hook-CTA or Cinema Beat Sheet)
-  - `shots/` (Shot units with decoupled API configs)
-  - `pipeline/` (Automated compilers and linters)
+  - `shots/` (Director's Cut ledger, Tier 1–3 prompts, and `clips/clip_XX/` units with decoupled configs)
+  - `pipeline/` (Automated Node.js compilers and L-01 to L-18 linters)
 - [ ] Implement OpenSpec-Style Template Storage (`templates/` directory contract & unique identifier specs)
 
-## Milestone 3: Python Automation Pipeline
-- [ ] Implement `compile_shot.py` (Assembles front-loaded 100–150 word Veo 3.1 prompt)
-- [ ] Implement `lint_shot.py` (Automated pre-flight validator enforcing rules L-01 to L-06)
-- [ ] Implement `manage_template.py` (`template save <name>`, `template load <name>`, `template list`)
-- [ ] Implement `chain_continuity.py` (Checks terminal frame -> first frame linkages)
-- [ ] Implement `export_flow_manifest.py` (Generates Google Flow Scene Builder timeline manifest)
+## Milestone 3: Node.js CLI Automation Pipeline (`@theprojectsx/video-skill`)
+- [ ] Implement `compile` command (Assembles front-loaded 100–150w T2V / 75–150w I2V Veo 3.1 prompts)
+- [ ] Implement `lint` command (Automated pre-flight validator enforcing Master Linters L-01 to L-18)
+- [ ] Implement `template` command (`template save <name>`, `template load <name>`, `template list`)
+- [ ] Implement `chain` command (Checks terminal frame `last_frame` -> first frame linkages and 30° contrast)
+- [ ] Implement `export` command (Generates Google Flow Scene Builder timeline manifest)
 
 ## Milestone 4: End-to-End Reference Production Projects
 - [ ] Build a complete Cinema reference sequence (e.g. 3-shot war aftermath / pilot sequence)

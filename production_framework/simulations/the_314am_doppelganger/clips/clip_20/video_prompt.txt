@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_20/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off static high-angle live camera perspective looking at the front door. The heavy front door slowly swings wide open into the hallway on its hinges, pushed from the outside pitch-black void. As the door opens fully, a faint waft of cold air draft causes the door to shudder slightly. Nobody is visible in the opening, but the red LIVE dot blinks continuously in the corner. Immaculate 2D vector graphic noir. Audio: SFX: deep wooden door creak, sudden whoosh of icy cold exterior air, two wet heavy footsteps padding onto entryway wood; Ambience: dead corridor quiet; Dialogue: None; Music: None.

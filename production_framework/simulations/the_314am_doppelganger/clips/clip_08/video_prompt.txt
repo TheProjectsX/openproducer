@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 6s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: SPATIAL BOUNDARY SHIFT (HALLWAY FEED)
+Input Seed / Dependencies: Generated from clips/clip_08/image_prompt.txt
+
+[VIDEO PROMPT]
+Starting directly from the initial image, locked-off static high-angle security camera perspective looking down the empty apartment corridor. For the entire six seconds, the corridor remains dead still: the closed bedroom door at the far end does not move, the floorboards remain undisturbed, and the subtle gray night-vision vector scanlines drift imperceptibly across the frame. In the corner, the digital timestamp advances cleanly second-by-second. Pristine 2D vector graphic art. Audio: SFX: quiet electrical line static; Ambience: low mechanical security camera hum, dead apartment corridor silence; Dialogue: None; Music: None.

@@ -1,9 +1,0 @@
-[CONFIGURATION SETTINGS]
-Duration: 6s
-Aspect Ratio: 16:9
-Resolution: 1080p
-Transition / Chop: CONTINUOUS ACTION EXTENSION
-Input Seed / Dependencies: Generated from clips/clip_15/image_prompt.txt
-
-[VIDEO PROMPT]
-Starting directly from the initial image, eye-level locked-off static view of the apartment entrance. The doppelgänger figure pulls the front door smoothly closed from the outside: the door panel swings shut into the frame, the deadbolt latch clicks firmly into place with a hollow thud at the third second, and the figure disappears completely into the exterior darkness. The corridor returns to total motionless gray silence for the remaining three seconds. Crisp 2D vector graphic art. Audio: sudden cold gust of exterior wind, heavy front door shutting and latching securely (`THUD... click`), followed by utter silence, zero dialogue.

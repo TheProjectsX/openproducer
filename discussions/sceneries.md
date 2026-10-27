@@ -1,6 +1,6 @@
 # Discussion Log: Sceneries & Environments Domain
 
-**Status:** 🟡 IN PROGRESS (Drafting Phase 5.3 Specification)  
+**Status:** ✅ **FINALIZED** (Authoritative Specification Locked in `03_scenery_spec.md`)  
 **Target Specification:** [`../production_framework/specs/03_scenery_spec.md`](../production_framework/specs/03_scenery_spec.md)  
 
 ---

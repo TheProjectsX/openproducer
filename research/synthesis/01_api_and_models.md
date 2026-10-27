@@ -28,7 +28,7 @@ Google's AI video generation stack is bifurcated into two primary model families
   - **Trade-off:** Reduced micro-texture detail, potential subtle temporal jitter on high-frequency movement.
 - **Historical / Preview Endpoints:**
   - `veo-3.1-generate-preview`, `veo-3.1-fast-generate-preview`, `veo-3.1-lite-generate-preview`.
-  - **Deprecation Warning:** API preview endpoints scheduled for decommission on October 22, 2026. Production systems must target standard GA endpoints or Gemini Omni Flash integration.
+  - **Deprecation Warning:** API preview endpoints were decommissioned on October 22, 2026. Production systems must target standard GA endpoints or Gemini Omni Flash integration.
 
 ### 1.2 Gemini Omni / Omni Flash (Multimodal Video Intelligence)
 - **Model Role:** Multimodal native audiovisual reasoning and conversational editing engine.
@@ -48,7 +48,7 @@ Google's AI video generation stack is bifurcated into two primary model families
 
 | Parameter | Supported Values | Optimal Setting / Recommendation |
 |---|---|---|
-| **Duration** | 4, 6, 8 seconds | • 4s: High-complexity action, rapid dynamic moves.<br>• 6s: Balanced character interaction.<br>• 8s: Atmospheric, dialogue delivery, slow camera moves. |
+| **Duration** | 4, 6, 8, 10 seconds | • 4s: High-complexity action, rapid dynamic moves.<br>• 6s: Balanced character interaction.<br>• 8s: Atmospheric, dialogue delivery, slow camera moves.<br>• 10s: Extended single takes, lingering contemplative cinema, multi-phrase dialogue. |
 | **Resolution** | 720p (1280x720), 1080p (1920x1080) | 720p for fast iteration; 1080p for final render. |
 | **Aspect Ratio** | 16:9 (Horizontal), 9:16 (Vertical) | 16:9 for cinematic/desktop; 9:16 for social/mobile. |
 | **Frame Rate** | 24 fps (fixed cinematic standard) | Enforces cinematic cadence; avoid requesting 60fps in prompt. |
@@ -76,9 +76,9 @@ Google's AI video generation stack is bifurcated into two primary model families
 - **Usage:** Morphological transformations, match cuts, highly specific camera trajectories between two points.
 
 ### 3.4 Video Extension (Temporal Chaining)
-- **Definition:** Extends an existing 4–8 second video clip forward in time.
+- **Definition:** Extends an existing 4–10 second video clip forward in time.
 - **Mechanism:** Extracts terminal frame ($t=T$) and motion momentum vectors to synthesize the subsequent temporal block ($t=T$ to $t=T+\Delta t$).
-- **Usage:** Building continuous scenes exceeding 8 seconds.
+- **Usage:** Building continuous scenes exceeding 10 seconds.
 
 ---
 
@@ -160,7 +160,7 @@ operation = client.models.generate_videos(
 | Task / Responsibility | Primary Engine | Supporting Engine | Protocol / Hand-off |
 |---|---|---|---|
 | **Script Breakdown & Shot Listing** | Gemini Omni Flash | Human Director | Omni parses premise into structured JSON shot list. |
-| **Character & Style Reference Sheets** | Imagen 4 | Gemini Omni | Imagen generates neutral 3-view reference assets. |
-| **High-Fidelity Cinematic Clip Rendering** | Veo 3.1 | Google Flow | Veo renders 4–8s clips utilizing Imagen reference keys. |
+| **Character & Style Reference Sheets** | Imagen 4 | Gemini Omni | Imagen generates neutral 4-view reference assets on #E5E5E5. |
+| **High-Fidelity Cinematic Clip Rendering** | Veo 3.1 | Google Flow | Veo renders 4–10s clips utilizing Imagen reference keys. |
 | **Timeline Assembly & Shot Chaining** | Scene Builder (Flow) | Veo (Clip Extension) | Flow sequences clips; extracts last frames for chained shots. |
 | **Conversational Tweaks & In-Painting** | Gemini Omni Flash | Veo 3.1 | Omni modifies rendered footage (lighting shifts, object removal). |

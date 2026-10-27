@@ -7,7 +7,7 @@
 ---
 
 ## 1. Master Style Anchor String (Verbatim Token Block — Ground-Level Default)
-> `Traditional 2D hand-drawn cel animation, crisp clean uniform dark ink outlines, classic 2-tone cel shading with distinct shadow boundaries, flat vibrant color fills, hand-painted scenic anime background art, classic 24fps stepped animation cadence on twos, flat 2D graphic anime aesthetic.`
+> `Traditional 2D hand-drawn cel animation, crisp clean uniform dark ink outlines, classic 2-tone cel shading with distinct shadow boundaries, flat vibrant color fills, hand-painted scenic anime background art, stepped animation timing on twos, flat 2D graphic anime aesthetic.`
 
 ---
 
@@ -78,12 +78,11 @@ When the creator requests a specific anime studio, era, or artistic school, the 
 ---
 
 ## 6. Native Anime Audio Foley Soundboard (Google Veo 3.1)
-All Veo anime prompts must pair visual actions with authentic Japanese anime sound design signatures:
-* **Weapon / Katana Foley:** `Sharp metallic ringing impact sound effect (katana clash), layered with high-pitch steel resonance ("shing") and heavy bass sub-boom`.
-* **Energy / Magic Flare:** `Resonant high-pitched electrical hum and burst, surging plasma crackle, deep sub-bass charging pulse`.
-* **Anime Vocal Foley:** `Sharp breathless anime gasp, tense choked intake of air caught in throat, aggressive warrior grunt, quiet solemn whisper`.
-* **Footsteps & Surface Foley:** `Tactile wooden geta clatter on stone, rhythmic footsteps on tatami mats, heavy combat boot slide across gravel with scattering debris`.
-* **Music Suppression Rule:** Always end audio cues with `, no background music` or `, clean foley only` to suppress automated generic synthesizer music.
+All Veo anime prompts must pair visual actions with authentic Japanese anime sound design signatures structured in 4-part semicolon syntax:
+* **Weapon & Combat Foley:** `Audio: SFX: Sharp metallic ringing impact sound effect, layered with high-pitch steel resonance and deep sub-boom; Ambience: Subtle wind rush; Dialogue: None; Music: None.`
+* **Footsteps & Surface Foley:** `Audio: SFX: Tactile wooden geta clatter on stone, rhythmic footsteps on tatami mats; Ambience: Quiet evening cicadas; Dialogue: None; Music: None.`
+* **Anime Vocal Foley:** `Audio: SFX: None; Ambience: Ambient mountain breeze; Dialogue: Sharp breathless anime gasp; Music: None.`
+* **Music Suppression Rule:** Always enforce `Music: None.` over dialogue to suppress automated generic synthesizer music.
 
 ---
 

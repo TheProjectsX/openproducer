@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-25  
 **Topic:** Dialogue-First Simulation with High-Retention Script & Expressive Fear Posture  
-**Project Artifact:** [`production_framework/the_314am_doppelganger/`](../../production_framework/the_314am_doppelganger/)  
+**Project Artifact:** [`production_framework/simulations/the_314am_doppelganger/`](../../production_framework/simulations/the_314am_doppelganger/)  
 **Specification Reference:** [`production_framework/specs/05_directors_cut_assembly_spec.md`](../../production_framework/specs/05_directors_cut_assembly_spec.md)  
 **Style Reference:** [`production_framework/styles/vector_stick_figure.md`](../../production_framework/styles/vector_stick_figure.md)
 

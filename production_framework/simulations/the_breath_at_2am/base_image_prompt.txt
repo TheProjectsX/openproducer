@@ -1,0 +1,14 @@
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+intended_engine: Imagen 4 / Midjourney / VideoFX
+medium: Vector Stick Figure (minimalist_noir)
+primary_subject: Lone Stick Figure (#FFFFFF head, #0F172A fingerless vector limbs)
+secondary_subject: 2D Vector Black Cat (Dilated black saucer pupils, perched on sofa back)
+environment: 2:00 AM Living Room Void (Cool-blue TV light cone, cream canvas #F8F6F0, pitch-black ceiling #0A0B0E)
+
+[IMAGE PROMPT]
+High-contrast minimalist 2D vector noir animation on a warm cream paper canvas (#F8F6F0). In a pitch-black living room at 2:00 AM, a lone stick figure sits frozen on a minimalist linear sofa silhouette. The stick figure has pure unbroken solid black vector limbs terminating in rounded line-caps with strictly zero fingers or hands, and a solid white circular head (#FFFFFF) with a uniform black contour and zero facial features. Perched on the sofa back, a sleek 2D black vector cat silhouette sits bolt upright with tilted head, gazing straight up into the ceiling void with large dilated solid black circular pupils. A single motivated cool-blue volumetric light cone from a low television screen cuts through the darkness, casting stark graphic drop shadows while leaving the upper ceiling in total pitch-black (#0A0B0E) suspense. Crisp clean vector lines, uniform stroke weight, flat graphic aesthetic.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig, colorful backgrounds, neon colors, 3D shadows, cartoon comedy.
