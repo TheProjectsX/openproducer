@@ -34,7 +34,7 @@ This workspace is accessed across different devices, workstations, and conversat
 | **Phase 5: Core Domain Primitives** | Visuals, Subjects, Sceneries, Cinematography, Audio & Retake Doctor | ✅ **FINALIZED** | [`01_visual`](./production_framework/specs/01_visual_spec.md), [`02_subject`](./production_framework/specs/02_subject_spec.md), [`03_scenery`](./production_framework/specs/03_scenery_spec.md), [`04_cinematography_audio`](./production_framework/specs/04_cinematography_audio_spec.md), [`06_retake_doctor`](./production_framework/specs/06_retake_doctor_spec.md) | [`discussions/`](./discussions/) |
 | **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (4s/6s/8s/10s), Multi-Character Clean Singles, Spatial Handoffs, Dynamic Audio Bridges, Pluggable Styles, Retake Doctor & T&S Registry | 🔒 **LOCKED & EMPIRICALLY VALIDATED** | [`05_directors_cut`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`06_retake_doctor`](./production_framework/specs/06_retake_doctor_spec.md), [`safety_registry`](./production_framework/specs/safety_registry.md), [`styles/`](./production_framework/styles/) | [`directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md), [Discussions 49, 63, 64](./discussions/_raw/) |
 
-| **Phase 7: Project Scaffolding** | Lean Folder Scaffold & Universal Template | ⏳ Pending | `production_template/` | TBD |
+| **Phase 7: Project Scaffolding** | Dynamic Workspace Scaffolding Spec, OpenSpec `openproducer/` Engine, Two-Tier Elastic Generator & 2-Phase Guided Producer Flow | ✅ **COMPLETE** | [`07_scaffolding`](./production_framework/specs/07_scaffolding_and_workspace_spec.md), [`production_template/`](./production_template/) | [Discussion 65](./discussions/_raw/65_phase_07_universal_production_scaffolding.md) |
 | **Phase 8: Automation Skill & Linters** | Node.js / npx Tooling Suite (`OpenProducer` / `openproducer`), Master Linters (L-01 to L-19), Flow Timeline Manifest Export | ⏳ Pending | Tooling & Skill code | TBD |
 
 ---
@@ -632,6 +632,17 @@ To prevent token bloat while retaining 100% information control:
      - **Option B (Uncompromised Exact Script):** Keep 100% of the exact authored words by rendering a clean silent actor plate in Veo and executing waveform-driven lip-sync via Sync Labs or LivePortrait (0% text safety block).
 - **Specifications Updated:** Added **Linter L-19** to [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md); created [`safety_registry.md`](./production_framework/specs/safety_registry.md); updated Diagnostic Code G-14 in [`06_retake_doctor_spec.md`](./production_framework/specs/06_retake_doctor_spec.md).
 - **Reference Deliverables:** [`discussions/_raw/64_trust_and_safety_interactive_resolution_protocol_and_linter_l19.md`](./discussions/_raw/64_trust_and_safety_interactive_resolution_protocol_and_linter_l19.md), [`production_framework/specs/safety_registry.md`](./production_framework/specs/safety_registry.md), and [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md).
+
+### 2026-10-28 — Phase 07: Universal Production Scaffolding & 2-Phase Guided Producer Flow (Discussion 65)
+- **Producer Boundary Established:** Codified the strict operational role of the AI Agent as Director & Executive Producer, never an image/video rendering machine. The Agent outputs machine-grade prompts and acts as Retake Doctor; the creator generates on their own accounts.
+- **The OpenSpec Architecture (`openproducer/`):** Established clear separation between creator-facing assets (`base_image_prompt.txt`, `references/`, `clips/`, `master_videos_prompt.txt`, `scratchbook.md`) and the visible producer engine directory `openproducer/` (`config.json`, `state.json`, `blueprint.md`, `manifest.json`, `visual/`, `subjects/`, `environments/`).
+- **Two-Tier Elastic Scaffolding:** Codified the Lean Base-Reference Tier (80% of productions, single base reference image) vs. the Modular Studio Tier (multi-character, multi-scene, Genesis Master Style Plate).
+- **The 2-Phase Creator Experience Flow:**
+  1. *Phase 1 (One-Pass Synthesis):* Full production draft generated upfront without tedious intermediate pauses.
+  2. *The Fork:* Experienced creators proceed directly to self-serve rendering; new creators are offered the Step-by-Step Guided Run.
+  3. *Phase 2 (Guided Run):* Step-by-step guidance through Gate 1 (Base Image Lock & Re-roll Loop), Gate 2 (Audio & Script Review), Gate 3 (Clip-by-Clip Render Run), and Gate 4 (Retake Doctor Polish).
+- **Deliverables Created:** Authoritative canonical template directory [`production_template/`](./production_template/) and discussion record [`discussions/_raw/65_phase_07_universal_production_scaffolding.md`](./discussions/_raw/65_phase_07_universal_production_scaffolding.md).
+
 
 
 
