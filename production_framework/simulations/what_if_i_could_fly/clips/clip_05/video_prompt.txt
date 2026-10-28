@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_05
+Production ID: what_if_i_could_fly
+Duration: 8s | SRT Timing: Cue 3–5 (00:22.80 – 00:31.00)
+Lyrics: "Maybe I'm just wondering / Late at night just alone pondering / Imagination a bit rendering"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_05/keyframe.png
+
+[VIDEO PROMPT]
+Intimate interior perspective in minimalist 2D vector animation style. The vector stick figure from [IMAGE 1] sits quietly beside an open window at 2:00 AM, his chin resting gently on one rounded hand as he gazes up into the deep indigo night sky. A delicate night breeze rustles the clean white curtain folds while moonlight bathes his circular head in soft silver luminescence. Slow creeping linear push-in gliding toward the open window frame, accentuating his contemplative stillness. Audio: SFX: Soft curtain fabric fluttering in the draft, wooden chair creak; Ambience: Gentle late-night crickets outside, quiet domestic room tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

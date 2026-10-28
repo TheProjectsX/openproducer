@@ -1,0 +1,14 @@
+# Keyframe Plate Specification: CLIP_07
+Production ID: what_if_i_could_fly
+Target Duration: 4s | SRT Cue: Cue 7–8 (00:36.00 – 00:40.00)
+Lyrics: "Feeling is in my mind / Can't anymore stay behind"
+
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Full-body low-angle shot of the vector stick figure character from [IMAGE 1] standing on a rolling green grassy hilltop at sunrise, chest lifted high, eyes wide with sudden joyful energy, loosened tie whipping in a brisk warm wind. Vibrant emerald grass meadow dotted with tiny colorful vector wildflowers under a brilliant pastel orange and golden sunrise sky. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

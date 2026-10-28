@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_13
+Production ID: what_if_i_could_fly
+Duration: 6s | SRT Timing: Cue 18 (01:15.64 – 01:21.86)
+Lyrics: "Still I'm wondering what if I could fly"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_13/keyframe.png
+
+[VIDEO PROMPT]
+Medium profile perspective in minimalist 2D vector animation style. The character from [IMAGE 1] lifts his head purposefully, pushing back his chair and standing up with renewed resolve. His expressive eyes gaze toward the doorway leading out to the building's roof, his posture shedding its weariness. Slow creeping push-in past the desk toward the doorway, building narrative anticipation. Audio: SFX: Chair scraping softly on hardwood floor, firm decisive footsteps; Ambience: Night wind whistling through the window frame; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

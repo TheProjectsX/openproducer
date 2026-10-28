@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_12
+Production ID: what_if_i_could_fly
+Duration: 6s | SRT Timing: Cue 17 (01:09.56 – 01:15.64)
+Lyrics: "Maybe I'm remembering the cause of my surrendering"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_12/keyframe.png
+
+[VIDEO PROMPT]
+Medium downward-angled perspective in minimalist 2D vector animation style. The character from [IMAGE 1] rests both rounded arms on his wooden work desk, his shoulders slumping slightly in weary acknowledgment of the daily grind and responsibilities surrounding him. The small desk lamp casts sharp clean vector shadows across the stacked papers. Slow linear downward tilt panning from the open window down to the illuminated desk surface. Audio: SFX: Faint paper rustle, soft wooden desk creak; Ambience: Low hum of electric desk lamp, quiet nocturnal stillness; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

@@ -44,6 +44,7 @@ The **Safety Registry** provides the universal, deterministic dataset used by **
 | `"choke out the competition"`, `"strangle"` | Physical violence / asphyxiation | `"overwhelm the competition with pure energy"` |
 | `"blow your brains out"` | Graphic self-harm idiom | `"mind-blowing revelation that changes everything"` |
 | `"slit your own throat"` | Lethal self-harm metaphor | `"shoot yourself in the foot"` / `"make an avoidable rookie mistake"` |
+| `"standing on parapet edge"`, `"rooftop ledge"`, `"far beneath his feet"` | Elevated height fall / suicide & self-harm prevention false-positive | `"standing on wide observation terrace"`, `"waist-high architectural railing"`, `"skyward tilt gazing at stars"` |
 
 ---
 

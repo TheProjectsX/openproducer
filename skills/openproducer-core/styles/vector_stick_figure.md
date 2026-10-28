@@ -36,6 +36,11 @@ When the creator requests a specific visual sub-genre, educational format, or ac
 * **Dialect Negative Override:** When active, the compiler **removes `individual fingers`** from the base negative prompt and enforces:
   `NEGATIVE OVERRIDE: fleshy human skin, photorealistic fingernails, realistic knuckles, organic dermal textures, 3D render.`
 
+### E. `expressive_stick_figure` (Music Video / Emotional Storytelling / The Dreamer)
+* **Dialect Descriptor:** `Minimalist expressive 2D vector stick figure animation, solid white circular head (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), two minimalist expressive curved black eye slits capable of subtle emotion, blinking, and softly closing in deep introspection, without nose or mouth. Uniform unbroken charcoal vector strokes (#1E293B) with rounded line-caps, adult anatomical proportions, subtle mundane commuter attire (thin loosened dark necktie or casual bag strap), warm atmospheric vector color palettes.`
+* **Kinematics:** Soft micro-gestures, gentle eye-close on musical phrasing, sweeping camera tilts to sky, grounded observer posture watching soaring kites/butterflies/aircraft.
+* **Dialect Negatives:** `cartoon mouth, goofy anime eyes, fleshy nose, realistic hands, individual fingers, knuckles, glossy 3D gradients, camera equipment, tripod.`
+
 ---
 
 ## 3. Anatomical & Vector Materiality Rules

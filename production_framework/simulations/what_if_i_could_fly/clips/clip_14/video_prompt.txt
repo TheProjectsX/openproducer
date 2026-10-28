@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_14
+Production ID: what_if_i_could_fly
+Duration: 6s | SRT Timing: Cue 19–20 (01:21.86 – 01:28.00)
+Lyrics: "Feeling is in my mind / Can't anymore stay behind / Single thought that only rise"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_14/keyframe.png
+
+[VIDEO PROMPT]
+Follow-tracking perspective from behind in minimalist 2D vector animation style. The character from [IMAGE 1] pushes open the rooftop door, stepping boldly into the brisk open night air. A gust of wind catches his loosened necktie, lifting it dynamically as he surveys the sprawling constellation of city skyscraper lights stretching to the horizon. Smooth tracking shot following directly behind the figure as he steps onto the open roof. Audio: SFX: Heavy door latch click, creak of metal hinges, gravel crunching underfoot; Ambience: Roaring open-air city rooftop breeze, distant urban sirens; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

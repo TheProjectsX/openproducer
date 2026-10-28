@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_16
+Production ID: what_if_i_could_fly
+Duration: 6s | SRT Timing: Solo Part 1 (01:34.00 – 01:40.00)
+Lyrics: "[Instrumental Solo — Soaring lead melody]"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_16/keyframe.png
+
+[VIDEO PROMPT]
+Dynamic orbital tracking shot in minimalist 2D vector animation style. The camera sweeps in a continuous 45-degree arc around the character from [IMAGE 1] standing calmly on the wide rooftop terrace, capturing the horizon transforming from midnight black into explosive streaks of dawn magenta and radiant amber. His loosened tie waves triumphantly in the breeze. Dynamic orbital tracking pan sweeping smoothly around the standing figure. Audio: SFX: Strong whistling wind rush, distant city dawn rumble; Ambience: Soaring atmospheric high-altitude draft; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

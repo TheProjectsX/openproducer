@@ -16,7 +16,7 @@ Diagnose runtime generative AI anomalies across Google Flow, Veo 3.1, and Imagen
    - G-15: Word looping / stuttering $\rightarrow$ soft punctuation (`...`).
    - G-16: Dead-air delay $\rightarrow$ Immediate Vocal Attack on Frame 1.
    - G-16: Kinetic text spoiler $\rightarrow$ Decouple to `motion_graphics.md`.
-   - G-14: Trust & Safety block $\rightarrow$ 2-Option Gate (Option A safe reword vs. Option B silent plate + external lip-sync).
+   - G-14: Trust & Safety block $\rightarrow$ 2-Option Gate (Option A safe reword / replace elevated ledges with observation terrace & railing vs. Option B silent plate + external lip-sync).
    - G-01: Face drift $\rightarrow$ Strengthen bone structure biometrics.
    - G-09: Equipment visible $\rightarrow$ Purge hardware nouns.
 2. **Apply Surgical Patch:**

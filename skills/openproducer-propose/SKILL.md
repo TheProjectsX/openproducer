@@ -12,7 +12,7 @@ Synthesize an internal production proposal in the brain (`openproducer/blueprint
 
 ## Operational Playbook
 1. **Consult Specifications:**
-   - Reference `skills/openproducer-core/specs/05_directors_cut_assembly_spec.md` for temporal quantum pacing (4s/6s/8s @ 2.2 wps).
+   - Reference `skills/openproducer-core/specs/05_directors_cut_assembly_spec.md` for temporal quantum pacing (4s/6s/8s @ 2.2 wps dialogue, or musical stanza beat-slicing for music videos).
    - Reference `skills/openproducer-core/styles/` for visual DNA.
 2. **Synthesize Proposal in Brain:**
    - Draft Tier 1 Base Prompt concept.

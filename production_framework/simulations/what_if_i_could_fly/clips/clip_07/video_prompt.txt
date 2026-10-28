@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_07
+Production ID: what_if_i_could_fly
+Duration: 4s | SRT Timing: Cue 7–8 (00:36.00 – 00:40.00)
+Lyrics: "Feeling is in my mind / Can't anymore stay behind"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 4
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_07/keyframe.png
+
+[VIDEO PROMPT]
+Dynamic low-angle perspective in minimalist 2D vector animation style. The nighttime room dissolves into an expansive sunlit hillside where the character from [IMAGE 1] straightens up with exuberant energy, turning his face directly into a surging golden morning wind. Swirling flower petals and blades of grass dance around his feet as his posture leans forward into motion. Fast dynamic push-in with a rising elevation angle, injecting sudden kinetic life. Audio: SFX: Gusting warm wind whoosh, rustling meadow grass; Ambience: Cheerful morning birdsong, crisp open-air atmosphere; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

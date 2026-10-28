@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_25
+Production ID: what_if_i_could_fly
+Duration: 8s | SRT Timing: Cue 30 (02:32.44 – 02:36.46)
+Lyrics: "What if I could fly?"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_25/keyframe.png
+
+[VIDEO PROMPT]
+Side profile action composition in minimalist 2D vector animation style. The character from [IMAGE 1] draws his arm back and softly launches the white paper airplane into the open air. The paper plane catches an immediate updraft, lifting gracefully into a steady, gliding climb toward the golden sunset clouds. Side-profile tracking pan following the release of the plane into the open breeze. Audio: SFX: Soft paper launch whoosh, paper plane gliding through the breeze; Ambience: Broad city evening ambience, calm sunset wind; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

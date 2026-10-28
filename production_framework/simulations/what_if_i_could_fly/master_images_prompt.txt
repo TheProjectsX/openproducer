@@ -1,0 +1,330 @@
+================================================================================
+MASTER IMAGES PROMPT MANIFEST: What If I Could Fly? (16:9 Widescreen)
+Production ID: what_if_i_could_fly
+Style Plugin: vector_stick_figure (Dialect: expressive_stick_figure)
+Total Keyframe Plates: 27 Clips + 1 Base Turnaround Sheet
+================================================================================
+
+--- CLIP_01 (6s | Cue: Intro (00:00.00 – 00:06.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. The exact same minimalist vector stick figure character from [IMAGE 1], walking slowly along a wide paved city park sidewalk at dusk. Surrounding him, blurred generic vector stick figure commuters in muted gray tones hurry past in both directions with briefcases, heads tilted downward on autopilot. Clean vector city park path flanked by autumn trees with amber leaves, distant soft purple and slate-gray city skyline buildings against a dusky twilight sky. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_02 (6s | Cue: Intro (00:06.00 – 00:12.22)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Medium profile view of the vector stick figure character from [IMAGE 1] walking right-to-left along a clean stone plaza, his thin loosened dark necktie resting flat against his chest, walking with measured, weary steps. A soaring glass-facade corporate office skyscraper reflecting the amber twilight clouds, minimal clean architectural ground lines. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_03 (6s | Cue: Cue 1 (00:12.22 – 00:17.30)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Low-angle perspective focusing on the lower limbs of the vector stick figure character from [IMAGE 1], his black vector legs moving at an unhurried, measured pace while fast-moving pairs of stick figure legs in charcoal rush past in the foreground. Polished sidewalk pavement showing a faint reflection of a large minimalist corporate clock face displayed inside a store window. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_04 (6s | Cue: Cue 2 (00:17.30 – 00:22.80)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Full body medium shot of the vector stick figure from [IMAGE 1] coming to a gentle halt on the quiet sidewalk, looking down at his feet where faint semi-translucent charcoal shadow lines trail behind his ankles like weighted anchor tendrils. An empty stretch of quiet urban walkway lit by a single streetlamp casting a soft golden pool of light on the concrete path, darkness beyond. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_05 (8s | Cue: Cue 3–5 (00:22.80 – 00:31.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. The vector stick figure from [IMAGE 1] seated quietly on a simple wooden chair beside a wide open bedroom window, resting his rounded chin on his raised hand, gazing up wistfully into the deep indigo night sky. A cozy, minimalist vector bedroom interior illuminated by soft silver moonlight spilling through the window frame, a small desk lamp casting a warm amber glow onto a clean wooden tabletop. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_06 (4s | Cue: Cue 6 (00:31.00 – 00:35.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Tight Medium Close-Up of the circular white head and dark neckline of the character from [IMAGE 1], his minimalist curved eye slits visible in sharp graphic detail against the dark midnight-blue background. Deep navy blue and indigo void with soft silver moonlight rimming the left edge of the circular head. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_07 (4s | Cue: Cue 7–8 (00:36.00 – 00:40.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Full-body low-angle shot of the vector stick figure character from [IMAGE 1] standing on a rolling green grassy hilltop at sunrise, chest lifted high, eyes wide with sudden joyful energy, loosened tie whipping in a brisk warm wind. Vibrant emerald grass meadow dotted with tiny colorful vector wildflowers under a brilliant pastel orange and golden sunrise sky. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_08 (8s | Cue: Cue 9–10 (00:40.00 – 00:47.32)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Wide tracking view of the vector stick figure from [IMAGE 1] sprinting across a lush open meadow, arms stretched out wide horizontally like the wings of an airplane, his thin tie streaming behind him, his feet lightly skipping across the grass. Expansive rolling hills rolling toward a distant sunlit cliff edge under bright cyan and gold skies. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_09 (6s | Cue: Cue 11–12 (00:48.28 – 00:54.38)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Grand panoramic wide view of the vector stick figure from [IMAGE 1] standing at the precipice of a dramatic coastal cliff, arms relaxed at his sides, looking out at the boundless sparkling ocean below. Towering sea cliff overlooking an endless expanse of shimmering deep sapphire and azure ocean waters meeting the horizon, white sea-foam waves gently lapping the cliff base far below. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_10 (8s | Cue: Cue 13–14 (00:54.38 – 01:02.60)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Medium-shot 3/4 low angle of the vector stick figure from [IMAGE 1] tilting his circular white head upward at a 45-degree angle, eyes wide and tranquil, gazing into the heavens. Colossal, luminous white and warm-gold cumulus clouds drifting majestically across a rich azure sky, bathed in heavenly morning light. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_11 (8s | Cue: Cue 15–16 (01:02.60 – 01:09.56)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Intimate close-up of the circular white head and dark necktie of the character from [IMAGE 1], his closed curved eye slits slowly and tenderly fluttering open again as the golden dreamscape fades back into the cool dim shadows of his bedroom. Soft indigo nighttime bedroom shadows re-emerging, moonlight slanting across the wall behind the head. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_12 (6s | Cue: Cue 17 (01:09.56 – 01:15.64)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Medium shot of the vector stick figure from [IMAGE 1] seated at his desk, his circular head tilted down toward a neatly stacked pile of white office paperwork and an alarm clock glowing with digital numbers. Dim bedroom corner with warm desk lamp illuminating stacks of corporate documents, briefcases, and office supplies in clean graphic line art. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_13 (6s | Cue: Cue 18 (01:15.64 – 01:21.86)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Medium profile view of the vector stick figure from [IMAGE 1] lifting his circular head back up from the desk, his curved eye slits narrowing with quiet determination and resolve, moonlight catching his white silhouette. Open window frame looking out toward the apartment building fire escape and a door leading toward the roof. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_14 (6s | Cue: Cue 19–20 (01:21.86 – 01:28.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. The vector stick figure from [IMAGE 1] seen from behind, pushing open a heavy metal rooftop access door and stepping out onto the wide gravel surface of an apartment rooftop under the open night sky. City rooftop with air vents, low parapet walls, and a panoramic view of the shimmering metropolis skyline under scattered night clouds. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_15 (6s | Cue: Cue 21–23 (01:28.00 – 01:34.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Low-angle heroic 3/4 shot of the vector stick figure from [IMAGE 1] standing peacefully on a wide rooftop observation terrace, hands resting casually on a waist-high architectural railing, gazing up in awe at the vast starry sky. Deep navy blue sky studded with sparkling clean vector stars and a glowing silver crescent moon, distant city skyline buildings glowing softly in the background. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_16 (6s | Cue: Solo Part 1 (01:34.00 – 01:40.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Dynamic 3/4 orbital angle of the vector stick figure from [IMAGE 1] standing tall on a wide rooftop terrace, arms relaxed, hair-line wind trails whipping past his silhouette as the sky transitions from deep night indigo to vibrant rose-gold dawn. Rooftop vantage point with a dramatic 180-degree sunrise horizon breaking across stylized geometric skyscraper towers. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_17 (4s | Cue: Solo Part 2 (01:40.00 – 01:44.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Extreme low-angle framing looking directly past the smiling face of the vector stick figure from [IMAGE 1] up into the pure azure morning sky, where a flock of silhouetted vector birds glides effortlessly overhead. Brilliant turquoise morning sky bathed in clean golden sunlight, fluffy white cloud puffs drifting high above. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_18 (6s | Cue: Cue 24 (01:44.00 – 01:49.38)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Low-angle perspective past the vector stick figure from [IMAGE 1] standing on a breezy open grassy knoll, tilting his head back to watch a vibrant crimson-and-gold diamond paper kite soaring and dancing gracefully high above. Open hilltop under crisp morning sunlight, long purple ribbons trailing from the kite dancing on the wind currents against fluffy white clouds. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_19 (6s | Cue: Cue 25 (01:49.38 – 01:56.18)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Macro medium-close-up: The vector stick figure from [IMAGE 1] extending one rounded arm forward into warm golden sunlight, where a delicate, glowing cyan-and-yellow butterfly rests peacefully on his rounded hand before fluttering its wings. Sun-dappled meadow with floating golden dust particles and soft pastel floral shapes in the background. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_20 (6s | Cue: Cue 26 (01:56.18 – 02:00.78)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Medium shot of the vector stick figure from [IMAGE 1] turning his head smoothly to watch the glowing butterfly soar higher into the brilliant sky, radiant sunbeams framing his white circular silhouette. Expansive sunlit meadow landscape with towering rays of sunlight piercing through clouds into the azure atmosphere. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_21 (6s | Cue: Cue 27a (02:00.78 – 02:07.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Moody low-angle shot of the vector stick figure from [IMAGE 1] standing on a rain-slicked rooftop pavement in a light drizzle, his loosened tie damp, tilting his head skyward as the low rumble of a jet engine vibrates through the air. Dark slate-gray stormy rain clouds rolling across the city sky, fine diagonal streaks of rain falling through the frame. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_22 (6s | Cue: Cue 27b (02:07.00 – 02:14.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Upward telephoto view tracking a sleek minimalist twin-engine passenger jet slicing at tremendous speed through the dark rain clouds, twin white condensation vapor trails trailing behind its wings. The jet cuts through the charcoal storm clouds, bursting through the cloud ceiling into a blinding burst of pure golden sunlight before vanishing into the distance. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_23 (8s | Cue: Cue 28 (02:13.00 – 02:25.20)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Medium close-up of the vector stick figure from [IMAGE 1] as the rain clouds part and a warm golden sunbeam illuminates his circular white head, his curved eyes shining with serene joy and peace, a gentle relaxed smile forming. The dark rain mist dissipates into brilliant golden god-rays breaking across the glistening city rooftop, creating sparkling puddles. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_24 (6s | Cue: Cue 29 (02:25.20 – 02:32.44)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Top-down 45-degree macro close-up of the character's rounded vector hands carefully and precisely creasing a clean rectangular sheet of white paper into a sharp, aerodynamic paper airplane. Clean wooden parapet surface bathed in golden afternoon sunlight, crisp geometric paper creases in graphic novel line art. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_25 (8s | Cue: Cue 30 (02:32.44 – 02:36.46)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Side profile medium shot of the vector stick figure from [IMAGE 1] standing at the rooftop edge, drawing his arm back and gently releasing the white paper airplane forward into the sky. Expansive scenic city overlook at sunset, the paper airplane catching a warm thermal updraft and soaring smoothly upward. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_26 (6s | Cue: Cue 31–32 (02:37.94 – 02:46.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Aerial third-person perspective gliding right behind the tiny white paper airplane as it soars effortlessly over the rooftops and tree canopies of the city, flying free toward the glowing horizon. Breathtaking panoramic sunset skyline with magenta, peach, and gold clouds stretching to the infinite horizon. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_27 (8s | Cue: Cue 33 & Outro (02:50.00 – 02:51.00)) ---
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Wide cinematic tableau: The vector stick figure from [IMAGE 1] sitting peacefully on a simple wooden park bench on the high overlook, legs resting comfortably, looking out into the twilight sky where the tiny paper plane merges into the first evening star. Deep indigo and violet dusk sky studded with twinkling stars, the skyline glowing with warm amber dots, slow peaceful fade out to black. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+

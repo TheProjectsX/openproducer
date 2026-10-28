@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_27
+Production ID: what_if_i_could_fly
+Duration: 8s | SRT Timing: Cue 33 & Outro (02:50.00 – 02:51.00)
+Lyrics: "What if I could fly? [Final fading piano notes]"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_27/keyframe.png
+
+[VIDEO PROMPT]
+Wide cinematic tableau in minimalist 2D vector animation style. The character from [IMAGE 1] sits calmly on the scenic bench, his posture completely at peace, watching the distant paper plane dissolve into the twilight sky beside the glowing evening star. A serene quiet settles over the world as the scene gradually and gently dissolves into a soft, warm black fade. Locked-off wide tableau, stationary composition with a slow gradual fade to black over the final three seconds. Audio: SFX: Final quiet rustle of evening leaves, fading breeze; Ambience: Gentle twilight quietude, peaceful crickets; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

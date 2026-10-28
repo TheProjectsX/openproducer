@@ -1,0 +1,14 @@
+# Keyframe Plate Specification: CLIP_14
+Production ID: what_if_i_could_fly
+Target Duration: 6s | SRT Cue: Cue 19–20 (01:21.86 – 01:28.00)
+Lyrics: "Feeling is in my mind / Can't anymore stay behind / Single thought that only rise"
+
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. The vector stick figure from [IMAGE 1] seen from behind, pushing open a heavy metal rooftop access door and stepping out onto the wide gravel surface of an apartment rooftop under the open night sky. City rooftop with air vents, low parapet walls, and a panoramic view of the shimmering metropolis skyline under scattered night clouds. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

@@ -1,0 +1,14 @@
+# Keyframe Plate Specification: CLIP_01
+Production ID: what_if_i_could_fly
+Target Duration: 6s | SRT Cue: Intro (00:00.00 – 00:06.00)
+Lyrics: "[Instrumental Intro — Acoustic guitar / piano strumming]"
+
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. The exact same minimalist vector stick figure character from [IMAGE 1], walking slowly along a wide paved city park sidewalk at dusk. Surrounding him, blurred generic vector stick figure commuters in muted gray tones hurry past in both directions with briefcases, heads tilted downward on autopilot. Clean vector city park path flanked by autumn trees with amber leaves, distant soft purple and slate-gray city skyline buildings against a dusky twilight sky. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

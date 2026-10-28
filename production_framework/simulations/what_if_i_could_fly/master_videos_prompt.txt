@@ -1,0 +1,384 @@
+================================================================================
+MASTER VIDEOS PROMPT MANIFEST: What If I Could Fly? (16:9 Widescreen)
+Production ID: what_if_i_could_fly
+Audio Architecture: Pathway B (Master Song on A1, Foley/SFX on A2/A3)
+Total Flow Video Prompts: 27 Clips (170.0s Total Runtime)
+================================================================================
+
+--- CLIP_01 (6s | Cue: Intro (00:00.00 – 00:06.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_01/keyframe.png
+
+[VIDEO PROMPT]
+Wide eye-level perspective in minimalist 2D vector animation style. The vector stick figure character from [IMAGE 1] walks slowly forward along a paved park path at dusk, his shoulders slightly weighed down while rapid generic pedestrian silhouettes rush past him on autopilot. Subtle golden dusk light glints off distant office windows. Locked-off wide eye-level framing, maintaining steady stationary composition with gentle ambient pedestrian flow. Audio: SFX: Soft rhythmic footsteps on pavement, rustling dry autumn leaves; Ambience: Distant muted city traffic hum, faint evening park breeze; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_02 (6s | Cue: Intro (00:06.00 – 00:12.22)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_02/keyframe.png
+
+[VIDEO PROMPT]
+Medium profile tracking shot in minimalist 2D vector animation style. The vector stick figure character from [IMAGE 1] walks steadily from right to left across a corporate plaza, his loosened tie fluttering faintly in the draft created by towering glass skyscrapers. Amber dusk reflections drift across the dark blue window panes. Smooth lateral tracking pan precisely synchronized with the character's unhurried walking cadence, keeping him centered in the frame. Audio: SFX: Steady measured shoe clicks against smooth stone; Ambience: Muted urban wind whistling gently between skyscraper walls; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_03 (6s | Cue: Cue 1 (00:12.22 – 00:17.30)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_03/keyframe.png
+
+[VIDEO PROMPT]
+Low-angle ground-level tracking shot in minimalist 2D vector animation style. The rounded vector legs of the character from [IMAGE 1] step methodically along the smooth sidewalk as hurry-scurry commuter legs blur past in opposing directions. The glass window reflects a glowing minimalist clock face ticking steadily onward. Slow continuous forward low-tracking glide skimming six inches above the pavement, framing the steady rhythm of the steps. Audio: SFX: Clacking pedestrian heel strikes, faint distant ticking clock; Ambience: Ambient evening street murmur, low urban rumble; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_04 (6s | Cue: Cue 2 (00:17.30 – 00:22.80)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_04/keyframe.png
+
+[VIDEO PROMPT]
+Medium locked-off perspective in minimalist 2D vector animation style. The vector stick figure character from [IMAGE 1] slows his stride and pauses under a lone lamppost, tilting his circular head down toward his ankles where subtle graphic shadow lines stretch backward along the pavement like invisible anchors. His posture sinks into a weary, introspective breath. Locked-off eye-level framing, stationary camera emphasizing the quiet stillness of the pause. Audio: SFX: Final dragging shoe step, faint metallic chain resonance; Ambience: Quiet lamppost hum, soft nighttime breeze rustling leaves; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_05 (8s | Cue: Cue 3–5 (00:22.80 – 00:31.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_05/keyframe.png
+
+[VIDEO PROMPT]
+Intimate interior perspective in minimalist 2D vector animation style. The vector stick figure from [IMAGE 1] sits quietly beside an open window at 2:00 AM, his chin resting gently on one rounded hand as he gazes up into the deep indigo night sky. A delicate night breeze rustles the clean white curtain folds while moonlight bathes his circular head in soft silver luminescence. Slow creeping linear push-in gliding toward the open window frame, accentuating his contemplative stillness. Audio: SFX: Soft curtain fabric fluttering in the draft, wooden chair creak; Ambience: Gentle late-night crickets outside, quiet domestic room tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_06 (4s | Cue: Cue 6 (00:31.00 – 00:35.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 4
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_06/keyframe.png
+
+[VIDEO PROMPT]
+Tight cinematic close-up in minimalist 2D vector animation style. Focusing on the solid white circular head of the character from [IMAGE 1], the gentle night breeze causes his thin loosened tie to drift softly. His two minimalist curved eye slits slowly and tenderly flutter closed, releasing a long, quiet wistful sigh into the night. Locked-off macro portrait framing, stationary composition capturing the emotional gravity of the closed eyes. Audio: SFX: Soft intake and release of breath, whisper of air; Ambience: Faint nocturnal wind draft, soft room silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_07 (4s | Cue: Cue 7–8 (00:36.00 – 00:40.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 4
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_07/keyframe.png
+
+[VIDEO PROMPT]
+Dynamic low-angle perspective in minimalist 2D vector animation style. The nighttime room dissolves into an expansive sunlit hillside where the character from [IMAGE 1] straightens up with exuberant energy, turning his face directly into a surging golden morning wind. Swirling flower petals and blades of grass dance around his feet as his posture leans forward into motion. Fast dynamic push-in with a rising elevation angle, injecting sudden kinetic life. Audio: SFX: Gusting warm wind whoosh, rustling meadow grass; Ambience: Cheerful morning birdsong, crisp open-air atmosphere; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_08 (8s | Cue: Cue 9–10 (00:40.00 – 00:47.32)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_08/keyframe.png
+
+[VIDEO PROMPT]
+Wide tracking action perspective in minimalist 2D vector animation style. The character from [IMAGE 1] sprints joyfully across the vast green meadow, extending both rounded arms wide like aircraft wings as if defying gravity. His feet take long, buoyant leaping strides across the grass as warm sunlight illuminates his white circular head. Smooth forward tracking glide moving alongside the running figure, matching his exhilarating forward momentum across the hill. Audio: SFX: Energetic rhythmic footsteps on turf, rushing wind buffeting clothes; Ambience: Expansive hillside breeze, morning meadow ambience; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_09 (6s | Cue: Cue 11–12 (00:48.28 – 00:54.38)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_09/keyframe.png
+
+[VIDEO PROMPT]
+Sweeping high-angle coastal reveal in minimalist 2D vector animation style. The character from [IMAGE 1] stands peacefully at the edge of an epic ocean bluff, gazing across the sparkling vastness of the sea as ocean breezes gently lift his loosened tie. Shimmering vector water ripples catch radiant golden sun reflections across the entire horizon. Sweeping slow elevation reveal rising smoothly over the cliff edge, unveiling the boundless seascape. Audio: SFX: Rhythmic crashing ocean breakers below, gentle sea spray mist; Ambience: Coastal seabirds crying faintly, surging sea wind; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_10 (8s | Cue: Cue 13–14 (00:54.38 – 01:02.60)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_10/keyframe.png
+
+[VIDEO PROMPT]
+Low-angle upward pedestal perspective in minimalist 2D vector animation style. The character from [IMAGE 1] tilts his circular head back in awe, his expressive curved eyes tracking the majestic motion of monumental fluffy clouds sailing effortlessly through the sky. Warm golden sunbeams crest over the billowing cloud edges, casting radiant highlights across the vector canvas. Slow upward pedestal tilt tracking with the subject's skyward gaze, emphasizing the soaring height of the clouds. Audio: SFX: Deep atmospheric wind sweep across high altitude; Ambience: Whistling clean mountain air, serene high-sky tranquility; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_11 (8s | Cue: Cue 15–16 (01:02.60 – 01:09.56)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_11/keyframe.png
+
+[VIDEO PROMPT]
+Intimate close-up portrait in minimalist 2D vector animation style. The golden sky softly fades away as the character from [IMAGE 1] slowly opens his expressive curved eyes, returning to the quiet reality of his bedroom windowsill at 2:00 AM. A bittersweet, tender realization softens his posture as he lets out a quiet breath into the cool room air. Static locked-off intimate close-up framing, holding stationary on the subtle micro-movement of his opening eyes. Audio: SFX: Soft gentle exhalation, curtain fabric rustling against wood; Ambience: Distant quiet nighttime city hum, subtle room tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_12 (6s | Cue: Cue 17 (01:09.56 – 01:15.64)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_12/keyframe.png
+
+[VIDEO PROMPT]
+Medium downward-angled perspective in minimalist 2D vector animation style. The character from [IMAGE 1] rests both rounded arms on his wooden work desk, his shoulders slumping slightly in weary acknowledgment of the daily grind and responsibilities surrounding him. The small desk lamp casts sharp clean vector shadows across the stacked papers. Slow linear downward tilt panning from the open window down to the illuminated desk surface. Audio: SFX: Faint paper rustle, soft wooden desk creak; Ambience: Low hum of electric desk lamp, quiet nocturnal stillness; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_13 (6s | Cue: Cue 18 (01:15.64 – 01:21.86)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_13/keyframe.png
+
+[VIDEO PROMPT]
+Medium profile perspective in minimalist 2D vector animation style. The character from [IMAGE 1] lifts his head purposefully, pushing back his chair and standing up with renewed resolve. His expressive eyes gaze toward the doorway leading out to the building's roof, his posture shedding its weariness. Slow creeping push-in past the desk toward the doorway, building narrative anticipation. Audio: SFX: Chair scraping softly on hardwood floor, firm decisive footsteps; Ambience: Night wind whistling through the window frame; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_14 (6s | Cue: Cue 19–20 (01:21.86 – 01:28.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_14/keyframe.png
+
+[VIDEO PROMPT]
+Follow-tracking perspective from behind in minimalist 2D vector animation style. The character from [IMAGE 1] pushes open the rooftop door, stepping boldly into the brisk open night air. A gust of wind catches his loosened necktie, lifting it dynamically as he surveys the sprawling constellation of city skyscraper lights stretching to the horizon. Smooth tracking shot following directly behind the figure as he steps onto the open roof. Audio: SFX: Heavy door latch click, creak of metal hinges, gravel crunching underfoot; Ambience: Roaring open-air city rooftop breeze, distant urban sirens; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_15 (6s | Cue: Cue 21–23 (01:28.00 – 01:34.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_15/keyframe.png
+
+[VIDEO PROMPT]
+Low-angle heroic composition in minimalist 2D vector animation style. The character from [IMAGE 1] stands comfortably on a spacious rooftop observation terrace, his circular white head raised peacefully toward the celestial dome of stars. His eye slits are wide with wonder as a gentle cool breeze streams across his silhouette, with distant city towers glowing softly in the background. Slow linear push-in with an upward tilt, amplifying the grand scale of the open night sky and stars. Audio: SFX: Soft nighttime breeze whistling gently; Ambience: Calm nocturnal city atmospheric hum; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_16 (6s | Cue: Solo Part 1 (01:34.00 – 01:40.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_16/keyframe.png
+
+[VIDEO PROMPT]
+Dynamic orbital tracking shot in minimalist 2D vector animation style. The camera sweeps in a continuous 45-degree arc around the character from [IMAGE 1] standing calmly on the wide rooftop terrace, capturing the horizon transforming from midnight black into explosive streaks of dawn magenta and radiant amber. His loosened tie waves triumphantly in the breeze. Dynamic orbital tracking pan sweeping smoothly around the standing figure. Audio: SFX: Strong whistling wind rush, distant city dawn rumble; Ambience: Soaring atmospheric high-altitude draft; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_17 (4s | Cue: Solo Part 2 (01:40.00 – 01:44.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 4
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_17/keyframe.png
+
+[VIDEO PROMPT]
+Rapid upward elevation tilt in minimalist 2D vector animation style. The camera tilts swiftly from the character's upward-looking face straight toward the sun-drenched zenith of the sky as three graceful silhouette birds glide smoothly through the sunlight, their wings beating in effortless sync. Fast linear upward tilt sweeping from face to infinite sky, capturing the uplifting climax of the musical build. Audio: SFX: Rapid wind whoosh, gentle flapping of bird wings overhead; Ambience: Distant clear sky acoustics; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_18 (6s | Cue: Cue 24 (01:44.00 – 01:49.38)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_18/keyframe.png
+
+[VIDEO PROMPT]
+Low-angle spectator perspective in minimalist 2D vector animation style. The character from [IMAGE 1] stands in the foreground looking up in fascination as a vibrant red-and-gold geometric diamond kite bobs, loops, and hovers in the strong mountain thermals high overhead. Its colorful trailing ribbon tail ripples gracefully through the bright air. Slow upward low-angle drift looking past the character toward the soaring kite. Audio: SFX: Fluttering paper kite fabric snapping in the wind, taut string hum; Ambience: Crisp hillside breeze, distant rustling foliage; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_19 (6s | Cue: Cue 25 (01:49.38 – 01:56.18)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_19/keyframe.png
+
+[VIDEO PROMPT]
+Intimate macro close-up in minimalist 2D vector animation style. The character from [IMAGE 1] holds his rounded arm completely steady as a vibrant, glowing butterfly gently beats its delicate patterned wings and lifts off into the air, spiraling upward in playful weightless loops. His expressive eyes track the butterfly's ascent with genuine awe. Macro tracking shot starting on the hand and tilting smoothly upward to follow the butterfly's lift-off. Audio: SFX: Whisper-quiet wing flutters, soft gentle breeze; Ambience: Warm sunlit meadow hum, quiet idyllic tranquility; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_20 (6s | Cue: Cue 26 (01:56.18 – 02:00.78)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_20/keyframe.png
+
+[VIDEO PROMPT]
+Medium tracking composition in minimalist 2D vector animation style. The character from [IMAGE 1] watches the tiny glowing butterfly drift higher into a colossal pillar of golden sunlight, his face lit with admiration. The butterfly becomes a dancing speck of gold against the endless sky. Smooth linear tracking shot moving with the character's upward gaze into the light. Audio: SFX: Gentle warm wind gust sweeping over grass; Ambience: Resonant open-sky atmosphere, soft rustling wildflowers; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_21 (6s | Cue: Cue 27a (02:00.78 – 02:07.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_21/keyframe.png
+
+[VIDEO PROMPT]
+Moody low-angle tracking shot in minimalist 2D vector animation style. The character from [IMAGE 1] stands firmly on the wet rooftop with rain mist swirling around his silhouette, looking up into heavy charcoal rain clouds. Puddle reflections ripple beneath his feet as the distant low-frequency roar of a jet engine builds in the overcast heavens. Slow upward tracking push-in focusing on the expectant figure in the drizzle. Audio: SFX: Soft patter of light rain on wet concrete, distant low jet engine rumble; Ambience: Cool rainstorm wind, distant thunder roll; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_22 (6s | Cue: Cue 27b (02:07.00 – 02:14.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_22/keyframe.png
+
+[VIDEO PROMPT]
+Fast telephoto skyward tracking shot in minimalist 2D vector animation style. A sleek vector airplane streaks diagonally across the frame at breakneck speed, cleaving the dark rain clouds in two with sharp white vapor contrails. It punches through the stormy cloud layer into brilliant sunlit skies, fading rapidly to a tiny glistening dot on the horizon. Rapid diagonal tracking pan following the blistering flight path of the aircraft. Audio: SFX: Powerful roaring jet turbine whoosh, air shearing sound; Ambience: Turbulent cloud wind, fading engine echo into the distance; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_23 (8s | Cue: Cue 28 (02:13.00 – 02:25.20)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_23/keyframe.png
+
+[VIDEO PROMPT]
+Uplifting medium portrait in minimalist 2D vector animation style. As the storm clouds part, a radiant shaft of warm golden sunlight envelops the character from [IMAGE 1]. His expressive eyes open wide in serene peace, breathing in the fresh post-rain air as his loosened tie flutters lightly in the renewed warmth. Slow orbital push-in revolving gently around the illuminated, smiling figure. Audio: SFX: Water droplets dripping softly from rooftops, deep relaxed breath; Ambience: Warming breeze, birds singing as rain clears; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_24 (6s | Cue: Cue 29 (02:25.20 – 02:32.44)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_24/keyframe.png
+
+[VIDEO PROMPT]
+Intimate top-down macro shot in minimalist 2D vector animation style. The rounded vector hands of the character from [IMAGE 1] gently fold and press the final wing crease of a sharp, elegant white paper airplane. The clean paper plane rests completed and gleaming in the warm sun. Static locked-off macro framing, capturing the deliberate craftsmanship of folding the plane. Audio: SFX: Crisp paper creasing and folding sounds, fingernail glide along paper fold; Ambience: Gentle rooftop air draft; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_25 (8s | Cue: Cue 30 (02:32.44 – 02:36.46)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_25/keyframe.png
+
+[VIDEO PROMPT]
+Side profile action composition in minimalist 2D vector animation style. The character from [IMAGE 1] draws his arm back and softly launches the white paper airplane into the open air. The paper plane catches an immediate updraft, lifting gracefully into a steady, gliding climb toward the golden sunset clouds. Side-profile tracking pan following the release of the plane into the open breeze. Audio: SFX: Soft paper launch whoosh, paper plane gliding through the breeze; Ambience: Broad city evening ambience, calm sunset wind; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_26 (6s | Cue: Cue 31–32 (02:37.94 – 02:46.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_26/keyframe.png
+
+[VIDEO PROMPT]
+Smooth aerial pursuit glide in minimalist 2D vector animation style. Flying smoothly behind the little white paper airplane as it banks gracefully over the city skyline, gliding effortlessly higher and higher into the glowing pastel sunset clouds, weightless and unburdened. Smooth forward aerial glide tracking three feet behind the soaring paper plane. Audio: SFX: Gentle wind rushing smoothly across the paper wings; Ambience: Expansive high-altitude quietude, serene evening atmosphere; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+
+
+--- CLIP_27 (8s | Cue: Cue 33 & Outro (02:50.00 – 02:51.00)) ---
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_27/keyframe.png
+
+[VIDEO PROMPT]
+Wide cinematic tableau in minimalist 2D vector animation style. The character from [IMAGE 1] sits calmly on the scenic bench, his posture completely at peace, watching the distant paper plane dissolve into the twilight sky beside the glowing evening star. A serene quiet settles over the world as the scene gradually and gently dissolves into a soft, warm black fade. Locked-off wide tableau, stationary composition with a slow gradual fade to black over the final three seconds. Audio: SFX: Final quiet rustle of evening leaves, fading breeze; Ambience: Gentle twilight quietude, peaceful crickets; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
+

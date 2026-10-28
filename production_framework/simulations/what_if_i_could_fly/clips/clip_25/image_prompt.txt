@@ -1,0 +1,14 @@
+# Keyframe Plate Specification: CLIP_25
+Production ID: what_if_i_could_fly
+Target Duration: 8s | SRT Cue: Cue 30 (02:32.44 – 02:36.46)
+Lyrics: "What if I could fly?"
+
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Side profile medium shot of the vector stick figure from [IMAGE 1] standing at the rooftop edge, drawing his arm back and gently releasing the white paper airplane forward into the sky. Expansive scenic city overlook at sunset, the paper airplane catching a warm thermal updraft and soaring smoothly upward. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

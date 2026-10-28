@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_01
+Production ID: what_if_i_could_fly
+Duration: 6s | SRT Timing: Intro (00:00.00 – 00:06.00)
+Lyrics: "[Instrumental Intro — Acoustic guitar / piano strumming]"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_01/keyframe.png
+
+[VIDEO PROMPT]
+Wide eye-level perspective in minimalist 2D vector animation style. The vector stick figure character from [IMAGE 1] walks slowly forward along a paved park path at dusk, his shoulders slightly weighed down while rapid generic pedestrian silhouettes rush past him on autopilot. Subtle golden dusk light glints off distant office windows. Locked-off wide eye-level framing, maintaining steady stationary composition with gentle ambient pedestrian flow. Audio: SFX: Soft rhythmic footsteps on pavement, rustling dry autumn leaves; Ambience: Distant muted city traffic hum, faint evening park breeze; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

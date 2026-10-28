@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_03
+Production ID: what_if_i_could_fly
+Duration: 6s | SRT Timing: Cue 1 (00:12.22 – 00:17.30)
+Lyrics: "Life goes normally, time just flying by"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_03/keyframe.png
+
+[VIDEO PROMPT]
+Low-angle ground-level tracking shot in minimalist 2D vector animation style. The rounded vector legs of the character from [IMAGE 1] step methodically along the smooth sidewalk as hurry-scurry commuter legs blur past in opposing directions. The glass window reflects a glowing minimalist clock face ticking steadily onward. Slow continuous forward low-tracking glide skimming six inches above the pavement, framing the steady rhythm of the steps. Audio: SFX: Clacking pedestrian heel strikes, faint distant ticking clock; Ambience: Ambient evening street murmur, low urban rumble; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

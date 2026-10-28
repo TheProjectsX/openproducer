@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_11
+Production ID: what_if_i_could_fly
+Duration: 8s | SRT Timing: Cue 15–16 (01:02.60 – 01:09.56)
+Lyrics: "Making my parents proud / Oh, it's still just a dream"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 8
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_11/keyframe.png
+
+[VIDEO PROMPT]
+Intimate close-up portrait in minimalist 2D vector animation style. The golden sky softly fades away as the character from [IMAGE 1] slowly opens his expressive curved eyes, returning to the quiet reality of his bedroom windowsill at 2:00 AM. A bittersweet, tender realization softens his posture as he lets out a quiet breath into the cool room air. Static locked-off intimate close-up framing, holding stationary on the subtle micro-movement of his opening eyes. Audio: SFX: Soft gentle exhalation, curtain fabric rustling against wood; Ambience: Distant quiet nighttime city hum, subtle room tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

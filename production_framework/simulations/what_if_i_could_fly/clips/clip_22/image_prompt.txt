@@ -1,0 +1,14 @@
+# Keyframe Plate Specification: CLIP_22
+Production ID: what_if_i_could_fly
+Target Duration: 6s | SRT Cue: Cue 27b (02:07.00 – 02:14.00)
+Lyrics: "With a speed insane, disappearing from the sight"
+
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Upward telephoto view tracking a sleek minimalist twin-engine passenger jet slicing at tremendous speed through the dark rain clouds, twin white condensation vapor trails trailing behind its wings. The jet cuts through the charcoal storm clouds, bursting through the cloud ceiling into a blinding burst of pure golden sunlight before vanishing into the distance. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

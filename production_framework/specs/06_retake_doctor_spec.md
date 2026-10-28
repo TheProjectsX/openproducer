@@ -157,13 +157,14 @@ The **Retake Doctor** is an autonomous diagnostic engine that eliminates trial-a
 ### Diagnostic Code G-14: Automated Trust & Safety (T&S) Policy False Positives
 * **Creator Complaint:** *"Google Flow says: 'This generation might violate our policy' and blocks the clip from rendering!"*
 * **Root Cause:** Upstream automated text classifiers (Gemini Safety Filter / Google Trust & Safety) evaluate the entire prompt (`[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`, and dialogue quotes) via translation to English. Non-English idioms and technical negative tokens frequently trigger 3 distinct policy false positives:
-  1. *Self-Harm & Personal Violence Classifiers:* Sarcastic figures of speech like `"ready to destroy your life"` or `"want to end it all"` trip automated suicide and self-harm prevention models when evaluated literally.
+  1. *Self-Harm & Personal Violence Classifiers:* Sarcastic figures of speech like `"ready to destroy your life"` or `"want to end it all"`, as well as elevated height / rooftop fall staging (`"standing on parapet edge"`, `"rooftop ledge"`, `"city far beneath feet"`) especially when paired with lyrics contemplating flight or escape, trip automated suicide and self-harm prevention models when evaluated literally.
   2. *Financial Deception & High-Risk Solicitation Classifiers:* Promotional imperatives like `"Invest everything today and get rich overnight!"` or explicit solvency keywords like `"go completely bankrupt"` trigger predatory solicitation and investment scam filters.
   3. *Negative Prompt Gore/Decapitation Inversion:* AI safety classifiers often lack negation awareness; including tokens like `"twisting head 360 degrees"` or `"mutated neck"` in `[NEGATIVE PROMPT]` causes the safety parser to flag the clip for graphic violence or physical trauma!
 * **Surgical Patch & The 2-Option Decision Gate (`L-19`):**
   When a T&S trigger matching [`safety_registry.md`](safety_registry.md) is detected, the AI presents the interactive choice:
   1. **Option A: Native Flow Safe Reword (1-Click Veo Generation):**
      - Replace literal regulatory keywords (*"bankrupt"*, *"destroy life"*) with safe colloquial hyperbole (*"watch your balance hit zero"*, *"mess up your peaceful routine"*).
+     - For elevated height staging: replace precarious edges/ledges with a wide, safe rooftop observation terrace, waist-high architectural railing, and skyward camera tilts.
      - Reframe imperative solicitations (*"Invest everything right now!"*) into observational satire (*"Let's explore how fast a portfolio can experience pure chaos"*).
      - Sanitize negative prompt: purge gore/trauma words, retaining neutral quality tokens.
   2. **Option B: Uncompromised Exact Script (Decoupled Audio & External Lip-Sync):**

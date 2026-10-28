@@ -1,0 +1,9 @@
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Minimalist 2D vector animation character turnaround model sheet. A relatable, expressive modern stick figure character centered on a solid neutral light-gray studio background (#E5E5E5). The character has a smooth circular white head (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive black curved eye slits that convey subtle emotion and soul without a nose or mouth. The body and limbs are pure unbroken charcoal vector strokes (#1E293B) with smooth rounded line-caps, fluid anatomical proportions (1:7 adult scale), wearing a subtle thin loosened dark necktie hanging loosely around the neck. The model sheet shows the character standing in a relaxed, contemplative 3/4 pose on the left with open wistful eyes looking forward, and a close-up profile on the right showing the expressive eyes softly closed in quiet thought. Crisp 2D line art, uniform vector stroke weight, clean graphic novel illustration, flat 2D vector style.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, watermark, text labels.

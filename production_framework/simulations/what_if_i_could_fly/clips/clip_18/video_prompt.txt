@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_18
+Production ID: what_if_i_could_fly
+Duration: 6s | SRT Timing: Cue 24 (01:44.00 – 01:49.38)
+Lyrics: "What if I was a kite hovering with delight / Breaking past my height so that I could be bright"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_18/keyframe.png
+
+[VIDEO PROMPT]
+Low-angle spectator perspective in minimalist 2D vector animation style. The character from [IMAGE 1] stands in the foreground looking up in fascination as a vibrant red-and-gold geometric diamond kite bobs, loops, and hovers in the strong mountain thermals high overhead. Its colorful trailing ribbon tail ripples gracefully through the bright air. Slow upward low-angle drift looking past the character toward the soaring kite. Audio: SFX: Fluttering paper kite fabric snapping in the wind, taut string hum; Ambience: Crisp hillside breeze, distant rustling foliage; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_04
+Production ID: what_if_i_could_fly
+Duration: 6s | SRT Timing: Cue 2 (00:17.30 – 00:22.80)
+Lyrics: "Dreams still pending but shackles keep me tight"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_04/keyframe.png
+
+[VIDEO PROMPT]
+Medium locked-off perspective in minimalist 2D vector animation style. The vector stick figure character from [IMAGE 1] slows his stride and pauses under a lone lamppost, tilting his circular head down toward his ankles where subtle graphic shadow lines stretch backward along the pavement like invisible anchors. His posture sinks into a weary, introspective breath. Locked-off eye-level framing, stationary camera emphasizing the quiet stillness of the pause. Audio: SFX: Final dragging shoe step, faint metallic chain resonance; Ambience: Quiet lamppost hum, soft nighttime breeze rustling leaves; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

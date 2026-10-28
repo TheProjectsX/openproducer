@@ -1,0 +1,14 @@
+# Keyframe Plate Specification: CLIP_13
+Production ID: what_if_i_could_fly
+Target Duration: 6s | SRT Cue: Cue 18 (01:15.64 – 01:21.86)
+Lyrics: "Still I'm wondering what if I could fly"
+
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Medium profile view of the vector stick figure from [IMAGE 1] lifting his circular head back up from the desk, his curved eye slits narrowing with quiet determination and resolve, moonlight catching his white silhouette. Open window frame looking out toward the apartment building fire escape and a door leading toward the roof. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

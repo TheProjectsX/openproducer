@@ -1,0 +1,14 @@
+# Keyframe Plate Specification: CLIP_11
+Production ID: what_if_i_could_fly
+Target Duration: 8s | SRT Cue: Cue 15–16 (01:02.60 – 01:09.56)
+Lyrics: "Making my parents proud / Oh, it's still just a dream"
+
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Intimate close-up of the circular white head and dark necktie of the character from [IMAGE 1], his closed curved eye slits slowly and tenderly fluttering open again as the golden dreamscape fades back into the cool dim shadows of his bedroom. Soft indigo nighttime bedroom shadows re-emerging, moonlight slanting across the wall behind the head. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

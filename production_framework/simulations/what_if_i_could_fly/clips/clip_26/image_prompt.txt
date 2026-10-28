@@ -1,0 +1,14 @@
+# Keyframe Plate Specification: CLIP_26
+Production ID: what_if_i_could_fly
+Target Duration: 6s | SRT Cue: Cue 31–32 (02:37.94 – 02:46.00)
+Lyrics: "What if I could fly? / What if I could fly?"
+
+[IMAGE CONFIGURATION]
+aspect_ratio: 16:9
+resolution: 1080p
+
+[IMAGE PROMPT]
+Pre-composited starting keyframe plate for video generation. Aerial third-person perspective gliding right behind the tiny white paper airplane as it soars effortlessly over the rooftops and tree canopies of the city, flying free toward the glowing horizon. Breathtaking panoramic sunset skyline with magenta, peach, and gold clouds stretching to the infinite horizon. Minimalist 2D vector animation style. Limbs and torso are unbroken solid charcoal vector lines (#1E293B) terminating in smooth rounded line-caps; the circular head is solid opaque white (#FFFFFF) contoured with a clean dark charcoal outline (#1E293B), featuring two minimalist expressive curved black eye slits without nose or mouth. Character wears a subtle thin loosened dark necktie. Crisp flat 2D graphic art, uniform stroke weight, clean architectural line grounding, warm atmospheric vector color palettes.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.

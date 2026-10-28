@@ -106,6 +106,15 @@ Every clip containing spoken dialogue must manage silence buffers according to i
 1. **Cinema & Narrative Drama:** Must preserve at least 1.0s to 1.5s of total silence buffer (split between pre-roll silence before the first word and post-roll silence after the last word). Characters must never speak on Frame 1 or conclude speech on the terminal frame. Enforced via Linter **L-14**.
 2. **Social UGC / Satirical Explainer / Commercial Reels:** Exempt from pre-roll dead air (`G-16`). Enforces **Immediate Vocal Attack (Zero Dead Air)** to prevent retention drop and prevent external edit trimming from destroying incoming camera transitions. Terminal rest anchors (`G-15`) remain strictly mandatory.
 
+### 3.4 Pathway B Music Video & Lyric Visualizer Standard
+When producing an animated music video or lyric visualizer from an external master song and timed transcript/SRT:
+1. **Musical Stanza & Phrase Slicing:** Clips are sliced to musical measures and lyric verses rather than speech word counts:
+   - *Verses & Atmospheric Build-ups:* Budgeted at **6s to 8s** steady tracking, slow push-ins, or elevation glides.
+   - *Choruses, Drops & Kinetic Peaks:* Budgeted at **4s** high-velocity cuts, whip-pans, and dynamic action frames.
+   - *Introspective Holds & Vistas:* Budgeted at **8s** for expansive landscapes, ocean panoramas, or lingering emotional beats.
+2. **The Grounded Observer Paradigm:** In animated music videos with transformative or poetic lyrics (e.g. *"What if I was a kite / butterfly / plane"*), the character remains the grounded emotional observer watching the free elements soar through the world, preserving character model consistency and preventing chaotic AI body morphing.
+3. **Mandatory Music Suppression:** Every clip prompt enforces `Dialogue: None; Music: None;` with gentle diegetic foley (`Audio: SFX: [Footsteps/wind]; Ambience: [Atmosphere]; Dialogue: None; Music: None.`), guaranteeing that the master song audio track on Track A1 plays with 100% acoustic purity and zero AI instrument clashes.
+
 ---
 
 

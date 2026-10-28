@@ -12,7 +12,8 @@ Guide the creator through creative intake to lock foundational parameters withou
 
 ## Operational Playbook
 1. **Intake Dialogue:**
-   - Gather core story/hook, archetype (Social UGC, Cinema, Commercial, Animation), aspect ratio (`9:16` vs `16:9`), and audio pathway.
+   - Gather core story/hook, archetype (Social UGC, Cinema, Commercial, Animation, Music Video / Lyric Visualizer), aspect ratio (`9:16` vs `16:9`), and audio pathway.
+   - For Music Videos: ingest song audio/SRT, establish musical stanza beat-slicing (verses 6s–8s, drops 4s), and enforce Observer Staging with `Music: None;` audio suppression.
    - Reference `skills/openproducer-core/styles/` to match creator's vibe to a master style paradigm.
 2. **Classify Project Tier:**
    - Assign `lean_base_reference` (1 subject/setting) or `modular_studio` (multi-character/scene).

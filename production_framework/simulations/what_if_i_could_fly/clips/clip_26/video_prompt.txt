@@ -1,0 +1,16 @@
+# Video Motion Specification: CLIP_26
+Production ID: what_if_i_could_fly
+Duration: 6s | SRT Timing: Cue 31–32 (02:37.94 – 02:46.00)
+Lyrics: "What if I could fly? / What if I could fly?"
+
+[CONFIGURATION SETTINGS]
+duration_seconds: 6
+aspect_ratio: 16:9
+resolution: 1080p
+reference_image: clip_26/keyframe.png
+
+[VIDEO PROMPT]
+Smooth aerial pursuit glide in minimalist 2D vector animation style. Flying smoothly behind the little white paper airplane as it banks gracefully over the city skyline, gliding effortlessly higher and higher into the glowing pastel sunset clouds, weightless and unburdened. Smooth forward aerial glide tracking three feet behind the soaring paper plane. Audio: SFX: Gentle wind rushing smoothly across the paper wings; Ambience: Expansive high-altitude quietude, serene evening atmosphere; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic human skin, fleshy nose, open mouth, realistic hands, individual fingers, realistic knuckles, 3D CGI rendering, glossy gradients, plastic toys, blurry lines, messy sketch, camera tripod, dolly track, watermark, text labels.
