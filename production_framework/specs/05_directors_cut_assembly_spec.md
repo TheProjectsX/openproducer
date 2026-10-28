@@ -1,6 +1,6 @@
 # Specification: `directors_cut/` & `assembly/` Domain (Temporal Slicing & Multi-Engine Assembly)
 
-**Status:** ✅ FINALIZED & EMPIRICALLY VALIDATED (Discussion 46)  
+**Status:** 🔒 LOCKED & EMPIRICALLY VALIDATED (Discussions 46, 49, 63, 64)  
 **Domain:** `directors_cut/` / `assembly/`  
 **Target Engines:** Google Flow (Veo 3.1, Imagen 4, Gemini Omni Flash), Seedance/Sora, ElevenLabs
 
@@ -101,8 +101,10 @@ Speech velocity depends directly on the generation pathway:
 | **8 Seconds** | 18 words | 13 – 16 words | 5.5s – 6.5s | $\ge 1.5\text{s}$ |
 | **10 Seconds** | 22 words | 17 – 20 words | 7.5s – 8.5s | $\ge 1.5\text{s}$ |
 
-### 3.3 The Punctuation Breathing Buffer Rule
-Every clip containing spoken dialogue **must preserve at least 1.0s to 1.5s of total silence buffer** (split between pre-roll silence before the first word and post-roll silence after the last word). Characters must never speak on Frame 1 or conclude speech on the terminal frame. Enforced via Linter **L-14** (Dual-Track Speech Word Budget & Silence Buffer).
+### 3.3 The Punctuation Breathing Buffer Rule vs. UGC Immediate Vocal Attack
+Every clip containing spoken dialogue must manage silence buffers according to its archetype:
+1. **Cinema & Narrative Drama:** Must preserve at least 1.0s to 1.5s of total silence buffer (split between pre-roll silence before the first word and post-roll silence after the last word). Characters must never speak on Frame 1 or conclude speech on the terminal frame. Enforced via Linter **L-14**.
+2. **Social UGC / Satirical Explainer / Commercial Reels:** Exempt from pre-roll dead air (`G-16`). Enforces **Immediate Vocal Attack (Zero Dead Air)** to prevent retention drop and prevent external edit trimming from destroying incoming camera transitions. Terminal rest anchors (`G-15`) remain strictly mandatory.
 
 ---
 
@@ -487,9 +489,9 @@ When explicitly requested by the creator:
 
 ---
 
-## 8. Master Pre-Flight Linters (Authoritative Registry L-01 to L-18)
+## 8. Master Pre-Flight Linters (Authoritative Registry L-01 to L-19)
 
-Every assembled production must pass these 18 authoritative pre-flight linters before delivery:
+Every assembled production must pass these 19 authoritative pre-flight linters before delivery:
 
 | Linter ID | Name | Inspection Rule | Failure Condition |
 |---|---|---|---|
@@ -511,6 +513,7 @@ Every assembled production must pass these 18 authoritative pre-flight linters b
 | **L-16** | **Closed-Lip Listener Rule** | Off-screen/phone/narrator speech over visible actor mandates `firmly closed lips, tight jaw, zero mouth movement`. | Visible actor lacking closed-lip restraint during external speech. |
 | **L-17** | **Structured 4-Field Audio Syntax** | Trailing audio block follows `Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...` with music suppression over dialogue. | Audio block is unstructured or contains aggressive score over dialogue. |
 | **L-18** | **Gemini TTS Script & Non-Imposition** | `narrator_script.md` isolates `< >` tags on standalone lines (`.\n<long pause>\n`), zero square brackets, zero consecutive `<long pause>` dead air, and never rewrites creator's authored script into 2nd person. | Square brackets, inline pause tags, or overwriting creator's authored voice. |
+| **L-19** | **Trust & Safety Pre-Flight & Multi-Pathway Gate** | Positive prompt, quotes, and negative tokens scanned against [`safety_registry.md`](safety_registry.md) for platform policy triggers (financial fraud/bankruptcy, self-harm translations, inverted trauma negatives). If triggered, must execute the 2-Fork Creator Decision Gate (Option A: Safe Reword vs. Option B: Clean Veo Plate + External Audio Lip-Sync). | Submitting un-sanitized regulatory trigger words directly in Veo text prompts without creator confirmation. |
 
 ---
 
@@ -520,7 +523,7 @@ Every assembled production must pass these 18 authoritative pre-flight linters b
 * **Empirical Simulation Validation:** Formally validated and signed off through the end-to-end production of *The 3:14 AM Doppelgänger* ([`production_framework/simulations/the_314am_doppelganger/`](../simulations/the_314am_doppelganger/)), proving:
   1. Exact mathematical SRT dialogue slicing across 22 Flow-native clips.
   2. The Dialogue-First Hard Pause Rule and Anti-Dead-Air pacing (~140 wpm).
-  3. Pre-materialized closed-set prop bounding (L-07) and Master Linters L-01 through L-18.
+  3. Pre-materialized closed-set prop bounding (L-07) and Master Linters L-01 through L-19.
   4. Dynamic J-Cut & L-Cut native Veo audio transitions.
 * **Specification Sign-off:** ✅ **COMPLETE & LOCKED FOR PRODUCTION SCALABILITY**.
 

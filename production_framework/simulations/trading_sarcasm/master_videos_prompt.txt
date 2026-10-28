@@ -8,13 +8,13 @@ Aspect Ratio: 16:9
 Starting Seed: keyframe_01.png
 
 [VIDEO PROMPT]
-Starting directly from the initial image, the exact same young man from [IMAGE 1] maintains unwavering direct eye contact with the camera. Large, bold, stylized floating typography animates in the upper-third displaying: "জীবন-যৌবনের ১২টা বাজাতে চান? চলে আসুন ট্রেডিং-এ!". With relaxed facial muscles, natural subtle lip articulation, and minimal jaw displacement, he delivers dialogue with deadpan sarcastic inflection: "আপনিও কি আপনার জীবন-যৌবনের ১২টা বাজাতে চান? তাহলে চলে আসুন ট্রেডিং-এ!" The camera holds a steady locked-off eye-level framing. As he finishes speaking on second 7, the camera executes a swift optical push-in snap with subtle motion blur, transitioning dynamically into the following sequence.
+Starting directly from the initial image, the exact same young man from [IMAGE 1] maintains direct eye contact with the camera. Beginning immediately on frame 1 without initial silence or delay, with relaxed facial muscles, subtle lip articulation, and minimal jaw displacement, he delivers punchy deadpan dialogue: "আপনিও কি আপনার জীবন-যৌবনের ১২টা বাজাতে চান... তাহলে চলে আসুন ট্রেডিং-এ!" Synchronized exactly with his spoken delivery, bold floating kinetic typography bursts into the upper third displaying: "জীবন-যৌবনের ১২টা বাজাতে চান? চলে আসুন ট্রেডিং-এ!". He concludes speaking cleanly on second 5.5, then immediately closes his lips and rests in natural silent composure with zero repeated words and zero looped phrases. The camera holds a steady locked-off eye-level framing before executing a swift optical snap-zoom with subtle motion blur at second 7 to complete the scene handoff.
 
 [NEGATIVE PROMPT]
-illegible text, misspelled runes, messy gibberish words, muppet mouth, wide jaw flapping, exaggerated grimace, distorted teeth, camera equipment, tripod, cartoon, face morphing.
+illegible text, misspelled runes, messy gibberish words, muppet mouth, wide jaw flapping, exaggerated grimace, distorted teeth, camera equipment, tripod, cartoon, face morphing, repeated words, stuttering, looping speech, repeating phrases, double speech, audio echo, onset stutter.
 
 [AUDIO SPECIFICATION]
-Audio: SFX: Subtle soft fabric rustle as his shoulders shift; Ambience: Clean acoustically treated studio room tone; Dialogue: Confident deadpan male voice delivers "আপনিও কি আপনার জীবন-যৌবনের ১২টা বাজাতে চান? তাহলে চলে আসুন ট্রেডিং-এ!" with subtle sarcastic bite; Music: Minimalist satirical pizzicato strings with subtle ironic undertones.
+Audio: SFX: Subtle soft fabric rustle as his shoulders shift; Ambience: Clean acoustically treated studio room tone; Dialogue: Confident deadpan male voice begins immediately on frame 1 delivering "আপনিও কি আপনার জীবন-যৌবনের ১২টা বাজাতে চান... তাহলে চলে আসুন ট্রেডিং-এ!" with subtle sarcastic bite, finishing cleanly by second 5.5 into silent room tone; Music: Minimalist satirical pizzicato strings with subtle ironic undertones.
 
 ================================================================================
 CLIP 02: THE TRADING DESK B-ROLL & CAMERA SLAP TRANSITION
@@ -26,16 +26,16 @@ Aspect Ratio: 16:9
 Starting Seed: keyframe_02.png
 
 [VIDEO PROMPT]
-Starting directly from the initial image, the young man from [IMAGE 1] sits at his desk while glowing crimson candlestick charts pulse downward on the laptop monitor. Dynamic, luminous red floating text flashes across the upper portion of the frame: "শান্তির জীবন ➡️ জাহান্নাম!". Beginning immediately at frame 1, his voice delivers sharp sarcastic dialogue: "জ্বী হ্যা, শুধু Trading এ পারে আপনার শান্তির জীবনকে জাহান্নাম বানাতে!" As he speaks, his right hand gestures animatedly toward the crashing chart. At second 5, his right hand moves decisively and rapidly directly toward the camera lens in a playful palm-forward slap motion, completely covering the optical glass and blacking out the frame to create a seamless lens-wipe transition cut.
+Starting directly from the initial image, the young man from [IMAGE 1] sits at his desk while glowing crimson candlestick charts pulse downward on the laptop monitor. Beginning immediately on frame 1 without initial dead air, with minimal jaw displacement and sarcastic cadence, his voice delivers: "জ্বী হ্যা, শুধু Trading এ পারে আপনার শান্তির জীবনকে জাহান্নাম বানাতে!" Synchronized simultaneously with the vocal delivery, dynamic luminous red floating text flashes across the upper frame: "শান্তির জীবন ➡️ জাহান্নাম!". As he finishes speaking cleanly on second 4, his right hand gestures animatedly toward the crashing chart before moving decisively and rapidly directly toward the camera lens in a playful palm-forward slap motion at second 5, completely covering the optical glass to black out the frame into a seamless lens-wipe transition cut. Zero repeated words, zero audio stutter.
 
 [NEGATIVE PROMPT]
-illegible letters, messy distorted fonts, green rising charts, smiling face, cartoon, tripod, studio gear, distorted anatomy, extra fingers.
+illegible letters, messy distorted fonts, green rising charts, smiling face, cartoon, tripod, studio gear, distorted anatomy, extra fingers, repeated words, stuttering, looping speech, repeating phrases, double speech, audio echo, onset stutter.
 
 [AUDIO SPECIFICATION]
-Audio: SFX: Rapid mechanical keyboard tapping, mouse clicks, ending with an abrupt physical palm slap against glass at second 5.5; Ambience: Low hum of computer cooling fans in quiet room; Dialogue: Energetic sarcastic male voice immediately speaks "জ্বী হ্যা, শুধু Trading এ পারে আপনার শান্তির জীবনকে জাহান্নাম বানাতে!"; Music: Comical fast-paced descending synth arpeggio ducked beneath dialogue.
+Audio: SFX: Rapid mechanical keyboard tapping, mouse clicks, ending with an abrupt physical palm slap against glass at second 5.5; Ambience: Low hum of computer cooling fans in quiet room; Dialogue: Energetic sarcastic male voice immediately speaks on frame 1 "জ্বী হ্যা, শুধু Trading এ পারে আপনার শান্তির জীবনকে জাহান্নাম বানাতে!" finishing cleanly by second 4; Music: Comical fast-paced descending synth arpeggio ducked beneath dialogue.
 
 ================================================================================
-CLIP 03: THE SOFA SIT-DOWN REALITY CHECK (SAFETY PATCHED)
+CLIP 03: THE SOFA SIT-DOWN REALITY CHECK (SAFETY & REST PATCHED)
 ================================================================================
 [CONFIGURATION SETTINGS]
 Duration: 8s
@@ -44,16 +44,16 @@ Aspect Ratio: 16:9
 Starting Seed: keyframe_03.png
 
 [VIDEO PROMPT]
-Starting directly from the initial image, the young man from [IMAGE 1] with textured spiked hair smoothly completes his motion of sitting down into the center cushion of the single dark fabric sofa. Bold stylized floating kinetic text animates in mid-air in the upper third: "আজকে ডিপোজিট করবেন, তো কালকেই ব্যালেন্স জিরো!". As his back rests against the sofa rear cushion, he maintains relaxed facial muscles and restrained lip articulation, delivering sarcastic deadpan dialogue: "আজকে ডিপোজিট করবেন, তো কালকেই ব্যালেন্স জিরো!" A smooth optical camera push-in glides slowly forward toward his eye line, keeping the studio balanced. Exactly one sofa in the room, zero secondary furniture.
+Starting directly from the initial image, the young man from [IMAGE 1] with textured spiked hair completes his downward motion of sitting into the center cushion of the single dark fabric sofa. As his shoulders settle into the cushion on second 1, he looks directly into the optical axis and delivers deadpan sarcastic dialogue with restrained lip movement and minimal jaw displacement: "আজকে ডিপোজিট করবেন, তো কালকেই ব্যালেন্স জিরো!" Synchronized simultaneously with his speech, bold glowing kinetic typography animates in mid-air across the upper third displaying: "আজকে ডিপোজিট করবেন, কালকেই ব্যালেন্স জিরো!". He finishes delivering the line cleanly by second 5, closing his mouth and resting in natural silent composure with zero repeated words and zero looped phrases for the remainder of the clip. A smooth optical camera push-in glides slowly forward toward his eye line. Exactly one sofa in the room, zero secondary furniture.
 
 [NEGATIVE PROMPT]
-multiple sofas, two couches, secondary chair, sliding feet, moonwalking, floating body, muppet mouth, wide rubber jaw, distorted text, illegible letters, cartoon, equipment.
+multiple sofas, two couches, secondary chair, sliding feet, moonwalking, floating body, muppet mouth, wide rubber jaw, distorted text, illegible letters, cartoon, equipment, repeated words, stuttering, looping speech, repeating phrases, double speech, audio echo, onset stutter.
 
 [AUDIO SPECIFICATION]
-Audio: SFX: Realistic soft sofa fabric compression as body sits, gentle clothing rustle; Ambience: Quiet evening apartment room tone; Dialogue: Sarcastic dry male voice delivers "আজকে ডিপোজিট করবেন, তো কালকেই ব্যালেন্স জিরো!" with relaxed ironic cadence; Music: Subtle ironic acoustic guitar plucks with wide stereo spacing.
+Audio: SFX: Realistic soft sofa fabric compression as body sits on second 1, gentle clothing rustle; Ambience: Quiet evening apartment room tone; Dialogue: Sarcastic dry male voice delivers "আজকে ডিপোজিট করবেন, তো কালকেই ব্যালেন্স জিরো!" starting on second 1 and completing cleanly by second 5; Music: Subtle ironic acoustic guitar plucks with wide stereo spacing.
 
 ================================================================================
-CLIP 04: THE BACK-ANGLE CTA TURN & OUTRO TRANSITION (CLEANED)
+CLIP 04: THE BACK-ANGLE CTA TURN & OUTRO TRANSITION (SCRIPT INVARIANT)
 ================================================================================
 [CONFIGURATION SETTINGS]
 Duration: 8s
@@ -62,11 +62,10 @@ Aspect Ratio: 16:9
 Starting Seed: keyframe_04.png
 
 [VIDEO PROMPT]
-Starting directly from the initial image positioned behind the character, the young man from [IMAGE 1] glances at the illuminated trading monitors before smoothly turning his head over his left shoulder to face directly toward the camera. Large, bold, stylized floating text animates across the upper screen: "আজই চলে আসুন ট্রেডিং-এ!". Looking into the optical axis with restrained lip movement and calm facial articulation, he delivers the satirical line: "তো দেরি কেনো। আজই চলে আসুন ট্রেডিং-এ, আর নিজের সব ব্যালেন্স খালি করুন!" The camera holds a steady three-quarter over-the-back angle before executing a fast lateral whip-pan blur out on the final beat.
+Starting directly from the initial image positioned behind the character, the young man from [IMAGE 1] glances at the illuminated trading monitors before smoothly turning his head over his left shoulder on second 1 to face directly toward the optical axis. Beginning immediately as eye contact locks, with restrained lip movement and calm facial articulation, he delivers the satirical line: "তো দেরি কেনো... আজই চলে আসুন ট্রেডিং-এ, আর নিজের সব ব্যালেন্স খালি করুন!" Synchronized with the vocal delivery, bold stylized floating text bursts across the upper screen displaying: "আজই চলে আসুন ট্রেডিং-এ!". He completes speaking cleanly by second 6.5, closing his lips into silent composure with zero repeated words and zero looped phrases. The camera holds a steady three-quarter over-the-back angle before executing a fast lateral whip-pan blur out on second 7.5 to black.
 
 [NEGATIVE PROMPT]
-blurry, distorted facial features, wide jaw flapping, camera equipment, tripod, cartoon, low fidelity, illegible runes, messy text, overexposure.
+blurry, distorted facial features, wide jaw flapping, camera equipment, tripod, cartoon, low fidelity, illegible runes, messy text, overexposure, repeated words, stuttering, looping speech, repeating phrases, double speech, audio echo, onset stutter.
 
 [AUDIO SPECIFICATION]
-Audio: SFX: Gentle chair swivel pivot sound, concluding with a fast optical whoosh transition on the final second; Ambience: Warm studio acoustic tone; Dialogue: Enthusiastic satirical male voice proclaims "তো দেরি কেনো। আজই চলে আসুন ট্রেডিং-এ, আর নিজের সব ব্যালেন্স খালি করুন!"; Music: Playful mock-inspirational corporate jingle swelling briefly before cutting sharply on the whip-pan.
-
+Audio: SFX: Gentle chair swivel pivot sound on second 1, concluding with a fast optical whoosh transition on second 7.5; Ambience: Warm studio acoustic tone; Dialogue: Enthusiastic satirical male voice proclaims "তো দেরি কেনো... আজই চলে আসুন ট্রেডিং-এ, আর নিজের সব ব্যালেন্স খালি করুন!" starting at second 1 and completing cleanly by second 6.5; Music: Playful mock-inspirational corporate jingle swelling briefly before cutting sharply on the whip-pan.

@@ -43,11 +43,11 @@
 
 ### Clip 03 (00:14.00 – 00:22.00) — The Sofa Reality Check
 * **00:15.00 – 00:18.00:**
-  * **Text Overlay:** `আজকে টাকা ঢালবেন... 💸`
+  * **Text Overlay:** `আজকে ডিপোজিট করবেন... 💸`
   * **Animation:** Smooth slide-down with green dollar bill emoji drifting downward.
 * **00:18.50 – 00:21.50:**
-  * **Text Overlay:** `কালকেই আপনি ফতুর! 💀`
-  * **Animation:** Glitch distortion effect with skull emoji in stark monochrome white.
+  * **Text Overlay:** `কালকেই ব্যালেন্স জিরো! 📉`
+  * **Animation:** Glitch distortion effect with downward trendline icon.
 
 ---
 
@@ -56,5 +56,6 @@
   * **Text Overlay:** `তো দেরি কেনো? 🤷‍♂️`
   * **Animation:** Quick bounce pop-in centered right as he turns his head over his shoulder.
 * **00:26.00 – 00:29.20:**
-  * **Text Overlay:** `আজই জীবন ধ্বংস করতে লেগে পরুন! 🚀🔥`
+  * **Text Overlay:** `আজই চলে আসুন ট্রেডিং-এ, ব্যালেন্স খালি করুন! 🚀📉`
   * **Animation:** Kinetic mock-promotional scale-up with celebratory sarcastic emojis right before the final whip-pan transition.
+

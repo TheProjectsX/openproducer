@@ -167,9 +167,9 @@ def compile_veo_prompt(shot: dict) -> str:
 
 ---
 
-## 4. Pre-Flight Quality Linter (Master Registry L-01 to L-18)
+## 4. Pre-Flight Quality Linter (Master Registry L-01 to L-19)
 
-Before submitting any compiled prompt to the API or rendering tool, the orchestrating agent validates prompts against the Master Unified Linter Registry (`L-01` to `L-18`) detailed in [`production_framework/specs/05_directors_cut_assembly_spec.md`](../../production_framework/specs/05_directors_cut_assembly_spec.md#8-master-pre-flight-linters-authoritative-registry-l-01-to-l-18). Key single-shot baseline checks include:
+Before submitting any compiled prompt to the API or rendering tool, the orchestrating agent validates prompts against the Master Unified Linter Registry (`L-01` to `L-19`) detailed in [`production_framework/specs/05_directors_cut_assembly_spec.md`](../../production_framework/specs/05_directors_cut_assembly_spec.md#8-master-pre-flight-linters-authoritative-registry-l-01-to-l-19). Key single-shot baseline checks include:
 
 | Check # | Lint Rule | Verification Test | Auto-Fix Protocol |
 |---|---|---|---|

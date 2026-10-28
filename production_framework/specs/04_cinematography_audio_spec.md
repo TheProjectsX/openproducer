@@ -249,10 +249,19 @@ Generative audio engines operate on radically different speech velocities. Treat
 | **Pathway A: Native In-Video Audio (Veo 3.1)** | **$\approx 1.2$ to $1.5$ Words/Sec**<br>*(Deliberate, unhurried cadence)* | • **4s Clip:** 3 – 5 words<br>• **6s Clip:** 7 – 9 words<br>• **8s Clip:** 11 – 13 words<br>• **10s Clip:** 15 – 18 words | • 4s: 6 words<br>• 6s: 10 words<br>• 8s: 14 words<br>• 10s: 19 words | **$\ge 1.0\text{s}$ Pre-roll**<br>**$\ge 1.0\text{s}$ Post-roll** |
 | **Pathway B: External Narration (ElevenLabs / Gemini TTS)** | **$\approx 2.17$ to $2.50$ Words/Sec**<br>*(Conversational human pacing)* | • **4s Clip:** 5 – 7 words<br>• **6s Clip:** 9 – 11 words<br>• **8s Clip:** 13 – 16 words<br>• **10s Clip:** 17 – 20 words | • 4s: 8 words<br>• 6s: 12 words<br>• 8s: 18 words<br>• 10s: 22 words | **$\ge 0.5\text{s}$ Pre-roll**<br>**$\ge 0.5\text{s}$ Post-roll** |
 
-### 7.2 The Pre/Post-Roll Silence Buffer Rule
-Every dialogue clip—regardless of pathway—**must preserve dedicated silence buffers**:
-1. **Pre-Roll Silence:** Zero speech on Frame 1. Character takes a micro-breath before speaking (~0.5s–1.0s).
-2. **Post-Roll Silence:** Speech concludes at least 0.8s–1.2s prior to the terminal cut. Characters must never speak across the cut boundary.
+### 7.2 Pre/Post-Roll Silence Buffers vs. UGC Immediate Vocal Attack
+
+Speech onset and termination must adapt dynamically to the **Project Archetype**:
+
+1. **Cinematic & Narrative Fiction (Atmospheric Buffer):**
+   - **Pre-Roll Silence:** Zero speech on Frame 1. Character takes a natural micro-breath before speaking (~0.5s–1.0s).
+   - **Post-Roll Silence:** Speech concludes at least 0.8s–1.2s prior to the terminal cut. Characters must never speak across the cut boundary.
+
+2. **Social UGC / Satirical Explainer / Commercial Reels (Immediate Vocal Attack & Anti-Dead-Air Law):**
+   - **Zero Dead-Air Law (`G-16`):** In short-form reels, a 1-second pre-roll silence kills retention. Furthermore, trimming the front in an external editor truncates the head of the video clip and destroys incoming camera transitions or whip-pans.
+   - **Prompt Phrasing:** Use `"Beginning immediately on frame 1 without pause or initial silence, his voice delivers: '...' "`.
+   - **Active Physical Buffer:** If an incoming camera transition requires 0.5s before speech, motivate it with active physical kinetics (e.g. typing, turning, slamming mug) accompanied by loud SFX rather than an awkward frozen stare.
+   - **Anti-Looping Resting Anchor (`G-15`):** Explicitly instruct Veo when speech finishes (e.g. `"delivers dialogue cleanly by second 4, then rests in natural quiet composure with closed lips, zero repeated words, and zero looped phrases for the remainder of the clip"`).
 
 ---
 
@@ -297,7 +306,7 @@ When videos are exported from Flow for professional assembly in timeline editing
 
 ## 10. Authoritative Pre-Flight Linters (Cinematography & Audio)
 
-Before compiling prompts into Google Flow, the automated validator enforces these validation gates from the Master `L-01` to `L-18` Registry:
+Before compiling prompts into Google Flow, the automated validator enforces these validation gates from the Master `L-01` to `L-19` Registry:
 
 ### Rule L-03: Equipment Noun Prohibition
 - **Check:** Creative positive prompt MUST NOT contain any hardware nouns: `tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`. (Note: `NEGATIVE PROMPT:` clauses and audio frequency words like "drone of fluorescent lights" are strictly exempt).

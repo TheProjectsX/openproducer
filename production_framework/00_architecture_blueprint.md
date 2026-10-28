@@ -171,8 +171,8 @@ The framework automatically configures its depth based on the selected Project A
 │   ├── master_videos_prompt.txt      # Master manifest for ALL VIDEO generation (Tier 3 Veo prompts)
 │   ├── narrator_script.md            # (Conditional) TTS script with word-to-time pacing
 │   ├── dialogue_scripts.md           # (Conditional) Character cue sheet manifest
-│   ├── origin_manifest.md            # Ledger mapping assets to engine origins & L-01..L-18 audit
-│   ├── lint_report.json              # Automated L-01 to L-18 pre-flight verification report
+│   ├── origin_manifest.md            # Ledger mapping assets to engine origins & L-01..L-19 audit
+│   ├── lint_report.json              # Automated L-01 to L-19 pre-flight verification report
 │   └── clips/                        # Isolated clip packages (e.g. clip_01/, clip_02/)
 │       └── <clip_id>/
 │           ├── image_prompt.txt      # [Tier 2] Starting Keyframe Plate (Conditioned on Tier 1)
@@ -180,7 +180,7 @@ The framework automatically configures its depth based on the selected Project A
 │
 └── pipeline/                         # Department: Node.js CLI Tooling (`npx @theprojectsx/video-skill`)
     ├── compile.js                    # Deterministic JSON/Markdown -> Front-loaded prompt compiler
-    ├── lint.js                       # Automated 18-point (L-01 to L-18) pre-flight quality validator
+    ├── lint.js                       # Automated 19-point (L-01 to L-19) pre-flight quality validator
     ├── chain.js                      # Validates keyframe & last_frame continuity chaining across clips
     └── export.js                     # Generates Google Flow Scene Builder & NLE timeline manifests
 ```
@@ -217,11 +217,13 @@ To guarantee complete session independence and rapid production recycling across
 
 ---
 
-## 7. Master Pre-Flight Linters (Authoritative Registry L-01 to L-18)
+## 7. Master Pre-Flight Linters (Authoritative Registry L-01 to L-19)
 
-Before any prompt is submitted to Google Flow, the pipeline validates it against the authoritative 18-rule registry defined in [`specs/05_directors_cut_assembly_spec.md`](specs/05_directors_cut_assembly_spec.md#8-master-pre-flight-linters-authoritative-registry-l-01-to-l-18):
+Before any prompt is submitted to Google Flow, the pipeline validates it against the authoritative 19-rule registry defined in [`specs/05_directors_cut_assembly_spec.md`](specs/05_directors_cut_assembly_spec.md#8-master-pre-flight-linters-authoritative-registry-l-01-to-l-19):
 - **Universal Prompt Purity:** `L-01` (Word Economy: 100–150w T2V, 75–150w Tier 3 I2V), `L-02` (Attention Front-Loading: Tokens 1–30), `L-03` (Equipment Noun Ban in positive prompt), `L-04` (Decoupled Configuration; stepped cadence whitelisted), `L-05` (Anti-Subtitle & Non-Render Guardrail).
 - **Subject, Prop & Environment Integrity:** `L-06` (Subject DNA Verbatim vs. Lean Reference Anchor), `L-07` (Pre-Materialized Prop Guard), `L-08` (Empty Stage & 3-Plane Environment).
 - **Temporal Slicing & Kinematics:** `L-09` (Flow Native Duration Lock: `{4s, 6s, 8s, 10s}`), `L-10` (Single-Motion De-Cramming & Clock Bracket Ban), `L-11` (Continuity Chaining Syntax), `L-12` (30° Contrast & Anti-Jump-Cut), `L-13` (180° Screen Direction & Clean Singles; OTS Ban).
 - **Audio, Dialogue & Scripting:** `L-14` (Dual-Track Speech Word Budget & $\ge 1.0\text{s}$ Buffer), `L-15` (Anti-Muppet Biomechanical Restraints & Sentence Case), `L-16` (Closed-Lip Listener Rule), `L-17` (Structured 4-Field Audio Syntax), `L-18` (Gemini TTS Tag Formatting & Non-Imposition Law).
+- **Trust & Safety Compliance:** `L-19` (Trust & Safety Pre-Flight Scanner & 2-Fork Creator Decision Gate via [`safety_registry.md`](specs/safety_registry.md)).
+
 
