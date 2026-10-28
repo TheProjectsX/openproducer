@@ -1,6 +1,6 @@
 # Specification: `safety_registry.md` (Trust & Safety Classifier Trigger & Sanitization Registry)
 
-**Status:** 🔒 LOCKED & EMPIRICALLY VALIDATED (Discussion 64)  
+**Status:** 🔒 LOCKED & UNIVERSALLY CODIFIED  
 **Domain:** `safety_registry` (Cross-Cutting Pre-Flight Subsystem)  
 **Governing Linter:** **L-19 (Trust & Safety Pre-Flight & Multi-Pathway Resolution Gate)**  
 **Target Engines:** Google Flow (Veo 3.1 & Gemini Omni Flash), ElevenLabs, Sync Labs, LivePortrait
@@ -11,37 +11,39 @@
 
 Generative video platforms (Google Flow / Veo 3.1) utilize upstream automated safety classifiers powered by Gemini safety models. These classifiers evaluate all prompt tokens—including spoken dialogue quotes—prior to rendering. 
 
-Because foreign languages are evaluated via automated English translation, colloquial satire and hyperbole frequently trip **false-positive policy blocks** (*"This generation might violate our policy"*).
+Colloquial satire, figurative sarcasm, and hyperbole frequently trip **false-positive policy blocks** (*"This generation might violate our policy"*) when automated classifiers interpret figurative language literally.
 
-The **Safety Registry** provides the deterministic dataset used by **Linter L-19** to detect risk tokens before prompt submission, alerting the creator and offering transparent resolution pathways.
+The **Safety Registry** provides the universal, deterministic dataset used by **Linter L-19** to detect risk tokens before prompt submission, alerting the creator and offering transparent resolution pathways without exposing internal development or testing data.
 
 ---
 
 ## 2. Master Policy Risk Classification Matrices
 
-### 2.1 Category A: Financial Fraud, Scams & High-Risk Deception
-* **Trigger Mechanism:** Google strictly blocks content resembling investment scams, predatory financial advice, get-rich-quick schemes, or high-risk gambling solicitations.
+### 2.1 Category A: Financial Deception, High-Risk Schemes & Severe Loss
+* **Trigger Mechanism:** Upstream safety filters strictly flag content resembling predatory financial advice, get-rich-quick claims, catastrophic financial devastation, or fraudulent solicitations.
 * **Classifier Category:** `HARM_CATEGORY_DANGEROUS_CONTENT` / Financial Fraud Classifier.
 
-| High-Risk Trigger Words / Phrases (Flagged by Veo) | English Translation / Semantic Meaning | Safe Colloquial Parity (100% Policy Clean) |
+| High-Risk Trigger Words / Phrases (Flagged by Veo) | Underlying Classifier Sensitivity | Safe Colloquial Parity (100% Policy Clean) |
 |---|---|---|
-| `"টাকা ঢালবেন... ফতুর"` | *"pour money... become bankrupt"* | `"আজকে ডিপোজিট করবেন, তো কালকেই ব্যালেন্স জিরো!"` |
-| `"bankrupt"`, `"be bankrupt"` | Legal bankruptcy / financial devastation | `"নিজের সব ব্যালেন্স খালি করুন"` (*"empty your balance"*) |
-| `"আজই জয়েন দিন Trading এ"` | Imperative call: *"Join trading today!"* | `"তাহলে চলে আসুন ট্রেডিং-এ"` (*"Come check out trading"*) |
-| `"সব টাকা হারাবেন"` | Catastrophic loss solicitation | `"পকেট এক নিমেষেই ফাঁকা"` (*"pockets emptied in a flash"*) |
-| `"guaranteed returns"`, `"get rich quick"` | Predatory promise | Use abstract metaphors: sleek chart visuals |
+| `"go completely bankrupt"`, `"become bankrupt"` | Legal insolvency / financial ruin | `"watch your balance drop to zero"` / `"empty your pockets in seconds"` |
+| `"guaranteed returns"`, `"get rich overnight"` | Predatory promise / fraudulent scheme | `"see how high-volatility moves play out"` |
+| `"invest all your life savings immediately"` | Imperative predatory financial solicitation | `"take a look at how aggressive markets work"` |
+| `"you will lose everything"` | Catastrophic devastation guarantee | `"prepare for maximum portfolio chaos"` |
+| `"double your money in 24 hours"` | Deceptive financial inducement | Stylized abstract metaphor: dynamic chart animations |
 
 ---
 
-### 2.2 Category B: Translation-Induced Self-Harm & Bodily Harm
-* **Trigger Mechanism:** Colloquial hyperbole translating literally to self-harm, destruction of life, or personal violence triggers Google's automated suicide prevention models.
-* **Classifier Category:** `HARM_CATEGORY_DANGEROUS_CONTENT` / Self-Harm Prevention.
+### 2.2 Category B: Figurative Hyperbole, Self-Harm & Bodily Harm
+* **Trigger Mechanism:** Colloquial hyperbole and sarcastic figures of speech that translate or read literally as personal harm, life destruction, or bodily violence trip automated suicide and self-harm prevention filters.
+* **Classifier Category:** `HARM_CATEGORY_DANGEROUS_CONTENT` / Self-Harm & Violence Prevention.
 
-| High-Risk Trigger Words / Phrases (Flagged by Veo) | English Translation / Semantic Meaning | Safe Colloquial Parity (100% Policy Clean) |
+| High-Risk Trigger Words / Phrases (Flagged by Veo) | Underlying Classifier Sensitivity | Safe Colloquial Parity (100% Policy Clean) |
 |---|---|---|
-| `"জীবন ধ্বংস করতে লেগে পরুন"` | Literal: *"get busy destroying your life"* | `"নিজের ১২টা বাজাতে চলে আসুন"` (*"come mess up your routine"*) |
-| `"মরতে চান?"` | Literal: *"do you want to die?"* | `"শান্তির জীবন শেষ করতে চান?"` (*"want to end your peaceful life?"*) |
-| `"গলা টিপে ধরা"` | Literal: *"strangle / choke"* | Stylized dramatic reaction: *"দম বন্ধ করা উত্তেজনা"* |
+| `"get busy destroying your life"`, `"ruin your life"` | Literal self-destruction / personal harm | `"come mess up your peaceful daily routine"` |
+| `"ready to die?"`, `"want to end it all?"` | Literal suicide / mortality solicitation | `"ready for absolute pandemonium?"` / `"want complete chaos?"` |
+| `"choke out the competition"`, `"strangle"` | Physical violence / asphyxiation | `"overwhelm the competition with pure energy"` |
+| `"blow your brains out"` | Graphic self-harm idiom | `"mind-blowing revelation that changes everything"` |
+| `"slit your own throat"` | Lethal self-harm metaphor | `"shoot yourself in the foot"` / `"make an avoidable rookie mistake"` |
 
 ---
 
@@ -66,14 +68,14 @@ When **Linter L-19** detects any token matching this registry in a production sc
 ⚠️ PRE-FLIGHT POLICY ALERT (Linter L-19):
 Phrase: "[Flagged Phrase]" in clip_[ID]
 Risk Category: [Financial Deception / Self-Harm / Graphic Trauma]
-Probability of Google Flow Block: HIGH (≥ 90%)
+Probability of Platform Policy Block: HIGH (≥ 90%)
 
 Please choose your preferred production pathway:
 
 [OPTION A: Native Flow Safe Reword (Recommended for 1-Click Veo Generation)]
 • Substitute with safe colloquial satire: "[Proposed Safe Parity Line]"
-• Benefit: 100% bypass of Google's policy filter while preserving comedy and native lip-sync.
-• Cost: Minor rephrasing of the dialogue line.
+• Benefit: 100% bypass of platform policy filters while preserving comedic tone and native lip-sync.
+• Cost: Minor colloquial rephrasing of the dialogue line.
 
 [OPTION B: Uncompromised Exact Script (Preserve 100% Original Words)]
 • Retain original script: "[Exact Original Line]"

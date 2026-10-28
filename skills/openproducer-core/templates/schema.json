@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OpenProducerCreatorTemplate",
+  "description": "Schema for saved creator franchise/series production templates",
+  "type": "object",
+  "required": [
+    "template_id",
+    "name",
+    "archetype",
+    "tier",
+    "aspect_ratio",
+    "audio_pathway",
+    "visual_dna",
+    "pacing_profile"
+  ],
+  "properties": {
+    "template_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Unique lowercase dash-separated identifier (e.g. stickman-youtube, crypto-explainer)"
+    },
+    "name": {
+      "type": "string",
+      "description": "Human-readable name of the series or channel template"
+    },
+    "description": {
+      "type": "string",
+      "description": "Summary of the series format, visual style, and target audience"
+    },
+    "archetype": {
+      "type": "string",
+      "enum": ["social_ugc", "cinematic", "commercial", "documentary", "animation"]
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["lean_base_reference", "modular_studio"]
+    },
+    "aspect_ratio": {
+      "type": "string",
+      "enum": ["9:16", "16:9", "1:1", "4:5"]
+    },
+    "resolution": {
+      "type": "string",
+      "default": "1080p"
+    },
+    "audio_pathway": {
+      "type": "string",
+      "enum": ["pathway_a_native_veo", "pathway_b_external_audio_lipsync"]
+    },
+    "visual_dna": {
+      "type": "object",
+      "required": ["style_id", "master_style_anchor", "negative_prompt"],
+      "properties": {
+        "style_id": { "type": "string" },
+        "master_style_anchor": { "type": "string" },
+        "negative_prompt": { "type": "string" }
+      }
+    },
+    "subject_dna": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "biometrics": { "type": "string" },
+        "wardrobe": { "type": "string" },
+        "expression_profile": { "type": "string" }
+      }
+    },
+    "environment_dna": {
+      "type": "object",
+      "properties": {
+        "setting_name": { "type": "string" },
+        "spatial_description": { "type": "string" },
+        "lighting_rig": { "type": "string" },
+        "acoustics": { "type": "string" }
+      }
+    },
+    "pacing_profile": {
+      "type": "object",
+      "required": ["default_clip_duration", "words_per_second", "vocal_onset"],
+      "properties": {
+        "default_clip_duration": { "type": "integer", "enum": [4, 6, 8, 10] },
+        "words_per_second": { "type": "number", "default": 2.2 },
+        "vocal_onset": { "type": "string", "enum": ["immediate_vocal_attack", "pre_roll_buffer"] }
+      }
+    },
+    "motion_graphics": {
+      "type": "object",
+      "properties": {
+        "font_family": { "type": "string" },
+        "primary_color": { "type": "string" },
+        "accent_color": { "type": "string" },
+        "style": { "type": "string" }
+      }
+    }
+  }
+}

@@ -157,14 +157,14 @@ The **Retake Doctor** is an autonomous diagnostic engine that eliminates trial-a
 ### Diagnostic Code G-14: Automated Trust & Safety (T&S) Policy False Positives
 * **Creator Complaint:** *"Google Flow says: 'This generation might violate our policy' and blocks the clip from rendering!"*
 * **Root Cause:** Upstream automated text classifiers (Gemini Safety Filter / Google Trust & Safety) evaluate the entire prompt (`[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`, and dialogue quotes) via translation to English. Non-English idioms and technical negative tokens frequently trigger 3 distinct policy false positives:
-  1. *Self-Harm & Personal Violence Classifiers:* Bengali/foreign phrases like `"জীবন ধ্বংস করতে"` translate literally to `"destroy your life"`, triggering automated self-harm prevention blocks.
-  2. *Financial Fraud & High-Risk Solicitation Classifiers:* Imperative promotional calls like `"আজই জয়েন দিন Trading এ"` (*"Join Trading today!"*) or explicit bankruptcy betting (*"টাকা ঢালবেন... ফতুর"*) trigger investment scam and predatory financial advice blocks.
+  1. *Self-Harm & Personal Violence Classifiers:* Sarcastic figures of speech like `"ready to destroy your life"` or `"want to end it all"` trip automated suicide and self-harm prevention models when evaluated literally.
+  2. *Financial Deception & High-Risk Solicitation Classifiers:* Promotional imperatives like `"Invest everything today and get rich overnight!"` or explicit solvency keywords like `"go completely bankrupt"` trigger predatory solicitation and investment scam filters.
   3. *Negative Prompt Gore/Decapitation Inversion:* AI safety classifiers often lack negation awareness; including tokens like `"twisting head 360 degrees"` or `"mutated neck"` in `[NEGATIVE PROMPT]` causes the safety parser to flag the clip for graphic violence or physical trauma!
 * **Surgical Patch & The 2-Option Decision Gate (`L-19`):**
   When a T&S trigger matching [`safety_registry.md`](safety_registry.md) is detected, the AI presents the interactive choice:
   1. **Option A: Native Flow Safe Reword (1-Click Veo Generation):**
-     - Replace literal regulatory keywords (*"bankrupt"*, *"destroy life"*) with safe colloquial hyperbole (*"ব্যালেন্স জিরো"*, *"১২টা বাজাতে"*, *"নিজের সব ব্যালেন্স খালি করুন"*).
-     - Reframe imperative solicitations (*"Join Trading today"*) into observational humor (*"তাহলে চলে আসুন ট্রেডিং-এ"*).
+     - Replace literal regulatory keywords (*"bankrupt"*, *"destroy life"*) with safe colloquial hyperbole (*"watch your balance hit zero"*, *"mess up your peaceful routine"*).
+     - Reframe imperative solicitations (*"Invest everything right now!"*) into observational satire (*"Let's explore how fast a portfolio can experience pure chaos"*).
      - Sanitize negative prompt: purge gore/trauma words, retaining neutral quality tokens.
   2. **Option B: Uncompromised Exact Script (Decoupled Audio & External Lip-Sync):**
      - Retain 100% of the raw, edgy authored script.
@@ -176,12 +176,12 @@ The **Retake Doctor** is an autonomous diagnostic engine that eliminates trial-a
 
 ### Diagnostic Code G-15: Inter-Sentence Boundary Stutter & Multi-Sentence Phonetic Looping
 * **Creator Complaint:** *"The character repeated words in the middle of speaking (specifically repeating the first word of the next sentence after finishing the first sentence)."*
-* **Root Cause:** Punctuation-induced prosody pause. When a dialogue quote inside a single clip contains multiple sentences separated by terminal punctuation (`?`, `.`, `!`, `।`), Veo drops acoustic prosody at the boundary. When re-initiating vocal articulation for the second sentence, the cross-attention audio head frequently re-samples or stutters the onset token/word twice. Continuous single-sentence lines (with commas) do not suffer from this glitch.
+* **Root Cause:** Punctuation-induced prosody pause. When a dialogue quote inside a single clip contains multiple sentences separated by terminal punctuation (`?`, `.`, `!`), Veo drops acoustic prosody at the boundary. When re-initiating vocal articulation for the second sentence, the cross-attention audio head frequently re-samples or stutters the onset token/word twice. Continuous single-sentence lines (with commas) do not suffer from this glitch.
 * **Surgical Patch:**
   1. **The Single-Sentence Dialogue Law:** Every atomic video clip must contain strictly **ONE contiguous spoken sentence or flowing clause**. Never embed multiple disjointed sentences separated by hard terminators in a single clip.
-  2. **Punctuation-Only Continuity Bridges (Script Invariance Law):** Never alter or rewrite the creator's authored words. Preserve 100% of the exact vocabulary by simply replacing hard terminal punctuation (`।`, `?`, `!`, `.`) with soft acoustic suspension markers—specifically **ellipsis dots (`...`)** or **commas (`,`)**:
-     - *Script Invariant Example (Clip 01):* `"চান? তাহলে..."` $\rightarrow$ `"চান... তাহলে চলে আসুন ট্রেডিং-এ!"`
-     - *Script Invariant Example (Clip 04):* `"তো দেরি কেনো। আজই..."` $\rightarrow$ `"তো দেরি কেনো... আজই চলে আসুন ট্রেডিং-এ, আর নিজের সব ব্যালেন্স খালি করুন!"`
+  2. **Punctuation-Only Continuity Bridges (Script Invariance Law):** Never alter or rewrite the creator's authored words. Preserve 100% of the exact vocabulary by simply replacing hard terminal punctuation (`?`, `!`, `.`) with soft acoustic suspension markers—specifically **ellipsis dots (`...`)** or **commas (`,`)**:
+     - *Script Invariant Example 1:* `"Want to learn the secret? Then listen closely."` $\rightarrow$ `"Want to learn the secret... then listen closely."`
+     - *Script Invariant Example 2:* `"Why wait? Jump into the action right now."` $\rightarrow$ `"Why wait... jump into the action right now, and see the results."`
      - *Why Ellipsis (`...`) Works:* In neural speech synthesizers, `...` is parsed as an in-sentence natural breath/suspension pause rather than a hard sentence-termination `<eos>` token, preventing the onset stutter without changing a single spoken word.
   3. **Kuleshov Slicing (Alternative):** If the two sentences represent distinct emotional beats (e.g., Question hook $\rightarrow$ CTA punchline), slice them across two separate 4-second clips.
   4. **Mandatory Negative Audio Tokens:** `repeated words, stuttering, looping speech, repeating phrases, double speech, audio echo, onset stutter`.

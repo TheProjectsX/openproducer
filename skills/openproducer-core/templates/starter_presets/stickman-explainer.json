@@ -1,0 +1,38 @@
+{
+  "template_id": "stickman-explainer",
+  "name": "Stickman Explainer Series",
+  "description": "Minimalist hand-drawn 2D vector stick figure on textured paper for sarcastic educational and commentary reels.",
+  "archetype": "animation",
+  "tier": "lean_base_reference",
+  "aspect_ratio": "9:16",
+  "resolution": "1080p",
+  "audio_pathway": "pathway_a_native_veo",
+  "visual_dna": {
+    "style_id": "vector_stick_figure",
+    "master_style_anchor": "Minimalist 2D hand-drawn black ink vector art on clean off-white textured sketchbook parchment, bold clean line-weights, zero shading, stark high contrast, expressive graphic animation.",
+    "negative_prompt": "3D render, photorealistic human, realistic skin, blurry, colored gradients, photoreal background, complex anatomy, realistic eyes, lens flare, film grain."
+  },
+  "subject_dna": {
+    "name": "Stickman Narrator",
+    "biometrics": "Clean circular white head with bold black outline, 4px solid black ink limbs, two oversized expressive black dot eyes, cartoon mouth with wide comedic expressions.",
+    "wardrobe": "None, pure minimalist stick figure aesthetic.",
+    "expression_profile": "Deadpan sarcasm, wide-eyed disbelief, energetic animated gestures."
+  },
+  "environment_dna": {
+    "setting_name": "Infinite Sketchbook Canvas",
+    "spatial_description": "Clean minimalist off-white textured parchment surface with subtle natural paper fiber texture.",
+    "lighting_rig": "Even flat cartoon illumination, zero specular reflections, zero dark shadows.",
+    "acoustics": "Dry direct microphone capture, crisp cartoon vocal delivery, zero reverb, zero room echo."
+  },
+  "pacing_profile": {
+    "default_clip_duration": 6,
+    "words_per_second": 2.2,
+    "vocal_onset": "immediate_vocal_attack"
+  },
+  "motion_graphics": {
+    "font_family": "Montserrat Black",
+    "primary_color": "#000000",
+    "accent_color": "#FF3366",
+    "style": "Handwritten pop-on-word"
+  }
+}

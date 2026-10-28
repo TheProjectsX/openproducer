@@ -34,8 +34,7 @@ This workspace is accessed across different devices, workstations, and conversat
 | **Phase 5: Core Domain Primitives** | Visuals, Subjects, Sceneries, Cinematography, Audio & Retake Doctor | ✅ **FINALIZED** | [`01_visual`](./production_framework/specs/01_visual_spec.md), [`02_subject`](./production_framework/specs/02_subject_spec.md), [`03_scenery`](./production_framework/specs/03_scenery_spec.md), [`04_cinematography_audio`](./production_framework/specs/04_cinematography_audio_spec.md), [`06_retake_doctor`](./production_framework/specs/06_retake_doctor_spec.md) | [`discussions/`](./discussions/) |
 | **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (4s/6s/8s/10s), Multi-Character Clean Singles, Spatial Handoffs, Dynamic Audio Bridges, Pluggable Styles, Retake Doctor & T&S Registry | 🔒 **LOCKED & EMPIRICALLY VALIDATED** | [`05_directors_cut`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`06_retake_doctor`](./production_framework/specs/06_retake_doctor_spec.md), [`safety_registry`](./production_framework/specs/safety_registry.md), [`styles/`](./production_framework/styles/) | [`directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md), [Discussions 49, 63, 64](./discussions/_raw/) |
 
-| **Phase 7: Project Scaffolding** | Dynamic Workspace Scaffolding Spec, OpenSpec `openproducer/` Engine, Two-Tier Elastic Generator & 2-Phase Guided Producer Flow | ✅ **COMPLETE** | [`07_scaffolding`](./production_framework/specs/07_scaffolding_and_workspace_spec.md), [`production_template/`](./production_template/) | [Discussion 65](./discussions/_raw/65_phase_07_universal_production_scaffolding.md) |
-| **Phase 8: Automation Skill & Linters** | Node.js / npx Tooling Suite (`OpenProducer` / `openproducer`), Master Linters (L-01 to L-19), Flow Timeline Manifest Export | ⏳ Pending | Tooling & Skill code | TBD |
+| **Phase 8: Automation Skill & Linters** | OpenProducer Agent Skill, 7 Operational Modes, Global Series Templates, 19 Linters & 8 Pluggable Styles | ⏳ In Progress (Skill Packaged) | [`skills/openproducer/`](./skills/openproducer/) | [Discussion 66](./discussions/_raw/66_mode_architecture_and_creator_series_templates.md) |
 
 ---
 
@@ -642,6 +641,29 @@ To prevent token bloat while retaining 100% information control:
   2. *The Fork:* Experienced creators proceed directly to self-serve rendering; new creators are offered the Step-by-Step Guided Run.
   3. *Phase 2 (Guided Run):* Step-by-step guidance through Gate 1 (Base Image Lock & Re-roll Loop), Gate 2 (Audio & Script Review), Gate 3 (Clip-by-Clip Render Run), and Gate 4 (Retake Doctor Polish).
 - **Deliverables Created:** Authoritative canonical template directory [`production_template/`](./production_template/) and discussion record [`discussions/_raw/65_phase_07_universal_production_scaffolding.md`](./discussions/_raw/65_phase_07_universal_production_scaffolding.md).
+
+### 2026-10-28 — Phase 08 Architecture: 7 Operational Modes & Global Creator Series Templates (Discussion 66)
+- **Progressive Disclosure Architecture:** Decoupled the upcoming agent skill to prevent token bloat: a lean `SKILL.md` router (~1,500 tokens) accompanied by dedicated mode modules in `modes/` and reference bibles in `references/`.
+- **The 7-Mode Operational Roster:**
+  1. `explore` (`/opp:explore`): Creative discovery, archetype classification (Social UGC, Cinema, Commercial, Animation), aspect ratio (`9:16`/`16:9`), audio pathway.
+  2. `propose` (`/opp:propose`): Internal draft synthesis in `openproducer/blueprint.md` (clip pacing, duration, cinematography plan) before touching workspace root.
+  3. `produce` (`/opp:produce`): Physical file factory generating all creator deliverables on disk (`base_image_prompt.txt`, `clips/`, `scratchbook.md`, `master_videos_prompt.txt`).
+  4. `guide` (`/opp:guide`): The 4-gate interactive co-pilot (Base Image lock & re-roll, audio review, clip render, retake check).
+  5. `sync` (`/opp:sync`): Automated pre-flight auditor checking Linters L-01 to L-19 and compiling `master_videos_prompt.txt`.
+  6. `doctor` (`/opp:doctor`): Emergency room triage for AI video glitches (G-01 to G-16) and surgical prompt patching.
+  7. `template` (`/opp:template`): Global series franchise presets stored at `~/.openproducer/templates/<template-id>.json` enabling 1-click generation of recurring episodic content.
+- **Dual-Trigger Interaction Model:** Seamless convergence of explicit slash commands (`/openproducer:<mode>` / `/opp:<mode>`) and natural conversational intent routing.
+- **Reference Deliverable:** [`discussions/_raw/66_mode_architecture_and_creator_series_templates.md`](./discussions/_raw/66_mode_architecture_and_creator_series_templates.md).
+
+### 2026-10-28 — OpenSpec Modular Packaging & Standardized Status Output Engine
+- **OpenSpec UI Integration:** Restructured `skills/` into discrete callable skills and IDE workflows matching the native Antigravity/OpenSpec pattern:
+  - `skills/workflows/` containing 7 slash-command workflows (`opp-explore.md` through `opp-template.md`) that directly populate the IDE's `/` suggestion popup with subtitles and descriptions.
+  - 7 discrete skill directories (`skills/openproducer-explore/`, `openproducer-propose/`, `openproducer-produce/`, `openproducer-guide/`, `openproducer-sync/`, `openproducer-doctor/`, `openproducer-template/`).
+  - Shared knowledge core at `skills/openproducer-core/` housing the 9 domain specifications, 8 master visual style paradigms, and global series template schema.
+- **Mandatory Structured Output Card:** Codified and enforced a standardized `### 🎬 OpenProducer Status: [MODE]` visual dashboard card at the conclusion of every skill execution, displaying project metadata, artifacts created/updated, and the explicit next step slash command.
+- **Specs Universalization:** Purged all simulation-specific non-English strings from `safety_registry.md` and `06_retake_doctor_spec.md`, certifying 100% universal English across all production specifications.
+
+
 
 
 
