@@ -1,289 +1,296 @@
-# Specification 07: Dynamic Workspace Scaffolding & The 2-Phase Guided Producer Engine
+# Specification 07: Dynamic Workspace Scaffolding & Creator File Architecture
 
-## 1. Architectural Philosophy: The Dynamic Generator Paradigm
+## 1. Architectural Philosophy: Brain vs. Creator Deliverables
 
-In OpenProducer, **we do not copy static template folders containing dummy placeholder text**. Static templates burden creators with placeholder cleanup and force rigid assumptions (e.g. fixed 4 clips, dummy characters, generic dialogue).
+In OpenProducer, **we do not copy static template folders containing dummy placeholder text**, and **OpenProducer NEVER generates any image on its own** (not even as an example to show the creator) unless the creator explicitly asks it to generate an image.
 
-Instead, OpenProducer operates on the **Dynamic Generator Paradigm**:
-1. The **AI Agent is the Executive Producer & Director**. It holds the complete architectural knowledge and prompt-engineering mechanics in its skill brain.
-2. During initial intake, the Agent analyzes the creator's creative pitch, script, or photo.
-3. The Agent **classifies the project tier** (Lean vs. Studio) and **dynamically synthesizes the exact, custom-tailored workspace directly on disk**—with real characters, tailored cinematography, accurate duration budgets, and zero dummy boilerplate.
-4. The Agent then presents a **2-Phase Creator Experience**: a one-pass full package draft followed by an interactive, step-by-step guided review.
+The workspace is strictly divided into two zones:
+1. **`./openproducer/` (The Brain):** Internal producer state, configuration, style anchors, linter manifest, and full story/session memory (`blueprint.md`). Created/updated during `propose`, `sync`, and `template`.
+2. **`<project_root>/` (Creator Deliverables):** Clean, plain-text `.txt` prompt files (with zero markdown bloat) plus `.md` script/timeline files generated during `produce`.
 
 ---
 
 ## 2. Project Tier Classification Logic
 
-The Agent automatically evaluates project complexity based on creator input and selects one of two operating tiers:
+The Agent evaluates project complexity and selects one of two operating tiers:
 
 ```mermaid
 graph TD
-    A["Creator Pitch / Script / Reference"] --> B{"Complexity Classification"}
+    A["Creator Pitch / Plot / Reference"] --> B{"Complexity Classification"}
     
-    B -->|"1 Subject & 1 Environment<br/>(Social UGC, Solo Explainer, 2D Stick Figure, Product Ad)"| C["TIER 1: LEAN BASE-REFERENCE<br/>(Flat, Minimal, Single Base Image)"]
+    B -->|"1 Subject & 1 Environment<br/>(Social UGC, Solo Explainer, 2D Stick Figure, Product Ad)"| C["TIER 1: LEAN VERSION<br/>(base_image_prompt.txt + clips/)"]
     
-    B -->|">=2 Recurring Characters OR<br/>Multiple Distinct Locations OR<br/>Episodic Narrative Short"| D["TIER 2: MODULAR STUDIO<br/>(Scene Grouping, Modular Subjects, Genesis Plate)"]
+    B -->|">=2 Recurring Characters OR<br/>Multiple Distinct Locations OR<br/>Episodic Narrative Short"| D["TIER 2: MODULAR STUDIO VERSION<br/>(base_image_prompt.txt + subjects/ + visuals/environments/ + clips/)"]
 ```
 
 ### Classification Rules:
-| Project Trait | Assigned Tier | Scaffolding Behavior |
+| Project Trait | Assigned Tier | Creator Scaffolding Behavior |
 |---|---|---|
-| Single host/creator in one studio/room | **Lean Tier** | Single `base_image_prompt.txt` locks face + studio together. No `subjects/` or `environments/` folders created. |
-| 2D animation / Stick Figure explainer | **Lean Tier** | Single `base_image_prompt.txt` locks art style + canvas. Flat `clips/` directory. |
-| Tabletop commercial product (watch, shoe) | **Lean Tier** | Single `base_image_prompt.txt` locks lighting + product hero. Flat `clips/` directory. |
-| Short film with 2+ actors interacting | **Studio Tier** | Generates `openproducer/subjects/<id>/` for each actor; clips use multi-character clean singles. |
-| Story moving across multiple locations | **Studio Tier** | Generates `openproducer/environments/<id>/` for each stage plate. |
-| Multi-scene episodic narrative | **Studio Tier** | Clips grouped into `clips/scene_01/`, `clips/scene_02/`. |
+| Single host/creator in one studio/room | **Lean Version** | `base_image_prompt.txt` locks base style, face, and studio together. No `subjects/` or `visuals/environments/` folders needed. |
+| 2D animation / Stick Figure explainer (single setting) | **Lean Version** | `base_image_prompt.txt` locks art style + character + canvas. Flat `clips/` directory. |
+| Tabletop commercial product (watch, shoe) | **Lean Version** | `base_image_prompt.txt` locks lighting + product hero. Flat `clips/` directory. |
+| Short film / animation with 2+ characters or multiple locations | **Modular Studio Version** | `base_image_prompt.txt` locks master visual style first; generates creator-facing `subjects/<id>/` and `visuals/environments/<id>/` `.txt` prompts at project root. |
 
 ---
 
 ## 3. Directory Layout Contracts
 
-### 3.1 Tier 1: Lean Base-Reference Workspace
-*Optimized for speed, simplicity, and zero friction. The creator sees only what they need to execute.*
+### 3.1 Tier 1: Lean Version Workspace
+*Optimized for single-subject or single-setting productions.*
 
 ```text
 <project_root>/
-├── openproducer/                  # THE PRODUCER ENGINE ROOM (Agent Context)
-│   ├── config.json                # Project configuration & model settings
-│   ├── state.json                 # Interactive production stage tracker
-│   ├── blueprint.md               # Chronological collaboration log & decisions
+├── openproducer/                  # 🧠 THE BRAIN (Internal Agent Context)
+│   ├── config.json                # Project configuration, audio pathway & delivery settings
+│   ├── state.json                 # Interactive stage tracker (explore | proposed | produced | guiding)
+│   ├── blueprint.md               # Complete archived story, plot, plans & session memory
 │   ├── manifest.json              # Pre-flight audit ledger for Linters L-01 to L-19
 │   └── visual/
 │       └── technical_anchor.txt   # The master 30-word visual style anchor string
 │
-├── base_image_prompt.txt          # CREATOR ASSET: Tier 1 prompt to generate base_image.jpg
-├── references/                    # CREATOR ASSET: Visual assets directory
-│   ├── creator_photo.jpg          # (Input) Real photo, sketch, or mood reference
-│   └── base_image.jpg             # (Output from Gate 1) Master Ingredient #1 for Flow
+├── base_image_prompt.txt          # 🎨 CREATOR FILE: Master Base Style & Subject/Setting lock prompt
+├── audio_script.md                # 🎙️ CREATOR FILE: (If Separate Audio) Clean script to generate/record voice/audio
 │
-├── clips/                         # CREATOR ASSET: The shot prompts
+├── clips/                         # 🎬 CREATOR FOLDER: Shot-by-shot plain-text prompts
 │   ├── clip_01/
-│   │   ├── image_prompt.txt       # Tier 2: Starting posture/framing
-│   │   └── video_prompt.txt       # Tier 3: Action, dialogue, cinematography, audio
+│   │   ├── image_prompt.txt       # Tier 2: Starting frame prompt (Conditioned On: base_image_prompt.txt)
+│   │   └── video_prompt.txt       # Tier 3: Video prompt (Input Seed: clips/clip_01/image_prompt.txt)
 │   ├── clip_02/
+│   │   ├── image_prompt.txt
 │   │   └── video_prompt.txt
-│   └── clip_XX/
+│   └── clip_xxx/
 │
-├── master_videos_prompt.txt       # CREATOR ASSET: 1-click clipboard for Google Flow
-├── scratchbook.md                 # CREATOR ASSET: Script pacing table (4s/6s/8s) & retake log
-└── motion_graphics.md             # CREATOR ASSET: On-screen caption & subtitle cue sheet
+├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All image prompts compiled (ignored by /opp-guide)
+├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All video prompts compiled (ignored by /opp-guide)
+├── scratchbook.md                 # 📝 CREATOR FILE: Timeline pacing table (4s/6s/8s), timestamps & retake log
+└── motion_graphics.md             # 🔤 CREATOR FILE: (If applicable) On-screen captions & typography cue sheet
 ```
 
 ---
 
-### 3.2 Tier 2: Modular Studio Workspace
-*Activated for multi-character, multi-scene narrative productions. Keeps the creator root uncluttered while storing deep character bibles and stage plates inside `openproducer/`.*
+### 3.2 Tier 2: Modular Studio Version Workspace
+*Activated for multi-character or multi-environment productions. Because the creator must generate the character references and environment plates as base images in Google Flow / Imagen, `subjects/` and `visuals/environments/` live directly in the Creator File Structure at project root.*
 
 ```text
 <project_root>/
-├── openproducer/                  # THE PRODUCER ENGINE ROOM
-│   ├── config.json                # Tier: "modular_studio", Aspect: "16:9", Cinema
-│   ├── state.json                 # State tracker with scene completion metrics
-│   ├── blueprint.md               # Director's screenplay notes & character arcs
+├── openproducer/                  # 🧠 THE BRAIN (Internal Agent Context)
+│   ├── config.json                # Tier: "modular_studio", Aspect: "16:9", etc.
+│   ├── state.json                 # State tracker
+│   ├── blueprint.md               # Complete archived story, character arcs & session memory
 │   ├── manifest.json              # Pre-flight audit ledger (L-01 to L-19)
-│   │
-│   ├── visual/                    # Master Visual DNA
-│   │   ├── technical_anchor.txt   # Master style anchor string
-│   │   └── genesis_prompt.txt     # Generates genesis_style.jpg to anchor all assets
-│   │
-│   ├── subjects/                  # Modular Cast & Hero Props
-│   │   ├── <subject_a_id>/
-│   │   │   ├── profile.md         # Facial biometrics, wardrobe, voice profile
-│   │   │   ├── hero_prompt.txt    # Step 1 Hero shot (conditioned on genesis_style.jpg)
-│   │   │   └── turnaround.jpg     # Step 2: 4-view model sheet (Ingredient for Flow)
-│   │   └── <subject_b_id>/
-│   │       ├── profile.md
-│   │       ├── hero_prompt.txt
-│   │       └── turnaround.jpg
-│   │
-│   └── environments/              # Modular Stages (Empty 3-Plane Plates)
-│       ├── <env_a_id>/
-│       │   ├── summary.md         # Spatial depth, lighting rig, acoustics
-│       │   └── plate.jpg          # Empty stage plate (conditioned on genesis_style.jpg)
-│       └── <env_b_id>/
-│           ├── summary.md
-│           └── plate.jpg
+│   └── visual/
+│       └── technical_anchor.txt   # Master style anchor string
 │
-├── references/
-│   └── genesis_style.jpg          # Master Visual DNA Reference
+├── base_image_prompt.txt          # 🎨 CREATOR FILE: Master Base Style lock prompt (anchors all subjects & environments)
+├── audio_script.md                # 🎙️ CREATOR FILE: (If Separate Audio) Clean script to generate/record voice/audio
 │
-├── clips/                         # The Shots Grouped by Scene
-│   ├── scene_01_<name>/
-│   │   ├── clip_01/
-│   │   │   └── video_prompt.txt   # Ingredients: [IMAGE 1]=subject_a, [IMAGE 2]=env_a
-│   │   └── clip_02/
-│   │       └── video_prompt.txt   # Clean single of subject_b
-│   └── scene_02_<name>/
-│       ├── clip_03/
-│       │   └── video_prompt.txt   # Ingredients: [IMAGE 1]=subject_a, [IMAGE 2]=env_b
-│       └── clip_04/
+├── subjects/                      # 👥 CREATOR FOLDER: Character & Subject Base Prompts
+│   ├── <subject_id_or_name>/
+│   │   ├── hero_prompt.txt        # Step 1: Single Hero Shot prompt (Conditioned On: base_image_prompt.txt)
+│   │   └── profile_prompt.txt     # Step 2: 4-View Turnaround prompt (Conditioned On: hero_prompt.txt)
+│   └── <subject_2_name>/
+│       ├── hero_prompt.txt
+│       └── profile_prompt.txt
 │
-├── master_videos_prompt.txt       # Master compilation grouped by scene with ingredient maps
-├── scratchbook.md                 # Screenplay timeline, eyeline vectors, acoustic bridges
-└── motion_graphics.md             # Title cards, lower thirds, subtitle cue sheet
+├── visuals/                       # 🌆 CREATOR FOLDER: Environment Base Prompts
+│   └── environments/
+│       ├── <environment_id_or_name>/
+│       │   └── prompt.txt         # Empty 3-plane stage plate prompt (Conditioned On: base_image_prompt.txt)
+│       └── <environment_2_name>/
+│           └── prompt.txt
+│
+├── clips/                         # 🎬 CREATOR FOLDER: Shot-by-shot plain-text prompts
+│   ├── clip_01/
+│   │   ├── image_prompt.txt       # Keyframe prompt (Conditioned On: subject + environment images)
+│   │   └── video_prompt.txt       # Video prompt (Input Seed: clips/clip_01/image_prompt.txt)
+│   ├── clip_02/
+│   │   ├── image_prompt.txt
+│   │   └── video_prompt.txt
+│   └── clip_xxx/
+│
+├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All base, subject, environment & clip image prompts compiled (ignored by /opp-guide)
+├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All clip video prompts compiled (ignored by /opp-guide)
+├── scratchbook.md                 # 📝 CREATOR FILE: Timeline pacing math, eyeline vectors & retake log
+└── motion_graphics.md             # 🔤 CREATOR FILE: (If applicable) Title cards, lower thirds & subtitle cue sheet
 ```
 
 ---
 
-## 4. Exact File Content Contracts & Schemas
+## 4. Exact Plain-Text Prompt File Contracts (Modeled on `the_314am_doppelganger`)
 
-### 4.1 `openproducer/config.json` Schema
-```json
-{
-  "project_name": "<project_slug>",
-  "archetype": "social_ugc | cinematic | commercial | documentary | animation",
-  "tier": "lean_base_reference | modular_studio",
-  "aspect_ratio": "9:16 | 16:9 | 1:1",
-  "resolution": "1080p | 4k",
-  "target_duration_seconds": 24,
-  "flow_orchestration": {
-    "video_model": "veo-3.1",
-    "image_model": "imagen-4",
-    "director_model": "gemini-1.5-pro"
-  },
-  "audio_pathway": "pathway_a_native_veo | pathway_b_external_audio_lipsync",
-  "language": "bn-BD | en-US | etc",
-  "linter_profile": "strict"
-}
-```
+### 4.1 Clean Plain-Text Format (Zero Markdown Bloat in Prompt Files)
+All prompt files (`.txt`) must use clean, simple plain-text bracket headers (`[TIER ...]`, `[IMAGE PROMPT]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`) with `Conditioned On:` or `Input Seed / Dependencies:` noted directly in the top header block—never cluttered with markdown `#` headings, emojis, or bullet lists.
 
----
-
-### 4.2 `openproducer/state.json` Schema
-```json
-{
-  "project_name": "<project_slug>",
-  "tier": "lean_base_reference",
-  "current_stage": "intake_complete | base_image_review | audio_review | clip_rendering | retake_doctor | completed",
-  "stages": {
-    "synthesis_complete": true,
-    "base_image_locked": false,
-    "audio_script_locked": false,
-    "clips_rendered": false,
-    "assembly_complete": false
-  },
-  "interactive_guidance": {
-    "enabled": true,
-    "active_gate": 1,
-    "gate_name": "base_image_review"
-  },
-  "created_at": "ISO-8601 Timestamp",
-  "updated_at": "ISO-8601 Timestamp"
-}
-```
-
----
-
-### 4.3 `base_image_prompt.txt` Structure Contract
+#### 1. `base_image_prompt.txt`
 ```text
-================================================================================
-TIER 1: MASTER BASE REFERENCE IMAGE PROMPT
-================================================================================
-[IMAGE CONFIGURATION]
-Aspect Ratio: <9:16 | 16:9>
+[TIER 1: MASTER BASE REFERENCE PROMPT — <PROJECT NAME>]
+Target Engine: Google Flow / Imagen 4 (Master Ingredient #1)
+Conditioned On: None (or creator_photo.jpg if using a real human reference)
+Aspect Ratio: 16:9
 Resolution: 1080p
-Conditioning: [IMAGE 1] (Creator Reference Photo in references/creator_photo.jpg)
-Output Asset: references/base_image.jpg
+
+[MASTER IMAGE PROMPT]
+<Cinematic framing, subject/scene anchor, lighting vectors, and master visual style anchor string. 100% pure creative description, zero equipment nouns.>
+
+[NEGATIVE PROMPT]
+<photorealistic/cartoon exclusions, blurry, altered style, distorted proportions, cluttered background, harsh flash, watermarks, text, subtitles.>
+```
+
+#### 2. `subjects/<subject_id_or_name>/hero_prompt.txt` & `profile_prompt.txt` (Modular Studio)
+```text
+[TIER 1A: SUBJECT HERO PROMPT — <SUBJECT NAME>]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Attach as [IMAGE 1] for Master Style Lock)
+Feeds Into: subjects/<subject_id_or_name>/profile_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
 
 [IMAGE PROMPT]
-<Cinematic framing, subject identity, facial landmark locks, wardrobe materiality, environment spatial depth, lighting vectors, and visual style anchor string. 100% pure cinema description, zero equipment nouns.>
+<Step 1 Genesis Hero Shot prompt locking facial landmarks, wardrobe materiality, and style anchor.>
 
 [NEGATIVE PROMPT]
-<blurry, cartoon, 3D render, anime, altered facial features, shifted skin tone, graphic logos on shirt, cluttered background, harsh direct flash, over-saturation, watermarks, text.>
+<action figure, plastic doll, ball joints, blurry, text, watermarks.>
 ```
 
----
-
-### 4.4 `clips/clip_XX/video_prompt.txt` Structure Contract
 ```text
-================================================================================
-TIER 3: CLIP <XX> VIDEO GENERATION PROMPT
-================================================================================
-[CONFIGURATION SETTINGS]
-Aspect Ratio: <9:16 | 16:9>
+[TIER 1B: SUBJECT 4-VIEW PROFILE PROMPT — <SUBJECT NAME>]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: subjects/<subject_id_or_name>/hero_prompt.txt (Attach generated Hero Image as [IMAGE 1])
+Feeds Into: clips/clip_xxx/image_prompt.txt (Attach as Subject Ingredient)
+Aspect Ratio: 16:9
 Resolution: 1080p
-Duration: <4 | 6 | 8> seconds
-Model: Veo 3.1
-Ingredient References:
-- [IMAGE 1]: references/base_image.jpg (Master Identity & Setting Lock)
+
+[IMAGE PROMPT]
+<Step 2 4-panel character model sheet (Front, Left Profile, Back, Close-up Face) on solid neutral light-gray studio background (#E5E5E5).>
+
+[NEGATIVE PROMPT]
+<changing clothes, facial drift, props in hands, environment background, text, watermarks.>
+```
+
+#### 3. `visuals/environments/<environment_id_or_name>/prompt.txt` (Modular Studio)
+```text
+[TIER 1C: ENVIRONMENT STAGE PROMPT — <ENVIRONMENT NAME>]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Attach as [IMAGE 1] for Master Style Lock)
+Feeds Into: clips/clip_xxx/image_prompt.txt (Attach as Environment Ingredient)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+<Empty 3-plane stage environment (Foreground, Midground stage zone, Background) with motivated lighting vectors and zero characters/people present.>
+
+[NEGATIVE PROMPT]
+<people, characters, crowds, silhouettes, camera equipment, tripod, text, watermarks.>
+```
+
+#### 4. `clips/clip_XX/image_prompt.txt`
+```text
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP <XX>]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: <base_image_prompt.txt (Tier 1 Master DNA) OR [IMAGE 1]: subjects/<name>/profile_prompt.txt + [IMAGE 2]: visuals/environments/<name>/prompt.txt>
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+<Starting frame composition staging the subject inside the environment with exact camera framing, posture, expression, and lighting.>
+
+[NEGATIVE PROMPT]
+<studio gray background bleed, split screen, multiple panels, camera equipment, blurry lines, text, subtitles, watermarks.>
+```
+
+#### 5. `clips/clip_XX/video_prompt.txt`
+```text
+[CONFIGURATION SETTINGS]
+Duration: <4s | 6s | 8s>
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: <e.g. ESTABLISHING MACRO | CONTINUOUS ACTION EXTENSION | MOTIVATED CUT>
+Input Seed / Dependencies: Generated from clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of clips/clip_<XX-1>/video_prompt.txt)
 
 [VIDEO PROMPT]
-<Tokens 1-30: Viewport framing & subject anchor (L-04, L-15).
-Tokens 31-80: Biomechanical action & motivated lighting (L-10, L-12).
-Tokens 81-130: Injected visual style anchor (L-18) & single camera verb (L-05).
-Tokens 131-150: Spoken dialogue with soft punctuation (G-15) and trailing audio closure (L-06, L-17).
-Strict Word Economy: 75-150 words (L-01). Zero equipment nouns (L-02).>
+Starting directly from the initial image, <Tokens 1-30: Viewport framing & subject anchor. Tokens 31-80: Single biomechanical action & motivated lighting. Tokens 81-130: Visual style anchor & single camera verb. Trailing block: 4-part semicolon Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ....>
 
 [NEGATIVE PROMPT]
-<camera equipment, tripod, dolly track, blurry, cartoon, 3D render, morphing face, distorted hands, extra fingers, text, subtitles, watermark, speech looping, unnatural pauses, background music.>
-
-[AUDIO SPECIFICATION]
-Vocal Delivery: <Pacing, tone, and onset timing (Immediate Vocal Attack for UGC, G-16).>
-Dialogue: "<Exact dialogue string with soft punctuation dots/commas (G-15).>"
-Acoustics: <Acoustic signature, microphone intimacy, natural room tone (L-13).>
-Acoustic Bridge: <Transition tail and reverb decay bridging into next clip (L-17).>
+<camera equipment, tripod, dolly track, blurry, morphing face, distorted hands, extra fingers, text, subtitles, watermark, speech looping, unnatural pauses.>
 ```
 
 ---
 
-## 5. The 2-Phase Creator Experience Engine
+### 4.2 `audio_script.md` Structure Contract (Google AI Studio TTS & Anti-Dead-Air Standard)
 
-```mermaid
-sequenceDiagram
-    autonumber
-    actor Creator
-    participant Agent as OpenProducer Agent
-    participant Disk as Local Workspace
-    participant Flow as Google Flow / Veo 3.1
+1. **NEVER Divide `audio_script.md` by Clips (`clip_01`, `clip_02`, etc.):**
+   * The audio script is generated for continuous voice synthesis in **[Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)**.
+   * Write it as **one continuous master script** (or if the script is very long, e.g., >120 words, divide it into 2–3 large macro **Parts / Chunks** like `### Part 1`, `### Part 2`—**NEVER slice it into 4s/6s/8s clip segments**).
+2. **The Context-Driven Emotion & Anti-Dead-Air Law (Discussion 47 & 49 — NO TAG SPAMMING):**
+   * **Why Tag Spamming Kills Retention:** Putting `<short pause>` after every sentence or paragraph creates robotic dead air that destroys narrative momentum and causes viewers to scroll away immediately.
+   * **90% Natural Punctuation Flow:** Standard commas (`,`), periods (`.`), em-dashes (`—`), and paragraph breaks already produce natural 0.3s–0.5s breathing cadences in Google AI Studio TTS. **90%+ of sentences must have ZERO tags.**
+   * **10% Scalpel Tagging (Strictly Context-Driven):**
+     - **`<short pause>` (Max 1–3 per ~100 words):** Use ONLY immediately before a major narrative twist, a sudden freeze in terror, or the final climactic reveal—**NEVER between ordinary narrative sentences**.
+     - **`<whisper>...</whisper>`:** Use ONLY when a character/entity actually whispers in the story or on a chilling final payoff phrase.
+     - **Other Contextual Tags (`<sigh>`, `<gasp>`, `<panting>`):** Use ONLY when the narrative explicitly calls for that physical vocal reaction.
+   * **Clean Formatting Rules:**
+     - When you do use `<short pause>`, place `<short pause>` on its own clean line (never write a standalone dot `.` on a line, and never attach `<short pause>` to the end of a sentence line).
+     - **Zero Square Brackets (`[...]`):** Never use square brackets in the script text (Gemini TTS reads `[pause]` aloud as literal words).
 
-    Note over Creator,Agent: PHASE 1: FULL-PACKAGE SYNTHESIS
-    Creator->>Agent: Gives pitch, script, or photo ("9:16 sarcastic trading reel")
-    Agent->>Agent: Analyzes complexity -> Classifies as Lean Tier
-    Agent->>Disk: Synthesizes base_image_prompt.txt, clips/, scratchbook.md, openproducer/
-    Agent->>Creator: "Your complete production package is ready! Would you like the Step-by-Step Guided Run?"
+#### Exact Proven Template for `audio_script.md` (Modeled on `the_breath_at_2am` & `the_314am_doppelganger`):
+```markdown
+# 🎙️ AUDIO & NARRATION SCRIPT: <Project Name>
+*Optimized for [Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)*
 
-    Note over Creator,Agent: PHASE 2: STEP-BY-STEP GUIDED EXECUTION
-    Creator->>Agent: "Yes, guide me!"
-    
-    rect rgb(240, 248, 255)
-    Note over Agent,Creator: GATE 1: BASE IMAGE REVIEW
-    Agent->>Creator: Presents base_image_prompt.txt + Flow instructions
-    Creator->>Flow: Generates references/base_image.jpg
-    Creator->>Agent: "Looks great!" (or "Make hair spikes sharper")
-    opt Revision Requested
-        Agent->>Disk: Updates base_image_prompt.txt & affected clips
-        Agent->>Creator: Provides updated base prompt
-    end
-    end
+## 1. Google AI Studio Configuration & System Instructions
+- **Tool Link:** https://aistudio.google.com/generate-speech
+- **Recommended Voice Preset:** `<e.g., Charon / Puck / Fenrir / Kore / Aoede>`
+- **Pacing & Tone:** `<e.g., Intimate, relentless forward momentum (~2.2–2.3 words/sec, zero dead air)>`
+- **Paste the following into "System Instructions" / "Style Instructions":**
 
-    rect rgb(255, 250, 240)
-    Note over Agent,Creator: GATE 2: AUDIO & SCRIPT REVIEW
-    Agent->>Creator: Verifies pacing & L-19 safety. Asks for final dialogue approval
-    Creator->>Agent: Approves script (or updates a punchline)
-    end
-
-    rect rgb(245, 255, 245)
-    Note over Agent,Creator: GATE 3: CLIP-BY-CLIP RENDER
-    Agent->>Creator: Presents Clip 01 prompt with ingredient bindings
-    Creator->>Flow: Renders Clip 01
-    Agent->>Creator: Moves to Clip 02 -> Clip XX
-    end
-
-    rect rgb(255, 240, 245)
-    Note over Agent,Creator: GATE 4: RETAKE DOCTOR
-    Creator->>Agent: "Clip 01 stuttered on the second word!"
-    Agent->>Agent: Diagnoses G-15 (Punctuation boundary reset)
-    Agent->>Creator: Prescribes surgical retake patch
-    end
+```text
+You are <persona description, e.g. a chilling, intimate narrator telling a psychological horror story>. Speak with <tone, pitch, and pacing>.
+Anti-Dead-Air Rule: Maintain relentless forward narrative momentum. Do not leave awkward dead silences between sentences; let natural commas and periods carry the suspense smoothly.
+Tag Syntax Rules:
+- Strictly execute inline angle-bracket performance tags: <short pause>, <whisper>...</whisper>.
+- When encountering <whisper>...</whisper>, drop your volume into a dry, breathless whisper.
+- Observe <short pause> as a genuine, tense silent beat.
+- Never speak tag names or punctuation aloud under any circumstance.
 ```
 
 ---
 
-## 6. Session Persistence & Handoff Protocol
+## 2. Continuous Master Script (Copy-Paste into Google AI Studio)
+*(Note: If the script is very long, split into macro `### Part 1`, `### Part 2` chunks — NEVER split into individual video clips, and NEVER spam `<short pause>` between normal sentences).*
 
-Any AI agent entering an OpenProducer workspace—regardless of workstation, device, or IDE—must execute the following startup sequence:
-1. **Read `openproducer/config.json`:** Identifies archetype, aspect ratio, audio pathway, and project tier.
-2. **Read `openproducer/state.json`:** Identifies `current_stage` and `active_gate`.
-3. **Read `openproducer/blueprint.md`:** Restores chronological context and recent decisions.
-4. **Greet Creator at Active Gate:** The agent immediately resumes the conversation at the exact creative stage where work was left off.
+```text
+You are sitting in the dark of your living room at 2:00 AM, the only illumination coming from the muted blue glow of your television screen.
+
+You live alone. The apartment is dead quiet.
+
+Your cat, perched on the back of the sofa, suddenly sits bolt upright. Its pupils dilate into black saucers. It isn’t looking at you, the window, or the hallway.
+
+Its head is tilted up, tracking something invisible that is drifting slowly across the ceiling directly toward you.
+
+Step by step. Left, then right.
+
+You can’t see anything in the shadows above, but as the cat’s gaze stops directly overhead,
+<short pause>
+the air around you turns ice cold.
+<short pause>
+Then, two inches above your crown, you feel the hair on your scalp stir...
+<whisper>as something... exhales.</whisper>
+```
+
+---
+
+## 3. Next Steps (After Generating Audio)
+1. Generate the audio in **[Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)**.
+2. Generate the timestamped transcript / SRT using **[TurboScribe](https://turboscribe.ai/dashboard)** or **[AudioToSRT](https://audiotosrt.com/)**.
+3. Share the transcript/timestamps here (or in `/opp-guide`) so OpenProducer can slice the video clips to match your exact audio timing!
+```
+
+---
+
+### 4.3 Role of `scratchbook.md` and `master_*_prompt.txt`
+
+1. **`scratchbook.md` (Internal Engineering & Timeline Ledger):**
+   * Contains the timeline pacing math (4s/6s/8s word budgets, timestamp mappings, eyeline continuity vectors, and Retake Doctor diagnostic history).
+2. **`master_images_prompt.txt` & `master_videos_prompt.txt` (Creator Self-Serve Reference Only):**
+   * Compiled one-file plain-text manifests of all image prompts and all video prompts (preserving their `Conditioned On:` / `Input Seed:` connection lines).
+   * **Strictly for creator self-serve convenience.** During `/opp-guide`, OpenProducer **does NOT use** these two master files; `/opp-guide` walks through `base_image_prompt.txt`, `subjects/`, `visuals/environments/`, and `clips/clip_xxx/` individually.

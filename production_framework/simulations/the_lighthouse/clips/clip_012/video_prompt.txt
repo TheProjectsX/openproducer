@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_012/image_prompt.txt
+
+[VIDEO PROMPT]
+Extreme close-up shot as the camera maintains a locked-off static composition framing the keeper's white circular head in side profile. The keeper abruptly slams the door shut out of frame and stumbles backward into the light cone, his posture rigid with panic. Behind his neck, the deep black background shadow suddenly detaches and curls into a slender tendril of smoky vapor that brushes right against his ear, causing him to shudder violently in absolute dread. Minimalist 2D vector noir art. Audio: SFX: Heavy door slamming shut, bolt thrown, ragged gasp; Ambience: Distant muffled storm; Dialogue: Eerie hushed whisper murmuring keeper's name; Music: Chilling sub-bass swell.

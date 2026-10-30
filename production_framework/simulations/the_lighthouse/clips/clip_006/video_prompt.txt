@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_006/image_prompt.txt
+
+[VIDEO PROMPT]
+Close-up profile shot as the camera maintains a locked-off static composition framing the heavy storm hatch. The stick figure keeper forcefully pulls the thick hatch door shut against the howling storm, driving the heavy iron slide bolt into its stone bracket with a decisive mechanical snap. He pauses for a breathless moment with his rounded limb resting on the locked bolt before turning his white circular head toward the stairwell and stepping away out of frame. Crisp 2D vector animation. Audio: SFX: Violent wooden door slam, heavy metallic bolt latching, sudden dampening of wind; Ambience: Muffled exterior gale; Dialogue: None; Music: Sudden ominous silence.

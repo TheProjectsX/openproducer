@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_013/image_prompt.txt
+
+[VIDEO PROMPT]
+Eye-level medium shot as the camera executes a rapid tracking push-in following the keeper as he lunges desperately toward the wooden radio desk. His rounded black arms frantically toggle metallic switches and spin illuminated tuning dials on the vintage transmitter unit. He lifts the wire-line microphone to his white circular head, his posture tense and shaking with urgency as faint electrical waveform ripples pulse across the radio receiver display. Crisp 2D vector line-art animation. Audio: SFX: Metallic switch toggles, frantic frequency dial spinning, heavy crackling radio static; Ambience: Storm rattling window; Dialogue: None; Music: Urgent pulsating synth rhythm.

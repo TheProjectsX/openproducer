@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_010/image_prompt.txt
+
+[VIDEO PROMPT]
+Eye-level medium shot as the camera executes a slow push-in toward the open doorway as the keeper swings the massive timber door fully inward. A violent gust of Atlantic gale wind and rain sweeps across the stone threshold, causing the keeper's silhouette to lean forward into the blast with his lantern held aloft. Outside, the pitch-black ocean surges violently against the rock ledge with zero boats or human presence in sight, revealing only foaming black water. Crisp vector noir animation. Audio: SFX: Screeching iron bolt retraction, heavy door creak swinging open, roaring ocean gale blast; Ambience: Torrential rain wash; Dialogue: None; Music: Swelling dissonant brass drone.

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_025/image_prompt.txt
+
+[VIDEO PROMPT]
+High-angle panoramic shot as the camera executes a slow horizontal tracking pan across the barren rock shelves and crashing tide pools. The stick figure relief crew slowly searches the empty shoreline, shining flashlights into crevices and finding nothing. The camera pans smoothly upward toward the looming stone lighthouse tower as the searchers begin ascending the interior stairwell toward the upper storeroom. Crisp 2D vector graphic art. Audio: SFX: Moderate ocean waves breaking on rocks, gusting ocean breeze; Ambience: Open daylight atmosphere; Dialogue: None; Music: Pensive, lingering cello melody.

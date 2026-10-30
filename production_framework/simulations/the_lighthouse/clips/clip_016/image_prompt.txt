@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 016]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level wide shot of the keeper's quarters suddenly plunged into darkness. The previously bright overhead illumination and rotating beam light have completely vanished, replaced by a pitch-black graphic void. Along the lower wall, a single small rectangular backup generator box flickers with a dim, glowing amber vector line, casting an eerie minimalist silhouette across the floor and revealing the keeper standing frozen beside the window.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

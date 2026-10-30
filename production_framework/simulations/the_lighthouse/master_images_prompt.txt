@@ -1,0 +1,442 @@
+# MASTER IMAGES PROMPT: THE LONE LIGHTHOUSE KEEPER
+# Target System: Imagen 4 / Google Flow (Image Mode)
+# Aspect Ratio: 16:9 | Resolution: 1080p
+# Pluggable Style: Minimalist 2D Vector Graphic Noir (vector_stick_figure.md)
+
+================================================================================
+TIER 1: MASTER BASE REFERENCE ASSET (INGREDIENT #1)
+================================================================================
+[TIER 1: MASTER BASE REFERENCE PROMPT — THE LONE LIGHTHOUSE KEEPER]
+Target Engine: Google Flow / Imagen 4 (Master Ingredient #1)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[MASTER IMAGE PROMPT]
+Eye-level medium wide shot of a lone lighthouse keeper standing beside an old cast-iron stove inside a stone lighthouse tower quarters. The protagonist is rendered as a minimalist 2D vector stick figure with pure unbroken solid black vector stroke limbs and torso terminating in smooth rounded ends, completely devoid of human fingers, knuckles, or fleshy details. His circular head is filled with solid opaque white contoured with a clean uniform black outline, wearing a minimalist black peaked mariner cap silhouette. The room features clean graphic novel vector line-art, minimalist wooden floorboards, and a heavy bolted timber door. High-contrast minimalist 2D vector noir animation style on a warm cream paper canvas, with a single glowing kerosene lantern casting a dramatic motivated light cone and deep graphic drop shadows across the dark background. Crisp sharp line-art, uniform stroke weight throughout, flat graphic art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+================================================================================
+TIER 2: CLIP KEYFRAME PLATES (CLIPS 01 TO 28)
+================================================================================
+
+--------------------------------------------------------------------------------
+CLIP_001 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 001]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Wide establishing eye-level shot of a stark stone lighthouse tower standing solitary atop a jagged, barren rock shelf surrounded by surging Atlantic ocean waves. Minimalist 2D vector noir animation style on a textured cream paper canvas, composed with crisp unbroken black vector outlines and deep graphic drop shadows. The towering stone beacon rises into a pitch-black night void, battered by angular churning wave crests and driving rain lines. A single bright conical beam of vector light radiates from the glass lantern room, slicing diagonally through the atmospheric gloom. Flat graphic line-art, uniform stroke weight throughout.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_002 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 002]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium shot of the lone lighthouse keeper standing on the upper circular iron gallery inside the glowing glass lantern room. The protagonist is rendered as a minimalist 2D vector stick figure with unbroken solid black vector stroke limbs terminating in smooth rounded ends, wearing a peaked mariner cap silhouette. His head is a solid white circle contoured in uniform black outline without facial features. He stands before the intricate geometric Fresnel lens housing, hands resting against the brass railing, staring out through rain-streaked storm glass into the pitch-black ocean abyss. High-contrast vector noir graphic art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_003 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 003]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+High-angle perspective looking down into the circular spiral iron staircase of the lighthouse tower. The lone stick figure keeper with solid black limbs and white circular head holds a glowing brass lantern, starting his descent down the curved curving black metal steps. Stark minimalist 2D vector noir animation on a cream paper canvas, where the lantern casts a sharp radiating triangular cone of warm light that cuts into deep pitch-black graphic drop shadows. The spiraling iron railing creates intricate geometric concentric rings descending into the black void below.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_004 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 004]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Low-angle upward-tilted shot from the spiral staircase looking up at the wooden floorboards of the upper walkway ceiling. The lone stick figure keeper stands frozen in three-quarter profile on an iron stair tread, his featureless white circular head tilted sharply toward the ceiling timbers. High-contrast minimalist 2D vector noir animation with stark solid black silhouettes against a warm cream paper background. A single motivated lantern beam illuminates dusty plank lines above, where faint graphic stress lines radiate outward from unseen overhead weight.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_005 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 005]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium wide shot of the upper walkway platform inside the stone tower. The lone stick figure keeper steps onto the top floorboard with his lantern raised high, confronting a gaping storm hatch standing flung wide open. Minimalist 2D vector line-art animation on cream paper canvas with pitch-black silhouettes. Through the rectangular hatch opening, driving diagonal rain vectors and dark churning clouds pour into the room, creating puddles of black water on the floorboards beside the empty walkway.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_006 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 006]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Close-up profile shot of the stick figure keeper grasping the heavy iron handle of the wooden storm hatch. Minimalist 2D vector line-art with solid black stroke limbs terminating in rounded ends, white circle head in side profile. The wooden hatch is rendered with bold graphic grain lines, showing a thick cast-iron sliding slide-bolt mechanism firmly engaged into a reinforced wall socket. Splashes of rain glisten in crisp vector highlights across the dark surface under warm lantern light.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_007 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 007]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium shot on the middle landing of the spiral iron staircase. The stick figure keeper is caught mid-step, gripping the slender iron handrail with both arms rigid. Stark 2D vector noir animation with dramatic graphic lighting casting his elongated black silhouette against the curved masonry wall behind him. Directly above his head, the dark overhead ceiling beams show distinct graphic vibration arcs, emphasizing the immediate renewed pacing overhead.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_008 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 008]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level wide shot of the keeper's sparse living quarters on the tower ground floor. Minimalist 2D vector noir animation showing a wooden table, an unlit cast-iron stove, and a narrow cot outlined in crisp uniform black lines on a cream paper canvas. The stick figure keeper sits on the edge of the cot with his rounded hands resting on his knees, his featureless white circular head bowed slightly in deep exhaustion. A single lantern on the table casts long, deep graphic drop shadows across the stone floor.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_009 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 009]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Straight-on eye-level view of the heavy reinforced timber entrance door of the lighthouse quarters. Minimalist 2D vector noir style with thick black vertical timber grain lines, horizontal iron reinforcing straps, and a massive sliding iron bolt. Concentric graphic impact shockwaves radiate from the upper panel of the door, visually representing three violent impacts. Across the room, the small silhouette of the stick figure keeper stands frozen in the bottom corner, staring across the void.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_010 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 010]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium three-quarter shot of the stick figure keeper standing at the open doorway of the lighthouse entrance. He holds his glowing lantern extended forward into the void. Through the wide doorway, there is only endless churning black ocean water with sharp white vector wave caps under driving rain. The wind blows fiercely, shown by diagonal streak lines whipping across the threshold into the room. High-contrast 2D vector noir aesthetic.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_011 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 011]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+High-angle bird's-eye view looking down at the stone floor threshold just inside the open doorway. The keeper's two rounded black vector boots stand at the bottom edge. Extending across the stone slabs from the wet doorstep right up to his boots is a trail of distinct, glistening black vector footprints of bare human feet, glistening with brine moisture. Minimalist 2D vector line-art with stark graphic puddles and wet splash droplets on a warm cream canvas. No returning footprints exist.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_012 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 012]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Extreme close-up side-profile shot of the keeper's featureless white circular head outlined in uniform black stroke. From the dark void directly behind his neck, a shadowy, semi-translucent black vector vapor coils outward toward his ear like curling smoke. The keeper's torso is turned away in terror, with his rounded black limb raised defensively to his chest. High-contrast minimalist 2D vector noir animation on a cream paper canvas, surrounded by pitch-black graphic shadows.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_013 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 013]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium shot of the keeper lunging forward across his wooden quarters toward a vintage radio communication desk. The desk features minimalist vector outlines of a tube radio receiver with illuminated dials, dials, and a coiled microphone cable. The stick figure keeper leans frantically over the radio with his rounded limbs rapidly toggling switches and gripping the hand microphone. Deep graphic noir drop shadows envelope the room around the warm lantern light.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_014 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 014]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Extreme close-up shot of the round perforated speaker grille of the vintage radio unit on the desk. Minimalist 2D vector style with bold geometric concentric circular holes and clean metallic outline lines. Emanating from the speaker grille are sharp, jagged vector soundwave ripples in stark black lines cutting across the warm cream paper background, visualizing the sudden clear broadcast cutting through the static void.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_015 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 015]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Point-of-view shot looking through the rain-lashed arched seaward window of the lighthouse into the dark Atlantic Ocean. Through the glass frame, violent churning black waves crash in sharp angular vector crests. Standing upright in the middle of the surging open water, completely upright and unaffected by the giant waves, is a solid pitch-black stick figure silhouette. Minimalist 2D vector noir animation on cream paper canvas with driving rain lines.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_016 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 016]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level wide shot of the keeper's quarters suddenly plunged into darkness. The previously bright overhead illumination and rotating beam light have completely vanished, replaced by a pitch-black graphic void. Along the lower wall, a single small rectangular backup generator box flickers with a dim, glowing amber vector line, casting an eerie minimalist silhouette across the floor and revealing the keeper standing frozen beside the window.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_017 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 017]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Medium close-up reflection shot in the dark glass window pane. Reflected on the dark surface is the keeper's solid white circular head staring forward in horror. Directly behind his right shoulder in the reflection looms a second, identical white circular head outlined in sharp black vector stroke, staring silently over his shoulder into the glass. The background is a stark graphic void under the faint amber generator glow.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_018 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 018]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level wide exterior shot outside the lighthouse doorway. The stick figure keeper stands on the stone threshold, arms outspread in total shock. The violent ocean gale and rain have completely vanished; instead, the entire world is enveloped in a thick, uniform, suffocating milky white vector mist. The churning ocean waves are completely calm and motionless, frozen like flat black vector planes beneath the swirling white fog.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_019 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 019]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Medium close-up shot of the stick figure keeper surrounded entirely by swirling opaque white vector fog on a dark background. From the mist beside his ear, swirling curls of cold vapor coalesce into the faint outline of a second set of rounded vector shoulders. The keeper's posture is stiff and completely paralyzed, his white head outlined in stark black against the milky mist.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_020 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 020]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Low-angle dynamic shot looking up along the exterior of the stone lighthouse tower. Simultaneously, every glass window pane and exterior bulkhead bulb along the tower explodes outward into hundreds of sharp, angular black vector shards that burst into the white mist. High-contrast 2D vector noir animation with stark geometric explosion lines and falling glass debris.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_021 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 021]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Medium shot on the spiral staircase landing near the top of the tower. The stick figure keeper climbs the curved iron stairs, his lantern held forward. Exactly two steps behind him on the spiraling iron steps is a second, solid pitch-black stick figure silhouette mirroring his exact climbing stride. At the top of the stairs, a heavy rusted iron door stands ajar, opening into total pitch-black void.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_022 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 022]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium shot framing the open doorway of the upper storeroom. The doorway reveals a deep pitch-black graphic void. Standing inside the center of the dark doorway, partially illuminated by the keeper's lantern light, is an identical stick figure silhouette with solid black limbs and an opaque white circular head wearing the same mariner cap. It stands calm and motionless, facing the keeper.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_023 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 023]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Extreme high-contrast shot of the hallway outside the storeroom. The stick figure keeper stands frozen in place, lantern trembling in his rounded hand. The lantern flame is depicted in mid-snap, extinguishing into a wispy curl of white smoke. The surrounding frame is engulfed in deep, solid black graphic ink on a cream canvas, capturing the instant of total blackout.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_024 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 024]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Wide exterior daytime establishing shot under clear bright skies with soft cream and pastel vector tones. A clean white vector relief ship is anchored off the rocky lighthouse island in calm blue-gray water. On the rock shelf, two stick figure sailors with caps inspect the base of the towering lighthouse. Inside the open ground floor doorway, a shattered brass lantern lies broken on the stone floor beneath the stairs.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_025 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 025]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+High-angle panoramic wide shot of the rugged island cliffs and rocky shoreline. Three stick figure searchers with solid black limbs and white circular heads comb the perimeter rocks and tide pools under bright daylight. Crisp 2D vector line-art with clean graphic contours representing the jagged Atlantic shoreline, devoid of any human presence or belongings.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_026 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 026]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium wide shot of the dusty top storeroom illuminated by daylight shafts pouring through an arched storm window. The window is clearly reinforced with a heavy iron latch bolted securely from the inside. Across the dusty wooden floorboards, a dark trail of damp seawater footprints begins abruptly in the middle of empty space and leads directly to the glass pane, where it abruptly stops. Zero other tracks exist.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_027 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 027]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Dusk wide shot of the solitary lighthouse tower standing against a deep indigo and purple sunset sky over the vast Atlantic Ocean. The tower is rendered as a clean, majestic solid black vector silhouette anchored to the dark rocky shelf. Minimalist 2D vector art with smooth graphic novel lines and deep contrast on a textured cream paper canvas, as the ocean swells gently below.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
+
+--------------------------------------------------------------------------------
+CLIP_028 KEYFRAME PLATE
+--------------------------------------------------------------------------------
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 028]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Close-up shot of the high lantern room glass pane at night, eighty feet above the sea. Three sharp vector vibration ripple rings appear on the exterior of the glass pane as if struck by invisible knuckles. In the lower corner, the vintage radio transmitter sits in the dark; its circular green dial suddenly illuminates with glowing vector line-art, casting a sinister reflection onto the glass.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_005/image_prompt.txt
+
+[VIDEO PROMPT]
+Eye-level medium wide shot as the camera executes a slow horizontal tracking pan following the keeper as he ascends onto the upper walkway. He raises the glowing lantern forward, revealing the empty wooden chamber where the heavy storm hatch bangs erratically against its iron frame in the fierce gale. Cold driving rain streaks surge diagonally through the rectangular portal, scattering reflective water droplets across the floorboards as the keeper slowly approaches the opening. Crisp vector noir line-art. Audio: SFX: Heavy hatch banging against stone, whistling storm wind, violent rain wash; Ambience: Deep ocean gale roar; Dialogue: None; Music: Unsettling dissonant strings.

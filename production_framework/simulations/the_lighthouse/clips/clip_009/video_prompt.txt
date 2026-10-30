@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_009/image_prompt.txt
+
+[VIDEO PROMPT]
+Straight-on eye-level view as the camera remains in a locked-off static composition framing the reinforced front door. The heavy timber planks violently shudder three distinct times in rapid succession, producing three sharp visible impact ripples that shake the iron brackets and dislodge dust from the lintel. In the foreground, the keeper's black stick figure silhouette freezes in absolute stillness, motionless against the warm cream canvas as the violent crash of waves echoes from the other side. Minimalist vector line animation. Audio: SFX: Three thunderous sharp metallic knocks on thick oak wood, rattling iron hinges; Ambience: Roaring Atlantic gale; Dialogue: None; Music: Ominous low-pitch sting.

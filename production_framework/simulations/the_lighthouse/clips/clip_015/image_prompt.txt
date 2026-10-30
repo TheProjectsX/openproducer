@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 015]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Point-of-view shot looking through the rain-lashed arched seaward window of the lighthouse into the dark Atlantic Ocean. Through the glass frame, violent churning black waves crash in sharp angular vector crests. Standing upright in the middle of the surging open water, completely upright and unaffected by the giant waves, is a solid pitch-black stick figure silhouette. Minimalist 2D vector noir animation on cream paper canvas with driving rain lines.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

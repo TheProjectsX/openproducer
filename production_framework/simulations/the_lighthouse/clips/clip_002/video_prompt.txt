@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_002/image_prompt.txt
+
+[VIDEO PROMPT]
+Eye-level medium shot as the camera remains in a locked-off static composition observing the minimalist stick figure keeper in the glowing lantern room. The keeper slowly raises one rounded arm to inspect the glowing brass lamp mechanism as the rotating Fresnel lens sweeps an intense cone of brilliant white light through the rain-streaked glass. Outside the tall vertical window panes, violent black storm clouds churn continuously against the warm cream canvas, casting rhythmic sweeping shadows across the iron floorboards. Crisp 2D vector noir aesthetic. Audio: SFX: Heavy mechanical gear rotation, clockwork ticking, howling wind against glass; Ambience: Distant storm thunder; Dialogue: None; Music: Low atmospheric drone.

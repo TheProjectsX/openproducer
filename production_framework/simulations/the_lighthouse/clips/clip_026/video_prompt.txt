@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_026/image_prompt.txt
+
+[VIDEO PROMPT]
+Eye-level medium wide shot as the camera executes a slow tracking push-in across the dusty floorboards of the upper storeroom. Shafts of morning light reveal the storm window firmly bolted shut from the inside with its heavy iron latch engaged. The camera tracks along the glistening trail of dark seawater footprints that mysteriously materialize in the center of the dusty floor, march in a direct line straight to the glass window sill, and terminate without a trace. Minimalist 2D vector noir animation. Audio: SFX: Floorboard creak under footsteps, subtle ocean wind against window pane, water droplet splash; Ambience: Dusty quiet room tone; Dialogue: None; Music: Eerie mystery progression with subtle harmonics.

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_021/image_prompt.txt
+
+[VIDEO PROMPT]
+Medium shot as the camera executes a slow upward tracking pan following the keeper as he climbs the curving spiral staircase toward the top landing. With every step the keeper takes, a metallic clang echoes, immediately doubled by a second identical step right behind him. The keeper reaches the top landing without looking back as the rusted iron door creaks open on its hinges, revealing an impenetrable black doorway. Minimalist 2D vector noir animation. Audio: SFX: Rhythmic synchronized double iron footsteps clanging on metal stairs, heavy rusted iron hinge groan; Ambience: Low draft in tower shaft; Dialogue: None; Music: Suspenseful pulsating drone.

@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 013]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium shot of the keeper lunging forward across his wooden quarters toward a vintage radio communication desk. The desk features minimalist vector outlines of a tube radio receiver with illuminated dials, dials, and a coiled microphone cable. The stick figure keeper leans frantically over the radio with his rounded limbs rapidly toggling switches and gripping the hand microphone. Deep graphic noir drop shadows envelope the room around the warm lantern light.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

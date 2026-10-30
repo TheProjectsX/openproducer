@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 014]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Extreme close-up shot of the round perforated speaker grille of the vintage radio unit on the desk. Minimalist 2D vector style with bold geometric concentric circular holes and clean metallic outline lines. Emanating from the speaker grille are sharp, jagged vector soundwave ripples in stark black lines cutting across the warm cream paper background, visualizing the sudden clear broadcast cutting through the static void.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

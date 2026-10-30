@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 024]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Wide exterior daytime establishing shot under clear bright skies with soft cream and pastel vector tones. A clean white vector relief ship is anchored off the rocky lighthouse island in calm blue-gray water. On the rock shelf, two stick figure sailors with caps inspect the base of the towering lighthouse. Inside the open ground floor doorway, a shattered brass lantern lies broken on the stone floor beneath the stairs.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

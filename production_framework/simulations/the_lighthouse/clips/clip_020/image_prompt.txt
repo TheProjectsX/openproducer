@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 020]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Low-angle dynamic shot looking up along the exterior of the stone lighthouse tower. Simultaneously, every glass window pane and exterior bulkhead bulb along the tower explodes outward into hundreds of sharp, angular black vector shards that burst into the white mist. High-contrast 2D vector noir animation with stark geometric explosion lines and falling glass debris.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

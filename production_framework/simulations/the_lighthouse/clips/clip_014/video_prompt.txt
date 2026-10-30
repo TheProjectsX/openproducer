@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_014/image_prompt.txt
+
+[VIDEO PROMPT]
+Extreme close-up shot as the camera executes a slow creeping push-in toward the dark circular speaker grille of the radio transmitter. The harsh erratic crackle of radio static suddenly flattens into an unnatural, perfectly smooth rhythmic audio wave as subtle graphic distortion rings pulse from the metallic mesh into the air. In the out-of-focus background, the motionless silhouette of the keeper's head remains frozen in terror. High-contrast 2D vector noir animation. Audio: SFX: Harsh radio static cutting into smooth silence, speaker electrical pop; Ambience: Low eerie room drone; Dialogue: Calm voice: 'Extinguish the light. It sees you.'; Music: None.

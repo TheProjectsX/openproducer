@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_015/image_prompt.txt
+
+[VIDEO PROMPT]
+Point-of-view shot through the arched storm window as the camera executes a slow optical zoom toward the churning sea. Outside amidst the violent crashing waves, the solitary black vector stick silhouette stands eerily motionless atop the water, perfectly upright against the storm. Sudden flash of lightning illuminates the figure's identical proportions before a sheet of sea spray washes over the window glass, and the silhouette instantly disappears into the foaming black waves. Crisp vector noir art. Audio: SFX: Thunder crack, roaring wave crash against rock, rain hammering glass; Ambience: Ferocious maritime gale; Dialogue: None; Music: High piercing sustained suspense chord.

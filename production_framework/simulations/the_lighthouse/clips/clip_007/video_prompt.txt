@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_007/image_prompt.txt
+
+[VIDEO PROMPT]
+Eye-level medium shot as the camera executes a subtle optical tilt upward from the keeper toward the creaking ceiling overhead. The keeper remains completely rigid on the iron landing as heavy, unmistakable footsteps resume pacing across the floorboards directly above him with ominous mechanical regularity. The masonry walls vibrate subtly in graphic line pulses as dust shivers loose from the timbers, drifting down through the lantern beam into the darkness. High-contrast vector noir animation. Audio: SFX: Heavy deliberate pacing footsteps resumed immediately, deep groan of bending timber; Ambience: Hollow interior draft; Dialogue: None; Music: Low discordant acoustic swell.

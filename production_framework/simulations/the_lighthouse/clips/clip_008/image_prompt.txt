@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 008]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level wide shot of the keeper's sparse living quarters on the tower ground floor. Minimalist 2D vector noir animation showing a wooden table, an unlit cast-iron stove, and a narrow cot outlined in crisp uniform black lines on a cream paper canvas. The stick figure keeper sits on the edge of the cot with his rounded hands resting on his knees, his featureless white circular head bowed slightly in deep exhaustion. A single lantern on the table casts long, deep graphic drop shadows across the stone floor.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_028/image_prompt.txt
+
+[VIDEO PROMPT]
+Close-up shot as the camera executes a slow creeping push-in toward the high glass pane of the dark lantern room. In the exterior night void eighty feet above the surging ocean, three sharp, distinct impacts strike the glass, sending concentric graphic shockwaves across the pane. Down on the desk, the radio receiver power switch clicks on by itself, its frequency dial glowing green in the darkness as a soft, chilling whisper speaks into the quiet room. Minimalist 2D vector noir animation. Audio: SFX: Three distinct sharp knocks against high window glass, metallic electrical switch click, subtle radio static hum; Ambience: Wind blowing around the tower dome; Dialogue: Hushed chilling whisper: 'It's your turn to keep the light burning.'; Music: Fading dark sub-bass drone.

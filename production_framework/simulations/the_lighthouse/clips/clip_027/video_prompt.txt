@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_027/image_prompt.txt
+
+[VIDEO PROMPT]
+Dusk wide shot as the camera executes a slow pull-back revealing the towering silhouette of the lighthouse against the darkening Atlantic horizon. As twilight deepens into night, the sweeping light beam remains dark, yet the tower stands monolithic and immovable against the endless ocean swells. Subtle graphic storm clouds gather once again along the horizon line under the cream canvas sky. High-contrast 2D vector noir style. Audio: SFX: Deep oceanic swells rolling against rock, distant evening wind; Ambience: Expansive twilight ocean solitude; Dialogue: None; Music: Melancholic, reflective bass and violin duet.

@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 010]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium three-quarter shot of the stick figure keeper standing at the open doorway of the lighthouse entrance. He holds his glowing lantern extended forward into the void. Through the wide doorway, there is only endless churning black ocean water with sharp white vector wave caps under driving rain. The wind blows fiercely, shown by diagonal streak lines whipping across the threshold into the room. High-contrast 2D vector noir aesthetic.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 004]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Low-angle upward-tilted shot from the spiral staircase looking up at the wooden floorboards of the upper walkway ceiling. The lone stick figure keeper stands frozen in three-quarter profile on an iron stair tread, his featureless white circular head tilted sharply toward the ceiling timbers. High-contrast minimalist 2D vector noir animation with stark solid black silhouettes against a warm cream paper background. A single motivated lantern beam illuminates dusty plank lines above, where faint graphic stress lines radiate outward from unseen overhead weight.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

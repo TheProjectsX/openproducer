@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_004/image_prompt.txt
+
+[VIDEO PROMPT]
+Low-angle upward-tilted view as the camera executes a slow creeping push-in toward the frozen stick figure keeper gazing up at the ceiling. The keeper remains completely stationary on the iron stair tread, trembling subtly with suspense as rhythmic, deliberate graphic vibration rings pulse across the wooden ceiling floorboards overhead. Dust particles drift through the sharp conical lantern beam while the heavy creak of unseen pacing echoes directly above. Pure 2D vector noir style with sharp graphic contrast. Audio: SFX: Slow deliberate heavy footsteps pacing overhead, creaking oak timber floorboards; Ambience: Hollow tower wind resonance; Dialogue: None; Music: Tension-building low metallic drone.

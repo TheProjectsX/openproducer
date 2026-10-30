@@ -1,26 +1,43 @@
-# OpenProducer Collaboration Blueprint
+# OpenProducer Brain Blueprint
 
 <!-- 
-This file is the living collaboration log between the creator and the AI Executive Producer.
-Decisions, aesthetic changes, script revisions, and retake notes are recorded here chronologically.
+This file is the internal brain memory of OpenProducer (./openproducer/blueprint.md).
+It is ONLY written/updated during /opp-propose, /opp-sync, or /opp-produce (never during read-only /opp-explore).
+It archives the complete project context so any brand-new session can resume with 0 prior chat history.
 -->
 
-## Project Intent
+## 1. Project Intent & Configuration
 * **Project Name:** 
+* **Operating Tier:** `<lean_base_reference | modular_studio>`
 * **Archetype:** 
-* **Aspect Ratio:** 
-* **Target Duration:** 
-* **Audio Pathway:** 
+* **Visual Style Paradigm:** 
+* **Aspect Ratio / Orientation:** 
+* **Audio Pathway:** `<embedded | separate_audio>`
+* **Audio Delivery Mode:** `<embedded | separate_script_first | separate_all_at_once>`
 
 ---
 
-## Chronological Director's Log
-
-| Timestamp (UTC) | Gate / Stage | Action Taken | Decisions & Adjustments | Next Action |
-|---|---|---|---|---|
-| Initial | Intake | Project Initialized | Workspace created; awaiting creative pitch | Begin intake interview |
+## 2. Raw Plot / Brainstormed Plot Points Archive (Historical Record Only)
+<!-- 
+ARCHIVE ONLY (Not used directly for prompt generation, preserved strictly as a historical record for future reference):
+- If the creator provided a raw plot, record the verbatim raw plot here.
+- If the creator brainstormed from 0, record the key plot points proposed during brainstorming here.
+-->
 
 ---
 
-## Revision History
-<!-- Record any adjustments to hair, wardrobe, lighting, dialogue, or camera kinematics here -->
+## 3. Structured Story, Subjects & Environments Plan
+<!-- Complete structured story arc, character/subject descriptions, and environment/setting descriptions -->
+
+---
+
+## 4. Drafted Script & Scene-by-Scene Pacing Plan
+<!-- Complete drafted narration/dialogue script, shot-by-shot breakdown, camera kinematics, and planned 4s/6s/8s durations -->
+
+---
+
+## 5. Chronological Session & Sync Log
+
+| Timestamp | Mode (`propose` / `sync` / `produce`) | Summary of Updates | Next Step |
+|---|---|---|---|
+| Initial | `explore` | Workspace initialized in read-only explore mode | Run `/opp-propose` to save to brain |

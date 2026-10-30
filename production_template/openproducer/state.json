@@ -1,20 +1,22 @@
 {
-  "$comment": "OpenProducer State Tracker. Guides session handoffs and the 2-phase production flow.",
+  "$comment": "OpenProducer State Tracker. Starts in 'explore' mode by default.",
   "project_name": "",
-  "tier": "lean_base_reference",
-  "current_stage": "intake",
+  "tier": "",
+  "current_stage": "explore",
   "stages": {
-    "synthesis_complete": false,
+    "propose_complete": false,
+    "produce_complete": false,
+    "clips_generated": false,
     "base_image_locked": false,
     "audio_script_locked": false,
     "clips_rendered": false,
     "assembly_complete": false
   },
   "interactive_guidance": {
-    "enabled": true,
-    "active_gate": 0,
-    "gate_name": "intake"
+    "enabled": false,
+    "active_step": "not_started"
   },
+  "template_loaded": "",
   "created_at": "",
   "updated_at": ""
 }

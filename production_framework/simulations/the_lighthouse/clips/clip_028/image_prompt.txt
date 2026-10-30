@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 028]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Close-up shot of the high lantern room glass pane at night, eighty feet above the sea. Three sharp vector vibration ripple rings appear on the exterior of the glass pane as if struck by invisible knuckles. In the lower corner, the vintage radio transmitter sits in the dark; its circular green dial suddenly illuminates with glowing vector line-art, casting a sinister reflection onto the glass.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

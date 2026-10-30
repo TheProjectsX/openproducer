@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 005]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium wide shot of the upper walkway platform inside the stone tower. The lone stick figure keeper steps onto the top floorboard with his lantern raised high, confronting a gaping storm hatch standing flung wide open. Minimalist 2D vector line-art animation on cream paper canvas with pitch-black silhouettes. Through the rectangular hatch opening, driving diagonal rain vectors and dark churning clouds pour into the room, creating puddles of black water on the floorboards beside the empty walkway.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

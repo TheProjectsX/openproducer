@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 002]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium shot of the lone lighthouse keeper standing on the upper circular iron gallery inside the glowing glass lantern room. The protagonist is rendered as a minimalist 2D vector stick figure with unbroken solid black vector stroke limbs terminating in smooth rounded ends, wearing a peaked mariner cap silhouette. His head is a solid white circle contoured in uniform black outline without facial features. He stands before the intricate geometric Fresnel lens housing, hands resting against the brass railing, staring out through rain-streaked storm glass into the pitch-black ocean abyss. High-contrast vector noir graphic art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

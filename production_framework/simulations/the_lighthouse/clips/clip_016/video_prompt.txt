@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_016/image_prompt.txt
+
+[VIDEO PROMPT]
+Eye-level wide shot as the camera remains in a locked-off static composition framing the living quarters. The bright ambient lantern light instantly cuts out with a violent electrical spark, plunging the entire frame into pitch-black darkness for two seconds. A low mechanical rumble vibrates the floorboards as a small backup generator kicks in, casting a faint, flickering amber vector glow along the baseboards and illuminating the keeper standing paralyzed in center frame. Minimalist 2D vector noir style. Audio: SFX: Loud electrical power outage pop, heavy generator diesel cough starting, mechanical hum; Ambience: Total quiet room tone; Dialogue: None; Music: Dark ambient drone.

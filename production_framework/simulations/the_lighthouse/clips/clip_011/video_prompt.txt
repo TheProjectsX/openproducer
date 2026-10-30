@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_011/image_prompt.txt
+
+[VIDEO PROMPT]
+High-angle view as the camera executes a slow downward tilting push-in tracing the wet trail of brine footprints along the stone floor. The warm conical beam of the keeper's lantern pans along the flagstones, illuminating glistening wet vector impressions of bare human feet that start at the flooded doorway threshold and step forward, terminating inches in front of the keeper's boots. The footprints glisten under the lantern light while outside, the dark surf churns relentlessly. High-contrast 2D vector noir style. Audio: SFX: Wet squelching water drip, howling wind through open door, ocean surge; Ambience: Dark atmospheric maritime storm; Dialogue: None; Music: Creeping high-register horror violin note.

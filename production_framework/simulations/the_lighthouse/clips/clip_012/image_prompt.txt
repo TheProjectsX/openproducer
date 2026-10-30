@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 012]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Extreme close-up side-profile shot of the keeper's featureless white circular head outlined in uniform black stroke. From the dark void directly behind his neck, a shadowy, semi-translucent black vector vapor coils outward toward his ear like curling smoke. The keeper's torso is turned away in terror, with his rounded black limb raised defensively to his chest. High-contrast minimalist 2D vector noir animation on a cream paper canvas, surrounded by pitch-black graphic shadows.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

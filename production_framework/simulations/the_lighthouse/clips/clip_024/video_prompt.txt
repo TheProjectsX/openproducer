@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_024/image_prompt.txt
+
+[VIDEO PROMPT]
+Wide exterior shot as the camera executes a slow push-in toward the lighthouse standing under bright daylight and calm skies. A relief vessel rests gently on the calm sea while two stick figure sailors walk across the rocky shore toward the open tower entrance. Cutting smoothly to the interior, the camera glides across the cold, silent living quarters showing the untouched kettle on the stove and the shattered glass lantern lying at the base of the spiral stairs. Minimalist 2D vector style. Audio: SFX: Gentle waves lapping against rock, distant sea birds calling, footsteps on stone; Ambience: Peaceful coastal breeze; Dialogue: None; Music: Somber melancholic acoustic strings.

@@ -1,0 +1,151 @@
+# MASTER VIDEOS PROMPT: THE LONE LIGHTHOUSE KEEPER
+# Project: The Lone Lighthouse Keeper
+# Target Engine: Google Flow (Veo 3.1 & Imagen 4)
+# Audio Master: audio_script.md / SRT Timestamps
+# Pacing Profile: Slow-Burn Spooky Dread (28 Flow-Native Clips | Total Runtime: 318s)
+# Visual Paradigm: Pluggable Style `vector_stick_figure` (Minimalist 2D Vector Graphic Noir)
+# Visual DNA: Minimalist 2D vector line-art animation. Limbs and torso are pure unbroken solid black vector strokes terminating in smooth rounded line-cap ends; strictly zero individual fingers, zero human hands, zero toes, zero knuckles. Head is solid opaque white (#FFFFFF) outlined in clean black contour (#0F172A). High-contrast noir aesthetic on warm cream paper canvas (#F8F6F0) and stark pitch-black shadows (#0A0B0E).
+# Subject DNA Standard: Lone lighthouse keeper in minimalist mariner cap silhouette, carrying brass kerosene lantern.
+# Negative Constraints: photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig.
+
+---
+
+[SCENE 001 - CLIP 001 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Wide eye-level establishing shot as the camera executes a slow push-in toward the solitary stone lighthouse tower battered by surging Atlantic waves. Dense angular rain streaks slice diagonally across the black night void while turbulent vector wave crests violently crash against the jagged rock shelf. In the high lantern room, the brilliant conical vector light beam steadily rotates across the darkness, casting shifting graphic shadows across the churned sea foam. Crisp 2D vector noir animation style with uniform unbroken line-caps. Audio: SFX: Crashing Atlantic surf against stone, driving wind and pelting rain; Ambience: Low roaring oceanic storm bed; Dialogue: None; Music: Ominous low-frequency synthesizer drone.
+
+---
+
+[SCENE 002 - CLIP 002 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Eye-level medium shot as the camera remains in a locked-off static composition observing the minimalist stick figure keeper in the glowing lantern room. The keeper slowly raises one rounded arm to inspect the glowing brass lamp mechanism as the rotating Fresnel lens sweeps an intense cone of brilliant white light through the rain-streaked glass. Outside the tall vertical window panes, violent black storm clouds churn continuously against the warm cream canvas, casting rhythmic sweeping shadows across the iron floorboards. Crisp 2D vector noir aesthetic. Audio: SFX: Heavy mechanical gear rotation, clockwork ticking, howling wind against glass; Ambience: Distant storm thunder; Dialogue: None; Music: Low atmospheric drone.
+
+---
+
+[SCENE 003 - CLIP 003 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+High-angle perspective as the camera executes a slow downward tracking tilt following the stick figure keeper descending the curved spiral staircase. The keeper takes three deliberate steps down the iron treads before abruptly freezing in mid-motion, one rounded limb pausing in suspense. The swaying lantern in his hand casts dynamic swinging triangular light cones across the curving stone masonry and cast-iron steps, throwing jittery drop shadows into the gloom below as unseen ceiling timbers shudder overhead. Minimalist 2D vector line-art animation. Audio: SFX: Clanging iron footstep, sudden creaking floorboard above, whistling draft; Ambience: Muffled howling gale outside; Dialogue: None; Music: Suspenseful pulsating sub-bass drone.
+
+---
+
+[SCENE 004 - CLIP 004 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Low-angle upward-tilted view as the camera executes a slow creeping push-in toward the frozen stick figure keeper gazing up at the ceiling. The keeper remains completely stationary on the iron stair tread, trembling subtly with suspense as rhythmic, deliberate graphic vibration rings pulse across the wooden ceiling floorboards overhead. Dust particles drift through the sharp conical lantern beam while the heavy creak of unseen pacing echoes directly above. Pure 2D vector noir style with sharp graphic contrast. Audio: SFX: Slow deliberate heavy footsteps pacing overhead, creaking oak timber floorboards; Ambience: Hollow tower wind resonance; Dialogue: None; Music: Tension-building low metallic drone.
+
+---
+
+[SCENE 005 - CLIP 005 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Eye-level medium wide shot as the camera executes a slow horizontal tracking pan following the keeper as he ascends onto the upper walkway. He raises the glowing lantern forward, revealing the empty wooden chamber where the heavy storm hatch bangs erratically against its iron frame in the fierce gale. Cold driving rain streaks surge diagonally through the rectangular portal, scattering reflective water droplets across the floorboards as the keeper slowly approaches the opening. Crisp vector noir line-art. Audio: SFX: Heavy hatch banging against stone, whistling storm wind, violent rain wash; Ambience: Deep ocean gale roar; Dialogue: None; Music: Unsettling dissonant strings.
+
+---
+
+[SCENE 006 - CLIP 006 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Close-up profile shot as the camera maintains a locked-off static composition framing the heavy storm hatch. The stick figure keeper forcefully pulls the thick hatch door shut against the howling storm, driving the heavy iron slide bolt into its stone bracket with a decisive mechanical snap. He pauses for a breathless moment with his rounded limb resting on the locked bolt before turning his white circular head toward the stairwell and stepping away out of frame. Crisp 2D vector animation. Audio: SFX: Violent wooden door slam, heavy metallic bolt latching, sudden dampening of wind; Ambience: Muffled exterior gale; Dialogue: None; Music: Sudden ominous silence.
+
+---
+
+[SCENE 007 - CLIP 007 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Eye-level medium shot as the camera executes a subtle optical tilt upward from the keeper toward the creaking ceiling overhead. The keeper remains completely rigid on the iron landing as heavy, unmistakable footsteps resume pacing across the floorboards directly above him with ominous mechanical regularity. The masonry walls vibrate subtly in graphic line pulses as dust shivers loose from the timbers, drifting down through the lantern beam into the darkness. High-contrast vector noir animation. Audio: SFX: Heavy deliberate pacing footsteps resumed immediately, deep groan of bending timber; Ambience: Hollow interior draft; Dialogue: None; Music: Low discordant acoustic swell.
+
+---
+
+[SCENE 008 - CLIP 008 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Eye-level wide shot as the camera executes a slow linear push-in toward the keeper seated on the cot in his living quarters. The keeper's black vector torso rises and falls in deliberate, exaggerated breathing cycles as he attempts to calm his racing nerves. The flame inside the table lantern flickers gently, sending rhythmic undulating shadows stretching across the cold stone masonry wall behind him until he abruptly snaps his head upright in sudden shock. Minimalist 2D vector graphic art. Audio: SFX: Heavy ragged breathing, faint lantern oil hiss, storm wind rattling window frames; Ambience: Eerie domestic solitude; Dialogue: None; Music: Suspenseful sustained string note.
+
+---
+
+[SCENE 009 - CLIP 009 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Straight-on eye-level view as the camera remains in a locked-off static composition framing the reinforced front door. The heavy timber planks violently shudder three distinct times in rapid succession, producing three sharp visible impact ripples that shake the iron brackets and dislodge dust from the lintel. In the foreground, the keeper's black stick figure silhouette freezes in absolute stillness, motionless against the warm cream canvas as the violent crash of waves echoes from the other side. Minimalist vector line animation. Audio: SFX: Three thunderous sharp metallic knocks on thick oak wood, rattling iron hinges; Ambience: Roaring Atlantic gale; Dialogue: None; Music: Ominous low-pitch sting.
+
+---
+
+[SCENE 010 - CLIP 010 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Eye-level medium shot as the camera executes a slow push-in toward the open doorway as the keeper swings the massive timber door fully inward. A violent gust of Atlantic gale wind and rain sweeps across the stone threshold, causing the keeper's silhouette to lean forward into the blast with his lantern held aloft. Outside, the pitch-black ocean surges violently against the rock ledge with zero boats or human presence in sight, revealing only foaming black water. Crisp vector noir animation. Audio: SFX: Screeching iron bolt retraction, heavy door creak swinging open, roaring ocean gale blast; Ambience: Torrential rain wash; Dialogue: None; Music: Swelling dissonant brass drone.
+
+---
+
+[SCENE 011 - CLIP 011 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+High-angle view as the camera executes a slow downward tilting push-in tracing the wet trail of brine footprints along the stone floor. The warm conical beam of the keeper's lantern pans along the flagstones, illuminating glistening wet vector impressions of bare human feet that start at the flooded doorway threshold and step forward, terminating inches in front of the keeper's boots. The footprints glisten under the lantern light while outside, the dark surf churns relentlessly. High-contrast 2D vector noir style. Audio: SFX: Wet squelching water drip, howling wind through open door, ocean surge; Ambience: Dark atmospheric maritime storm; Dialogue: None; Music: Creeping high-register horror violin note.
+
+---
+
+[SCENE 012 - CLIP 012 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Extreme close-up shot as the camera maintains a locked-off static composition framing the keeper's white circular head in side profile. The keeper abruptly slams the door shut out of frame and stumbles backward into the light cone, his posture rigid with panic. Behind his neck, the deep black background shadow suddenly detaches and curls into a slender tendril of smoky vapor that brushes right against his ear, causing him to shudder violently in absolute dread. Minimalist 2D vector noir art. Audio: SFX: Heavy door slamming shut, bolt thrown, ragged gasp; Ambience: Distant muffled storm; Dialogue: Eerie hushed whisper murmuring keeper's name; Music: Chilling sub-bass swell.
+
+---
+
+[SCENE 013 - CLIP 013 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Eye-level medium shot as the camera executes a rapid tracking push-in following the keeper as he lunges desperately toward the wooden radio desk. His rounded black arms frantically toggle metallic switches and spin illuminated tuning dials on the vintage transmitter unit. He lifts the wire-line microphone to his white circular head, his posture tense and shaking with urgency as faint electrical waveform ripples pulse across the radio receiver display. Crisp 2D vector line-art animation. Audio: SFX: Metallic switch toggles, frantic frequency dial spinning, heavy crackling radio static; Ambience: Storm rattling window; Dialogue: None; Music: Urgent pulsating synth rhythm.
+
+---
+
+[SCENE 014 - CLIP 014 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Extreme close-up shot as the camera executes a slow creeping push-in toward the dark circular speaker grille of the radio transmitter. The harsh erratic crackle of radio static suddenly flattens into an unnatural, perfectly smooth rhythmic audio wave as subtle graphic distortion rings pulse from the metallic mesh into the air. In the out-of-focus background, the motionless silhouette of the keeper's head remains frozen in terror. High-contrast 2D vector noir animation. Audio: SFX: Harsh radio static cutting into smooth silence, speaker electrical pop; Ambience: Low eerie room drone; Dialogue: Calm voice: 'Extinguish the light. It sees you.'; Music: None.
+
+---
+
+[SCENE 015 - CLIP 015 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Point-of-view shot through the arched storm window as the camera executes a slow optical zoom toward the churning sea. Outside amidst the violent crashing waves, the solitary black vector stick silhouette stands eerily motionless atop the water, perfectly upright against the storm. Sudden flash of lightning illuminates the figure's identical proportions before a sheet of sea spray washes over the window glass, and the silhouette instantly disappears into the foaming black waves. Crisp vector noir art. Audio: SFX: Thunder crack, roaring wave crash against rock, rain hammering glass; Ambience: Ferocious maritime gale; Dialogue: None; Music: High piercing sustained suspense chord.
+
+---
+
+[SCENE 016 - CLIP 016 | DURATION: 8s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Eye-level wide shot as the camera remains in a locked-off static composition framing the living quarters. The bright ambient lantern light instantly cuts out with a violent electrical spark, plunging the entire frame into pitch-black darkness for two seconds. A low mechanical rumble vibrates the floorboards as a small backup generator kicks in, casting a faint, flickering amber vector glow along the baseboards and illuminating the keeper standing paralyzed in center frame. Minimalist 2D vector noir style. Audio: SFX: Loud electrical power outage pop, heavy generator diesel cough starting, mechanical hum; Ambience: Total quiet room tone; Dialogue: None; Music: Dark ambient drone.
+
+---
+
+[SCENE 017 - CLIP 017 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Medium close-up shot as the camera executes a slow push-in toward the dark window reflection. In the dark glass, the keeper's white circle head is clearly visible, while an identical pale white face slowly rises into view directly over his shoulder. The keeper suddenly gasps, whipping his entire stick figure body around to swing his arms blindly at the empty air behind him, only to find the amber-lit chamber completely vacant. Crisp 2D vector noir animation. Audio: SFX: Sharp intake of breath, cloth rustle, wild swinging arm swoosh through air, heavy foot scuff; Ambience: Low generator hum; Dialogue: None; Music: Sharp dissonant horror screech.
+
+---
+
+[SCENE 018 - CLIP 018 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Eye-level wide shot as the camera executes a horizontal tracking pan following the keeper as he bursts through the heavy entrance door into the outside air. Instead of the howling gale, the atmosphere is dead and unnatural. Dense swirls of pure white vector fog drift silently past his silhouette, blotting out the stars and ocean in a suffocating shroud of white mist as the keeper takes two hesitant steps forward onto the quiet rock. Minimalist 2D vector noir aesthetic. Audio: SFX: Wooden door burst open, sudden dead silence, eerie muffled air pressure; Ambience: Dead silent void with faint distant ringing; Dialogue: None; Music: Empty haunting synthesizer tone.
+
+---
+
+[SCENE 019 - CLIP 019 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Medium close-up shot as the camera executes a slow creeping push-in on the keeper enveloped in white mist. Dense fog curls slowly across his dark stick figure silhouette. Without any physical figure appearing, a cold visible burst of vapor blooms directly beside his neck, rippling his silhouette as a sinister whisper cuts the silence. The keeper freezes in absolute terror, unable to turn as the mist tightens around him. Crisp 2D vector animation. Audio: SFX: Cold breath exhale, subtle cloth rustle; Ambience: Total eerie silence; Dialogue: Hushed chilling whisper: 'What took you so long? You were never alone.'; Music: Creeping sub-bass pulse.
+
+---
+
+[SCENE 020 - CLIP 020 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Low-angle dynamic shot as the camera executes a rapid upward tilt toward the top of the tower as every incandescent bulb simultaneously shatters in a spectacular burst of geometric vector glass shards. The frame plunges into pitch blackness before a single sulfur match strikes with an orange vector spark, igniting the keeper's hand lantern. The keeper, holding the flaming lantern, resolutely turns back toward the tower base and begins ascending the iron spiral stairs. Crisp vector noir line-art. Audio: SFX: Cascading glass bulbs shattering simultaneously, heavy glass raining on stone, sulfur match strike hiss; Ambience: Distant ocean swell; Dialogue: None; Music: Ominous rising tension chord.
+
+---
+
+[SCENE 021 - CLIP 021 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Medium shot as the camera executes a slow upward tracking pan following the keeper as he climbs the curving spiral staircase toward the top landing. With every step the keeper takes, a metallic clang echoes, immediately doubled by a second identical step right behind him. The keeper reaches the top landing without looking back as the rusted iron door creaks open on its hinges, revealing an impenetrable black doorway. Minimalist 2D vector noir animation. Audio: SFX: Rhythmic synchronized double iron footsteps clanging on metal stairs, heavy rusted iron hinge groan; Ambience: Low draft in tower shaft; Dialogue: None; Music: Suspenseful pulsating drone.
+
+---
+
+[SCENE 022 - CLIP 022 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Eye-level medium shot as the camera executes a slow creeping push-in toward the open storeroom doorway. The identical stick figure doppelgänger stands perfectly still within the black void, its white circular head tilted in an eerily calm, welcoming posture under the swaying lantern light. Its rounded arm slowly gestures toward the interior darkness as an identical voice speaks with uncanny tranquility into the silence. Crisp 2D vector noir art. Audio: SFX: Faint lantern oil hiss, creaking floorboard; Ambience: Absolute dead silence; Dialogue: Smooth calm voice identical to keeper: 'Come inside.'; Music: Deep sub-bass resonance.
+
+---
+
+[SCENE 023 - CLIP 023 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Extreme high-contrast shot as the camera maintains a locked-off static composition on the keeper in the hallway. The keeper remains paralyzed in horror before the yellow lantern flame abruptly snuffs out into a thin tendril of smoke, throwing the entire screen into solid pitch-black darkness. In the blackness, a sharp gasp is heard, followed by a terrifying scream that vibrates the iron tower, before cutting cleanly into total, unbroken silence. Crisp minimalist vector noir. Audio: SFX: Lantern flame snuff hiss, sharp choked gasp, violent terrified scream reverberating off iron, abrupt cut to dead silence; Ambience: Pure silence; Dialogue: None; Music: Sudden deafening silence.
+
+---
+
+[SCENE 024 - CLIP 024 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Wide exterior shot as the camera executes a slow push-in toward the lighthouse standing under bright daylight and calm skies. A relief vessel rests gently on the calm sea while two stick figure sailors walk across the rocky shore toward the open tower entrance. Cutting smoothly to the interior, the camera glides across the cold, silent living quarters showing the untouched kettle on the stove and the shattered glass lantern lying at the base of the spiral stairs. Minimalist 2D vector style. Audio: SFX: Gentle waves lapping against rock, distant sea birds calling, footsteps on stone; Ambience: Peaceful coastal breeze; Dialogue: None; Music: Somber melancholic acoustic strings.
+
+---
+
+[SCENE 025 - CLIP 025 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+High-angle panoramic shot as the camera executes a slow horizontal tracking pan across the barren rock shelves and crashing tide pools. The stick figure relief crew slowly searches the empty shoreline, shining flashlights into crevices and finding nothing. The camera pans smoothly upward toward the looming stone lighthouse tower as the searchers begin ascending the interior stairwell toward the upper storeroom. Crisp 2D vector graphic art. Audio: SFX: Moderate ocean waves breaking on rocks, gusting ocean breeze; Ambience: Open daylight atmosphere; Dialogue: None; Music: Pensive, lingering cello melody.
+
+---
+
+[SCENE 026 - CLIP 026 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Eye-level medium wide shot as the camera executes a slow tracking push-in across the dusty floorboards of the upper storeroom. Shafts of morning light reveal the storm window firmly bolted shut from the inside with its heavy iron latch engaged. The camera tracks along the glistening trail of dark seawater footprints that mysteriously materialize in the center of the dusty floor, march in a direct line straight to the glass window sill, and terminate without a trace. Minimalist 2D vector noir animation. Audio: SFX: Floorboard creak under footsteps, subtle ocean wind against window pane, water droplet splash; Ambience: Dusty quiet room tone; Dialogue: None; Music: Eerie mystery progression with subtle harmonics.
+
+---
+
+[SCENE 027 - CLIP 027 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Dusk wide shot as the camera executes a slow pull-back revealing the towering silhouette of the lighthouse against the darkening Atlantic horizon. As twilight deepens into night, the sweeping light beam remains dark, yet the tower stands monolithic and immovable against the endless ocean swells. Subtle graphic storm clouds gather once again along the horizon line under the cream canvas sky. High-contrast 2D vector noir style. Audio: SFX: Deep oceanic swells rolling against rock, distant evening wind; Ambience: Expansive twilight ocean solitude; Dialogue: None; Music: Melancholic, reflective bass and violin duet.
+
+---
+
+[SCENE 028 - CLIP 028 | DURATION: 10s | ASPECT: 16:9 | RESOLUTION: 1080p | CHOP: CONTINUOUS ACTION EXTENSION]
+Close-up shot as the camera executes a slow creeping push-in toward the high glass pane of the dark lantern room. In the exterior night void eighty feet above the surging ocean, three sharp, distinct impacts strike the glass, sending concentric graphic shockwaves across the pane. Down on the desk, the radio receiver power switch clicks on by itself, its frequency dial glowing green in the darkness as a soft, chilling whisper speaks into the quiet room. Minimalist 2D vector noir animation. Audio: SFX: Three distinct sharp knocks against high window glass, metallic electrical switch click, subtle radio static hum; Ambience: Wind blowing around the tower dome; Dialogue: Hushed chilling whisper: 'It's your turn to keep the light burning.'; Music: Fading dark sub-bass drone.
+
+---

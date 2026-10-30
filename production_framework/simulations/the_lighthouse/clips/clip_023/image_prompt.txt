@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 023]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Extreme high-contrast shot of the hallway outside the storeroom. The stick figure keeper stands frozen in place, lantern trembling in his rounded hand. The lantern flame is depicted in mid-snap, extinguishing into a wispy curl of white smoke. The surrounding frame is engulfed in deep, solid black graphic ink on a cream canvas, capturing the instant of total blackout.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_003/image_prompt.txt
+
+[VIDEO PROMPT]
+High-angle perspective as the camera executes a slow downward tracking tilt following the stick figure keeper descending the curved spiral staircase. The keeper takes three deliberate steps down the iron treads before abruptly freezing in mid-motion, one rounded limb pausing in suspense. The swaying lantern in his hand casts dynamic swinging triangular light cones across the curving stone masonry and cast-iron steps, throwing jittery drop shadows into the gloom below as unseen ceiling timbers shudder overhead. Minimalist 2D vector line-art animation. Audio: SFX: Clanging iron footstep, sudden creaking floorboard above, whistling draft; Ambience: Muffled howling gale outside; Dialogue: None; Music: Suspenseful pulsating sub-bass drone.

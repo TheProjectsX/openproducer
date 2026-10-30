@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_018/image_prompt.txt
+
+[VIDEO PROMPT]
+Eye-level wide shot as the camera executes a horizontal tracking pan following the keeper as he bursts through the heavy entrance door into the outside air. Instead of the howling gale, the atmosphere is dead and unnatural. Dense swirls of pure white vector fog drift silently past his silhouette, blotting out the stars and ocean in a suffocating shroud of white mist as the keeper takes two hesitant steps forward onto the quiet rock. Minimalist 2D vector noir aesthetic. Audio: SFX: Wooden door burst open, sudden dead silence, eerie muffled air pressure; Ambience: Dead silent void with faint distant ringing; Dialogue: None; Music: Empty haunting synthesizer tone.

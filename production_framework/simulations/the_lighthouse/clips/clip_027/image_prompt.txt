@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 027]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Dusk wide shot of the solitary lighthouse tower standing against a deep indigo and purple sunset sky over the vast Atlantic Ocean. The tower is rendered as a clean, majestic solid black vector silhouette anchored to the dark rocky shelf. Minimalist 2D vector art with smooth graphic novel lines and deep contrast on a textured cream paper canvas, as the ocean swells gently below.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

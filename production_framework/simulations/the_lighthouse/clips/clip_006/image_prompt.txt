@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 006]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Close-up profile shot of the stick figure keeper grasping the heavy iron handle of the wooden storm hatch. Minimalist 2D vector line-art with solid black stroke limbs terminating in rounded ends, white circle head in side profile. The wooden hatch is rendered with bold graphic grain lines, showing a thick cast-iron sliding slide-bolt mechanism firmly engaged into a reinforced wall socket. Splashes of rain glisten in crisp vector highlights across the dark surface under warm lantern light.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

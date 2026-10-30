@@ -1,9 +1,10 @@
 {
-  "$comment": "OpenProducer Workspace Configuration. Populated during initial intake dialogue.",
+  "$comment": "OpenProducer Brain Configuration. Saved during /opp-propose, /opp-sync, or /opp-template.",
   "project_name": "",
-  "archetype": "social_ugc",
-  "tier": "lean_base_reference",
-  "aspect_ratio": "9:16",
+  "archetype": "",
+  "tier": "",
+  "visual_style": "",
+  "aspect_ratio": "",
   "resolution": "1080p",
   "target_duration_seconds": 0,
   "flow_orchestration": {
@@ -11,7 +12,8 @@
     "image_model": "imagen-4",
     "director_model": "gemini-1.5-pro"
   },
-  "audio_pathway": "pathway_a_native_veo",
+  "audio_pathway": "",
+  "audio_delivery_mode": "",
   "language": "en-US",
   "linter_profile": "strict"
 }

@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 026]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium wide shot of the dusty top storeroom illuminated by daylight shafts pouring through an arched storm window. The window is clearly reinforced with a heavy iron latch bolted securely from the inside. Across the dusty wooden floorboards, a dark trail of damp seawater footprints begins abruptly in the middle of empty space and leads directly to the glass pane, where it abruptly stops. Zero other tracks exist.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

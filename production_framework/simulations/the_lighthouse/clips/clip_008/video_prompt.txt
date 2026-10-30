@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 8s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_008/image_prompt.txt
+
+[VIDEO PROMPT]
+Eye-level wide shot as the camera executes a slow linear push-in toward the keeper seated on the cot in his living quarters. The keeper's black vector torso rises and falls in deliberate, exaggerated breathing cycles as he attempts to calm his racing nerves. The flame inside the table lantern flickers gently, sending rhythmic undulating shadows stretching across the cold stone masonry wall behind him until he abruptly snaps his head upright in sudden shock. Minimalist 2D vector graphic art. Audio: SFX: Heavy ragged breathing, faint lantern oil hiss, storm wind rattling window frames; Ambience: Eerie domestic solitude; Dialogue: None; Music: Suspenseful sustained string note.

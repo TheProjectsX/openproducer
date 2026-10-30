@@ -1,69 +1,71 @@
 # OpenProducer Dynamic Workspace Schema
 
-This document serves as the declarative file system contract for OpenProducer. When initializing a project, the AI Agent dynamically generates the files below tailored to the creator's vision.
+This document serves as the declarative file system contract for OpenProducer.
+- **Zero Unauthorized Image Generation:** OpenProducer NEVER generates any image on its own (not even as an example) unless explicitly asked by the creator.
+- **Plain-Text Prompts (Zero Markdown Bloat):** All prompt files use clean `.txt` format with bracket headers (`[TIER ...]`, `Conditioned On:`, `[IMAGE PROMPT]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`) modeled on `the_314am_doppelganger`.
 
 ---
 
 ## 1. Operating Tiers
 
-### Tier 1: Lean Base-Reference (Default for 80% of Productions)
+### Tier 1: Lean Version (Single Subject / Setting)
 * **Use Cases:** Social UGC (TikTok/Reels), Solo Host Explainers, 2D Stick-Figure animation, Single-Product commercial ads.
-* **Core Characteristic:** 1 Subject + 1 Setting. Uses a single `base_image_prompt.txt` to lock face, room, lighting, and style simultaneously. No `subjects/` or `environments/` subdirectories.
+* **Core Characteristic:** 1 Subject + 1 Setting. Uses `base_image_prompt.txt` to lock visual style, subject, and setting simultaneously.
 
 ```text
 <project_root>/
-├── openproducer/                  # Internal Producer Engine
-│   ├── config.json                # Project settings (aspect_ratio, archetype, audio_pathway)
-│   ├── state.json                 # Interactive stage tracker (current_stage, active_gate)
-│   ├── blueprint.md               # Chronological collaboration notes
+├── openproducer/                  # 🧠 Internal Producer Brain
+│   ├── config.json                # Project settings (aspect_ratio, archetype, audio_pathway, audio_delivery_mode)
+│   ├── state.json                 # Interactive stage tracker (explore | proposed | produced | guiding)
+│   ├── blueprint.md               # Complete archived story, plot, plans & session memory
 │   ├── manifest.json              # Pre-flight linter audit ledger (L-01 to L-19)
 │   └── visual/
 │       └── technical_anchor.txt   # Injected master style anchor string
 │
-├── base_image_prompt.txt          # Tier 1 Base Reference Image Prompt (with [IMAGE 1] conditioning)
-├── references/                    # Image directory (creator_photo.jpg, base_image.jpg)
-├── clips/                         # Clip directories (clip_01, clip_02...)
-│   └── clip_XX/
-│       ├── image_prompt.txt       # Tier 2: Start-frame image prompt
-│       └── video_prompt.txt       # Tier 3: Veo 3.1 video kinematics, dialogue & audio
-├── master_videos_prompt.txt       # 1-click clipboard compilation for Google Flow
-├── scratchbook.md                 # Script timeline budget table & retake log
-└── motion_graphics.md             # Subtitle cues & on-screen typography specs
+├── base_image_prompt.txt          # 🎨 Master Base Style & Subject/Setting lock prompt
+├── audio_script.md                # 🎙️ (If Separate Audio) Clean script to generate/record voice/audio
+├── clips/                         # 🎬 Clip directories (clip_01, clip_02...)
+│   └── clip_xxx/
+│       ├── image_prompt.txt       # Tier 2: Start-frame prompt (Conditioned On: base_image_prompt.txt)
+│       └── video_prompt.txt       # Tier 3: Veo 3.1 video prompt (Input Seed: clips/clip_xxx/image_prompt.txt)
+├── master_images_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
+├── master_videos_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
+├── scratchbook.md                 # 📝 Timeline pacing math, duration map & Retake Doctor log
+└── motion_graphics.md             # 🔤 (If applicable) On-screen captions & typography specs
 ```
 
 ---
 
-### Tier 2: Modular Studio (Multi-Character & Multi-Scene Productions)
-* **Use Cases:** Narrative cinema, short films, multi-actor dialogue, multi-location stories.
-* **Core Characteristic:** Birthed from a **Genesis Master Style Plate** (`references/genesis_style.jpg`). Cast dossiers and stage plates reside in `openproducer/` so the project root stays clean.
+### Tier 2: Modular Studio Version (Multi-Character & Multi-Environment Productions)
+* **Use Cases:** Narrative cinema, short films, multi-character animations, multi-location stories.
+* **Core Characteristic:** Anchored by `base_image_prompt.txt` to lock the master visual style first. Character prompts (`subjects/`) and environment stage prompts (`visuals/environments/`) are created directly at project root in clean `.txt` format with `Conditioned On:` / `Feeds Into:` connection headers.
 
 ```text
 <project_root>/
-├── openproducer/
-│   ├── config.json                # Tier: "modular_studio", Aspect: "16:9", Cinema
-│   ├── state.json                 # Scene completion tracker
-│   ├── blueprint.md               # Screenplay director notes
-│   ├── manifest.json              # Linter audit ledger
-│   ├── visual/                    # Visual style anchor & genesis prompt
-│   ├── subjects/<subject_id>/     # Profile, hero prompt, 4-view turnaround sheet
-│   └── environments/<env_id>/     # Summary, lighting rig, empty stage plate
+├── openproducer/                  # 🧠 Internal Producer Brain
+│   ├── config.json                # Tier: "modular_studio", Aspect: "16:9", etc.
+│   ├── state.json                 # Interactive stage tracker
+│   ├── blueprint.md               # Complete archived story, character arcs & session memory
+│   ├── manifest.json              # Linter audit ledger (L-01 to L-19)
+│   └── visual/
+│       └── technical_anchor.txt   # Master style anchor string
 │
-├── references/                    # genesis_style.jpg
-├── clips/                         # Grouped by scene: clips/scene_01/clip_01/
-├── master_videos_prompt.txt       # Scene-grouped Flow compilation with ingredient bindings
-├── scratchbook.md                 # Multi-character script slicing, eyeline vectors, audio bridges
-└── motion_graphics.md             # Title cards, lower thirds, subtitle cue sheet
+├── base_image_prompt.txt          # 🎨 Master Base Style lock prompt (anchors all subjects & environments)
+├── audio_script.md                # 🎙️ (If Separate Audio) Clean script to generate/record voice/audio
+├── subjects/                      # 👥 Character & Subject Base Prompts
+│   └── <subject_id_or_name>/
+│       ├── hero_prompt.txt        # Step 1 Hero Shot (Conditioned On: base_image_prompt.txt)
+│       └── profile_prompt.txt     # Step 2 4-View Sheet (Conditioned On: hero_prompt.txt)
+├── visuals/                       # 🌆 Environment Base Prompts
+│   └── environments/
+│       └── <environment_id_or_name>/
+│           └── prompt.txt         # Empty 3-plane stage prompt (Conditioned On: base_image_prompt.txt)
+├── clips/                         # 🎬 Shot-by-shot prompts
+│   └── clip_xxx/
+│       ├── image_prompt.txt       # Keyframe prompt (Conditioned On: subject + environment images)
+│       └── video_prompt.txt       # Video prompt (Input Seed: clips/clip_xxx/image_prompt.txt or LAST_FRAME)
+├── master_images_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
+├── master_videos_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
+├── scratchbook.md                 # 📝 Timeline pacing math, eyeline vectors & Retake Doctor log
+└── motion_graphics.md             # 🔤 (If applicable) Title cards, lower thirds & subtitle cue sheet
 ```
-
----
-
-## 2. The 2-Phase Interactive Workflow
-
-1. **Phase 1: One-Pass Synthesis:**
-   * Agent generates all tailored files on disk immediately upon creative intake.
-   * Agent asks creator: *"Your package is ready! Would you like the Step-by-Step Guided Run?"*
-2. **Phase 2: Step-by-Step Guided Run:**
-   * **Gate 1 (Base Image Lock):** Test `base_image_prompt.txt` in Flow. Loop on revisions until approved.
-   * **Gate 2 (Audio & Script Review):** Verify pacing, L-19 safety, and audio bridges.
-   * **Gate 3 (Clip-by-Clip Render):** Walk through clip prompts with exact Flow ingredient bindings.
-   * **Gate 4 (Retake Doctor):** Post-generation triage for speech repeats, dead air, or text spoilers.

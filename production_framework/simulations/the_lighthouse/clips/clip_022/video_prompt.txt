@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_022/image_prompt.txt
+
+[VIDEO PROMPT]
+Eye-level medium shot as the camera executes a slow creeping push-in toward the open storeroom doorway. The identical stick figure doppelgänger stands perfectly still within the black void, its white circular head tilted in an eerily calm, welcoming posture under the swaying lantern light. Its rounded arm slowly gestures toward the interior darkness as an identical voice speaks with uncanny tranquility into the silence. Crisp 2D vector noir art. Audio: SFX: Faint lantern oil hiss, creaking floorboard; Ambience: Absolute dead silence; Dialogue: Smooth calm voice identical to keeper: 'Come inside.'; Music: Deep sub-bass resonance.

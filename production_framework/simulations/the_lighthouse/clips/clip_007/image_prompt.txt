@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 007]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level medium shot on the middle landing of the spiral iron staircase. The stick figure keeper is caught mid-step, gripping the slender iron handrail with both arms rigid. Stark 2D vector noir animation with dramatic graphic lighting casting his elongated black silhouette against the curved masonry wall behind him. Directly above his head, the dark overhead ceiling beams show distinct graphic vibration arcs, emphasizing the immediate renewed pacing overhead.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

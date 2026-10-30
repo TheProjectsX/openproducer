@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_023/image_prompt.txt
+
+[VIDEO PROMPT]
+Extreme high-contrast shot as the camera maintains a locked-off static composition on the keeper in the hallway. The keeper remains paralyzed in horror before the yellow lantern flame abruptly snuffs out into a thin tendril of smoke, throwing the entire screen into solid pitch-black darkness. In the blackness, a sharp gasp is heard, followed by a terrifying scream that vibrates the iron tower, before cutting cleanly into total, unbroken silence. Crisp minimalist vector noir. Audio: SFX: Lantern flame snuff hiss, sharp choked gasp, violent terrified scream reverberating off iron, abrupt cut to dead silence; Ambience: Pure silence; Dialogue: None; Music: Sudden deafening silence.

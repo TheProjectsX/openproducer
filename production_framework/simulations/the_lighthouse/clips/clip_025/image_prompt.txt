@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 025]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+High-angle panoramic wide shot of the rugged island cliffs and rocky shoreline. Three stick figure searchers with solid black limbs and white circular heads comb the perimeter rocks and tide pools under bright daylight. Crisp 2D vector line-art with clean graphic contours representing the jagged Atlantic shoreline, devoid of any human presence or belongings.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

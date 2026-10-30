@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 011]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+High-angle bird's-eye view looking down at the stone floor threshold just inside the open doorway. The keeper's two rounded black vector boots stand at the bottom edge. Extending across the stone slabs from the wet doorstep right up to his boots is a trail of distinct, glistening black vector footprints of bare human feet, glistening with brine moisture. Minimalist 2D vector line-art with stark graphic puddles and wet splash droplets on a warm cream canvas. No returning footprints exist.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

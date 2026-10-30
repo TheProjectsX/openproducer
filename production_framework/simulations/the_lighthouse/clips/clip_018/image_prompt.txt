@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 018]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Eye-level wide exterior shot outside the lighthouse doorway. The stick figure keeper stands on the stone threshold, arms outspread in total shock. The violent ocean gale and rain have completely vanished; instead, the entire world is enveloped in a thick, uniform, suffocating milky white vector mist. The churning ocean waves are completely calm and motionless, frozen like flat black vector planes beneath the swirling white fog.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

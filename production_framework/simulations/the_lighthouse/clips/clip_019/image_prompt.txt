@@ -1,0 +1,11 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 019]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[IMAGE PROMPT]
+Medium close-up shot of the stick figure keeper surrounded entirely by swirling opaque white vector fog on a dark background. From the mist beside his ear, swirling curls of cold vapor coalesce into the faint outline of a second set of rounded vector shoulders. The keeper's posture is stiff and completely paralyzed, his white head outlined in stark black against the milky mist.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

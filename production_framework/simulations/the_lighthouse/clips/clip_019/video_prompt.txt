@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_019/image_prompt.txt
+
+[VIDEO PROMPT]
+Medium close-up shot as the camera executes a slow creeping push-in on the keeper enveloped in white mist. Dense fog curls slowly across his dark stick figure silhouette. Without any physical figure appearing, a cold visible burst of vapor blooms directly beside his neck, rippling his silhouette as a sinister whisper cuts the silence. The keeper freezes in absolute terror, unable to turn as the mist tightens around him. Crisp 2D vector animation. Audio: SFX: Cold breath exhale, subtle cloth rustle; Ambience: Total eerie silence; Dialogue: Hushed chilling whisper: 'What took you so long? You were never alone.'; Music: Creeping sub-bass pulse.

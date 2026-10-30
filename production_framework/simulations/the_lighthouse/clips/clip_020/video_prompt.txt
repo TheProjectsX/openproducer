@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_020/image_prompt.txt
+
+[VIDEO PROMPT]
+Low-angle dynamic shot as the camera executes a rapid upward tilt toward the top of the tower as every incandescent bulb simultaneously shatters in a spectacular burst of geometric vector glass shards. The frame plunges into pitch blackness before a single sulfur match strikes with an orange vector spark, igniting the keeper's hand lantern. The keeper, holding the flaming lantern, resolutely turns back toward the tower base and begins ascending the iron spiral stairs. Crisp vector noir line-art. Audio: SFX: Cascading glass bulbs shattering simultaneously, heavy glass raining on stone, sulfur match strike hiss; Ambience: Distant ocean swell; Dialogue: None; Music: Ominous rising tension chord.

@@ -1,0 +1,9 @@
+[CONFIGURATION SETTINGS]
+Duration: 10s
+Aspect Ratio: 16:9
+Resolution: 1080p
+Transition / Chop: CONTINUOUS ACTION EXTENSION
+Input Seed / Dependencies: Generated from clips/clip_001/image_prompt.txt
+
+[VIDEO PROMPT]
+Wide eye-level establishing shot as the camera executes a slow push-in toward the solitary stone lighthouse tower battered by surging Atlantic waves. Dense angular rain streaks slice diagonally across the black night void while turbulent vector wave crests violently crash against the jagged rock shelf. In the high lantern room, the brilliant conical vector light beam steadily rotates across the darkness, casting shifting graphic shadows across the churned sea foam. Crisp 2D vector noir animation style with uniform unbroken line-caps. Audio: SFX: Crashing Atlantic surf against stone, driving wind and pelting rain; Ambience: Low roaring oceanic storm bed; Dialogue: None; Music: Ominous low-frequency synthesizer drone.
