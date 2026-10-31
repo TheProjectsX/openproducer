@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_009]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_009/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 8s
+Audio Timestamp: 00:01:08 - 00:01:16
+Narration Cue: "Down in your quarters, you try to steady your breath. Then comes a sound that makes your blood run cold."
+
+[VIDEO PROMPT]
+Wide eye-level shot of the living quarters, slow linear push-in toward the keeper sitting rigidly at the wooden table. The room is dead silent except for the faint whistle of wind through the masonry cracks. The keeper clutches his chest with rounded vector arms, chest rising and falling in shallow, trembling breaths. Long, stark graphic drop shadows stretch across the cream canvas floor. Audio: SFX: Ragged human breathing, faint stove flue whistle; Ambience: Cold stone room tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

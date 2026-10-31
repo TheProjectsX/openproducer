@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_025]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_025/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 03:29 - 03:40
+Narration Cue: "With every step you take, a second set of footsteps follows directly behind you. Clang. You reach the upper doorway."
+
+[VIDEO PROMPT]
+Low-angle shot on the iron staircase, slow upward tracking glide following the synchronized ascent. With each metallic boot-strike on the iron tread, an identical second metallic impact sounds immediately behind him in terrifying synchrony. On the final step, a singular heavy iron clang reverberates through the hollow tower shaft, causing the keeper to pause at the upper threshold. Audio: SFX: Rhythmic iron boot steps followed by trailing secondary footsteps, heavy resonant metallic clang; Ambience: Hollow tower reverberation; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

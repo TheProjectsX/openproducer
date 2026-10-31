@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_028]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_028/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 03:56 - 04:07
+Narration Cue: "You are frozen in the hallway, listening to your own mouth speak from the dark. Your lantern flame abruptly snuffs out."
+
+[VIDEO PROMPT]
+Extreme close-up shot focused on the burning lantern chimney, slow push-in as the keeper remains petrified in the corridor. Without any wind or draft, the lantern wick abruptly snaps out with a sharp puff of smoke, instantly plunging the entire hallway into suffocating, impenetrable blackness. A thin white smoke wisp vanishes into the dark. Audio: SFX: Sharp hiss of extinguished kerosene flame, sudden intake of breath; Ambience: Dead blackout silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

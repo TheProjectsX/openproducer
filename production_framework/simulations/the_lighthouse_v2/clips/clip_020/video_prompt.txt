@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_020]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_020/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 02:46 - 02:56
+Narration Cue: "The room is empty. Panic takes over. You run for the exit, tearing the door open."
+
+[VIDEO PROMPT]
+Dynamic action shot, horizontal tracking pan following the keeper as he spins violently around, sweeping his brass lantern through the empty air. Finding nothing behind him, absolute terror overtakes him. He sprints across the stone floor toward the exterior entrance, tearing the heavy timber door wide open and hurling himself toward the outdoor rampart. Audio: SFX: Lantern chain swinging, frantic boot scuffs on stone, door violently thrown open; Ambience: Sudden unnatural silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

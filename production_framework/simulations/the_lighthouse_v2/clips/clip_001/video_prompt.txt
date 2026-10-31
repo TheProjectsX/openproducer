@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_001]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_001/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 6s
+Audio Timestamp: 00:00:00 - 00:00:06
+Narration Cue: "You have been alone on this barren rock in the Atlantic Ocean for an entire month."
+
+[VIDEO PROMPT]
+Wide establishing eye-level shot of the solitary stone lighthouse standing firm amidst crashing waves, slow linear push-in toward the towering stone structure. Heavy diagonal rain lines streak across the dark frame while churning black ocean crests surge against the base of the rock. The high lantern beam casts a steady, piercing cone of warm light cutting through the driving Atlantic storm. The composition remains bleak and austere with sharp 2D vector graphic novel lines. Audio: SFX: Crashing ocean surge, howling wind gusts; Ambience: Relentless sea storm drone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

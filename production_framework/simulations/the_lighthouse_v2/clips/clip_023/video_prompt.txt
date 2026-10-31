@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_023]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_023/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 03:12 - 03:22
+Narration Cue: "You were never alone. Every bulb in the tower shatters. In the blackness, heavy glass crashes on the top floor."
+
+[VIDEO PROMPT]
+Dramatic interior shot looking up the spiral staircase, rapid upward tilt as every electric light bulb shatters simultaneously in explosive bursts of glass shards. In the ensuing pitch blackness, heavy glass crashes violently on the top deck. The keeper strikes a wooden match with a sharp hiss, illuminating his blank white face before relighting the kerosene lantern. Audio: SFX: Multiple light bulbs popping and shattering, heavy glass crashing upstairs, match strike scrape, lantern flame whoosh; Ambience: Echoing tower resonance; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

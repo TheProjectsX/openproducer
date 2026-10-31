@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_036]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_036/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 05:09 - 05:19
+Narration Cue: "answered the radio. The lighthouse still stands. Tonight, you can almost hear three sharp knocks against the glass..."
+
+[VIDEO PROMPT]
+Extreme close-up shot focused on the exterior storm window pane at night, slow optical push-in toward the dark glass. Out in the empty air eighty feet above the ocean, three sharp, distinct impact taps strike against the outside of the glass with chilling clarity, causing subtle concentric vibration rings across the rain film. Audio: SFX: Three crisp knuckles tapping against exterior window glass; Ambience: Distant ocean storm wind; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

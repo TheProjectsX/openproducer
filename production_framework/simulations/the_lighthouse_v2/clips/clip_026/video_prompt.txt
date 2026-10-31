@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_026]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_026/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 03:40 - 03:50
+Narration Cue: "The rusted door slowly swings open into the dark. From inside the gloom, a voice speaks. Smooth."
+
+[VIDEO PROMPT]
+Eye-level medium shot of the upper doorway landing, slow creeping push-in toward the open threshold. The heavy rusted iron door glides open on screeching hinges under its own momentum, revealing an absolute void of pitch-black darkness within the upper storeroom. The lantern light refuses to penetrate more than a few inches into the room. From the deep interior gloom, a calm, familiar presence stirs. Audio: SFX: Slow screeching iron door hinges, floorboard groan inside dark room; Ambience: Heavy unnatural acoustic stillness; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

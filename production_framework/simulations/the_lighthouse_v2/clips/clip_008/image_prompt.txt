@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_008]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 00:00:59 - 00:01:08 (8s)
+Narration Cue: "head back down. Instantly, the pacing starts again, directly over your head. The ceiling timbers creak..."
+
+[IMAGE PROMPT]
+Extreme low-angle shot looking directly up at the heavy dark oak ceiling beams overhead. Two large timber planks sag slightly under invisible downward pressure. In the lower corner, the stick figure keeper stands frozen, clutching his lantern, staring straight up into the ceiling. Minimalist 2D vector animation on warm cream canvas, deep graphic shadows pooling between the timber beams.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

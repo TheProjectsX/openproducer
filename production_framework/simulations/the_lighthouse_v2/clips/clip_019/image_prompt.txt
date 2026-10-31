@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_019]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 02:36 - 02:46 (10s)
+Narration Cue: "The backup generator kicks in, and in the glass pane before you, you see a pale face reflected right over your shoulder."
+
+[IMAGE PROMPT]
+Medium close-up shot of the seaward window glass in the gloom. An emergency backup bulb flickers to life overhead with sickly pale light. In the dark reflective surface of the glass pane, beside the keeper's blank circular head reflection, a ghostly white face with hollow dark contours stares right over his shoulder. High-contrast vector horror art, crisp line-art reflections on deep black void.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

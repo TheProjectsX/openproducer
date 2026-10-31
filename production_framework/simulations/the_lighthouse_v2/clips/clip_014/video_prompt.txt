@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_014]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_014/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 8s
+Audio Timestamp: 01:51 - 02:00
+Narration Cue: "Right behind your ear, a familiar voice whispers your name. It belongs to someone you buried years ago."
+
+[VIDEO PROMPT]
+Over-the-shoulder medium close-up shot, slow creeping push-in as the keeper presses his spine against the cold masonry. Out of the deep graphic shadow behind his left ear, an imperceptible dark silhouette leans softly forward. The keeper's posture freezes in paralyzing realization as a chilling invisible whisper brushes against his neck. Audio: SFX: Soft intake of breath, eerie atmospheric chill tone; Ambience: Total unnatural room silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_019]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_019/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 02:36 - 02:46
+Narration Cue: "The backup generator kicks in, and in the glass pane before you, you see a pale face reflected right over your shoulder."
+
+[VIDEO PROMPT]
+Medium close-up shot focused on the reflective glass window, slow push-in as the generator coughs to life with a dull mechanical rhythm. The dim emergency lamp illuminates the interior, casting a crisp reflection on the pane. Directly beside the keeper's head, an uncanny second face stares forward from the reflection with terrifying stillness. The keeper's posture freezes in paralyzing realization. Audio: SFX: Distant generator motor sputtering to life, electrical hum; Ambience: Tense low atmospheric hum; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

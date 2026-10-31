@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_013]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 01:45 - 01:51 (6s)
+Narration Cue: "from the surf up to your boots. None lead back out. You slam the door shut and back away."
+
+[IMAGE PROMPT]
+Eye-level medium shot of the keeper violently slamming the heavy timber door shut, throwing his weight against the iron bar. The puddle of wet footprints glistens on the stone floor at his feet. Minimalist 2D vector line-art, high-tension dramatic composition.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_035]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 05:02 - 05:09 (8s)
+Narration Cue: "jumped, but that will never explain a window locked from the inside. And it will never explain the voice that answered..."
+
+[IMAGE PROMPT]
+Wide exterior tracking shot of the lighthouse tower standing tall against a darkening Atlantic sunset. The stone tower rises majestically from the black ocean crags as twilight descends. Minimalist 2D vector line-art on warm cream canvas, deep indigo ocean void, solitary monument silhouette.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

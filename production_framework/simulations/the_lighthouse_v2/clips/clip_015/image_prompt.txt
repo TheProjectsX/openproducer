@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_015]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 02:00 - 02:07 (8s)
+Narration Cue: "You bolt to the radio desk, flicking the transmitter frantically. Mayday! Mayday! Lighthouse station! Does anyone read?"
+
+[IMAGE PROMPT]
+Eye-level medium shot of the radio communications desk. An old vacuum-tube radio apparatus with glowing orange dials, a large Morse telegraph key, and a wired microphone sit on a cluttered oak desk. The stick figure keeper leans over the desk, frantically turning knobs with his rounded vector arm. Clean 2D graphic novel linework, dramatic chiaroscuro light from the glowing tube filaments.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

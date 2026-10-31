@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_006]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_006/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 00:00:41 - 00:00:51
+Narration Cue: "Slow, deliberate. You raise your lantern and climb back up. The room is empty, except for a storm..."
+
+[VIDEO PROMPT]
+Low-angle upward shot looking up toward the lantern deck hatch, slow push-in tracking the keeper as he climbs back up the stairs. His raised lantern casts an expanding arc of warm light across the stone ceiling vault. As his head rises above the floor level, the upper room is revealed to be completely vacant, with only rain streaks visible through the peripheral windows. The pacing sounds stop abruptly into chilling silence. Audio: SFX: Metal boots ascending iron stairs, rhythmic creak; Ambience: Low draft whistling through stone seams; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_005]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 00:00:32 - 00:00:41 (10s)
+Narration Cue: "Then you freeze. Above you, on the walkway you just left, heavy footsteps pace the floorboards."
+
+[IMAGE PROMPT]
+High-angle diagonal perspective looking down the dizzying spiral of the black iron staircase into the dark depths of the tower. The stick figure keeper grips the iron handrail with a rounded vector arm, paused mid-step on a curved metal tread. A handheld kerosene lantern casts a sharp circular pool of warm light on the stone steps. Minimalist 2D vector noir animation, geometric curving iron steps, deep graphic drop shadows.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

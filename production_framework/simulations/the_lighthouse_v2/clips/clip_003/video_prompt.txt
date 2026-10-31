@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_003]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_003/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 00:00:11 - 00:00:21
+Narration Cue: "You are the sole lighthouse keeper, bound to a single duty. Keep the beam burning so passing ships survive the dark."
+
+[VIDEO PROMPT]
+Eye-level medium interior shot of the glowing lantern room, slow horizontal tracking pan across the faceted glass prism rings. The stick figure keeper raises his rounded vector arm, carefully trimming the glowing wick as the massive brass apparatus hums with steady warmth. Outside the curved glass, torrential rain streaks horizontally across the void. The ambient lantern glow casts long, clean vector drop shadows across the circular metal floor. Audio: SFX: Whirring brass clockwork gears, crackling kerosene lamp wick; Ambience: Muffled howling gale outside glass; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

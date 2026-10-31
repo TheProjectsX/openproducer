@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_024]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 03:22 - 03:29 (8s)
+Narration Cue: "top floor. You strike a match, relight your lantern, and mount the spiral stairs."
+
+[IMAGE PROMPT]
+Medium low-angle shot tracking upward along the curving iron stairs. The stick figure keeper ascends step by step with his glowing lantern. The yellow lantern cone casts dramatic spiral silhouettes along the curving granite walls. Minimalist 2D vector noir animation, clean iron railing lines, deep graphic drop shadows.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

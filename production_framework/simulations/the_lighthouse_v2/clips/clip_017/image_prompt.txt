@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_017]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 02:17 - 02:28 (10s)
+Narration Cue: "You turn slowly toward the seaward window. Out among the cresting waves stands a dark silhouette, perfectly motionless..."
+
+[IMAGE PROMPT]
+Wide interior perspective looking past the keeper's back toward the large arched seaward window. Outside the rain-slicked glass pane, amidst the violent cresting dark waves, an immense solid black humanoid vector silhouette stands perfectly upright on the surface of the churning water. High-contrast noir vector aesthetic, eerie supernatural scale, deep oceanic shadows.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,116 @@
+================================================================================
+MASTER VIDEOS PROMPT COMPILATION — THE LONE LIGHTHOUSE KEEPER
+Operating Tier: lean_base_reference | Format: 16:9 | Total Clips: 37 | Audio: Separate
+Reference Compilation Only (OpenProducer /opp-guide uses clips/clip_xxx/ directly)
+================================================================================
+
+--- CLIP_001 (6s) [00:00:00 - 00:00:06] ---
+Prompt: Wide establishing eye-level shot of the solitary stone lighthouse standing firm amidst crashing waves, slow linear push-in toward the towering stone structure. Heavy diagonal rain lines streak across the dark frame while churning black ocean crests surge against the base of the rock. The high lantern beam casts a steady, piercing cone of warm light cutting through the driving Atlantic storm. The composition remains bleak and austere with sharp 2D vector graphic novel lines. Audio: SFX: Crashing ocean surge, howling wind gusts; Ambience: Relentless sea storm drone; Dialogue: None; Music: None.
+
+--- CLIP_002 (6s) [00:00:06 - 00:00:11] ---
+Prompt: High-angle locked-off static composition looking down over the wet ramparts, watching violent foaming surf batter the sharp rocks below. The lone stick figure keeper stands completely motionless, bracing against the gale with his coat hem fluttering slightly in the storm wind. Swirling white vector foam patterns cycle rhythmically through the dark waters. Sharp vector outlines maintain absolute crispness against the deep shadows. Audio: SFX: Heavy surf impact on stone, whipping wind; Ambience: Distant ocean undertow; Dialogue: None; Music: None.
+
+--- CLIP_003 (10s) [00:00:11 - 00:00:21] ---
+Prompt: Eye-level medium interior shot of the glowing lantern room, slow horizontal tracking pan across the faceted glass prism rings. The stick figure keeper raises his rounded vector arm, carefully trimming the glowing wick as the massive brass apparatus hums with steady warmth. Outside the curved glass, torrential rain streaks horizontally across the void. The ambient lantern glow casts long, clean vector drop shadows across the circular metal floor. Audio: SFX: Whirring brass clockwork gears, crackling kerosene lamp wick; Ambience: Muffled howling gale outside glass; Dialogue: None; Music: None.
+
+--- CLIP_004 (10s) [00:00:21 - 00:00:32] ---
+Prompt: Low-angle medium shot looking toward the iron stairway hatch, slow creeping push-in as the keeper turns away from the central lamp. The tower structure trembles subtly as an immense gust of wind slams the exterior stone wall, causing the hanging brass tools to sway in rhythm. The stick figure protagonist steps toward the descent with deliberate, solitary weight, his clean circular head tilted forward in exhaustion. Audio: SFX: Metal shears clattering on iron table, sudden concussive thunderclap; Ambience: Deep resonant wind vibration; Dialogue: None; Music: None.
+
+--- CLIP_005 (10s) [00:00:32 - 00:00:41] ---
+Prompt: High-angle diagonal perspective descending the spiral staircase, slow downward tracking tilt following the keeper before abruptly locking stationary as he freezes mid-stride. From directly above, rhythmic heavy floorboard thuds resonate through the stone architecture. The keeper's blank circular head slowly tilts upward into the towering shadows above. The lantern flame flickers slightly inside its glass chimney, casting shifting geometric shadows along the curved wall. Audio: SFX: Heavy deliberate boot steps on wooden planks above, creaking iron steps; Ambience: Hollow tower acoustic echo; Dialogue: None; Music: None.
+
+--- CLIP_006 (10s) [00:00:41 - 00:00:51] ---
+Prompt: Low-angle upward shot looking up toward the lantern deck hatch, slow push-in tracking the keeper as he climbs back up the stairs. His raised lantern casts an expanding arc of warm light across the stone ceiling vault. As his head rises above the floor level, the upper room is revealed to be completely vacant, with only rain streaks visible through the peripheral windows. The pacing sounds stop abruptly into chilling silence. Audio: SFX: Metal boots ascending iron stairs, rhythmic creak; Ambience: Low draft whistling through stone seams; Dialogue: None; Music: None.
+
+--- CLIP_007 (8s) [00:00:51 - 00:00:59] ---
+Prompt: Medium eye-level shot of the open storm hatch, rapid linear push-in as the stick figure keeper lunges forward into the rain spray. He grabs the heavy hatch door, hauling it against the screaming wind. Outside, horizontal rain pelts the iron frame as dark water puddles violently across the floorboards. Crisp vector lines render the spraying droplets against the deep void. Audio: SFX: Iron hatch vibrating in wind, driving rain impact; Ambience: Howling exterior storm roar; Dialogue: None; Music: None.
+
+--- CLIP_008 (8s) [00:00:59 - 00:01:08] ---
+Prompt: Extreme low-angle shot gazing up at the ceiling timbers, subtle upward creeping push-in as the heavy footsteps instantly resume overhead. The thick wooden floorboards visibly flex downward under slow, unmistakable pacing weight, grinding sawdust down through the floorboard cracks. The stick figure keeper below remains paralyzed in dread, his lantern trembling slightly in his grip as the footsteps pace steadily from left to right. Audio: SFX: Heavy plodding footsteps pacing directly overhead, deep timber creaking groans; Ambience: Eerie room acoustics; Dialogue: None; Music: None.
+
+--- CLIP_009 (8s) [00:01:08 - 00:01:16] ---
+Prompt: Wide eye-level shot of the living quarters, slow linear push-in toward the keeper sitting rigidly at the wooden table. The room is dead silent except for the faint whistle of wind through the masonry cracks. The keeper clutches his chest with rounded vector arms, chest rising and falling in shallow, trembling breaths. Long, stark graphic drop shadows stretch across the cream canvas floor. Audio: SFX: Ragged human breathing, faint stove flue whistle; Ambience: Cold stone room tone; Dialogue: None; Music: None.
+
+--- CLIP_010 (10s) [01:16 - 01:26] ---
+Prompt: Medium shot framing the heavy timber entrance door, slow push-in as three violent, concussive knocks pound against the exterior wood with terrifying authority. The iron latch bolt rattles in its socket as dust dislodges from the stone lintel. The keeper rises in sheer terror, lifting his kerosene lantern with a shaking rounded vector arm. Audio: SFX: Three heavy concussive door knocks on oak wood, iron latch vibration; Ambience: Muffled howling gale outside; Dialogue: None; Music: None.
+
+--- CLIP_011 (10s) [01:26 - 01:35] ---
+Prompt: Side-profile medium shot framing the doorway, slow tracking pan following the door as it swings inward into the room. Cold gale-force Atlantic wind rushes inside, whipping the keeper's coat hem as the lantern flame flares yellow. Outside lies only the churning, pitch-black water of the ocean surging violently against the lower stone ramparts. Zero boats or living forms appear in the storm. Audio: SFX: Heavy iron latch scraping, creaking door hinges, sudden rush of gale wind; Ambience: Raging ocean surf roar; Dialogue: None; Music: None.
+
+--- CLIP_012 (10s) [01:35 - 01:45] ---
+Prompt: High-angle close-up shot looking down at the wet threshold, slow downward tilting push-in tracking the trail of wet footprints. Each distinct bare human footprint glistens with fresh seawater foam, advancing step by step from the outside darkness straight toward the keeper's stationary boots. The water has not yet dried or spread. Crucially, zero footprints lead back outside into the rain. Audio: SFX: Wet squelching water drops dripping on stone, faint sea brine hiss; Ambience: Ominous low-frequency atmospheric drone; Dialogue: None; Music: None.
+
+--- CLIP_013 (6s) [01:45 - 01:51] ---
+Prompt: Eye-level medium shot of the keeper at the entrance, locked-off static composition as he slams the oak door shut with concussive force. He slides the heavy iron latch bar home with a desperate metallic bang and stumbles backward across the room, staring at the fresh wet tracks pooling on the stone floorboards. Audio: SFX: Door slamming with heavy latch click, frantic boot scuffs on stone; Ambience: Stifled room draft; Dialogue: None; Music: None.
+
+--- CLIP_014 (8s) [01:51 - 02:00] ---
+Prompt: Over-the-shoulder medium close-up shot, slow creeping push-in as the keeper presses his spine against the cold masonry. Out of the deep graphic shadow behind his left ear, an imperceptible dark silhouette leans softly forward. The keeper's posture freezes in paralyzing realization as a chilling invisible whisper brushes against his neck. Audio: SFX: Soft intake of breath, eerie atmospheric chill tone; Ambience: Total unnatural room silence; Dialogue: None; Music: None.
+
+--- CLIP_015 (8s) [02:00 - 02:07] ---
+Prompt: Eye-level medium shot of the radio console, rapid tracking push-in as the keeper lunges onto the desk. His rounded vector limbs frantically flip heavy toggle switches and rotate the tuning dials. The vacuum tubes pulse with vibrant amber luminescence as he grips the microphone to his blank face. Green signal needles twitch erratically across the analog gauges amidst dense audio static. Audio: SFX: Heavy toggle switches clicking, frantic dial ratchets, electrical hum; Ambience: Harsh radio static crackle; Dialogue: None; Music: None.
+
+--- CLIP_016 (10s) [02:07 - 02:17] ---
+Prompt: Extreme close-up shot focusing on the radio speaker grille, slow optical zoom into the center of the vibrating perforated circle. The chaotic white noise static abruptly clears into a chillingly smooth, dead silence. A tiny electrical pop echoes through the speaker coil as an unnaturally calm, resonant transmission connects through the speaker wire. Audio: SFX: Harsh static cutting out abruptly, electrical pop, dead carrier wave hum; Ambience: Pure room stillness; Dialogue: None; Music: None.
+
+--- CLIP_017 (10s) [02:17 - 02:28] ---
+Prompt: Wide interior perspective gazing past the keeper toward the seaward window, slow creeping push-in toward the foggy glass. The keeper turns his circular head slowly toward the storm. Out among the foaming black waves, defying all ocean physics, an eerie, perfectly stationary black silhouette stands motionless upon the surging water, facing directly into the tower. Rain streams across the exterior glass pane. Audio: SFX: Low supernatural bass resonance, wind howling against window glass; Ambience: Deep ocean surge drone; Dialogue: None; Music: None.
+
+--- CLIP_018 (8s) [02:28 - 02:36] ---
+Prompt: Close-up shot looking out the glass pane, locked-off static composition as the keeper blinks. In an instant, the ocean surface is completely empty with only white foam remaining. Suddenly, with a loud electrical hum and sudden mechanical thump, the main beam overhead completely dies. The entire frame cuts to pitch-black darkness, leaving only the faintest amber ember of the tube radio. Audio: SFX: Massive wave crash, high-voltage transformer shutdown click, complete silence; Ambience: Wind whistling through blackout; Dialogue: None; Music: None.
+
+--- CLIP_019 (10s) [02:36 - 02:46] ---
+Prompt: Medium close-up shot focused on the reflective glass window, slow push-in as the generator coughs to life with a dull mechanical rhythm. The dim emergency lamp illuminates the interior, casting a crisp reflection on the pane. Directly beside the keeper's head, an uncanny second face stares forward from the reflection with terrifying stillness. The keeper's posture freezes in paralyzing realization. Audio: SFX: Distant generator motor sputtering to life, electrical hum; Ambience: Tense low atmospheric hum; Dialogue: None; Music: None.
+
+--- CLIP_020 (10s) [02:46 - 02:56] ---
+Prompt: Dynamic action shot, horizontal tracking pan following the keeper as he spins violently around, sweeping his brass lantern through the empty air. Finding nothing behind him, absolute terror overtakes him. He sprints across the stone floor toward the exterior entrance, tearing the heavy timber door wide open and hurling himself toward the outdoor rampart. Audio: SFX: Lantern chain swinging, frantic boot scuffs on stone, door violently thrown open; Ambience: Sudden unnatural silence; Dialogue: None; Music: None.
+
+--- CLIP_021 (8s) [02:56 - 03:04] ---
+Prompt: Wide exterior shot on the stone rampart, slow creeping push-in into the thick white mist. The howling gale and crashing waves have completely vanished into an eerie, stifling dead calm. Dense white vector fog rolls silently across the stone platform, erasing the horizon. From deep within the opaque white void directly ahead, an intimate disembodied whisper echoes softly through the silence. Audio: SFX: Absolute atmospheric dead silence, faint water lapping against rock; Ambience: Chilling dead air tone; Dialogue: None; Music: None.
+
+--- CLIP_022 (8s) [03:04 - 03:12] ---
+Prompt: Close-up profile shot of the keeper, locked-off static composition as his circular head trembles. From the thick fog directly behind his neck, a stream of condensation vapor curls over his shoulder as cold breath touches his skin. The keeper's posture locks in rigid paralysis as the realization takes hold that the entity is standing inches behind him. Audio: SFX: Soft, intimate exhalation of cold breath right at microphone; Ambience: Eerie atmospheric chill tone; Dialogue: None; Music: None.
+
+--- CLIP_023 (10s) [03:12 - 03:22] ---
+Prompt: Dramatic interior shot looking up the spiral staircase, rapid upward tilt as every electric light bulb shatters simultaneously in explosive bursts of glass shards. In the ensuing pitch blackness, heavy glass crashes violently on the top deck. The keeper strikes a wooden match with a sharp hiss, illuminating his blank white face before relighting the kerosene lantern. Audio: SFX: Multiple light bulbs popping and shattering, heavy glass crashing upstairs, match strike scrape, lantern flame whoosh; Ambience: Echoing tower resonance; Dialogue: None; Music: None.
+
+--- CLIP_024 (8s) [03:22 - 03:29] ---
+Prompt: Medium low-angle shot tracking upward along the spiral staircase, slow upward tracking pan following the keeper's climb. His boots clang against the metal treads as the lantern flame swings gently in rhythm. Behind him, the darkness of the lower tower shaft stretches down into complete obscurity. Audio: SFX: Rhythmic iron boot steps ascending metal stairs, creaking lantern handle; Ambience: Resonant stone tower draft; Dialogue: None; Music: None.
+
+--- CLIP_025 (10s) [03:29 - 03:40] ---
+Prompt: Low-angle shot on the iron staircase, slow upward tracking glide following the synchronized ascent. With each metallic boot-strike on the iron tread, an identical second metallic impact sounds immediately behind him in terrifying synchrony. On the final step, a singular heavy iron clang reverberates through the hollow tower shaft, causing the keeper to pause at the upper threshold. Audio: SFX: Rhythmic iron boot steps followed by trailing secondary footsteps, heavy resonant metallic clang; Ambience: Hollow tower reverberation; Dialogue: None; Music: None.
+
+--- CLIP_026 (10s) [03:40 - 03:50] ---
+Prompt: Eye-level medium shot of the upper doorway landing, slow creeping push-in toward the open threshold. The heavy rusted iron door glides open on screeching hinges under its own momentum, revealing an absolute void of pitch-black darkness within the upper storeroom. The lantern light refuses to penetrate more than a few inches into the room. From the deep interior gloom, a calm, familiar presence stirs. Audio: SFX: Slow screeching iron door hinges, floorboard groan inside dark room; Ambience: Heavy unnatural acoustic stillness; Dialogue: None; Music: None.
+
+--- CLIP_027 (6s) [03:50 - 03:56] ---
+Prompt: Interior perspective from within the dark storeroom looking out, locked-off static composition. In the deep shadow of the foreground stands an exact duplicate of the stick figure keeper, motionless. The keeper standing in the illuminated doorway stares forward, paralyzed in absolute disbelief, listening to his own calm, measured voice speaking to him from the dark interior. Audio: SFX: Subtle floorboard creak, steady atmospheric carrier hum; Ambience: Low eerie room silence; Dialogue: None; Music: None.
+
+--- CLIP_028 (10s) [03:56 - 04:07] ---
+Prompt: Extreme close-up shot focused on the burning lantern chimney, slow push-in as the keeper remains petrified in the corridor. Without any wind or draft, the lantern wick abruptly snaps out with a sharp puff of smoke, instantly plunging the entire hallway into suffocating, impenetrable blackness. A thin white smoke wisp vanishes into the dark. Audio: SFX: Sharp hiss of extinguished kerosene flame, sudden intake of breath; Ambience: Dead blackout silence; Dialogue: None; Music: None.
+
+--- CLIP_029 (10s) [04:07 - 04:16] ---
+Prompt: Pitch-black composition with minimalist graphic silhouette lines, locked-off static composition as the darkness holds. A terrifying, reverberant acoustic vibration shakes the iron railings before cutting dead into complete, absolute stillness. The darkness lingers without movement or sound, establishing a chilling sense of sudden emptiness. Audio: SFX: Violent metallic iron vibration, sudden cut to total pure silence; Ambience: Complete dead air; Dialogue: None; Music: None.
+
+--- CLIP_030 (10s) [04:16 - 04:26] ---
+Prompt: Wide establishing exterior shot of the lighthouse tower, slow push-in from the calm waters toward the rocky outcrop. Gentle ripples lap against the stone foundation under clear, pale daytime skies. The relief boat rocks gently at the moorings with its crew climbing the stone steps. The lighthouse stands stark, silent, and entirely motionless in the morning light. Audio: SFX: Gentle water lapping on rocks, distant seagulls crying; Ambience: Calm coastal breeze; Dialogue: None; Music: None.
+
+--- CLIP_031 (10s) [04:26 - 04:36] ---
+Prompt: Eye-level interior shot of the cold quarters, slow horizontal tracking pan across the silent room. Morning sunlight streams through the narrow slit windows, illuminating the cold kettle on the stove and the lifeless radio desk. The pan tilts downward to reveal the keeper's brass lantern lying crushed and shattered at the base of the iron stairs. Zero human presence remains. Audio: SFX: Distant sea breeze through open doorway, faint creak of floorboards; Ambience: Cold abandoned room tone; Dialogue: None; Music: None.
+
+--- CLIP_032 (10s) [04:36 - 04:46] ---
+Prompt: Wide interior shot of the upper storeroom, slow tracking push-in along the wooden floor toward the far seaward window. Pale morning light reveals thick dust covering the floor, except for a fresh, damp trail of bare human seawater footprints cutting cleanly through the dust. The iron storm window at the end of the trail remains bolted solid from the inside with its latch fully engaged. Audio: SFX: Crew boots walking on dusty floorboards, distant ocean hum; Ambience: High-tower atmospheric draft; Dialogue: None; Music: None.
+
+--- CLIP_033 (8s) [04:46 - 04:53] ---
+Prompt: High-angle close-up shot looking down at the dust, slow downward tracking glide following the wet footprints. The first wet footprint appears out of pristine, undisturbed dust in the exact dead center of the room with zero tracks leading up to it. The trail marches straight toward the window pane and abruptly stops at the baseboard, with the wet brine still fresh against the glass. Audio: SFX: Creaking wooden floor, faint wet droplet splash; Ambience: Ominous low drone; Dialogue: None; Music: None.
+
+--- CLIP_034 (8s) [04:53 - 05:02] ---
+Prompt: Medium shot framing the interior window bolt, slow creeping push-in toward the locked mechanism. Through the clean glass pane, the sheer vertical cliff drop and distant churning surf are clearly visible, yet the heavy iron latch is undeniably wedged firmly into its locked brass socket on the inside. The camera lingers on the impossible physical contradiction. Audio: SFX: Faint wind whistling around window frame, muffled surf below; Ambience: Chilling psychological mystery tone; Dialogue: None; Music: None.
+
+--- CLIP_035 (8s) [05:02 - 05:09] ---
+Prompt: Wide exterior shot of the solitary lighthouse, slow horizontal tracking pan across the evening horizon. Dusk settles over the Atlantic waters as deep purple and charcoal vector gradients sweep across the sky. The ancient stone tower stands completely intact and unwavering amidst the surging tides, keeping its silent vigil over the empty sea. Audio: SFX: Steady ocean surf rhythm, cool dusk wind; Ambience: Expansive oceanic silence; Dialogue: None; Music: None.
+
+--- CLIP_036 (10s) [05:09 - 05:19] ---
+Prompt: Extreme close-up shot focused on the exterior storm window pane at night, slow optical push-in toward the dark glass. Out in the empty air eighty feet above the ocean, three sharp, distinct impact taps strike against the outside of the glass with chilling clarity, causing subtle concentric vibration rings across the rain film. Audio: SFX: Three crisp knuckles tapping against exterior window glass; Ambience: Distant ocean storm wind; Dialogue: None; Music: None.
+
+--- CLIP_037 (10s) [05:19 - 05:29] ---
+Prompt: Wide dramatic closing shot, slow creeping pull-back from the radio desk as the toggle switch flips on by itself with a sharp metallic snap. The vacuum tubes flare with warm amber light. As the rotating lighthouse beam sweeps across the room, it reveals the silhouette of the stick figure keeper standing motionless in the dark, watching the viewer. The sweeping light beam cuts diagonally across the screen before fading to black. Audio: SFX: Radio switch clicking on, vacuum tube hum, sweeping beacon whoosh; Ambience: Low eerie carrier wave hum; Dialogue: None; Music: None.

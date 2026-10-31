@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_007]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 00:00:51 - 00:00:59 (8s)
+Narration Cue: "hatch standing wide open to the driving rain. You know you latched it minutes ago."
+
+[IMAGE PROMPT]
+Medium eye-level shot of a heavy cast-iron storm hatch standing wide open, swinging violently in the gale as torrential rain pours onto the wooden floorboards. The stick figure keeper leans into the storm, gripping the iron latch handle with rounded vector arms. Crisp vector noir line-art, diagonal rain splashes, high-contrast puddles reflecting black shadow.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

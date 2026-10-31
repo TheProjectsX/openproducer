@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_030]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 04:16 - 04:26 (10s)
+Narration Cue: "Days later, a relief tender arrives under clear skies. They find the lighthouse cold and abandoned. The kettle sits..."
+
+[IMAGE PROMPT]
+Wide establishing exterior shot of the Atlantic lighthouse under crisp, calm blue-gray morning skies. A small naval relief tender boat floats calmly beside the stone landing slip. The Atlantic waters are smooth and glassy. Minimalist 2D vector line-art on light cream canvas, clean architectural lines, serene yet eerie daytime mood.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

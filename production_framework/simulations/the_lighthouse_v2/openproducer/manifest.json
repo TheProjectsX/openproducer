@@ -1,0 +1,23 @@
+{
+  "project_name": "the_lighthouse_keeper",
+  "tier": "lean_base_reference",
+  "total_clips": 37,
+  "audio_pathway": "separate_audio",
+  "audio_delivery_mode": "separate_script_first",
+  "master_audio_duration_seconds": 330.62,
+  "total_flow_duration_seconds": 330.0,
+  "timeline_parity_delta_seconds": -0.62,
+  "linter_audit": {
+    "L-01_word_economy": "PASS (All 37 prompts strictly between 75-145 words)",
+    "L-02_equipment_noun_ban": "PASS (Zero tripod, dolly, crane rig nouns; pure optical kinematics)",
+    "L-03_prompt_purity": "PASS (Zero aspect ratio or resolution tokens inside prompt text)",
+    "L-04_token_decay": "PASS (Viewport framing and primary subject anchored in tokens 1-30)",
+    "L-05_single_camera_verb": "PASS (Exactly one primary camera motion verb per shot)",
+    "L-06_ingredient_binding": "PASS (Conditioned On and Input Seed lines explicit across all 37 clips)",
+    "L-14_quantum_pacing": "PASS (Discrete 6s/8s/10s pacing; total delta -0.62s strictly <= 1.0s)",
+    "L-15_dialogue_cleansing": "PASS (Dialogue: None in all video prompts to protect voiceover track)",
+    "L-18_audio_block_format": "PASS (Standardized 4-part semicolon Foley blocks across all clips)",
+    "L-19_safety_sanitization": "PASS (Zero banned or restricted tokens)"
+  },
+  "verified_at": "2026-10-31T16:48:30+06:00"
+}

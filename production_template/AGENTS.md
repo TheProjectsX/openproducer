@@ -121,14 +121,22 @@ flowchart TD
 
 ### Mode 4: `produce` (`/opp-produce` or `/openproducer-produce`) — Creator File Factory
 * **Auto-Propose Guard:** If the project is still in `explore` (`stages.propose_complete == false`), **run `propose` first** so the story and settings are saved in `./openproducer/`, then immediately run `produce`.
-* **`audio_script.md` Formatting Law (Google AI Studio TTS & Anti-Dead-Air Standard):**
-  - **NEVER divide `audio_script.md` into clip sizes (`clip_01`, `clip_02`)!** Write it as **one continuous master script** (or if very long, split into 2–3 macro `Part 1`, `Part 2` chunks).
-  - Always include the **Google AI Studio System Instructions** block (Voice preset + persona prompt).
-  - **Context-Driven Emotion & Pause Tags Only (NO Tag Spamming):** 90%+ of sentences must flow continuously using natural punctuation (commas, periods, paragraph breaks) to maintain viewer retention. Use `<short pause>` **sparingly (max 1–3 times per ~100 words)** ONLY right before a major narrative twist or climactic reveal—**NEVER put `<short pause>` after every sentence**, and **NEVER write a standalone dot `.` on its own line**. Use `<whisper>...</whisper>` only on actual whispered lines or chilling payoffs, with zero square brackets `[...]`.
+* **`audio_script.md` Formatting Law (Google AI Studio Alternating-Turn Standard):**
+  - **Case 1 (When Secondary Voice Exists):** Format for Google AI Studio's 2-speaker alternating UI (`Speaker 1` -> `Speaker 2` -> `Speaker 1`). Group all narration leading up to each character line into a single `[Narrator]` turn (Speaker 1), followed by the character line in `[Voice B]` (Speaker 2), followed by the next narrative block in `[Narrator]` (Speaker 1). This yields **ONE unified master audio file** that the creator can drop directly into TurboScribe for an unbroken, continuous SRT transcript!
+  - **Case 2 (When NO Secondary Voice Exists):** Format for Single-Speaker mode using balanced **100–160 word segments** (max 180 words) breaking at natural scene shifts to prevent Gemini TTS from rushing or reading tags aloud (*"less than short pause greater than"*).
+  - **Zero Clip Cuts in Script:** Segments/turns represent audio performance beats and speaker handoffs, NEVER video clip cuts (`clip_01`, `clip_02`).
+  - **Google AI Studio Cast Presets & System Instructions:** Always specify Cast Presets (e.g. `Fenrir` for narrator, `Orus`/`Kore` for secondary voice) and the master persona prompt.
+  - **Context-Driven Tags:** 90%+ flow with natural punctuation. Use `<short pause>` sparingly (1–3 per segment) on its own isolated line (`.\n<short pause>\n`); `<whisper>...</whisper>` only on actual whispered lines; zero square brackets `[...]`.
 * **File Generation from Brain (`./openproducer/config.json`):**
   * **If `separate_script_first`:**
     - **Pass 1 (Before Timestamps):** Creates `audio_script.md`, `base_image_prompt.txt`, `scratchbook.md`, and (if Modular Studio) `subjects/` & `visuals/environments/`. Waits for creator to give audio timestamps/transcripts.
-    - **Pass 2 (After Timestamps Given):** Creates `clips/clip_xxx/[image_prompt.txt, video_prompt.txt]` matched to timestamps, plus `master_images_prompt.txt` and `master_videos_prompt.txt`.
+    - **Pass 2 (After Timestamps Given):**
+      - **Context-Driven Cinematography (NOT 1:1 Transcript Slices):** Design clips based on **plot context, visual storytelling, and cinematic coverage** (establishing shots, medium shots, close-ups, macro cutaways, character reactions). Do NOT mechanically map 1 script line to 1 clip!
+      - **Contiguous Audio Timeline Tiling:** Sliced clips must tile the audio timeline contiguously from $00:00$ to $T_{\text{end}}$ ($\sum \text{Clip Durations} == \text{Total Master Audio Duration}$ within $\pm 1\text{s}$). Every clip starts exactly when the previous clip ends with zero gaps.
+      - **Flow Native Durations:** Each clip uses a valid Flow duration (`4s`, `6s`, `8s`, or `10s`) matching its timeline interval ($|\text{Clip Duration} - (\text{End} - \text{Start})| \le 1.0\text{s}$).
+      - **Scenery-Voice Context Matching:** Visual prompts depict scenery and actions matching what the voice describes at that exact timestamp window.
+      - **Dialogue Cleansing in Separate Audio:** Set `Dialogue: None;` in all `video_prompt.txt` files to prevent Veo from generating speech over the master track.
+      - Creates `clips/clip_xxx/[image_prompt.txt, video_prompt.txt]` (with `Conditioned On:` / `Input Seed:` lines), `master_images_prompt.txt`, and `master_videos_prompt.txt`.
   * **If `embedded` or `separate_all_at_once`:** Creates all creator files in one pass (`base_image_prompt.txt`, `audio_script.md` if separate, `subjects/` & `visuals/environments/` if Modular Studio, `clips/clip_xxx/`, `master_images_prompt.txt`, `master_videos_prompt.txt`, `scratchbook.md`, `motion_graphics.md`).
 
 ---

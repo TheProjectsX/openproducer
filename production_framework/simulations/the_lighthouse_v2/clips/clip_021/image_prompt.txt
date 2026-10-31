@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_021]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 02:56 - 03:04 (8s)
+Narration Cue: "suffocating fog. A voice whispers from the white mist. Before you can move, cold breath hits the side of your neck."
+
+[IMAGE PROMPT]
+Wide exterior shot outside the lighthouse base. The raging storm has completely vanished; the Atlantic ocean is dead flat, covered in a dense, suffocating white vector sea mist that swallows all perspective. The stick figure keeper stands on the stone walkway, enveloped in ghostly white fog. Minimalist vector art, soft textured cream mist contrasting with stark black architectural stones.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

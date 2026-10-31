@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_032]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_032/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 04:36 - 04:46
+Narration Cue: "Then the crew climbs to the top storeroom. The storm window is bolted tight from the inside..."
+
+[VIDEO PROMPT]
+Wide interior shot of the upper storeroom, slow tracking push-in along the wooden floor toward the far seaward window. Pale morning light reveals thick dust covering the floor, except for a fresh, damp trail of bare human seawater footprints cutting cleanly through the dust. The iron storm window at the end of the trail remains bolted solid from the inside with its latch fully engaged. Audio: SFX: Crew boots walking on dusty floorboards, distant ocean hum; Ambience: High-tower atmospheric draft; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

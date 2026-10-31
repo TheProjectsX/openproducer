@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_017]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_017/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 02:17 - 02:28
+Narration Cue: "You turn slowly toward the seaward window. Out among the cresting waves stands a dark silhouette, perfectly motionless..."
+
+[VIDEO PROMPT]
+Wide interior perspective gazing past the keeper toward the seaward window, slow creeping push-in toward the foggy glass. The keeper turns his circular head slowly toward the storm. Out among the foaming black waves, defying all ocean physics, an eerie, perfectly stationary black silhouette stands motionless upon the surging water, facing directly into the tower. Rain streams across the exterior glass pane. Audio: SFX: Low supernatural bass resonance, wind howling against window glass; Ambience: Deep ocean surge drone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

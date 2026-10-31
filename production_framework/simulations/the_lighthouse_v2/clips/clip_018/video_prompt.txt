@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_018]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_018/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 8s
+Audio Timestamp: 02:28 - 02:36
+Narration Cue: "You blink, and it vanishes. Suddenly, the main lighthouse beam dies pitch black."
+
+[VIDEO PROMPT]
+Close-up shot looking out the glass pane, locked-off static composition as the keeper blinks. In an instant, the ocean surface is completely empty with only white foam remaining. Suddenly, with a loud electrical hum and sudden mechanical thump, the main beam overhead completely dies. The entire frame cuts to pitch-black darkness, leaving only the faintest amber ember of the tube radio. Audio: SFX: Massive wave crash, high-voltage transformer shutdown click, complete silence; Ambience: Wind whistling through blackout; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

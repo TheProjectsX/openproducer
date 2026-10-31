@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_026]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 03:40 - 03:50 (10s)
+Narration Cue: "The rusted door slowly swings open into the dark. From inside the gloom, a voice speaks. Smooth."
+
+[IMAGE PROMPT]
+Eye-level medium shot at the top landing of the tower. A weathered, rusted iron door stands ajar, creaking open into an impenetrable black doorway. The stick figure keeper stands outside the door, raising his lantern into the darkness. Crisp graphic novel line-art, textured cream canvas, pitch-black void inside the chamber.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

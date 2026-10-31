@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_014]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 01:51 - 02:00 (8s)
+Narration Cue: "Right behind your ear, a familiar voice whispers your name. It belongs to someone you buried years ago."
+
+[IMAGE PROMPT]
+Over-the-shoulder medium close-up of the stick figure keeper backing into the stone corner. Behind his white circular head, in the pitch-black shadow, an ethereal second vector silhouette emerges, leaning close to his neck. Crisp vector noir aesthetic, stark silhouette contours, high psychological tension.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

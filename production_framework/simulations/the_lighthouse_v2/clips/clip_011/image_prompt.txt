@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_011]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 01:26 - 01:35 (10s)
+Narration Cue: "pull back the heavy iron bolt. You swing the door open into the howling gale. Nothing. Just churning black water."
+
+[IMAGE PROMPT]
+Side-profile medium shot of the stick figure keeper gripping the heavy iron door bolt. The door swings inward, revealing the churning black Atlantic gale outside. Torrential sea spray and rain mist rush over the threshold. Crisp 2D vector graphic line-art, stark black silhouettes, warm amber lantern cone highlighting the iron hardware.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

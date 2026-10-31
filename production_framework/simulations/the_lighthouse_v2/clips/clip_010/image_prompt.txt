@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_010]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 01:16 - 01:26 (10s)
+Narration Cue: "Three sharp knocks on the front door. Nobody lands a boat in seas like this. You take your lantern..."
+
+[IMAGE PROMPT]
+Medium shot of the heavy arched wooden door framed in rough Atlantic granite. The massive iron latch bolt gleams faintly in the lantern glow. Three sharp concentric vector shockwaves emanate from the exterior wood grain as if struck by heavy iron. Minimalist vector noir aesthetic, stark dramatic chiaroscuro.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

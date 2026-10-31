@@ -1,0 +1,116 @@
+================================================================================
+MASTER IMAGES PROMPT COMPILATION — THE LONE LIGHTHOUSE KEEPER
+Operating Tier: lean_base_reference | Format: 16:9 | Total Clips: 37
+Reference Compilation Only (OpenProducer /opp-guide uses clips/clip_xxx/ directly)
+================================================================================
+
+--- CLIP_001 (6s) [00:00:00 - 00:00:06] ---
+Prompt: Wide establishing eye-level shot of a stark stone lighthouse tower standing solitary atop a jagged, barren rock shelf surrounded by surging Atlantic ocean waves. Minimalist 2D vector noir animation style on a textured cream paper canvas, composed with crisp unbroken black vector outlines and deep graphic drop shadows. The towering stone beacon rises into a pitch-black night void, battered by angular churning wave crests and driving rain lines. A single bright conical beam of vector light radiates from the glass lantern room, slicing diagonally through the atmospheric gloom. Flat graphic line-art, uniform stroke weight throughout.
+
+--- CLIP_002 (6s) [00:00:06 - 00:00:11] ---
+Prompt: High-angle bird's eye perspective looking down at the jagged rock base and foaming white vector surf violently churning against black crags. A lone minimalist vector stick figure in a black sou'wester mariner cap silhouette stands on the outer stone rampart, gazing into the violent ocean abyss. Crisp graphic noir aesthetic on warm cream paper canvas, deep black graphic shadows pool along the wave troughs. Flat 2D vector art with rounded line-cap terminations.
+
+--- CLIP_003 (10s) [00:00:11 - 00:00:21] ---
+Prompt: Eye-level medium interior shot inside the glass-walled lantern room at the summit of the lighthouse. A massive faceted vector Fresnel lens rings the center, glowing with intense amber light. The minimalist stick figure keeper stands in profile, holding brass wick-trimming shears, silhouetted against the roaring storm visible through rain-streaked glass panes. Warm cream paper canvas with pitch-black shadow contrast, sharp unbroken vector lines, zero human facial features.
+
+--- CLIP_004 (10s) [00:00:21 - 00:00:32] ---
+Prompt: Low-angle medium shot looking up at the curved stone wall as the storm wind violently rattles the exterior iron brackets. The stick figure keeper lowers his brass shears, setting them down on a metal work surface, and turns toward the descending spiral staircase opening. Stark minimalist vector noir animation, deep graphic black shadows, warm directional lantern glow slicing across the stone masonry.
+
+--- CLIP_005 (10s) [00:00:32 - 00:00:41] ---
+Prompt: High-angle diagonal perspective looking down the dizzying spiral of the black iron staircase into the dark depths of the tower. The stick figure keeper grips the iron handrail with a rounded vector arm, paused mid-step on a curved metal tread. A handheld kerosene lantern casts a sharp circular pool of warm light on the stone steps. Minimalist 2D vector noir animation, geometric curving iron steps, deep graphic drop shadows.
+
+--- CLIP_006 (10s) [00:00:41 - 00:00:51] ---
+Prompt: Low-angle upward medium shot of the stick figure keeper ascending the spiral stairs in reverse, holding the glowing brass lantern high overhead. The motivated conical light beam illuminates the underside of the upper platform timbers. Stark 2D vector line-art on cream canvas, crisp black vector silhouette, atmospheric suspense lighting.
+
+--- CLIP_007 (8s) [00:00:51 - 00:00:59] ---
+Prompt: Medium eye-level shot of a heavy cast-iron storm hatch standing wide open, swinging violently in the gale as torrential rain pours onto the wooden floorboards. The stick figure keeper leans into the storm, gripping the iron latch handle with rounded vector arms. Crisp vector noir line-art, diagonal rain splashes, high-contrast puddles reflecting black shadow.
+
+--- CLIP_008 (8s) [00:00:59 - 00:01:08] ---
+Prompt: Extreme low-angle shot looking directly up at the heavy dark oak ceiling beams overhead. Two large timber planks sag slightly under invisible downward pressure. In the lower corner, the stick figure keeper stands frozen, clutching his lantern, staring straight up into the ceiling. Minimalist 2D vector animation on warm cream canvas, deep graphic shadows pooling between the timber beams.
+
+--- CLIP_009 (8s) [00:01:08 - 00:01:16] ---
+Prompt: Wide eye-level shot of the keeper's living quarters on the ground floor. A small iron stove glows faintly, a single wooden chair sits beside a heavy arched timber entrance door secured with a massive iron sliding bolt. The stick figure keeper sits at the table, his head in his hands, trembling. Minimalist vector noir aesthetic, long stark drop shadows cast across the floor.
+
+--- CLIP_010 (10s) [01:16 - 01:26] ---
+Prompt: Medium shot of the heavy arched wooden door framed in rough Atlantic granite. The massive iron latch bolt gleams faintly in the lantern glow. Three sharp concentric vector shockwaves emanate from the exterior wood grain as if struck by heavy iron. Minimalist vector noir aesthetic, stark dramatic chiaroscuro.
+
+--- CLIP_011 (10s) [01:26 - 01:35] ---
+Prompt: Side-profile medium shot of the stick figure keeper gripping the heavy iron door bolt. The door swings inward, revealing the churning black Atlantic gale outside. Torrential sea spray and rain mist rush over the threshold. Crisp 2D vector graphic line-art, stark black silhouettes, warm amber lantern cone highlighting the iron hardware.
+
+--- CLIP_012 (10s) [01:35 - 01:45] ---
+Prompt: High-angle close-up shot of the granite floor at the keeper's boots. A trail of dripping, brine-soaked bare human footprints rendered in deep black vector pools leads directly across the threshold stone, stopping inches from the keeper's black vector boots. Sharp 2D graphic line-art on cream canvas, glistening puddle highlights, chilling visual clarity.
+
+--- CLIP_013 (6s) [01:45 - 01:51] ---
+Prompt: Eye-level medium shot of the keeper violently slamming the heavy timber door shut, throwing his weight against the iron bar. The puddle of wet footprints glistens on the stone floor at his feet. Minimalist 2D vector line-art, high-tension dramatic composition.
+
+--- CLIP_014 (8s) [01:51 - 02:00] ---
+Prompt: Over-the-shoulder medium close-up of the stick figure keeper backing into the stone corner. Behind his white circular head, in the pitch-black shadow, an ethereal second vector silhouette emerges, leaning close to his neck. Crisp vector noir aesthetic, stark silhouette contours, high psychological tension.
+
+--- CLIP_015 (8s) [02:00 - 02:07] ---
+Prompt: Eye-level medium shot of the radio communications desk. An old vacuum-tube radio apparatus with glowing orange dials, a large Morse telegraph key, and a wired microphone sit on a cluttered oak desk. The stick figure keeper leans over the desk, frantically turning knobs with his rounded vector arm. Clean 2D graphic novel linework, dramatic chiaroscuro light from the glowing tube filaments.
+
+--- CLIP_016 (10s) [02:07 - 02:17] ---
+Prompt: Extreme close-up shot of the metallic perforated speaker cone of the vintage radio transceiver. Dust particles hover in the beam of lantern light. The fabric grille vibrates subtly with electromagnetic frequency. Minimalist vector noir animation, crisp circular speaker geometry, stark graphic shadows on cream canvas.
+
+--- CLIP_017 (10s) [02:17 - 02:28] ---
+Prompt: Wide interior perspective looking past the keeper's back toward the large arched seaward window. Outside the rain-slicked glass pane, amidst the violent cresting dark waves, an immense solid black humanoid vector silhouette stands perfectly upright on the surface of the churning water. High-contrast noir vector aesthetic, eerie supernatural scale, deep oceanic shadows.
+
+--- CLIP_018 (8s) [02:28 - 02:36] ---
+Prompt: Close-up shot of the windowpane as a massive wave crashes against the glass. The dark silhouette on the water vanishes into thin air between two wave crests. Overhead, the brilliant rotating lighthouse beam abruptly snuffs out, plunging the world into total pitch darkness. Stark vector aesthetic, sudden total shadow immersion.
+
+--- CLIP_019 (10s) [02:36 - 02:46] ---
+Prompt: Medium close-up shot of the seaward window glass in the gloom. An emergency backup bulb flickers to life overhead with sickly pale light. In the dark reflective surface of the glass pane, beside the keeper's blank circular head reflection, a ghostly white face with hollow dark contours stares right over his shoulder. High-contrast vector horror art, crisp line-art reflections on deep black void.
+
+--- CLIP_020 (10s) [02:46 - 02:56] ---
+Prompt: Dynamic action shot inside the quarters. The stick figure keeper whips around with outstretched rounded vector limbs, swinging his lantern through the air. The arc of lantern light illuminates an empty room: just the wooden table, chair, and open doorway. The keeper bolts toward the open door in blind panic. Snappy 2D vector graphic line-art, motion blur smears on warm cream canvas.
+
+--- CLIP_021 (8s) [02:56 - 03:04] ---
+Prompt: Wide exterior shot outside the lighthouse base. The raging storm has completely vanished; the Atlantic ocean is dead flat, covered in a dense, suffocating white vector sea mist that swallows all perspective. The stick figure keeper stands on the stone walkway, enveloped in ghostly white fog. Minimalist vector art, soft textured cream mist contrasting with stark black architectural stones.
+
+--- CLIP_022 (8s) [03:04 - 03:12] ---
+Prompt: Close-up profile shot of the stick figure keeper's circular white head surrounded by swirling white mist. Directly behind his neck, a subtle disturbance in the fog forms the soft contour of another figure exhaling cold vapor. High-contrast minimalist 2D vector noir animation, delicate vector mist wisps, intense dread.
+
+--- CLIP_023 (10s) [03:12 - 03:22] ---
+Prompt: Dramatic interior shot at the base of the tower. In the upper vault, electric bulbs explode into cascading vector glass shards. In the dark below, the stick figure keeper strikes a match, creating a brilliant sulfurous flare that catches his circular white head and lights the lantern wick. Crisp graphic noir aesthetic, sharp geometric spark lines, deep black shadows.
+
+--- CLIP_024 (8s) [03:22 - 03:29] ---
+Prompt: Medium low-angle shot tracking upward along the curving iron stairs. The stick figure keeper ascends step by step with his glowing lantern. The yellow lantern cone casts dramatic spiral silhouettes along the curving granite walls. Minimalist 2D vector noir animation, clean iron railing lines, deep graphic drop shadows.
+
+--- CLIP_025 (10s) [03:29 - 03:40] ---
+Prompt: Low-angle shot on the curving iron steps. The keeper takes a step forward; directly behind him on the trailing step, a second pitch-black vector silhouette matches his stride in exact lockstep. Clean graphic novel vector line-art, eerie geometric repetition, stark contrast on cream canvas.
+
+--- CLIP_026 (10s) [03:40 - 03:50] ---
+Prompt: Eye-level medium shot at the top landing of the tower. A weathered, rusted iron door stands ajar, creaking open into an impenetrable black doorway. The stick figure keeper stands outside the door, raising his lantern into the darkness. Crisp graphic novel line-art, textured cream canvas, pitch-black void inside the chamber.
+
+--- CLIP_027 (6s) [03:50 - 03:56] ---
+Prompt: Interior perspective looking out from inside the dark room toward the keeper standing in the doorway. Inside the gloom, an identical stick figure keeper silhouette stands in the foreground, facing the doorway. The protagonist outside holds his lantern in shock. Minimalist 2D vector noir animation, striking double-silhouette staging, deep psychological dread.
+
+--- CLIP_028 (10s) [03:56 - 04:07] ---
+Prompt: Extreme close-up shot of the brass lantern held in the keeper's rounded vector arm. Inside the glass chimney, the yellow flame suddenly flickers and snuffs out completely, leaving a thin wisp of vector smoke curling upward into the darkness. Minimalist 2D vector animation on cream canvas, sudden shadow engulfment.
+
+--- CLIP_029 (10s) [04:07 - 04:16] ---
+Prompt: Pitch-black canvas with only the stark geometric white outline of the tower's spiral staircase and arched window visible in extreme high-contrast silhouette. The frame captures the sudden violent vibration of the tower framework before settling into pure stillness. Minimalist 2D vector noir art, dramatic graphic impact.
+
+--- CLIP_030 (10s) [04:16 - 04:26] ---
+Prompt: Wide establishing exterior shot of the Atlantic lighthouse under crisp, calm blue-gray morning skies. A small naval relief tender boat floats calmly beside the stone landing slip. The Atlantic waters are smooth and glassy. Minimalist 2D vector line-art on light cream canvas, clean architectural lines, serene yet eerie daytime mood.
+
+--- CLIP_031 (10s) [04:26 - 04:36] ---
+Prompt: Eye-level medium interior shot of the ground floor quarters in daylight. A cold cast-iron kettle rests quietly on the unlit stove; the radio set is dark and silent; at the foot of the spiral stairs lies a shattered brass lantern with broken glass shards strewn across the floorboards. Minimalist 2D vector line-art, clean graphic lines, cold daytime shadows.
+
+--- CLIP_032 (10s) [04:36 - 04:46] ---
+Prompt: Wide interior shot of the top storeroom bathed in pale gray daylight. At the far end of the dusty room, a heavy storm window is bolted tight with its iron latch secured from the inside. Across the dusty wooden floorboards runs a distinct trail of glistening dark seawater footprints. Minimalist 2D vector noir animation on warm cream canvas, crisp architectural line-art.
+
+--- CLIP_033 (8s) [04:46 - 04:53] ---
+Prompt: High-angle close-up shot of the dusty storeroom floorboards. In the exact center of the blank dusty floor, the wet footprints begin abruptly out of mid-air with zero preceding tracks, leading in five distinct steps directly to the glass pane where they abruptly terminate. Crisp 2D vector graphic line-art on cream canvas, impossible geometry.
+
+--- CLIP_034 (8s) [04:53 - 05:02] ---
+Prompt: Medium shot of the bolted window latch from inside the storeroom. Outside the thick glass pane, eighty feet of sheer cliff drops vertically into crashing ocean breakers below. The heavy brass and iron latch is visibly locked into its receiver on the inside. Minimalist 2D vector noir animation, crisp mechanical line-art, stark ocean depth outside.
+
+--- CLIP_035 (8s) [05:02 - 05:09] ---
+Prompt: Wide exterior tracking shot of the lighthouse tower standing tall against a darkening Atlantic sunset. The stone tower rises majestically from the black ocean crags as twilight descends. Minimalist 2D vector line-art on warm cream canvas, deep indigo ocean void, solitary monument silhouette.
+
+--- CLIP_036 (10s) [05:09 - 05:19] ---
+Prompt: Extreme close-up shot of the exterior storm window glass eighty feet in the air at night. Raindrops run diagonally across the dark reflective pane. Suddenly, three small circular shockwaves appear on the exterior surface of the glass as if tapped by invisible knuckles from outside. Stark minimalist vector noir animation, high contrast.
+
+--- CLIP_037 (10s) [05:19 - 05:29] ---
+Prompt: Wide dramatic closing shot of the radio desk in the dark quarters. The vacuum tube apparatus clicks on by itself, glowing with warm orange luminescence in the black room. Across the frame, the powerful lighthouse beam sweeps through the window, revealing the stick figure keeper's silhouette standing beside the radio, looking directly at the camera. Minimalist 2D vector noir animation, iconic final graphic frame.

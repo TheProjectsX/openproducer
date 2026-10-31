@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_033]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 04:46 - 04:53 (8s)
+Narration Cue: "trail of damp seawater footprints. They begin out of nowhere, in the middle of the room, lead straight to the glass..."
+
+[IMAGE PROMPT]
+High-angle close-up shot of the dusty storeroom floorboards. In the exact center of the blank dusty floor, the wet footprints begin abruptly out of mid-air with zero preceding tracks, leading in five distinct steps directly to the glass pane where they abruptly terminate. Crisp 2D vector graphic line-art on cream canvas, impossible geometry.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

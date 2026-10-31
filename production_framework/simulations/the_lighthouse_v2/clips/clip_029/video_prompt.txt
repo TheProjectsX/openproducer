@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_029]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_029/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 04:07 - 04:16
+Narration Cue: "A sharp gasp cuts the silence, then a scream that rattles the iron frame of the tower. Then, absolute stillness."
+
+[VIDEO PROMPT]
+Pitch-black composition with minimalist graphic silhouette lines, locked-off static composition as the darkness holds. A terrifying, reverberant acoustic vibration shakes the iron railings before cutting dead into complete, absolute stillness. The darkness lingers without movement or sound, establishing a chilling sense of sudden emptiness. Audio: SFX: Violent metallic iron vibration, sudden cut to total pure silence; Ambience: Complete dead air; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

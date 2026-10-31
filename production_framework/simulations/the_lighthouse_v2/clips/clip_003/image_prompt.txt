@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_003]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 00:00:11 - 00:00:21 (10s)
+Narration Cue: "You are the sole lighthouse keeper, bound to a single duty. Keep the beam burning so passing ships survive the dark."
+
+[IMAGE PROMPT]
+Eye-level medium interior shot inside the glass-walled lantern room at the summit of the lighthouse. A massive faceted vector Fresnel lens rings the center, glowing with intense amber light. The minimalist stick figure keeper stands in profile, holding brass wick-trimming shears, silhouetted against the roaring storm visible through rain-streaked glass panes. Warm cream paper canvas with pitch-black shadow contrast, sharp unbroken vector lines, zero human facial features.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

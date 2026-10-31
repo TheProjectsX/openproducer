@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_034]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 04:53 - 05:02 (8s)
+Narration Cue: "and stop. No tracks coming in. No tracks leaving. Some claim the solitude broke you and you jumped..."
+
+[IMAGE PROMPT]
+Medium shot of the bolted window latch from inside the storeroom. Outside the thick glass pane, eighty feet of sheer cliff drops vertically into crashing ocean breakers below. The heavy brass and iron latch is visibly locked into its receiver on the inside. Minimalist 2D vector noir animation, crisp mechanical line-art, stark ocean depth outside.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

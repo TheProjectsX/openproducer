@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_010]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_010/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 01:16 - 01:26
+Narration Cue: "Three sharp knocks on the front door. Nobody lands a boat in seas like this. You take your lantern..."
+
+[VIDEO PROMPT]
+Medium shot framing the heavy timber entrance door, slow push-in as three violent, concussive knocks pound against the exterior wood with terrifying authority. The iron latch bolt rattles in its socket as dust dislodges from the stone lintel. The keeper rises in sheer terror, lifting his kerosene lantern with a shaking rounded vector arm. Audio: SFX: Three heavy concussive door knocks on oak wood, iron latch vibration; Ambience: Muffled howling gale outside; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

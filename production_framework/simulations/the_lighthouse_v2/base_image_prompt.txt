@@ -1,0 +1,10 @@
+[TIER 1: MASTER BASE REFERENCE PROMPT — THE LONE LIGHTHOUSE KEEPER]
+Target Engine: Google Flow / Imagen 4 (Master Ingredient #1)
+Aspect Ratio: 16:9
+Resolution: 1080p
+
+[MASTER IMAGE PROMPT]
+Eye-level medium wide shot of a lone lighthouse keeper standing beside an old cast-iron stove inside a stone lighthouse tower quarters. The protagonist is rendered as a minimalist 2D vector stick figure with pure unbroken solid black vector stroke limbs and torso terminating in smooth rounded ends, completely devoid of human fingers, knuckles, or fleshy details. His circular head is filled with solid opaque white contoured with a clean uniform black outline, wearing a minimalist black peaked mariner cap silhouette. The room features clean graphic novel vector line-art, minimalist wooden floorboards, and a heavy bolted timber door. High-contrast minimalist 2D vector noir animation style on a warm cream paper canvas, with a single glowing kerosene lantern casting a dramatic motivated light cone and deep graphic drop shadows across the dark background. Crisp sharp line-art, uniform stroke weight throughout, flat graphic art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

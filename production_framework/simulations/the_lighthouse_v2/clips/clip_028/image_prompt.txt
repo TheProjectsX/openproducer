@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_028]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 03:56 - 04:07 (10s)
+Narration Cue: "You are frozen in the hallway, listening to your own mouth speak from the dark. Your lantern flame abruptly snuffs out."
+
+[IMAGE PROMPT]
+Extreme close-up shot of the brass lantern held in the keeper's rounded vector arm. Inside the glass chimney, the yellow flame suddenly flickers and snuffs out completely, leaving a thin wisp of vector smoke curling upward into the darkness. Minimalist 2D vector animation on cream canvas, sudden shadow engulfment.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

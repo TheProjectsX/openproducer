@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_037]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 05:19 - 05:29 (10s)
+Narration Cue: "The radio clicks on by itself, and your own voice whispers. Whisper child, it's your turn to keep the light burning."
+
+[IMAGE PROMPT]
+Wide dramatic closing shot of the radio desk in the dark quarters. The vacuum tube apparatus clicks on by itself, glowing with warm orange luminescence in the black room. Across the frame, the powerful lighthouse beam sweeps through the window, revealing the stick figure keeper's silhouette standing beside the radio, looking directly at the camera. Minimalist 2D vector noir animation, iconic final graphic frame.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_035]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_035/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 8s
+Audio Timestamp: 05:02 - 05:09
+Narration Cue: "jumped, but that will never explain a window locked from the inside. And it will never explain the voice that answered..."
+
+[VIDEO PROMPT]
+Wide exterior shot of the solitary lighthouse, slow horizontal tracking pan across the evening horizon. Dusk settles over the Atlantic waters as deep purple and charcoal vector gradients sweep across the sky. The ancient stone tower stands completely intact and unwavering amidst the surging tides, keeping its silent vigil over the empty sea. Audio: SFX: Steady ocean surf rhythm, cool dusk wind; Ambience: Expansive oceanic silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

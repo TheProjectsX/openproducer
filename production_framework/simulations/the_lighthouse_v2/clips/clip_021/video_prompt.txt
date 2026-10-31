@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_021]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_021/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 8s
+Audio Timestamp: 02:56 - 03:04
+Narration Cue: "suffocating fog. A voice whispers from the white mist. Before you can move, cold breath hits the side of your neck."
+
+[VIDEO PROMPT]
+Wide exterior shot on the stone rampart, slow creeping push-in into the thick white mist. The howling gale and crashing waves have completely vanished into an eerie, stifling dead calm. Dense white vector fog rolls silently across the stone platform, erasing the horizon. From deep within the opaque white void directly ahead, an intimate disembodied whisper echoes softly through the silence. Audio: SFX: Absolute atmospheric dead silence, faint water lapping against rock; Ambience: Chilling dead air tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

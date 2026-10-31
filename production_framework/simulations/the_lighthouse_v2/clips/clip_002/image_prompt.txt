@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_002]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 00:00:06 - 00:00:11 (6s)
+Narration Cue: "No visitors, no escape from the endless crash of the surf."
+
+[IMAGE PROMPT]
+High-angle bird's eye perspective looking down at the jagged rock base and foaming white vector surf violently churning against black crags. A lone minimalist vector stick figure in a black sou'wester mariner cap silhouette stands on the outer stone rampart, gazing into the violent ocean abyss. Crisp graphic noir aesthetic on warm cream paper canvas, deep black graphic shadows pool along the wave troughs. Flat 2D vector art with rounded line-cap terminations.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_029]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 04:07 - 04:16 (10s)
+Narration Cue: "A sharp gasp cuts the silence, then a scream that rattles the iron frame of the tower. Then, absolute stillness."
+
+[IMAGE PROMPT]
+Pitch-black canvas with only the stark geometric white outline of the tower's spiral staircase and arched window visible in extreme high-contrast silhouette. The frame captures the sudden violent vibration of the tower framework before settling into pure stillness. Minimalist 2D vector noir art, dramatic graphic impact.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

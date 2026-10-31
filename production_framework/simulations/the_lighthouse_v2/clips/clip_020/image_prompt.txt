@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_020]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 02:46 - 02:56 (10s)
+Narration Cue: "The room is empty. Panic takes over. You run for the exit, tearing the door open."
+
+[IMAGE PROMPT]
+Dynamic action shot inside the quarters. The stick figure keeper whips around with outstretched rounded vector limbs, swinging his lantern through the air. The arc of lantern light illuminates an empty room: just the wooden table, chair, and open doorway. The keeper bolts toward the open door in blind panic. Snappy 2D vector graphic line-art, motion blur smears on warm cream canvas.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

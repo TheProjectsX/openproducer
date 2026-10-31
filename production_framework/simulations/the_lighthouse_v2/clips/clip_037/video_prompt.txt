@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_037]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_037/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 05:19 - 05:29
+Narration Cue: "The radio clicks on by itself, and your own voice whispers. Whisper child, it's your turn to keep the light burning."
+
+[VIDEO PROMPT]
+Wide dramatic closing shot, slow creeping pull-back from the radio desk as the toggle switch flips on by itself with a sharp metallic snap. The vacuum tubes flare with warm amber light. As the rotating lighthouse beam sweeps across the room, it reveals the silhouette of the stick figure keeper standing motionless in the dark, watching the viewer. The sweeping light beam cuts diagonally across the screen before fading to black. Audio: SFX: Radio switch clicking on, vacuum tube hum, sweeping beacon whoosh; Ambience: Low eerie carrier wave hum; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

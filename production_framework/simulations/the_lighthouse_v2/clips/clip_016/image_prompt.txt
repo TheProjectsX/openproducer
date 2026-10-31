@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_016]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 02:07 - 02:17 (10s)
+Narration Cue: "Static hisses. Then a calm voice answers through the speaker. Extinguish the light. It sees you."
+
+[IMAGE PROMPT]
+Extreme close-up shot of the metallic perforated speaker cone of the vintage radio transceiver. Dust particles hover in the beam of lantern light. The fabric grille vibrates subtly with electromagnetic frequency. Minimalist vector noir animation, crisp circular speaker geometry, stark graphic shadows on cream canvas.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

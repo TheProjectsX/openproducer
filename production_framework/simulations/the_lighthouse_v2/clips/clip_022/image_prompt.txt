@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_022]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 03:04 - 03:12 (8s)
+Narration Cue: "side of your neck. What took you so long? Before you can move, cold breath hits the side of your neck. You were never alone."
+
+[IMAGE PROMPT]
+Close-up profile shot of the stick figure keeper's circular white head surrounded by swirling white mist. Directly behind his neck, a subtle disturbance in the fog forms the soft contour of another figure exhaling cold vapor. High-contrast minimalist 2D vector noir animation, delicate vector mist wisps, intense dread.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,20 @@
+{
+  "$comment": "OpenProducer Brain Configuration. Saved during /opp-propose, /opp-sync, or /opp-template.",
+  "project_name": "the_lighthouse_keeper",
+  "archetype": "narrative_short",
+  "tier": "lean_base_reference",
+  "visual_style": "vector_stick_figure",
+  "dialect": "minimalist_noir",
+  "aspect_ratio": "16:9",
+  "resolution": "1080p",
+  "target_duration_seconds": 120,
+  "flow_orchestration": {
+    "video_model": "veo-3.1",
+    "image_model": "imagen-4",
+    "director_model": "gemini-1.5-pro"
+  },
+  "audio_pathway": "separate_audio",
+  "audio_delivery_mode": "separate_script_first",
+  "language": "en-US",
+  "linter_profile": "strict"
+}

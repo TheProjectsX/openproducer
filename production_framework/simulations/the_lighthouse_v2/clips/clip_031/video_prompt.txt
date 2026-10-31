@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_031]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_031/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 04:26 - 04:36
+Narration Cue: "The radio is off. Your lantern lies shattered at the base of the stairs. They search the cliffs, the rocks, the shoreline..."
+
+[VIDEO PROMPT]
+Eye-level interior shot of the cold quarters, slow horizontal tracking pan across the silent room. Morning sunlight streams through the narrow slit windows, illuminating the cold kettle on the stove and the lifeless radio desk. The pan tilts downward to reveal the keeper's brass lantern lying crushed and shattered at the base of the iron stairs. Zero human presence remains. Audio: SFX: Distant sea breeze through open doorway, faint creak of floorboards; Ambience: Cold abandoned room tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

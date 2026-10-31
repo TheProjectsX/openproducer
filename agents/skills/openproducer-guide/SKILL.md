@@ -29,9 +29,9 @@ Read `./openproducer/config.json` and `./openproducer/state.json` and follow thi
 ### Phase 1: Audio Handling (Only if Separate Audio)
 - **If `audio_delivery_mode == "separate_script_first"`:**
   1. Direct the creator to `audio_script.md` and provide the links:
-     - Generate voice/audio in **[Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)**.
+     - Generate voice/audio in **[Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)** (if secondary voice exists, paste into the pre-aligned 2-speaker alternating turns for 1-click master generation; if solo narration, paste into Single-Speaker mode; download the single audio file).
      - Generate the timestamped transcript/SRT using **[TurboScribe](https://turboscribe.ai/dashboard)** or **[AudioToSRT](https://audiotosrt.com/)**.
-  2. Once the creator shares the transcript/timestamps, match the timing and generate `clips/clip_xxx/[image_prompt.txt, video_prompt.txt]` (plus update `scratchbook.md`, `master_images_prompt.txt`, and `master_videos_prompt.txt`).
+  2. Once the creator shares the transcript/timestamps, generate `clips/clip_xxx/[image_prompt.txt, video_prompt.txt]` using context-driven cinematography to contiguously tile the audio timeline (matching scenery to voice context with zero black gaps, and `Dialogue: None;` in video prompts), plus update `scratchbook.md`, `master_images_prompt.txt`, and `master_videos_prompt.txt`.
 - **If `audio_delivery_mode == "separate_all_at_once"`:**
   1. Guide the creator to generate/prepare their audio from `audio_script.md` in **[Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)** first **without asking for a transcript**.
   2. *(On-Demand Transcript Sync Interrupt: If at any point the creator asks to sync the clips with a transcript, immediately re-slice and update `clips/clip_xxx/` and `scratchbook.md` to match the transcript).*

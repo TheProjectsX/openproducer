@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_034]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_034/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 8s
+Audio Timestamp: 04:53 - 05:02
+Narration Cue: "and stop. No tracks coming in. No tracks leaving. Some claim the solitude broke you and you jumped..."
+
+[VIDEO PROMPT]
+Medium shot framing the interior window bolt, slow creeping push-in toward the locked mechanism. Through the clean glass pane, the sheer vertical cliff drop and distant churning surf are clearly visible, yet the heavy iron latch is undeniably wedged firmly into its locked brass socket on the inside. The camera lingers on the impossible physical contradiction. Audio: SFX: Faint wind whistling around window frame, muffled surf below; Ambience: Chilling psychological mystery tone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

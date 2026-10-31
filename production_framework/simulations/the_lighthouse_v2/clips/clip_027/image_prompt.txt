@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_027]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 03:50 - 03:56 (6s)
+Narration Cue: "Calm. It is your own voice. Come inside."
+
+[IMAGE PROMPT]
+Interior perspective looking out from inside the dark room toward the keeper standing in the doorway. Inside the gloom, an identical stick figure keeper silhouette stands in the foreground, facing the doorway. The protagonist outside holds his lantern in shock. Minimalist 2D vector noir animation, striking double-silhouette staging, deep psychological dread.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

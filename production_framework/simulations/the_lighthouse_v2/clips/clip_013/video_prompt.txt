@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_013]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_013/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 6s
+Audio Timestamp: 01:45 - 01:51
+Narration Cue: "from the surf up to your boots. None lead back out. You slam the door shut and back away."
+
+[VIDEO PROMPT]
+Eye-level medium shot of the keeper at the entrance, locked-off static composition as he slams the oak door shut with concussive force. He slides the heavy iron latch bar home with a desperate metallic bang and stumbles backward across the room, staring at the fresh wet tracks pooling on the stone floorboards. Audio: SFX: Door slamming with heavy latch click, frantic boot scuffs on stone; Ambience: Stifled room draft; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

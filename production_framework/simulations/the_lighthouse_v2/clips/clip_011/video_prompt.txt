@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_011]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_011/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 01:26 - 01:35
+Narration Cue: "pull back the heavy iron bolt. You swing the door open into the howling gale. Nothing. Just churning black water."
+
+[VIDEO PROMPT]
+Side-profile medium shot framing the doorway, slow tracking pan following the door as it swings inward into the room. Cold gale-force Atlantic wind rushes inside, whipping the keeper's coat hem as the lantern flame flares yellow. Outside lies only the churning, pitch-black water of the ocean surging violently against the lower stone ramparts. Zero boats or living forms appear in the storm. Audio: SFX: Heavy iron latch scraping, creaking door hinges, sudden rush of gale wind; Ambience: Raging ocean surf roar; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

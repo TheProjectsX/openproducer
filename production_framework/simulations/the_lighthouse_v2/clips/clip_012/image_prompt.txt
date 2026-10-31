@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_012]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 01:35 - 01:45 (10s)
+Narration Cue: "Then your light catches the stone threshold. Wet footprints. Bare human feet, soaked in brine, leading straight..."
+
+[IMAGE PROMPT]
+High-angle close-up shot of the granite floor at the keeper's boots. A trail of dripping, brine-soaked bare human footprints rendered in deep black vector pools leads directly across the threshold stone, stopping inches from the keeper's black vector boots. Sharp 2D graphic line-art on cream canvas, glistening puddle highlights, chilling visual clarity.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

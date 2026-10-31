@@ -1,0 +1,22 @@
+{
+  "$comment": "OpenProducer State Tracker. Starts in 'explore' mode by default.",
+  "project_name": "the_lighthouse_keeper",
+  "tier": "lean_base_reference",
+  "current_stage": "produced",
+  "stages": {
+    "propose_complete": true,
+    "produce_complete": true,
+    "clips_generated": true,
+    "base_image_locked": false,
+    "audio_script_locked": true,
+    "clips_rendered": false,
+    "assembly_complete": false
+  },
+  "interactive_guidance": {
+    "enabled": false,
+    "active_step": "ready_for_guide"
+  },
+  "template_loaded": "",
+  "created_at": "2026-10-31T11:22:41+06:00",
+  "updated_at": "2026-10-31T16:48:45+06:00"
+}

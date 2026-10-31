@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_002]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_002/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 6s
+Audio Timestamp: 00:00:06 - 00:00:11
+Narration Cue: "No visitors, no escape from the endless crash of the surf."
+
+[VIDEO PROMPT]
+High-angle locked-off static composition looking down over the wet ramparts, watching violent foaming surf batter the sharp rocks below. The lone stick figure keeper stands completely motionless, bracing against the gale with his coat hem fluttering slightly in the storm wind. Swirling white vector foam patterns cycle rhythmically through the dark waters. Sharp vector outlines maintain absolute crispness against the deep shadows. Audio: SFX: Heavy surf impact on stone, whipping wind; Ambience: Distant ocean undertow; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

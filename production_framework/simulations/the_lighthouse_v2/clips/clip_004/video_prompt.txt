@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_004]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_004/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 00:00:21 - 00:00:32
+Narration Cue: "Until tonight. A violent gale hammers the stone tower. You finish trimming the lamp wick and start..."
+
+[VIDEO PROMPT]
+Low-angle medium shot looking toward the iron stairway hatch, slow creeping push-in as the keeper turns away from the central lamp. The tower structure trembles subtly as an immense gust of wind slams the exterior stone wall, causing the hanging brass tools to sway in rhythm. The stick figure protagonist steps toward the descent with deliberate, solitary weight, his clean circular head tilted forward in exhaustion. Audio: SFX: Metal shears clattering on iron table, sudden concussive thunderclap; Ambience: Deep resonant wind vibration; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

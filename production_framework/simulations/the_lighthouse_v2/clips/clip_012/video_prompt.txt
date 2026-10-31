@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_012]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_012/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 01:35 - 01:45
+Narration Cue: "Then your light catches the stone threshold. Wet footprints. Bare human feet, soaked in brine, leading straight..."
+
+[VIDEO PROMPT]
+High-angle close-up shot looking down at the wet threshold, slow downward tilting push-in tracking the trail of wet footprints. Each distinct bare human footprint glistens with fresh seawater foam, advancing step by step from the outside darkness straight toward the keeper's stationary boots. The water has not yet dried or spread. Crucially, zero footprints lead back outside into the rain. Audio: SFX: Wet squelching water drops dripping on stone, faint sea brine hiss; Ambience: Ominous low-frequency atmospheric drone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_025]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 03:29 - 03:40 (10s)
+Narration Cue: "With every step you take, a second set of footsteps follows directly behind you. Clang. You reach the upper doorway."
+
+[IMAGE PROMPT]
+Low-angle shot on the curving iron steps. The keeper takes a step forward; directly behind him on the trailing step, a second pitch-black vector silhouette matches his stride in exact lockstep. Clean graphic novel vector line-art, eerie geometric repetition, stark contrast on cream canvas.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

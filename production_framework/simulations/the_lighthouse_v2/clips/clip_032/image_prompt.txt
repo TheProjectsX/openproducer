@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_032]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 04:36 - 04:46 (10s)
+Narration Cue: "Then the crew climbs to the top storeroom. The storm window is bolted tight from the inside..."
+
+[IMAGE PROMPT]
+Wide interior shot of the top storeroom bathed in pale gray daylight. At the far end of the dusty room, a heavy storm window is bolted tight with its iron latch secured from the inside. Across the dusty wooden floorboards runs a distinct trail of glistening dark seawater footprints. Minimalist 2D vector noir animation on warm cream canvas, crisp architectural line-art.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_031]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 04:26 - 04:36 (10s)
+Narration Cue: "The radio is off. Your lantern lies shattered at the base of the stairs. They search the cliffs, the rocks, the shoreline..."
+
+[IMAGE PROMPT]
+Eye-level medium interior shot of the ground floor quarters in daylight. A cold cast-iron kettle rests quietly on the unlit stove; the radio set is dark and silent; at the foot of the spiral stairs lies a shattered brass lantern with broken glass shards strewn across the floorboards. Minimalist 2D vector line-art, clean graphic lines, cold daytime shadows.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

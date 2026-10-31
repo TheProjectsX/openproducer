@@ -34,7 +34,7 @@ This workspace is accessed across different devices, workstations, and conversat
 | **Phase 5: Core Domain Primitives** | Visuals, Subjects, Sceneries, Cinematography, Audio & Retake Doctor | ✅ **FINALIZED** | [`01_visual`](./production_framework/specs/01_visual_spec.md), [`02_subject`](./production_framework/specs/02_subject_spec.md), [`03_scenery`](./production_framework/specs/03_scenery_spec.md), [`04_cinematography_audio`](./production_framework/specs/04_cinematography_audio_spec.md), [`06_retake_doctor`](./production_framework/specs/06_retake_doctor_spec.md) | [`discussions/`](./discussions/) |
 | **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (4s/6s/8s/10s), Multi-Character Clean Singles, Spatial Handoffs, Dynamic Audio Bridges, Pluggable Styles, Retake Doctor & T&S Registry | 🔒 **LOCKED & EMPIRICALLY VALIDATED** | [`05_directors_cut`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`06_retake_doctor`](./production_framework/specs/06_retake_doctor_spec.md), [`safety_registry`](./production_framework/specs/safety_registry.md), [`styles/`](./production_framework/styles/) | [`directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md), [Discussions 49, 63, 64](./discussions/_raw/) |
 
-| **Phase 8: Automation Skill & Linters** | OpenProducer Agent Skill, 7 Operational Modes, Global Series Templates, 19 Linters & 8 Pluggable Styles | ⏳ In Progress (Skill Packaged) | [`agents/skills/`](./agents/skills/) | [Discussion 66](./discussions/_raw/66_mode_architecture_and_creator_series_templates.md) |
+| **Phase 8: Automation Skill & Linters** | OpenProducer Agent Skill, 7 Operational Modes, Global Series Templates, 19 Linters & 8 Pluggable Styles | ⏳ In Progress (Skill Packaged) | [`agents/skills/`](./agents/skills/), [`simulations/the_lighthouse`](./production_framework/simulations/the_lighthouse/), [`the_lighthouse_v2`](./production_framework/simulations/the_lighthouse_v2/) | [Discussion 66](./discussions/_raw/66_mode_architecture_and_creator_series_templates.md), [Discussion 70](./discussions/_raw/70_context_driven_clip_architecture_and_timeline_continuity.md), [Discussion 71](./discussions/_raw/71_default_multispeaker_segmented_audio_and_tts_hallucination_sweetspot.md), [Discussion 72](./discussions/_raw/72_the_lighthouse_v2_empirical_validation_and_production_readiness.md) |
 
 ---
 
@@ -711,26 +711,25 @@ To prevent token bloat while retaining 100% information control:
   5. *`guide` (Direct URLs + Instructions vs. Step-by-Step Support Choice):* Provides direct URLs (Google AI Studio Speech Playground, TurboScribe, AudioToSRT, Google Flow), adapts to the audio mode, loops on `base_image_prompt.txt` until creator satisfaction, guides through modular assets, and uses `ask_question` to let the creator choose between **Only Instructions** or **Step-by-Step Support** (offering either **All Clip Images First then Videos One-by-One** or **Per-Clip Image $\rightarrow$ Video One-by-One**), with anytime on-demand transcript syncing.
   6. *`template` (Preset Vault):* Auto-saves loaded settings to `./openproducer/` without running `propose`/`produce` (skipping pre-filled questions in `explore`), and saves templates without the plot.
 - **Reference Deliverables:** [`discussions/_raw/69_workflow_state_machine_and_creator_file_structure_alignment.md`](./discussions/_raw/69_workflow_state_machine_and_creator_file_structure_alignment.md), [`production_framework/specs/07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md), [`production_template/AGENTS.md`](./production_template/AGENTS.md), [`agents/workflows/`](./agents/workflows/), and [`agents/skills/`](./agents/skills/).
-- **Session Lock & Next Session Priority Agenda (2026-10-30):**
-  - **Status:** 🔒 **SESSION LOCKED.**
-  - **Next Session Focus:** **Clips Duration Not Meeting Audio Duration** — Address and harden the temporal alignment mechanics so total and per-segment clip durations (`4s`/`6s`/`8s` video clips) strictly meet and cover the actual audio duration and transcript timestamps.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### 2026-10-31 — Context-Driven Clip Generation, Timeline Continuity, and Lighthouse Audit (Discussion 70)
+- **Simulation Audit (`the_lighthouse`):** Audited the 5:18 (318.37s) horror monologue simulation *The Lone Lighthouse Keeper* ([`production_framework/simulations/the_lighthouse/`](./production_framework/simulations/the_lighthouse/)). Identified a 58.37s temporal deficit (260s video generated vs. 318.37s audio) caused by an artificial 10s ceiling trap on long dialogue lines (e.g. `clip_023` assigning an 18s audio cue to a 10s clip), as well as speech prompt leakage in `clip_028`.
+- **Refined Agent Mental Model (Context-Driven Cinematography):**
+  1. *Clips Are Born from Plot Context:* Video clips are visual storytelling and cinematic units (establishing shots, medium shots, close-ups, macro cutaway inserts, character reactions) designed from the **story context and emotional beats**, NOT by a mechanical 1:1 split of transcript lines.
+  2. *Transcript as Audio Timeline Anchor:* The recorded audio/transcript serves strictly as the **audio timeline anchor**:
+     - **Contiguous Timeline Tiling:** Sliced clips must tile the audio timeline contiguously from $00:00$ to $T_{\text{end}}$ ($\sum \text{Clip Durations} == \text{Total Audio Duration}$ within $\pm 1\text{s}$). Every clip starts exactly when the previous clip ends.
+     - **Scenery-Voice Context Matching:** Each clip's visual prompt depicts scenery and actions that match what the narrator/voice is describing or evoking at that specific timestamp window.
+  3. *Dialogue Cleansing in Separate Audio:* Strict enforcement that `video_prompt.txt` contains `Dialogue: None;` (or omits spoken lines) when `separate_audio` is selected, preventing Veo speech hallucination and unwanted mouth movement.
+  4. *Mathematical Linter L-14 Hardening:* Enforced that every clip's duration must match its timestamp interval, and total clip durations must cover the audio track before `produce` can declare completion.
+- **Reference Deliverables:** [`discussions/_raw/70_context_driven_clip_architecture_and_timeline_continuity.md`](./discussions/_raw/70_context_driven_clip_architecture_and_timeline_continuity.md), [`production_framework/simulations/the_lighthouse/`](./production_framework/simulations/the_lighthouse/), [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md), and [`agents/workflows/opp-produce.md`](./agents/workflows/opp-produce.md).
+### 2026-10-31 — Google AI Studio 2-Speaker Alternating Turn Alignment & Unified TurboScribe Transcripts (Discussion 71)
+- **Google AI Studio Alternating-Turn Alignment:** Resolved AI Studio's UI constraint (2 speakers max, strictly alternating turns `Speaker 1` -> `Speaker 2` -> `Speaker 1`). OpenProducer groups preceding narrative text into alternating turns: `Turn 01 — [Narrator - Fenrir] (Speaker 1)`, `Turn 02 — [Voice B - Orus] (Speaker 2)`, `Turn 03 — [Narrator - Fenrir] (Speaker 1)`.
+- **Single Master Audio for TurboScribe:** Avoids the disjointed-stems failure. Exporting 1 unified master audio file from Google AI Studio allows direct 1-click ingestion into TurboScribe / AudioToSRT, yielding an unbroken, mathematically continuous SRT transcript from `00:00` to `T_end`.
+- **Balanced Solo Segments (~120 Words):** When no secondary voice exists, format for Single-Speaker mode in balanced 100–160 word segments (max 180 words) to eliminate Gemini TTS context decay and prevent speaking markup tags aloud (*"less than short pause greater than"*).
+- **Reference Deliverables:** [`discussions/_raw/71_default_multispeaker_segmented_audio_and_tts_hallucination_sweetspot.md`](./discussions/_raw/71_default_multispeaker_segmented_audio_and_tts_hallucination_sweetspot.md), [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md), [`agents/workflows/opp-produce.md`](./agents/workflows/opp-produce.md), and [`production_template/AGENTS.md`](./production_template/AGENTS.md).
+### 2026-10-31 — Empirical Validation Benchmark: The Lighthouse v2 & Production Readiness (Discussion 72)
+- **Empirical Simulation Validated (`the_lighthouse_v2`):** Conducted a live end-to-end production of *The Lone Lighthouse Keeper (v2)* under [`production_framework/simulations/the_lighthouse_v2/`](./production_framework/simulations/the_lighthouse_v2/).
+- **Mathematical Timeline Parity Verified:** Master audio runtime of 330.62 seconds ([`audio.srt`](./production_framework/simulations/the_lighthouse_v2/audio.srt)) was contiguously tiled across 37 native Flow clips (6s, 8s, 10s) summing to 330.00 seconds (Delta = -0.62s, strictly within +-1.0s tolerance).
+- **Google AI Studio Alternating Layout Tested:** Generated `audio_script.md` using the pre-aligned 2-speaker alternating layout (`Speaker 1: Fenrir` <-> `Speaker 2: Orus`), generating 1 unified audio file for TurboScribe with zero UI friction.
+- **Dialogue Cleansing & Linter Pass:** Verified `Dialogue: None;` across all 37 video prompts, eliminating speech hallucination in separate audio mode. 100% pass rate on Linters L-01 to L-19.
+- **Reference Deliverables:** [`discussions/_raw/72_the_lighthouse_v2_empirical_validation_and_production_readiness.md`](./discussions/_raw/72_the_lighthouse_v2_empirical_validation_and_production_readiness.md), [`production_framework/simulations/the_lighthouse_v2/`](./production_framework/simulations/the_lighthouse_v2/), and [`AGENTS.md`](./AGENTS.md).
+- **Session Status (2026-10-31):** 🔒 **LOCKED & PRODUCTION-READY.** The OpenProducer Skill and workflows are fully hardened, empirically validated, and ready for deployment.

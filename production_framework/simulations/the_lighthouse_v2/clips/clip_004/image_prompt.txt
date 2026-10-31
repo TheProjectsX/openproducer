@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_004]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 00:00:21 - 00:00:32 (10s)
+Narration Cue: "Until tonight. A violent gale hammers the stone tower. You finish trimming the lamp wick and start..."
+
+[IMAGE PROMPT]
+Low-angle medium shot looking up at the curved stone wall as the storm wind violently rattles the exterior iron brackets. The stick figure keeper lowers his brass shears, setting them down on a metal work surface, and turns toward the descending spiral staircase opening. Stark minimalist vector noir animation, deep graphic black shadows, warm directional lantern glow slicing across the stone masonry.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

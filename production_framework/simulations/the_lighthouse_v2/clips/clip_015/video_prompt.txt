@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_015]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_015/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 8s
+Audio Timestamp: 02:00 - 02:07
+Narration Cue: "You bolt to the radio desk, flicking the transmitter frantically. Mayday! Mayday! Lighthouse station! Does anyone read?"
+
+[VIDEO PROMPT]
+Eye-level medium shot of the radio console, rapid tracking push-in as the keeper lunges onto the desk. His rounded vector limbs frantically flip heavy toggle switches and rotate the tuning dials. The vacuum tubes pulse with vibrant amber luminescence as he grips the microphone to his blank face. Green signal needles twitch erratically across the analog gauges amidst dense audio static. Audio: SFX: Heavy toggle switches clicking, frantic dial ratchets, electrical hum; Ambience: Harsh radio static crackle; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

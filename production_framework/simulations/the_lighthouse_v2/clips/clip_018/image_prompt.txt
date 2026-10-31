@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_018]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 02:28 - 02:36 (8s)
+Narration Cue: "You blink, and it vanishes. Suddenly, the main lighthouse beam dies pitch black."
+
+[IMAGE PROMPT]
+Close-up shot of the windowpane as a massive wave crashes against the glass. The dark silhouette on the water vanishes into thin air between two wave crests. Overhead, the brilliant rotating lighthouse beam abruptly snuffs out, plunging the world into total pitch darkness. Stark vector aesthetic, sudden total shadow immersion.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

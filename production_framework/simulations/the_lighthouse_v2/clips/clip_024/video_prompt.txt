@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_024]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_024/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 8s
+Audio Timestamp: 03:22 - 03:29
+Narration Cue: "top floor. You strike a match, relight your lantern, and mount the spiral stairs."
+
+[VIDEO PROMPT]
+Medium low-angle shot tracking upward along the spiral staircase, slow upward tracking pan following the keeper's climb. His boots clang against the metal treads as the lantern flame swings gently in rhythm. Behind him, the darkness of the lower tower shaft stretches down into complete obscurity. Audio: SFX: Rhythmic iron boot steps ascending metal stairs, creaking lantern handle; Ambience: Resonant stone tower draft; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

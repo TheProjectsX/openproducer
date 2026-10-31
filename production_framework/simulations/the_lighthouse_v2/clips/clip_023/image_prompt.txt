@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_023]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 03:12 - 03:22 (10s)
+Narration Cue: "You were never alone. Every bulb in the tower shatters. In the blackness, heavy glass crashes on the top floor."
+
+[IMAGE PROMPT]
+Dramatic interior shot at the base of the tower. In the upper vault, electric bulbs explode into cascading vector glass shards. In the dark below, the stick figure keeper strikes a match, creating a brilliant sulfurous flare that catches his circular white head and lights the lantern wick. Crisp graphic noir aesthetic, sharp geometric spark lines, deep black shadows.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_016]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_016/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 10s
+Audio Timestamp: 02:07 - 02:17
+Narration Cue: "Static hisses. Then a calm voice answers through the speaker. Extinguish the light. It sees you."
+
+[VIDEO PROMPT]
+Extreme close-up shot focusing on the radio speaker grille, slow optical zoom into the center of the vibrating perforated circle. The chaotic white noise static abruptly clears into a chillingly smooth, dead silence. A tiny electrical pop echoes through the speaker coil as an unnaturally calm, resonant transmission connects through the speaker wire. Audio: SFX: Harsh static cutting out abruptly, electrical pop, dead carrier wave hum; Ambience: Pure room stillness; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

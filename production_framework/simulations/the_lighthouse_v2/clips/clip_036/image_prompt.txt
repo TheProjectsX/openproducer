@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_036]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 05:09 - 05:19 (10s)
+Narration Cue: "answered the radio. The lighthouse still stands. Tonight, you can almost hear three sharp knocks against the glass..."
+
+[IMAGE PROMPT]
+Extreme close-up shot of the exterior storm window glass eighty feet in the air at night. Raindrops run diagonally across the dark reflective pane. Suddenly, three small circular shockwaves appear on the exterior surface of the glass as if tapped by invisible knuckles from outside. Stark minimalist vector noir animation, high contrast.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_033]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_033/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 8s
+Audio Timestamp: 04:46 - 04:53
+Narration Cue: "trail of damp seawater footprints. They begin out of nowhere, in the middle of the room, lead straight to the glass..."
+
+[VIDEO PROMPT]
+High-angle close-up shot looking down at the dust, slow downward tracking glide following the wet footprints. The first wet footprint appears out of pristine, undisturbed dust in the exact dead center of the room with zero tracks leading up to it. The trail marches straight toward the window pane and abruptly stops at the baseboard, with the wet brine still fresh against the glass. Audio: SFX: Creaking wooden floor, faint wet droplet splash; Ambience: Ominous low drone; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

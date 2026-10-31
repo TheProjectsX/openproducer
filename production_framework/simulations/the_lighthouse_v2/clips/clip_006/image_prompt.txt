@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_006]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 00:00:41 - 00:00:51 (10s)
+Narration Cue: "Slow, deliberate. You raise your lantern and climb back up. The room is empty, except for a storm..."
+
+[IMAGE PROMPT]
+Low-angle upward medium shot of the stick figure keeper ascending the spiral stairs in reverse, holding the glowing brass lantern high overhead. The motivated conical light beam illuminates the underside of the upper platform timbers. Stark 2D vector line-art on cream canvas, crisp black vector silhouette, atmospheric suspense lighting.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

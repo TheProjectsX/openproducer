@@ -1,0 +1,14 @@
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP_027]
+Target Engine: Google Flow / Veo 3.1
+Input Seed / Dependencies: clips/clip_027/image_prompt.txt
+Aspect Ratio: 16:9
+Resolution: 1080p
+Duration: 6s
+Audio Timestamp: 03:50 - 03:56
+Narration Cue: "Calm. It is your own voice. Come inside."
+
+[VIDEO PROMPT]
+Interior perspective from within the dark storeroom looking out, locked-off static composition. In the deep shadow of the foreground stands an exact duplicate of the stick figure keeper, motionless. The keeper standing in the illuminated doorway stares forward, paralyzed in absolute disbelief, listening to his own calm, measured voice speaking to him from the dark interior. Audio: SFX: Subtle floorboard creak, steady atmospheric carrier hum; Ambience: Low eerie room silence; Dialogue: None; Music: None.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

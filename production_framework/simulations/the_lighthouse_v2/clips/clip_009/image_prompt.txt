@@ -1,0 +1,13 @@
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_009]
+Target Tool: Google Flow / Imagen 4
+Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
+Aspect Ratio: 16:9
+Resolution: 1080p
+Audio Timestamp: 00:01:08 - 00:01:16 (8s)
+Narration Cue: "Down in your quarters, you try to steady your breath. Then comes a sound that makes your blood run cold."
+
+[IMAGE PROMPT]
+Wide eye-level shot of the keeper's living quarters on the ground floor. A small iron stove glows faintly, a single wooden chair sits beside a heavy arched timber entrance door secured with a massive iron sliding bolt. The stick figure keeper sits at the table, his head in his hands, trembling. Minimalist vector noir aesthetic, long stark drop shadows cast across the floor.
+
+[NEGATIVE PROMPT]
+photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig
