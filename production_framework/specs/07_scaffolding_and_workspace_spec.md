@@ -6,7 +6,7 @@ In OpenProducer, **we do not copy static template folders containing dummy place
 
 The workspace is strictly divided into two zones:
 1. **`./openproducer/` (The Brain):** Internal producer state, configuration, style anchors, linter manifest, and full story/session memory (`blueprint.md`). Created/updated during `propose`, `sync`, and `template`.
-2. **`<project_root>/` (Creator Deliverables):** Clean, plain-text `.txt` prompt files (with zero markdown bloat) plus `.md` script/timeline files generated during `produce`.
+2. **`./production/` (Creator Deliverables):** All clean, plain-text `.txt` prompt files (with zero markdown bloat) plus `.md` script/timeline files generated during `produce`. Kept strictly inside `production/` so the workspace root stays clean.
 
 ---
 
@@ -18,18 +18,18 @@ The Agent evaluates project complexity and selects one of two operating tiers:
 graph TD
     A["Creator Pitch / Plot / Reference"] --> B{"Complexity Classification"}
     
-    B -->|"1 Subject & 1 Environment<br/>(Social UGC, Solo Explainer, 2D Stick Figure, Product Ad)"| C["TIER 1: LEAN VERSION<br/>(base_image_prompt.txt + clips/)"]
+    B -->|"1 Subject & 1 Environment<br/>(Social UGC, Solo Explainer, 2D Stick Figure, Product Ad)"| C["TIER 1: LEAN VERSION<br/>(production/base_image_prompt.txt + production/clips/)"]
     
-    B -->|">=2 Recurring Characters OR<br/>Multiple Distinct Locations OR<br/>Episodic Narrative Short"| D["TIER 2: MODULAR STUDIO VERSION<br/>(base_image_prompt.txt + subjects/ + visuals/environments/ + clips/)"]
+    B -->|">=2 Recurring Characters OR<br/>Multiple Distinct Locations OR<br/>Episodic Narrative Short"| D["TIER 2: MODULAR STUDIO VERSION<br/>(production/base_image_prompt.txt + production/subjects/ + production/visuals/environments/ + production/clips/)"]
 ```
 
 ### Classification Rules:
-| Project Trait | Assigned Tier | Creator Scaffolding Behavior |
+| Project Trait | Assigned Tier | Creator Scaffolding Behavior (inside `production/`) |
 |---|---|---|
 | Single host/creator in one studio/room | **Lean Version** | `base_image_prompt.txt` locks base style, face, and studio together. No `subjects/` or `visuals/environments/` folders needed. |
 | 2D animation / Stick Figure explainer (single setting) | **Lean Version** | `base_image_prompt.txt` locks art style + character + canvas. Flat `clips/` directory. |
 | Tabletop commercial product (watch, shoe) | **Lean Version** | `base_image_prompt.txt` locks lighting + product hero. Flat `clips/` directory. |
-| Short film / animation with 2+ characters or multiple locations | **Modular Studio Version** | `base_image_prompt.txt` locks master visual style first; generates creator-facing `subjects/<id>/` and `visuals/environments/<id>/` `.txt` prompts at project root. |
+| Short film / animation with 2+ characters or multiple locations | **Modular Studio Version** | `base_image_prompt.txt` locks master visual style first; generates creator-facing `subjects/<id>/` and `visuals/environments/<id>/` `.txt` prompts inside `production/`. |
 
 ---
 
@@ -48,28 +48,29 @@ graph TD
 │   └── visual/
 │       └── technical_anchor.txt   # The master 30-word visual style anchor string
 │
-├── base_image_prompt.txt          # 🎨 CREATOR FILE: Master Base Style & Subject/Setting lock prompt
-├── audio_script.md                # 🎙️ CREATOR FILE: (If Separate Audio) Clean script to generate/record voice/audio
-│
-├── clips/                         # 🎬 CREATOR FOLDER: Shot-by-shot plain-text prompts
-│   ├── clip_01/
-│   │   ├── image_prompt.txt       # Tier 2: Starting frame prompt (Conditioned On: base_image_prompt.txt)
-│   │   └── video_prompt.txt       # Tier 3: Video prompt (Input Seed: clips/clip_01/image_prompt.txt)
-│   ├── clip_02/
-│   │   ├── image_prompt.txt
-│   │   └── video_prompt.txt
-│   └── clip_xxx/
-│
-├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All image prompts compiled (ignored by /opp-guide)
-├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All video prompts compiled (ignored by /opp-guide)
-├── scratchbook.md                 # 📝 CREATOR FILE: Timeline pacing table (4s/6s/8s), timestamps & retake log
-└── motion_graphics.md             # 🔤 CREATOR FILE: (If applicable) On-screen captions & typography cue sheet
+└── production/                    # 🎬 CREATOR PRODUCTION DELIVERABLES
+    ├── base_image_prompt.txt          # 🎨 CREATOR FILE: Master Base Style & Subject/Setting lock prompt
+    ├── audio_script.md                # 🎙️ CREATOR FILE: (If Separate Audio) Clean script to generate/record voice/audio
+    │
+    ├── clips/                         # 🎬 CREATOR FOLDER: Shot-by-shot plain-text prompts
+    │   ├── clip_01/
+    │   │   ├── image_prompt.txt       # Tier 2: Starting frame prompt (Conditioned On: base_image_prompt.txt)
+    │   │   └── video_prompt.txt       # Tier 3: Video prompt (Input Seed: production/clips/clip_01/image_prompt.txt)
+    │   ├── clip_02/
+    │   │   ├── image_prompt.txt
+    │   │   └── video_prompt.txt
+    │   └── clip_xxx/
+    │
+    ├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All image prompts compiled (ignored by /opp-guide)
+    ├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All video prompts compiled (ignored by /opp-guide)
+    ├── scratchbook.md                 # 📝 CREATOR FILE: Timeline pacing table (4s/6s/8s), timestamps & retake log
+    └── motion_graphics.md             # 🔤 CREATOR FILE: (If applicable) On-screen captions & typography cue sheet
 ```
 
 ---
 
 ### 3.2 Tier 2: Modular Studio Version Workspace
-*Activated for multi-character or multi-environment productions. Because the creator must generate the character references and environment plates as base images in Google Flow / Imagen, `subjects/` and `visuals/environments/` live directly in the Creator File Structure at project root.*
+*Activated for multi-character or multi-environment productions. Because the creator must generate the character references and environment plates as base images in Google Flow / Imagen, `subjects/` and `visuals/environments/` live directly inside `production/`.*
 
 ```text
 <project_root>/
@@ -81,37 +82,38 @@ graph TD
 │   └── visual/
 │       └── technical_anchor.txt   # Master style anchor string
 │
-├── base_image_prompt.txt          # 🎨 CREATOR FILE: Master Base Style lock prompt (anchors all subjects & environments)
-├── audio_script.md                # 🎙️ CREATOR FILE: (If Separate Audio) Clean script to generate/record voice/audio
-│
-├── subjects/                      # 👥 CREATOR FOLDER: Character & Subject Base Prompts
-│   ├── <subject_id_or_name>/
-│   │   ├── hero_prompt.txt        # Step 1: Single Hero Shot prompt (Conditioned On: base_image_prompt.txt)
-│   │   └── profile_prompt.txt     # Step 2: 4-View Turnaround prompt (Conditioned On: hero_prompt.txt)
-│   └── <subject_2_name>/
-│       ├── hero_prompt.txt
-│       └── profile_prompt.txt
-│
-├── visuals/                       # 🌆 CREATOR FOLDER: Environment Base Prompts
-│   └── environments/
-│       ├── <environment_id_or_name>/
-│       │   └── prompt.txt         # Empty 3-plane stage plate prompt (Conditioned On: base_image_prompt.txt)
-│       └── <environment_2_name>/
-│           └── prompt.txt
-│
-├── clips/                         # 🎬 CREATOR FOLDER: Shot-by-shot plain-text prompts
-│   ├── clip_01/
-│   │   ├── image_prompt.txt       # Keyframe prompt (Conditioned On: subject + environment images)
-│   │   └── video_prompt.txt       # Video prompt (Input Seed: clips/clip_01/image_prompt.txt)
-│   ├── clip_02/
-│   │   ├── image_prompt.txt
-│   │   └── video_prompt.txt
-│   └── clip_xxx/
-│
-├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All base, subject, environment & clip image prompts compiled (ignored by /opp-guide)
-├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All clip video prompts compiled (ignored by /opp-guide)
-├── scratchbook.md                 # 📝 CREATOR FILE: Timeline pacing math, eyeline vectors & retake log
-└── motion_graphics.md             # 🔤 CREATOR FILE: (If applicable) Title cards, lower thirds & subtitle cue sheet
+└── production/                    # 🎬 CREATOR PRODUCTION DELIVERABLES
+    ├── base_image_prompt.txt          # 🎨 CREATOR FILE: Master Base Style lock prompt (anchors all subjects & environments)
+    ├── audio_script.md                # 🎙️ CREATOR FILE: (If Separate Audio) Clean script to generate/record voice/audio
+    │
+    ├── subjects/                      # 👥 CREATOR FOLDER: Character & Subject Base Prompts
+    │   ├── <subject_id_or_name>/
+    │   │   ├── hero_prompt.txt        # Step 1: Single Hero Shot prompt (Conditioned On: base_image_prompt.txt)
+    │   │   └── profile_prompt.txt     # Step 2: 4-View Turnaround prompt (Conditioned On: hero_prompt.txt)
+    │   └── <subject_2_name>/
+    │       ├── hero_prompt.txt
+    │       └── profile_prompt.txt
+    │
+    ├── visuals/                       # 🌆 CREATOR FOLDER: Environment Base Prompts
+    │   └── environments/
+    │       └── <environment_id_or_name>/
+    │           └── prompt.txt         # Empty 3-plane stage plate prompt (Conditioned On: base_image_prompt.txt)
+    │       └── <environment_2_name>/
+    │           └── prompt.txt
+    │
+    ├── clips/                         # 🎬 CREATOR FOLDER: Shot-by-shot plain-text prompts
+    │   ├── clip_01/
+    │   │   ├── image_prompt.txt       # Keyframe prompt (Conditioned On: subject + environment images)
+    │   │   └── video_prompt.txt       # Video prompt (Input Seed: production/clips/clip_01/image_prompt.txt)
+    │   ├── clip_02/
+    │   │   ├── image_prompt.txt
+    │   │   └── video_prompt.txt
+    │   └── clip_xxx/
+    │
+    ├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All base, subject, environment & clip image prompts compiled (ignored by /opp-guide)
+    ├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All clip video prompts compiled (ignored by /opp-guide)
+    ├── scratchbook.md                 # 📝 CREATOR FILE: Timeline pacing math, eyeline vectors & retake log
+    └── motion_graphics.md             # 🔤 CREATOR FILE: (If applicable) Title cards, lower thirds & subtitle cue sheet
 ```
 
 ---
@@ -205,7 +207,7 @@ Duration: <4s | 6s | 8s>
 Aspect Ratio: 16:9
 Resolution: 1080p
 Transition / Chop: <e.g. ESTABLISHING MACRO | CONTINUOUS ACTION EXTENSION | MOTIVATED CUT>
-Input Seed / Dependencies: Generated from clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of clips/clip_<XX-1>/video_prompt.txt)
+Input Seed / Dependencies: Generated from production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of production/clips/clip_<XX-1>/video_prompt.txt)
 
 [VIDEO PROMPT]
 Starting directly from the initial image, <Tokens 1-30: Viewport framing & subject anchor. Tokens 31-80: Single biomechanical action & motivated lighting. Tokens 81-130: Visual style anchor & single camera verb. Trailing block: 4-part semicolon Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ....>
@@ -293,4 +295,4 @@ Then, two inches above your crown, you feel the hair on your scalp stir...
    * Contains the timeline pacing math (4s/6s/8s word budgets, timestamp mappings, eyeline continuity vectors, and Retake Doctor diagnostic history).
 2. **`master_images_prompt.txt` & `master_videos_prompt.txt` (Creator Self-Serve Reference Only):**
    * Compiled one-file plain-text manifests of all image prompts and all video prompts (preserving their `Conditioned On:` / `Input Seed:` connection lines).
-   * **Strictly for creator self-serve convenience.** During `/opp-guide`, OpenProducer **does NOT use** these two master files; `/opp-guide` walks through `base_image_prompt.txt`, `subjects/`, `visuals/environments/`, and `clips/clip_xxx/` individually.
+   * **Strictly for creator self-serve convenience.** During `/opp-guide`, OpenProducer **does NOT use** these two master files; `/opp-guide` walks through `production/base_image_prompt.txt`, `production/subjects/`, `production/visuals/environments/`, and `production/clips/clip_xxx/` individually.

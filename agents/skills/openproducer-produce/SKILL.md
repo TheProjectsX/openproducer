@@ -1,6 +1,6 @@
 ---
 name: openproducer-produce
-description: Produce creator deliverables from the brain - auto-runs propose first if still in explore mode, then generates clean plain-text .txt prompt files and .md script/timeline files on disk.
+description: Produce creator deliverables from the brain - auto-runs propose first if still in explore mode, then generates clean plain-text .txt prompt files and .md script/timeline files inside ./production/ on disk.
 ---
 
 # OpenProducer — Produce Skill (The Creator File Factory)
@@ -13,7 +13,9 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
 2. **Zero Unauthorized Image Generation:**
    - NEVER generate any image on your own (not even as an example) unless the creator explicitly asks you to generate an image.
 3. **Clean Plain-Text `.txt` Prompts (Zero Markdown Bloat):**
-   - All prompt files (`base_image_prompt.txt`, `subjects/<id>/[hero_prompt.txt, profile_prompt.txt]`, `visuals/environments/<id>/prompt.txt`, `clips/clip_xxx/[image_prompt.txt, video_prompt.txt]`, `master_images_prompt.txt`, `master_videos_prompt.txt`) MUST use clean plain-text bracket headers (`[TIER ...]`, `Conditioned On:`, `Input Seed / Dependencies:`, `[IMAGE PROMPT]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`) modeled on `the_314am_doppelganger` (`agents/skills/openproducer-core/specs/07_scaffolding_and_workspace_spec.md` Section 4.1). Do NOT put markdown `#` headings or emojis inside `.txt` prompt files.
+   - All prompt files (`production/base_image_prompt.txt`, `production/subjects/<id>/[hero_prompt.txt, profile_prompt.txt]`, `production/visuals/environments/<id>/prompt.txt`, `production/clips/clip_xxx/[image_prompt.txt, video_prompt.txt]`, `production/master_images_prompt.txt`, `production/master_videos_prompt.txt`) MUST use clean plain-text bracket headers (`[TIER ...]`, `Conditioned On:`, `Input Seed / Dependencies:`, `[IMAGE PROMPT]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`) modeled on `the_314am_doppelganger` (`agents/skills/openproducer-core/specs/07_scaffolding_and_workspace_spec.md` Section 4.1). Do NOT put markdown `#` headings or emojis inside `.txt` prompt files.
+4. **Dedicated `./production/` Folder:**
+   - All creator deliverables are written inside `./production/`. The workspace root stays clean with only `./openproducer/` (Brain) and `./production/` (Deliverables).
 
 ## Operational Playbook
 
@@ -24,7 +26,7 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
 
 ### 2. Branch A: Separate Audio — Script First (`separate_script_first`)
 - **Pass 1 (When timestamps/transcripts have NOT been provided yet):**
-  1. Generate `audio_script.md` following the **Google AI Studio Alternating-Turn & TTS Anti-Hallucination Standard** (`07_scaffolding_and_workspace_spec.md` Section 4.2):
+  1. Generate `production/audio_script.md` following the **Google AI Studio Alternating-Turn & TTS Anti-Hallucination Standard** (`07_scaffolding_and_workspace_spec.md` Section 4.2):
      - **Structure Fork Based on Secondary Voices:**
        * **Case 1 — When Secondary Voice Exists (Google AI Studio 2-Speaker Alternating Format):**
          - Google AI Studio Speech Playground strictly enforces a 2-speaker alternating turn layout (`Speaker 1` -> `Speaker 2` -> `Speaker 1`).
@@ -41,11 +43,11 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
      - **Never Divide by Video Clips:** Segments/turns represent audio performance beats and speaker handoffs, NEVER video clip cuts (`clip_01`, `clip_02`).
      - **Configuration Header:** Include direct playground link, Cast & Voice Presets table, and System Instructions / Persona Prompt.
      - **Context-Driven Tagging:** 90%+ natural punctuation flow. Use `<short pause>` sparingly (1–3 per segment) on its own isolated line (`.\n<short pause>\n`); `<whisper>...</whisper>` only on actual whispered payoffs; zero square brackets `[...]`.
-  2. Generate `base_image_prompt.txt` (Master Base Style & Reference prompt).
-  3. If `modular_studio`: generate `subjects/<subject_id>/[hero_prompt.txt, profile_prompt.txt]` and `visuals/environments/<env_id>/prompt.txt` with `Conditioned On:` lines.
-  4. Generate `scratchbook.md` (initial script breakdown & estimated pacing table).
+  2. Generate `production/base_image_prompt.txt` (Master Base Style & Reference prompt).
+  3. If `modular_studio`: generate `production/subjects/<subject_id>/[hero_prompt.txt, profile_prompt.txt]` and `production/visuals/environments/<env_id>/prompt.txt` with `Conditioned On:` lines.
+  4. Generate `production/scratchbook.md` (initial script breakdown & estimated pacing table).
   5. Update `./openproducer/state.json`: set `"current_stage": "produced_awaiting_timestamps"`, `"stages.produce_complete": true`, `"stages.clips_generated": false`.
-  6. Inform the creator that `audio_script.md` and base prompts are ready, and ask them to provide their recorded audio timestamps/transcripts to generate the clips (or run **`/opp-guide`** for step-by-step guidance).
+  6. Inform the creator that `production/audio_script.md` and base prompts are ready, and ask them to provide their recorded audio timestamps/transcripts to generate the clips (or run **`/opp-guide`** for step-by-step guidance).
 - **Pass 2 (Once Creator Provides Timestamps/Transcripts):**
   1. **Context-Driven Cinematography with Audio Timeline Tiling:**
      - **Clips Are Context-Driven, NOT Transcript-Slices:** Design clips based on **plot context, visual storytelling, and cinematic coverage** (establishing shots, medium shots, close-ups, macro cutaways, character reactions). Do NOT mechanically map 1 script line to 1 clip!
@@ -55,22 +57,22 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
        - **Scenery-Voice Context Matching:** Each clip's visual prompt (`image_prompt.txt` + `video_prompt.txt`) depicts scenery, props, and actions that match what the voice is saying or evoking at that exact timestamp window.
      - **Dialogue Cleansing in Separate Audio:** Set `Dialogue: None;` (or omit spoken dialogue quotes) in all `video_prompt.txt` files to prevent Veo from hallucinating speech or unwanted mouth movements over the master voice track.
      - Ensure each clip has clean plain-text bracket headers with `Conditioned On:` and `Input Seed / Dependencies:` lines.
-  2. Generate `master_images_prompt.txt` and `master_videos_prompt.txt` (strictly for creator self-serve reference).
-  3. Update `scratchbook.md` with the full contiguous timeline ledger ($\sum \text{Clips} == \text{Audio}$) and `motion_graphics.md` (if applicable).
+  2. Generate `production/master_images_prompt.txt` and `production/master_videos_prompt.txt` (strictly for creator self-serve reference).
+  3. Update `production/scratchbook.md` with the full contiguous timeline ledger ($\sum \text{Clips} == \text{Audio}$) and `production/motion_graphics.md` (if applicable).
   4. Audit Linters L-01 to L-19 (strictly verifying L-14 duration parity) in `./openproducer/manifest.json` and set `"current_stage": "produced"`, `"stages.clips_generated": true` in `./openproducer/state.json`.
 
 ### 3. Branch B: Embedded Audio OR Separate Audio — All Together (`embedded` or `separate_all_at_once`)
-- Generate the complete creator file structure in one pass:
-  1. `base_image_prompt.txt` (Master Base Style lock prompt).
-  2. `audio_script.md` (if `separate_all_at_once`: formatted in default Multi-Speaker Segmented structure with 100–160 words sweet spot per segment and isolated secondary character lines; never divided by video clips).
+- Generate the complete creator file structure in `./production/` in one pass:
+  1. `production/base_image_prompt.txt` (Master Base Style lock prompt).
+  2. `production/audio_script.md` (if `separate_all_at_once`: formatted in default Multi-Speaker Segmented structure with 100–160 words sweet spot per segment and isolated secondary character lines; never divided by video clips).
   3. If `modular_studio`:
-     - `subjects/<subject_id>/hero_prompt.txt` & `profile_prompt.txt` (with `Conditioned On:` lines).
-     - `visuals/environments/<environment_id>/prompt.txt` (with `Conditioned On:` line).
-  4. `clips/clip_01/` to `clip_xxx/`:
+     - `production/subjects/<subject_id>/hero_prompt.txt` & `profile_prompt.txt` (with `Conditioned On:` lines).
+     - `production/visuals/environments/<environment_id>/prompt.txt` (with `Conditioned On:` line).
+  4. `production/clips/clip_01/` to `clip_xxx/`:
      - `image_prompt.txt` (Starting keyframe prompt + `Conditioned On:` line).
      - `video_prompt.txt` (Veo 3.1 video prompt + `Input Seed / Dependencies:` line).
-  5. `master_images_prompt.txt` & `master_videos_prompt.txt` (Creator self-serve reference compilations; not used by `/opp-guide`).
-  6. `scratchbook.md` (Timeline pacing math & Retake Doctor log) and `motion_graphics.md` (if applicable).
+  5. `production/master_images_prompt.txt` & `production/master_videos_prompt.txt` (Creator self-serve reference compilations; not used by `/opp-guide`).
+  6. `production/scratchbook.md` (Timeline pacing math & Retake Doctor log) and `production/motion_graphics.md` (if applicable).
 - Run Linters L-01 to L-19, write `./openproducer/manifest.json`, and set `"current_stage": "produced"`, `"stages.produce_complete": true`, `"stages.clips_generated": true` in `./openproducer/state.json`.
 
 ## Mandatory Structured Output Format
@@ -82,15 +84,15 @@ Always conclude execution with this exact Status Card:
 * **Project:** `<project_name>` | **Tier:** `<lean_base_reference / modular_studio>` | **Aspect Ratio:** `<ratio>`
 * **Active State:** `<produced / produced_awaiting_timestamps>` | **Audio Mode:** `<embedded / separate_script_first / separate_all_at_once>`
 
-#### 📦 Creator Deliverables Generated on Disk:
-- `base_image_prompt.txt` — ✅ Created (Master Base Style Lock Prompt)
-- `<If Separate Audio: audio_script.md — ✅ Created (Continuous Voice/Audio Script)>`
-- `<If Modular Studio: subjects/ & visuals/environments/ (.txt) — ✅ Created with Conditioned On links>`
-- `<clips/clip_01..XX/ — ✅ Created (image_prompt.txt + video_prompt.txt) OR ⏳ Awaiting Audio Timestamps>`
-- `<master_images_prompt.txt & master_videos_prompt.txt — ✅ Created (Creator Self-Serve References)>`
-- `scratchbook.md` — ✅ Created (Timeline Pacing & Retake Ledger)
+#### 📦 Creator Deliverables Generated in `./production/`:
+- `production/base_image_prompt.txt` — ✅ Created (Master Base Style Lock Prompt)
+- `<If Separate Audio: production/audio_script.md — ✅ Created (Continuous Voice/Audio Script)>`
+- `<If Modular Studio: production/subjects/ & production/visuals/environments/ (.txt) — ✅ Created with Conditioned On links>`
+- `<production/clips/clip_01..XX/ — ✅ Created (image_prompt.txt + video_prompt.txt) OR ⏳ Awaiting Audio Timestamps>`
+- `<production/master_images_prompt.txt & production/master_videos_prompt.txt — ✅ Created (Creator Self-Serve References)>`
+- `production/scratchbook.md` — ✅ Created (Timeline Pacing & Retake Ledger)
 
 #### 🚀 Next Step in Workflow:
-👉 `<If awaiting timestamps: "Use audio_script.md to create your audio and share the timestamps here, or run /opp-guide!" | If complete: "Run /opp-guide for step-by-step interactive guidance, or use the files directly!">`
+👉 `<If awaiting timestamps: "Use production/audio_script.md to create your audio and share the timestamps here, or run /opp-guide!" | If complete: "Run /opp-guide for step-by-step interactive guidance, or use the files directly!">`
 ---
 ```

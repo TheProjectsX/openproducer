@@ -1,6 +1,7 @@
 {
   "$comment": "OpenProducer Brain Configuration. Saved during /opp-propose, /opp-sync, or /opp-template.",
   "project_name": "the_lighthouse_keeper",
+  "production_dir": "production",
   "archetype": "narrative_short",
   "tier": "lean_base_reference",
   "visual_style": "vector_stick_figure",

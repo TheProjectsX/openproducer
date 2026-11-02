@@ -733,3 +733,17 @@ To prevent token bloat while retaining 100% information control:
 - **Dialogue Cleansing & Linter Pass:** Verified `Dialogue: None;` across all 37 video prompts, eliminating speech hallucination in separate audio mode. 100% pass rate on Linters L-01 to L-19.
 - **Reference Deliverables:** [`discussions/_raw/72_the_lighthouse_v2_empirical_validation_and_production_readiness.md`](./discussions/_raw/72_the_lighthouse_v2_empirical_validation_and_production_readiness.md), [`production_framework/simulations/the_lighthouse_v2/`](./production_framework/simulations/the_lighthouse_v2/), and [`AGENTS.md`](./AGENTS.md).
 - **Session Status (2026-10-31):** 🔒 **LOCKED & PRODUCTION-READY.** The OpenProducer Skill and workflows are fully hardened, empirically validated, and ready for deployment.
+
+
+### 2026-11-02 — Dedicated `production/` Folder Workspace Architecture (Discussion 73)
+- **Dedicated Production Directory:** All creator-facing deliverables (`base_image_prompt.txt`, `audio_script.md`, `clips/`, `subjects/`, `visuals/environments/`, `master_images_prompt.txt`, `master_videos_prompt.txt`, `scratchbook.md`, `motion_graphics.md`) are now strictly encapsulated inside `./production/`.
+- **Spotless Workspace Root:** The project root is clean with exactly two top-level directories: `./openproducer/` (the internal producer brain) and `./production/` (the active shoot floor and creator deliverables).
+- **Simulations Updated:** Migrated [`production_framework/simulations/the_lighthouse_v2/`](./production_framework/simulations/the_lighthouse_v2/) to reflect the new structure (`the_lighthouse_v2/production/`).
+- **Reference Deliverables:** [`discussions/_raw/73_dedicated_production_folder_workspace_architecture.md`](./discussions/_raw/73_dedicated_production_folder_workspace_architecture.md), [`production_template/STRUCTURE.md`](./production_template/STRUCTURE.md), [`production_template/AGENTS.md`](./production_template/AGENTS.md), and [`production_framework/simulations/the_lighthouse_v2/`](./production_framework/simulations/the_lighthouse_v2/).
+
+
+### 2026-11-02 — Human-Readable Markdown Series Templates (`.md`) (Discussion 74)
+- **JSON to Markdown Conversion:** Upgraded creator series templates from `.json` to `.md` with YAML frontmatter (for machine settings) and structured Markdown sections (for `Visual DNA`, `Subject DNA`, `Environment DNA`, `Pacing & Voice Profile`, and `Motion Graphics`).
+- **Creator UX Upgrade:** Eliminates JSON syntax errors (missing commas, escaped quotes), makes templates easily editable in any editor, and allows 1-click copy-pasting of prompt DNA.
+- **Starter Presets Migrated:** Converted `stickman-explainer.md`, `cinema-short-film.md`, and `social-ugc-reel.md` under [`agents/skills/openproducer-core/templates/starter_presets/`](./agents/skills/openproducer-core/templates/starter_presets/).
+- **Reference Deliverables:** [`discussions/_raw/74_markdown_creator_series_templates.md`](./discussions/_raw/74_markdown_creator_series_templates.md), [`agents/skills/openproducer-template/SKILL.md`](./agents/skills/openproducer-template/SKILL.md), and [`agents/workflows/opp-template.md`](./agents/workflows/opp-template.md).
