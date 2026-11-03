@@ -1,0 +1,22 @@
+{
+  "$comment": "OpenProducer State Tracker. Starts in 'explore' mode by default.",
+  "project_name": "",
+  "tier": "",
+  "current_stage": "explore",
+  "stages": {
+    "propose_complete": false,
+    "produce_complete": false,
+    "clips_generated": false,
+    "base_image_locked": false,
+    "audio_script_locked": false,
+    "clips_rendered": false,
+    "assembly_complete": false
+  },
+  "interactive_guidance": {
+    "enabled": false,
+    "active_step": "not_started"
+  },
+  "template_loaded": "",
+  "created_at": "",
+  "updated_at": ""
+}

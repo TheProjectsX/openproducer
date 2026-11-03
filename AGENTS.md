@@ -747,3 +747,10 @@ To prevent token bloat while retaining 100% information control:
 - **Creator UX Upgrade:** Eliminates JSON syntax errors (missing commas, escaped quotes), makes templates easily editable in any editor, and allows 1-click copy-pasting of prompt DNA.
 - **Starter Presets Migrated:** Converted `stickman-explainer.md`, `cinema-short-film.md`, and `social-ugc-reel.md` under [`agents/skills/openproducer-core/templates/starter_presets/`](./agents/skills/openproducer-core/templates/starter_presets/).
 - **Reference Deliverables:** [`discussions/_raw/74_markdown_creator_series_templates.md`](./discussions/_raw/74_markdown_creator_series_templates.md), [`agents/skills/openproducer-template/SKILL.md`](./agents/skills/openproducer-template/SKILL.md), and [`agents/workflows/opp-template.md`](./agents/workflows/opp-template.md).
+
+
+### 2026-11-03 — OpenProducer TypeScript CLI & NPM Package Publishing Architecture (Discussion 75)
+- **TypeScript CLI Suite (`src/`):** Implemented the official CLI package in TypeScript supporting `npx openproducer init` (and `opp init`), `status`, `doctor` (alias `lint`), and `template` (list/save/use).
+- **Dynamic GitHub Upstream Sync (`src/core/fetcher.ts`):** `npx openproducer init` fetches fresh skills and templates directly from `github:TheProjectsX/openproducer#main` upon execution. Pushing to GitHub immediately propagates new prompts, skills, and workflows to all creators with zero npm publish overhead, with seamless fallback to offline bundled templates.
+- **Publish-Ready NPM Configuration:** Configured `package.json` with binaries (`openproducer`, `opp`), build lifecycle hooks (`prepare`, `prepublishOnly`), type definitions (`dist/index.d.ts`), MIT license, and whitelist packaging. Verified via `npm pack --dry-run` (147.1 kB tarball).
+- **Reference Deliverables:** [`src/`](./src/), [`package.json`](./package.json), [`tsconfig.json`](./tsconfig.json), [`README.md`](./README.md), and [Discussion 75](./discussions/_raw/75_openproducer_typescript_cli_and_npm_packaging.md).

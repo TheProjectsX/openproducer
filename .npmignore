@@ -1,0 +1,23 @@
+# Source files (compiled into dist)
+src/
+scripts/
+tsconfig.json
+
+# Development & Research archives
+research/
+discussions/
+production_framework/
+production_template/
+example_openproducer_project/
+agents/
+simulations/
+
+# Logs & Temp
+*.log
+.DS_Store
+Thumbs.db
+node_modules/
+.git
+.gitignore
+.agents/
+

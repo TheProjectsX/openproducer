@@ -1,0 +1,19 @@
+{
+  "$comment": "OpenProducer Brain Configuration. Saved during /opp-propose, /opp-sync, or /opp-template.",
+  "project_name": "",
+  "archetype": "",
+  "tier": "",
+  "visual_style": "",
+  "aspect_ratio": "",
+  "resolution": "1080p",
+  "target_duration_seconds": 0,
+  "flow_orchestration": {
+    "video_model": "veo-3.1",
+    "image_model": "imagen-4",
+    "director_model": "gemini-1.5-pro"
+  },
+  "audio_pathway": "",
+  "audio_delivery_mode": "",
+  "language": "en-US",
+  "linter_profile": "strict"
+}

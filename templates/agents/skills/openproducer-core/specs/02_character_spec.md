@@ -1,0 +1,259 @@
+# Specification: `characters/` Domain (Character Turnaround & Identity Anchors)
+
+**Status:** ✅ FINALIZED (Specialized Character Domain Specification)  
+**Parent Universal Specification:** [`02_subject_spec.md`](./02_subject_spec.md)  
+**Domain:** `characters/` (Specialized Human & Stylized Character Domain under `subjects/`)  
+**Target Engines:** Google Flow (Veo 3.1, Imagen 4, Gemini Omni Flash)
+
+> **Architectural Relationship:** This document is the deep, authoritative specification for **Human, Anime, Stylized, and Creature Characters**. For the overarching parent primitive governing commercial hero products, vehicles, and inanimate artifacts, consult the master [`02_subject_spec.md`](./02_subject_spec.md).
+
+---
+
+## 1. Domain Purpose & Philosophy
+
+The `characters/` domain defines and locks every character's visual, anatomical, sartorial, and acoustic identity across a film production. It completely eliminates **Identity Drift** (faces warping, clothing changing, or voices shifting between video cuts).
+
+### The Dual-Asset Anchor Architecture:
+1. **Visual Anchor Key (Ingredient #1):** A standardized, 4-view model sheet generated on a seamless neutral light-gray studio background (`#E5E5E5`) uploaded into Google Flow as **Ingredient #1**.
+2. **Text Anchor Key (Verbatim Anchor String):** A locked 25–40 word Master Anchor string deterministically injected into Tokens 1–30 of every downstream Veo video prompt.
+3. **Acoustic Anchor Key (Vocal Profile):** Standardized voice timbre and delivery tags driving Veo 3.1's native dual-stream audio synthesizer.
+
+---
+
+## 2. Directory Structure & File Contract
+
+Every character in a project is isolated in their own folder under the unified `subjects/` directory (`subjects/<character_id>/`, with `characters/<character_id>/` supported as a domain alias):
+
+```text
+subjects/
+└── <character_id>/                  # e.g., maya_lin/ or elena_vance/
+    ├── profile.md                   # Human-readable demographics, biometrics, wardrobe, and vocal profile
+    ├── verbatim_anchor.txt          # LOCKED 25–40 word Master Anchor String for video prompts
+    ├── hero_prompt.txt              # Step 1 prompt used to generate the canonical hero portrait
+    ├── turnaround_prompt.txt        # Step 2 prompt used to generate the 4-view model sheet
+    ├── rules.md                     # Negative guards, invariant traits, asymmetry locks
+    └── references/
+        ├── hero_portrait.png        # Approved Step 1 base image (canonical identity)
+        └── turnaround_sheet.png     # Approved Step 2 model sheet (Ingredient #1 in Google Flow)
+```
+
+---
+
+## 3. Standard File Templates
+
+### 3.1 `subjects/<character_id>/profile.md` (Human Review & Trait Bible)
+
+```markdown
+# Character Profile: [CHARACTER_NAME]
+
+## 1. Identity & Demographics
+- **Character ID:** [character_id]
+- **Role / Archetype:** [e.g., Combat Field Medic | Lead Detective | High-Tech Pilot]
+- **Age & Gender:** [e.g., 28-year-old female]
+- **Perceived Ethnicity / Heritage:** [e.g., East Asian descent | Mediterranean]
+
+## 2. Anatomical Biometrics & Distinctive Features
+- **Bone Structure:** [e.g., Sharp angular jawline, high cheekbones, straight nose bridge]
+- **Eyes:** [e.g., Weary, intense hazel eyes with faint dark circles]
+- **Hair:** [e.g., Dark brunette wavy hair loosely tied back in a low knot, loose strands framing face]
+- **Distinctive Invariant Markers:** [e.g., Diagonal pale scar across left cheekbone, faint soot smudge on temple]
+- **Build & Stature:** [e.g., Lean athletic 5'7 frame, broad natural shoulders]
+
+## 3. Signature Wardrobe (Physical Materiality)
+- **Primary Garment:** [e.g., Weathered matte olive-green canvas tactical flak vest with dull subdued medical cross patch]
+- **Base Layer:** [e.g., Faded charcoal-grey breathable long-sleeve undershirt with reinforced collar]
+- **Lower Body:** [e.g., Olive-drab ripstop cargo trousers tucked into rugged scuffed combat boots]
+- **Accessories:** [e.g., Weathered fingerless gloves, webbed utility belt with holstered first-aid pouch]
+
+## 4. Vocal Profile (Audio Synthesis)
+- **Timbre & Pitch:** [e.g., Raspy low-pitched alto, weathered tone]
+- **Delivery Cadence:** [e.g., Calm, quiet, clipped military cadence under pressure]
+```
+
+### 3.2 `subjects/<character_id>/verbatim_anchor.txt` (Authoritative Flow String)
+
+> **Rule:** Must be strictly bounded between 25–40 words. Contains zero buzzwords. Injected verbatim into Tokens 1–30 of video prompts.
+
+```text
+[CHARACTER_NAME], a [AGE]-year-old [BUILD] [GENDER] with [EYE_COLOR] eyes, [DISTINCTIVE_MARKER], [HAIRSTYLE_AND_COLOR], wearing [PRIMARY_GARMENT_MATERIAL] over [BASE_LAYER].
+```
+*Example:*
+> `Maya Lin, a 28-year-old lean athletic female combat medic with weary hazel eyes, a faint diagonal scar on her left cheekbone, messy tied-back dark wavy hair, wearing a distressed olive-green canvas tactical flak vest over a faded charcoal undershirt.`
+
+### 3.3 `subjects/<character_id>/rules.md` (Invariant & Safety Directives)
+
+```markdown
+# Character Rules & Invariant Constraints: [CHARACTER_NAME]
+
+## 1. Absolute Invariants (Never Mutate)
+- Eye color must remain [COLOR] across all lighting conditions.
+- Cheek scar is located strictly on the **LEFT cheekbone** (the right side remains completely unscarred).
+- Hair length remains shoulder-length tied in a low knot; must never appear loose or short.
+
+## 2. Anti-Artifact Directives
+- **Anti-Toy Banning:** Real living human being in tailored movie wardrobe. Not an action figure, not a plastic toy, not a doll, no plastic ball joints, not a 3D miniature, no mannequin poses.
+- **Detachable Props:** Hands must remain empty in model sheets. Sidearms and gear must remain securely holstered at hip.
+
+## 3. Style Synchronization
+- Inherits master style directly from `visual/technical_anchor.md`.
+```
+
+---
+
+## 4. The Two Production Genesis Workflows
+
+### 4.0 Creator Intent Rule: Single Hero Shot vs. 4-Panel Profile Sheet
+- **Default Delivery (The Hero Shot):** Unless the creator explicitly uses terms like `"character profile"`, `"profile"`, `"turnaround"`, or `"model sheet"`, the Agent **MUST default to generating a single cinematic Hero Shot (`hero_prompt.txt`)** featuring an expressive, iconic character pose placed inside a motivated, atmospheric environment.
+- **Conditional Delivery (The 4-Panel Model Sheet):** The 4-view model turnaround sheet on `#E5E5E5` (`turnaround_prompt.txt`) is reserved strictly for when:
+  1. The creator explicitly asks for a `"profile"`, `"character profile"`, or `"model sheet"`.
+  2. OR the creator approves the hero shot, and the workflow enters Mode 3 (`sync`) to lock the reference asset (Ingredient #1) for Google Flow.
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                        WORKFLOW DECISION POINT                         │
+└───────────────────┬────────────────────────────────┬───────────────────┘
+                    │                                │
+     [ CREATOR SUPPLIES OWN PHOTO ]         [ ORIGINAL CHARACTER FROM TEXT ]
+                    │                                │
+                    ▼                                ▼
+       [ SCENARIO 1: IMAGE-TO-CHAR ]        [ SCENARIO 2: 2-STEP GENESIS ]
+       1. Lock Facial Biometrics            Step 1: Hero Concept Portrait
+       2. Inherit Real Body Build                    │ (Approved Hero Shot)
+       3. Cosplay Deconstruction Engine              ▼
+                    │                       Step 2: Profile Model Sheet
+                    │                                │
+                    └────────────────┬───────────────┘
+                                     │
+                                     ▼
+                     [ 4-VIEW MODEL SHEET ON #E5E5E5 ]
+                     • Panel 1: Front Full-Body
+                     • Panel 2: Side Profile (90°)
+                     • Panel 3: Back Full-Body
+                     • Panel 4: Close-up Headshot
+                                     │
+                                     ▼
+                     [ INGREDIENT #1 IN GOOGLE FLOW ]
+```
+
+### Scenario 1: Creator Supplies Their Own Photo (Image-to-Character)
+When a creator uploads their photo and requests custom wardrobe, cosplay, or talking-head generation:
+1. **Zero Manual Biometric Writing:** The creator is never required to write technical facial descriptions. The multimodal AI Agent inspects photos and applies anatomical guardrails under the hood.
+2. **Biological Landmark Invariance vs. Lean Reference Anchoring (Linter `L-06`):**
+   - *Text-Conditioned Genesis (No Photo Supplied):* The prompt injects full anatomical bone structure descriptors (zygomatic arches, nose bridge contours, jawline angle).
+   - *Image-Conditioned Genesis (`[IMAGE 1]` Attached):* Writing lengthy paragraphs describing facial bones backfires by splitting token attention—the text tokens compete with and override the reference image's latent representation, synthesizing a generic AI face. The prompt MUST use **Lean Reference Anchoring**:
+     `The exact same person from [IMAGE 1], retaining 100% identical authentic facial features, likeness, and natural skin from the reference photo without modification.`
+     This allows the image reference to retain 95%+ latent attention weight.
+   - *Multi-Ingredient Indexing in Tier 2 Keyframe Compositing (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`):* When compositing a clip's starting keyframe (`clips/clip_XX/image_prompt.txt`) using Google Flow's 3 Ingredient slots (`[IMAGE 1]` = Primary Character Turnaround, `[IMAGE 2]` = Empty Stage Environment, `[IMAGE 3]` = Secondary Character or Hero Prop), explicitly bind each slot by index without re-describing locked facial bones:
+     `The exact same person from [IMAGE 1] positioned screen-left, holding the exact object from [IMAGE 3], set inside the exact environment from [IMAGE 2]...`
+     Once the Tier 2 keyframe is generated, pass **only that single pre-composited keyframe** into Tier 3 Veo 3.1 video generation to prevent multi-sheet identity bleed.
+3. **Expression Decoupling Engine (Clean Winks & Smiles):** Decouple permanent bone geometry from transient emotions. When animating expressions from `[IMAGE 1]`, combine Lean Reference Anchoring with dynamic muscle vectors:
+   `The exact same person from [IMAGE 1], retaining 100% identical authentic facial likeness and bone structure from the reference photo. Dynamic expression: while strictly preserving authentic biological landmarks, the face naturally articulates into a relaxed subtle smile with naturally lifted cheeks and soft eye creases. Real living human face, subtle micro-expression, not an exaggerated caricature, no frozen grimace.`
+4. **The 1:7.5 Head-to-Body Anatomical Ratio Lock (Anti-Bobblehead):** Prevent oversized heads and compressed bodies by injecting strict scale constraints: *"Realistic adult human anatomical proportions, strictly natural 1:7.5 head-to-body scale ratio, natural shoulder width proportional to torso height."* Mandate negative prompt clause: `oversized head, giant face, bobblehead, caricature, dwarfism, shrunken torso, chibi proportions, cartoon anatomy, macro face`.
+5. **The 2-Step Angle Normalizer (For Posed / Neck-Tilted Photos):** If the source image is non-frontal (angled 3/4, tilted head, turned neck), NEVER attempt to simultaneously un-rotate the head, extrapolate a full body, change clothes, and animate expressions in one step.
+   - *Step 1A (Pose Normalization):* Generate a clean, eye-level frontal headshot portrait on `#E5E5E5` whose sole goal is straightening head angle and locking 1:1 facial likeness with zero wardrobe or expression changes.
+   - *Step 1B (Character Activation):* Condition on the straightened Step 1A plate to generate full-body tailoring, dynamic expressions, and environment staging.
+6. **Full-Body Biological Inheritance & Downward Extrapolation:** Anchor natural height, musculoskeletal build, and posture. When only a face headshot is provided, upper collar/garment traits are seamlessly extrapolated downward into matching tailored lower pieces (trousers/skirt, belt, footwear) with identical textile weave.
+7. **Cosplay Deconstruction Engine:** Automatically expand pop-culture and anime terms into physical garment descriptors (materials, piping, armor plates, collars) to prevent AI hallucination.
+8. **Style Harmonization:** If target is Anime, translate both face and body into unified 2D hand-drawn cel art. If target is Live Action, render a real living actor in tailored movie costume.
+9. **Universal Relative Melanin & Complexion Parity Law (Cross-Source / Multi-Reference Translation):**
+   - *The Empirical Glitch:* When translating an anime pose or multi-image reference (`[IMAGE 2]`) onto a real model (`[IMAGE 1]`), diffusion models frequently alter skin tone, misinterpret dark anime cell-shading as dark skin pigmentation (melanin), or trigger diversity priors that shift the character's race.
+   - *The Relative Parity Formula:* Never hardcode static skin colors (e.g. "fair" or "tan"). Always bind directly to `[IMAGE 1]` using relative parity syntax across all visible anatomy:
+     `"Lock 100% biometric identity from [IMAGE 1]. Mirror the exact same skin tone, natural melanin level, undertones, and biological ethnicity of the person in [IMAGE 1]. All visible skin (face, neck, ears, hands, arms) must be an identical 1:1 match to [IMAGE 1]—neither lightened, darkened, nor altered in ethnicity."`
+   - *Mandatory Negative Anchor:* `mismatched skin tone from [IMAGE 1], altered skin tone, shifted complexion, lightened skin, darkened skin, race drift, ethnicity change, mismatched neck and face color, different race from [IMAGE 1]`.
+10. **The "Facial Mask Only" & Hair Decoupling Protocol (Grafting Identity onto Existing Poses/Characters):**
+    - *The Empirical Glitch:* When transferring identity onto an existing pose or character from `[IMAGE 2]`, copying the full head wipes out the iconic hairstyle, haircut, and hair color of `[IMAGE 2]`, replacing it with the real model's haircut.
+    - *Decoupled Hair vs. Facial Mask Architecture:*
+      1. **Hairstyle Inheritance from `[IMAGE 2]` Only:** The character retains 100% of the exact hairstyle, haircut, bangs, hair length, and hair color from the character in `[IMAGE 2]`, translated into realistic, individual fine organic hair strands with natural specular sheen and physical volume. Strictly forbid using the hairstyle or hair color from `[IMAGE 1]`.
+      2. **Facial Mask Graft from `[IMAGE 1]` Only:** Graft ONLY the facial features (cheekbones, eye contours, nose bridge, lips, jawline) and relative skin tone/melanin from `[IMAGE 1]` onto the face.
+    - *Mandatory Negative Anchor:* `hair from [IMAGE 1], haircut from [IMAGE 1], wrong hair color, altered hairstyle, mismatched hair from [IMAGE 2]`.
+
+### Scenario 2: Original Character Creation from Pure Text (2-Step Architecture)
+When creating an original character without a source photo, generating a 4-view sheet in 1 step causes **split token attention** and **facial drift across panels**. The mandatory 2-step pipeline solves this:
+
+#### Step 1: Character Genesis (`hero_prompt.txt`)
+Directs 100% of latent diffusion attention into creating **one coherent living persona**:
+- **Locked Order:** Name $\rightarrow$ Age $\rightarrow$ Bone Structure $\rightarrow$ Eyes $\rightarrow$ Hair $\rightarrow$ Distinctive Markers $\rightarrow$ Wardrobe Layering $\rightarrow$ Stature $\rightarrow$ Master Style Anchor.
+- **Physical Materiality:** Specifies fabric weaves, seam weights, and garment tailoring.
+- **Environment:** Placed naturally in the film's world with motivated lighting.
+
+#### Step 2: Turnaround Profile Conversion (`turnaround_prompt.txt`)
+Takes the approved Step 1 image as the reference anchor:
+- **Canvas Cleansing:** Strips environmental rubble and forces a solid, seamless `#E5E5E5` light-gray background with flat, shadowless diffuse lighting.
+- **Turntable Directive:** Forces the model to rotate the exact 3D form (*"the exact same subject rotated in place on an invisible turntable"*).
+- **Standardized 4 Panels:** Panel 1 (Front), Panel 2 (Side 90°), Panel 3 (Back), Panel 4 (Facial Close-up).
+
+---
+
+## 5. Universal Medium Adaptability Matrix
+
+| Visual Medium / Paradigm | Step 1 (Genesis Hero Adaptation) | Step 2 (Profile Model Sheet Adaptation) | Mandatory Guardrails |
+|---|---|---|---|
+| **1. Ultra-Realistic Live-Action** | 85mm portrait prime lens, natural skin micro-pores, authentic subsurface scattering, organic textile drape. | Solid `#E5E5E5` cyclorama, flat diffuse studio lighting, real human actor in movie wardrobe. | Ban action figures, dolls, plastic ball joints, 3D miniatures. |
+| **2. Traditional 2D Cel Anime** | Hand-drawn cel animation, bold uniform ink lines, flat unshaded color fills, stepped animation timing on twos. | Classic production model sheet (*settei* / 設定資料), neutral light-gray (`#E5E5E5`) or warm off-white (`#F8F6F0`) studio paper, multi-angle line art. | Ban 3D rendering, plastic surfaces, pure `#FFFFFF` white backgrounds, and volumetric CGI lighting (prevents doubled jittery lines and scanline tearing). |
+| **3. Stylized 3D CGI** | Stylized proportions, tactile vinyl/felt micro-textures, warm subsurface scattering on skin, expressive stylized planes. | Digital T-pose / A-pose 3D asset model sheet, neutral gray background. | Keep facial planes stylized to avoid uncanny valley realism. |
+| **4. Fantasy Armor & Mecha Suits** | Deconstruct into physical plates: lightweight articulated polycarbonate armor, silicone seals, matte finish. | Multi-angle view revealing rear thrusters, waist articulations, and weapon holsters. | Never say just "mecha suit"; always describe tailored flexible undersuit with articulated composite plates. |
+| **5. Non-Human Creatures / Robots** | Replace human biometrics with creature anatomy (chassis plating, servo joints, reptilian scales, tail length). | Turnaround showing dorsal, lateral, and ventral silhouettes on neutral gray. | Must explicitly constrain tail length, limb counts, and ocular placement across all 4 panels. |
+| **6. Minimalist 2D Vector Stick Figure** | Pure unbroken pencil-thin black vector line strokes terminating in smooth rounded line-cap ends (`stroke-linecap: round`). Circular head filled with solid opaque white (`#FFFFFF`) and contoured with a clean black vector outline (`#0F172A`). Completely blank facial anatomy. | Flat 4-view model sheet on cream paper canvas (`#F8F6F0`) or `#E5E5E5`: front, left profile, right profile, back. | **Strictly zero individual fingers, zero human hands, zero toes, no knuckles, no fleshy anatomical details.** Pure unbroken continuous line limbs with rounded line-cap ends. |
+
+---
+
+## 6. Engine Directives & Failure Mode Guards
+
+1. **The "Action Figure Trap" Guard:**
+   - *Cause:* Diffusion models associate words like "model sheet", "mecha suit", and "standing pose" with collectible toys.
+   - *Directives:* Explicitly enforce: `Real living human being wearing tailored cinematic movie wardrobe. Not an action figure, not a plastic toy, not a doll, no plastic ball joints, not a 3D miniature, no mannequin poses.`
+2. **The "Hand & Feet Flesh Mutancy" Guard (Viral Stick Figures):**
+   - *Cause:* Diffusion models trigger biological human anatomy latent weights when words like "hands", "fingers", or "feet" are used on 2D vector stick figures, rendering mutated 6-finger fleshy clusters or knobby joints.
+   - *Directives:* Explicitly mandate: `Pure unbroken 2D vector line limbs with smooth rounded line-cap ends. Strictly zero individual fingers, zero human hands, zero toes, zero knuckles, and zero fleshy anatomical details. Uniform stroke thickness from shoulder to tip.`
+3. **The Asymmetry / Mirroring Glitch Guard:**
+   - *Cause:* Diffusion models mirror scars, eyepatches, or mechanical arms to both sides or flip them across profile views.
+   - *Directives:* Explicitly bind asymmetric traits to the specific panel in `turnaround_prompt.txt`:
+     `Panel 2: Left side profile showing the diagonal scar across the left cheekbone (the right side of the face remains completely unscarred and clear).`
+4. **The Detachable Prop Hallucination Guard (Linter `L-07`):**
+   - *Cause:* Loose handheld weapons warp, float, or vanish across panels.
+   - *Directives:* Strictly enforce empty hands in model sheets:
+     `Hands in relaxed open standing posture, empty hands, sidearms and knives securely holstered at hip utility belt.`
+5. **Dialogue Syntax Formula & Biomechanical Restraint (Linters `L-14` & `L-15`):**
+   - Spoken speech is directed via natural language tokens without UI dropdown dependencies:
+     $$\mathbf{[Character\ Name]\ says,\ [modifier\ +\ biomechanical\ restraint]:\ "[Spoken\ words\ in\ sentence\ case,\ capped\ by\ duration]}."$$
+   - *Biomechanical Restraint Tokens:* Spoken lines MUST include $\ge 2$ restraint tokens (e.g. `relaxed jaw, minimal jaw displacement, subtle lip articulation`) to defeat the Muppet Mouth glitch.
+   - *Native Veo Duration Word Ceilings (Pathway A):*
+     - `4s` $\le$ **3–5 words** (max 6)
+     - `6s` $\le$ **7–9 words** (max 10)
+     - `8s` $\le$ **11–13 words** (max 14)
+     - `10s` $\le$ **15–18 words** (max 19)
+   - *Rules:* Never use ALL CAPS in spoken dialogue (causes Veo to spell letter-by-letter). Always place a colon before quoted speech. Always ensure words are enclosed in double quotes.
+
+---
+
+## 7. Downstream Consumption by Google Flow & Veo 3.1
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│             characters/<id>/references/                     │
+│                turnaround_sheet.png                         │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ Uploaded as
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                 GOOGLE FLOW INGREDIENT #1                   │
+│                    (Character Anchor)                       │
+└──────────────────────────────┬──────────────────────────────┘
+                               │
+                               │ Synchronized with
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│            characters/<id>/verbatim_anchor.txt              │
+│  "Maya Lin, a 28-year-old lean athletic female combat       │
+│   medic with weary hazel eyes, faint diagonal scar..."      │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ Injected into Tokens 1–30 of
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                 VEO 3.1 SHOT PROMPT COMPILER                │
+│  [Tokens 1–30: Framing & Verbatim Anchor]                   │
+│  [Tokens 31–80: Biomechanical Action & Motivated Lighting]  │
+│  [Tokens 81–130: Master Style Anchor & Camera Kinematics]   │
+│  [Trailing Block: Spoken Dialogue & Foley Audio]            │
+└─────────────────────────────────────────────────────────────┘
+```

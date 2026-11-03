@@ -1,0 +1,60 @@
+{
+  "name": "openproducer",
+  "version": "1.0.0",
+  "description": "OpenProducer CLI — The autonomous, creator-centric AI video generation production framework & scaffolding engine",
+  "keywords": [
+    "video-generation",
+    "ai-video",
+    "google-flow",
+    "veo",
+    "imagen",
+    "prompt-engineering",
+    "openproducer",
+    "cinematography",
+    "scaffolding",
+    "agent-skill"
+  ],
+  "author": "Modasser",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheProjectsX/openproducer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TheProjectsX/openproducer/issues"
+  },
+  "homepage": "https://github.com/TheProjectsX/openproducer#readme",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "openproducer": "./dist/cli.js",
+    "opp": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/copy-assets.js",
+    "start": "node dist/cli.js",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.1",
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/prompts": "^2.4.9",
+    "typescript": "^5.7.2"
+  }
+}
+
