@@ -813,7 +813,7 @@ To prevent token bloat while retaining 100% information control:
 - **Direct Tool Resources Block Codified:** Added Guardrail #5 to [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md) and updated the Produce Status Card and workflow instructions to explicitly provide direct clickable tool links:
   - 🎙️ **Voice / Audio Generation (Google AI Studio):** https://aistudio.google.com/generate-speech
   - ⏱️ **Transcript / SRT Tools:** [TurboScribe](https://turboscribe.ai/) | [AudioToSRT](https://audiotosrt.com/)
-  - 🎬 **Image & Video Generation (Google Flow):** https://labs.google/fx/tools/flow
+  - 🎬 **Image & Video Generation (Google Flow):** https://flow.google.com
 - **Next Step Workflow Guidance:** Updated the final call-to-action to directly instruct creators to generate their audio in Google AI Studio and transcript/timestamps via TurboScribe or AudioToSRT before sharing timestamps or running `/opp-guide`.
 - **Reference Deliverables:** [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md), [`agents/workflows/opp-produce.md`](./agents/workflows/opp-produce.md), [`src/templates/agents/skills/openproducer-produce/SKILL.md`](./src/templates/agents/skills/openproducer-produce/SKILL.md), and [`src/templates/agents/workflows/opp-produce.md`](./src/templates/agents/workflows/opp-produce.md).
 
