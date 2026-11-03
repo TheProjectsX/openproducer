@@ -164,7 +164,7 @@ flowchart TD
 * **Direct Tool URLs (Always Provide in Guide):**
   - 🎙️ **Voice / TTS Generation:** [Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)
   - ⏱️ **Transcript / SRT Timestamp Generators:** [TurboScribe](https://turboscribe.ai/) or [AudioToSRT](https://audiotosrt.com/)
-  - 🎬 **Image & Video Generation:** [Google Flow](https://labs.google/fx/tools/flow)
+  - 🎬 **Image & Video Generation:** [Google Flow](https://flow.google.com)
 * **Audio-Aware Guided Pathways & Clip Support Choice:**
   1. **Audio Phase (If Separate Audio):**
      - If `separate_script_first`: Ask creator to create the audio from `production/audio_script.txt` first $\rightarrow$ take their transcript/timestamps to match and generate `production/clips/clip_xxx/`.
@@ -173,7 +173,7 @@ flowchart TD
      - Guide creator to create `production/base_image_prompt.txt` first and **loop until satisfied** (saving changes) $\rightarrow$ if Modular Studio, guide through `production/subjects/` & `production/visuals/environments/`.
   3. **Clip Creation Mode Choice (Ask via `ask_question`):**
      - Ask if the creator needs **Step-by-Step Support** (creating clips one by one) OR **Only Instructions**.
-     - **If Only Instructions:** Provide the complete workflow instructions (open [Google Flow](https://labs.google/fx/tools/flow) $\rightarrow$ create Base Image $\rightarrow$ attach Base/Subject/Environment images to generate Clip Images $\rightarrow$ attach Clip Images with the Video Prompts before video generation).
+     - **If Only Instructions:** Provide the complete workflow instructions (open [Google Flow](https://flow.google.com) $\rightarrow$ create Base Image $\rightarrow$ attach Base/Subject/Environment images to generate Clip Images $\rightarrow$ attach Clip Images with the Video Prompts before video generation).
      - **If Step-by-Step Support:** Use `ask_question` to give the option to either **(A) Generate all Clip Images first and then Clip Videos one by one**, OR **(B) Go Clip-by-Clip (create Clip Image first then Video for each clip one by one)**.
 
 ---
