@@ -2,7 +2,7 @@
 Platform: Google AI Studio Speech Playground (https://aistudio.google.com/generate-speech)
 Delivery Mode: separate_script_first (Alternating-Turn Multi-Speaker Standard)
 Target Audio Duration: ~05:18 (318s)
-Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/dashboard) or AudioToSRT (https://audiotosrt.com/) -> production/audio.srt
+Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/) or AudioToSRT (https://audiotosrt.com/) -> production/audio.srt
 
 [VOICE CAST & PRESETS]
 Speaker 1 (Narrator): Fenrir (or Orus) | Position: Speaker 1 | Style: Weathered, isolated, world-weary baritone with natural gravel; tense, deliberate pacing.
@@ -132,6 +132,6 @@ And your own voice whispers:
 3. Configure Voice Presets for Speaker 1 and Speaker 2 per [VOICE CAST & PRESETS].
 4. Copy-paste the alternating turns from [AUDIO SCRIPT] into the conversation inputs.
 5. Generate and download the unified master audio file.
-6. Drop the audio file into TurboScribe (https://turboscribe.ai/dashboard) or AudioToSRT (https://audiotosrt.com/) to export production/audio.srt.
+6. Drop the audio file into TurboScribe (https://turboscribe.ai/) or AudioToSRT (https://audiotosrt.com/) to export production/audio.srt.
 7. Run /opp-produce to slice and verify video clips against audio timestamps.
 

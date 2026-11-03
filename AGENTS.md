@@ -806,3 +806,39 @@ To prevent token bloat while retaining 100% information control:
 - **Root Cleanup:** Moved the pre-packaged offline asset bundle from the root (`templates/`) into [`src/templates/`](./src/templates/) and [`dist/templates/`](./dist/templates/).
 - **Build & Resolver Synchronization:** Updated [`scripts/copy-assets.js`](./scripts/copy-assets.js) to copy into `src/templates/` and `dist/templates/`, updated `resolveLocalBundledTemplatesDir()` in [`src/core/fetcher.ts`](./src/core/fetcher.ts) and preset discovery in [`src/core/templates.ts`](./src/core/templates.ts), and updated `files` whitelist in [`package.json`](./package.json).
 - **Result:** Keeps the repository root clean and uncluttered, packaged as `openproducer-1.1.1.tgz`.
+
+
+### 2026-11-03 — Direct Tool Resources Guardrail in `/openproducer-produce`
+- **Problem Solved:** When running `/openproducer-produce` in `separate_script_first` mode (Pass 1, awaiting audio timestamps), the ending Next Step advised creators to use `production/audio_script.txt` to create their audio and share timestamps, but omitted direct tool links, leaving creators to search for tools manually.
+- **Direct Tool Resources Block Codified:** Added Guardrail #5 to [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md) and updated the Produce Status Card and workflow instructions to explicitly provide direct clickable tool links:
+  - 🎙️ **Voice / Audio Generation (Google AI Studio):** https://aistudio.google.com/generate-speech
+  - ⏱️ **Transcript / SRT Tools:** [TurboScribe](https://turboscribe.ai/) | [AudioToSRT](https://audiotosrt.com/)
+  - 🎬 **Image & Video Generation (Google Flow):** https://labs.google/fx/tools/flow
+- **Next Step Workflow Guidance:** Updated the final call-to-action to directly instruct creators to generate their audio in Google AI Studio and transcript/timestamps via TurboScribe or AudioToSRT before sharing timestamps or running `/opp-guide`.
+- **Reference Deliverables:** [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md), [`agents/workflows/opp-produce.md`](./agents/workflows/opp-produce.md), [`src/templates/agents/skills/openproducer-produce/SKILL.md`](./src/templates/agents/skills/openproducer-produce/SKILL.md), and [`src/templates/agents/workflows/opp-produce.md`](./src/templates/agents/workflows/opp-produce.md).
+
+
+### 2026-11-03 — Google AI Studio 40-Expression TTS Catalog Codification (Discussion 81)
+- **Problem & Opportunity:** Google AI Studio Speech Playground supports a comprehensive library of inline vocal expressions beyond `<short pause>` and `<whisper>`, allowing dramatic emotional performances across comedy, suspense, horror, and action.
+- **40 Official Expression Tags Integrated:** Codified the complete catalog into [`07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md) and [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md):
+  - *Cadence & Pauses:* `<short pause>`, `<long pause>`
+  - *Breathing & Respiratory:* `<breath>`, `<heavy breath>`, `<exhales>`, `<pant>`, `<sigh>`, `<sighs>`, `<yawn>`, `<cough>`, `<sneeze>`, `<throat-clearing>`
+  - *Laughter & Amusement:* `<chuckle>`, `<chuckles>`, `<giggle>`, `<laugh>`, `<laughter>`, `<snicker>`, `<snort>`, `<cackle>`
+  - *Fear, Pain, Distress & Grief:* `<gasp>`, `<groan>`, `<grunt>`, `<whimper>`, `<cry>`, `<sob>`, `<moan>`, `<argh>`
+  - *Vocalizations & Projections:* `<whisper>`, `<whispering>`, `<whispers>`, `<cheer>`, `<shout>`, `<scream>`, `<shriek>`, `<pff>`, `<phew>`, `<tsk>`
+  - *Hostile & Animalistic:* `<growl>`, `<grr>`, `<hiss>`
+- **Workflow & Skill Synchronization:** Updated `openproducer-propose` and `openproducer-produce` skills to dynamically inject these tags at emotionally motivated story beats, preserving the 80–90% natural punctuation ratio and clean isolated-line syntax (`.\n<tag>\n`) while strictly banning square brackets in spoken text.
+- **Reference Deliverables:** [`production_framework/specs/07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md), [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md), [`agents/skills/openproducer-propose/SKILL.md`](./agents/skills/openproducer-propose/SKILL.md), and [`agents/workflows/opp-produce.md`](./agents/workflows/opp-produce.md).
+
+
+### 2026-11-03 — Google AI Studio 40-Expression TTS Catalog Codification (Discussion 81)
+- **Problem & Opportunity:** Google AI Studio Speech Playground supports a comprehensive library of inline vocal expressions beyond `<short pause>` and `<whisper>`, allowing dramatic emotional performances across comedy, suspense, horror, and action.
+- **40 Official Expression Tags Integrated:** Codified the complete catalog into [`07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md) and [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md):
+  - *Cadence & Pauses:* `<short pause>`, `<long pause>`
+  - *Breathing & Respiratory:* `<breath>`, `<heavy breath>`, `<exhales>`, `<pant>`, `<sigh>`, `<sighs>`, `<yawn>`, `<cough>`, `<sneeze>`, `<throat-clearing>`
+  - *Laughter & Amusement:* `<chuckle>`, `<chuckles>`, `<giggle>`, `<laugh>`, `<laughter>`, `<snicker>`, `<snort>`, `<cackle>`
+  - *Fear, Pain, Distress & Grief:* `<gasp>`, `<groan>`, `<grunt>`, `<whimper>`, `<cry>`, `<sob>`, `<moan>`, `<argh>`
+  - *Vocalizations & Projections:* `<whisper>`, `<whispering>`, `<whispers>`, `<cheer>`, `<shout>`, `<scream>`, `<shriek>`, `<pff>`, `<phew>`, `<tsk>`
+  - *Hostile & Animalistic:* `<growl>`, `<grr>`, `<hiss>`
+- **Workflow & Skill Synchronization:** Updated `openproducer-propose` and `openproducer-produce` skills to dynamically inject these tags at emotionally motivated story beats, preserving the 80–90% natural punctuation ratio and clean isolated-line syntax (`.\n<tag>\n`) while strictly banning square brackets in spoken text.
+- **Reference Deliverables:** [`production_framework/specs/07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md), [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md), [`agents/skills/openproducer-propose/SKILL.md`](./agents/skills/openproducer-propose/SKILL.md), and [`agents/workflows/opp-produce.md`](./agents/workflows/opp-produce.md).

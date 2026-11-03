@@ -3,7 +3,7 @@ Platform: Google AI Studio Speech Playground (https://aistudio.google.com/genera
 Delivery Mode: separate_script_first (Continuous Solo Voice Track)
 Recommended Voice: Fenrir (or Orus) | Style: Weathered, raspy, world-weary baritone
 Pacing & Tone: Grounded, tense, deliberate cadence (~2.2-2.3 words/sec, zero dead air)
-Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/dashboard) or AudioToSRT (https://audiotosrt.com/) -> audio.srt
+Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/) or AudioToSRT (https://audiotosrt.com/) -> audio.srt
 
 [SYSTEM INSTRUCTIONS]
 You are a weathered, isolated Atlantic lighthouse keeper recounting a harrowing supernatural encounter. Speak in a grounded, tense, deliberate cadence with gravel in your voice. Maintain natural human speech flow without artificial pauses. Lower your voice to a hushed, chilling whisper during intimate horror moments, and keep an eerie, unnatural calm during the doppelgänger reveal.

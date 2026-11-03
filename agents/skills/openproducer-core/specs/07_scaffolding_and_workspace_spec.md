@@ -226,10 +226,21 @@ Starting directly from the initial image, <Tokens 1-30: Viewport framing & subje
 2. **The Context-Driven Emotion & Anti-Dead-Air Law (Discussion 47 & 49 — NO TAG SPAMMING):**
    * **Why Tag Spamming Kills Retention:** Putting `<short pause>` after every sentence or paragraph creates robotic dead air that destroys narrative momentum and causes viewers to scroll away immediately.
    * **90% Natural Punctuation Flow:** Standard commas (`,`), periods (`.`), em-dashes (`—`), and paragraph breaks already produce natural 0.3s–0.5s breathing cadences in Google AI Studio TTS. **90%+ of sentences must have ZERO tags.**
-   * **10% Scalpel Tagging (Strictly Context-Driven):**
-     - **`<short pause>` (Max 1–3 per ~100 words):** Use ONLY immediately before a major narrative twist, a sudden freeze in terror, or the final climactic reveal—**NEVER between ordinary narrative sentences**.
-     - **`<whisper>...</whisper>`:** Use ONLY when a character/entity actually whispers in the story or on a chilling final payoff phrase.
-     - **Other Contextual Tags (`<sigh>`, `<gasp>`, `<panting>`):** Use ONLY when the narrative explicitly calls for that physical vocal reaction.
+   * **Google AI Studio TTS Expression Catalog (40 Official Tags):**
+     Google AI Studio Speech Playground officially supports 40 inline emotional vocalizations, breathing actions, and cadence markers in `<tag>` format. Proactively incorporate these expressions wherever contextually motivated by the narrative, dialogue, or dramatic mood:
+     - **Cadence & Pauses:** `<short pause>`, `<long pause>`
+     - **Breathing & Respiratory:** `<breath>`, `<heavy breath>`, `<exhales>`, `<pant>`, `<sigh>`, `<sighs>`, `<yawn>`, `<cough>`, `<sneeze>`, `<throat-clearing>`
+     - **Laughter & Amusement:** `<chuckle>`, `<chuckles>`, `<giggle>`, `<laugh>`, `<laughter>`, `<snicker>`, `<snort>`, `<cackle>`
+     - **Fear, Pain, Distress & Grief:** `<gasp>`, `<groan>`, `<grunt>`, `<whimper>`, `<cry>`, `<sob>`, `<moan>`, `<argh>`
+     - **Vocalizations, Whispers & Projections:** `<whisper>`, `<whispering>`, `<whispers>`, `<cheer>`, `<shout>`, `<scream>`, `<shriek>`, `<pff>`, `<phew>`, `<tsk>`
+     - **Hostile, Tension & Animalistic:** `<growl>`, `<grr>`, `<hiss>`
+   * **Context-Driven Application Rules:**
+     - **Use Where Fitting & Motivated:** Inject expressions at high-impact narrative beats: terror/horror (`<gasp>`, `<heavy breath>`, `<whimper>`, `<shriek>`), tension/unease (`<breath>`, `<throat-clearing>`, `<short pause>`), combat/effort (`<grunt>`, `<groan>`, `<argh>`, `<pant>`), comedy/satire (`<chuckle>`, `<snicker>`, `<snort>`, `<pff>`, `<tsk>`), sorrow/grief (`<sigh>`, `<sob>`, `<cry>`), and relief (`<phew>`, `<exhales>`).
+     - **80–90% Punctuation / 10–20% Expression Ratio:** Maintain natural momentum. Do not over-tag every single line. Standard punctuation (periods, commas, em-dashes) drives natural flow, while expressions provide emotional punch.
+     - **Clean Line Separation:** Standalone vocalizations (e.g., `<heavy breath>`, `<short pause>`, `<sigh>`) are best placed on their own isolated lines (`.
+<heavy breath>
+`) to prevent token collision or pronunciation glitches.
+     - **Strict Angle Brackets (`< >`):** Always write expressions in angle brackets (`<sigh>`, `<chuckle>`). NEVER use square brackets (`[...]`) in spoken narration text, as Gemini TTS will read the bracketed words aloud literally.
    * **Clean Formatting & Meta Tag Rules:**
      - Structure the file using plain-text custom meta tags (`[AUDIO CONFIGURATION]`, `[VOICE CAST & PRESETS]`, `[SYSTEM INSTRUCTIONS]`, `[AUDIO SCRIPT]`, `[DOWNSTREAM WORKFLOW]`).
      - When you do use `<short pause>`, place `<short pause>` on its own clean line (never write a standalone dot `.` on a line, and never attach `<short pause>` to the end of a sentence line).
@@ -242,7 +253,7 @@ Platform: Google AI Studio Speech Playground (https://aistudio.google.com/genera
 Delivery Mode: separate_script_first (Continuous Voice Track)
 Recommended Voice: Charon (or Puck / Fenrir / Kore / Aoede)
 Pacing & Tone: Intimate, relentless forward momentum (~2.2-2.3 words/sec, zero dead air)
-Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/dashboard) or AudioToSRT (https://audiotosrt.com/) -> production/audio.srt
+Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/) or AudioToSRT (https://audiotosrt.com/) -> production/audio.srt
 
 [SYSTEM INSTRUCTIONS]
 You are a chilling, intimate narrator telling a psychological horror story. Speak with tense, forward-moving cadence.
@@ -285,7 +296,7 @@ Then, two inches above your crown, you feel the hair on your scalp stir...
 [AUDIO CONFIGURATION]
 Platform: Google AI Studio Speech Playground (https://aistudio.google.com/generate-speech)
 Delivery Mode: separate_script_first (Alternating-Turn Multi-Speaker Standard)
-Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/dashboard) or AudioToSRT (https://audiotosrt.com/) -> production/audio.srt
+Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/) or AudioToSRT (https://audiotosrt.com/) -> production/audio.srt
 
 [VOICE CAST & PRESETS]
 Speaker 1 (Narrator): Fenrir (or Orus) | Position: Speaker 1 | Style: Weathered, isolated baritone with gravel; tense, deliberate pacing.

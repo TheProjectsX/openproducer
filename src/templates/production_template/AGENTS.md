@@ -163,7 +163,7 @@ flowchart TD
 * **Rule:** Never uses `master_images_prompt.txt` or `master_videos_prompt.txt`.
 * **Direct Tool URLs (Always Provide in Guide):**
   - 🎙️ **Voice / TTS Generation:** [Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)
-  - ⏱️ **Transcript / SRT Timestamp Generators:** [TurboScribe](https://turboscribe.ai/dashboard) or [AudioToSRT](https://audiotosrt.com/)
+  - ⏱️ **Transcript / SRT Timestamp Generators:** [TurboScribe](https://turboscribe.ai/) or [AudioToSRT](https://audiotosrt.com/)
   - 🎬 **Image & Video Generation:** [Google Flow](https://labs.google/fx/tools/flow)
 * **Audio-Aware Guided Pathways & Clip Support Choice:**
   1. **Audio Phase (If Separate Audio):**

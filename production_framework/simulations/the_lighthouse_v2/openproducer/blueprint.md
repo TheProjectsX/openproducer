@@ -143,7 +143,7 @@ And your own voice whispers:
 ### 🎙️ Speech Configuration
 * **Recommended Platform:** [Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)
 * **Audio Delivery Mode:** `separate_script_first` (Alternating-Turn Standard)
-* **Workflow Advantage:** Produces **ONE single continuous audio file** that the creator can drop directly into [TurboScribe](https://turboscribe.ai/dashboard) or [AudioToSRT](https://audiotosrt.com/) for a 100% continuous, unbroken transcript.
+* **Workflow Advantage:** Produces **ONE single continuous audio file** that the creator can drop directly into [TurboScribe](https://turboscribe.ai/) or [AudioToSRT](https://audiotosrt.com/) for a 100% continuous, unbroken transcript.
 
 ### 👥 Cast & Voice Presets:
 * **Speaker 1:** `Fenrir` (or `Orus`) — Weathered, world-weary baritone
