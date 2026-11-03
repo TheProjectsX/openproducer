@@ -25,7 +25,7 @@ This document serves as the declarative file system contract for OpenProducer.
 │
 └── production/                        # 🎬 Creator Production Deliverables
     ├── base_image_prompt.txt          # 🎨 Master Base Style & Subject/Setting lock prompt
-    ├── audio_script.md                # 🎙️ (If Separate Audio) Clean script to generate/record voice/audio
+    ├── audio_script.txt                # 🎙️ (If Separate Audio) Clean script to generate/record voice/audio
     ├── clips/                         # 🎬 Clip directories (clip_01, clip_02...)
     │   └── clip_xxx/
     │       ├── image_prompt.txt       # Tier 2: Start-frame prompt (Conditioned On: base_image_prompt.txt)
@@ -54,7 +54,7 @@ This document serves as the declarative file system contract for OpenProducer.
 │
 └── production/                        # 🎬 Creator Production Deliverables
     ├── base_image_prompt.txt          # 🎨 Master Base Style lock prompt (anchors all subjects & environments)
-    ├── audio_script.md                # 🎙️ (If Separate Audio) Clean script to generate/record voice/audio
+    ├── audio_script.txt                # 🎙️ (If Separate Audio) Clean script to generate/record voice/audio
     ├── subjects/                      # 👥 Character & Subject Base Prompts
     │   └── <subject_id_or_name>/
     │       ├── hero_prompt.txt        # Step 1 Hero Shot (Conditioned On: base_image_prompt.txt)

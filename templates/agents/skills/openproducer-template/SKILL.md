@@ -89,7 +89,8 @@ Always conclude execution with this exact Status Card:
 ```markdown
 ---
 ### 🎬 OpenProducer Status: TEMPLATE
-* **Operation:** `<LOAD / SAVE / LIST>` | **Template ID:** `<template_id>`
+* **Operation:** `<LOAD / SAVE / UPDATE / LIST>` | **Template ID:** `<template_id>`
+* **Updated Elements (if UPDATE):** `<e.g. Master Style Anchor, Typography, Aspect Ratio>`
 * **Pre-Locked Settings:** `<e.g. Style: Stick Figure | Orientation: 16:9 | Audio: Separate (Script First)>`
 * **Missing Settings to Ask:** `<None / List only unset fields>`
 
@@ -97,6 +98,6 @@ Always conclude execution with this exact Status Card:
 - `./openproducer/config.json` — `<✅ Pre-populated from template.md (Explore mode active) / 💾 Saved without plot to ~/.openproducer/templates/<name>.md>`
 
 #### 🚀 Next Step in Workflow:
-👉 `<If LOAD: "Template settings are loaded into the brain! Share your story plot (and any missing settings above) to continue exploring, or run /opp-propose once ready." | If SAVE: "Template saved cleanly as Markdown without the plot!">`
+👉 `<If LOAD: "Template settings are loaded into the brain! Share your story plot (and any missing settings above) to continue exploring, or run /opp-propose once ready." | If SAVE: "Template saved cleanly as Markdown without the plot!" | If UPDATE: "Template schema successfully updated based on current changes!">`
 ---
 ```

@@ -1,32 +1,27 @@
-# Audio Voiceover Script: The Lone Lighthouse Keeper
+[AUDIO CONFIGURATION]
+Platform: Google AI Studio Speech Playground (https://aistudio.google.com/generate-speech)
+Delivery Mode: separate_script_first (Alternating-Turn Multi-Speaker Standard)
+Target Audio Duration: ~05:18 (318s)
+Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/dashboard) or AudioToSRT (https://audiotosrt.com/) -> production/audio.srt
 
-## 🎙️ Google AI Studio Speech Configuration
+[VOICE CAST & PRESETS]
+Speaker 1 (Narrator): Fenrir (or Orus) | Position: Speaker 1 | Style: Weathered, isolated, world-weary baritone with natural gravel; tense, deliberate pacing.
+Speaker 2 (The Entity / Radio Voice / Doppelgänger): Orus (or Kore / Puck) | Position: Speaker 2 | Style: Unnaturally calm, deadpan, chilling whisper; devoid of human panic.
 
-* **Recommended Platform:** [Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)
-* **Audio Delivery Mode:** `separate_script_first` (Google AI Studio Alternating-Turn Standard)
-* **Workflow Advantage:** Produces **ONE unified master audio file** with alternating voices that you can drop directly into [TurboScribe](https://turboscribe.ai/dashboard) or [AudioToSRT](https://audiotosrt.com/) for a 100% continuous, unbroken transcript.
-
-### 👥 Cast & Voice Presets:
-
-| Role | UI Position | Recommended Voice Preset | Vocal Persona & Style |
-|---|---|---|---|
-| **Narrator (The Lighthouse Keeper)** | **Speaker 1** | `Fenrir` (or `Orus`) | Weathered, isolated, world-weary baritone with natural gravel. Tense, deliberate pacing. |
-| **The Entity / Radio Voice / Doppelgänger** | **Speaker 2** | `Orus` (or `Kore` / `Puck`) | Unnaturally calm, deadpan, chilling whisper. Devoid of human panic. |
-
-### 🎭 System Instructions:
-```text
+[SYSTEM INSTRUCTIONS]
 [Speaker 1 / Narrator / Fenrir]:
 You are a weathered, isolated Atlantic lighthouse keeper recounting a harrowing supernatural encounter. Speak in a grounded, tense, deliberate cadence with gravel in your voice. Maintain natural human speech flow without artificial pauses. Convey escalating dread through breath and pacing, breaking into stunned stillness during supernatural reveals.
 
 [Speaker 2 / The Entity & Doppelgänger / Orus]:
 You are an unearthly presence inhabiting the lighthouse and Atlantic surf, speaking through radios, mist, and the keeper's own voice. Speak with unnatural, eerie calm, hushed whispers, and chilling stillness. Completely devoid of panic or human urgency.
-```
 
----
+[Anti-Dead-Air & Syntax Rules]:
+- Strictly execute inline performance tags: <short pause>, <whisper>...</whisper>.
+- Maintain continuous speech momentum. 90%+ sentences flow naturally without pause tags.
+- Never speak tag names, punctuation, or bracketed labels aloud.
 
-## 📜 Master Alternating-Turn Script (Speaker 1 ↔ Speaker 2)
-
-### Turn 01 — [Narrator - Fenrir] (Speaker 1)
+[AUDIO SCRIPT]
+[Turn 01 - Narrator (Fenrir) / Speaker 1]
 You have been alone on this barren rock in the Atlantic Ocean for an entire month. No visitors. No escape from the endless crash of the surf. You are the sole lighthouse keeper, bound to a single duty: keep the beam burning so passing ships survive the dark.
 
 Until tonight.
@@ -58,10 +53,10 @@ You bolt to the radio desk, flicking the transmitter frantically: "Mayday, Mayda
 Static hisses. Then a calm voice answers through the speaker:
 <short pause>
 
-### Turn 02 — [Radio Entity - Orus] (Speaker 2)
+[Turn 02 - Radio Entity (Orus) / Speaker 2]
 <whisper>Extinguish the light. It sees you.</whisper>
 
-### Turn 03 — [Narrator - Fenrir] (Speaker 1)
+[Turn 03 - Narrator (Fenrir) / Speaker 1]
 You turn slowly toward the seaward window. Out among the cresting waves stands a dark silhouette, perfectly motionless on the churning water. You blink, and it vanishes.
 
 Suddenly, the main lighthouse beam dies. Pitch black.
@@ -73,17 +68,17 @@ Panic takes over. You run for the exit, tearing the door open. But the gale has 
 A voice whispers from the white mist:
 <short pause>
 
-### Turn 04 — [Mist Entity - Orus] (Speaker 2)
+[Turn 04 - Mist Entity (Orus) / Speaker 2]
 <whisper>What took you so long?</whisper>
 
-### Turn 05 — [Narrator - Fenrir] (Speaker 1)
+[Turn 05 - Narrator (Fenrir) / Speaker 1]
 Before you can move, cold breath hits the side of your neck:
 <short pause>
 
-### Turn 06 — [Mist Entity - Orus] (Speaker 2)
+[Turn 06 - Mist Entity (Orus) / Speaker 2]
 <whisper>You were never alone.</whisper>
 
-### Turn 07 — [Narrator - Fenrir] (Speaker 1)
+[Turn 07 - Narrator (Fenrir) / Speaker 1]
 Every bulb in the tower shatters. In the blackness, heavy glass crashes on the top floor.
 
 You strike a match, relight your lantern, and mount the spiral stairs. With every step you take, a second set of footsteps follows directly behind you.
@@ -97,10 +92,10 @@ From inside the gloom, a voice speaks. Smooth. Calm.
 It is your own voice:
 <short pause>
 
-### Turn 08 — [The Doppelgänger - Orus] (Speaker 2)
+[Turn 08 - The Doppelgänger (Orus) / Speaker 2]
 <whisper>Come inside.</whisper>
 
-### Turn 09 — [Narrator - Fenrir] (Speaker 1)
+[Turn 09 - Narrator (Fenrir) / Speaker 1]
 You are frozen in the hallway, listening to your own mouth speak from the dark.
 
 Your lantern flame abruptly snuffs out. A sharp gasp cuts the silence, then a scream that rattles the iron frame of the tower.
@@ -128,5 +123,15 @@ The radio clicks on by itself.
 And your own voice whispers:
 <short pause>
 
-### Turn 10 — [Final Radio Voice - Orus] (Speaker 2)
+[Turn 10 - Final Radio Voice (Orus) / Speaker 2]
 <whisper>It's your turn to keep the light burning.</whisper>
+
+[DOWNSTREAM WORKFLOW]
+1. Open Google AI Studio Speech Playground (https://aistudio.google.com/generate-speech).
+2. Paste the text under [SYSTEM INSTRUCTIONS] into System Instructions / Style Instructions.
+3. Configure Voice Presets for Speaker 1 and Speaker 2 per [VOICE CAST & PRESETS].
+4. Copy-paste the alternating turns from [AUDIO SCRIPT] into the conversation inputs.
+5. Generate and download the unified master audio file.
+6. Drop the audio file into TurboScribe (https://turboscribe.ai/dashboard) or AudioToSRT (https://audiotosrt.com/) to export production/audio.srt.
+7. Run /opp-produce to slice and verify video clips against audio timestamps.
+

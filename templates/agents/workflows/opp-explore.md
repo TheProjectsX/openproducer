@@ -23,7 +23,7 @@ Execute the OpenProducer Explore workflow (100% Read-Only Session Planning Mode)
      2. **Format / Archetype & Visual Style:** Suggest 2–3 matching styles from `agents/skills/openproducer-core/styles/` (put `(Recommended)` on the best match; the UI automatically adds an `Other` option for custom).
      3. **Audio Settings:** `Separate Audio (External Voiceover / Narration / Song)` vs. `Embedded Audio (Native Veo speech)`.
    - **Step B (The Separate Audio Follow-Up via `ask_question`):** Once Step A is answered, if **Separate Audio** was chosen, call `ask_question` to ask:
-     - `(Recommended) Give Audio Script First (generate audio_script.md first, wait for timestamps/transcripts, then create clips)` vs. `Generate Everything Together (create audio_script.md and all clips at once)`.
+     - `(Recommended) Give Audio Script First (generate audio_script.txt first, wait for timestamps/transcripts, then create clips)` vs. `Generate Everything Together (create audio_script.txt and all clips at once)`.
    - **Step C (Story Structuring & Clarification Loop):** After the questions are answered, summarize what is locked in session memory and ask if the creator has any more clarifications or wants to structure/refine the story together.
 5. **Mandatory Read-Only Footer Notice (Every Message):**
    - At the end of **every** message in `explore`, notify the creator that **this is a read-only conversation in session memory until proposed (if the session is lost, this discussion is gone)**, and prompt them to run **`/opp-propose`** (or `/openproducer-propose`) to save and draft the plan into the project brain.

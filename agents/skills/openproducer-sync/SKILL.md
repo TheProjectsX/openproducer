@@ -32,7 +32,7 @@ Synchronize any new changes (plot updates, character/environment tweaks, orienta
   1. **Update Brain (`./openproducer/`):** Update `config.json`, `blueprint.md`, `visual/technical_anchor.txt`, and `state.json`.
   2. **Update Affected Creator Files in `./production/`:**
      - `production/base_image_prompt.txt` (if style or primary subject/setting changed).
-     - `production/audio_script.md` (if separate audio script changed).
+     - `production/audio_script.txt` (if separate audio script changed).
      - `production/subjects/<id>/[hero_prompt.txt, profile_prompt.txt]` and `production/visuals/environments/<id>/prompt.txt` (if Modular Studio assets changed).
      - `production/clips/clip_xxx/[image_prompt.txt, video_prompt.txt]` (if shots, dialogue, or timestamps changed, maintaining `Conditioned On:` / `Input Seed:` connection lines).
      - `production/scratchbook.md`, `production/master_images_prompt.txt`, and `production/master_videos_prompt.txt`.
@@ -51,7 +51,7 @@ When `propose_complete == true`, conclude execution with this exact Status Card:
 
 #### 🔄 Synchronized Files:
 - `./openproducer/` (`config.json`, `blueprint.md`, `state.json`) — ✅ Brain Synchronized
-- `<If Post-Produce: List updated creator files in production/, e.g. production/base_image_prompt.txt, production/audio_script.md, production/clips/, production/master_images_prompt.txt, production/master_videos_prompt.txt>`
+- `<If Post-Produce: List updated creator files in production/, e.g. production/base_image_prompt.txt, production/audio_script.txt, production/clips/, production/master_images_prompt.txt, production/master_videos_prompt.txt>`
 
 #### 🚀 Next Step in Workflow:
 👉 `<If Pre-Produce: "Brain is up to date! Run /opp-produce when ready to generate creator files." | If Post-Produce: "Brain and creator files are 100% in sync! Run /opp-guide to continue production.">`

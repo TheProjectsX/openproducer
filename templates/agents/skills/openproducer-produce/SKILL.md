@@ -26,7 +26,7 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
 
 ### 2. Branch A: Separate Audio — Script First (`separate_script_first`)
 - **Pass 1 (When timestamps/transcripts have NOT been provided yet):**
-  1. Generate `production/audio_script.md` following the **Google AI Studio Alternating-Turn & TTS Anti-Hallucination Standard** (`07_scaffolding_and_workspace_spec.md` Section 4.2):
+  1. Generate `production/audio_script.txt` following the **Google AI Studio Alternating-Turn & TTS Anti-Hallucination Standard** (`07_scaffolding_and_workspace_spec.md` Section 4.2):
      - **Structure Fork Based on Secondary Voices:**
        * **Case 1 — When Secondary Voice Exists (Google AI Studio 2-Speaker Alternating Format):**
          - Google AI Studio Speech Playground strictly enforces a 2-speaker alternating turn layout (`Speaker 1` -> `Speaker 2` -> `Speaker 1`).
@@ -47,7 +47,7 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
   3. If `modular_studio`: generate `production/subjects/<subject_id>/[hero_prompt.txt, profile_prompt.txt]` and `production/visuals/environments/<env_id>/prompt.txt` with `Conditioned On:` lines.
   4. Generate `production/scratchbook.md` (initial script breakdown & estimated pacing table).
   5. Update `./openproducer/state.json`: set `"current_stage": "produced_awaiting_timestamps"`, `"stages.produce_complete": true`, `"stages.clips_generated": false`.
-  6. Inform the creator that `production/audio_script.md` and base prompts are ready, and ask them to provide their recorded audio timestamps/transcripts to generate the clips (or run **`/opp-guide`** for step-by-step guidance).
+  6. Inform the creator that `production/audio_script.txt` and base prompts are ready, and ask them to provide their recorded audio timestamps/transcripts to generate the clips (or run **`/opp-guide`** for step-by-step guidance).
 - **Pass 2 (Once Creator Provides Timestamps/Transcripts):**
   1. **Context-Driven Cinematography with Audio Timeline Tiling:**
      - **Clips Are Context-Driven, NOT Transcript-Slices:** Design clips based on **plot context, visual storytelling, and cinematic coverage** (establishing shots, medium shots, close-ups, macro cutaways, character reactions). Do NOT mechanically map 1 script line to 1 clip!
@@ -64,7 +64,7 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
 ### 3. Branch B: Embedded Audio OR Separate Audio — All Together (`embedded` or `separate_all_at_once`)
 - Generate the complete creator file structure in `./production/` in one pass:
   1. `production/base_image_prompt.txt` (Master Base Style lock prompt).
-  2. `production/audio_script.md` (if `separate_all_at_once`: formatted in default Multi-Speaker Segmented structure with 100–160 words sweet spot per segment and isolated secondary character lines; never divided by video clips).
+  2. `production/audio_script.txt` (if `separate_all_at_once`: formatted in default Multi-Speaker Segmented structure with 100–160 words sweet spot per segment and isolated secondary character lines; never divided by video clips).
   3. If `modular_studio`:
      - `production/subjects/<subject_id>/hero_prompt.txt` & `profile_prompt.txt` (with `Conditioned On:` lines).
      - `production/visuals/environments/<environment_id>/prompt.txt` (with `Conditioned On:` line).
@@ -86,13 +86,13 @@ Always conclude execution with this exact Status Card:
 
 #### 📦 Creator Deliverables Generated in `./production/`:
 - `production/base_image_prompt.txt` — ✅ Created (Master Base Style Lock Prompt)
-- `<If Separate Audio: production/audio_script.md — ✅ Created (Continuous Voice/Audio Script)>`
+- `<If Separate Audio: production/audio_script.txt — ✅ Created (Continuous Voice/Audio Script)>`
 - `<If Modular Studio: production/subjects/ & production/visuals/environments/ (.txt) — ✅ Created with Conditioned On links>`
 - `<production/clips/clip_01..XX/ — ✅ Created (image_prompt.txt + video_prompt.txt) OR ⏳ Awaiting Audio Timestamps>`
 - `<production/master_images_prompt.txt & production/master_videos_prompt.txt — ✅ Created (Creator Self-Serve References)>`
 - `production/scratchbook.md` — ✅ Created (Timeline Pacing & Retake Ledger)
 
 #### 🚀 Next Step in Workflow:
-👉 `<If awaiting timestamps: "Use production/audio_script.md to create your audio and share the timestamps here, or run /opp-guide!" | If complete: "Run /opp-guide for step-by-step interactive guidance, or use the files directly!">`
+👉 `<If awaiting timestamps: "Use production/audio_script.txt to create your audio and share the timestamps here, or run /opp-guide!" | If complete: "Run /opp-guide for step-by-step interactive guidance, or use the files directly!">`
 ---
 ```

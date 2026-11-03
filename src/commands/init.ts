@@ -144,10 +144,15 @@ export async function initCommand(directory?: string, cmdOptions: Partial<InitOp
 
     logger.success(`OpenProducer project successfully initialized!`);
 
-    const sourceLabel =
-      result.templateSource.sourceType === 'local-bundled'
-        ? 'Bundled Local Package'
-        : `Live GitHub Upstream (${result.templateSource.sourceLocation})`;
+    let sourceLabel = 'Live Upstream Registry (Synchronized)';
+    if (result.templateSource.sourceType === 'local-bundled') {
+      sourceLabel = 'Bundled Local Package';
+    } else if (result.templateSource.sourceType === 'cached-upstream') {
+      const dateStr = result.templateSource.cachedAt
+        ? ` (${new Date(result.templateSource.cachedAt).toLocaleDateString()})`
+        : '';
+      sourceLabel = `Persistent Workstation Cache${dateStr}`;
+    }
 
     const formatField = (val: string) => val || '(Pending /opp:explore intake)';
 

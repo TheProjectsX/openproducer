@@ -127,23 +127,40 @@ export interface SeriesTemplate {
   template_id: string;
   name: string;
   archetype: ProjectArchetype | string;
+  tier?: OperatingTier | string;
   aspect_ratio: AspectRatio | string;
+  resolution?: string;
   audio_pathway: AudioPathway | string;
+  audio_delivery_mode?: AudioDeliveryMode | string;
   visual_dna: {
+    style_id?: string;
     master_style_anchor: string;
     negative_prompt: string;
   };
   subject_dna?: {
-    name: string;
-    biometrics: string;
+    name?: string;
+    biometrics?: string;
+    wardrobe?: string;
+    expression_profile?: string;
   };
   environment_dna?: {
-    setting: string;
+    setting?: string;
+    spatial_description?: string;
+    lighting_rig?: string;
+    acoustics?: string;
   };
   pacing_profile?: {
-    default_clip_duration: number;
-    words_per_second: number;
-    onset: string;
+    default_clip_duration?: number;
+    speech_pacing?: number;
+    vocal_attack?: string;
+    voice_preset?: string;
   };
+  motion_graphics?: {
+    font_family?: string;
+    primary_color?: string;
+    accent_color?: string;
+    style?: string;
+  };
+  raw_content?: string;
 }
 

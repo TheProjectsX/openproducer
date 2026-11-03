@@ -32,10 +32,13 @@ OpenProducer immediately conducts the intake, crafts your story, and generates p
 
 ## 🚀 Features
 
-- **Live GitHub Upstream Sync (Zero Repackaging Friction):**
-  - `npx openproducer init` dynamically fetches the freshest agent skills (`agents/skills/`), workflows (`agents/workflows/`), and templates directly from your GitHub repository `main` branch.
-  - Push changes to GitHub $\rightarrow$ Every creator running `npx openproducer init` gets the latest updates immediately without needing an npm release!
-  - Includes offline fallback to bundled templates if disconnected from the network.
+- **Live Cloud Registry Sync & 3-Tier Auto-Fallback Caching:**
+  - `npx openproducer init` and `npx openproducer update` dynamically fetch the freshest agent skills (`.agents/skills/`), workflows (`.agents/workflows/`), and templates directly from the upstream cloud registry.
+  - **Workstation Cache on Every Fetch:** Every successful online fetch automatically updates the persistent workstation cache (`~/.openproducer/cache/upstream/`).
+  - **Tiered Auto-Fallback:**
+    1. **Live Upstream:** Fetches latest templates & skills online.
+    2. **Persistent Workstation Cache:** If offline or connection fails, automatically falls back to the last-fetched workstation cache.
+    3. **Bundled Local Package:** If no persistent cache exists, seamlessly falls back to pre-packaged bundled templates.
 - **Brain vs. Shoot Floor Separation:**
   - `openproducer/` (Internal Producer Brain): Maintains project configurations, state machines, linter audit ledgers, and `blueprint.md` for 100% context-lossless session handoffs.
   - `production/` (Shoot Floor): Houses creator-facing clean plain-text `.txt` prompts (`base_image_prompt.txt`, `clips/clip_01/`), audio scripts, timeline tables, and motion graphics.
@@ -104,6 +107,30 @@ npx openproducer init my-doc \
 | `-y, --yes` | Default mode | Instant clean setup from fetch (default: true) |
 | `-f, --force` | Overwrite | Overwrites existing files if directory is not empty |
 
+### `update [directory]` (alias: `upgrade`)
+
+Updates an initialized or actively in-progress production project to the latest OpenProducer framework standards without overwriting or destroying creator work.
+
+```bash
+# Update current project
+npx openproducer update
+
+# Or update a specific project directory
+npx openproducer update ./my-video
+
+# Force refresh of all framework files
+npx openproducer update --force
+```
+
+#### What `update` Does:
+- **Refreshes AI Skills & Workflows:** Pulls the latest `.agents/skills` and `.agents/workflows` from the upstream registry so your AI assistant has access to the newest prompts, linters, and operational modes.
+- **Synchronizes Specifications:** Updates root `STRUCTURE.md` and `AGENTS.md` to the current standards.
+- **Non-Destructive Schema Migration:** Safely updates `openproducer/config.json`, `openproducer/state.json`, and adds any missing linter rules to `manifest.json`.
+- **In-Progress Asset Migration:** Seamlessly upgrades existing projects:
+  - Migrates legacy `audio_script.md` to bracket-tagged `audio_script.txt`.
+  - Relocates any legacy root creator files into the dedicated `production/` shoot floor.
+- **100% Protected Creative Assets:** Never overwrites `openproducer/blueprint.md`, brainstormed plots, generated video clip prompts, or creator media.
+
 ---
 
 ### `status`
@@ -141,6 +168,9 @@ npx openproducer template save stickman-series
 
 # Apply template to current workspace
 npx openproducer template use stickman-series
+
+# Update existing template schema based on current workspace changes
+npx openproducer template update stickman-series "Update the design schema based on our current changes"
 ```
 
 ---

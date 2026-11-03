@@ -268,4 +268,4 @@ And your own voice whispers:
 * **[Turn 3 — Propose Executed]:** Entire project plan, verbatim raw plot archive, character/environment DNA, and master script archived strictly inside `./openproducer/`. Stage locked as `proposed`.
 * **[Turn 4 — Produce Pass 1]:** Generated initial base prompts and master audio script awaiting audio transcript.
 * **[Turn 5 — Produce Pass 2]:** Audio transcript received (314.82s). Tiled 35 contiguous clips (314.00s, $\Delta = -0.82\text{s}$). All linters verified.
-* **[Turn 6 — Google AI Studio Alternating Standard Alignment]:** Reloaded `/openproducer-produce` and rewritten `audio_script.md` to the 10-turn alternating `Speaker 1` ↔ `Speaker 2` format for 1-click single-file generation.
+* **[Turn 6 — Google AI Studio Alternating Standard Alignment]:** Reloaded `/openproducer-produce` and rewritten `audio_script.txt` to the 10-turn alternating `Speaker 1` ↔ `Speaker 2` format for 1-click single-file generation.

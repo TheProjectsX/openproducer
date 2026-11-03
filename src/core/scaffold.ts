@@ -58,7 +58,7 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
     }
   }
 
-  // Resolve template sources (GitHub live upstream single source of truth or local fallback)
+  // Resolve template sources (remote live upstream registry or local fallback)
   const templateSource = await resolveTemplateSources({
     offline: options.offline,
     token: options.token

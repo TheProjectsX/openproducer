@@ -9,6 +9,7 @@ export * from './core/templates';
 
 // Command handlers
 export { initCommand } from './commands/init';
+export { updateCommand } from './commands/update';
 export { doctorCommand } from './commands/doctor';
 export { statusCommand } from './commands/status';
 export { templateCommand } from './commands/template';

@@ -160,12 +160,12 @@ export const AUDIO_DELIVERY_MODES: Array<{
   {
     value: 'separate_script_first',
     title: 'Script First (Recommended for External Audio)',
-    description: 'Creates production/audio_script.md first, locks dialogue and timing before clips'
+    description: 'Creates production/audio_script.txt first, locks dialogue and timing before clips'
   },
   {
     value: 'separate_all_at_once',
     title: 'All Together',
-    description: 'Generates audio_script.md and all clip prompts in a single coordinated pass'
+    description: 'Generates audio_script.txt and all clip prompts in a single coordinated pass'
   },
   {
     value: 'embedded',

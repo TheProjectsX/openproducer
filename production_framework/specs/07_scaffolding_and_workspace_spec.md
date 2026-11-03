@@ -50,7 +50,7 @@ graph TD
 │
 └── production/                    # 🎬 CREATOR PRODUCTION DELIVERABLES
     ├── base_image_prompt.txt          # 🎨 CREATOR FILE: Master Base Style & Subject/Setting lock prompt
-    ├── audio_script.md                # 🎙️ CREATOR FILE: (If Separate Audio) Clean script to generate/record voice/audio
+    ├── audio_script.txt               # 🎙️ CREATOR FILE: (If Separate Audio) Plain-text bracket-tagged script to generate/record voice/audio
     │
     ├── clips/                         # 🎬 CREATOR FOLDER: Shot-by-shot plain-text prompts
     │   ├── clip_01/
@@ -84,7 +84,7 @@ graph TD
 │
 └── production/                    # 🎬 CREATOR PRODUCTION DELIVERABLES
     ├── base_image_prompt.txt          # 🎨 CREATOR FILE: Master Base Style lock prompt (anchors all subjects & environments)
-    ├── audio_script.md                # 🎙️ CREATOR FILE: (If Separate Audio) Clean script to generate/record voice/audio
+    ├── audio_script.txt               # 🎙️ CREATOR FILE: (If Separate Audio) Plain-text bracket-tagged script to generate/record voice/audio
     │
     ├── subjects/                      # 👥 CREATOR FOLDER: Character & Subject Base Prompts
     │   ├── <subject_id_or_name>/
@@ -218,11 +218,11 @@ Starting directly from the initial image, <Tokens 1-30: Viewport framing & subje
 
 ---
 
-### 4.2 `audio_script.md` Structure Contract (Google AI Studio TTS & Anti-Dead-Air Standard)
+### 4.2 `audio_script.txt` Structure Contract (Plain-Text Bracketed Meta Tags & Google AI Studio Standard)
 
-1. **NEVER Divide `audio_script.md` by Clips (`clip_01`, `clip_02`, etc.):**
+1. **NEVER Divide `audio_script.txt` by Clips (`clip_01`, `clip_02`, etc.):**
    * The audio script is generated for continuous voice synthesis in **[Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)**.
-   * Write it as **one continuous master script** (or if the script is very long, e.g., >120 words, divide it into 2–3 large macro **Parts / Chunks** like `### Part 1`, `### Part 2`—**NEVER slice it into 4s/6s/8s clip segments**).
+   * Write it as **one continuous master script** (or if the script is very long, e.g., >120 words, divide it into 2–3 large macro parts like `[PART 1]`, `[PART 2]`, or alternating speaker turns like `[Turn 01 - Narrator (Speaker 1)]`—**NEVER slice it into 4s/6s/8s clip segments**).
 2. **The Context-Driven Emotion & Anti-Dead-Air Law (Discussion 47 & 49 — NO TAG SPAMMING):**
    * **Why Tag Spamming Kills Retention:** Putting `<short pause>` after every sentence or paragraph creates robotic dead air that destroys narrative momentum and causes viewers to scroll away immediately.
    * **90% Natural Punctuation Flow:** Standard commas (`,`), periods (`.`), em-dashes (`—`), and paragraph breaks already produce natural 0.3s–0.5s breathing cadences in Google AI Studio TTS. **90%+ of sentences must have ZERO tags.**
@@ -230,37 +230,30 @@ Starting directly from the initial image, <Tokens 1-30: Viewport framing & subje
      - **`<short pause>` (Max 1–3 per ~100 words):** Use ONLY immediately before a major narrative twist, a sudden freeze in terror, or the final climactic reveal—**NEVER between ordinary narrative sentences**.
      - **`<whisper>...</whisper>`:** Use ONLY when a character/entity actually whispers in the story or on a chilling final payoff phrase.
      - **Other Contextual Tags (`<sigh>`, `<gasp>`, `<panting>`):** Use ONLY when the narrative explicitly calls for that physical vocal reaction.
-   * **Clean Formatting Rules:**
+   * **Clean Formatting & Meta Tag Rules:**
+     - Structure the file using plain-text custom meta tags (`[AUDIO CONFIGURATION]`, `[VOICE CAST & PRESETS]`, `[SYSTEM INSTRUCTIONS]`, `[AUDIO SCRIPT]`, `[DOWNSTREAM WORKFLOW]`).
      - When you do use `<short pause>`, place `<short pause>` on its own clean line (never write a standalone dot `.` on a line, and never attach `<short pause>` to the end of a sentence line).
-     - **Zero Square Brackets (`[...]`):** Never use square brackets in the script text (Gemini TTS reads `[pause]` aloud as literal words).
+     - **Zero Square Brackets (`[...]`) Inside Spoken Narration:** Never use square brackets inside the spoken narration text itself (Gemini TTS reads `[pause]` aloud as literal words). Square brackets are reserved exclusively for structural section tags (`[AUDIO SCRIPT]`, `[Turn 01 - ...]`).
 
-#### Exact Proven Template for `audio_script.md` (Modeled on `the_breath_at_2am` & `the_314am_doppelganger`):
-```markdown
-# 🎙️ AUDIO & NARRATION SCRIPT: <Project Name>
-*Optimized for [Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)*
-
-## 1. Google AI Studio Configuration & System Instructions
-- **Tool Link:** https://aistudio.google.com/generate-speech
-- **Recommended Voice Preset:** `<e.g., Charon / Puck / Fenrir / Kore / Aoede>`
-- **Pacing & Tone:** `<e.g., Intimate, relentless forward momentum (~2.2–2.3 words/sec, zero dead air)>`
-- **Paste the following into "System Instructions" / "Style Instructions":**
-
+#### Standard Plain-Text Template for Single-Speaker `audio_script.txt`:
 ```text
-You are <persona description, e.g. a chilling, intimate narrator telling a psychological horror story>. Speak with <tone, pitch, and pacing>.
+[AUDIO CONFIGURATION]
+Platform: Google AI Studio Speech Playground (https://aistudio.google.com/generate-speech)
+Delivery Mode: separate_script_first (Continuous Voice Track)
+Recommended Voice: Charon (or Puck / Fenrir / Kore / Aoede)
+Pacing & Tone: Intimate, relentless forward momentum (~2.2-2.3 words/sec, zero dead air)
+Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/dashboard) or AudioToSRT (https://audiotosrt.com/) -> production/audio.srt
+
+[SYSTEM INSTRUCTIONS]
+You are a chilling, intimate narrator telling a psychological horror story. Speak with tense, forward-moving cadence.
 Anti-Dead-Air Rule: Maintain relentless forward narrative momentum. Do not leave awkward dead silences between sentences; let natural commas and periods carry the suspense smoothly.
 Tag Syntax Rules:
 - Strictly execute inline angle-bracket performance tags: <short pause>, <whisper>...</whisper>.
 - When encountering <whisper>...</whisper>, drop your volume into a dry, breathless whisper.
 - Observe <short pause> as a genuine, tense silent beat.
-- Never speak tag names or punctuation aloud under any circumstance.
-```
+- Never speak tag names, punctuation, or bracketed labels aloud under any circumstance.
 
----
-
-## 2. Continuous Master Script (Copy-Paste into Google AI Studio)
-*(Note: If the script is very long, split into macro `### Part 1`, `### Part 2` chunks — NEVER split into individual video clips, and NEVER spam `<short pause>` between normal sentences).*
-
-```text
+[AUDIO SCRIPT]
 You are sitting in the dark of your living room at 2:00 AM, the only illumination coming from the muted blue glow of your television screen.
 
 You live alone. The apartment is dead quiet.
@@ -277,14 +270,61 @@ the air around you turns ice cold.
 <short pause>
 Then, two inches above your crown, you feel the hair on your scalp stir...
 <whisper>as something... exhales.</whisper>
+
+[DOWNSTREAM WORKFLOW]
+1. Open Google AI Studio Speech Playground (https://aistudio.google.com/generate-speech).
+2. Paste [SYSTEM INSTRUCTIONS] into System Instructions / Style Instructions.
+3. Paste [AUDIO SCRIPT] text into the prompt.
+4. Generate the audio file (.mp3 / .wav).
+5. Generate the timestamped transcript / SRT using TurboScribe or AudioToSRT and save as production/audio.srt.
+6. Run /opp-produce to slice and match video clips to your exact audio timestamps.
 ```
 
----
+#### Standard Plain-Text Template for Multi-Speaker Alternating-Turn `audio_script.txt` (The Lighthouse v2 Standard):
+```text
+[AUDIO CONFIGURATION]
+Platform: Google AI Studio Speech Playground (https://aistudio.google.com/generate-speech)
+Delivery Mode: separate_script_first (Alternating-Turn Multi-Speaker Standard)
+Workflow Pipeline: Google AI Studio Speech -> TurboScribe (https://turboscribe.ai/dashboard) or AudioToSRT (https://audiotosrt.com/) -> production/audio.srt
 
-## 3. Next Steps (After Generating Audio)
-1. Generate the audio in **[Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)**.
-2. Generate the timestamped transcript / SRT using **[TurboScribe](https://turboscribe.ai/dashboard)** or **[AudioToSRT](https://audiotosrt.com/)**.
-3. Share the transcript/timestamps here (or in `/opp-guide`) so OpenProducer can slice the video clips to match your exact audio timing!
+[VOICE CAST & PRESETS]
+Speaker 1 (Narrator): Fenrir (or Orus) | Position: Speaker 1 | Style: Weathered, isolated baritone with gravel; tense, deliberate pacing.
+Speaker 2 (The Entity / Doppelgänger): Orus (or Kore / Puck) | Position: Speaker 2 | Style: Unnaturally calm, deadpan, chilling whisper; devoid of human panic.
+
+[SYSTEM INSTRUCTIONS]
+[Speaker 1 / Narrator / Fenrir]:
+You are a weathered, isolated Atlantic lighthouse keeper recounting a harrowing supernatural encounter. Speak in a grounded, tense cadence with gravel in your voice. Maintain natural human speech flow without artificial pauses.
+
+[Speaker 2 / The Entity / Orus]:
+You are an unearthly presence speaking through radios, mist, and reflections. Speak with unnatural, eerie calm, hushed whispers, and chilling stillness. Devoid of human urgency.
+
+[Anti-Dead-Air & Syntax Rules]:
+- Strictly execute inline performance tags: <short pause>, <whisper>...</whisper>.
+- Maintain continuous speech momentum. 90%+ sentences flow naturally without pause tags.
+- Never speak tag names, punctuation, or bracketed labels aloud.
+
+[AUDIO SCRIPT]
+[Turn 01 - Narrator (Fenrir) / Speaker 1]
+You have been alone on this barren rock in the Atlantic Ocean for an entire month. No visitors. No escape from the endless crash of the surf. You are the sole lighthouse keeper, bound to a single duty: keep the beam burning so passing ships survive the dark.
+
+Until tonight.
+
+A violent gale hammers the stone tower. You finish trimming the lamp wick and start down the spiral iron staircase.
+...
+<short pause>
+
+[Turn 02 - Radio Entity (Orus) / Speaker 2]
+<whisper>Extinguish the light. It sees you.</whisper>
+
+[Turn 03 - Narrator (Fenrir) / Speaker 1]
+You turn slowly toward the seaward window. Out among the cresting waves stands a dark silhouette, perfectly motionless on the churning water.
+
+[DOWNSTREAM WORKFLOW]
+1. Open Google AI Studio Speech Playground (https://aistudio.google.com/generate-speech).
+2. Paste [SYSTEM INSTRUCTIONS] into Style Instructions.
+3. Configure Voice Presets for Speaker 1 and Speaker 2.
+4. Copy-paste alternating turns into the conversation fields.
+5. Download unified audio file and transcribe into production/audio.srt via TurboScribe or AudioToSRT.
 ```
 
 ---

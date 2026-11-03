@@ -5,6 +5,7 @@ import { doctorCommand } from './commands/doctor';
 import { initCommand } from './commands/init';
 import { statusCommand } from './commands/status';
 import { templateCommand } from './commands/template';
+import { updateCommand } from './commands/update';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const pkg = require('../package.json');
@@ -28,14 +29,26 @@ program
   .option('--audio <pathway>', 'Audio pathway (pathway_a_native_veo | pathway_b_external_audio)')
   .option('--delivery <mode>', 'Audio delivery mode (separate_script_first | separate_all_at_once | embedded)')
   .option('--template <id>', 'Load a saved series franchise template')
-  .option('--offline', 'Force offline mode: skip GitHub and use local bundled templates')
-  .option('--token <token>', 'GitHub API / access token for private repositories')
+  .option('--offline', 'Force offline mode: skip remote sync and use local bundled templates')
+  .option('--token <token>', 'Access token for private template registry authentication')
   .option('-y, --yes', 'Automatic mode: initialize with clean default templates (default: true)', true)
   .option('--no-yes', 'Disable automatic defaults and prompt for setup')
   .option('-i, --interactive', 'Interactively configure project parameters during initialization')
   .option('-f, --force', 'Force initialization even if directory is not empty')
   .action(async (directory, options) => {
     await initCommand(directory, options);
+  });
+
+// Command: update / upgrade
+program
+  .command('update [directory]')
+  .alias('upgrade')
+  .description('Update skills, workflows, specifications, and schema in an initialized project')
+  .option('--offline', 'Force offline mode: skip remote sync and use local bundled templates')
+  .option('--token <token>', 'Access token for private template registry authentication')
+  .option('-f, --force', 'Force refresh of all framework files')
+  .action(async (directory, options) => {
+    await updateCommand(directory, options);
   });
 
 // Command: doctor / lint
@@ -55,12 +68,13 @@ program
     await statusCommand();
   });
 
-// Command: template [action] [templateId]
+// Command: template [action] [templateId] [instruction...]
 program
-  .command('template [action] [templateId]')
-  .description('Manage global series franchise presets (list, save <id>, use <id>)')
-  .action(async (action, templateId) => {
-    await templateCommand(action || 'list', templateId);
+  .command('template [action] [templateId] [instruction...]')
+  .description('Manage global series franchise presets (list, save <id>, use <id>, update <id>)')
+  .action(async (action, templateId, instruction) => {
+    const fullInstruction = Array.isArray(instruction) ? instruction.join(' ') : instruction;
+    await templateCommand(action || 'list', templateId, fullInstruction);
   });
 
 // Default handler if no command provided

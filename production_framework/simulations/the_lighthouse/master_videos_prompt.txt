@@ -1,7 +1,7 @@
 # MASTER VIDEOS PROMPT: THE LONE LIGHTHOUSE KEEPER
 # Project: The Lone Lighthouse Keeper
 # Target Engine: Google Flow (Veo 3.1 & Imagen 4)
-# Audio Master: audio_script.md / SRT Timestamps
+# Audio Master: audio_script.txt / SRT Timestamps
 # Pacing Profile: Slow-Burn Spooky Dread (28 Flow-Native Clips | Total Runtime: 318s)
 # Visual Paradigm: Pluggable Style `vector_stick_figure` (Minimalist 2D Vector Graphic Noir)
 # Visual DNA: Minimalist 2D vector line-art animation. Limbs and torso are pure unbroken solid black vector strokes terminating in smooth rounded line-cap ends; strictly zero individual fingers, zero human hands, zero toes, zero knuckles. Head is solid opaque white (#FFFFFF) outlined in clean black contour (#0F172A). High-contrast noir aesthetic on warm cream paper canvas (#F8F6F0) and stark pitch-black shadows (#0A0B0E).

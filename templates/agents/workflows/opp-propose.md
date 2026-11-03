@@ -11,7 +11,7 @@ Execute the OpenProducer Propose workflow to archive the entire discussion, plot
    - Reference `agents/skills/openproducer-core/specs/05_directors_cut_assembly_spec.md` for temporal quantum pacing (4s/6s/8s @ 2.2 wps).
    - Reference `agents/skills/openproducer-core/styles/` for the selected Master Style Anchor string.
 3. **Write Exclusively to the Project Brain (`./openproducer/`) — Zero Creator Files:**
-   - **DO NOT** create any creator-facing files at the project root (`base_image_prompt.txt`, `audio_script.md`, `scratchbook.md`, `clips/`, `subjects/`, `visuals/environments/`).
+   - **DO NOT** create any creator-facing files at the project root (`base_image_prompt.txt`, `audio_script.txt`, `scratchbook.md`, `clips/`, `subjects/`, `visuals/environments/`).
    - Write/update `./openproducer/config.json`: save `project_name`, `archetype`, `tier` (`lean_base_reference` or `modular_studio`), `visual_style`, `aspect_ratio`, `audio_pathway`, and `audio_delivery_mode` (`embedded`, `separate_script_first`, or `separate_all_at_once`).
    - Write/update `./openproducer/visual/technical_anchor.txt`: save the locked Master Style Anchor string.
    - Write/update `./openproducer/blueprint.md`:

@@ -754,3 +754,48 @@ To prevent token bloat while retaining 100% information control:
 - **Dynamic GitHub Upstream Sync (`src/core/fetcher.ts`):** `npx openproducer init` fetches fresh skills and templates directly from `github:TheProjectsX/openproducer#main` upon execution. Pushing to GitHub immediately propagates new prompts, skills, and workflows to all creators with zero npm publish overhead, with seamless fallback to offline bundled templates.
 - **Publish-Ready NPM Configuration:** Configured `package.json` with binaries (`openproducer`, `opp`), build lifecycle hooks (`prepare`, `prepublishOnly`), type definitions (`dist/index.d.ts`), MIT license, and whitelist packaging. Verified via `npm pack --dry-run` (147.1 kB tarball).
 - **Reference Deliverables:** [`src/`](./src/), [`package.json`](./package.json), [`tsconfig.json`](./tsconfig.json), [`README.md`](./README.md), and [Discussion 75](./discussions/_raw/75_openproducer_typescript_cli_and_npm_packaging.md).
+
+
+### 2026-11-03 — Plain-Text Production Prompts & Bracket-Tagged Audio Script (.txt) (Discussion 76)
+- **Universal Plain-Text Deliverables:** Standardized all production script and prompt files inside `production/` to `.txt` format (`audio_script.txt`, `base_image_prompt.txt`, `clips/clip_xxx/image_prompt.txt`, `clips/clip_xxx/video_prompt.txt`, `master_images_prompt.txt`, `master_videos_prompt.txt`).
+- **Bracketed Meta Tags (`[...]`):** Converted `audio_script` from Markdown (`#` titles, tables, backticks) to custom plain-text bracketed meta tags (`[AUDIO CONFIGURATION]`, `[VOICE CAST & PRESETS]`, `[SYSTEM INSTRUCTIONS]`, `[AUDIO SCRIPT]`, `[Turn 01 - ...]`, `[DOWNSTREAM WORKFLOW]`), harmonizing its syntax with image and video prompt files.
+- **Vocal Syntax Separation:** Enforced that square brackets `[...]` are used strictly for file structural blocks and turn markers outside dialogue lines, while vocal performance cues inside spoken text remain strictly angle-bracket tags (`<short pause>`, `<whisper>...</whisper>`) to prevent Gemini TTS from reading brackets aloud.
+- **CLI Upstream Source Concealment:** Masked and abstracted live template upstream repository URLs, account identities, and cache paths across the CLI (`openproducer init`, `fetcher.ts`). The CLI now reports neutral `Live Upstream Registry (Synchronized)` and generic status messages (`Connecting to remote registry...`), keeping internal source repositories completely invisible to end-users.
+- **Reference Deliverables:** [`discussions/_raw/76_plain_text_production_prompts_and_bracket_tagged_audio_script.md`](./discussions/_raw/76_plain_text_production_prompts_and_bracket_tagged_audio_script.md), [`production_framework/specs/07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md), and [`the_lighthouse_v2/production/audio_script.txt`](./production_framework/simulations/the_lighthouse_v2/production/audio_script.txt).
+
+
+### 2026-11-03 — Project Update Command & In-Progress Migration Engine (Discussion 77)
+- **`update` (Alias `upgrade`) Command Implemented:** Added `openproducer update [directory]` to upgrade existing projects and actively in-progress productions to the latest framework standards.
+- **100% Protected Creative Work:** Guarantees zero overwriting of creator plot files (`openproducer/blueprint.md`), project configurations, state machine stages, or rendered/drafted video clips in `production/`.
+- **Live Upstream Refresh & Migrations:** Fetches the freshest skills (`.agents/skills/`), workflows, and specs from the upstream cloud registry, updates root framework files (`STRUCTURE.md`, `AGENTS.md`), auto-migrates legacy `audio_script.md` to `audio_script.txt` (bracket meta tags), backfills missing linter manifest entries, and relocates any legacy root assets into `production/`.
+- **Reference Deliverables:** [`src/commands/update.ts`](./src/commands/update.ts), [`src/cli.ts`](./src/cli.ts), [`README.md`](./README.md), and [Discussion 77](./discussions/_raw/77_project_update_command_and_non_destructive_in_progress_migration.md).
+
+
+### 2026-11-03 — Persistent Workstation Caching & Three-Tier Auto-Fallback (Discussion 78)
+- **Persistent Workstation Cache (`~/.openproducer/cache/upstream/`):** Each successful online fetch automatically caches the latest `production_template` and `.agents/` assets on the creator's machine along with timestamp metadata.
+- **Three-Tier Auto-Fallback Pipeline:**
+  1. *Tier 1 (Live Upstream Registry):* Fetches latest skills & templates online.
+  2. *Tier 2 (Workstation Cache):* If disconnected or offline, automatically falls back to the most recent cached fetch.
+  3. *Tier 3 (Bundled Package):* If no cache exists, falls back to local pre-bundled templates.
+- **Reference Deliverables:** [`src/core/fetcher.ts`](./src/core/fetcher.ts), [`README.md`](./README.md), and [Discussion 78](./discussions/_raw/78_persistent_workstation_caching_and_three_tier_auto_fallback.md).
+
+
+### 2026-11-03 — Series Template Update Command & Schema Synchronization (Discussion 79)
+- **`update` Action Added to Template Manager:** Implemented `/opp-template update <template-name> [instructions]` (and `openproducer template update <id> [instruction]`).
+- **Workspace Schema Synchronization:** Pulls active changes from the current workspace (`openproducer/config.json`, `visual/technical_anchor.txt`, `production/motion_graphics.md`) and creator directives to update existing templates (`~/.openproducer/templates/<id>.md`) without affecting other preset properties.
+- **Strict Plot Exclusion Law (Preserved):** Guarantees episode plots, story outlines, and scene dialogue are strictly excluded from updated templates, preserving template reusability across franchise episodes.
+- **Reference Deliverables:** [`src/commands/template.ts`](./src/commands/template.ts), [`src/core/templates.ts`](./src/core/templates.ts), [`agents/skills/openproducer-template/SKILL.md`](./agents/skills/openproducer-template/SKILL.md), [`agents/workflows/opp-template.md`](./agents/workflows/opp-template.md), and [Discussion 79](./discussions/_raw/79_series_template_update_command_and_schema_synchronization.md).
+
+
+### 2026-11-03 — Dual-Scope Template Discovery & Auto-Promotion (Discussion 80)
+- **Problem Solved:** Templates saved inside project workspaces (`./openproducer/templates/stickfigure.md`) by sandboxed AI agents were invisible to other projects looking only in `~/.openproducer/templates/`.
+- **Automatic Global Promotion:** Upgraded `TemplateManager` to automatically detect templates in project scopes and sibling project folders, promoting them to the global workstation vault (`~/.openproducer/templates/`) during any template or init operation.
+- **Dual-Vault Persistence:** Template saves now write to both the local project vault and the global workstation vault, guaranteeing instant cross-project discovery while respecting agent workspace boundaries.
+- **Reference Deliverables:** [`src/core/templates.ts`](./src/core/templates.ts), [`src/commands/template.ts`](./src/commands/template.ts), [`agents/skills/openproducer-template/SKILL.md`](./agents/skills/openproducer-template/SKILL.md), and [Discussion 80](./discussions/_raw/80_dual_scope_template_discovery_and_auto_promotion.md).
+
+
+### 2026-11-03 — Local NPX Bundle & v1.1.0 Release
+- **Version Bumped to 1.1.0:** Updated `package.json` and `package-lock.json` to version `1.1.0`.
+- **Bundled Asset Synchronization:** Synchronized bundled templates in `templates/` via `scripts/copy-assets.js` (`production_template` and `agents` including new `update` command, plain-text `.txt` specifications, and dual-scope starter presets).
+- **Global NPX Linking:** Linked `openproducer` and `opp` binaries globally via `npm link` and packaged `openproducer-1.1.0.tgz` via `npm pack`, enabling seamless execution via `npx openproducer` across any directory.
+- **Reference Deliverables:** [`package.json`](./package.json), [`package-lock.json`](./package-lock.json), [`dist/`](./dist/), and [`templates/`](./templates/).

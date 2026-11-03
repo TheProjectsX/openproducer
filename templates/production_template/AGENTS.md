@@ -37,7 +37,7 @@ This document is the authoritative runtime directive file for any AI assistant o
 │
 └── production/                    # 🎬 Creator Production Deliverables
     ├── base_image_prompt.txt      # Master Base Style & Subject/Setting lock prompt
-    ├── audio_script.md            # (If Separate Audio) Clean script for creator to record/generate audio
+    ├── audio_script.txt            # (If Separate Audio) Clean script for creator to record/generate audio
     ├── clips/
     │   └── clip_xxx/
     │       ├── image_prompt.txt   # Clip starting frame prompt (Conditioned On: base_image_prompt.txt)
@@ -61,7 +61,7 @@ This document is the authoritative runtime directive file for any AI assistant o
 │
 └── production/                    # 🎬 Creator Production Deliverables
     ├── base_image_prompt.txt      # Master Base Style lock prompt (anchors all subjects & environments)
-    ├── audio_script.md            # (If Separate Audio) Clean script for creator to record/generate audio
+    ├── audio_script.txt            # (If Separate Audio) Clean script for creator to record/generate audio
     ├── subjects/
     │   └── <subject_id_or_name>/
     │       ├── hero_prompt.txt    # Step 1 Hero Shot (Conditioned On: base_image_prompt.txt)
@@ -114,7 +114,7 @@ flowchart TD
      - **Orientation / Aspect Ratio:** `16:9 (Widescreen)`, `9:16 (Vertical Reels/Shorts)`, or `1:1 (Square)`.
      - **Format & Visual Style:** Suggest 3–4 matching styles from `agents/skills/openproducer-core/styles/` (mark best match with `(Recommended)` first; the UI automatically adds `Other` for custom).
      - **Audio Settings:** `Separate Audio (External Voiceover / Narration / Song)` vs. `Embedded Audio (Native Veo speech)`.
-  4. **Turn 2 (Separate Audio Follow-Up via `ask_question`):** If Separate Audio was selected, invoke the interactive `ask_question` tool to ask whether the creator wants **`(Recommended) Give Audio Script First`** (generate `production/audio_script.md` first and wait for timestamps before creating clips) OR **`Generate Everything Together`** at once.
+  4. **Turn 2 (Separate Audio Follow-Up via `ask_question`):** If Separate Audio was selected, invoke the interactive `ask_question` tool to ask whether the creator wants **`(Recommended) Give Audio Script First`** (generate `production/audio_script.txt` first and wait for timestamps before creating clips) OR **`Generate Everything Together`** at once.
   5. **Turn 3+ (Story Structuring):** Confirm settings in session memory, then invite the creator to clarify, refine, and structure the story together.
 * **Mandatory Footer on Every `explore` Message:**
   Always append at the bottom of every response in `explore`:
@@ -139,7 +139,7 @@ flowchart TD
 
 ### Mode 4: `produce` (`/opp-produce` or `/openproducer-produce`) — Creator File Factory
 * **Auto-Propose Guard:** If the project is still in `explore` (`stages.propose_complete == false`), **run `propose` first** so the story and settings are saved in `./openproducer/`, then immediately run `produce`.
-* **`audio_script.md` Formatting Law (Google AI Studio Alternating-Turn Standard):**
+* **`audio_script.txt` Formatting Law (Google AI Studio Alternating-Turn Standard):**
   - **Case 1 (When Secondary Voice Exists):** Format for Google AI Studio's 2-speaker alternating UI (`Speaker 1` -> `Speaker 2` -> `Speaker 1`). Group all narration leading up to each character line into a single `[Narrator]` turn (Speaker 1), followed by the character line in `[Voice B]` (Speaker 2), followed by the next narrative block in `[Narrator]` (Speaker 1). This yields **ONE unified master audio file** that the creator can drop directly into TurboScribe for an unbroken, continuous SRT transcript!
   - **Case 2 (When NO Secondary Voice Exists):** Format for Single-Speaker mode using balanced **100–160 word segments** (max 180 words) breaking at natural scene shifts to prevent Gemini TTS from rushing or reading tags aloud (*"less than short pause greater than"*).
   - **Zero Clip Cuts in Script:** Segments/turns represent audio performance beats and speaker handoffs, NEVER video clip cuts (`clip_01`, `clip_02`).
@@ -147,7 +147,7 @@ flowchart TD
   - **Context-Driven Tags:** 90%+ flow with natural punctuation. Use `<short pause>` sparingly (1–3 per segment) on its own isolated line (`.\n<short pause>\n`); `<whisper>...</whisper>` only on actual whispered lines; zero square brackets `[...]`.
 * **File Generation from Brain (`./openproducer/config.json`) into `./production/`:**
   * **If `separate_script_first`:**
-    - **Pass 1 (Before Timestamps):** Creates `production/audio_script.md`, `production/base_image_prompt.txt`, `production/scratchbook.md`, and (if Modular Studio) `production/subjects/` & `production/visuals/environments/`. Waits for creator to give audio timestamps/transcripts.
+    - **Pass 1 (Before Timestamps):** Creates `production/audio_script.txt`, `production/base_image_prompt.txt`, `production/scratchbook.md`, and (if Modular Studio) `production/subjects/` & `production/visuals/environments/`. Waits for creator to give audio timestamps/transcripts.
     - **Pass 2 (After Timestamps Given):**
       - **Context-Driven Cinematography (NOT 1:1 Transcript Slices):** Design clips based on **plot context, visual storytelling, and cinematic coverage** (establishing shots, medium shots, close-ups, macro cutaways, character reactions). Do NOT mechanically map 1 script line to 1 clip!
       - **Contiguous Audio Timeline Tiling:** Sliced clips must tile the audio timeline contiguously from $00:00$ to $T_{\text{end}}$ ($\sum \text{Clip Durations} == \text{Total Master Audio Duration}$ within $\pm 1\text{s}$). Every clip starts exactly when the previous clip ends with zero gaps.
@@ -155,7 +155,7 @@ flowchart TD
       - **Scenery-Voice Context Matching:** Visual prompts depict scenery and actions matching what the voice describes at that exact timestamp window.
       - **Dialogue Cleansing in Separate Audio:** Set `Dialogue: None;` in all `video_prompt.txt` files to prevent Veo from generating speech over the master track.
       - Creates `production/clips/clip_xxx/[image_prompt.txt, video_prompt.txt]` (with `Conditioned On:` / `Input Seed:` lines), `production/master_images_prompt.txt`, and `production/master_videos_prompt.txt`.
-  * **If `embedded` or `separate_all_at_once`:** Creates all creator files in `./production/` in one pass (`base_image_prompt.txt`, `audio_script.md` if separate, `subjects/` & `visuals/environments/` if Modular Studio, `clips/clip_xxx/`, `master_images_prompt.txt`, `master_videos_prompt.txt`, `scratchbook.md`, `motion_graphics.md`).
+  * **If `embedded` or `separate_all_at_once`:** Creates all creator files in `./production/` in one pass (`base_image_prompt.txt`, `audio_script.txt` if separate, `subjects/` & `visuals/environments/` if Modular Studio, `clips/clip_xxx/`, `master_images_prompt.txt`, `master_videos_prompt.txt`, `scratchbook.md`, `motion_graphics.md`).
 
 ---
 
@@ -167,8 +167,8 @@ flowchart TD
   - 🎬 **Image & Video Generation:** [Google Flow](https://labs.google/fx/tools/flow)
 * **Audio-Aware Guided Pathways & Clip Support Choice:**
   1. **Audio Phase (If Separate Audio):**
-     - If `separate_script_first`: Ask creator to create the audio from `production/audio_script.md` first $\rightarrow$ take their transcript/timestamps to match and generate `production/clips/clip_xxx/`.
-     - If `separate_all_at_once`: Work on audio (`production/audio_script.md`) first without asking for a transcript (if at any point the creator asks to sync clips with a transcript, sync `clips/` immediately).
+     - If `separate_script_first`: Ask creator to create the audio from `production/audio_script.txt` first $\rightarrow$ take their transcript/timestamps to match and generate `production/clips/clip_xxx/`.
+     - If `separate_all_at_once`: Work on audio (`production/audio_script.txt`) first without asking for a transcript (if at any point the creator asks to sync clips with a transcript, sync `clips/` immediately).
   2. **Base Image & Modular Assets Phase:**
      - Guide creator to create `production/base_image_prompt.txt` first and **loop until satisfied** (saving changes) $\rightarrow$ if Modular Studio, guide through `production/subjects/` & `production/visuals/environments/`.
   3. **Clip Creation Mode Choice (Ask via `ask_question`):**
