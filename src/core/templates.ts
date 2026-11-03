@@ -135,6 +135,9 @@ audio_delivery_mode: ${template.audio_delivery_mode || 'separate_script_first'}
 
 function getStarterPresetsDirs(): string[] {
   return [
+    path.join(__dirname, '..', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'starter_presets'),
+    path.join(__dirname, '..', '..', 'src', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'starter_presets'),
+    path.join(__dirname, '..', '..', 'dist', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'starter_presets'),
     path.join(__dirname, '..', '..', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'starter_presets'),
     path.join(__dirname, '..', '..', 'agents', 'skills', 'openproducer-core', 'templates', 'starter_presets')
   ];

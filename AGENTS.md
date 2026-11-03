@@ -799,3 +799,10 @@ To prevent token bloat while retaining 100% information control:
 - **Bundled Asset Synchronization:** Synchronized bundled templates in `templates/` via `scripts/copy-assets.js` (`production_template` and `agents` including new `update` command, plain-text `.txt` specifications, and dual-scope starter presets).
 - **Global NPX Linking:** Linked `openproducer` and `opp` binaries globally via `npm link` and packaged `openproducer-1.1.0.tgz` via `npm pack`, enabling seamless execution via `npx openproducer` across any directory.
 - **Reference Deliverables:** [`package.json`](./package.json), [`package-lock.json`](./package-lock.json), [`dist/`](./dist/), and [`templates/`](./templates/).
+
+
+### 2026-11-03 — Version 1.1.1 Release & Relocated Bundled Templates
+- **Version 1.1.1 Released:** Updated version to `1.1.1` in `package.json` and `package-lock.json`.
+- **Root Cleanup:** Moved the pre-packaged offline asset bundle from the root (`templates/`) into [`src/templates/`](./src/templates/) and [`dist/templates/`](./dist/templates/).
+- **Build & Resolver Synchronization:** Updated [`scripts/copy-assets.js`](./scripts/copy-assets.js) to copy into `src/templates/` and `dist/templates/`, updated `resolveLocalBundledTemplatesDir()` in [`src/core/fetcher.ts`](./src/core/fetcher.ts) and preset discovery in [`src/core/templates.ts`](./src/core/templates.ts), and updated `files` whitelist in [`package.json`](./package.json).
+- **Result:** Keeps the repository root clean and uncluttered, packaged as `openproducer-1.1.1.tgz`.

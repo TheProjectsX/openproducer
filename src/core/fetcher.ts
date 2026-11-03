@@ -34,15 +34,21 @@ export interface TemplateSourceResult {
 export function resolveLocalBundledTemplatesDir(): string | null {
   let curr = __dirname;
   for (let i = 0; i < 5; i++) {
-    const candidate = path.join(curr, 'templates');
-    const marker = path.join(candidate, 'production_template', 'AGENTS.md');
-    try {
-      const fs = require('node:fs');
-      if (fs.existsSync(marker)) {
-        return candidate;
+    const candidates = [
+      path.join(curr, 'templates'),
+      path.join(curr, 'src', 'templates'),
+      path.join(curr, 'dist', 'templates')
+    ];
+    for (const candidate of candidates) {
+      const marker = path.join(candidate, 'production_template', 'AGENTS.md');
+      try {
+        const fs = require('node:fs');
+        if (fs.existsSync(marker)) {
+          return candidate;
+        }
+      } catch {
+        // continue search
       }
-    } catch {
-      // continue search
     }
     const parent = path.dirname(curr);
     if (parent === curr) break;

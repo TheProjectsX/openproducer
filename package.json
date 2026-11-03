@@ -1,6 +1,6 @@
 {
   "name": "openproducer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "OpenProducer CLI — The autonomous, creator-centric AI video generation production framework & scaffolding engine",
   "keywords": [
     "video-generation",
@@ -32,7 +32,7 @@
   },
   "files": [
     "dist",
-    "templates",
+    "src/templates",
     "README.md",
     "LICENSE"
   ],
