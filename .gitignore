@@ -3,4 +3,6 @@ node_modules/
 dist/
 *.tgz
 *.log
+sync-example.js
+scripts/sync-example.js
 .gitignore

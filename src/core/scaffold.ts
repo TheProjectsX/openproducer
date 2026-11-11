@@ -19,6 +19,7 @@ import {
   writeJson
 } from '../utils/fs';
 import { resolveTemplateSources, TemplateSourceResult } from './fetcher';
+import { TemplateManager } from './templates';
 
 export interface ScaffoldResult {
   projectDir: string;
@@ -38,14 +39,48 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
   const projectName = options.name || path.basename(targetDir) || 'my_video_project';
   
   // When --yes=true (default) and not explicitly passed, leave setup blank from fetched template
-  const tier = options.tier || '';
-  const archetype = options.archetype || '';
-  const aspectRatio = options.aspectRatio || '';
-  const visualStyle = options.style || '';
-  const audioPathway = options.audio || '';
-  const audioDeliveryMode = options.delivery || '';
+  let tier = options.tier || '';
+  let archetype = options.archetype || '';
+  let aspectRatio = options.aspectRatio || '';
+  let visualStyle = options.style || '';
+  let audioPathway = options.audio || '';
+  let audioDeliveryMode = options.delivery || '';
+  let customMasterAnchor = '';
+  let storyTemplateId: string | undefined;
 
   await ensureDir(targetDir);
+
+  // If --template <id> was passed during init, resolve Video and/or Story template presets
+  if (options.template) {
+    const tm = new TemplateManager(targetDir);
+    const videoPreset = await tm.getTemplate(options.template);
+    const storyPreset = await tm.getStoryTemplate(options.template);
+
+    if (videoPreset) {
+      tier = tier || (videoPreset.tier as any) || '';
+      archetype = archetype || videoPreset.archetype || '';
+      aspectRatio = aspectRatio || videoPreset.aspect_ratio || '';
+      visualStyle = visualStyle || videoPreset.visual_dna?.style_id || '';
+      audioPathway = audioPathway || videoPreset.audio_pathway || '';
+      audioDeliveryMode = audioDeliveryMode || videoPreset.audio_delivery_mode || '';
+      if (videoPreset.visual_dna?.master_style_anchor) {
+        customMasterAnchor = videoPreset.visual_dna.master_style_anchor;
+      }
+    }
+
+    if (storyPreset) {
+      storyTemplateId = options.template;
+      const storyDir = path.join(targetDir, 'production', 'story');
+      await ensureDir(storyDir);
+      const beatsPath = path.join(storyDir, 'beats.md');
+      if (!(await exists(beatsPath))) {
+        await writeFile(
+          beatsPath,
+          `# 🗺️ Story Beats: ${storyPreset.name}\n- **Template:** \`${storyPreset.template_id}\`\n- **Archetype:** \`${storyPreset.narrative_archetype}\`\n- **Target WPM:** ${storyPreset.target_wpm || 135}\n\n## 🪝 Active Story Structure\n*(Generated via /opp-write or /opp-rewrite)*\n`
+        );
+      }
+    }
+  }
 
   // Validate directory emptiness unless force is specified
   if (!options.force) {
@@ -85,17 +120,18 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
     audio_pathway: audioPathway,
     audio_delivery_mode: audioDeliveryMode,
     language: 'en-US',
-    linter_profile: 'strict'
+    linter_profile: 'strict',
+    ...(storyTemplateId ? { story_template_id: storyTemplateId } : {})
   };
   await writeJson(path.join(openproducerDir, 'config.json'), config);
   filesCreated.push('openproducer/config.json');
 
   // 3. Generate openproducer/state.json
   const state: OpenProducerState = {
-    $comment: "OpenProducer State Tracker. Starts in 'explore' mode by default.",
+    $comment: "OpenProducer State Tracker. Starts in 'init' mode by default.",
     project_name: projectName,
     tier,
-    current_stage: 'explore',
+    current_stage: 'init',
     stages: {
       propose_complete: false,
       produce_complete: false,
@@ -191,13 +227,16 @@ ARCHIVE ONLY (Not used directly for prompt generation, preserved strictly as a h
 
 | Timestamp | Mode (\`propose\` / \`sync\` / \`produce\`) | Summary of Updates | Next Step |
 |---|---|---|---|
-| Initial | \`explore\` | Workspace initialized in read-only explore mode | Run \`/opp-propose\` to save to brain |
+| Initial | \`init\` | Workspace initialized in blank init mode | Run \`/opp-explore\`, \`/opp-template\`, or \`/opp-write\` |
 `;
   await writeFile(path.join(openproducerDir, 'blueprint.md'), blueprintContent);
   filesCreated.push('openproducer/blueprint.md');
 
-  // 6. Write master technical anchor text ONLY if style explicitly configured
-  if (visualStyle) {
+  // 6. Write master technical anchor text ONLY if style explicitly configured or loaded from template
+  if (customMasterAnchor) {
+    await writeFile(path.join(openproducerDir, 'visual', 'technical_anchor.txt'), customMasterAnchor + '\n');
+    filesCreated.push('openproducer/visual/technical_anchor.txt');
+  } else if (visualStyle) {
     const matchedStyle = VISUAL_STYLES.find((s) => s.value === visualStyle);
     if (matchedStyle) {
       await writeFile(path.join(openproducerDir, 'visual', 'technical_anchor.txt'), matchedStyle.masterAnchor + '\n');

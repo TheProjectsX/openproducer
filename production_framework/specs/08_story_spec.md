@@ -88,7 +88,7 @@ Cast:
 
 [SCRIPT]
 [Miller] (Speaker 1)
-(whispering into radio)
+<whispers>
 Dispatch, repeat last transmission. Did you say... my car?
 
 <short pause>
@@ -250,7 +250,7 @@ Before concluding execution, `/opp-write` and `/opp-rewrite` run these 7 pre-fli
 |---|---|---|---|
 | **LINT-S1** | File Contract Presence | `beats.md`, `script.txt`, and `clean.txt` exist in `production/story/`. | Halt and generate missing files. |
 | **LINT-S2** | Format Header Validity | `script.txt` starts with `[STORY FORMAT]` containing valid `Type: pure_narration \| dialogue_heavy \| hybrid \| silent_visual`. | Insert missing header block. |
-| **LINT-S3** | Clean Export Purity | `clean.txt` contains zero `<...>` tags and zero structural brackets (`[Speaker]`, `[Turn]`). | Strip tags and re-export. |
+| **LINT-S3** | Clean Export Purity | Below the top `[CLEAN STORY EXPORT ...]` header banner, `clean.txt` contains zero `<...>` tags and zero structural brackets (`[Speaker]`, `[Turn]`, `[SCRIPT]`). | Strip tags and re-export. |
 | **LINT-S4** | Tag Catalog Verification | All tags in `script.txt` exist in the 40-tag Google AI Studio catalog. | Replace or remove invalid tags. |
 | **LINT-S5** | Isolated Line Syntax | Pause/expression tags sit on their own dedicated line (`.\n<tag>\n`). | Re-format tag line breaks. |
 | **LINT-S6** | Spoken Text Concordance | Spoken sentences in `clean.txt` match `script.txt` word-for-word. | Synchronize spoken lines. |

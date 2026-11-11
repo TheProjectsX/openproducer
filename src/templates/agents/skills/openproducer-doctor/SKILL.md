@@ -14,7 +14,7 @@ Diagnose runtime generative AI anomalies across Google Flow, Veo 3.1, and Imagen
 1. **Interactive Question Tool First (`ask_question`):**
    - Whenever asking the creator which glitch occurred or presenting the G-14 Trust & Safety 2-Option Resolution Gate, **use your interactive `ask_question` tool** if available rather than asking via plain text.
 2. **Match Symptom Against Diagnostic Codes (G-01 to G-16):**
-   - Reference `agents/skills/openproducer-core/specs/06_retake_doctor_spec.md`.
+   - Reference `.agents/skills/openproducer-core/specs/06_retake_doctor_spec.md` (or `agents/skills/openproducer-core/specs/06_retake_doctor_spec.md`).
    - G-15: Word looping / stuttering $\rightarrow$ soft punctuation (`...`).
    - G-16: Dead-air delay $\rightarrow$ Immediate Vocal Attack on Frame 1.
    - G-16: Kinetic text spoiler $\rightarrow$ Decouple to `production/motion_graphics.md`.

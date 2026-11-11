@@ -7,8 +7,10 @@ description: Enter explore mode (Read-Only) - brainstorm plot, clarify settings 
 Execute the OpenProducer Explore workflow (100% Read-Only Session Planning Mode):
 
 1. **Activate Skill:** Invoke the `openproducer-explore` skill.
-2. **Strict Read-Only Rule (Zero Disk Writes):**
-   - **DO NOT** write or modify any files in `./openproducer/` or in the project root during `explore`.
+2. **State Transition:**
+   - If `./openproducer/state.json` is currently in `"current_stage": "init"`, update it to `"current_stage": "explore"`.
+3. **Session Memory Rule (Explore Mode):**
+   - Aside from updating `current_stage` to `"explore"`, **DO NOT** write or modify any story, clip, or blueprint files during `explore`.
    - Keep all plot details, answers, and configurations strictly in **session memory** (like an informal planning session with a producer—if the session is closed before `/opp-propose`, the discussion is gone).
    - **DO NOT** generate any images on your own unless the creator explicitly asks you to generate an image.
 3. **Check Pre-Loaded Template Settings (Read-Only):**

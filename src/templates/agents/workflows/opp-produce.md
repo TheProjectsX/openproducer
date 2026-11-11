@@ -7,7 +7,7 @@ description: Produce creator deliverables on disk inside ./production/ from the 
 Execute the OpenProducer Produce workflow to generate all creator deliverables on disk inside `./production/`:
 
 1. **Activate Skill:** Invoke the `openproducer-produce` skill.
-2. **Auto-Propose Guard (If Still in `explore`):**
+2. **Auto-Propose Guard (If Still in `init` or `explore`):**
    - Read `./openproducer/state.json`.
    - **IF `stages.propose_complete == false`:** Automatically run the `openproducer-propose` workflow FIRST to save the story, raw plot archive, settings, and plan into `./openproducer/` before executing `produce`.
 3. **Execute File Factory Based on Audio Settings (`./openproducer/config.json`) into `./production/`:**
@@ -26,7 +26,7 @@ Execute the OpenProducer Produce workflow to generate all creator deliverables o
    - **Case B — Embedded Audio OR Separate Audio + All Together (`embedded` or `separate_all_at_once`):**
      - Create all creator files in `./production/` at once:
        - `production/base_image_prompt.txt`
-       - `production/audio_script.txt` (if `separate_all_at_once`: formatted in default Multi-Speaker Segmented structure with 100–160 words sweet spot per segment and isolated secondary character lines; never divided by video clips)
+       - `production/audio_script.txt` (if `separate_all_at_once`: if `production/story/script.txt` exists on disk, directly ingest it; otherwise format using Google AI Studio 2-speaker alternating turns or balanced 100–160 word single-speaker segments with the 40 official expression tags; never divided by video clips. If `[STORY FORMAT: silent_visual]` or `embedded`, skip `audio_script.txt` and embed Foley/dialogue directly into `video_prompt.txt`)
        - If `modular_studio`: `production/subjects/<id>/[hero_prompt.txt, profile_prompt.txt]` and `production/visuals/environments/<id>/prompt.txt`
        - `production/clips/clip_xxx/[image_prompt.txt, video_prompt.txt]` (plain-text with `Conditioned On:` / `Input Seed:` lines)
        - `production/master_images_prompt.txt` & `production/master_videos_prompt.txt` (creator self-serve references only)

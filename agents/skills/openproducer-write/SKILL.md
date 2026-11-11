@@ -31,7 +31,7 @@ Take a creative premise, logline, or theme and structure it into a production-re
   - If the creator started with an open-ended idea (e.g. *"write me a horror story"*): Conduct a rapid narrative pitch (logline, protagonist goal, central conflict, target duration: 30s/60s/90s).
 
 ### 2. Determine Story Archetype
-Classify the story into one of the 4 canonical formats:
+Consult `.agents/skills/openproducer-core/specs/08_story_spec.md` and classify the story into one of the 4 canonical formats:
 1. `pure_narration`: Solo narrator, video essays, true crime, documentaries, brand VO.
 2. `dialogue_heavy`: Fast banter, comedy sketches, multi-character short drama.
 3. `hybrid`: Narrator setting the scene + characters speaking aloud.
@@ -76,7 +76,7 @@ Write the performance script with exact bracketed format header and official Goo
 Before rendering the status card, verify all 7 linters pass:
 1. **LINT-S1 (Presence):** `beats.md`, `script.txt`, and `clean.txt` all exist in `production/story/`.
 2. **LINT-S2 (Header):** `script.txt` contains valid `[STORY FORMAT]` header.
-3. **LINT-S3 (Cleanliness):** `clean.txt` contains 0 tags and 0 structural brackets.
+3. **LINT-S3 (Cleanliness):** Below the top `[CLEAN STORY EXPORT ...]` header banner, `clean.txt` contains 0 `<...>` tags and 0 structural brackets (`[Speaker]`, `[Turn]`, `[SCRIPT]`).
 4. **LINT-S4 (Tag Validity):** All tags in `script.txt` belong to the 40-expression catalog.
 5. **LINT-S5 (Isolated Syntax):** Pause/breath tags sit on isolated lines between sentences.
 6. **LINT-S6 (Concordance):** Spoken words in `clean.txt` and `script.txt` match verbatim.

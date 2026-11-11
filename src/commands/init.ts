@@ -167,9 +167,9 @@ export async function initCommand(directory?: string, cmdOptions: Partial<InitOp
         ['Visual Style', formatField(result.visualStyle)],
         ['Audio Pathway', formatField(result.audioPathway)],
         ['Template Source', sourceLabel],
-        ['AI Skills Loaded', '.agents/skills (7 Modes + Core Specs)']
+        ['AI Skills Loaded', '.agents/skills (9 Modes + Core Specs)']
       ],
-      'Status: READ-ONLY EXPLORE MODE ACTIVE'
+      'Status: BLANK INIT MODE ACTIVE'
     );
 
     console.log('Next Steps:');
@@ -177,8 +177,10 @@ export async function initCommand(directory?: string, cmdOptions: Partial<InitOp
       console.log(`  1. cd ${path.relative(process.cwd(), targetDir) || '.'}`);
     }
     console.log(`  2. Open in your AI IDE (Antigravity, Cursor, VS Code, Claude Code).`);
-    console.log(`  3. Tell your AI Assistant: "I have an idea for a video" or run /opp:explore.`);
-    console.log(`  4. OpenProducer will conduct intake, lock settings, and generate production prompts!`);
+    console.log(`  3. Choose your path:`);
+    console.log(`     • Run /opp-explore to start creative discovery and brainstorming.`);
+    console.log(`     • Run /opp-template to browse or load series/story templates.`);
+    console.log(`     • Run /opp-write or /opp-rewrite to write/adapt a screenplay into production/story/.`);
     console.log('');
   } catch (err: unknown) {
     const message = err instanceof Error ? err.message : String(err);

@@ -226,3 +226,48 @@ export const BANNED_TECHNICAL_TOKENS = [
   '4s'
 ];
 
+export const OFFICIAL_TTS_EXPRESSION_TAGS = [
+  'short pause',
+  'long pause',
+  'breath',
+  'heavy breath',
+  'exhales',
+  'pant',
+  'sigh',
+  'sighs',
+  'yawn',
+  'cough',
+  'sneeze',
+  'throat-clearing',
+  'chuckle',
+  'chuckles',
+  'giggle',
+  'laugh',
+  'laughter',
+  'snicker',
+  'snort',
+  'cackle',
+  'gasp',
+  'groan',
+  'grunt',
+  'whimper',
+  'cry',
+  'sob',
+  'moan',
+  'argh',
+  'whisper',
+  'whispering',
+  'whispers',
+  'cheer',
+  'shout',
+  'scream',
+  'shriek',
+  'pff',
+  'phew',
+  'tsk',
+  'growl',
+  'grr',
+  'hiss'
+];
+
+

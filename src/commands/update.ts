@@ -75,7 +75,7 @@ export async function updateCommand(
   if (await exists(templateSource.agentsDir)) {
     const agentsDest = path.join(projectRoot, '.agents');
     await copyRecursive(templateSource.agentsDir, agentsDest);
-    changesApplied.push('Refreshed .agents/ (7 operational skills, workflows & specs)');
+    changesApplied.push('Refreshed .agents/ (9 operational skills, workflows & specs)');
   }
 
   // 3. Update root specifications (STRUCTURE.md & AGENTS.md)

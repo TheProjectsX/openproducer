@@ -70,7 +70,7 @@ export interface OpenProducerState {
   $comment?: string;
   project_name: string;
   tier: OperatingTier | string;
-  current_stage: 'explore' | 'proposed' | 'produced' | 'guiding' | 'completed' | string;
+  current_stage: 'init' | 'explore' | 'proposed' | 'produced' | 'guiding' | 'completed' | string;
   stages: StageTracker;
   interactive_guidance: InteractiveGuidance;
   template_loaded: string;
@@ -195,6 +195,16 @@ export interface StoryTemplate {
 export interface TemplateInfo {
   id: string;
   path: string;
+  group: string;
+}
+
+export interface GenericTemplate {
+  template_id: string;
+  group: string;
+  type?: string;
+  name: string;
+  raw_content?: string;
+  metadata?: Record<string, any>;
 }
 
 

@@ -4,6 +4,7 @@ This document serves as the declarative file system contract for OpenProducer.
 - **Zero Unauthorized Image Generation:** OpenProducer NEVER generates any image on its own (not even as an example) unless explicitly asked by the creator.
 - **Plain-Text Prompts (Zero Markdown Bloat):** All prompt files use clean `.txt` format with bracket headers (`[TIER ...]`, `Conditioned On:`, `[IMAGE PROMPT]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`) modeled on `the_314am_doppelganger`.
 - **Clean Root & Dedicated Production Folder:** All creator-facing assets (prompts, scripts, clips, audio, and manifests) live strictly inside the `production/` folder. The workspace root stays clean with only `openproducer/` (Brain) and `production/` (Deliverables).
+- **Strict Sandbox Boundary & Self-Contained Knowledge:** All specifications, visual styles, starter presets, and agent logic live inside `.agents/` (`.agents/skills/openproducer-core/`). The agent operates strictly inside this project workspace; the only permitted external directory is the global user brain (`~/.openproducer/`). Probing parent directories (`../`) or volunteering external access is strictly prohibited.
 
 ---
 
@@ -24,6 +25,11 @@ This document serves as the declarative file system contract for OpenProducer.
 │       └── technical_anchor.txt       # Injected master style anchor string
 │
 └── production/                        # 🎬 Creator Production Deliverables
+    ├── story/                         # 📖 (Pre-Production Suite from /opp-write or /opp-rewrite)
+    │   ├── beats.md                   # 🗺️ Narrative Architecture: hooks, arcs, pacing
+    │   ├── script.txt                 # 📜 Machine Source of Truth: TTS tags & turn markers
+    │   ├── clean.txt                  # 📖 Human-Only Clean Export: stripped of machine tags
+    │   └── raw_source.txt             # 📥 (If /opp-rewrite) Verbatim source text backup
     ├── base_image_prompt.txt          # 🎨 Master Base Style & Subject/Setting lock prompt
     ├── audio_script.txt                # 🎙️ (If Separate Audio) Clean script to generate/record voice/audio
     ├── clips/                         # 🎬 Clip directories (clip_01, clip_02...)
@@ -53,6 +59,11 @@ This document serves as the declarative file system contract for OpenProducer.
 │       └── technical_anchor.txt       # Master style anchor string
 │
 └── production/                        # 🎬 Creator Production Deliverables
+    ├── story/                         # 📖 (Pre-Production Suite from /opp-write or /opp-rewrite)
+    │   ├── beats.md                   # 🗺️ Narrative Architecture: hooks, arcs, pacing
+    │   ├── script.txt                 # 📜 Machine Source of Truth: TTS tags & turn markers
+    │   ├── clean.txt                  # 📖 Human-Only Clean Export: stripped of machine tags
+    │   └── raw_source.txt             # 📥 (If /opp-rewrite) Verbatim source text backup
     ├── base_image_prompt.txt          # 🎨 Master Base Style lock prompt (anchors all subjects & environments)
     ├── audio_script.txt                # 🎙️ (If Separate Audio) Clean script to generate/record voice/audio
     ├── subjects/                      # 👥 Character & Subject Base Prompts

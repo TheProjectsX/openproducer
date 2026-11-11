@@ -71,14 +71,16 @@ program
 // Command: template [action] [templateId] [instruction...]
 program
   .command('template [action] [templateId] [instruction...]')
-  .description('Manage global series franchise presets (list, save <id>, use <id>, update <id>)')
+  .description('Manage global series franchise presets (list, save <id>, use <id>, update <id>, edit <id>)')
   .option('-p, --paths', 'Display physical file paths for listed templates')
   .option('-v, --verbose', 'Verbose mode: display template file paths and details')
+  .option('-g, --group <group>', 'Template group / sub-vault (video | story | audio | style | etc.)')
+  .option('-t, --type <type>', 'Template vault type alias (video | story | etc.)')
   .action(async (action, templateId, instruction, commandObj) => {
-    let opts = commandObj;
+    let opts = commandObj?.opts ? commandObj.opts() : commandObj;
     let instr = instruction;
     if (typeof instruction === 'object' && !Array.isArray(instruction) && instruction !== null) {
-      opts = instruction;
+      opts = instruction.opts ? instruction.opts() : instruction;
       instr = undefined;
     }
     const fullInstruction = Array.isArray(instr) ? instr.join(' ') : instr;

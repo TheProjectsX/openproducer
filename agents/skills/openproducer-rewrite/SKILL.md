@@ -34,6 +34,7 @@ Take an existing rough draft, raw text dump, novel excerpt, article, or unformat
   - If no duration is given, default to a high-retention 60s structure (120–150 words).
 
 ### 3. Apply Script Doctoring Passes
+Consult `.agents/skills/openproducer-core/specs/08_story_spec.md` and apply these 4 doctoring passes:
 1. **The Hook Extraction Pass:** Eliminate slow introductory throat-clearing (*"Hello everyone"*, *"Today I am going to talk about"*). Open immediately in media res with a provocative question, bold claim, or jarring visual event.
 2. **The Cadence & Pacing Pass:** Break long, complex sentences into short, rhythmic spoken lines suitable for natural speech cadence.
 3. **The Vocal Tag Injection Pass:** Invert robotic exposition by dynamically inserting Google AI Studio expression tags (`<breath>`, `<sigh>`, `<gasp>`, `<short pause>`, `<chuckle>`) on isolated lines between sentences.
@@ -53,7 +54,7 @@ Take an existing rough draft, raw text dump, novel excerpt, article, or unformat
 Before rendering the status card, verify all 7 linters pass:
 1. **LINT-S1 (Presence):** `beats.md`, `script.txt`, `clean.txt`, and `raw_source.txt` exist in `production/story/`.
 2. **LINT-S2 (Header):** `script.txt` contains valid `[STORY FORMAT]` header.
-3. **LINT-S3 (Cleanliness):** `clean.txt` contains 0 tags and 0 structural brackets.
+3. **LINT-S3 (Cleanliness):** Below the top `[CLEAN STORY EXPORT ...]` header banner, `clean.txt` contains 0 `<...>` tags and 0 structural brackets (`[Speaker]`, `[Turn]`, `[SCRIPT]`).
 4. **LINT-S4 (Tag Validity):** All tags in `script.txt` belong to the 40-expression catalog.
 5. **LINT-S5 (Isolated Syntax):** Pause/breath tags sit on isolated lines between sentences.
 6. **LINT-S6 (Concordance):** Spoken words in `clean.txt` and `script.txt` match verbatim.

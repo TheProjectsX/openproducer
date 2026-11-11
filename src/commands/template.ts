@@ -2,71 +2,134 @@ import * as path from 'node:path';
 import pc from 'picocolors';
 import { ConfigManager } from '../core/config';
 import { TemplateManager } from '../core/templates';
-import { SeriesTemplate } from '../core/types';
-import { exists, readFile } from '../utils/fs';
+import { SeriesTemplate, StoryTemplate } from '../core/types';
+import { ensureDir, exists, readFile, writeFile } from '../utils/fs';
 import { logger } from '../utils/logger';
 
 export async function templateCommand(
   action = 'list',
   templateId?: string,
   instruction?: string,
-  options?: { paths?: boolean; verbose?: boolean }
+  options?: { paths?: boolean; verbose?: boolean; type?: string; group?: string }
 ): Promise<void> {
   logger.banner();
 
   const configMgr = new ConfigManager();
   const tm = new TemplateManager(configMgr.root);
   const showPaths = Boolean(options?.paths || options?.verbose);
+  const requestedGroup = (options?.group || options?.type || '').toLowerCase();
+
+  const isInitialized = await configMgr.isInitialized();
+  const state = isInitialized ? await configMgr.readState().catch(() => null) : null;
+  const isBlankInit = !isInitialized || (state && state.current_stage === 'init');
 
   // 1. Action: list
   if (action === 'list') {
-    const videoList = await tm.listVideoTemplates();
-    const storyList = await tm.listStoryTemplates();
+    const allTemplates = await tm.listAllTemplates();
     logger.info(`Series templates located in: ${pc.dim(tm.directory)}`);
     console.log('');
-    console.log(pc.bold('🎬 Video & Cinematography Templates:'));
-    if (videoList.length === 0) {
-      console.log('  No video templates found.');
+
+    const groups = new Map<string, typeof allTemplates>();
+    for (const t of allTemplates) {
+      if (!groups.has(t.group)) {
+        groups.set(t.group, []);
+      }
+      groups.get(t.group)!.push(t);
+    }
+
+    if (groups.size === 0) {
+      console.log('  No templates found.');
     } else {
-      for (const t of videoList) {
-        console.log(`  • ${pc.cyan(t.id)}`);
-        if (showPaths) {
-          console.log(`    ${pc.dim(`↳ ${t.path}`)}`);
+      for (const [groupName, templates] of groups.entries()) {
+        if (requestedGroup && requestedGroup !== groupName.toLowerCase()) {
+          continue;
         }
+
+        const icon =
+          groupName === 'video' ? '🎬' : groupName === 'story' ? '📖' : groupName === 'audio' ? '🎙️' : '📁';
+        console.log(pc.bold(`${icon} ${groupName.toUpperCase()} Templates:`));
+        for (const t of templates) {
+          const colorFn = groupName === 'video' ? pc.cyan : groupName === 'story' ? pc.yellow : pc.magenta;
+          console.log(`  • ${colorFn(t.id)}`);
+          if (showPaths) {
+            console.log(`    ${pc.dim(`↳ ${t.path}`)}`);
+          }
+        }
+        console.log('');
       }
     }
-    console.log('');
-    console.log(pc.bold('📖 Story & Narrative Templates:'));
-    if (storyList.length === 0) {
-      console.log('  No story templates found.');
-    } else {
-      for (const t of storyList) {
-        console.log(`  • ${pc.yellow(t.id)}`);
-        if (showPaths) {
-          console.log(`    ${pc.dim(`↳ ${t.path}`)}`);
-        }
-      }
-    }
+
     if (!showPaths) {
-      console.log('');
       console.log(pc.dim('💡 Tip: Run "openproducer template list -p" (or --paths) to display exact file paths on disk.'));
     }
     console.log('');
     return;
   }
 
-  // 2. Action: save
-  if (action === 'save') {
+  // 2. Action: save / create
+  if (action === 'save' || action === 'create') {
     if (!templateId) {
-      logger.error('Please specify a template name: "openproducer template save <template-name>"');
+      logger.error('Please specify a template name: "openproducer template save <template-name> [--group <group>]"');
       process.exit(1);
     }
-    const configMgr = new ConfigManager();
-    if (!(await configMgr.isInitialized())) {
-      logger.error('No OpenProducer project found in this directory. Initialize one first.');
-      process.exit(1);
+
+    // A. If workspace is BLANK (init mode) -> Discussion-first collaborative template genesis
+    if (isBlankInit) {
+      logger.info(`Blank project detected (INIT mode active). Starting discussion-first template creation: ${pc.cyan(templateId)}`);
+      console.log('');
+      console.log(pc.bold(pc.cyan(`🛠️ Interactive Template Genesis: "${templateId}"`)));
+      console.log(`  • Target Group: ${pc.yellow(requestedGroup || 'video (default)')}`);
+      console.log(`  • Status: ${pc.green('Discussion Mode Active (Zero project data required)')}`);
+      console.log('');
+      logger.info(`Tell the agent what rules, style anchor, narrative formula, or pacing to include in this template.`);
+      logger.info(`The agent will assemble the template and save it directly to ~/.openproducer/templates/${requestedGroup || 'video'}/${templateId}.md.`);
+      console.log('');
+      return;
     }
+
     const config = await configMgr.readConfig();
+
+    const isStorySave = requestedGroup === 'story' || templateId.startsWith('story-');
+    if (isStorySave) {
+      let narrativeArchetype = 'pure_narration';
+      let targetWpm = 135;
+      let voicePersona = 'Expressive, high-retention storyteller';
+
+      const beatsPath = path.join(configMgr.root, 'production', 'story', 'beats.md');
+      if (await exists(beatsPath)) {
+        const beatsContent = await readFile(beatsPath);
+        const fmtMatch = beatsContent.match(/\*\*(?:Format|Archetype):\*\*\s*`?([a-zA-Z0-9_-]+)`?/i);
+        const wpmMatch = beatsContent.match(/\*\*Target WPM:\*\*\s*`?(\d+)`?/i);
+        if (fmtMatch) narrativeArchetype = fmtMatch[1].trim();
+        if (wpmMatch) targetWpm = parseInt(wpmMatch[1], 10) || 135;
+      }
+
+      const scriptPath = path.join(configMgr.root, 'production', 'story', 'script.txt');
+      if (await exists(scriptPath)) {
+        const scriptContent = await readFile(scriptPath);
+        const typeMatch = scriptContent.match(/^Type:\s*([a-zA-Z0-9_-]+)/im);
+        const wpmMatch = scriptContent.match(/^Target Pacing:\s*(\d+)/im);
+        const narratorMatch = scriptContent.match(/^Narrator:\s*(.+)$/im);
+        if (typeMatch) narrativeArchetype = typeMatch[1].trim();
+        if (wpmMatch) targetWpm = parseInt(wpmMatch[1], 10) || targetWpm;
+        if (narratorMatch) voicePersona = narratorMatch[1].trim();
+      }
+
+      const storyTemplate: StoryTemplate = {
+        template_id: templateId,
+        type: 'story',
+        name: `${config.project_name} Story Preset`,
+        narrative_archetype: narrativeArchetype,
+        voice_persona: voicePersona,
+        target_wpm: targetWpm
+      };
+
+      await tm.saveStoryTemplate(storyTemplate);
+      logger.success(`Story template saved globally in story sub-vault: "story/${templateId}.md"`);
+      console.log(`You can now load it with: "openproducer template use ${templateId} --type story"`);
+      console.log('');
+      return;
+    }
 
     let masterAnchor = `Derived from ${config.visual_style || 'default cinema'}`;
     const anchorPath = path.join(configMgr.root, 'openproducer', 'visual', 'technical_anchor.txt');
@@ -127,20 +190,29 @@ export async function templateCommand(
       process.exit(1);
     }
 
-    // Check if it's a Story Template first
-    const storyTemplate = await tm.getStoryTemplate(templateId);
+    const wantStory = !requestedGroup || requestedGroup === 'story';
+    const wantVideo = !requestedGroup || requestedGroup === 'video';
+
+    const storyTemplate = wantStory ? await tm.getStoryTemplate(templateId) : null;
+    const videoTemplate = wantVideo ? await tm.getTemplate(templateId) : null;
+    const genericTemplate = !storyTemplate && !videoTemplate ? await tm.getGenericTemplate(templateId, requestedGroup) : null;
+
+    if (!storyTemplate && !videoTemplate && !genericTemplate) {
+      logger.error(`Template "${templateId}" not found in ${tm.directory}`);
+      process.exit(1);
+    }
+
     if (storyTemplate) {
       const config = await configMgr.readConfig();
       config.story_template_id = templateId;
       await configMgr.writeConfig(config);
 
       // Scaffold production/story/beats.md if missing
-      const fs = require('../utils/fs');
       const storyDir = path.join(configMgr.root, 'production', 'story');
-      await fs.ensureDir(storyDir);
+      await ensureDir(storyDir);
       const beatsPath = path.join(storyDir, 'beats.md');
-      if (!(await fs.exists(beatsPath))) {
-        await fs.writeFile(
+      if (!(await exists(beatsPath))) {
+        await writeFile(
           beatsPath,
           `# 🗺️ Story Beats: ${storyTemplate.name}\n- **Template:** \`${storyTemplate.template_id}\`\n- **Archetype:** \`${storyTemplate.narrative_archetype}\`\n- **Target WPM:** ${storyTemplate.target_wpm || 135}\n\n## 🪝 Active Story Structure\n*(Generated via /opp-write or /opp-rewrite)*\n`
         );
@@ -148,42 +220,36 @@ export async function templateCommand(
 
       logger.success(`Applied Story Template "${pc.yellow(templateId)}" (${storyTemplate.name}) to workspace.`);
       logger.info(`Next step: Run "/opp-write" or "/opp-rewrite" to generate/adapt your story using this template!`);
-      console.log('');
-      return;
     }
 
-    // Otherwise treat as a Video Template
-    const template = await tm.getTemplate(templateId);
-    if (!template) {
-      logger.error(`Template "${templateId}" not found in ${tm.directory}`);
-      process.exit(1);
-    }
-    const config = await configMgr.readConfig();
-    config.archetype = template.archetype || config.archetype;
-    config.aspect_ratio = template.aspect_ratio || config.aspect_ratio;
-    config.tier = (template.tier as any) || config.tier;
-    config.audio_pathway = template.audio_pathway || config.audio_pathway;
-    config.audio_delivery_mode = template.audio_delivery_mode || config.audio_delivery_mode;
-    if (template.visual_dna?.style_id) {
-      config.visual_style = template.visual_dna.style_id;
-    }
-    await configMgr.writeConfig(config);
+    if (videoTemplate) {
+      const config = await configMgr.readConfig();
+      config.archetype = videoTemplate.archetype || config.archetype;
+      config.aspect_ratio = videoTemplate.aspect_ratio || config.aspect_ratio;
+      config.tier = (videoTemplate.tier as any) || config.tier;
+      config.audio_pathway = videoTemplate.audio_pathway || config.audio_pathway;
+      config.audio_delivery_mode = videoTemplate.audio_delivery_mode || config.audio_delivery_mode;
+      if (videoTemplate.visual_dna?.style_id) {
+        config.visual_style = videoTemplate.visual_dna.style_id;
+      }
+      await configMgr.writeConfig(config);
 
-    if (template.visual_dna?.master_style_anchor) {
-      const anchorPath = path.join(configMgr.root, 'openproducer', 'visual', 'technical_anchor.txt');
-      await readFile(anchorPath)
-        .catch(() => '')
-        .then(async () => {
-          const fs = require('../utils/fs');
-          await fs.writeFile(anchorPath, template.visual_dna.master_style_anchor + '\n');
-        });
+      if (videoTemplate.visual_dna?.master_style_anchor) {
+        const anchorPath = path.join(configMgr.root, 'openproducer', 'visual', 'technical_anchor.txt');
+        await writeFile(anchorPath, videoTemplate.visual_dna.master_style_anchor + '\n');
+      }
+
+      const activeState = await configMgr.readState();
+      activeState.template_loaded = templateId;
+      await configMgr.writeState(activeState);
+
+      logger.success(`Applied Video Series Template "${pc.cyan(templateId)}" to current workspace brain.`);
     }
 
-    const state = await configMgr.readState();
-    state.template_loaded = templateId;
-    await configMgr.writeState(state);
+    if (genericTemplate) {
+      logger.success(`Loaded "${genericTemplate.group}" template "${pc.magenta(templateId)}" into workspace.`);
+    }
 
-    logger.success(`Applied series template "${templateId}" to current workspace brain.`);
     console.log('');
     return;
   }
@@ -194,19 +260,72 @@ export async function templateCommand(
       logger.error('Please specify a template name to update: "openproducer template update <template-name> [instructions]"');
       process.exit(1);
     }
-    const existing = await tm.getTemplate(templateId);
-    if (!existing) {
+
+    // A. If workspace is BLANK (init mode) -> Discussion-first collaborative update
+    if (isBlankInit) {
+      logger.info(`Blank project detected (INIT mode active). Starting discussion-first template update: ${pc.cyan(templateId)}`);
+      console.log('');
+      console.log(pc.bold(pc.cyan(`🛠️ Interactive Template Update: "${templateId}"`)));
+      console.log(`  • Target Group: ${pc.yellow(requestedGroup || 'auto-detect')}`);
+      console.log(`  • Status: ${pc.green('Discussion Mode Active (Zero project data required)')}`);
+      console.log('');
+      logger.info(`Tell the agent what to add, remove, or modify. No project workspace data needed.`);
+      console.log('');
+      return;
+    }
+
+    const existingVideo = requestedGroup === 'story' ? null : await tm.getTemplate(templateId);
+    const existingStory = !existingVideo && requestedGroup !== 'video' ? await tm.getStoryTemplate(templateId) : null;
+
+    if (!existingVideo && !existingStory) {
       logger.error(`Template "${templateId}" not found in ${tm.directory}`);
       logger.info('To create a new template from this project, use: "openproducer template save ' + templateId + '"');
       process.exit(1);
     }
 
-    const configMgr = new ConfigManager();
-    if (!(await configMgr.isInitialized())) {
-      logger.error('No OpenProducer project found in this directory. Initialize or open a project first to extract updates.');
-      process.exit(1);
+    if (existingStory) {
+      const changes: string[] = [];
+      const beatsPath = path.join(configMgr.root, 'production', 'story', 'beats.md');
+      if (await exists(beatsPath)) {
+        const beatsContent = await readFile(beatsPath);
+        const fmtMatch = beatsContent.match(/\*\*(?:Format|Archetype):\*\*\s*`?([a-zA-Z0-9_-]+)`?/i);
+        const wpmMatch = beatsContent.match(/\*\*Target WPM:\*\*\s*`?(\d+)`?/i);
+        if (fmtMatch && fmtMatch[1].trim() !== existingStory.narrative_archetype) {
+          changes.push(`Narrative Archetype: "${existingStory.narrative_archetype}" -> "${fmtMatch[1].trim()}"`);
+          existingStory.narrative_archetype = fmtMatch[1].trim();
+        }
+        if (wpmMatch) {
+          const parsedWpm = parseInt(wpmMatch[1], 10);
+          if (parsedWpm && parsedWpm !== existingStory.target_wpm) {
+            changes.push(`Target WPM: ${existingStory.target_wpm} -> ${parsedWpm}`);
+            existingStory.target_wpm = parsedWpm;
+          }
+        }
+      }
+      if (instruction) {
+        changes.push(`Applied creator directive: "${instruction}"`);
+      }
+      // Clear raw_content if fields changed so formatStoryMarkdownTemplate regenerates frontmatter cleanly
+      if (changes.length > 0 && existingStory.raw_content) {
+        existingStory.raw_content = existingStory.raw_content
+          .replace(/^narrative_archetype:.*$/im, `narrative_archetype: "${existingStory.narrative_archetype}"`)
+          .replace(/^target_wpm:.*$/im, `target_wpm: ${existingStory.target_wpm || 135}`);
+      }
+      await tm.saveStoryTemplate(existingStory);
+      logger.success(`Story template "${templateId}" successfully updated in ~/.openproducer/templates/story/${templateId}.md`);
+      if (changes.length > 0) {
+        console.log(pc.bold('Updated Story Template Schema:'));
+        for (const c of changes) {
+          console.log(`  ${pc.green('✔')} ${c}`);
+        }
+      } else {
+        console.log(pc.dim('  Story template schema re-synchronized with current workspace.'));
+      }
+      console.log('');
+      return;
     }
 
+    const existing = existingVideo!;
     const config = await configMgr.readConfig();
     const changes: string[] = [];
 
@@ -291,5 +410,126 @@ export async function templateCommand(
     return;
   }
 
-  logger.error(`Unknown template action "${action}". Available: list, save, use, update.`);
+  // 5. Action: edit / refine / show / view
+  if (action === 'edit' || action === 'refine' || action === 'show' || action === 'view') {
+    if (!templateId) {
+      logger.error('Please specify a template name to inspect/edit: "openproducer template edit <template-name>"');
+      process.exit(1);
+    }
+
+    const isSaveCommit = Boolean(
+      instruction && /^(save|commit|lock|apply|sync)$/i.test(instruction.trim())
+    );
+
+    if (isSaveCommit) {
+      const synced = await tm.syncProjectTemplatesToGlobal();
+      logger.success(
+        `Promoted and locked refined template "${templateId}" into global vault (${tm.directory}).`
+      );
+      if (synced.length > 0) {
+        console.log(`  ${pc.green('✔')} Synced to global vault: ${synced.join(', ')}`);
+      }
+      console.log('');
+      return;
+    }
+
+    const wantStory = !requestedGroup || requestedGroup === 'story';
+    const wantVideo = !requestedGroup || requestedGroup === 'video';
+
+    const storyTemplate = wantStory ? await tm.getStoryTemplate(templateId) : null;
+    const videoTemplate = wantVideo ? await tm.getTemplate(templateId) : null;
+    const genericTemplate = !storyTemplate && !videoTemplate ? await tm.getGenericTemplate(templateId, requestedGroup) : null;
+
+    if (!storyTemplate && !videoTemplate && !genericTemplate) {
+      logger.error(`Template "${templateId}" not found in ${tm.directory}`);
+      process.exit(1);
+    }
+
+    const inProject = isInitialized;
+
+    if (storyTemplate) {
+      let localMirrorPath = '';
+      if (inProject && storyTemplate.raw_content) {
+        localMirrorPath = path.join(configMgr.root, 'openproducer', 'templates', 'story', `${templateId}.md`);
+        if (!(await exists(localMirrorPath))) {
+          await writeFile(localMirrorPath, storyTemplate.raw_content);
+        }
+      }
+
+      logger.info(`Loaded Story Template for collaborative editing: ${pc.yellow(templateId)}`);
+      console.log('');
+      console.log(pc.bold(pc.yellow(`📖 Story Template: ${storyTemplate.name}`)));
+      console.log(`  • Archetype: ${pc.cyan(storyTemplate.narrative_archetype)}`);
+      console.log(`  • Target WPM: ${pc.cyan(String(storyTemplate.target_wpm || 135))}`);
+      if (storyTemplate.voice_persona) {
+        console.log(`  • Voice Persona: ${storyTemplate.voice_persona}`);
+      }
+      if (localMirrorPath) {
+        console.log(`  • Workspace Mirror: ${pc.dim(localMirrorPath)}`);
+      }
+      console.log('');
+      if (storyTemplate.raw_content) {
+        console.log(pc.dim('── Raw Content Preview ──'));
+        console.log(storyTemplate.raw_content.trim());
+        console.log(pc.dim('─────────────────────────'));
+      }
+      console.log('');
+      logger.info(`Collaborative editing active in session (current project workspace untouched).`);
+      logger.info(
+        `When producer approves changes, write updates to openproducer/templates/story/${templateId}.md and run "npx openproducer template edit ${templateId} save".`
+      );
+      console.log('');
+    }
+
+    if (videoTemplate) {
+      let localMirrorPath = '';
+      if (inProject && videoTemplate.raw_content) {
+        localMirrorPath = path.join(configMgr.root, 'openproducer', 'templates', `${templateId}.md`);
+        if (!(await exists(localMirrorPath))) {
+          await writeFile(localMirrorPath, videoTemplate.raw_content);
+        }
+      }
+
+      logger.info(`Loaded Video Template for collaborative editing: ${pc.cyan(templateId)}`);
+      console.log('');
+      console.log(pc.bold(pc.cyan(`🎬 Video Template: ${videoTemplate.name}`)));
+      console.log(`  • Archetype: ${videoTemplate.archetype || 'N/A'}`);
+      console.log(`  • Aspect Ratio: ${videoTemplate.aspect_ratio || '16:9'}`);
+      console.log(`  • Tier: ${videoTemplate.tier || 'lean_base_reference'}`);
+      console.log(`  • Audio Delivery: ${videoTemplate.audio_delivery_mode || 'separate_script_first'}`);
+      console.log(`  • Master Anchor: ${videoTemplate.visual_dna.master_style_anchor}`);
+      if (localMirrorPath) {
+        console.log(`  • Workspace Mirror: ${pc.dim(localMirrorPath)}`);
+      }
+      console.log('');
+      if (videoTemplate.raw_content) {
+        console.log(pc.dim('── Raw Content Preview ──'));
+        console.log(videoTemplate.raw_content.trim());
+        console.log(pc.dim('─────────────────────────'));
+      }
+      console.log('');
+      logger.info(`Collaborative editing active in session (current project workspace untouched).`);
+      logger.info(
+        `When producer approves changes, write updates to openproducer/templates/${templateId}.md and run "npx openproducer template edit ${templateId} save".`
+      );
+      console.log('');
+    }
+
+    if (genericTemplate) {
+      logger.info(`Loaded ${genericTemplate.group.toUpperCase()} Template for editing: ${pc.magenta(templateId)}`);
+      console.log('');
+      console.log(pc.bold(pc.magenta(`📁 ${genericTemplate.group.toUpperCase()} Template: ${genericTemplate.name}`)));
+      console.log(`  • Group: ${genericTemplate.group}`);
+      if (genericTemplate.raw_content) {
+        console.log(pc.dim('── Raw Content Preview ──'));
+        console.log(genericTemplate.raw_content.trim());
+        console.log(pc.dim('─────────────────────────'));
+      }
+      console.log('');
+    }
+
+    return;
+  }
+
+  logger.error(`Unknown template action "${action}". Available: list, save, use, update, edit.`);
 }

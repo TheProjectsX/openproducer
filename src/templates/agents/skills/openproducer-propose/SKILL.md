@@ -19,7 +19,7 @@ Take everything discussed during `explore` or created during `write`/`rewrite` (
 - Determine whether the project is:
   - **`lean_base_reference`**: 1 Subject + 1 Setting.
   - **`modular_studio`**: Multiple characters/subjects OR multiple distinct environments.
-- Consult `agents/skills/openproducer-core/specs/05_directors_cut_assembly_spec.md` for 4s/6s/8s quantum pacing, `specs/08_story_spec.md` for story schemas, and `agents/skills/openproducer-core/styles/` for the Master Style Anchor string.
+- Consult `.agents/skills/openproducer-core/specs/05_directors_cut_assembly_spec.md` for 4s/6s/8s quantum pacing, `.agents/skills/openproducer-core/specs/08_story_spec.md` for story schemas, and `.agents/skills/openproducer-core/styles/` for the Master Style Anchor string.
 
 ### 2. Write All State & Plans Strictly into `./openproducer/`
 1. **`./openproducer/config.json`**:
