@@ -72,9 +72,17 @@ program
 program
   .command('template [action] [templateId] [instruction...]')
   .description('Manage global series franchise presets (list, save <id>, use <id>, update <id>)')
-  .action(async (action, templateId, instruction) => {
-    const fullInstruction = Array.isArray(instruction) ? instruction.join(' ') : instruction;
-    await templateCommand(action || 'list', templateId, fullInstruction);
+  .option('-p, --paths', 'Display physical file paths for listed templates')
+  .option('-v, --verbose', 'Verbose mode: display template file paths and details')
+  .action(async (action, templateId, instruction, commandObj) => {
+    let opts = commandObj;
+    let instr = instruction;
+    if (typeof instruction === 'object' && !Array.isArray(instruction) && instruction !== null) {
+      opts = instruction;
+      instr = undefined;
+    }
+    const fullInstruction = Array.isArray(instr) ? instr.join(' ') : instr;
+    await templateCommand(action || 'list', templateId, fullInstruction, opts);
   });
 
 // Default handler if no command provided

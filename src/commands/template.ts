@@ -9,25 +9,47 @@ import { logger } from '../utils/logger';
 export async function templateCommand(
   action = 'list',
   templateId?: string,
-  instruction?: string
+  instruction?: string,
+  options?: { paths?: boolean; verbose?: boolean }
 ): Promise<void> {
   logger.banner();
 
   const configMgr = new ConfigManager();
   const tm = new TemplateManager(configMgr.root);
+  const showPaths = Boolean(options?.paths || options?.verbose);
 
   // 1. Action: list
   if (action === 'list') {
-    const list = await tm.listTemplates();
-    logger.info(`Global series templates located in: ${pc.dim(tm.directory)}`);
-    if (list.length === 0) {
-      console.log('  No custom series templates found.');
-      console.log('  Save your current project look with: "openproducer template save <template-name>"');
+    const videoList = await tm.listVideoTemplates();
+    const storyList = await tm.listStoryTemplates();
+    logger.info(`Series templates located in: ${pc.dim(tm.directory)}`);
+    console.log('');
+    console.log(pc.bold('🎬 Video & Cinematography Templates:'));
+    if (videoList.length === 0) {
+      console.log('  No video templates found.');
     } else {
-      console.log(pc.bold('Available Series Templates:'));
-      for (const t of list) {
-        console.log(`  • ${pc.cyan(t)}`);
+      for (const t of videoList) {
+        console.log(`  • ${pc.cyan(t.id)}`);
+        if (showPaths) {
+          console.log(`    ${pc.dim(`↳ ${t.path}`)}`);
+        }
       }
+    }
+    console.log('');
+    console.log(pc.bold('📖 Story & Narrative Templates:'));
+    if (storyList.length === 0) {
+      console.log('  No story templates found.');
+    } else {
+      for (const t of storyList) {
+        console.log(`  • ${pc.yellow(t.id)}`);
+        if (showPaths) {
+          console.log(`    ${pc.dim(`↳ ${t.path}`)}`);
+        }
+      }
+    }
+    if (!showPaths) {
+      console.log('');
+      console.log(pc.dim('💡 Tip: Run "openproducer template list -p" (or --paths) to display exact file paths on disk.'));
     }
     console.log('');
     return;
@@ -98,14 +120,42 @@ export async function templateCommand(
       logger.error('Please specify a template name to use: "openproducer template use <template-name>"');
       process.exit(1);
     }
+
+    const configMgr = new ConfigManager();
+    if (!(await configMgr.isInitialized())) {
+      logger.error('No OpenProducer project found. Run "openproducer init" first.');
+      process.exit(1);
+    }
+
+    // Check if it's a Story Template first
+    const storyTemplate = await tm.getStoryTemplate(templateId);
+    if (storyTemplate) {
+      const config = await configMgr.readConfig();
+      config.story_template_id = templateId;
+      await configMgr.writeConfig(config);
+
+      // Scaffold production/story/beats.md if missing
+      const fs = require('../utils/fs');
+      const storyDir = path.join(configMgr.root, 'production', 'story');
+      await fs.ensureDir(storyDir);
+      const beatsPath = path.join(storyDir, 'beats.md');
+      if (!(await fs.exists(beatsPath))) {
+        await fs.writeFile(
+          beatsPath,
+          `# 🗺️ Story Beats: ${storyTemplate.name}\n- **Template:** \`${storyTemplate.template_id}\`\n- **Archetype:** \`${storyTemplate.narrative_archetype}\`\n- **Target WPM:** ${storyTemplate.target_wpm || 135}\n\n## 🪝 Active Story Structure\n*(Generated via /opp-write or /opp-rewrite)*\n`
+        );
+      }
+
+      logger.success(`Applied Story Template "${pc.yellow(templateId)}" (${storyTemplate.name}) to workspace.`);
+      logger.info(`Next step: Run "/opp-write" or "/opp-rewrite" to generate/adapt your story using this template!`);
+      console.log('');
+      return;
+    }
+
+    // Otherwise treat as a Video Template
     const template = await tm.getTemplate(templateId);
     if (!template) {
       logger.error(`Template "${templateId}" not found in ${tm.directory}`);
-      process.exit(1);
-    }
-    const configMgr = new ConfigManager();
-    if (!(await configMgr.isInitialized())) {
-      logger.error('No OpenProducer project found. Run "openproducer init --template ' + templateId + '" instead.');
       process.exit(1);
     }
     const config = await configMgr.readConfig();

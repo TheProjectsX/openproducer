@@ -11,13 +11,15 @@ Execute the OpenProducer Template workflow to save, load, or update reusable con
    Run the OpenProducer CLI command in the terminal to bypass file sandbox restrictions and sync with the global vault:
    - **`list`**:
      ```bash
-     npx openproducer template list
+     npx openproducer template list        # Clean list of template names
+     npx openproducer template list -p     # Show resolved physical file paths on disk
      ```
    - **`load [name]` / `use [name]`**:
      ```bash
      npx openproducer template use [name]
      ```
-     - Auto-populates `./openproducer/config.json`, `./openproducer/state.json`, and `./openproducer/visual/technical_anchor.txt`.
+     - Auto-detects whether `[name]` is a Story Template or Video Template.
+     - Auto-populates `./openproducer/config.json`, `./openproducer/state.json`, and `./openproducer/visual/technical_anchor.txt` (or scaffolds `production/story/beats.md`).
      - Keeps mode in `explore` for plot intake, skipping any pre-filled template questions.
    - **`save [name]`**:
      ```bash

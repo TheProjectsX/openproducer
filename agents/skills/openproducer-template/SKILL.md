@@ -90,7 +90,16 @@ audio_delivery_mode: <separate_script_first / separate_all_at_once / embedded>
 
 ### 4. List Templates (`list`)
 - Execute via terminal: `npx openproducer template list`
-- Lists all available templates in `~/.openproducer/templates/` and starter presets (`.md`).
+- Lists all available templates neatly categorized into **🎬 Video & Cinematography Templates** and **📖 Story & Narrative Templates**.
+- **Display Physical File Paths (`--paths` / `-p` / `-v`):**
+  - Execute: `npx openproducer template list -p` (or `--paths` / `--verbose`)
+  - Displays the exact physical file path on disk for every template.
+- **Official Template Search Hierarchy:**
+  Templates are resolved deterministically across 3 locations:
+  1. Global Workstation Vault: `~/.openproducer/templates/` (and `~/.openproducer/templates/story/`)
+  2. Local Project Scope: `./openproducer/templates/` (and `./openproducer/templates/story/`)
+  3. Bundled Starter Presets: `openproducer-core/templates/starter_presets/`
+- **Strict Anti-Drift Rule:** NEVER search or crawl arbitrary directories looking for templates. The CLI automatically resolves and prioritizes the template path when running `npx openproducer template use <id>`. If you need to verify locations, always run `npx openproducer template list -p`.
 
 ---
 

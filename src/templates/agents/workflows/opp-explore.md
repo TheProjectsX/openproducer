@@ -16,6 +16,8 @@ Execute the OpenProducer Explore workflow (100% Read-Only Session Planning Mode)
 4. **Step-by-Step Conversational Flow (Use Interactive `ask_question` Tool):**
    - **Interactive UI First:** Whenever asking structured intake questions (Steps A and B below), **MUST use the agent's interactive question tool (`ask_question` / `AskUserQuestion`)** if available in the environment so the creator can click options directly instead of typing text (fall back to plain text only if no question tool exists).
    - **Step A0 (Ensure Plot is Given or Established First):**
+     - **Pre-Existing Story Check:** If `production/story/script.txt` exists on disk (from `/opp-write` or `/opp-rewrite`), announce it and adopt it by default. Skip to Step A.
+     - **Script Guidance Routing:** If creator mentions they have no script or need writing/rewriting, inform them of `/opp-write` and `/opp-rewrite`.
      - If the creator already provided a plot upfront, proceed directly to Step A.
      - If the creator has no plot yet (brainstorming from 0), brainstorm plot ideas with them **first** until a plot is chosen and established. **Do NOT ask the technical settings questions before a plot is given or established.**
    - **Step A (Foundational Intake Questions via `ask_question` — Only After Plot is Given/Established):** Once the plot is given or established, call `ask_question` to ask only the missing settings:

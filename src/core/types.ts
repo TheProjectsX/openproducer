@@ -48,6 +48,7 @@ export interface OpenProducerConfig {
   audio_delivery_mode: AudioDeliveryMode | string;
   language: string;
   linter_profile: string;
+  story_template_id?: string;
 }
 
 export interface StageTracker {
@@ -163,4 +164,37 @@ export interface SeriesTemplate {
   };
   raw_content?: string;
 }
+
+export type StoryArchetype =
+  | 'pure_narration'
+  | 'dialogue_heavy'
+  | 'hybrid'
+  | 'silent_visual'
+  | string;
+
+export interface StoryTemplate {
+  template_id: string;
+  type: 'story';
+  name: string;
+  narrative_archetype: StoryArchetype;
+  voice_persona?: string;
+  target_wpm?: number;
+  pacing_structure?: Array<{
+    section: string;
+    duration_target: string;
+    rule: string;
+  }>;
+  dialogue_rules?: {
+    sentence_cadence?: string;
+    expression_tags?: string[];
+    banned_cliches?: string[];
+  };
+  raw_content?: string;
+}
+
+export interface TemplateInfo {
+  id: string;
+  path: string;
+}
+
 

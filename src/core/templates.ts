@@ -1,8 +1,36 @@
 import * as os from 'node:os';
 import * as path from 'node:path';
 import * as fsp from 'node:fs/promises';
-import { SeriesTemplate } from './types';
+import { SeriesTemplate, StoryTemplate, TemplateInfo } from './types';
 import { ensureDir, exists, findProjectRoot, readFile, readJson, writeFile } from '../utils/fs';
+
+/**
+ * Parses human-readable Markdown story template (.md) into a StoryTemplate object.
+ */
+export function parseStoryMarkdownTemplate(content: string, templateId: string): StoryTemplate {
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+  const frontmatterStr = match ? match[1] : '';
+
+  const fm: Record<string, string> = {};
+  for (const line of frontmatterStr.split('\n')) {
+    const parts = line.split(':');
+    if (parts.length >= 2) {
+      const key = parts[0].trim();
+      const val = parts.slice(1).join(':').trim().replace(/^['"](.*)['"]$/, '$1');
+      if (key) fm[key] = val;
+    }
+  }
+
+  return {
+    template_id: fm.template_id || templateId,
+    type: 'story',
+    name: fm.name || templateId,
+    narrative_archetype: fm.narrative_archetype || 'pure_narration',
+    voice_persona: fm.voice_persona || '',
+    target_wpm: parseInt(fm.target_wpm, 10) || 135,
+    raw_content: content
+  };
+}
 
 /**
  * Parses human-readable Markdown series template (.md) into a SeriesTemplate object.
@@ -349,5 +377,161 @@ export class TemplateManager {
 
     await this.saveTemplate(merged);
     return merged;
+  }
+
+  async listStoryTemplates(): Promise<TemplateInfo[]> {
+    await this.ensureDirectory();
+    await this.syncProjectTemplatesToGlobal();
+    const storyMap = new Map<string, string>();
+
+    // 1. Check starter presets (lowest priority)
+    for (const presetDir of getStarterPresetsDirs()) {
+      try {
+        if (await exists(presetDir)) {
+          const files = await fsp.readdir(presetDir);
+          for (const f of files) {
+            if (f.endsWith('.md') && f.startsWith('story-')) {
+              const id = f.replace(/\.md$/, '');
+              storyMap.set(id, path.join(presetDir, f));
+            }
+          }
+        }
+      } catch {}
+    }
+
+    // 2. Check ~/.openproducer/templates/ for story- prefixed files
+    try {
+      const files = await fsp.readdir(this.globalDir);
+      for (const f of files) {
+        if (f.endsWith('.md') && f.startsWith('story-')) {
+          const id = f.replace(/\.md$/, '');
+          storyMap.set(id, path.join(this.globalDir, f));
+        }
+      }
+    } catch {}
+
+    // 3. Check ~/.openproducer/templates/story/
+    const globalStory = path.join(this.globalDir, 'story');
+    if (await exists(globalStory)) {
+      try {
+        const files = await fsp.readdir(globalStory);
+        for (const f of files) {
+          if (f.endsWith('.md')) {
+            const id = f.replace(/\.md$/, '');
+            storyMap.set(id, path.join(globalStory, f));
+          }
+        }
+      } catch {}
+    }
+
+    // 4. Check current project openproducer/templates/story/ (highest priority)
+    if (this.projectRoot) {
+      const localStory = path.join(this.projectRoot, 'openproducer', 'templates', 'story');
+      if (await exists(localStory)) {
+        try {
+          const files = await fsp.readdir(localStory);
+          for (const f of files) {
+            if (f.endsWith('.md')) {
+              const id = f.replace(/\.md$/, '');
+              storyMap.set(id, path.join(localStory, f));
+            }
+          }
+        } catch {}
+      }
+    }
+
+    return Array.from(storyMap.entries()).map(([id, p]) => ({ id, path: p }));
+  }
+
+  async listVideoTemplates(): Promise<TemplateInfo[]> {
+    await this.ensureDirectory();
+    await this.syncProjectTemplatesToGlobal();
+    const videoMap = new Map<string, string>();
+
+    // 1. Check starter presets that are not stories
+    for (const presetDir of getStarterPresetsDirs()) {
+      try {
+        if (await exists(presetDir)) {
+          const files = await fsp.readdir(presetDir);
+          for (const f of files) {
+            if (f.endsWith('.md') && !f.startsWith('story-')) {
+              const id = f.replace(/\.md$/, '');
+              videoMap.set(id, path.join(presetDir, f));
+            }
+          }
+        }
+      } catch {}
+    }
+
+    // 2. Check globalDir files that are not stories
+    try {
+      const files = await fsp.readdir(this.globalDir);
+      for (const f of files) {
+        if (f.endsWith('.md') && !f.startsWith('story-')) {
+          const id = f.replace(/\.md$/, '');
+          videoMap.set(id, path.join(this.globalDir, f));
+        }
+      }
+    } catch {}
+
+    // 3. Check current project openproducer/templates/
+    if (this.projectRoot) {
+      const localDir = path.join(this.projectRoot, 'openproducer', 'templates');
+      if (await exists(localDir)) {
+        try {
+          const files = await fsp.readdir(localDir);
+          for (const f of files) {
+            if (f.endsWith('.md') && !f.startsWith('story-')) {
+              const id = f.replace(/\.md$/, '');
+              videoMap.set(id, path.join(localDir, f));
+            }
+          }
+        } catch {}
+      }
+    }
+
+    return Array.from(videoMap.entries()).map(([id, p]) => ({ id, path: p }));
+  }
+
+  async getStoryTemplate(templateId: string): Promise<StoryTemplate | null> {
+    await this.syncProjectTemplatesToGlobal();
+
+    // 1. Check global story dir ~/.openproducer/templates/story/<id>.md
+    const globalStoryMd = path.join(this.globalDir, 'story', `${templateId}.md`);
+    if (await exists(globalStoryMd)) {
+      const content = await readFile(globalStoryMd);
+      return parseStoryMarkdownTemplate(content, templateId);
+    }
+
+    // 2. Check global dir ~/.openproducer/templates/<id>.md
+    const globalMd = path.join(this.globalDir, `${templateId}.md`);
+    if (await exists(globalMd)) {
+      const content = await readFile(globalMd);
+      if (content.includes('type: story') || templateId.startsWith('story-')) {
+        return parseStoryMarkdownTemplate(content, templateId);
+      }
+    }
+
+    // 3. Check local project openproducer/templates/story/<id>.md
+    if (this.projectRoot) {
+      const localStoryMd = path.join(this.projectRoot, 'openproducer', 'templates', 'story', `${templateId}.md`);
+      if (await exists(localStoryMd)) {
+        const content = await readFile(localStoryMd);
+        return parseStoryMarkdownTemplate(content, templateId);
+      }
+    }
+
+    // 4. Check starter presets
+    for (const presetDir of getStarterPresetsDirs()) {
+      const candidate = path.join(presetDir, `${templateId}.md`);
+      if (await exists(candidate)) {
+        const content = await readFile(candidate);
+        if (content.includes('type: story') || templateId.startsWith('story-')) {
+          return parseStoryMarkdownTemplate(content, templateId);
+        }
+      }
+    }
+
+    return null;
   }
 }

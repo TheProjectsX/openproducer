@@ -35,6 +35,7 @@ This workspace is accessed across different devices, workstations, and conversat
 | **Phase 6: Director's Cut & Assembly** | Script Slicing, Temporal Pacing (4s/6s/8s/10s), Multi-Character Clean Singles, Spatial Handoffs, Dynamic Audio Bridges, Pluggable Styles, Retake Doctor & T&S Registry | 🔒 **LOCKED & EMPIRICALLY VALIDATED** | [`05_directors_cut`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`06_retake_doctor`](./production_framework/specs/06_retake_doctor_spec.md), [`safety_registry`](./production_framework/specs/safety_registry.md), [`styles/`](./production_framework/styles/) | [`directors_cut_and_assembly.md`](./discussions/directors_cut_and_assembly.md), [Discussions 49, 63, 64](./discussions/_raw/) |
 
 | **Phase 8: Automation Skill & Linters** | OpenProducer Agent Skill, 7 Operational Modes, Global Series Templates, 19 Linters & 8 Pluggable Styles | ⏳ In Progress (Skill Packaged) | [`agents/skills/`](./agents/skills/), [`simulations/the_lighthouse`](./production_framework/simulations/the_lighthouse/), [`the_lighthouse_v2`](./production_framework/simulations/the_lighthouse_v2/) | [Discussion 66](./discussions/_raw/66_mode_architecture_and_creator_series_templates.md), [Discussion 70](./discussions/_raw/70_context_driven_clip_architecture_and_timeline_continuity.md), [Discussion 71](./discussions/_raw/71_default_multispeaker_segmented_audio_and_tts_hallucination_sweetspot.md), [Discussion 72](./discussions/_raw/72_the_lighthouse_v2_empirical_validation_and_production_readiness.md) |
+| **Phase 9: OpenProducer v2 (Story Engine)** | Dynamic Pre-Production (`opp-write`, `opp-rewrite`), Intent Routing, Decoupled Story & Video Templates, `production/story/` Human Suite & `clean.txt` Export | ✅ **SPECIFIED & PACKAGED** | [`08_story_spec.md`](./production_framework/specs/08_story_spec.md), [`openproducer-write`](./agents/skills/openproducer-write/SKILL.md), [`openproducer-rewrite`](./agents/skills/openproducer-rewrite/SKILL.md) | [Discussion 82](./discussions/_raw/82_dynamic_story_engine_write_rewrite_and_narrative_templates.md) |
 
 ---
 
@@ -818,7 +819,7 @@ To prevent token bloat while retaining 100% information control:
 - **Reference Deliverables:** [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md), [`agents/workflows/opp-produce.md`](./agents/workflows/opp-produce.md), [`src/templates/agents/skills/openproducer-produce/SKILL.md`](./src/templates/agents/skills/openproducer-produce/SKILL.md), and [`src/templates/agents/workflows/opp-produce.md`](./src/templates/agents/workflows/opp-produce.md).
 
 
-### 2026-11-03 — Google AI Studio 40-Expression TTS Catalog Codification (Discussion 81)
+### 2026-11-03 — Google AI Studio 40-Expression TTS Catalog Codification
 - **Problem & Opportunity:** Google AI Studio Speech Playground supports a comprehensive library of inline vocal expressions beyond `<short pause>` and `<whisper>`, allowing dramatic emotional performances across comedy, suspense, horror, and action.
 - **40 Official Expression Tags Integrated:** Codified the complete catalog into [`07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md) and [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md):
   - *Cadence & Pauses:* `<short pause>`, `<long pause>`
@@ -831,14 +832,35 @@ To prevent token bloat while retaining 100% information control:
 - **Reference Deliverables:** [`production_framework/specs/07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md), [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md), [`agents/skills/openproducer-propose/SKILL.md`](./agents/skills/openproducer-propose/SKILL.md), and [`agents/workflows/opp-produce.md`](./agents/workflows/opp-produce.md).
 
 
-### 2026-11-03 — Google AI Studio 40-Expression TTS Catalog Codification (Discussion 81)
-- **Problem & Opportunity:** Google AI Studio Speech Playground supports a comprehensive library of inline vocal expressions beyond `<short pause>` and `<whisper>`, allowing dramatic emotional performances across comedy, suspense, horror, and action.
-- **40 Official Expression Tags Integrated:** Codified the complete catalog into [`07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md) and [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md):
-  - *Cadence & Pauses:* `<short pause>`, `<long pause>`
-  - *Breathing & Respiratory:* `<breath>`, `<heavy breath>`, `<exhales>`, `<pant>`, `<sigh>`, `<sighs>`, `<yawn>`, `<cough>`, `<sneeze>`, `<throat-clearing>`
-  - *Laughter & Amusement:* `<chuckle>`, `<chuckles>`, `<giggle>`, `<laugh>`, `<laughter>`, `<snicker>`, `<snort>`, `<cackle>`
-  - *Fear, Pain, Distress & Grief:* `<gasp>`, `<groan>`, `<grunt>`, `<whimper>`, `<cry>`, `<sob>`, `<moan>`, `<argh>`
-  - *Vocalizations & Projections:* `<whisper>`, `<whispering>`, `<whispers>`, `<cheer>`, `<shout>`, `<scream>`, `<shriek>`, `<pff>`, `<phew>`, `<tsk>`
-  - *Hostile & Animalistic:* `<growl>`, `<grr>`, `<hiss>`
-- **Workflow & Skill Synchronization:** Updated `openproducer-propose` and `openproducer-produce` skills to dynamically inject these tags at emotionally motivated story beats, preserving the 80–90% natural punctuation ratio and clean isolated-line syntax (`.\n<tag>\n`) while strictly banning square brackets in spoken text.
-- **Reference Deliverables:** [`production_framework/specs/07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md), [`production_framework/specs/05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md), [`agents/skills/openproducer-propose/SKILL.md`](./agents/skills/openproducer-propose/SKILL.md), and [`agents/workflows/opp-produce.md`](./agents/workflows/opp-produce.md).
+### 2026-11-11 — Native CLI Template Execution (Zero-Script Architecture, Discussion 81)
+- **Problem Solved:** Generating helper `.js` files in `.agents/scripts/` cluttered creator repositories and created sandbox permission friction across different AI editor environments.
+- **Unified Native CLI Execution:** Standardized template lifecycle operations directly into the official TypeScript binary `npx openproducer template <list|save|use|update>` (or `npx opp template <action>`), eliminating all loose helper scripts while maintaining full dual-scope discovery and auto-promotion.
+- **Reference Deliverables:** [`discussions/_raw/81_sandbox_safe_agent_template_scripts.md`](./discussions/_raw/81_sandbox_safe_agent_template_scripts.md), [`src/commands/template.ts`](./src/commands/template.ts), and [`agents/skills/openproducer-template/SKILL.md`](./agents/skills/openproducer-template/SKILL.md).
+
+
+### 2026-11-11 — Dynamic Story Engine: Write/Rewrite, Intent Routing & Decoupled Story/Video Templates (Discussion 82)
+- **Architectural Consensus:** Codified OpenProducer v2 Story Engine (`opp-write` and `opp-rewrite`) as native Pre-Production skills, rejecting the disconnected standalone `openwriter` route in favor of a cohesive creator lifecycle.
+- **Fluid Intent-Driven Lifecycle:**
+  1. *Writer-First (`opp-write`):* Checks active Story Template; if none, conducts an interactive narrative pitch session; generates beat sheet and screenplay.
+  2. *Rewriter-First (`opp-rewrite`):* Ingests rough drafts/articles, preserves verbatim source in `production/story/raw_source.txt`, and restructures dialogue/pacing according to Story Template or tone parameters.
+  3. *Context-Aware `opp-explore`:* Detects when creators lack a script and intelligently suggests `/opp-write` or `/opp-rewrite`. Automatically detects existing story files in `production/story/` to eliminate redundant input.
+  4. *Traditional Fast-Path:* Preserves immediate `explore` -> `propose` -> `produce` flow for creators who arrive with finished scripts.
+- **Producer-Facing Deliverables (`production/story/`):** Rather than hiding generated stories inside the internal brain, `opp-write` and `opp-rewrite` write directly to creator-facing files in `production/story/` (`script.txt`, `beats.md`, and optional `raw_source.txt`), giving the producer immediate visibility to review and edit dialogue before video production.
+- **Decoupled Story & Video Templates (Zero Cramping & Zero Collision):**
+  - Story and Video templates live in dedicated sub-vaults: `~/.openproducer/templates/video/` and `~/.openproducer/templates/story/` (and local `./openproducer/templates/`).
+  - Identical IDs are supported without collision (e.g. `stickfigure` for story narrative style AND `stickfigure` for visual cinematography).
+  - Decoupled loading targets: Video templates load into `./openproducer/visual/` and `./production/motion_graphics.md`; Story templates load into `./production/story/beats.md` and story pacing configs.
+  - Complete mix-and-match freedom: A creator can pair any Story Template (e.g. comedic rant) with any Video Template (e.g. claymation or stick figure).
+- **Universal Story Schema (Narration, Dialogue, Hybrid, Silent):**
+  - Fixed file stability: Always `production/story/beats.md` and `production/story/script.txt`.
+  - Dynamic content schemas via explicit bracket headers (`[STORY FORMAT: pure_narration | dialogue_heavy | hybrid | silent_visual]`) to seamlessly route to single-voice TTS, alternating-turn multi-speaker TTS, or pure ambient foley without file sprawl.
+- **The Human Clean Reading Export (`production/story/clean.txt`):**
+  - Agent write-only export stripped of all TTS tags, brackets, and machine directives, formatted like a clean book or script for effortless human reading.
+  - Excluded from automated agent reading (agent treats `script.txt` as source of truth), unless the producer explicitly requests to update from `clean.txt`.
+- **Implementation Deliverables (Complete):**
+  - Specification: [`08_story_spec.md`](./production_framework/specs/08_story_spec.md) defining the 4 canonical schemas, tag purity laws, and 7 story pre-flight linters.
+  - Agent Skills & Workflows: [`openproducer-write`](./agents/skills/openproducer-write/SKILL.md), [`openproducer-rewrite`](./agents/skills/openproducer-rewrite/SKILL.md), [`opp-write.md`](./agents/workflows/opp-write.md), and [`opp-rewrite.md`](./agents/workflows/opp-rewrite.md).
+  - Pipeline Synchronizations: Updated `openproducer-explore`, `openproducer-propose`, and `openproducer-produce` for zero-loss auto-ingestion of `production/story/script.txt`.
+  - Starter Story Presets: Bundled `story-stickfigure-rant.md`, `story-true-crime-mystery.md`, `story-youtube-explainer.md`, and `story-dialogue-drama.md` into `src/templates/` and `dist/templates/`.
+  - CLI Template Decoupling & Path Flags: Upgraded `src/core/templates.ts`, `src/core/types.ts`, `src/cli.ts`, and `src/commands/template.ts` with dedicated `listVideoTemplates()`, `listStoryTemplates()`, and `getStoryTemplate()`, supporting clean default names and optional `--paths` (`-p`) / `--verbose` (`-v`) flags for full disk path visibility with strict 3-tier search order rules.
+- **Reference Deliverables:** [`production_framework/specs/08_story_spec.md`](./production_framework/specs/08_story_spec.md) and [`discussions/_raw/82_dynamic_story_engine_write_rewrite_and_narrative_templates.md`](./discussions/_raw/82_dynamic_story_engine_write_rewrite_and_narrative_templates.md).
