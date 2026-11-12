@@ -11,13 +11,50 @@ export async function templateCommand(
   templateId?: string,
   instruction?: string,
   options?: { paths?: boolean; verbose?: boolean; type?: string; group?: string }
-): Promise<void> {
-  logger.banner();
+): Promise<string | void> {
+  const showPaths = Boolean(options?.paths || options?.verbose);
+  let requestedGroup = (options?.group || options?.type || '').toLowerCase();
+
+  const knownActions = [
+    'read',
+    'cat',
+    'use',
+    'load',
+    'save',
+    'create',
+    'update',
+    'edit',
+    'refine',
+    'show',
+    'view',
+    'list'
+  ];
+
+  // Handle group-first syntax: e.g. "openproducer template package read xxxx-xxxx"
+  // or "openproducer template package use xxxx-xxxx"
+  if (templateId && knownActions.includes(templateId.toLowerCase())) {
+    requestedGroup = (action || '').toLowerCase();
+    action = templateId.toLowerCase();
+    templateId = instruction;
+    instruction = undefined;
+  }
+
+  // Handle slash syntax in templateId: "openproducer template read package/xxxx-xxxx"
+  if (templateId && templateId.includes('/')) {
+    const slashParts = templateId.split('/');
+    requestedGroup = slashParts[0].toLowerCase();
+    templateId = slashParts.slice(1).join('/');
+  }
+
+  action = (action || 'list').toLowerCase();
+
+  // Print banner for interactive commands (skip for read/cat to preserve pure stdout formatting)
+  if (action !== 'read' && action !== 'cat') {
+    logger.banner();
+  }
 
   const configMgr = new ConfigManager();
   const tm = new TemplateManager(configMgr.root);
-  const showPaths = Boolean(options?.paths || options?.verbose);
-  const requestedGroup = (options?.group || options?.type || '').toLowerCase();
 
   const isInitialized = await configMgr.isInitialized();
   const state = isInitialized ? await configMgr.readState().catch(() => null) : null;
@@ -531,5 +568,23 @@ export async function templateCommand(
     return;
   }
 
-  logger.error(`Unknown template action "${action}". Available: list, save, use, update, edit.`);
+  // 6. Action: read / cat
+  if (action === 'read' || action === 'cat') {
+    if (!templateId) {
+      logger.error('Please specify a template name to read: "openproducer template read <template-name> [--group <group>]"');
+      process.exit(1);
+    }
+
+    const tpl = await tm.readTemplate(templateId, requestedGroup);
+    if (!tpl) {
+      const groupHint = requestedGroup ? ` in group "${requestedGroup}"` : '';
+      logger.error(`Template "${templateId}" not found${groupHint} in ${tm.directory}`);
+      process.exit(1);
+    }
+
+    console.log(tpl.content.trim());
+    return tpl.content;
+  }
+
+  logger.error(`Unknown template action "${action}". Available: list, save, use, update, edit, read.`);
 }

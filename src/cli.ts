@@ -71,7 +71,7 @@ program
 // Command: template [action] [templateId] [instruction...]
 program
   .command('template [action] [templateId] [instruction...]')
-  .description('Manage global series franchise presets (list, save <id>, use <id>, update <id>, edit <id>)')
+  .description('Manage global series franchise presets (list, save <id>, use <id>, update <id>, edit <id>, read <id>)')
   .option('-p, --paths', 'Display physical file paths for listed templates')
   .option('-v, --verbose', 'Verbose mode: display template file paths and details')
   .option('-g, --group <group>', 'Template group / sub-vault (video | story | audio | style | etc.)')

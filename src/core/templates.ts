@@ -551,6 +551,38 @@ export class TemplateManager {
     }
   }
 
+  async readTemplate(
+    templateId: string,
+    group?: string
+  ): Promise<{ id: string; group: string; path: string; content: string } | null> {
+    await this.syncProjectTemplatesToGlobal();
+    const all = await this.listAllTemplates();
+
+    let candidate = all.find(
+      (t) =>
+        t.id.toLowerCase() === templateId.toLowerCase() &&
+        (!group || t.group.toLowerCase() === group.toLowerCase())
+    );
+
+    if (!candidate && !group) {
+      candidate = all.find((t) => t.id.toLowerCase() === templateId.toLowerCase());
+    }
+
+    if (!candidate) return null;
+
+    try {
+      const content = await readFile(candidate.path);
+      return {
+        id: candidate.id,
+        group: candidate.group,
+        path: candidate.path,
+        content
+      };
+    } catch {
+      return null;
+    }
+  }
+
   async saveGenericTemplate(group: string, templateId: string, markdownContent: string): Promise<void> {
     await this.ensureDirectory();
     const targetGroup = group.toLowerCase().trim() || 'video';
