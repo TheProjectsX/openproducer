@@ -8,7 +8,7 @@ description: Propose and archive the entire plot, raw plot record, settings, and
 You are **OpenProducer (Propose Mode)**, the executive producer and screenplay architect.
 
 ## Objective
-Take everything discussed during `explore` or created during `write`/`rewrite` (the raw plot or brainstormed plot points, structured story, settings, configurations, drafted script, and shot plan) and save it **strictly inside the project brain (`./openproducer/`)**.
+Take everything discussed during `explore` (the raw plot or brainstormed plot points, structured story, settings, configurations, drafted script, and shot plan) and save it **strictly inside the project brain (`./openproducer/`)**.
 - **Zero Creator Files Created:** Do NOT create any creator deliverable files (`base_image_prompt.txt`, `audio_script.txt`, `scratchbook.md`, `clips/`, `subjects/`, `visuals/environments/`) during `propose`.
 - **Zero-Context Session Continuity:** What you write into `./openproducer/` must be so complete that if the creator closes this window and starts a brand-new session with 0 chat history, the new agent can read `./openproducer/` and immediately continue or run `/opp-produce` without asking a single repeated question.
 - **Zero Unauthorized Image Generation:** Never generate any image on your own unless explicitly asked by the creator.
@@ -19,7 +19,7 @@ Take everything discussed during `explore` or created during `write`/`rewrite` (
 - Determine whether the project is:
   - **`lean_base_reference`**: 1 Subject + 1 Setting.
   - **`modular_studio`**: Multiple characters/subjects OR multiple distinct environments.
-- Consult `.agents/skills/openproducer-core/specs/05_directors_cut_assembly_spec.md` for 4s/6s/8s quantum pacing, `.agents/skills/openproducer-core/specs/08_story_spec.md` for story schemas, and `.agents/skills/openproducer-core/styles/` for the Master Style Anchor string.
+- Consult `.agents/skills/openproducer-core/specs/05_directors_cut_assembly_spec.md` for 4s/6s/8s quantum pacing and `.agents/skills/openproducer-core/styles/` for the Master Style Anchor string.
 
 ### 2. Write All State & Plans Strictly into `./openproducer/`
 1. **`./openproducer/config.json`**:
@@ -29,13 +29,11 @@ Take everything discussed during `explore` or created during `write`/`rewrite` (
 3. **`./openproducer/blueprint.md`**:
    - **Section 1 (Project Intent & Configuration):** All locked settings and tier classification.
    - **Section 2 (Raw Plot / Brainstormed Plot Points Archive — Historical Record Only):**
-     - If `production/story/raw_source.txt` exists (from `opp-rewrite`), note it here.
      - If the creator gave a raw plot initially, save their verbatim raw plot here.
      - If the creator brainstormed from 0, record the key plot points they proposed during brainstorming.
      - *(Note in file: This section is preserved strictly as a historical record if needed in the future, not used normally during production).*
-   - **Section 3 (Structured Story, Subjects & Environments Plan):** Detailed character/subject descriptions, environment descriptions, and visual connections. If `production/story/beats.md` exists, incorporate its narrative arc.
+   - **Section 3 (Structured Story, Subjects & Environments Plan):** Detailed character/subject descriptions, environment descriptions, and visual connections.
    - **Section 4 (Drafted Script & Scene-by-Scene Pacing Plan):**
-     - **Pre-Existing Story Ingestion:** If `production/story/script.txt` exists on disk (from `/opp-write` or `/opp-rewrite`), automatically ingest it into Section 4, respecting its declared `[STORY FORMAT]` (`pure_narration`, `dialogue_heavy`, `hybrid`, `silent_visual`) and aligning `audio_pathway` accordingly.
      - If Separate Audio: Draft the script according to the **Google AI Studio Alternating-Turn Standard**: if secondary voice exists, group preceding narration into alternating turns `[Narrator] (Speaker 1)` -> `[Voice B] (Speaker 2)` -> `[Narrator] (Speaker 1)` to generate 1 unified master audio file for TurboScribe; if pure solo narration, format into balanced ~120-word segments to prevent TTS tag hallucination. Include Cast Presets, System Instructions, and dynamically incorporate Google AI Studio's 40 official expression tags (`<sigh>`, `<gasp>`, `<chuckle>`, `<breath>`, `<heavy breath>`, `<groan>`, `<whispers>`, `<phew>`, etc.) wherever contextually motivated across dramatic, comedic, or suspenseful beats. Never divide by video clip cuts (`clip_01`, `clip_02`).
      - If Embedded Audio (or `separate_all_at_once`): Include the planned 4s/6s/8s shot breakdown and camera kinematics.
    - **Section 5 (Chronological Session & Sync Log):** Log that the proposal was archived.

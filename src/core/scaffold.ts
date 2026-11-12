@@ -76,7 +76,7 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
       if (!(await exists(beatsPath))) {
         await writeFile(
           beatsPath,
-          `# 🗺️ Story Beats: ${storyPreset.name}\n- **Template:** \`${storyPreset.template_id}\`\n- **Archetype:** \`${storyPreset.narrative_archetype}\`\n- **Target WPM:** ${storyPreset.target_wpm || 135}\n\n## 🪝 Active Story Structure\n*(Generated via /opp-write or /opp-rewrite)*\n`
+          `# 🗺️ Story Beats: ${storyPreset.name}\n- **Template:** \`${storyPreset.template_id}\`\n- **Archetype:** \`${storyPreset.narrative_archetype}\`\n- **Target WPM:** ${storyPreset.target_wpm || 135}\n\n## 🪝 Active Story Structure\n*(Story beats and narrative structure)*\n`
         );
       }
     }
@@ -227,7 +227,7 @@ ARCHIVE ONLY (Not used directly for prompt generation, preserved strictly as a h
 
 | Timestamp | Mode (\`propose\` / \`sync\` / \`produce\`) | Summary of Updates | Next Step |
 |---|---|---|---|
-| Initial | \`init\` | Workspace initialized in blank init mode | Run \`/opp-explore\`, \`/opp-template\`, or \`/opp-write\` |
+| Initial | \`init\` | Workspace initialized in blank init mode | Run \`/opp-explore\` or \`/opp-template\` |
 `;
   await writeFile(path.join(openproducerDir, 'blueprint.md'), blueprintContent);
   filesCreated.push('openproducer/blueprint.md');

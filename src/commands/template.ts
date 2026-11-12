@@ -214,12 +214,12 @@ export async function templateCommand(
       if (!(await exists(beatsPath))) {
         await writeFile(
           beatsPath,
-          `# 🗺️ Story Beats: ${storyTemplate.name}\n- **Template:** \`${storyTemplate.template_id}\`\n- **Archetype:** \`${storyTemplate.narrative_archetype}\`\n- **Target WPM:** ${storyTemplate.target_wpm || 135}\n\n## 🪝 Active Story Structure\n*(Generated via /opp-write or /opp-rewrite)*\n`
+          `# 🗺️ Story Beats: ${storyTemplate.name}\n- **Template:** \`${storyTemplate.template_id}\`\n- **Archetype:** \`${storyTemplate.narrative_archetype}\`\n- **Target WPM:** ${storyTemplate.target_wpm || 135}\n\n## 🪝 Active Story Structure\n*(Story beats and narrative structure)*\n`
         );
       }
 
       logger.success(`Applied Story Template "${pc.yellow(templateId)}" (${storyTemplate.name}) to workspace.`);
-      logger.info(`Next step: Run "/opp-write" or "/opp-rewrite" to generate/adapt your story using this template!`);
+      logger.info(`Next step: Run "/opp-explore" to brainstorm and develop your story using this template!`);
     }
 
     if (videoTemplate) {

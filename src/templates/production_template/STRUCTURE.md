@@ -25,11 +25,6 @@ This document serves as the declarative file system contract for OpenProducer.
 │       └── technical_anchor.txt       # Injected master style anchor string
 │
 └── production/                        # 🎬 Creator Production Deliverables
-    ├── story/                         # 📖 (Pre-Production Suite from /opp-write or /opp-rewrite)
-    │   ├── beats.md                   # 🗺️ Narrative Architecture: hooks, arcs, pacing
-    │   ├── script.txt                 # 📜 Machine Source of Truth: TTS tags & turn markers
-    │   ├── clean.txt                  # 📖 Human-Only Clean Export: stripped of machine tags
-    │   └── raw_source.txt             # 📥 (If /opp-rewrite) Verbatim source text backup
     ├── base_image_prompt.txt          # 🎨 Master Base Style & Subject/Setting lock prompt
     ├── audio_script.txt                # 🎙️ (If Separate Audio) Clean script to generate/record voice/audio
     ├── clips/                         # 🎬 Clip directories (clip_01, clip_02...)
@@ -59,11 +54,6 @@ This document serves as the declarative file system contract for OpenProducer.
 │       └── technical_anchor.txt       # Master style anchor string
 │
 └── production/                        # 🎬 Creator Production Deliverables
-    ├── story/                         # 📖 (Pre-Production Suite from /opp-write or /opp-rewrite)
-    │   ├── beats.md                   # 🗺️ Narrative Architecture: hooks, arcs, pacing
-    │   ├── script.txt                 # 📜 Machine Source of Truth: TTS tags & turn markers
-    │   ├── clean.txt                  # 📖 Human-Only Clean Export: stripped of machine tags
-    │   └── raw_source.txt             # 📥 (If /opp-rewrite) Verbatim source text backup
     ├── base_image_prompt.txt          # 🎨 Master Base Style lock prompt (anchors all subjects & environments)
     ├── audio_script.txt                # 🎙️ (If Separate Audio) Clean script to generate/record voice/audio
     ├── subjects/                      # 👥 Character & Subject Base Prompts
@@ -81,5 +71,5 @@ This document serves as the declarative file system contract for OpenProducer.
     ├── master_images_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
     ├── master_videos_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
     ├── scratchbook.md                 # 📝 Timeline pacing math, eyeline vectors & Retake Doctor log
-    └── motion_graphics.md             # 🔤 (If applicable) Title cards, lower thirds & subtitle cue sheet
+    └── motion_graphics.md             # 🔤 (If applicable) On-screen captions & typography specs
 ```

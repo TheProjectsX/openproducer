@@ -115,7 +115,7 @@ target_wpm: <e.g. 135>
 - **If Story Template:**
   - Sets `"story_template_id": "<name>"` in `./openproducer/config.json`.
   - Scaffolds `./production/story/beats.md` with the template's narrative archetype and target WPM if not yet created.
-  - Keeps mode in `init` (or `explore`) so producer can run `/opp-write` or `/opp-rewrite` next!
+  - Keeps mode in `init` (or `explore`) so producer can brainstorm and explore the story next!
 - **If Video Template:**
   - Parses YAML frontmatter and writes settings (`archetype`, `tier`, `visual_style`, `aspect_ratio`, `audio_pathway`, `audio_delivery_mode`) into `./openproducer/config.json`.
   - Writes the `Master Style Anchor` to `./openproducer/visual/technical_anchor.txt`.

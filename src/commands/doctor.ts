@@ -17,24 +17,7 @@ export async function doctorCommand(): Promise<void> {
   logger.info(`Running Retake Doctor & Linter Audit on: ${pc.bold(config.project_name)}`);
 
   const suite = new LinterSuite(configMgr.root);
-  const storyResults = await suite.runStoryLinters();
   const result = await suite.runAll();
-
-  if (storyResults.length > 0) {
-    console.log('');
-    console.log(pc.bold(pc.yellow('=== PRE-PRODUCTION STORY LINTER AUDIT (S-01 to S-07) ===')));
-    console.log(pc.dim('────────────────────────────────────────────────────────────'));
-    for (const sr of storyResults) {
-      let statusIcon = pc.green('✔ PASS');
-      if (sr.status === 'WARN') statusIcon = pc.yellow('▲ WARN');
-      if (sr.status === 'FAIL') statusIcon = pc.red('✖ FAIL');
-      const idFormatted = pc.bold(sr.id.padEnd(5, ' '));
-      console.log(`${idFormatted} [${statusIcon}] ${sr.name}`);
-      if (sr.details) {
-        console.log(`      ${pc.dim(sr.details)}`);
-      }
-    }
-  }
 
   console.log('');
   console.log(pc.bold(pc.cyan('=== PRE-FLIGHT LINTER AUDIT (L-01 to L-19) ===')));
@@ -56,8 +39,8 @@ export async function doctorCommand(): Promise<void> {
   console.log(pc.dim('────────────────────────────────────────────────────────────'));
   console.log(
     `Summary: ${pc.green(`${result.passedCount} Passed`)}, ` +
-      `${pc.yellow(`${result.warningCount} Warnings`)}, ` +
-      `${pc.red(`${result.failureCount} Failures`)}`
+    `${pc.yellow(`${result.warningCount} Warnings`)}, ` +
+    `${pc.red(`${result.failureCount} Failures`)}`
   );
   console.log('');
 

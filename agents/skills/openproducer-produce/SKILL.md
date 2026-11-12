@@ -32,7 +32,6 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
 ### 2. Branch A: Separate Audio — Script First (`separate_script_first`)
 - **Pass 1 (When timestamps/transcripts have NOT been provided yet):**
   1. Generate `production/audio_script.txt` following the **Google AI Studio Alternating-Turn & TTS Anti-Hallucination Standard** (`07_scaffolding_and_workspace_spec.md` Section 4.2):
-     - **Pre-Production Source Ingestion:** If `production/story/script.txt` exists on disk (from `/opp-write` or `/opp-rewrite`), directly ingest it into `production/audio_script.txt` (or if declared `[STORY FORMAT: silent_visual]`, skip spoken audio and compile pure Foley prompts into `production/clips/`).
      - **Structure Fork Based on Secondary Voices:**
        * **Case 1 — When Secondary Voice Exists (Google AI Studio 2-Speaker Alternating Format):**
          - Google AI Studio Speech Playground strictly enforces a 2-speaker alternating turn layout (`Speaker 1` -> `Speaker 2` -> `Speaker 1`).
@@ -77,7 +76,7 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
 ### 3. Branch B: Embedded Audio OR Separate Audio — All Together (`embedded` or `separate_all_at_once`)
 - Generate the complete creator file structure in `./production/` in one pass:
   1. `production/base_image_prompt.txt` (Master Base Style lock prompt).
-  2. `production/audio_script.txt` (if `separate_all_at_once`: if `production/story/script.txt` exists on disk, directly ingest it; otherwise format according to the Google AI Studio Alternating-Turn & 40-Expression-Tag Standard—if secondary voice exists, use 2-speaker alternating turns `[Narrator] (Speaker 1)` -> `[Voice B] (Speaker 2)`; if solo narration, use balanced 100–160 word segments; never divided by video clips. If `[STORY FORMAT: silent_visual]` or `embedded`, skip `audio_script.txt` and embed Foley/dialogue into `video_prompt.txt`).
+  2. `production/audio_script.txt` (if `separate_all_at_once`: format according to the Google AI Studio Alternating-Turn & 40-Expression-Tag Standard—if secondary voice exists, use 2-speaker alternating turns `[Narrator] (Speaker 1)` -> `[Voice B] (Speaker 2)`; if solo narration, use balanced 100–160 word segments; never divided by video clips. If `embedded`, skip `audio_script.txt` and embed Foley/dialogue into `video_prompt.txt`).
   3. If `modular_studio`:
      - `production/subjects/<subject_id>/hero_prompt.txt` & `profile_prompt.txt` (with `Conditioned On:` lines).
      - `production/visuals/environments/<environment_id>/prompt.txt` (with `Conditioned On:` line).
