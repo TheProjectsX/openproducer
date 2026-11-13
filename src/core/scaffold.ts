@@ -19,7 +19,11 @@ import {
   writeJson
 } from '../utils/fs';
 import { resolveTemplateSources, TemplateSourceResult } from './fetcher';
-import { TemplateManager } from './templates';
+import {
+  TemplateManager,
+  formatMarkdownTemplate,
+  formatStoryMarkdownTemplate
+} from './templates';
 
 export interface ScaffoldResult {
   projectDir: string;
@@ -51,12 +55,18 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
   await ensureDir(targetDir);
 
   // If --template <id> was passed during init, resolve Video and/or Story template presets
+  let loadedVideoPreset: any = null;
+  let loadedStoryPreset: any = null;
+  let loadedGenericPreset: any = null;
+
   if (options.template) {
     const tm = new TemplateManager(targetDir);
     const videoPreset = await tm.getTemplate(options.template);
     const storyPreset = await tm.getStoryTemplate(options.template);
+    const genericPreset = !videoPreset && !storyPreset ? await tm.getGenericTemplate(options.template) : null;
 
     if (videoPreset) {
+      loadedVideoPreset = videoPreset;
       tier = tier || (videoPreset.tier as any) || '';
       archetype = archetype || videoPreset.archetype || '';
       aspectRatio = aspectRatio || videoPreset.aspect_ratio || '';
@@ -69,6 +79,7 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
     }
 
     if (storyPreset) {
+      loadedStoryPreset = storyPreset;
       storyTemplateId = options.template;
       const storyDir = path.join(targetDir, 'production', 'story');
       await ensureDir(storyDir);
@@ -79,6 +90,10 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
           `# 🗺️ Story Beats: ${storyPreset.name}\n- **Template:** \`${storyPreset.template_id}\`\n- **Archetype:** \`${storyPreset.narrative_archetype}\`\n- **Target WPM:** ${storyPreset.target_wpm || 135}\n\n## 🪝 Active Story Structure\n*(Story beats and narrative structure)*\n`
         );
       }
+    }
+
+    if (genericPreset) {
+      loadedGenericPreset = genericPreset;
     }
   }
 
@@ -241,6 +256,42 @@ ARCHIVE ONLY (Not used directly for prompt generation, preserved strictly as a h
     if (matchedStyle) {
       await writeFile(path.join(openproducerDir, 'visual', 'technical_anchor.txt'), matchedStyle.masterAnchor + '\n');
       filesCreated.push('openproducer/visual/technical_anchor.txt');
+    }
+  }
+
+  // 6b. Mirror loaded template(s) into project openproducer/templates/ working directory
+  if (options.template) {
+    const localTplDir = path.join(openproducerDir, 'templates');
+    await ensureDir(localTplDir);
+
+    if (loadedVideoPreset) {
+      const videoContent = loadedVideoPreset.raw_content || formatMarkdownTemplate(loadedVideoPreset);
+      const localVideoPath = path.join(localTplDir, `${options.template}.md`);
+      await writeFile(localVideoPath, videoContent);
+      filesCreated.push(`openproducer/templates/${options.template}.md`);
+
+      const localVideoSubDir = path.join(localTplDir, 'video');
+      await ensureDir(localVideoSubDir);
+      await writeFile(path.join(localVideoSubDir, `${options.template}.md`), videoContent);
+      filesCreated.push(`openproducer/templates/video/${options.template}.md`);
+    }
+
+    if (loadedStoryPreset) {
+      const localStoryDir = path.join(localTplDir, 'story');
+      await ensureDir(localStoryDir);
+      const storyContent = loadedStoryPreset.raw_content || formatStoryMarkdownTemplate(loadedStoryPreset);
+      const localStoryPath = path.join(localStoryDir, `${options.template}.md`);
+      await writeFile(localStoryPath, storyContent);
+      filesCreated.push(`openproducer/templates/story/${options.template}.md`);
+    }
+
+    if (loadedGenericPreset && loadedGenericPreset.raw_content) {
+      const targetGroup = (loadedGenericPreset.group || 'generic').toLowerCase();
+      const localGroupDir = path.join(localTplDir, targetGroup);
+      await ensureDir(localGroupDir);
+      const localGenericPath = path.join(localGroupDir, `${options.template}.md`);
+      await writeFile(localGenericPath, loadedGenericPreset.raw_content);
+      filesCreated.push(`openproducer/templates/${targetGroup}/${options.template}.md`);
     }
   }
 

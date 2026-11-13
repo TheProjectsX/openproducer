@@ -1,7 +1,11 @@
 import * as path from 'node:path';
 import pc from 'picocolors';
 import { ConfigManager } from '../core/config';
-import { TemplateManager } from '../core/templates';
+import {
+  TemplateManager,
+  formatMarkdownTemplate,
+  formatStoryMarkdownTemplate
+} from '../core/templates';
 import { SeriesTemplate, StoryTemplate } from '../core/types';
 import { ensureDir, exists, readFile, writeFile } from '../utils/fs';
 import { logger } from '../utils/logger';
@@ -244,6 +248,13 @@ export async function templateCommand(
       config.story_template_id = templateId;
       await configMgr.writeConfig(config);
 
+      // Mirror template file into local working directory: openproducer/templates/story/<id>.md
+      const localStoryDir = path.join(configMgr.root, 'openproducer', 'templates', 'story');
+      await ensureDir(localStoryDir);
+      const localStoryPath = path.join(localStoryDir, `${templateId}.md`);
+      const storyContent = storyTemplate.raw_content || formatStoryMarkdownTemplate(storyTemplate);
+      await writeFile(localStoryPath, storyContent);
+
       // Scaffold production/story/beats.md if missing
       const storyDir = path.join(configMgr.root, 'production', 'story');
       await ensureDir(storyDir);
@@ -256,6 +267,7 @@ export async function templateCommand(
       }
 
       logger.success(`Applied Story Template "${pc.yellow(templateId)}" (${storyTemplate.name}) to workspace.`);
+      logger.info(`Mirrored template locally to: ${pc.dim(localStoryPath)}`);
       logger.info(`Next step: Run "/opp-explore" to brainstorm and develop your story using this template!`);
     }
 
@@ -280,11 +292,39 @@ export async function templateCommand(
       activeState.template_loaded = templateId;
       await configMgr.writeState(activeState);
 
+      // Mirror template file into local working directory: openproducer/templates/<id>.md and openproducer/templates/video/<id>.md
+      const localTplDir = path.join(configMgr.root, 'openproducer', 'templates');
+      await ensureDir(localTplDir);
+      const videoContent = videoTemplate.raw_content || formatMarkdownTemplate(videoTemplate);
+      const localVideoPath = path.join(localTplDir, `${templateId}.md`);
+      await writeFile(localVideoPath, videoContent);
+
+      const localVideoSubDir = path.join(localTplDir, 'video');
+      await ensureDir(localVideoSubDir);
+      await writeFile(path.join(localVideoSubDir, `${templateId}.md`), videoContent);
+
       logger.success(`Applied Video Series Template "${pc.cyan(templateId)}" to current workspace brain.`);
+      logger.info(`Mirrored template locally to: ${pc.dim(localVideoPath)}`);
     }
 
     if (genericTemplate) {
+      const config = await configMgr.readConfig();
+      if (genericTemplate.group === 'package') {
+        (config as any).package_template_id = templateId;
+        await configMgr.writeConfig(config);
+      }
+
+      // Mirror generic template file into local working directory: openproducer/templates/<group>/<id>.md
+      const targetGroup = (genericTemplate.group || 'generic').toLowerCase();
+      const localGroupDir = path.join(configMgr.root, 'openproducer', 'templates', targetGroup);
+      await ensureDir(localGroupDir);
+      const localGenericPath = path.join(localGroupDir, `${templateId}.md`);
+      if (genericTemplate.raw_content) {
+        await writeFile(localGenericPath, genericTemplate.raw_content);
+      }
+
       logger.success(`Loaded "${genericTemplate.group}" template "${pc.magenta(templateId)}" into workspace.`);
+      logger.info(`Mirrored template locally to: ${pc.dim(localGenericPath)}`);
     }
 
     console.log('');
