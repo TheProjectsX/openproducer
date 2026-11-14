@@ -125,9 +125,18 @@ graph TD
 ### 4.1 Clean Plain-Text Format (Universal 4-Block Schema)
 All generation prompt files (`.txt`) adhere to the unified 4-block schema: `[CONFIGURATION SETTINGS]`, `[INPUT SEEDS & INGREDIENTS]`, `[IMAGE PROMPT]` or `[VIDEO PROMPT]`, and `[NEGATIVE PROMPT]`. This eliminates format fragmentation, guarantees seamless 1-to-1 slot mapping in Google Flow/Imagen reference slots, and ensures zero markdown bloat.
 
+> [!IMPORTANT]
+> **The Law of Ingredient Uniqueness & Tier-Adaptive Slot Binding:**
+> 1. **Zero Duplicate Bindings:** A file path may NEVER be bound to more than one slot (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`). Binding the same image file twice is strictly banned as an agent hallucination error.
+> 2. **Tier-Adaptive Slot Binding:**
+>    - **In Tier 1 (Lean Projects):** Only `production/base_image_prompt.txt` exists. Therefore, all clip and packaging prompts bind strictly to a single reference: `[IMAGE 1] -> production/base_image_prompt.txt`. There is NO `[IMAGE 2]`.
+>    - **In Tier 2 (Modular Studio Projects):** Distinct subject sheets (`production/subjects/...`) and environment plates (`production/visuals/environments/...`) exist. Prompts bind `[IMAGE 1]` to the Subject and `[IMAGE 2]` to the Environment plate.
+
 #### 1. `base_image_prompt.txt`
 ```text
+[TIER 1: MASTER BASE REFERENCE PROMPT — <PROJECT NAME>]
 [CONFIGURATION SETTINGS]
+Target Engine: Google Flow / Imagen 4
 Aspect Ratio: 16:9
 Resolution: 1080p
 
@@ -143,7 +152,9 @@ Resolution: 1080p
 
 #### 2. `subjects/<subject_id_or_name>/hero_prompt.txt` & `profile_prompt.txt` (Modular Studio)
 ```text
+[TIER 1A: SUBJECT HERO PROMPT — <SUBJECT NAME>]
 [CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4
 Aspect Ratio: 16:9
 Resolution: 1080p
 
@@ -158,7 +169,9 @@ Resolution: 1080p
 ```
 
 ```text
+[TIER 1B: SUBJECT 4-VIEW PROFILE PROMPT — <SUBJECT NAME>]
 [CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4
 Aspect Ratio: 16:9
 Resolution: 1080p
 
@@ -174,7 +187,9 @@ Resolution: 1080p
 
 #### 3. `visuals/environments/<environment_id_or_name>/prompt.txt` (Modular Studio)
 ```text
+[TIER 1C: ENVIRONMENT STAGE PROMPT — <ENVIRONMENT NAME>]
 [CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4
 Aspect Ratio: 16:9
 Resolution: 1080p
 
@@ -215,14 +230,18 @@ Resolution: 1080p
 
 #### 5. `clips/clip_XX/image_prompt.txt`
 ```text
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP <XX>]
 [CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4
 Aspect Ratio: 16:9 (or 9:16)
 Resolution: 1080p
+Audio Timestamp: <00:00:00 - 00:00:06 (6s)>
+Narration / Dialogue Cue: <"Exact transcript or spoken dialogue line for this moment...">
 
 [INPUT SEEDS & INGREDIENTS]
-1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (or turnaround_sheet.png)
-2. Persistent Scene DNA:   [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt (or empty_stage.png)
-3. (Optional Hero Prop):   [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
+1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
+2. Persistent Scene DNA:   [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
+3. Optional Hero Prop:     [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [IMAGE PROMPT]
 <Starting frame composition staging the subject inside the environment with exact camera framing, posture, expression, and lighting.>
@@ -233,17 +252,21 @@ Resolution: 1080p
 
 #### 6. `clips/clip_XX/video_prompt.txt`
 ```text
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP <XX>]
 [CONFIGURATION SETTINGS]
+Target Engine: Google Flow / Veo 3.1
 Duration: <4s | 6s | 8s | 10s>
 Aspect Ratio: 16:9
 Resolution: 1080p
 Transition / Chop: <e.g. ESTABLISHING MACRO | CONTINUOUS ACTION EXTENSION | MOTIVATED CUT>
+Audio Timestamp: <00:00:00 - 00:00:06>
+Narration / Dialogue Cue: <"Exact transcript or spoken dialogue line for this moment...">
 
 [INPUT SEEDS & INGREDIENTS]
 1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of production/clips/clip_<XX-1>/video_prompt.txt)
-2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (Locks face & clothes across reveals/turns)
-3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt (Locks room topology & lighting)
-4. (Optional Hero Prop):     [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
+2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
+3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
+4. Optional Hero Prop:       [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [VIDEO PROMPT]
 Starting directly from the initial image, <Comprehensive descriptive prompt (uncapped depth): Viewport framing, subject DNA, physical room topology, Z-index depth layering (subject positioned strictly behind furniture/props with lower body occluded), motivated lighting vectors, single continuous camera verb, and kinematic action continuation from preceding clip terminal state. Conditioned on [IMAGE 1] for subject facial identity and [IMAGE 2] for scene topology. Trailing block: 4-part semicolon Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: [BGM Continuity: CONTINUATION - SUSTAIN / DECAY / ACCELERATION matching preceding cut volume]....>

@@ -1,0 +1,48 @@
+================================================================================
+PUBLISH KIT: COMBINATION 01 (RECOMMENDED — CURIOSITY & ATMOSPHERE)
+Platform: YouTube Long-Form (16:9)
+Angle: Maximum Curiosity Gap & Cinematic Immersion
+================================================================================
+
+[TITLE]
+Someone Else Is in the Tower | 4K Animated Horror
+
+
+[DESCRIPTION]
+You have been stationed alone on a jagged Atlantic reef for months. Tonight, the front door rattles with three heavy knocks—and the wet footprints on the stone threshold only lead inside.
+
+When the relief tender arrives days later under blinding sunlight, the tower is empty. The storm window on the top floor is shattered from the inside out, trailing seawater footprints across the floorboards. But the heavy iron hatch was locked from the inside... and someone just clicked the radio back on.
+
+TIMESTAMPS:
+0:00 The Solitary Rock
+0:32 Footsteps on the Walkway
+1:16 Three Knocks at the Door
+1:51 A Voice Behind Your Ear
+2:36 The Reflection in the Glass
+3:12 Shattered Bulbs & Blind Mist
+3:50 "Come Inside"
+4:16 The Relief Tender Arrives
+4:46 Footprints in the Storeroom
+5:19 Whisper Child, It's Your Turn
+
+PRODUCTION CREDITS:
+Directed & Assembled via: OpenProducer Pipeline
+Visual Generation: Google Flow (Veo 3.1 & Imagen 4)
+Art Direction: 2D Minimalist Vector Noir
+Voice Synthesis: Google AI Studio (Fenrir & Orus)
+
+CONNECT & COMMUNITY:
+* Subscribe for weekly animated horror: https://youtube.com/@example
+* Join the Discord discussion: https://discord.gg/example
+
+#HorrorShort #AIAnimation #Veo3 #CosmicHorror #MinimalistNoir
+
+
+[RECOMMENDED THUMBNAIL]
+File: production/packaging/thumbnails/thumb_01_prompt.txt
+Concept: Keeper Close-Up with Glowing Lantern in Deep Noir Shadow
+In-Prompt Text: "NOT ALONE"
+
+
+[TAGS]
+the lone lighthouse keeper, animated horror short, vector noir, cosmic horror, psychological horror story, creepy lighthouse, veo 3 animation, minimalist animation, indie animation short

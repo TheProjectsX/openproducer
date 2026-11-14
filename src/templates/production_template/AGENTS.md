@@ -42,6 +42,7 @@ When you need deep domain rules, prompt syntax formulas, or linter requirements,
 * [`05_directors_cut_assembly_spec.md`](.agents/skills/openproducer-core/specs/05_directors_cut_assembly_spec.md): Pacing rules, 4s/6s/8s/10s quantum duration locks, clean singles, 180° eyelines, and master linters L-01 to L-19.
 * [`06_retake_doctor_spec.md`](.agents/skills/openproducer-core/specs/06_retake_doctor_spec.md): Glitch catalog (`G-01` to `G-16`), root cause taxonomy, and surgical prompt patch formulas.
 * [`07_scaffolding_and_workspace_spec.md`](.agents/skills/openproducer-core/specs/07_scaffolding_and_workspace_spec.md): Workspace file contracts, plain-text prompt bracket formatting, and manifest ledger.
+* [`09_packaging_spec.md`](.agents/skills/openproducer-core/specs/09_packaging_spec.md): Delivery packaging, high-CTR titles, structured descriptions with timeline chapters, universal 4-block thumbnails with in-prompt AI typography, and 1-stop publish kits.
 * [`safety_registry.md`](.agents/skills/openproducer-core/specs/safety_registry.md): Multi-pathway gate against platform Trust & Safety trigger words.
 
 ### 2.2 Pluggable Visual Styles & Dialects (`.agents/skills/openproducer-core/styles/`)
@@ -57,15 +58,16 @@ When selecting, suggesting, or compiling visual styles, consult the 8 medium gui
 
 ### 2.3 Series Franchise Templates & Presets
 When using, listing, creating, or editing templates (`/opp-template`), templates are located across three tiers:
-1. **Bundled Starter Presets:** `.agents/skills/openproducer-core/templates/starter_presets/`
-   * *Video:* `stickman-explainer.md`, `cinema-short-film.md`, `social-ugc-reel.md`
-   * *Story:* `story-stickfigure-rant.md`, `story-true-crime-mystery.md`, `story-youtube-explainer.md`, `story-dialogue-drama.md`
-2. **Project Local Templates:** `./openproducer/templates/<group>/` (e.g. `video/`, `story/`, `audio/`)
+1. **Bundled Starter Presets:** `.agents/skills/openproducer-core/templates/`
+   * *Video (`starter_presets/`):* `stickman-explainer.md`, `cinema-short-film.md`, `social-ugc-reel.md`
+   * *Story (`starter_presets/`):* `story-stickfigure-rant.md`, `story-true-crime-mystery.md`, `story-youtube-explainer.md`, `story-dialogue-drama.md`
+   * *Package (`package/`):* `youtube_dark_scifi.md`, `viral_shorts.md`
+2. **Project Local Templates:** `./openproducer/templates/<group>/` (e.g. `video/`, `story/`, `audio/`, `package/`)
 3. **Global Workstation Vault:** `~/.openproducer/templates/<group>/` (Shared across all projects on this machine)
 
 ### 2.4 Agent Skills & Slash Workflows
-* **Skills Directory (`.agents/skills/`):** `openproducer-explore`, `openproducer-propose`, `openproducer-sync`, `openproducer-produce`, `openproducer-guide`, `openproducer-doctor`, `openproducer-template`, `openproducer-core`.
-* **Workflows Directory (`.agents/workflows/`):** `opp-explore.md`, `opp-propose.md`, `opp-sync.md`, `opp-produce.md`, `opp-guide.md`, `opp-doctor.md`, `opp-template.md`.
+* **Skills Directory (`.agents/skills/`):** `openproducer-explore`, `openproducer-propose`, `openproducer-sync`, `openproducer-produce`, `openproducer-guide`, `openproducer-doctor`, `openproducer-template`, `openproducer-package`, `openproducer-core`.
+* **Workflows Directory (`.agents/workflows/`):** `opp-explore.md`, `opp-propose.md`, `opp-sync.md`, `opp-produce.md`, `opp-guide.md`, `opp-doctor.md`, `opp-template.md`, `opp-package.md`.
 
 ---
 
@@ -92,7 +94,18 @@ When using, listing, creating, or editing templates (`/opp-template`), templates
     ├── master_images_prompt.txt   # Creator self-serve reference only (ignored by /opp-guide)
     ├── master_videos_prompt.txt   # Creator self-serve reference only (ignored by /opp-guide)
     ├── scratchbook.md             # Timeline pacing math, timestamps & Retake Doctor log
-    └── motion_graphics.md         # (If applicable) On-screen captions / title overlay cues
+    ├── motion_graphics.md         # (If applicable) On-screen captions / title overlay cues
+    └── packaging/                 # 📦 Delivery Packaging & Distribution Suite
+        ├── titles.txt             # High-CTR title variations (Curiosity, Stakes, SEO, Shorts)
+        ├── descriptions.txt       # Structured descriptions (Full Chapters, Punchy, Shorts)
+        ├── thumbnails/            # Universal 4-block thumbnail prompts
+        │   ├── thumb_01_prompt.txt
+        │   ├── thumb_02_prompt.txt
+        │   └── thumb_03_prompt.txt
+        └── publish_kit/           # 1-Stop copy-paste publishing kits
+            ├── combination_01.txt
+            ├── combination_02.txt
+            └── combination_03.txt
 ```
 
 ### 3.2 Modular Studio Version (`tier: "modular_studio"` — Multi-Character / Multi-Environment)
@@ -124,18 +137,29 @@ When using, listing, creating, or editing templates (`/opp-template`), templates
     ├── master_images_prompt.txt   # Creator self-serve reference only (ignored by /opp-guide)
     ├── master_videos_prompt.txt   # Creator self-serve reference only (ignored by /opp-guide)
     ├── scratchbook.md             # Timeline pacing math, eyeline vectors & Retake Doctor log
-    └── motion_graphics.md         # (If applicable) On-screen captions / title overlay cues
+    ├── motion_graphics.md         # (If applicable) On-screen captions / title overlay cues
+    └── packaging/                 # 📦 Delivery Packaging & Distribution Suite
+        ├── titles.txt             # High-CTR title variations (Curiosity, Stakes, SEO, Shorts)
+        ├── descriptions.txt       # Structured descriptions (Full Chapters, Punchy, Shorts)
+        ├── thumbnails/            # Universal 4-block thumbnail prompts
+        │   ├── thumb_01_prompt.txt
+        │   ├── thumb_02_prompt.txt
+        │   └── thumb_03_prompt.txt
+        └── publish_kit/           # 1-Stop copy-paste publishing kits
+            ├── combination_01.txt
+            ├── combination_02.txt
+            └── combination_03.txt
 ```
 *(Every `.txt` prompt file uses simple plain-text bracket headers like `[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 01]`, `Conditioned On:`, `[IMAGE PROMPT]`, `[NEGATIVE PROMPT]` with zero markdown `#` headers or emojis).*
 
 ---
 
-## 4. The 7 Operational Modes & State Machine
+## 4. The 8 Operational Modes & State Machine
 
 ```mermaid
 flowchart TD
     I["0. INIT (Default Blank Workspace State)<br/>• Fresh project canvas<br/>• Ready for /opp-explore or /opp-template"]
-    T["/opp-template<br/>Load: Auto-saves Video/Story/Custom template settings<br/>In INIT: Creates/updates templates via interactive discussion<br/>In ACTIVE: Snapshots or updates from workspace"] -.-> I
+    T["7. TEMPLATE (/opp-template)<br/>Load: Auto-saves Video/Story/Package settings<br/>In INIT: Creates/updates templates via interactive discussion<br/>In ACTIVE: Snapshots or updates from workspace"] -.-> I
     T -.-> E
     I -->|"/opp-explore"| E
     E["1. EXPLORE (Creative Intake & Discovery - Session Memory)<br/>• Asks missing settings (Orientation, Style, Audio)<br/>• Explores plot in session memory ONLY (zero production writes)"]
@@ -144,6 +168,7 @@ flowchart TD
     PR["4. PRODUCE (/opp-produce)<br/>• Auto-runs Propose first if still in Init or Explore<br/>• Generates creator files on disk inside ./production/ from ./openproducer/"]
     G["5. GUIDE (/opp-guide)<br/>• Step-by-Step interactive co-pilot<br/>• Loops on base_image_prompt.txt until satisfied"]
     D["6. DOCTOR (/opp-doctor)<br/>• Diagnoses G-01 to G-16 glitches & patches prompts"]
+    PKG["8. PACKAGE (/opp-package)<br/>• High-converting delivery kit in ./production/packaging/<br/>• Titles, descriptions, 4-block thumbnails & publish kits"]
 
     E -->|"/opp-propose"| P
     E -->|"/opp-produce (auto-runs propose first)"| PR
@@ -152,6 +177,8 @@ flowchart TD
     PR -->|"/opp-sync"| S
     PR -->|"/opp-guide"| G
     G -->|"/opp-doctor"| D
+    PR -->|"/opp-package"| PKG
+    G -->|"/opp-package"| PKG
 ```
 
 ---
@@ -252,6 +279,16 @@ flowchart TD
   - *In `init` Mode (Blank Project):* Interactively drafts or tunes templates through conversational discussion with the producer (zero workspace assets required).
   - *In Active Stages (`explore`, `proposed`, `produced`):* Snapshots active project settings or synchronizes workspace diffs.
 * **On Edit / Refine (`edit <name>` / `refine <name>`):** Starts an interactive, conversational editing workshop session dedicated solely to refining a template's schema (adding/removing rules, tweaking pacing or master anchors) for future productions without touching current workspace video assets or clips. Modifications are held in session memory and committed only upon explicit producer approval via `npx openproducer template edit <id> save`.
+
+---
+
+### Mode 8: `package` (`/opp-package` or `/openproducer-package`) — Delivery & Distribution Suite
+* **Action:** Packages an assembled production into high-converting, platform-ready marketing deliverables inside `./production/packaging/`.
+* **Universal 4-Block Thumbnails (`thumbnails/thumb_XX_prompt.txt`):** Follows the universal schema (`[CONFIGURATION SETTINGS]`, `[INPUT SEEDS & INGREDIENTS]`, `[IMAGE PROMPT]`, `[NEGATIVE PROMPT]`) with embedded in-prompt AI typography, 40% negative space law, and YouTube timestamp badge safe zones.
+* **The Law of Ingredient Uniqueness (Linter PKG-07):** Never duplicate identical reference image paths across ingredient slots. Single-reference/lean productions bind strictly to `[IMAGE 1]`.
+* **Clean Zero-Jargon Titles & Descriptions (`titles.txt`, `descriptions.txt`):** Provides instant human readability with clean visual section dividers (`====`, `----`) and zero developer audit jargon in prompt deliverables.
+* **1-Stop Publish Kit (`publish_kit/combination_XX.txt`):** Automatically bundled whenever both titles and descriptions exist, pairing Title + Description + Thumbnail prompt into ready-to-paste distribution packages.
+* **Modular Generation:** Supports targeted asset generation (`/opp-package titles`, `/opp-package descriptions`, `/opp-package thumbnails`) or complete turnkey packaging (`/opp-package`).
 
 ---
 

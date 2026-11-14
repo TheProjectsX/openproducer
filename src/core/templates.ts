@@ -217,6 +217,16 @@ function getStarterPresetsDirs(): string[] {
   ];
 }
 
+function getPackagePresetsDirs(): string[] {
+  return [
+    path.join(__dirname, '..', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'package'),
+    path.join(__dirname, '..', '..', 'src', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'package'),
+    path.join(__dirname, '..', '..', 'dist', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'package'),
+    path.join(__dirname, '..', '..', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'package'),
+    path.join(__dirname, '..', '..', 'agents', 'skills', 'openproducer-core', 'templates', 'package')
+  ];
+}
+
 export class TemplateManager {
   private globalDir: string;
   private projectRoot: string | null;
@@ -305,10 +315,8 @@ export class TemplateManager {
   }
 
   async listTemplates(): Promise<string[]> {
-    const video = await this.listVideoTemplates();
-    const story = await this.listStoryTemplates();
-    const all = new Set<string>([...video.map((v) => v.id), ...story.map((s) => s.id)]);
-    return Array.from(all);
+    const all = await this.listAllTemplates();
+    return Array.from(new Set(all.map((t) => t.id)));
   }
 
   async getTemplate(templateId: string): Promise<SeriesTemplate | null> {
@@ -490,6 +498,11 @@ export class TemplateManager {
       await scanDir(presetDir);
     }
 
+    // 1b. Bundled package templates
+    for (const packageDir of getPackagePresetsDirs()) {
+      await scanDir(packageDir, 'package');
+    }
+
     // 2. Global directory
     await scanDir(this.globalDir);
 
@@ -507,6 +520,10 @@ export class TemplateManager {
 
   async listVideoTemplates(): Promise<TemplateInfo[]> {
     return this.listGroupTemplates('video');
+  }
+
+  async listPackageTemplates(): Promise<TemplateInfo[]> {
+    return this.listGroupTemplates('package');
   }
 
   async getGenericTemplate(templateId: string, group?: string): Promise<GenericTemplate | null> {

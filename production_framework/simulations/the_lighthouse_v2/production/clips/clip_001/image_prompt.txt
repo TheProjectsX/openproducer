@@ -1,13 +1,16 @@
 [TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP_001]
+[CONFIGURATION SETTINGS]
 Target Tool: Google Flow / Imagen 4
-Conditioned On: base_image_prompt.txt (Tier 1 Master DNA)
 Aspect Ratio: 16:9
 Resolution: 1080p
 Audio Timestamp: 00:00:00 - 00:00:06 (6s)
 Narration Cue: "You have been alone on this barren rock in the Atlantic Ocean for an entire month."
 
+[INPUT SEEDS & INGREDIENTS]
+1. Master Visual & Scene DNA: [IMAGE 1] -> production/base_image_prompt.txt
+
 [IMAGE PROMPT]
-Wide establishing eye-level shot of a stark stone lighthouse tower standing solitary atop a jagged, barren rock shelf surrounded by surging Atlantic ocean waves. Minimalist 2D vector noir animation style on a textured cream paper canvas, composed with crisp unbroken black vector outlines and deep graphic drop shadows. The towering stone beacon rises into a pitch-black night void, battered by angular churning wave crests and driving rain lines. A single bright conical beam of vector light radiates from the glass lantern room, slicing diagonally through the atmospheric gloom. Flat graphic line-art, uniform stroke weight throughout.
+Wide establishing eye-level shot of a stark stone lighthouse tower from [IMAGE 1] standing solitary atop a jagged, barren rock shelf surrounded by surging Atlantic ocean waves. Minimalist 2D vector noir animation style on a textured cream paper canvas, composed with crisp unbroken black vector outlines and deep graphic drop shadows. The towering stone beacon rises into a pitch-black night void, battered by angular churning wave crests and driving rain lines. A single bright conical beam of vector light radiates from the glass lantern room, slicing diagonally through the atmospheric gloom. Flat graphic line-art, uniform stroke weight throughout.
 
 [NEGATIVE PROMPT]
 photorealistic, 3D render, CGI, fleshy human hands, individual fingers, realistic toes, knuckles, skin pores, facial features, realistic eyes, airbrush, gradient shading, realistic anatomy, doll, action figure, tripod, camera rig

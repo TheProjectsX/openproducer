@@ -61,8 +61,8 @@ graph TD
     │   │   └── video_prompt.txt
     │   └── clip_xxx/
     │
-    ├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All image prompts compiled (ignored by /opp-guide)
-    ├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All video prompts compiled (ignored by /opp-guide)
+    ├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All image prompts compiled (ignored by /openproducer-guide)
+    ├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All video prompts compiled (ignored by /openproducer-guide)
     ├── scratchbook.md                 # 📝 CREATOR FILE: Timeline pacing table (4s/6s/8s), timestamps & retake log
     └── motion_graphics.md             # 🔤 CREATOR FILE: (If applicable) On-screen captions & typography cue sheet
 ```
@@ -112,8 +112,8 @@ graph TD
     │   │   └── video_prompt.txt
     │   └── clip_xxx/
     │
-    ├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All base, subject, environment & clip image prompts compiled (ignored by /opp-guide)
-    ├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All clip video prompts compiled (ignored by /opp-guide)
+    ├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All base, subject, environment & clip image prompts compiled (ignored by /openproducer-guide)
+    ├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All clip video prompts compiled (ignored by /openproducer-guide)
     ├── scratchbook.md                 # 📝 CREATOR FILE: Timeline pacing math, eyeline vectors & retake log
     └── motion_graphics.md             # 🔤 CREATOR FILE: (If applicable) Title cards, lower thirds & subtitle cue sheet
 ```
@@ -122,18 +122,28 @@ graph TD
 
 ## 4. Exact Plain-Text Prompt File Contracts (Modeled on `the_314am_doppelganger`)
 
-### 4.1 Clean Plain-Text Format (Zero Markdown Bloat in Prompt Files)
-All prompt files (`.txt`) must use clean, simple plain-text bracket headers (`[TIER ...]`, `[IMAGE PROMPT]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`) with `Conditioned On:` or `Input Seed / Dependencies:` noted directly in the top header block—never cluttered with markdown `#` headings, emojis, or bullet lists.
+### 4.1 Clean Plain-Text Format (Universal 4-Block Schema)
+All generation prompt files (`.txt`) adhere to the unified 4-block schema: `[CONFIGURATION SETTINGS]`, `[INPUT SEEDS & INGREDIENTS]`, `[IMAGE PROMPT]` or `[VIDEO PROMPT]`, and `[NEGATIVE PROMPT]`. This eliminates format fragmentation, guarantees seamless 1-to-1 slot mapping in Google Flow/Imagen reference slots, and ensures zero markdown bloat.
+
+> [!IMPORTANT]
+> **The Law of Ingredient Uniqueness & Tier-Adaptive Slot Binding:**
+> 1. **Zero Duplicate Bindings:** A file path may NEVER be bound to more than one slot (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`). Binding the same image file twice is strictly banned as an agent hallucination error.
+> 2. **Tier-Adaptive Slot Binding:**
+>    - **In Tier 1 (Lean Projects):** Only `production/base_image_prompt.txt` exists. Therefore, all clip and packaging prompts bind strictly to a single reference: `[IMAGE 1] -> production/base_image_prompt.txt`. There is NO `[IMAGE 2]`.
+>    - **In Tier 2 (Modular Studio Projects):** Distinct subject sheets (`production/subjects/...`) and environment plates (`production/visuals/environments/...`) exist. Prompts bind `[IMAGE 1]` to the Subject and `[IMAGE 2]` to the Environment plate.
 
 #### 1. `base_image_prompt.txt`
 ```text
 [TIER 1: MASTER BASE REFERENCE PROMPT — <PROJECT NAME>]
-Target Engine: Google Flow / Imagen 4 (Master Ingredient #1)
-Conditioned On: None (or creator_photo.jpg if using a real human reference)
+[CONFIGURATION SETTINGS]
+Target Engine: Google Flow / Imagen 4
 Aspect Ratio: 16:9
 Resolution: 1080p
 
-[MASTER IMAGE PROMPT]
+[INPUT SEEDS & INGREDIENTS]
+1. Creator Face / Photo: None (or input_assets/creator_photo.jpg if anchoring real human likeness)
+
+[IMAGE PROMPT]
 <Cinematic framing, subject/scene anchor, lighting vectors, and master visual style anchor string. 100% pure creative description, zero equipment nouns.>
 
 [NEGATIVE PROMPT]
@@ -143,11 +153,13 @@ Resolution: 1080p
 #### 2. `subjects/<subject_id_or_name>/hero_prompt.txt` & `profile_prompt.txt` (Modular Studio)
 ```text
 [TIER 1A: SUBJECT HERO PROMPT — <SUBJECT NAME>]
+[CONFIGURATION SETTINGS]
 Target Tool: Google Flow / Imagen 4
-Conditioned On: base_image_prompt.txt (Attach as [IMAGE 1] for Master Style Lock)
-Feeds Into: subjects/<subject_id_or_name>/profile_prompt.txt
 Aspect Ratio: 16:9
 Resolution: 1080p
+
+[INPUT SEEDS & INGREDIENTS]
+1. Master Visual DNA: [IMAGE 1] -> production/base_image_prompt.txt
 
 [IMAGE PROMPT]
 <Step 1 Genesis Hero Shot prompt locking facial landmarks, wardrobe materiality, and style anchor.>
@@ -158,11 +170,13 @@ Resolution: 1080p
 
 ```text
 [TIER 1B: SUBJECT 4-VIEW PROFILE PROMPT — <SUBJECT NAME>]
+[CONFIGURATION SETTINGS]
 Target Tool: Google Flow / Imagen 4
-Conditioned On: subjects/<subject_id_or_name>/hero_prompt.txt (Attach generated Hero Image as [IMAGE 1])
-Feeds Into: clips/clip_xxx/image_prompt.txt (Attach as Subject Ingredient)
 Aspect Ratio: 16:9
 Resolution: 1080p
+
+[INPUT SEEDS & INGREDIENTS]
+1. Subject Hero Anchor: [IMAGE 1] -> production/subjects/<subject_id_or_name>/hero_prompt.txt (or hero.png)
 
 [IMAGE PROMPT]
 <Step 2 4-panel character model sheet (Front, Left Profile, Back, Close-up Face) on solid neutral light-gray studio background (#E5E5E5).>
@@ -174,11 +188,13 @@ Resolution: 1080p
 #### 3. `visuals/environments/<environment_id_or_name>/prompt.txt` (Modular Studio)
 ```text
 [TIER 1C: ENVIRONMENT STAGE PROMPT — <ENVIRONMENT NAME>]
+[CONFIGURATION SETTINGS]
 Target Tool: Google Flow / Imagen 4
-Conditioned On: base_image_prompt.txt (Attach as [IMAGE 1] for Master Style Lock)
-Feeds Into: clips/clip_xxx/image_prompt.txt (Attach as Environment Ingredient)
 Aspect Ratio: 16:9
 Resolution: 1080p
+
+[INPUT SEEDS & INGREDIENTS]
+1. Master Visual DNA: [IMAGE 1] -> production/base_image_prompt.txt
 
 [IMAGE PROMPT]
 <Empty 3-plane stage environment (Foreground, Midground stage zone, Background) with motivated lighting vectors and zero characters/people present.>
@@ -215,10 +231,17 @@ Resolution: 1080p
 #### 5. `clips/clip_XX/image_prompt.txt`
 ```text
 [TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP <XX>]
+[CONFIGURATION SETTINGS]
 Target Tool: Google Flow / Imagen 4
-Conditioned On: <base_image_prompt.txt (Tier 1 Master DNA) OR [IMAGE 1]: subjects/<name>/profile_prompt.txt + [IMAGE 2]: visuals/environments/<name>/prompt.txt>
-Aspect Ratio: 16:9
+Aspect Ratio: 16:9 (or 9:16)
 Resolution: 1080p
+Audio Timestamp: <00:00:00 - 00:00:06 (6s)>
+Narration / Dialogue Cue: <"Exact transcript or spoken dialogue line for this moment...">
+
+[INPUT SEEDS & INGREDIENTS]
+1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
+2. Persistent Scene DNA:   [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
+3. Optional Hero Prop:     [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [IMAGE PROMPT]
 <Starting frame composition staging the subject inside the environment with exact camera framing, posture, expression, and lighting.>
@@ -229,17 +252,21 @@ Resolution: 1080p
 
 #### 6. `clips/clip_XX/video_prompt.txt`
 ```text
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP <XX>]
 [CONFIGURATION SETTINGS]
+Target Engine: Google Flow / Veo 3.1
 Duration: <4s | 6s | 8s | 10s>
 Aspect Ratio: 16:9
 Resolution: 1080p
 Transition / Chop: <e.g. ESTABLISHING MACRO | CONTINUOUS ACTION EXTENSION | MOTIVATED CUT>
+Audio Timestamp: <00:00:00 - 00:00:06>
+Narration / Dialogue Cue: <"Exact transcript or spoken dialogue line for this moment...">
 
 [INPUT SEEDS & INGREDIENTS]
 1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of production/clips/clip_<XX-1>/video_prompt.txt)
-2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (Locks face & clothes across reveals/turns)
-3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt (Locks room topology & lighting)
-4. (Optional Hero Prop):     [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
+2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
+3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
+4. Optional Hero Prop:       [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [VIDEO PROMPT]
 Starting directly from the initial image, <Comprehensive descriptive prompt (uncapped depth): Viewport framing, subject DNA, physical room topology, Z-index depth layering (subject positioned strictly behind furniture/props with lower body occluded), motivated lighting vectors, single continuous camera verb, and kinematic action continuation from preceding clip terminal state. Conditioned on [IMAGE 1] for subject facial identity and [IMAGE 2] for scene topology. Trailing block: 4-part semicolon Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: [BGM Continuity: CONTINUATION - SUSTAIN / DECAY / ACCELERATION matching preceding cut volume]....>
@@ -320,7 +347,7 @@ Then, two inches above your crown, you feel the hair on your scalp stir...
 3. Paste [AUDIO SCRIPT] text into the prompt.
 4. Generate the audio file (.mp3 / .wav).
 5. Generate the timestamped transcript / SRT using TurboScribe or AudioToSRT and save as production/audio.srt.
-6. Run /opp-produce to slice and match video clips to your exact audio timestamps.
+6. Run /openproducer-produce to slice and match video clips to your exact audio timestamps.
 ```
 
 #### Standard Plain-Text Template for Multi-Speaker Alternating-Turn `audio_script.txt` (The Lighthouse v2 Standard):
@@ -378,4 +405,4 @@ You turn slowly toward the seaward window. Out among the cresting waves stands a
    * Contains the timeline pacing math (4s/6s/8s word budgets, timestamp mappings, eyeline continuity vectors, and Retake Doctor diagnostic history).
 2. **`master_images_prompt.txt` & `master_videos_prompt.txt` (Creator Self-Serve Reference Only):**
    * Compiled one-file plain-text manifests of all image prompts and all video prompts (preserving their `Conditioned On:` / `Input Seed:` connection lines).
-   * **Strictly for creator self-serve convenience.** During `/opp-guide`, OpenProducer **does NOT use** these two master files; `/opp-guide` walks through `production/base_image_prompt.txt`, `production/subjects/`, `production/visuals/environments/`, and `production/clips/clip_xxx/` individually.
+   * **Strictly for creator self-serve convenience.** During `/openproducer-guide`, OpenProducer **does NOT use** these two master files; `/openproducer-guide` walks through `production/base_image_prompt.txt`, `production/subjects/`, `production/visuals/environments/`, and `production/clips/clip_xxx/` individually.

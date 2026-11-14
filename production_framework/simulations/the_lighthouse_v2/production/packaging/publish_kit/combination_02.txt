@@ -1,0 +1,39 @@
+================================================================================
+PUBLISH KIT: COMBINATION 02 (HIGH-STAKES CONFLICT & LORE)
+Platform: YouTube Long-Form (16:9)
+Angle: The Uncanny Doppelgänger Mystery
+================================================================================
+
+[TITLE]
+The Lighthouse Keeper Who Heard Himself Outside
+
+
+[DESCRIPTION]
+Nobody lands a boat on this reef in an Atlantic hurricane. So whose footprints are drying on the lighthouse floorboards?
+
+Watch the full 5-minute psychological horror short. What really happened to the lighthouse keeper? Tell us your theory in the comments below.
+
+TIMESTAMPS:
+0:00 Alone on the Atlantic
+1:16 The Knock
+2:36 The Vanishing Beam
+3:50 The Uncanny Echo
+4:46 The Impossible Window
+
+PRODUCTION CREDITS:
+Directed & Assembled via: OpenProducer Pipeline
+Visual Generation: Google Flow (Veo 3.1 & Imagen 4)
+Art Direction: 2D Minimalist Vector Noir
+Voice Synthesis: Google AI Studio (Fenrir & Orus)
+
+#HorrorShort #AIAnimation #CosmicHorror
+
+
+[RECOMMENDED THUMBNAIL]
+File: production/packaging/thumbnails/thumb_02_prompt.txt
+Concept: Tower Establishing Shot in Raging Storm Mist with Shattered Window Beam
+In-Prompt Text: "LOCKED INSIDE"
+
+
+[TAGS]
+the lone lighthouse keeper, animated horror short, vector noir, cosmic horror, psychological horror story, creepy lighthouse, veo 3 animation, minimalist animation, indie animation short

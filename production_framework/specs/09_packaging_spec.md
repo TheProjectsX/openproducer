@@ -28,21 +28,31 @@ All delivery packaging assets reside within `production/packaging/`:
 ```
 production/
 └── packaging/
-    ├── titles.txt                  # Title variations with character counts, tags & hashtags
-    ├── descriptions.txt            # Description styles (Lore, Punchy, Full YouTube Chapters)
-    └── thumbnails/
-        ├── thumb_01_prompt.txt     # Raw prompt 1: Character Close-up / Emotion + In-Prompt Text
-        ├── thumb_02_prompt.txt     # Raw prompt 2: Environmental Scale / Mystery + In-Prompt Text
-        └── thumb_03_prompt.txt     # Raw prompt 3: Climax Confrontation / Action + In-Prompt Text
+    ├── titles.txt                  # Title variations (Curiosity, Stakes, SEO, Shorts)
+    ├── descriptions.txt            # Description styles (Full Chapters, Punchy, Shorts)
+    ├── thumbnails/
+    │   ├── thumb_01_prompt.txt     # Thumbnail 1: Character Close-up / Emotion + In-Prompt Text
+    │   ├── thumb_02_prompt.txt     # Thumbnail 2: Environmental Scale / Mystery + In-Prompt Text
+    │   └── thumb_03_prompt.txt     # Thumbnail 3: Mobile Vertical Cover (9:16) + In-Prompt Text
+    └── publish_kit/                # (Generated when both Title & Description exist)
+        ├── combination_01.txt      # 1-stop copy-paste kit: Option 1 Title + Description + Thumbnail 1
+        ├── combination_02.txt      # 1-stop copy-paste kit: Option 2 Title + Description + Thumbnail 2
+        └── combination_03.txt      # 1-stop copy-paste kit: Shorts/Reels Title + Caption + Cover 3
 ```
 
 ### 2.1 File Contract Specifications:
 
 | File | Primary Consumer | Content Structure | Purpose |
 |---|---|---|---|
-| `titles.txt` | Human Producer & Platform | ASCII blocks with Title, Char Count, Safe-Zone Check (<65 chars), and Hashtags | 3+ distinct psychological angles for A/B/C testing in one viewable file. |
-| `descriptions.txt` | Human Producer & Platform | ASCII blocks with Hook, Auto-Calculated Chapters (`0:00`), In-Universe Lore, Credits, and Links | 3 distinct description styles (Story-heavy, Punchy CTR, Full YouTube Chapters). |
-| `thumbnails/thumb_XX_prompt.txt` | AI Image Generators (Flux, Ideogram, Imagen, Midjourney) | Standard 3-part anatomy: `[METADATA HEADER]` + `[IMAGE PROMPT]` + `[NEGATIVE PROMPT]` | 1-click copy-paste ready image prompt with embedded AI typography and safe-zone protection. |
+| `titles.txt` | Human Producer & Platform | Clean ASCII blocks with Title on isolated line, mobile char count, and tags | Fast A/B/C title selection without debug clutter. |
+| `descriptions.txt` | Human Producer & Platform | Clean ASCII blocks with Hook, Auto-Calculated Chapters (`0:00`), Lore, Credits, Links | 3 distinct description styles ready for copy-paste. |
+| `thumbnails/thumb_XX_prompt.txt` | AI Image Generators | Universal 4-block schema with embedded AI typography and safe zones | 1-click copy-paste ready image prompt for Imagen 4 / Flux. |
+| `publish_kit/combination_XX.txt` | Creator / Publisher | Unified 1-stop kit pairing Title + Description + Matching Thumbnail | Instant upload form matching YouTube Studio / TikTok inputs. |
+
+### 2.2 The Publish Kit (`publish_kit/combination_XX.txt`)
+**The Creator Convenience Rule:** The Publish Kit is generated automatically whenever **both title and description assets exist** (during full `/opp-package` runs or when both are requested). It gives creators complete flexibility:
+- **Modular Workflow:** Creators who want to mix-and-match can grab titles from `titles.txt`, descriptions from `descriptions.txt`, and thumbnails from `thumbnails/`.
+- **1-Click Rapid Publishing:** Creators who want a cohesive, pre-paired package for upload open `publish_kit/combination_01.txt` and find the Title, Description, and matching Thumbnail all assembled in one place matching the platform's upload UI.
 
 ---
 
@@ -51,7 +61,9 @@ production/
 Every thumbnail prompt generated into `thumbnails/thumb_XX_prompt.txt` strictly mirrors the universal 4-block prompt contract established in `base_image_prompt.txt` and `clip_XXX/image_prompt.txt`:
 
 ```text
+[THUMBNAIL 01: HIGH-CTR KEYFRAME PROMPT — <CONCEPT NAME>]
 [CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4 / Flux 1.1 Pro / Midjourney
 Aspect Ratio: 16:9 (or 9:16 for Shorts/Reels Cover)
 Resolution: 1080p
 Composition: Left-Third Subject Framing, 40% Clean Negative Space Right
@@ -59,8 +71,12 @@ Safe Zone: Bottom-right corner kept completely clear of text/focal points (YouTu
 AI Typography: "<PUNCHY TEXT>" (<Font Style>, <Color Contrast>, <Drop Shadow / Placement>)
 
 [INPUT SEEDS & INGREDIENTS]
-1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (or turnaround_sheet.png)
-2. Master Visual DNA:      [IMAGE 2] -> production/base_image_prompt.txt (or visual/technical_anchor.md)
+# Tier 1 (Lean Projects): Exactly 1 Reference Image (NO DUPLICATE SLOTS):
+1. Master Visual & Subject DNA: [IMAGE 1] -> production/base_image_prompt.txt
+
+# OR Tier 2 (Modular Studio Projects): Distinct Subject & Environment Assets:
+# 1. Persistent Subject DNA:     [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
+# 2. Persistent Scene DNA:       [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
 
 [IMAGE PROMPT]
 <Cinematic medium close-up of Subject from [IMAGE 1] displaying intense emotional micro-expression (dread, awe, fierce focus). Left-third framing. The clean dark negative space on the right third features bold, stylized typography reading "<PUNCHY TEXT>" rendered directly in high contrast with subtle dark drop shadow. Cinematic lens prime, shallow depth of field, motivated rim lighting matching visual anchor, organic grain, high visual punch for mobile feeds.>

@@ -521,10 +521,18 @@ Each individual clip folder contains two decoupled files conforming to the 3-Tie
 
 #### Tier 2 Pre-Composited Starting Keyframe Plate: `clips/clip_XX/image_prompt.txt`
 ```text
-[IMAGE CONFIGURATION]
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP <XX>]
+[CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4
 Aspect Ratio: [16:9 | 9:16]
 Resolution: [1080p]
-Reference Images: [IMAGE 1: Primary Subject Sheet | IMAGE 2: Empty Stage Plate | IMAGE 3: Secondary Subject or Hero Prop Sheet]
+Audio Timestamp: [00:00:00 - 00:00:06 (6s)]
+Narration / Dialogue Cue: ["Exact transcript or spoken dialogue line for this moment..."]
+
+[INPUT SEEDS & INGREDIENTS]
+1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
+2. Persistent Scene DNA:   [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
+3. Optional Hero Prop:     [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [IMAGE PROMPT]
 [Multi-Index Lean Reference Anchoring: "The exact same person from [IMAGE 1]..., set inside the exact environment from [IMAGE 2]..." + pure cinematographic description of 3-plane lighting, motivated shadows, subject pose, and pre-materialized props at Frame 1...]
@@ -535,16 +543,21 @@ Reference Images: [IMAGE 1: Primary Subject Sheet | IMAGE 2: Empty Stage Plate |
 
 #### Tier 3 Video Motion & Audio Prompt: `clips/clip_XX/video_prompt.txt`
 ```text
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP <XX>]
 [CONFIGURATION SETTINGS]
+Target Engine: Google Flow / Veo 3.1
 Duration: [4s | 6s | 8s | 10s]
 Aspect Ratio: [16:9 | 9:16]
 Resolution: [1080p]
+Transition / Chop: [MOTIVATED CUT | CONTINUOUS ACTION EXTENSION | VIOLENT JOLT | ESTABLISHING MACRO]
+Audio Timestamp: [00:00:00 - 00:00:06]
+Narration / Dialogue Cue: ["Exact transcript or spoken dialogue line for this moment..."]
 
 [INPUT SEEDS & INGREDIENTS]
 1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of Clip N-1)
-2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (Locks face & clothes across reveals/turns)
-3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt (Locks room topology & lighting)
-4. (Optional Hero Prop):     [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
+2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
+3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
+4. Optional Hero Prop:       [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [VIDEO PROMPT]
 Starting directly from the initial image, [Viewport framing & primary subject]. [Biomechanical action & 3-plane lighting]. [Master Style Anchor & single continuous camera verb]. Conditioned on [IMAGE 1] for persistent subject identity and [IMAGE 2] for scene topology. Audio: SFX: [Foley]; Ambience: [Room tone]; Dialogue: [Spoken attribution | None]; Music: [Directive | None].

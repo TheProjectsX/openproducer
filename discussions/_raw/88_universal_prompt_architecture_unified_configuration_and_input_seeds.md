@@ -54,7 +54,9 @@ From this point forward, **all generation prompt files** (`.txt`) across both im
 
 ### 3.1 Tier 1 Master Base Prompt (`base_image_prompt.txt`)
 ```text
+[TIER 1: MASTER BASE REFERENCE PROMPT — <PROJECT NAME>]
 [CONFIGURATION SETTINGS]
+Target Engine: Google Flow / Imagen 4
 Aspect Ratio: 16:9
 Resolution: 1080p
 
@@ -70,7 +72,9 @@ photorealistic/cartoon exclusions, blurry, altered style, distorted proportions,
 
 ### 3.2 Tier 1A Subject Hero & 1B Profile Sheets (`subjects/<id>/`)
 ```text
+[TIER 1A: SUBJECT HERO PROMPT — <SUBJECT NAME>]
 [CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4
 Aspect Ratio: 16:9
 Resolution: 1080p
 
@@ -85,7 +89,9 @@ action figure, plastic doll, ball joints, blurry, text, watermarks.
 ```
 
 ```text
+[TIER 1B: SUBJECT 4-VIEW PROFILE PROMPT — <SUBJECT NAME>]
 [CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4
 Aspect Ratio: 16:9
 Resolution: 1080p
 
@@ -101,7 +107,9 @@ changing clothes, facial drift, props in hands, environment background, text, wa
 
 ### 3.3 Tier 1C Environment Stage Plate (`visuals/environments/<id>/prompt.txt`)
 ```text
+[TIER 1C: ENVIRONMENT STAGE PROMPT — <ENVIRONMENT NAME>]
 [CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4
 Aspect Ratio: 16:9
 Resolution: 1080p
 
@@ -117,9 +125,13 @@ people, characters, crowds, silhouettes, camera equipment, tripod, text, waterma
 
 ### 3.4 Tier 2 Clip Starting Keyframe Plate (`clips/clip_XX/image_prompt.txt`)
 ```text
+[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP <XX>]
 [CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4
 Aspect Ratio: [16:9 | 9:16]
 Resolution: 1080p
+Audio Timestamp: [00:00:00 - 00:00:06 (6s)]
+Narration / Dialogue Cue: ["Exact transcript or spoken dialogue line for this moment..."]
 
 [INPUT SEEDS & INGREDIENTS]
 1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (or turnaround_sheet.png)
@@ -135,11 +147,15 @@ studio gray background bleed, split screen, multiple panels, camera equipment, b
 
 ### 3.5 Tier 3 Video Motion & Audio Prompt (`clips/clip_XX/video_prompt.txt`)
 ```text
+[TIER 3: VEO 3.1 CINEMATOGRAPHY PROMPT — CLIP <XX>]
 [CONFIGURATION SETTINGS]
+Target Engine: Google Flow / Veo 3.1
 Duration: [4s | 6s | 8s | 10s]
 Aspect Ratio: [16:9 | 9:16]
 Resolution: 1080p
 Transition / Chop: [MOTIVATED CUT | CONTINUOUS ACTION EXTENSION | VIOLENT JOLT | ESTABLISHING MACRO]
+Audio Timestamp: [00:00:00 - 00:00:06]
+Narration / Dialogue Cue: ["Exact transcript or spoken dialogue line for this moment..."]
 
 [INPUT SEEDS & INGREDIENTS]
 1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of Clip N-1)
@@ -156,7 +172,9 @@ camera tripod, dolly track, morphing, jitter, subtitles, burned-in text...
 
 ### 3.6 On-Demand High-CTR Packaging & Thumbnails (`thumbnails/thumb_XX_prompt.txt`)
 ```text
+[THUMBNAIL 01: HIGH-CTR KEYFRAME PROMPT — <CONCEPT NAME>]
 [CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4 / Flux 1.1 Pro / Midjourney
 Aspect Ratio: 16:9 (or 9:16 for Shorts/Reels Cover)
 Resolution: 1080p
 Composition: Left-Third Subject Framing, 40% Clean Negative Space Right

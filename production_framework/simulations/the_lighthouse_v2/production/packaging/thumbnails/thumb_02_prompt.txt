@@ -1,0 +1,17 @@
+[THUMBNAIL 02: HIGH-CTR KEYFRAME PROMPT — THE LONE LIGHTHOUSE KEEPER]
+[CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4 / Flux 1.1 Pro
+Aspect Ratio: 16:9
+Resolution: 1080p
+Composition: Right-Third Environmental Subject Framing, 40% Clean Negative Space Left
+Safe Zone: Bottom-right corner kept 100% clean of text and focal elements (YouTube duration badge shield)
+AI Typography: "LOCKED INSIDE" (Distressed Industrial Grotesk, stark ivory white with faint atmospheric blue halo, positioned in upper-left negative space)
+
+[INPUT SEEDS & INGREDIENTS]
+1. Master Visual & Scene DNA: [IMAGE 1] -> production/base_image_prompt.txt
+
+[IMAGE PROMPT]
+Cinematic wide establishing shot of the towering stone lighthouse from [IMAGE 1] perched on a jagged black rock reef, positioned on the right vertical third of the frame. Violent crashing ocean waves explode into graphic white foam at its base under a storm-swept midnight sky. At the top lantern room, a single shattered storm window casts a sharp angular beam of electric gold light cutting across the torrential downpour. The left 40% of the frame is vast, dark, atmospheric storm void featuring bold, high-contrast typography reading "LOCKED INSIDE" rendered in solid stark ivory lettering. Minimalist 2D vector noir animation aesthetic, clean unbroken charcoal line work, dramatic chiaroscuro composition with extreme visual punch for mobile feeds. Bottom-right corner strictly clear of text and focal points.
+
+[NEGATIVE PROMPT]
+blurry text, misspelled typography, illegible letters, deformed font, messy typography, photorealistic textures, 3D CGI rendering, glossy gradients, plastic toys, centered lighthouse blocking negative space, text in bottom-right corner, camera tripod, dolly track, watermark, lower thirds.

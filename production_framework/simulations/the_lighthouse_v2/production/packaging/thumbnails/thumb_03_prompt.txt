@@ -1,0 +1,17 @@
+[THUMBNAIL 03: HIGH-CTR VERTICAL COVER FRAME — THE LONE LIGHTHOUSE KEEPER]
+[CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4 / Flux 1.1 Pro
+Aspect Ratio: 9:16
+Resolution: 1080p
+Composition: Center-weighted pushed slightly left, 35% clean negative space above and right
+Safe Zone: Bottom 25% kept completely clear of focal elements and text (TikTok/Shorts UI overlay safe margin); Right 15% edge kept clear of critical details
+AI Typography: "DON'T OPEN" (Heavy Sans-Serif, bold uppercase, high-contrast hazard yellow with deep black outline, placed in upper center third)
+
+[INPUT SEEDS & INGREDIENTS]
+1. Master Visual & Subject DNA: [IMAGE 1] -> production/base_image_prompt.txt
+
+[IMAGE PROMPT]
+Vertical 9:16 mobile keyframe composition. Low-angle medium shot of the vector stick figure lighthouse keeper from [IMAGE 1] standing paralyzed before a heavy bolted iron timber door. His hand hovers inches from the frozen iron latch, whole body locked in terror as wet puddles reflect flickering lantern light across the floor. In the upper-center third, bold high-contrast graphic typography reads "DON'T OPEN" in solid hazard-yellow lettering with a sharp black outline. Bottom 25% of the frame is dark minimalist floorboards with zero text or focal details to protect the mobile UI safe zone. Right edge clear of buttons. Minimalist 2D vector noir animation style, uniform solid black stroke weight, high emotional tension tuned for vertical video feeds.
+
+[NEGATIVE PROMPT]
+blurry text, misspelled typography, illegible letters, deformed font, messy typography, photorealistic skin, fleshy hands, realistic fingers, knuckles, 3D CGI rendering, text in bottom 25% UI zone, text along right edge margin, camera tripod, dolly track, watermark, lower thirds.

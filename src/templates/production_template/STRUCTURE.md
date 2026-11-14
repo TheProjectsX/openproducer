@@ -34,7 +34,18 @@ This document serves as the declarative file system contract for OpenProducer.
     ├── master_images_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
     ├── master_videos_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
     ├── scratchbook.md                 # 📝 Timeline pacing math, duration map & Retake Doctor log
-    └── motion_graphics.md             # 🔤 (If applicable) On-screen captions & typography specs
+    ├── motion_graphics.md             # 🔤 (If applicable) On-screen captions & typography specs
+    └── packaging/                     # 📦 Delivery Packaging & Distribution Suite
+        ├── titles.txt                 # High-CTR title variations (Curiosity, Stakes, SEO, Shorts)
+        ├── descriptions.txt           # Structured descriptions (Full Chapters, Punchy, Shorts)
+        ├── thumbnails/                # Universal 4-block thumbnail prompts
+        │   ├── thumb_01_prompt.txt
+        │   ├── thumb_02_prompt.txt
+        │   └── thumb_03_prompt.txt
+        └── publish_kit/               # 1-Stop copy-paste publishing kits
+            ├── combination_01.txt
+            ├── combination_02.txt
+            └── combination_03.txt
 ```
 
 ---
@@ -72,5 +83,16 @@ This document serves as the declarative file system contract for OpenProducer.
     ├── master_images_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
     ├── master_videos_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
     ├── scratchbook.md                 # 📝 Timeline pacing math, eyeline vectors & Retake Doctor log
-    └── motion_graphics.md             # 🔤 (If applicable) On-screen captions & typography specs
+    ├── motion_graphics.md             # 🔤 (If applicable) On-screen captions & typography specs
+    └── packaging/                     # 📦 Delivery Packaging & Distribution Suite
+        ├── titles.txt                 # High-CTR title variations (Curiosity, Stakes, SEO, Shorts)
+        ├── descriptions.txt           # Structured descriptions (Full Chapters, Punchy, Shorts)
+        ├── thumbnails/                # Universal 4-block thumbnail prompts
+        │   ├── thumb_01_prompt.txt
+        │   ├── thumb_02_prompt.txt
+        │   └── thumb_03_prompt.txt
+        └── publish_kit/               # 1-Stop copy-paste publishing kits
+            ├── combination_01.txt
+            ├── combination_02.txt
+            └── combination_03.txt
 ```

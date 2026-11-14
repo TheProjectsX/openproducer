@@ -1,0 +1,17 @@
+[THUMBNAIL 01: HIGH-CTR KEYFRAME PROMPT — THE LONE LIGHTHOUSE KEEPER]
+[CONFIGURATION SETTINGS]
+Target Tool: Google Flow / Imagen 4 / Flux 1.1 Pro
+Aspect Ratio: 16:9
+Resolution: 1080p
+Composition: Left-Third Subject Framing, 40% Clean Negative Space Right
+Safe Zone: Bottom-right corner kept 100% clean of text and focal elements (YouTube duration badge shield)
+AI Typography: "NOT ALONE" (Heavy Bold Sans-Serif, solid stark white, subtle charcoal drop shadow, positioned centered in the right-third negative space)
+
+[INPUT SEEDS & INGREDIENTS]
+1. Master Visual & Subject DNA: [IMAGE 1] -> production/base_image_prompt.txt
+
+[IMAGE PROMPT]
+Cinematic medium close-up of the lighthouse keeper from [IMAGE 1] positioned strictly on the left vertical third of the frame, clutching a glowing brass lantern with rigid, trembling tension. The minimalist 2D vector character features unbroken solid black vector stroke limbs and a solid opaque white contoured circular head wearing a black mariner peaked cap, displaying intense frozen psychological dread. A warm kerosene lantern cone cuts across his silhouette, casting long graphic drop shadows onto a dark charcoal textured wall. The right 40% of the frame is clean, deep negative shadow space featuring bold, stark in-prompt typography reading "NOT ALONE" rendered in crisp high-contrast white lettering with a subtle dark drop shadow. Minimalist 2D vector noir animation style, sharp architectural line art, high visual contrast tuned for mobile feed clarity. Bottom-right corner kept completely empty of text.
+
+[NEGATIVE PROMPT]
+blurry text, misspelled typography, illegible letters, deformed font, messy typography, photorealistic skin, fleshy hands, realistic fingers, knuckles, 3D CGI rendering, glossy gradients, plastic toys, centered subject blocking negative space, text in bottom-right corner, camera tripod, dolly track, watermark, lower thirds.

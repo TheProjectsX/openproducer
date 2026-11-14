@@ -87,10 +87,25 @@ export async function templateCommand(
         }
 
         const icon =
-          groupName === 'video' ? '🎬' : groupName === 'story' ? '📖' : groupName === 'audio' ? '🎙️' : '📁';
+          groupName === 'video'
+            ? '🎬'
+            : groupName === 'story'
+            ? '📖'
+            : groupName === 'audio'
+            ? '🎙️'
+            : groupName === 'package'
+            ? '📦'
+            : '📁';
         console.log(pc.bold(`${icon} ${groupName.toUpperCase()} Templates:`));
         for (const t of templates) {
-          const colorFn = groupName === 'video' ? pc.cyan : groupName === 'story' ? pc.yellow : pc.magenta;
+          const colorFn =
+            groupName === 'video'
+              ? pc.cyan
+              : groupName === 'story'
+              ? pc.yellow
+              : groupName === 'package'
+              ? pc.green
+              : pc.magenta;
           console.log(`  • ${colorFn(t.id)}`);
           if (showPaths) {
             console.log(`    ${pc.dim(`↳ ${t.path}`)}`);
