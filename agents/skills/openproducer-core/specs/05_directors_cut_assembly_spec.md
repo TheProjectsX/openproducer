@@ -12,7 +12,7 @@ The `directors_cut/` & `assembly/` domain elevates the production framework from
 
 ### Core Architectural Axioms:
 1. **Intake-First Alignment:** Never assume runtime or pacing. Always establish the creator's target duration, tempo profile, and clip budget upfront.
-2. **Mathematical Word Economy:** Speech pacing adheres to natural human conversational velocity (~2.2 words per second) with guaranteed silence buffers to prevent AI lip-sync warping.
+2. **Decoupled Word Pacing & Descriptive Completeness:** Spoken dialogue pacing adheres strictly to natural human conversational velocity (~2.0–2.2 words per second via `L-14`) with guaranteed silence buffers to prevent AI lip-sync warping. Meanwhile, visual and environmental prompt descriptions are **uncapped** (abolishing artificial 100–150 word limit cards) to ensure complete spatial, topological, and kinematic specification.
 3. **The Single-Motion Law:** Each sliced clip is budgeted for exactly one primary biomechanical action and one continuous optical camera vector to prevent diffusion latent collapse.
 4. **Verbatim Subject DNA Invariance:** Characters and hero subjects must inject their exact immutable description string across all clips where they appear to prevent anatomical mutations.
 5. **Flow Baseline with Dynamic Modality Switching:** Default to native Google Flow, but provide non-destructive switches for still images, monolithic long-takes, external dialogue (ElevenLabs), and custom music.
@@ -282,17 +282,42 @@ To guarantee 100% visual coherence and zero multi-ingredient identity bleed, pro
 | **2 Characters + 1 Environment (Clean Single `L-13`)** | Active Speaker/Listener Sheet | Empty Stage Plate | *(Optional)* Scene Prop | Clean Singles isolate 1 character per clip, freeing Slot 3. |
 | **2 Characters + 1 Prop + 1 Environment (Wide Two-Shot)** | Character A Sheet | Empty Stage Plate | Character B Sheet | Bind Characters A & B + Environment to Slots 1–3; inject Hero Prop via its locked `verbatim_anchor.txt` string. |
 
-### 5.6 Spatial Continuity & The "Entry / Exit State" Handoff Architecture
-Video diffusion models treat each clip as an isolated pass and will randomly flip character orientation across cuts without explicit boundaries. Every multi-clip sequence must define explicit spatial handoffs:
+### 5.6 Spatial & Kinematic Continuity: The "Entry / Exit State" Handoff Architecture
+Video diffusion models treat each clip as an isolated pass and will randomly flip character orientation, invent dividing walls, pop characters in front of objects, or reset biomechanical motion across cuts without explicit boundaries. Across **4s to 10s clips**, every sequence must define explicit spatial, kinematic, and topological handoffs:
 
-1. **Clip $N$ Spatial Exit State:** Declare the terminating vector and gaze:
-   > *"Camera concludes its push-in on a locked medium close-up, the subject staring fixedly toward the screen-right edge."*
-2. **Clip $N+1$ Spatial Entry State:** Declare the inherited perspective:
-   > *"Starting directly from an angle looking screen-left, framing the closed apartment doorway that the subject was gazing toward..."*
-3. **The 180-Degree Screen Direction Rule:**
+1. **Visual & Kinematic Action Handover (Terminal-to-Initial Continuation):**
+   Even when generating clips without a chained last-frame seed, consecutive cuts must bridge biomechanical motion. The initial posture and momentum of Clip $B$ must inherit the terminal state of Clip $A$:
+   $$\mathbf{Initial\ State(Clip\ B)_{t=0s} \approx Terminal\ State(Clip\ A)_{t=end}}$$
+   - *Example:* If Clip $A$ ends with a character reaching their right arm forward toward a brass door handle, Clip $B$ prompt MUST begin:  
+     `"Continuing directly from the preceding movement: Starting with the character already standing at the doorway with their right hand firmly grasping the brass handle, the character pushes the door inward..."`
+   - Characters must never reset to an idle neutral stance across an action cut.
+
+2. **Camera Perspective & Viewpoint Lock (Anti-Portrait Bias):**
+   Diffusion models harbor an aggressive bias toward rendering frontal portraits. When the narrative dictates viewing a character from behind or in profile (e.g. looking out a window, walking toward a doorway, or OTS framing):
+   - Positive prompts MUST declare: `"Viewpoint: Rear three-quarter perspective (viewed strictly from behind; character's back and shoulders face the camera, character faces forward toward the window; character does NOT turn around)."`
+   - Negative prompts MUST mandate: `Negative Prompt: frontal portrait, facing camera, turned around to face viewer, reversed eyeline.`
+
+3. **Z-Index Depth Layering & Occlusion Law (In Front vs. Behind):**
+   Depth layers must be explicitly declared relative to the camera vector to prevent characters from erroneously popping in front of desks, counters, or props:
+   - *Layer 1 (Foreground / Near Camera):* Physical props, desktop front edge, foreground architecture.
+   - *Layer 2 (Midground / Action Plane):* Character seated or standing **strictly behind** the foreground furniture.
+   - *Layer 3 (Background / Deep):* Rear wall, windows, structural boundaries.
+   - *Mandatory Occlusion Clause:* `"Positioned strictly behind the heavy oak desk, with lower torso, lap, and legs fully occluded behind the solid wood panel; actor is never rendered in front of or sitting atop the desk."`
+
+4. **Architectural Topology Invariance (Anti-Dropped Wall & Partition Ban):**
+   To prevent diffusion models from hallucinating partition walls dropping from the ceiling, random dividing pillars, or altered room shapes between cuts:
+   - Prompts must inject the room topology invariants from `environments/<id>/ground_rules.md`: `"Single unified unbroken rectangular room (5m x 6m) with flat continuous ceiling; strictly zero dropped ceiling walls, zero partition dividers, zero structural columns."`
+   - Negative prompts route: `Negative Prompt: ceiling partition, dropped wall, room divider, structural column, extra door.`
+
+5. **Clip $N$ Spatial Exit to Clip $N+1$ Entry Handoff:**
+   - *Clip $N$ Spatial Exit State:* Declare terminating vector and gaze (e.g. `"Camera concludes push-in on locked MCU, subject staring fixedly toward screen-right edge."`).
+   - *Clip $N+1$ Spatial Entry State:* Declare inherited perspective (e.g. `"Starting directly from an angle looking screen-left, framing the closed apartment doorway that the subject was gazing toward..."`).
+
+6. **The 180-Degree Screen Direction Rule:**
    - If Character A is framed screen-left looking Screen-Right, the object or partner they interact with **MUST be framed screen-right looking Screen-Left**.
    - Tracked in metadata: `Screen Direction: Left-to-Right` vs. `Right-to-Left (Complementary)`.
-4. **Eyeline Elevation Matching:** If a subject looks down toward a table or phone, the subsequent macro cut must be explicitly prompted from a high-angle / top-down elevation to match the spatial geometry.
+
+7. **Eyeline Elevation Matching:** If a subject looks down toward a table or phone, the subsequent macro cut must be explicitly prompted from a high-angle / top-down elevation to match the spatial geometry.
 
 ### 5.7 Multi-Character Staging (The "Clean Single" Standard)
 In video diffusion, Over-The-Shoulder (OTS) shots suffer from the **"Melting Shoulder" Glitch** (foreground shoulders warping into background bodies) and **Identity Bleed** (features blending between characters). Two-character dialogue is governed by three rules:
@@ -395,7 +420,7 @@ The production framework operates on a **Flow Native Baseline** by default, but 
 3. **`dialogue_engine` Modality Switching:**
    - **`native_flow` (Default):** Embedded in-clip dialogue with anti-muppet lip restraints (`subtle lip articulation, relaxed jaw`) and Closed-Lip Listener rule if off-screen/phone audio.
    - **`elevenlabs`:** Strips spoken dialogue quotes from video prompts (prevents double-speech audio); generates `dialogue_scripts.md` cue sheet with pre-roll/post-roll silence buffers and voice profiles.
-   - **`gemini_tts`:** Strips speech quotes from video prompts (pure foley and score); generates `narrator_script.md` using official **Angle Bracket `< >` syntax** (`<short pause>`, `<long pause>`, `<whisper>...</whisper>`, `<sigh>`) with System Instructions for narrator persona. Strictly bans square brackets `[...]` to avoid TTS reading tags aloud. *Line-Break Formatting Rule:* Pause tags must NEVER be appended to the end of a sentence line (`name. <long pause>`), as the tokenizer will speak the tag words; sentences must terminate with a period and newline (`.\n`), with pause tags placed on their own isolated lines (`<long pause>\n`).
+   - **`gemini_tts`:** Strips speech quotes from video prompts (pure foley and score); generates `narrator_script.md` using official **Angle Bracket `< >` syntax** with Google AI Studio's 40-tag expression catalog (`<short pause>`, `<long pause>`, `<whisper>`, `<sigh>`, `<gasp>`, `<chuckle>`, `<heavy breath>`, `<groan>`, `<whimper>`, etc.) and System Instructions for narrator persona. Strictly bans square brackets `[...]` to avoid TTS reading tags aloud. *Line-Break Formatting Rule:* Pause tags must NEVER be appended to the end of a sentence line (`name. <long pause>`), as the tokenizer will speak the tag words; sentences must terminate with a period and newline (`.\n`), with pause tags placed on their own isolated lines (`<long pause>\n`).
 4. **`music_engine: external`:** Purges score prompts from the `Audio:` block (`zero background music, no score`), leaving pure diegetic foley and spatial room tone.
 
 ### 6.5 Dynamic Context-Driven Audio Transitions (J-Cuts, L-Cuts & Sound Bridges)
@@ -422,6 +447,43 @@ Audio must rarely cut synchronously on the exact video frame boundary (straight 
 2. **In External Speech & Narration (Gemini 3.8 Flash TTS / ElevenLabs):**
    - *J-Cut Narration Pre-Lap:* In `narrator_script.md` or timeline cue sheets, the narrator's next sentence or sound cue begins **0.5s to 1.5s before the visual edit**, pulling viewer attention forward into the next scene.
    - *L-Cut Narration Post-Hang:* The narrator's final words or whisper tails linger for 0.5s–1.0s over the incoming visual B-roll or macro insert before room tone takes over.
+
+### 6.6 Dynamic BGM Handover & Cross-Clip Volume Continuity State Machine
+In multi-clip sequences, treating each clip's `Audio: Music: [...]` block in isolation causes jarring "volume cliffs"—for example, Clip 4 ending on an intense 85% volume crescendo while Clip 5 generates with a quiet 20% intro.
+
+Every sequential clip sharing an underlying score MUST maintain a continuous **BGM Dynamic Handover Curve**:
+
+$$\mathbf{Dynamic\ State(Clip\ N+1)_{Entry} = Dynamic\ State(Clip\ N)_{Exit}}$$
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     BGM CONTINUITY HANDOVER ARCHITECTURE                    │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ CLIP N:                                                                     │
+│ • Entry Dynamic: Mid-Volume (50%), 110 BPM, subtle pulsing bass             │
+│ • Progression: Dramatic escalation as tension peaks                         │
+│ • Exit Dynamic: PEAK HIGH VOLUME (85%), intense orchestral crescendo        │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                CUT TRANSITION                               │
+├─────────────────────────────────────────────────────────────────────────────┤
+│ CLIP N+1:                                                                   │
+│ • Entry Dynamic: MATCHES EXIT (85% Volume, High Energy Climax)              │
+│ • Prompt Directive: "Music: enters immediately at full climactic volume     │
+│   (85% intensity, continuing the aggressive brass and driving tempo from    │
+│   preceding cut), sustaining peak tension before resolving..."              │
+│ • Exit Dynamic: Sustained High or Motivated Resolution Decrescendo          │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Standardized BGM Continuity Directives:
+1. **`[CONTINUATION - SUSTAIN]` (Matched Handover):**
+   - *Prompt Syntax:* `"Music: enters immediately at high volume (85% intensity, matching the crescendo peak of the preceding shot), sustaining continuous heavy sub-bass and distorted strings without drop in volume or tempo."`
+2. **`[CONTINUATION - DECAY / DECRESCENDO]` (Motivated Resolution):**
+   - *Prompt Syntax:* `"Music: enters at peak intensity matching preceding shot, immediately cascading into a gradual 2-second decrescendo down to a hushed atmospheric drone."`
+3. **`[CONTINUATION - ACCELERATION]` (Building Arc):**
+   - *Prompt Syntax:* `"Music: seamlessly continues the medium-tempo ostinato from preceding shot, accelerating rhythmic percussion toward a mid-shot impact."`
+4. **`[MOTIVATED HARD CUT / NEEDLE DROP]` (Intentional Silence or Hit):**
+   - *Prompt Syntax:* `"Music: sudden instantaneous music cut on frame one; absolute zero score, yielding completely to room tone and dialogue echo."`
 
 ---
 
@@ -504,14 +566,14 @@ Every assembled production must pass these 19 authoritative pre-flight linters b
 
 | Linter ID | Name | Inspection Rule | Failure Condition |
 |---|---|---|---|
-| **L-01** | **Word Economy** | Standalone T2V body strictly 100–150 words; Tier 3 I2V body (`video_prompt.txt`) strictly 75–150 words (excluding config and negative prompt blocks). | Word count below floor or exceeding 150 words. |
+| **L-01** | **Descriptive Completeness & Spatial Locking** | Descriptive prompt body is uncapped (150-word ceiling card abolished) and must comprehensively specify subject DNA, unbroken room topology, Z-index depth layering, and kinematics. Minimum descriptive floor $\ge 50$ words to prevent underspecified prompts. (Spoken dialogue words remain governed by `L-14`). | Underspecified scene prompt (<50 words) lacking spatial/depth bounds, or omitting room topology. |
 | **L-02** | **Attention Front-Loading** | Viewport framing and primary subject anchor appear within Tokens 1–30. | Framing/subject delayed past Token 30. |
 | **L-03** | **Equipment Noun Ban** | Zero physical camera hardware nouns (`tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`) in positive prompt. (Negative prompt clauses exempt). | Any hardware noun in positive creative prompt. |
 | **L-04** | **Config Decoupling** | Zero technical specs (`16:9`, `9:16`, `4:3`, `1080p`, `720p`, `4K`, `24fps`, `60fps`, `320x240`) in creative prompt text. (Creative cadence `on twos`, `12fps` whitelisted; negative prompts exempt). | Technical config token in creative prompt. |
 | **L-05** | **Anti-Subtitle & Non-Render** | Narrative context uses `(REFERENCE ONLY — DO NOT RENDER...)` and negative prompt includes anti-subtitle tokens (`subtitles, closed captions, burned-in text, lower thirds, watermark`). | Context un-isolated or missing anti-subtitle negative clause. |
 | **L-06** | **Subject DNA & Pre-Composited Tier 2** | Text-conditioned clips inject verbatim `verbatim_anchor.txt`; Tier 2 image prompts bind up to 3 Ingredients (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`) via Lean Reference Anchoring banning competing bone-structure text; Tier 3 video prompts take ONLY the single pre-composited Tier 2 keyframe (or `LAST_FRAME`) as seed. | Bare pronoun in T2V, over-describing facial bones when `[IMAGE N]` attached, or feeding raw turnaround sheets directly into Tier 3 video. |
 | **L-07** | **Pre-Materialized Prop Guard** | Held props declared grasped from Frame 1 to Frame End; zero mid-clip drawing without cutaway; complex scenes declare `Permitted Props: [...]`. | Prompt verbs like *"draws weapon"* or un-materialized prop appear mid-clip. |
-| **L-08** | **Empty Stage & 3-Plane Environment** | Environment reference plates contain zero people/hero products; scene prompts establish Foreground, Midground, Background. | People in environment plates, or flat single-plane staging. |
+| **L-08** | **Empty Stage & Scene Ground Rules** | Environment reference plates contain zero people/hero products; scene prompts establish Foreground, Midground, Background; mandatory `environments/<id>/ground_rules.md` present defining unbroken room topology (anti-dropped walls), Z-index depth (character occluded behind furniture), and negative bans. | People in environment plates, flat single-plane staging, missing `ground_rules.md`, or omitting topology/Z-index constraints. |
 | **L-09** | **Flow Native Duration Lock** | Clip duration strictly in `{4s, 6s, 8s, 10s}` in Flow Native mode. | Non-Flow duration (`1s, 2s, 3s, 5s, 7s`). |
 | **L-10** | **Single-Motion & Clock Bracket Ban** | Max 1 primary biomechanical action and 1 continuous camera vector per clip. Numeric clock brackets (`\[\d{2}:\d{2}`) strictly banned; natural temporal phrases permitted. | Multiple sequential actions or clock timestamp in atomic clip. |
 | **L-11** | **Continuity Chaining Syntax** | Mode 1 clips declare `(SEED: LAST_FRAME)` and begin with *"Continuing directly from the initial frame"*; Tier 3 I2V begins with *"Starting directly from the initial image"*. | Missing continuity seed syntax or starting declaration. |
@@ -520,7 +582,7 @@ Every assembled production must pass these 19 authoritative pre-flight linters b
 | **L-14** | **Dual-Track Speech Word Budget** | Native Flow (`Pathway A`) $\le \{5, 9, 13, 18\}$ words for $\{4\text{s}, 6\text{s}, 8\text{s}, 10\text{s}\}$; External TTS (`Pathway B`) $\le \{8, 12, 18, 22\}$ words; $\text{Clip Duration} - \text{SRT Cue Duration} \ge 1.0\text{s}$ silence buffer. | Spoken words exceed duration ceiling or lack 1.0s buffer. |
 | **L-15** | **Anti-Muppet & Phonetic Normalization** | Spoken dialogue uses preceding colon (`says, [modifier]: "..."`), strict sentence case, $\ge 2$ restraint tokens (`relaxed jaw, minimal jaw displacement, subtle lip articulation`), and all numbers/symbols/acronyms in Pathway A written phonetically as spoken English words (`"three fourteen"`, `"twenty-four frames"`). | Dialogue without restraint tokens, ALL CAPS words, or containing unexpanded numeric digits (`\d+`) in spoken quotes. |
 | **L-16** | **Closed-Lip Listener Rule** | Off-screen/phone/narrator speech over visible actor mandates `firmly closed lips, tight jaw, zero mouth movement`. | Visible actor lacking closed-lip restraint during external speech. |
-| **L-17** | **Structured 4-Field Audio Syntax** | Trailing audio block follows `Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...` with music suppression over dialogue. | Audio block is unstructured or contains aggressive score over dialogue. |
+| **L-17** | **Structured Audio & Dynamic BGM Handover** | Trailing audio block follows `Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...` with music suppression over dialogue AND explicit BGM continuity directives (`[CONTINUATION - SUSTAIN]`, `[CONTINUATION - DECAY]`, etc.) matching preceding clip exit dynamic. | Audio block is unstructured, contains aggressive score over dialogue, or causes unmotivated volume cliff across cuts. |
 | **L-18** | **Gemini TTS Script & Non-Imposition** | `narrator_script.md` isolates `< >` tags on standalone lines (`.\n<long pause>\n`), zero square brackets, zero consecutive `<long pause>` dead air, and never rewrites creator's authored script into 2nd person. | Square brackets, inline pause tags, or overwriting creator's authored voice. |
 | **L-19** | **Trust & Safety Pre-Flight & Multi-Pathway Gate** | Positive prompt, quotes, and negative tokens scanned against [`safety_registry.md`](safety_registry.md) for platform policy triggers (financial fraud/bankruptcy, self-harm translations, inverted trauma negatives). If triggered, must execute the 2-Fork Creator Decision Gate (Option A: Safe Reword vs. Option B: Clean Veo Plate + External Audio Lip-Sync). | Submitting un-sanitized regulatory trigger words directly in Veo text prompts without creator confirmation. |
 

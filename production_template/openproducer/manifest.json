@@ -5,7 +5,7 @@
   "audit_timestamp": "",
   "certification_status": "PENDING",
   "linters": {
-    "L01_word_count_economy": { "status": "PENDING", "range": "75-150 words" },
+    "L01_descriptive_completeness": { "status": "PENDING", "uncapped_depth_enforced": true, "min_words": 50 },
     "L02_equipment_noun_ban": { "status": "PENDING", "banned_found": [] },
     "L03_pure_creative_prompt": { "status": "PENDING", "technical_tokens_in_text": 0 },
     "L04_asymmetric_token_decay": { "status": "PENDING", "framing_in_first_30": false },

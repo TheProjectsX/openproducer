@@ -14,9 +14,9 @@ The `environments/` domain defines, stages, and locks the spatial geometry, moti
 1. **The 3-Plane Spatial Parallax Law:** Every environment must be explicitly layered into **Foreground**, **Midground**, and **Background**. When the camera moves in AI video, this forces the diffusion latent space to compute authentic multi-speed 3D parallax instead of 2D card warping.
 2. **Motivated Lighting & Atmospheric Medium:** Light never exists in an empty vacuum. All illumination must originate from an identifiable physical vector (e.g. low-angle sunset, stage spotlights, overhead commercial softboxes) scattering through a tangible atmospheric medium (mist, dust motes, sea spray, or haze).
 3. **The "Empty Stage" Reference Protocol (Google Flow Ingredient #2 / `[IMAGE 2]`):** For multi-shot continuity, reference plates stored in `environments/<id>/references/empty_stage.png` must strictly depict the **Empty Stage** (architecture, materials, and lighting with zero human characters or hero products). During **Tier 2 Keyframe Compositing**, `[IMAGE 2]` (Empty Stage) is combined with `[IMAGE 1]` (Primary Subject) and `[IMAGE 3]` (Secondary Subject/Prop) to generate a single pre-composited starting frame for Tier 3 Veo 3.1 video generation—eliminating subject and `#E5E5E5` background bleed across shots.
-4. **Architectural Decoupling (Image Mode vs. Video Mode):**
+4. **Architectural Decoupling & Descriptive Completeness:**
    - **Still Image Prompts (Imagen 4 / FLUX / Midjourney):** Uncapped descriptive depth focusing on classical concept art depth (Repoussoir foreground, atmospheric perspective, staffage scale, and optical lens specs). Strictly bans camera motion verbs and audio blocks.
-   - **Video Shot Prompts (Google Flow / Veo 3.1):** Continuous causal flow (100–150 words standard T2V, or 75–150 words Tier 3 I2V), single camera trajectory, and dedicated trailing 4-field `Audio:` soundscapes (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`) per Linter `L-17`.
+   - **Video Shot Prompts (Google Flow / Veo 3.1):** Uncapped descriptive completeness (abolishing artificial 100–150 word limits). Prompts must thoroughly detail spatial topology, object dimensions, Z-index depth layering, and negative bounds so the diffusion model never hallucinates missing geometry between cuts. Features continuous causal flow, single camera trajectory, and dedicated trailing 4-field `Audio:` soundscapes (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`) per Linter `L-17`. Spoken dialogue pacing remains mathematically bounded per clip duration buckets via `L-14`.
 
 ---
 
@@ -28,10 +28,11 @@ Every distinct location or studio set is isolated in its own folder:
 environments/
 └── <location_id>/                   # e.g., apocalyptic_beach/ or tabletop_studio/ or spotlight_arena/
     ├── summary.md                   # Human-readable world description, geography, or architectural notes
+    ├── ground_rules.md              # MANDATORY: Architectural topology, Z-index depth, negative bans & blocking
     ├── spatial_layers.md            # Prescriptive Foreground, Midground, and Background specifications
     ├── lighting_rig.md              # Key, fill, rim, practicals, softboxes, and atmospheric medium
     ├── acoustics.md                 # Diegetic room tone, reverberation profile, ambient soundscape
-    ├── master_anchor.txt            # LOCKED 25–40 word environmental anchor string for prompt injection
+    ├── master_anchor.txt            # Continuous environmental anchor string for prompt injection
     ├── reference_prompt.txt         # Generative prompt used to create the empty stage reference plate
     └── references/
         └── empty_stage.png          # Approved empty stage background plate (Google Flow Ingredient #2)
@@ -56,7 +57,38 @@ environments/
 - **Floor & Surface Textures:** [e.g., Wet reflective sand, damp mossy cobblestone, polished concrete]
 ```
 
-### 3.2 `environments/<location_id>/spatial_layers.md` (The 3-Plane Parallax Standard)
+### 3.2 `environments/<location_id>/ground_rules.md` (Spatial Invariants & Negative Constraints)
+
+```markdown
+# Scene Ground Rules: [LOCATION_NAME]
+
+## 1. Architectural Topology & Boundary Invariants
+- **Room Topology:** [e.g., Single unified rectangular room (5m x 6m); flat continuous 3m ceiling with zero elevation changes; strictly ZERO dividing walls, ZERO ceiling-dropped partitions, ZERO structural columns].
+- **Doorway Locations & States:** [e.g., Single solid dark walnut door located exclusively on the right (east) wall; MUST ALWAYS remain ajar by 30 degrees into the dark hallway].
+- **Window Orientations & Coverings:** [e.g., Two tall rectangular windows on the north wall only; completely uncovered with zero curtains or blinds].
+
+## 2. Negative Constraints & Forbidden Elements (Strict Hallucination Bans)
+- **Strictly Banned Fixtures:** [e.g., NEVER render a ceiling fan, NEVER render overhead fluorescent tube lighting, NO dropped partition walls, NO curtains].
+- **Banned Anachronisms / Objects:** [e.g., NO modern electronics or screens; NO extra doors or windows].
+
+## 3. Fixed Object Anchors & Z-Index Depth Layering
+- **Fixed Furniture Placements:** [e.g., Rectangular heavy oak desk (1.8m wide, 0.8m deep) is permanently anchored center-frame against the north wall].
+- **Z-Index Layer Hierarchy (Camera-to-Depth):**
+  - *Layer 1 (Foreground / Near Camera):* Front edge of the oak desk with green brass banker's lamp on the left.
+  - *Layer 2 (Midground / Subject Zone):* Character seated **strictly behind** the desk.
+  - *Layer 3 (Background / Deep):* North wall with framed maritime maps.
+- **Occlusion Rules:** [e.g., The actor's lower torso, legs, and lap are permanently occluded behind the solid wood front panel of the desk; actor is NEVER rendered standing in front of or sitting on the desk].
+
+## 4. Subject Blocking & Interaction Invariants
+- **Primary Subject Anchor:** [e.g., David sits centered behind the desk facing south toward camera/door].
+- **Visitor / Secondary Placement:** [e.g., Visitor stands strictly screen-left near the bookshelf, maintaining 2 meters distance from the desk].
+
+## 5. Invariant Lighting Vectors
+- **Key Light Origin:** [e.g., Diffused cool daylight strictly enters from the north window at 45 degrees, casting consistent shadows from right to left].
+- **Practical Light:** [e.g., Warm 2700K incandescent glow exclusively from the green desk lamp].
+```
+
+### 3.3 `environments/<location_id>/spatial_layers.md` (The 3-Plane Parallax Standard)
 
 ```markdown
 # Spatial Layers Specification
@@ -74,7 +106,7 @@ environments/
 - **Depth Function:** Establishes scale, celestial phenomena, and stable horizon geometry.
 ```
 
-### 3.3 `environments/<location_id>/lighting_rig.md` (Motivated Light Transport)
+### 3.4 `environments/<location_id>/lighting_rig.md` (Motivated Light Transport)
 
 ```markdown
 # Lighting Rig Specification
@@ -92,7 +124,7 @@ environments/
 - **Suspended Particulates:** [e.g., Dense sea spray mist, floating dust motes, drifting smoke, rain streaks]
 ```
 
-### 3.4 `environments/<location_id>/acoustics.md` (Diegetic Soundscape)
+### 3.5 `environments/<location_id>/acoustics.md` (Diegetic Soundscape)
 
 ```markdown
 # Acoustic Profile Specification
@@ -107,12 +139,12 @@ environments/
 - **Acoustic Space:** [e.g., Massive open outdoor coastline (infinite decay) | Dampened studio room (zero echo)]
 ```
 
-### 3.5 `environments/<location_id>/master_anchor.txt` (Locked Injection String)
+### 3.6 `environments/<location_id>/master_anchor.txt` (Continuous Structural Anchor)
 
-A locked, concise 25–40 word string deterministically injected into video shot prompts to lock the environment across cuts:
+An unconstrained structural anchor string deterministically injected into video shot prompts to lock the environment, room topology, and lighting across cuts:
 
 ```text
-[Vast coastal city beach bordered by reflective glass skyscrapers under a catastrophic amber sky, wet reflective sand shoreline meeting a swelling ocean horizon, filled with sea spray mist and dramatic golden-hour illumination]
+[Vast coastal city beach bordered by reflective glass skyscrapers under a catastrophic amber sky, unbroken sandy shoreline meeting a swelling ocean horizon, filled with sea spray mist and dramatic golden-hour illumination]
 ```
 
 ---
@@ -122,6 +154,7 @@ A locked, concise 25–40 word string deterministically injected into video shot
 ### A. Narrative Cinema & Anime Worlds
 - Prioritize **Atmospheric Perspective** and **Staffage Scale**: Tiny human silhouettes against massive environments communicate epic scale.
 - Layer atmospheric particles (fog, smoke, dust) to provide a tangible medium for light scattering.
+- Enforce **Room Topology & Boundary Invariants**: In interior sets, explicitly lock room volume (flat ceiling, zero dropped partition walls, fixed door/window assignments).
 
 ### B. Commercial Tabletop & Studio Stages
 - **Name Studio Light Fixtures:** Always specify `"overhead rectangular softboxes"` or `"diffused strip softbox"`—this forces diffusion models to render clean, linear reflections across glass, metallic bezels, and liquid surfaces instead of chaotic glares.
@@ -135,7 +168,11 @@ A locked, concise 25–40 word string deterministically injected into video shot
 ## 5. Pre-Flight Environment Linting Checklist (Master Registry Mapping)
 
 Before generating environment plates or compiling video prompts, the environment package must satisfy the authoritative Master Linters:
-- **L-08 (Empty Stage & 3-Plane Environment):** The reference prompt and image in `references/empty_stage.png` contain zero human actors, faces, or hero products; prompt explicitly defines motivated foreground, midground, and background planes.
+- **L-08 (Empty Stage & Scene Ground Rules):** 
+  1. The reference plate in `references/empty_stage.png` contains zero human actors, faces, or hero products; prompt explicitly defines motivated foreground, midground, and background planes.
+  2. The environment folder MUST contain a verified `ground_rules.md` establishing unbroken room topology (preventing hallucinated dropped walls/partitions), Z-index depth layering (characters occluded behind furniture), and explicit negative bans (e.g. banning ceiling fans, extra doors/windows).
+  3. Positive ground rules are embedded into shot scene descriptions; negative bans are routed to the clip negative prompt block.
+- **L-01 (Descriptive Completeness):** Scene prompts must comprehensively detail environmental boundaries, scale, and lighting without artificial word truncation (100–150 word cap abolished).
 - **L-03 (Equipment Noun Ban):** Zero camera hardware nouns (`tripod`, `dolly track`, `drone`); only perspective and kinematic adjectives allowed in positive prompts.
 - **L-04 (Config Decoupling):** Zero technical configuration specs (`16:9`, `1080p`) inside creative prompt text.
 - **L-17 (Structured 4-Field Audio Syntax):** Environment acoustic profiles follow semicolon-delimited syntax (`Audio: SFX: None; Ambience: [Room Tone]; Dialogue: None; Music: None`).

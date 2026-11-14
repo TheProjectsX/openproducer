@@ -204,6 +204,42 @@ The **Retake Doctor** is an autonomous diagnostic engine that eliminates trial-a
 
 ---
 
+### Diagnostic Code G-17: Dropped Wall & Architectural Topology Mutation
+* **Creator Complaint:** *"A random wall dropped from the ceiling to divide the room,"* or *"The room shape changed and new pillars appeared."*
+* **Root Cause:** Absence of explicit room boundary invariants in prompt text. Diffusion models invent architectural partitions to fill spatial ambiguities across cuts.
+* **Surgical Patch:**
+  1. Inject unbroken room topology: `"Single unified unbroken rectangular room (5m x 6m) with flat continuous ceiling; strictly zero dropped ceiling walls, zero partition dividers, zero structural columns."`
+  2. Route to Negative Prompt: `Negative Prompt: ceiling partition, dropped wall, room divider, structural column, dividing barrier, extra doorways.`
+
+---
+
+### Diagnostic Code G-18: Z-Index Depth Inversion (In Front vs. Behind Objects)
+* **Creator Complaint:** *"The character is popping in front of the desk when they should be seated behind it,"* or *"The character is floating on top of the counter."*
+* **Root Cause:** Underspecified occlusion relationships along the camera Z-axis.
+* **Surgical Patch:**
+  1. Declare explicit depth layering and occlusion: `"Positioned strictly behind the heavy oak desk, with lower torso, lap, and legs fully occluded behind the solid wood front panel; actor is never rendered in front of or sitting atop the desk."`
+  2. Map Layer Hierarchy: Layer 1 (Foreground desk edge) $\rightarrow$ Layer 2 (Midground seated character) $\rightarrow$ Layer 3 (Background wall).
+
+---
+
+### Diagnostic Code G-19: Camera Viewpoint & Facing Inversion (Front vs. Back View)
+* **Creator Complaint:** *"We are looking at the front of the character where we should look at their back as the sequence dictates."*
+* **Root Cause:** Diffusion model portrait bias defaults to rendering a face looking at the camera unless explicitly restrained.
+* **Surgical Patch:**
+  1. Declare explicit camera perspective relative to subject: `"Viewpoint: Rear three-quarter perspective (viewed strictly from behind; character's back and shoulders face the camera, character faces forward toward the window; character does NOT turn around)."`
+  2. Add anti-portrait negative tokens: `Negative Prompt: frontal portrait, facing camera, turned around to face viewer, reversed eyeline.`
+
+---
+
+### Diagnostic Code G-20: Cross-Clip BGM Volume Cliff & Dynamic Drop-Off
+* **Creator Complaint:** *"Clip 4 builds to an intense loud crescendo, but Clip 5 suddenly starts with quiet music, breaking the transition."*
+* **Root Cause:** Prompting trailing `Music:` blocks in isolation without cross-clip dynamic state inheritance.
+* **Surgical Patch:**
+  1. Inherit exit dynamic: $\mathbf{Dynamic\ State(Clip\ N+1)_{Entry} = Dynamic\ State(Clip\ N)_{Exit}}$.
+  2. Inject BGM continuity directive: `"Music: enters immediately at high volume (85% intensity, continuing the brass crescendo from preceding cut), sustaining driving tempo..."`
+
+---
+
 ## 3. The 3-Step "Doctor Mode" Interactive Protocol
 
 When the creator runs or invokes `/doctor` (or reports a bad clip generation), the agent executes this deterministic 3-step sequence:
@@ -252,4 +288,10 @@ When the creator runs or invokes `/doctor` (or reports a bad clip generation), t
 | **G-12** | Shadow Pareidolia / Face in Dark| Flatten shadow to geometric line + negative face tokens | Discussion 57 |
 | **G-13** | Complexion Drift / Hair Mismatch | Relative Melanin Parity + Hair vs. Facial Mask Decoupling | `02_character_spec` §4.0 |
 | **G-14** | Policy Violation False Positive | Reframe CTAs, purge gore negatives & harm phrases | `06_retake_doctor_spec` §2.0 |
+| **G-15** | Boundary Stutter / Phonetic Loop | Replace terminal punctuation with soft ellipsis or commas | `L-18` |
+| **G-16** | Kinetic Text Desync / Dead Air | Immediate Vocal Attack + decouple text to motion graphics | `06_retake_doctor_spec` §2.0 |
+| **G-17** | Dropped Wall / Topology Mutation | Inject unbroken room topology invariants + negative wall bans | `03_scenery_spec` §3.2, `L-08` |
+| **G-18** | Z-Index Depth Inversion | Declare explicit depth layer hierarchy & desk occlusion | `05_directors_cut` §5.6 |
+| **G-19** | Viewpoint / Facing Inversion | Declare rear/profile viewpoint + negative front portrait | `05_directors_cut` §5.6 |
+| **G-20** | Cross-Clip BGM Volume Cliff | Enforce BGM Dynamic Handover state inheritance directive | `04_cinematography` §6.0, `L-17` |
 

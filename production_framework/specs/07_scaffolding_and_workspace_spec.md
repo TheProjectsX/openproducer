@@ -97,9 +97,11 @@ graph TD
     ├── visuals/                       # 🌆 CREATOR FOLDER: Environment Base Prompts
     │   └── environments/
     │       └── <environment_id_or_name>/
-    │           └── prompt.txt         # Empty 3-plane stage plate prompt (Conditioned On: base_image_prompt.txt)
+    │           ├── prompt.txt         # Empty 3-plane stage plate prompt (Conditioned On: base_image_prompt.txt)
+    │           └── ground_rules.md    # MANDATORY: Scene topology, Z-index depth, and negative hallucination bans
     │       └── <environment_2_name>/
-    │           └── prompt.txt
+    │           ├── prompt.txt
+    │           └── ground_rules.md
     │
     ├── clips/                         # 🎬 CREATOR FOLDER: Shot-by-shot plain-text prompts
     │   ├── clip_01/
@@ -185,7 +187,32 @@ Resolution: 1080p
 <people, characters, crowds, silhouettes, camera equipment, tripod, text, watermarks.>
 ```
 
-#### 4. `clips/clip_XX/image_prompt.txt`
+#### 4. `visuals/environments/<environment_id_or_name>/ground_rules.md` (Modular Studio)
+```markdown
+# Scene Ground Rules: <ENVIRONMENT NAME>
+
+## 1. Architectural Topology & Boundary Invariants
+- Room Topology: Single unified rectangular volume; flat continuous ceiling with zero elevation drops; strictly ZERO ceiling-dropped partition walls, ZERO dividing screens, ZERO structural columns.
+- Doorways & Windows: Door located exclusively on east wall, always open 30 degrees; two tall windows on north wall only, completely uncurtained.
+
+## 2. Negative Constraints & Forbidden Hallucinations
+- Strict Bans: NEVER render a ceiling fan, NEVER render overhead fluorescent fixtures, NO dropped partition walls, NO curtains, NO modern screens.
+
+## 3. Fixed Object Anchors & Z-Index Depth Layering
+- Fixed Furniture: Heavy oak desk (1.8m x 0.8m) permanently anchored center-frame against the north wall.
+- Depth Layering:
+  - Layer 1 (Foreground): Desk front edge and green brass banker's lamp.
+  - Layer 2 (Midground): Character seated strictly behind the desk; lower body and lap fully occluded by solid desk panel. Actor is never in front of or atop desk.
+  - Layer 3 (Background): North wall and window frame.
+
+## 4. Subject Blocking & Interaction
+- Subject Position: Primary subject sits centered behind the desk facing south toward camera/doorway.
+
+## 5. Invariant Lighting Vectors
+- Key Light: Diffused cool daylight entering from north window at 45 degrees; consistent shadows from right to left.
+```
+
+#### 5. `clips/clip_XX/image_prompt.txt`
 ```text
 [TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP <XX>]
 Target Tool: Google Flow / Imagen 4
@@ -200,20 +227,20 @@ Resolution: 1080p
 <studio gray background bleed, split screen, multiple panels, camera equipment, blurry lines, text, subtitles, watermarks.>
 ```
 
-#### 5. `clips/clip_XX/video_prompt.txt`
+#### 6. `clips/clip_XX/video_prompt.txt`
 ```text
 [CONFIGURATION SETTINGS]
-Duration: <4s | 6s | 8s>
+Duration: <4s | 6s | 8s | 10s>
 Aspect Ratio: 16:9
 Resolution: 1080p
 Transition / Chop: <e.g. ESTABLISHING MACRO | CONTINUOUS ACTION EXTENSION | MOTIVATED CUT>
 Input Seed / Dependencies: Generated from production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of production/clips/clip_<XX-1>/video_prompt.txt)
 
 [VIDEO PROMPT]
-Starting directly from the initial image, <Tokens 1-30: Viewport framing & subject anchor. Tokens 31-80: Single biomechanical action & motivated lighting. Tokens 81-130: Visual style anchor & single camera verb. Trailing block: 4-part semicolon Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ....>
+Starting directly from the initial image, <Comprehensive descriptive prompt (uncapped depth): Viewport framing, subject DNA, physical room topology, Z-index depth layering (subject positioned strictly behind furniture/props with lower body occluded), motivated lighting vectors, single continuous camera verb, and kinematic action continuation from preceding clip terminal state. Trailing block: 4-part semicolon Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: [BGM Continuity: CONTINUATION - SUSTAIN / DECAY / ACCELERATION matching preceding cut volume]....>
 
 [NEGATIVE PROMPT]
-<camera equipment, tripod, dolly track, blurry, morphing face, distorted hands, extra fingers, text, subtitles, watermark, speech looping, unnatural pauses.>
+<camera equipment, tripod, dolly track, blurry, morphing face, distorted hands, extra fingers, text, subtitles, watermark, ceiling fan, dropped partition walls, structural columns, room dividers, frontal portrait (when rear/profile specified), speech looping, unnatural pauses.>
 ```
 
 ---

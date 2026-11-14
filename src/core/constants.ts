@@ -175,7 +175,7 @@ export const AUDIO_DELIVERY_MODES: Array<{
   ];
 
 export const LINTER_REGISTRY = [
-  { id: 'L01', name: 'Word Count Economy (75-150 words)', target: 'video_prompt' },
+  { id: 'L01', name: 'Descriptive Completeness (Uncapped Depth)', target: 'video_prompt' },
   { id: 'L02', name: 'Equipment Noun Ban (tripod, dolly, crane)', target: 'all_prompts' },
   { id: 'L03', name: 'Pure Creative Prompt (no technical config tokens)', target: 'all_prompts' },
   { id: 'L04', name: 'Asymmetric Token Decay (viewport framing first 30)', target: 'video_prompt' },
@@ -191,7 +191,7 @@ export const LINTER_REGISTRY = [
   { id: 'L14', name: 'Temporal Quantum Pacing (4s/6s/8s/10s)', target: 'scratchbook' },
   { id: 'L15', name: 'Multi-Character Clean Singles', target: 'clips' },
   { id: 'L16', name: 'Spatial Handoff Vectors & Eyelines', target: 'clips' },
-  { id: 'L17', name: 'Audio Bridge Closure', target: 'audio_script' },
+  { id: 'L17', name: 'Audio Bridge & BGM Dynamic Handover', target: 'audio_script' },
   { id: 'L18', name: 'Pluggable Style Injection', target: 'all_prompts' },
   { id: 'L19', name: 'Trust & Safety False-Positive Guard', target: 'all_prompts' }
 ];

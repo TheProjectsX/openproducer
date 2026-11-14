@@ -80,9 +80,10 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
   3. If `modular_studio`:
      - `production/subjects/<subject_id>/hero_prompt.txt` & `profile_prompt.txt` (with `Conditioned On:` lines).
      - `production/visuals/environments/<environment_id>/prompt.txt` (with `Conditioned On:` line).
+     - `production/visuals/environments/<environment_id>/ground_rules.md` (MANDATORY: Architectural topology, Z-index depth layering, and negative bans).
   4. `production/clips/clip_01/` to `clip_xxx/`:
      - `image_prompt.txt` (Starting keyframe prompt + `Conditioned On:` line).
-     - `video_prompt.txt` (Veo 3.1 video prompt + `Input Seed / Dependencies:` line).
+     - `video_prompt.txt` (Veo 3.1 video prompt + `Input Seed / Dependencies:` line; enforcing uncapped descriptive depth `L-01`, active `ground_rules.md` topology/Z-index depth, terminal-to-initial kinematic action handover, and `L-17` BGM dynamic continuity).
   5. `production/master_images_prompt.txt` & `production/master_videos_prompt.txt` (Creator self-serve reference compilations; not used by `/opp-guide`).
   6. `production/scratchbook.md` (Timeline pacing math & Retake Doctor log) and `production/motion_graphics.md` (if applicable).
 - Run Linters L-01 to L-19, write `./openproducer/manifest.json`, and set `"current_stage": "produced"`, `"stages.produce_complete": true`, `"stages.clips_generated": true` in `./openproducer/state.json`.

@@ -94,22 +94,22 @@ export class LinterSuite {
 
     switch (ruleId) {
       case 'L01': {
-        // Word count economy 75-150 words in video prompts
+        // Descriptive Completeness & Uncapped Prompt Depth (min 50 words, uncapped upper limit)
         const videoPrompts = promptFiles.filter((f) => f.type === 'video_prompt');
         if (videoPrompts.length === 0) {
-          return { status: 'PENDING', details: 'No video prompts found to analyze word count.' };
+          return { status: 'PENDING', details: 'No video prompts found to analyze descriptive completeness.' };
         }
         const violations: string[] = [];
         for (const vp of videoPrompts) {
           const words = vp.content.trim().split(/\s+/).filter(Boolean).length;
-          if (words < 70 || words > 160) {
-            violations.push(`${path.basename(path.dirname(vp.path))}: ${words} words`);
+          if (words < 50) {
+            violations.push(`${path.basename(path.dirname(vp.path))}: ${words} words (min 50 required)`);
           }
         }
         if (violations.length > 0) {
-          return { status: 'WARN', details: `Outside recommended 75-150 range: ${violations.join(', ')}` };
+          return { status: 'WARN', details: `Underspecified scene prompt (<50 words): ${violations.join(', ')}` };
         }
-        return { status: 'PASS', details: 'All video prompts within 75-150 word economy window.' };
+        return { status: 'PASS', details: 'All video prompts satisfy descriptive completeness with uncapped depth (>=50 words).' };
       }
 
       case 'L02': {

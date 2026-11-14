@@ -37,7 +37,7 @@ Synchronize any new changes (plot updates, character/environment tweaks, orienta
      - `production/clips/clip_xxx/[image_prompt.txt, video_prompt.txt]` (if shots, dialogue, or timestamps changed, maintaining `Conditioned On:` / `Input Seed:` connection lines).
      - `production/scratchbook.md`, `production/master_images_prompt.txt`, and `production/master_videos_prompt.txt`.
   3. **Run Linter Audit (L-01 to L-19):**
-     - Verify word count (75–150 words), zero equipment nouns (`tripod`, `dolly`), token decay curve, soft punctuation (`...`), and Trust & Safety (`.agents/skills/openproducer-core/specs/safety_registry.md`).
+     - Verify descriptive completeness (`L-01`, uncapped depth $\ge 50$ words, spatial locking), scene ground rules (`L-08`, topology, Z-index depth, negative bans), BGM dynamic handover (`L-17`), zero equipment nouns (`tripod`, `dolly`), soft punctuation (`...`), and Trust & Safety (`.agents/skills/openproducer-core/specs/safety_registry.md`).
      - Record results in `./openproducer/manifest.json`.
 
 ## Mandatory Structured Output Format

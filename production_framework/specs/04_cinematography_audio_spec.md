@@ -236,6 +236,15 @@ Audio: SFX: tactile mechanical keyboard keystrokes, soft ceramic mug set down on
 - **Constraint:** Absolute acoustic realism; zero score (essential for post-production stem mixing in NLEs).
 - **Mandatory Directive:** End audio section with the strict terminator: `no background music, zero score`.
 
+#### Mode D: Dynamic Cross-Clip BGM Handover (Continuous Musical Progression)
+- **Constraint:** Sequential cuts sharing a musical theme must eliminate volume drop-offs and jarring tempo resets across cuts.
+- **Continuous Dynamic Law:** $\mathbf{Dynamic\ State(Clip\ N+1)_{Entry} = Dynamic\ State(Clip\ N)_{Exit}}$.
+- **Mandatory Continuity Directive:** The trailing `Music:` block must declare an explicit continuity directive matching the preceding shot's exit dynamic:
+  - `[CONTINUATION - SUSTAIN]`: `"Music: enters immediately at high volume (85% intensity, continuing the brass crescendo from preceding cut), sustaining driving tempo..."`
+  - `[CONTINUATION - DECAY]`: `"Music: enters at peak intensity matching preceding shot, immediately cascading into a 2-second decrescendo down to ambient sub-bass drone."`
+  - `[CONTINUATION - ACCELERATION]`: `"Music: seamlessly continues the medium-tempo ostinato from preceding cut, accelerating rhythm toward mid-shot climax."`
+  - `[MOTIVATED HARD CUT]`: `"Music: sudden instantaneous music cut on frame one; absolute zero score, yielding completely to room tone."`
+
 ---
 
 ## 7. Dual-Track Speech Velocity & Temporal Budgeting
@@ -308,6 +317,10 @@ When videos are exported from Flow for professional assembly in timeline editing
 
 Before compiling prompts into Google Flow, the automated validator enforces these validation gates from the Master `L-01` to `L-19` Registry:
 
+### Rule L-01: Descriptive Completeness & Uncapped Prompt Depth
+- **Check:** Video shot prompts must comprehensively specify subject DNA, spatial topology, Z-index depth layering, and optical kinematics. The artificial 100–150 word ceiling card is abolished. Minimum descriptive floor $\ge 50$ words to prevent underspecified prompts. (Spoken dialogue words remain governed by L-14).
+- **Error Message:** `L-01 VIOLATION: Underspecified scene prompt (<50 words). Must comprehensively detail physical scene geometry, subject blocking, and camera kinematics.`
+
 ### Rule L-03: Equipment Noun Prohibition
 - **Check:** Creative positive prompt MUST NOT contain any hardware nouns: `tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`. (Note: `NEGATIVE PROMPT:` clauses and audio frequency words like "drone of fluorescent lights" are strictly exempt).
 - **Error Message:** `L-03 VIOLATION: Hardware noun detected in positive prompt. Replace with pure optical/kinematic trajectory directive.`
@@ -334,7 +347,7 @@ Before compiling prompts into Google Flow, the automated validator enforces thes
 - **Check:** When off-screen/phone audio or narrator voiceover plays over an on-screen subject, prompt MUST include `firmly closed lips, tight jaw, zero mouth movement`.
 - **Error Message:** `L-16 VIOLATION: Visible subject during off-screen audio lacks closed-lip restraint. Risk of lip desync animation.`
 
-### Rule L-17: Structured 4-Field Audio Syntax & Music Protection
-- **Check:** The trailing audio block MUST adhere to structured semicolon-delimited syntax (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`). If spoken dialogue is present, energetic rhythm words (`heavy drums`, `fast tempo`) are banned without `low-in-the-mix`.
-- **Error Message:** `L-17 VIOLATION: Audio block is unstructured or contains aggressive score over dialogue. Enforce 4-field semicolon audio syntax.`
+### Rule L-17: Structured 4-Field Audio Syntax & BGM Dynamic Handover
+- **Check:** The trailing audio block MUST adhere to structured semicolon-delimited syntax (`Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`). If spoken dialogue is present, energetic rhythm words (`heavy drums`, `fast tempo`) are banned without `low-in-the-mix`. In sequential cuts sharing an underlying score, the `Music:` block must declare an explicit BGM continuity directive (`[CONTINUATION - SUSTAIN]`, `[CONTINUATION - DECAY]`, etc.) matching the exit dynamic of the preceding cut to prevent unmotivated volume drop-offs.
+- **Error Message:** `L-17 VIOLATION: Audio block is unstructured, contains aggressive score over dialogue, or causes unmotivated volume cliff across cuts. Enforce 4-field semicolon audio syntax and BGM dynamic handover.`
 

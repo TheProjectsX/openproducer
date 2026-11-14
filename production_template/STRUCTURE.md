@@ -63,7 +63,8 @@ This document serves as the declarative file system contract for OpenProducer.
     ├── visuals/                       # 🌆 Environment Base Prompts
     │   └── environments/
     │       └── <environment_id_or_name>/
-    │           └── prompt.txt         # Empty 3-plane stage prompt (Conditioned On: base_image_prompt.txt)
+    │           ├── prompt.txt         # Empty 3-plane stage prompt (Conditioned On: base_image_prompt.txt)
+    │           └── ground_rules.md    # MANDATORY: Scene topology, Z-index depth, and negative hallucination bans
     ├── clips/                         # 🎬 Shot-by-shot prompts
     │   └── clip_xxx/
     │       ├── image_prompt.txt       # Keyframe prompt (Conditioned On: subject + environment images)

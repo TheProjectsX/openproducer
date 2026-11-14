@@ -36,7 +36,7 @@ Always conclude execution with this exact Status Card:
 * **Root Cause:** `<Short 1-sentence technical explanation>`
 
 #### 📦 Artifacts & Deliverables Updated:
-- `<production/clips/<clip_id>/video_prompt.txt>` — 🩹 Surgically Patched (75–150 words certified)
+- `<production/clips/<clip_id>/video_prompt.txt>` — 🩹 Surgically Patched (Descriptive Completeness certified)
 - `production/master_videos_prompt.txt` & `production/master_images_prompt.txt` — 🔄 Re-synchronized
 - `production/scratchbook.md` & `openproducer/blueprint.md` — 📝 Retake Logged & Recorded
 

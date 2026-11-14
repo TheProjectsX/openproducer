@@ -175,7 +175,7 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
     audit_timestamp: new Date().toISOString(),
     certification_status: 'PENDING',
     linters: {
-      L01_word_count_economy: { status: 'PENDING', range: '75-150 words' },
+      L01_descriptive_completeness: { status: 'PENDING', uncapped_depth_enforced: true, min_words: 50 },
       L02_equipment_noun_ban: { status: 'PENDING', banned_found: [] },
       L03_pure_creative_prompt: { status: 'PENDING', technical_tokens_in_text: 0 },
       L04_asymmetric_token_decay: { status: 'PENDING', framing_in_first_30: false },
@@ -191,7 +191,7 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
       L14_temporal_quantum_pacing: { status: 'PENDING', clip_durations: [] },
       L15_multi_character_clean_singles: { status: 'PENDING', clean_singles_enforced: false },
       L16_spatial_handoff_vectors: { status: 'PENDING', eyeline_vectors_consistent: false },
-      L17_audio_bridge_closure: { status: 'PENDING', dynamic_acoustic_swells: false },
+      L17_audio_bridge_closure: { status: 'PENDING', dynamic_bgm_handover_enforced: true },
       L18_pluggable_style_injection: { status: 'PENDING', master_style_injected: false },
       L19_trust_and_safety_scanner: { status: 'PENDING', policy_triggers_detected: 0 }
     }
