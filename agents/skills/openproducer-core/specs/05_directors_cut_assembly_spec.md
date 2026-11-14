@@ -263,14 +263,17 @@ To guarantee 100% visual coherence and zero multi-ingredient identity bleed, pro
 │     the exact object from [IMAGE 3], set inside the exact environment      │
 │     from [IMAGE 2]..."                                                     │
 └─────────────────────────────────────┬──────────────────────────────────────┘
-                                      │  (Pass ONLY `keyframe_XX.png` as Seed)
+                                      │  (Pass First Frame Seed + Persistent Ingredients)
                                       ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
-│ TIER 3: PURE MOTION & AUDIO GENERATION (clips/clip_XX/video_prompt.txt)    │
-│  • Engine: Google Flow / Veo 3.1 (Frames-to-Video / First-Frame Seed)      │
-│  • Input Seed: ONLY the approved Tier 2 `keyframe_XX.png` (or LAST_FRAME)  │
-│  • Role: 0% wasted on compositing turnaround sheets; 100% of Veo's latent  │
-│    capacity drives smooth biomechanics, camera kinematics, and lip-sync!   │
+│ TIER 3: MULTI-CONDITIONED VIDEO GENERATION (clips/clip_XX/video_prompt.txt)│
+│  • Engine: Google Flow / Veo 3.1 (First-Frame Seed + Ingredient Attention) │
+│  • First Frame: Starting Keyframe (`keyframe_XX.png` or LAST_FRAME)        │
+│  • Persistent Ingredients (Identity & Scene Anchors):                      │
+│    - [IMAGE 1]: Primary Subject Turnaround (Locks face & clothes on turns) │
+│    - [IMAGE 2]: Empty Stage Plate (Locks room topology when camera pans)   │
+│  • Role: Starts with exact pixel layout at t=0, while persistent           │
+│    ingredients prevent identity drift during reveals, turns, and walk-ins! │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -536,10 +539,15 @@ Reference Images: [IMAGE 1: Primary Subject Sheet | IMAGE 2: Empty Stage Plate |
 Duration: [4s | 6s | 8s | 10s]
 Aspect Ratio: [16:9 | 9:16]
 Resolution: [1080p]
-Input Seed / Dependency: [SINGLE SEED ONLY: Approved Tier 2 Pre-Composited Keyframe Plate | LAST_FRAME of Clip N]
+
+[INPUT SEEDS & INGREDIENTS]
+1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of Clip N-1)
+2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (Locks face & clothes across reveals/turns)
+3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt (Locks room topology & lighting)
+4. (Optional Hero Prop):     [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [VIDEO PROMPT]
-Starting directly from the initial image, [Viewport framing & primary subject]. [Biomechanical action & 3-plane lighting]. [Master Style Anchor & single continuous camera verb]. Audio: SFX: [Foley]; Ambience: [Room tone]; Dialogue: [Spoken attribution | None]; Music: [Directive | None].
+Starting directly from the initial image, [Viewport framing & primary subject]. [Biomechanical action & 3-plane lighting]. [Master Style Anchor & single continuous camera verb]. Conditioned on [IMAGE 1] for persistent subject identity and [IMAGE 2] for scene topology. Audio: SFX: [Foley]; Ambience: [Room tone]; Dialogue: [Spoken attribution | None]; Music: [Directive | None].
 
 [NEGATIVE PROMPT]
 [Banned motion glitches, morphing, tripod, camera rig, subtitles...]
@@ -571,7 +579,7 @@ Every assembled production must pass these 19 authoritative pre-flight linters b
 | **L-03** | **Equipment Noun Ban** | Zero physical camera hardware nouns (`tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`) in positive prompt. (Negative prompt clauses exempt). | Any hardware noun in positive creative prompt. |
 | **L-04** | **Config Decoupling** | Zero technical specs (`16:9`, `9:16`, `4:3`, `1080p`, `720p`, `4K`, `24fps`, `60fps`, `320x240`) in creative prompt text. (Creative cadence `on twos`, `12fps` whitelisted; negative prompts exempt). | Technical config token in creative prompt. |
 | **L-05** | **Anti-Subtitle & Non-Render** | Narrative context uses `(REFERENCE ONLY — DO NOT RENDER...)` and negative prompt includes anti-subtitle tokens (`subtitles, closed captions, burned-in text, lower thirds, watermark`). | Context un-isolated or missing anti-subtitle negative clause. |
-| **L-06** | **Subject DNA & Pre-Composited Tier 2** | Text-conditioned clips inject verbatim `verbatim_anchor.txt`; Tier 2 image prompts bind up to 3 Ingredients (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`) via Lean Reference Anchoring banning competing bone-structure text; Tier 3 video prompts take ONLY the single pre-composited Tier 2 keyframe (or `LAST_FRAME`) as seed. | Bare pronoun in T2V, over-describing facial bones when `[IMAGE N]` attached, or feeding raw turnaround sheets directly into Tier 3 video. |
+| **L-06** | **Subject DNA & Multi-Conditioned Video Ingredients** | Text-conditioned clips inject verbatim `verbatim_anchor.txt`; Tier 2 image prompts bind up to 3 Ingredients (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`) via Lean Reference Anchoring banning competing bone-structure text; Tier 3 video prompts support **Dual Conditioning**: First Frame (`keyframe_XX.png` or `LAST_FRAME`) PLUS persistent reference ingredients (`[IMAGE 1]` Subject Turnaround, `[IMAGE 2]` Empty Stage) to lock facial identity, wardrobe, and scene topology across reveals, turns, walk-ins, and macro cutaways. | Bare pronoun in T2V, over-describing facial bones when `[IMAGE N]` attached, or omitting persistent ingredients on subject reveals/turns. |
 | **L-07** | **Pre-Materialized Prop Guard** | Held props declared grasped from Frame 1 to Frame End; zero mid-clip drawing without cutaway; complex scenes declare `Permitted Props: [...]`. | Prompt verbs like *"draws weapon"* or un-materialized prop appear mid-clip. |
 | **L-08** | **Empty Stage & Scene Ground Rules** | Environment reference plates contain zero people/hero products; scene prompts establish Foreground, Midground, Background; mandatory `environments/<id>/ground_rules.md` present defining unbroken room topology (anti-dropped walls), Z-index depth (character occluded behind furniture), and negative bans. | People in environment plates, flat single-plane staging, missing `ground_rules.md`, or omitting topology/Z-index constraints. |
 | **L-09** | **Flow Native Duration Lock** | Clip duration strictly in `{4s, 6s, 8s, 10s}` in Flow Native mode. | Non-Flow duration (`1s, 2s, 3s, 5s, 7s`). |

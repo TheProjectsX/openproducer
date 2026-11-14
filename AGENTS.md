@@ -953,4 +953,17 @@ To prevent token bloat while retaining 100% information control:
   - Production Workspace Templates: [`production_template/STRUCTURE.md`](./production_template/STRUCTURE.md), [`production_template/openproducer/manifest.json`](./production_template/openproducer/manifest.json).
   - Engine & CLI Source: Updated [`src/core/constants.ts`](./src/core/constants.ts) (L01 uncapped completeness, L17 BGM handover), [`src/core/linters.ts`](./src/core/linters.ts) (L01 min 50 words, uncapped upper limit), [`src/core/scaffold.ts`](./src/core/scaffold.ts) (manifest generator), and bundled package templates in [`src/templates/`](./src/templates/) & `dist/`. Compiled via `npm run build`.
 
+### 2026-11-14 — Dual-Conditioned Video Generation: Persistent Reference Ingredients & Start-Frame Synergy (Discussion 87)
+- **Context:** Identified that relying solely on a single starting image (`image_prompt.txt`) fails when a clip begins with an empty room (walk-in), a macro close-up (tilt-up reveal), or the back of a character's head (180° turn). Without persistent character and environment references directly available to the video diffusion model, any subject revealed mid-clip suffers from severe facial and wardrobe hallucination.
+- **Architectural Solution:**
+  1. *Dual Conditioning (Start Frame + Persistent Ingredients):* Elevated video prompt scaffolding to formally bind both `First Frame` (starting keyframe or `LAST_FRAME` seed) AND `Persistent Ingredients` (`[IMAGE 1]` Primary Subject turnaround sheet, `[IMAGE 2]` Empty Stage plate, and optional `[IMAGE 3]` Prop).
+  2. *Linter `L-06` Overhaul:* Transformed `L-06` into *Subject DNA & Multi-Conditioned Video Ingredients*, explicitly permitting and validating dual conditioning to guarantee face/wardrobe lock on turns, reveals, and walk-ins.
+  3. *Direct Ingredient-Conditioned Mode:* Enabled direct video generation conditioned on `[IMAGE 1]` + `[IMAGE 2]` without requiring a separate still keyframe for high-velocity cutaways.
+- **Status:** ✅ **IMPLEMENTED & SYNCHRONIZED ACROSS CORE SPECS, AGENTS, AND BUNDLED TEMPLATES**. Logged in [`discussions/_raw/87_persistent_reference_ingredients_in_video_generation.md`](./discussions/_raw/87_persistent_reference_ingredients_in_video_generation.md).
+- **Implementation Deliverables:**
+  - Base Specs: [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md).
+  - Agent Skills: [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md) and [`agents/skills/openproducer-core/specs/`](./agents/skills/openproducer-core/specs/).
+  - Bundled Templates: Synced into [`src/templates/`](./src/templates/) and `dist/` via `npm run build`.
+
+
 

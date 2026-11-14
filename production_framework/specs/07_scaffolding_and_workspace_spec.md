@@ -234,10 +234,15 @@ Duration: <4s | 6s | 8s | 10s>
 Aspect Ratio: 16:9
 Resolution: 1080p
 Transition / Chop: <e.g. ESTABLISHING MACRO | CONTINUOUS ACTION EXTENSION | MOTIVATED CUT>
-Input Seed / Dependencies: Generated from production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of production/clips/clip_<XX-1>/video_prompt.txt)
+
+[INPUT SEEDS & INGREDIENTS]
+1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of production/clips/clip_<XX-1>/video_prompt.txt)
+2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (Locks face & clothes across reveals/turns)
+3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt (Locks room topology & lighting)
+4. (Optional Hero Prop):     [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [VIDEO PROMPT]
-Starting directly from the initial image, <Comprehensive descriptive prompt (uncapped depth): Viewport framing, subject DNA, physical room topology, Z-index depth layering (subject positioned strictly behind furniture/props with lower body occluded), motivated lighting vectors, single continuous camera verb, and kinematic action continuation from preceding clip terminal state. Trailing block: 4-part semicolon Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: [BGM Continuity: CONTINUATION - SUSTAIN / DECAY / ACCELERATION matching preceding cut volume]....>
+Starting directly from the initial image, <Comprehensive descriptive prompt (uncapped depth): Viewport framing, subject DNA, physical room topology, Z-index depth layering (subject positioned strictly behind furniture/props with lower body occluded), motivated lighting vectors, single continuous camera verb, and kinematic action continuation from preceding clip terminal state. Conditioned on [IMAGE 1] for subject facial identity and [IMAGE 2] for scene topology. Trailing block: 4-part semicolon Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: [BGM Continuity: CONTINUATION - SUSTAIN / DECAY / ACCELERATION matching preceding cut volume]....>
 
 [NEGATIVE PROMPT]
 <camera equipment, tripod, dolly track, blurry, morphing face, distorted hands, extra fingers, text, subtitles, watermark, ceiling fan, dropped partition walls, structural columns, room dividers, frontal portrait (when rear/profile specified), speech looping, unnatural pauses.>
