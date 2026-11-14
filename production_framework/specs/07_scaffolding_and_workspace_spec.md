@@ -122,18 +122,19 @@ graph TD
 
 ## 4. Exact Plain-Text Prompt File Contracts (Modeled on `the_314am_doppelganger`)
 
-### 4.1 Clean Plain-Text Format (Zero Markdown Bloat in Prompt Files)
-All prompt files (`.txt`) must use clean, simple plain-text bracket headers (`[TIER ...]`, `[IMAGE PROMPT]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`) with `Conditioned On:` or `Input Seed / Dependencies:` noted directly in the top header block—never cluttered with markdown `#` headings, emojis, or bullet lists.
+### 4.1 Clean Plain-Text Format (Universal 4-Block Schema)
+All generation prompt files (`.txt`) adhere to the unified 4-block schema: `[CONFIGURATION SETTINGS]`, `[INPUT SEEDS & INGREDIENTS]`, `[IMAGE PROMPT]` or `[VIDEO PROMPT]`, and `[NEGATIVE PROMPT]`. This eliminates format fragmentation, guarantees seamless 1-to-1 slot mapping in Google Flow/Imagen reference slots, and ensures zero markdown bloat.
 
 #### 1. `base_image_prompt.txt`
 ```text
-[TIER 1: MASTER BASE REFERENCE PROMPT — <PROJECT NAME>]
-Target Engine: Google Flow / Imagen 4 (Master Ingredient #1)
-Conditioned On: None (or creator_photo.jpg if using a real human reference)
+[CONFIGURATION SETTINGS]
 Aspect Ratio: 16:9
 Resolution: 1080p
 
-[MASTER IMAGE PROMPT]
+[INPUT SEEDS & INGREDIENTS]
+1. Creator Face / Photo: None (or input_assets/creator_photo.jpg if anchoring real human likeness)
+
+[IMAGE PROMPT]
 <Cinematic framing, subject/scene anchor, lighting vectors, and master visual style anchor string. 100% pure creative description, zero equipment nouns.>
 
 [NEGATIVE PROMPT]
@@ -142,12 +143,12 @@ Resolution: 1080p
 
 #### 2. `subjects/<subject_id_or_name>/hero_prompt.txt` & `profile_prompt.txt` (Modular Studio)
 ```text
-[TIER 1A: SUBJECT HERO PROMPT — <SUBJECT NAME>]
-Target Tool: Google Flow / Imagen 4
-Conditioned On: base_image_prompt.txt (Attach as [IMAGE 1] for Master Style Lock)
-Feeds Into: subjects/<subject_id_or_name>/profile_prompt.txt
+[CONFIGURATION SETTINGS]
 Aspect Ratio: 16:9
 Resolution: 1080p
+
+[INPUT SEEDS & INGREDIENTS]
+1. Master Visual DNA: [IMAGE 1] -> production/base_image_prompt.txt
 
 [IMAGE PROMPT]
 <Step 1 Genesis Hero Shot prompt locking facial landmarks, wardrobe materiality, and style anchor.>
@@ -157,12 +158,12 @@ Resolution: 1080p
 ```
 
 ```text
-[TIER 1B: SUBJECT 4-VIEW PROFILE PROMPT — <SUBJECT NAME>]
-Target Tool: Google Flow / Imagen 4
-Conditioned On: subjects/<subject_id_or_name>/hero_prompt.txt (Attach generated Hero Image as [IMAGE 1])
-Feeds Into: clips/clip_xxx/image_prompt.txt (Attach as Subject Ingredient)
+[CONFIGURATION SETTINGS]
 Aspect Ratio: 16:9
 Resolution: 1080p
+
+[INPUT SEEDS & INGREDIENTS]
+1. Subject Hero Anchor: [IMAGE 1] -> production/subjects/<subject_id_or_name>/hero_prompt.txt (or hero.png)
 
 [IMAGE PROMPT]
 <Step 2 4-panel character model sheet (Front, Left Profile, Back, Close-up Face) on solid neutral light-gray studio background (#E5E5E5).>
@@ -173,12 +174,12 @@ Resolution: 1080p
 
 #### 3. `visuals/environments/<environment_id_or_name>/prompt.txt` (Modular Studio)
 ```text
-[TIER 1C: ENVIRONMENT STAGE PROMPT — <ENVIRONMENT NAME>]
-Target Tool: Google Flow / Imagen 4
-Conditioned On: base_image_prompt.txt (Attach as [IMAGE 1] for Master Style Lock)
-Feeds Into: clips/clip_xxx/image_prompt.txt (Attach as Environment Ingredient)
+[CONFIGURATION SETTINGS]
 Aspect Ratio: 16:9
 Resolution: 1080p
+
+[INPUT SEEDS & INGREDIENTS]
+1. Master Visual DNA: [IMAGE 1] -> production/base_image_prompt.txt
 
 [IMAGE PROMPT]
 <Empty 3-plane stage environment (Foreground, Midground stage zone, Background) with motivated lighting vectors and zero characters/people present.>
@@ -214,11 +215,14 @@ Resolution: 1080p
 
 #### 5. `clips/clip_XX/image_prompt.txt`
 ```text
-[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP <XX>]
-Target Tool: Google Flow / Imagen 4
-Conditioned On: <base_image_prompt.txt (Tier 1 Master DNA) OR [IMAGE 1]: subjects/<name>/profile_prompt.txt + [IMAGE 2]: visuals/environments/<name>/prompt.txt>
-Aspect Ratio: 16:9
+[CONFIGURATION SETTINGS]
+Aspect Ratio: 16:9 (or 9:16)
 Resolution: 1080p
+
+[INPUT SEEDS & INGREDIENTS]
+1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (or turnaround_sheet.png)
+2. Persistent Scene DNA:   [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt (or empty_stage.png)
+3. (Optional Hero Prop):   [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [IMAGE PROMPT]
 <Starting frame composition staging the subject inside the environment with exact camera framing, posture, expression, and lighting.>

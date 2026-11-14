@@ -521,10 +521,14 @@ Each individual clip folder contains two decoupled files conforming to the 3-Tie
 
 #### Tier 2 Pre-Composited Starting Keyframe Plate: `clips/clip_XX/image_prompt.txt`
 ```text
-[IMAGE CONFIGURATION]
+[CONFIGURATION SETTINGS]
 Aspect Ratio: [16:9 | 9:16]
 Resolution: [1080p]
-Reference Images: [IMAGE 1: Primary Subject Sheet | IMAGE 2: Empty Stage Plate | IMAGE 3: Secondary Subject or Hero Prop Sheet]
+
+[INPUT SEEDS & INGREDIENTS]
+1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (or turnaround_sheet.png)
+2. Persistent Scene DNA:   [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt (or empty_stage.png)
+3. (Optional Hero Prop):   [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [IMAGE PROMPT]
 [Multi-Index Lean Reference Anchoring: "The exact same person from [IMAGE 1]..., set inside the exact environment from [IMAGE 2]..." + pure cinematographic description of 3-plane lighting, motivated shadows, subject pose, and pre-materialized props at Frame 1...]

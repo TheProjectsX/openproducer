@@ -965,5 +965,20 @@ To prevent token bloat while retaining 100% information control:
   - Agent Skills: [`agents/skills/openproducer-produce/SKILL.md`](./agents/skills/openproducer-produce/SKILL.md) and [`agents/skills/openproducer-core/specs/`](./agents/skills/openproducer-core/specs/).
   - Bundled Templates: Synced into [`src/templates/`](./src/templates/) and `dist/` via `npm run build`.
 
+### 2026-11-14 — Universal 4-Block Prompt Architecture Across All Modalities (Discussion 88)
+- **Context:** Recognized that `video_prompt.txt` featured an exceptionally clean, decoupled structure (`[CONFIGURATION SETTINGS]`, `[INPUT SEEDS & INGREDIENTS]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`), whereas `image_prompt.txt` and thumbnail prompts still used legacy single-line tags (`[IMAGE CONFIGURATION]`). Creator proposed standardizing this layout across all prompt files for clean, uniform readability.
+- **Architectural Consensus & Standardization:**
+  1. *Universal 4-Block Schema:* Standardized all generation prompts (`base_image_prompt.txt`, `hero_prompt.txt`, `profile_prompt.txt`, `environments/.../prompt.txt`, `clips/clip_XX/image_prompt.txt`, `clips/clip_XX/video_prompt.txt`, and `thumbnails/thumb_XX_prompt.txt`) to the identical 4-part anatomy:
+     - `[CONFIGURATION SETTINGS]` (Aspect ratio, resolution, duration, transition/chop, framing constraints)
+     - `[INPUT SEEDS & INGREDIENTS]` (Explicit numbered slot bindings: `[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`, or First Frame seeds with file paths)
+     - `[IMAGE PROMPT]` / `[VIDEO PROMPT]` (Pure creative cinematographic/photographic description, zero equipment nouns, zero config tokens)
+     - `[NEGATIVE PROMPT]` (Model-specific negative tokens, hardware exclusions, anti-text guards)
+  2. *1-to-1 UI Mapping in Google Flow & Imagen:* The numbered `[INPUT SEEDS & INGREDIENTS]` directly mirror Google Flow reference image upload slots (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`), functioning as an instant creator checklist.
+  3. *Unified Linter & Tooling Compliance:* Linters and parsers can validate ingredient dependencies across both image and video assets using identical regex patterns.
+- **Status:** ✅ **ESTABLISHED, RECORDED, AND SYNCHRONIZED ACROSS CORE BASE SPECS**. Logged in [`discussions/_raw/88_universal_prompt_architecture_unified_configuration_and_input_seeds.md`](./discussions/_raw/88_universal_prompt_architecture_unified_configuration_and_input_seeds.md).
+- **Implementation Deliverables:**
+  - Base Specs: [`05_directors_cut_assembly_spec.md`](./production_framework/specs/05_directors_cut_assembly_spec.md), [`07_scaffolding_and_workspace_spec.md`](./production_framework/specs/07_scaffolding_and_workspace_spec.md), [`09_packaging_spec.md`](./production_framework/specs/09_packaging_spec.md), [`staged/specs/09_packaging_spec.md`](./production_framework/staged/specs/09_packaging_spec.md).
+
+
 
 

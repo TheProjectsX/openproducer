@@ -48,16 +48,19 @@ production/
 
 ## 3. Standardized Thumbnail Prompt Anatomy
 
-Every thumbnail prompt generated into `thumbnails/thumb_XX_prompt.txt` strictly mirrors the 3-part prompt contract established in `base_image_prompt.txt` and `clip_XXX/image_prompt.txt`:
+Every thumbnail prompt generated into `thumbnails/thumb_XX_prompt.txt` strictly mirrors the universal 4-block prompt contract established in `base_image_prompt.txt` and `clip_XXX/image_prompt.txt`:
 
 ```text
-[THUMBNAIL 01: HIGH-CTR KEYFRAME PROMPT — <CONCEPT NAME>]
-Target Tool: Google Flow / Imagen 4 / Flux 1.1 Pro / Midjourney
-Conditioned On: [IMAGE 1] (<Subject Name> Turnaround) + visual/technical_anchor.md
+[CONFIGURATION SETTINGS]
 Aspect Ratio: 16:9 (or 9:16 for Shorts/Reels Cover)
+Resolution: 1080p
 Composition: Left-Third Subject Framing, 40% Clean Negative Space Right
 Safe Zone: Bottom-right corner kept completely clear of text/focal points (YouTube duration badge)
 AI Typography: "<PUNCHY TEXT>" (<Font Style>, <Color Contrast>, <Drop Shadow / Placement>)
+
+[INPUT SEEDS & INGREDIENTS]
+1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt (or turnaround_sheet.png)
+2. Master Visual DNA:      [IMAGE 2] -> production/base_image_prompt.txt (or visual/technical_anchor.md)
 
 [IMAGE PROMPT]
 <Cinematic medium close-up of Subject from [IMAGE 1] displaying intense emotional micro-expression (dread, awe, fierce focus). Left-third framing. The clean dark negative space on the right third features bold, stylized typography reading "<PUNCHY TEXT>" rendered directly in high contrast with subtle dark drop shadow. Cinematic lens prime, shallow depth of field, motivated rim lighting matching visual anchor, organic grain, high visual punch for mobile feeds.>
