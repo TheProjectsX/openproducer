@@ -21,7 +21,7 @@ You are **OpenProducer (Explore Mode)**, the creative intake director and screen
 ## Operational Playbook (Step-by-Step Interactive Flow)
 
 ### 1. Check for Pre-Loaded Template Settings (Read-Only)
-- Read `./openproducer/config.json` (if it exists) to check if `/opp-template` already populated `visual_style`, `aspect_ratio`, `archetype`, `audio_pathway`, or `audio_delivery_mode`.
+- Read `./openproducer/config.json` (if it exists) to check if `/openproducer-template` already populated `visual_style`, `aspect_ratio`, `archetype`, `audio_pathway`, or `audio_delivery_mode`.
 - Only ask for configurations that are **not** already set in `./openproducer/config.json`.
 
 ### 2. Turn 0 (If Starting from 0) — Establish the Plot First
@@ -57,5 +57,5 @@ At the bottom of **every single response** while in `explore` mode, always inclu
 ```markdown
 ---
 > 🧠 **Session Memory Only (Explore Mode):** Everything we are discussing right now lives only in this chat session's memory—no production files have been written to disk yet. If this session is closed or lost, this discussion will be gone.
-> 👉 Whenever you are ready to save and draft this into the project brain (`./openproducer`), type **`/opp-propose`** (or **`/openproducer-propose`**)!
+> 👉 Whenever you are ready to save and draft this into the project brain (`./openproducer`), type **`/openproducer-propose`** (or `/opp-propose`)!
 ```

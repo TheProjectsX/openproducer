@@ -59,7 +59,7 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
   3. If `modular_studio`: generate `production/subjects/<subject_id>/[hero_prompt.txt, profile_prompt.txt]` and `production/visuals/environments/<env_id>/prompt.txt` with `Conditioned On:` lines.
   4. Generate `production/scratchbook.md` (initial script breakdown & estimated pacing table).
   5. Update `./openproducer/state.json`: set `"current_stage": "produced_awaiting_timestamps"`, `"stages.produce_complete": true`, `"stages.clips_generated": false`.
-  6. Inform the creator that `production/audio_script.txt` and base prompts are ready. Explicitly present the clickable tool resources for audio generation ([Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)) and transcript/timestamp generation ([TurboScribe](https://turboscribe.ai/) or [AudioToSRT](https://audiotosrt.com/)), and ask them to create their audio, generate timestamps/transcripts, and share them here to generate the clips (or run **`/opp-guide`** for step-by-step guidance).
+  6. Inform the creator that `production/audio_script.txt` and base prompts are ready. Explicitly present the clickable tool resources for audio generation ([Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech)) and transcript/timestamp generation ([TurboScribe](https://turboscribe.ai/) or [AudioToSRT](https://audiotosrt.com/)), and ask them to create their audio, generate timestamps/transcripts, and share them here to generate the clips (or run **`/openproducer-guide`** for step-by-step guidance).
 - **Pass 2 (Once Creator Provides Timestamps/Transcripts):**
   1. **Context-Driven Cinematography with Audio Timeline Tiling:**
      - **Clips Are Context-Driven, NOT Transcript-Slices:** Design clips based on **plot context, visual storytelling, and cinematic coverage** (establishing shots, medium shots, close-ups, macro cutaways, character reactions). Do NOT mechanically map 1 script line to 1 clip!
@@ -84,7 +84,7 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
   4. `production/clips/clip_01/` to `clip_xxx/`:
      - `image_prompt.txt` (Starting keyframe prompt + `Conditioned On:` line).
      - `video_prompt.txt` (Veo 3.1 video prompt with `[INPUT SEEDS & INGREDIENTS]` binding First Frame start seed + persistent reference ingredients `[IMAGE 1]` Subject & `[IMAGE 2]` Environment; enforcing uncapped descriptive depth `L-01`, active `ground_rules.md` topology/Z-index depth, terminal-to-initial kinematic action handover, and `L-17` BGM dynamic continuity).
-  5. `production/master_images_prompt.txt` & `production/master_videos_prompt.txt` (Creator self-serve reference compilations; not used by `/opp-guide`).
+  5. `production/master_images_prompt.txt` & `production/master_videos_prompt.txt` (Creator self-serve reference compilations; not used by `/openproducer-guide`).
   6. `production/scratchbook.md` (Timeline pacing math & Retake Doctor log) and `production/motion_graphics.md` (if applicable).
 - Run Linters L-01 to L-19, write `./openproducer/manifest.json`, and set `"current_stage": "produced"`, `"stages.produce_complete": true`, `"stages.clips_generated": true` in `./openproducer/state.json`.
 
@@ -111,6 +111,6 @@ Always conclude execution with this exact Status Card:
 - 🎬 **Google Flow:** https://flow.google.com
 
 #### 🚀 Next Step in Workflow:
-👉 `<If awaiting timestamps: "Use production/audio_script.txt to create your audio in Google AI Studio, generate your transcript/timestamps via TurboScribe or AudioToSRT, and share the timestamps here, or run /opp-guide!" | If complete: "Run /opp-guide for step-by-step interactive guidance, or use the files directly!">`
+👉 `<If awaiting timestamps: "Use production/audio_script.txt to create your audio in Google AI Studio, generate your transcript/timestamps via TurboScribe or AudioToSRT, and share the timestamps here, or run /openproducer-guide!" | If complete: "Run /openproducer-guide for step-by-step interactive guidance, or use the files directly!">`
 ---
 ```

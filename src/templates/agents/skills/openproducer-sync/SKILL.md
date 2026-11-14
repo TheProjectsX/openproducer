@@ -14,10 +14,10 @@ Synchronize any new changes (plot updates, character/environment tweaks, orienta
 
 ### 1. Mandatory Pre-Condition Check (`propose_complete` Gate)
 - First, read `./openproducer/state.json`.
-- **IF `stages.propose_complete == false` (the story has NOT gone through `/opp-propose` yet):**
+- **IF `stages.propose_complete == false` (the story has NOT gone through `/openproducer-propose` yet):**
   - **HALT IMMEDIATELY.** Do not write any files.
   - Reply to the creator:
-    > ⚠️ **Cannot Sync Yet:** The story has not gone through the `propose` phase yet (the workspace is in `init` or `explore` mode). Please run **`/opp-propose`** (or `/openproducer-propose`) first to save the project into the brain!
+    > ⚠️ **Cannot Sync Yet:** The story has not gone through the `propose` phase yet (the workspace is in `init` or `explore` mode). Please run **`/openproducer-propose`** (or `/opp-propose`) first to save the project into the brain!
 
 ### 2. Pathway A: Pre-Produce Sync (`propose_complete == true` AND `produce_complete == false`)
 - Since the project has not gone to `produce` yet, sync all new changes **strictly into the brain (`./openproducer/`)**:
@@ -54,6 +54,6 @@ When `propose_complete == true`, conclude execution with this exact Status Card:
 - `<If Post-Produce: List updated creator files in production/, e.g. production/base_image_prompt.txt, production/audio_script.txt, production/clips/, production/master_images_prompt.txt, production/master_videos_prompt.txt>`
 
 #### 🚀 Next Step in Workflow:
-👉 `<If Pre-Produce: "Brain is up to date! Run /opp-produce when ready to generate creator files." | If Post-Produce: "Brain and creator files are 100% in sync! Run /opp-guide to continue production.">`
+👉 `<If Pre-Produce: "Brain is up to date! Run /openproducer-produce when ready to generate creator files." | If Post-Produce: "Brain and creator files are 100% in sync! Run /openproducer-guide to continue production.">`
 ---
 ```

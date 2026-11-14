@@ -22,7 +22,7 @@ The template skill adapts automatically to the project's current state:
 | Action | When Workspace is in `init` (Blank Project) | When Workspace is Active (`explore` / `proposed` / `produced`) |
 |---|---|---|
 | **`create` / `save`** | **Discussion-First Generator:** No project data required! Brainstorms and structures the template parameters interactively with the producer, then writes directly to `~/.openproducer/templates/<group>/<id>.md`. | **Workspace Snapshot:** Extracts active project configuration, visual DNA, and pacing into a reusable template preset (excluding the episode plot/script). |
-| **`load` / `use`** | **Foundation Loader:** Loads template into `config.json` / `story/beats.md`. Skips asking populated configuration questions when `/opp-explore` is subsequently run. | **Preset Switcher:** Applies or updates the active project brain with template settings. |
+| **`load` / `use`** | **Foundation Loader:** Loads template into `config.json` / `story/beats.md`. Skips asking populated configuration questions when `/openproducer-explore` is subsequently run. | **Preset Switcher:** Applies or updates the active project brain with template settings. |
 | **`update`** | **Discussion-First Update:** Loads template into session memory and updates rules/parameters through conversation without needing workspace state. | **Workspace Sync:** Updates existing template schema with recent changes made in the active workspace. |
 | **`edit` / `refine`** | **Conversational Workshop:** Loads template into session memory for deep collaborative tuning (add/remove rules, tweak pacing) and saves to vault only upon explicit confirmation. Workspace deliverables are completely untouched. | **Conversational Workshop:** Same isolated behavior — zero contamination of active workspace video files. |
 
@@ -108,7 +108,7 @@ target_wpm: <e.g. 135>
 > - `npx openproducer template use <name> [--group <group>]`
 > - `npx openproducer template save <name> [--group <group>]`
 > - `npx openproducer template update <name> [instructions] [--group <group>]`
-> - `npx openproducer template edit <name> [--group <group>]` (or `/opp-template edit <name>`)
+> - `npx openproducer template edit <name> [--group <group>]` (or `/openproducer-template edit <name>`)
 
 ### 1. Load / Use a Template (`use [name]` or `load [name]`)
 - Execute via terminal: `npx openproducer template use [name]` (optional `--group <group>` if disambiguating identical IDs)
@@ -191,6 +191,6 @@ Always conclude execution with this exact Status Card:
 - `~/.openproducer/templates/[story/]<template_id>.md` — `<Saved / Updated / Listed>`
 
 #### 🚀 Next Step in Workflow:
-👉 `<If EDIT in progress: "Share what other rules or details you want to tweak, or say 'save updates' to lock them into the template!" | If EDIT complete: "Template successfully refined and saved for all future projects! Run /opp-explore to start your next video." | If LOAD: "Template loaded! Share your story plot to start exploring." | If SAVE: "Template saved cleanly without the plot!">`
+👉 `<If EDIT in progress: "Share what other rules or details you want to tweak, or say 'save updates' to lock them into the template!" | If EDIT complete: "Template successfully refined and saved for all future projects! Run /openproducer-explore to start your next video." | If LOAD: "Template loaded! Share your story plot to start exploring." | If SAVE: "Template saved cleanly without the plot!">`
 ---
 ```

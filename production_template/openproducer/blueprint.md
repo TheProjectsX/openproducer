@@ -2,7 +2,7 @@
 
 <!-- 
 This file is the internal brain memory of OpenProducer (./openproducer/blueprint.md).
-It is ONLY written/updated during /opp-propose, /opp-sync, or /opp-produce (never during read-only /opp-explore).
+It is ONLY written/updated during /openproducer-propose, /openproducer-sync, or /openproducer-produce (never during read-only /openproducer-explore).
 It archives the complete project context so any brand-new session can resume with 0 prior chat history.
 -->
 
@@ -40,4 +40,4 @@ ARCHIVE ONLY (Not used directly for prompt generation, preserved strictly as a h
 
 | Timestamp | Mode (`propose` / `sync` / `produce`) | Summary of Updates | Next Step |
 |---|---|---|---|
-| Initial | `explore` | Workspace initialized in read-only explore mode | Run `/opp-propose` to save to brain |
+| Initial | `explore` | Workspace initialized in read-only explore mode | Run `/openproducer-propose` to save to brain |

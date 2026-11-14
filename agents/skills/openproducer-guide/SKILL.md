@@ -63,7 +63,7 @@ Provide a clear, complete self-serve instruction guide:
 2. **Base Image:** Ensure your Base Image from `production/base_image_prompt.txt` (and any `production/subjects/` or `production/visuals/environments/` base images) is generated and saved.
 3. **Generate Clip Images (`production/clips/clip_xxx/image_prompt.txt`):** For each clip, follow its `Conditioned On:` line—attach your Base Image (or Subject `[IMAGE 1]` + Environment `[IMAGE 2]`) into Google Flow's ingredient slots and run `image_prompt.txt` to create the clip's starting frame image.
 4. **Generate Clip Videos (`production/clips/clip_xxx/video_prompt.txt`):** Attach each clip's generated starting image (or the previous clip's `LAST_FRAME` where noted in `Input Seed / Dependencies:`) alongside `video_prompt.txt`, set the clip's duration (`4s` / `6s` / `8s`) and aspect ratio in Google Flow's settings dropdown, and generate the video.
-5. *(Note: For self-serve batch work, you can also reference `production/master_images_prompt.txt` and `production/master_videos_prompt.txt`, or run `/opp-doctor` anytime if a clip has a glitch!)*
+5. *(Note: For self-serve batch work, you can also reference `production/master_images_prompt.txt` and `production/master_videos_prompt.txt`, or run `/openproducer-doctor` anytime if a clip has a glitch!)*
 
 #### Branch 3B: If "Step-by-Step Support" Is Selected (Call `ask_question` for Clip Order)
 Immediately **call `ask_question`** to let the creator choose their preferred step-by-step clip workflow:

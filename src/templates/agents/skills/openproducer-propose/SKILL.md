@@ -42,7 +42,7 @@ Take everything discussed during `explore` (the raw plot or brainstormed plot po
 
 ### 3. Inform Creator of Next Options
 - Let the creator know that the entire plan is now safely archived inside `./openproducer/`.
-- They can keep talking to tweak anything (and run **`/opp-sync`** to sync changes into the brain), start a new session anytime without losing context, or run **`/opp-produce`** to generate all creator files!
+- They can keep talking to tweak anything (and run **`/openproducer-sync`** to sync changes into the brain), start a new session anytime without losing context, or run **`/openproducer-produce`** to generate all creator files!
 
 ## Mandatory Structured Output Format
 Always conclude execution with this exact Status Card:
@@ -60,6 +60,6 @@ Always conclude execution with this exact Status Card:
 - `openproducer/state.json` — 📍 Stage: `proposed` (Ready for zero-context session handoff or production)
 
 #### 🚀 Next Step in Workflow:
-👉 You can continue discussing tweaks (and run **`/opp-sync`** to update the brain), or run **`/opp-produce`** (or `/openproducer-produce`) to generate your creator files on disk!
+👉 You can continue discussing tweaks (and run **`/openproducer-sync`** to update the brain), or run **`/openproducer-produce`** (or `/opp-produce`) to generate your creator files on disk!
 ---
 ```

@@ -61,8 +61,8 @@ graph TD
     │   │   └── video_prompt.txt
     │   └── clip_xxx/
     │
-    ├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All image prompts compiled (ignored by /opp-guide)
-    ├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All video prompts compiled (ignored by /opp-guide)
+    ├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All image prompts compiled (ignored by /openproducer-guide)
+    ├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All video prompts compiled (ignored by /openproducer-guide)
     ├── scratchbook.md                 # 📝 CREATOR FILE: Timeline pacing table (4s/6s/8s), timestamps & retake log
     └── motion_graphics.md             # 🔤 CREATOR FILE: (If applicable) On-screen captions & typography cue sheet
 ```
@@ -112,8 +112,8 @@ graph TD
     │   │   └── video_prompt.txt
     │   └── clip_xxx/
     │
-    ├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All base, subject, environment & clip image prompts compiled (ignored by /opp-guide)
-    ├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All clip video prompts compiled (ignored by /opp-guide)
+    ├── master_images_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All base, subject, environment & clip image prompts compiled (ignored by /openproducer-guide)
+    ├── master_videos_prompt.txt       # 📋 CREATOR REFERENCE ONLY: All clip video prompts compiled (ignored by /openproducer-guide)
     ├── scratchbook.md                 # 📝 CREATOR FILE: Timeline pacing math, eyeline vectors & retake log
     └── motion_graphics.md             # 🔤 CREATOR FILE: (If applicable) Title cards, lower thirds & subtitle cue sheet
 ```
@@ -320,7 +320,7 @@ Then, two inches above your crown, you feel the hair on your scalp stir...
 3. Paste [AUDIO SCRIPT] text into the prompt.
 4. Generate the audio file (.mp3 / .wav).
 5. Generate the timestamped transcript / SRT using TurboScribe or AudioToSRT and save as production/audio.srt.
-6. Run /opp-produce to slice and match video clips to your exact audio timestamps.
+6. Run /openproducer-produce to slice and match video clips to your exact audio timestamps.
 ```
 
 #### Standard Plain-Text Template for Multi-Speaker Alternating-Turn `audio_script.txt` (The Lighthouse v2 Standard):
@@ -378,4 +378,4 @@ You turn slowly toward the seaward window. Out among the cresting waves stands a
    * Contains the timeline pacing math (4s/6s/8s word budgets, timestamp mappings, eyeline continuity vectors, and Retake Doctor diagnostic history).
 2. **`master_images_prompt.txt` & `master_videos_prompt.txt` (Creator Self-Serve Reference Only):**
    * Compiled one-file plain-text manifests of all image prompts and all video prompts (preserving their `Conditioned On:` / `Input Seed:` connection lines).
-   * **Strictly for creator self-serve convenience.** During `/opp-guide`, OpenProducer **does NOT use** these two master files; `/opp-guide` walks through `production/base_image_prompt.txt`, `production/subjects/`, `production/visuals/environments/`, and `production/clips/clip_xxx/` individually.
+   * **Strictly for creator self-serve convenience.** During `/openproducer-guide`, OpenProducer **does NOT use** these two master files; `/openproducer-guide` walks through `production/base_image_prompt.txt`, `production/subjects/`, `production/visuals/environments/`, and `production/clips/clip_xxx/` individually.
