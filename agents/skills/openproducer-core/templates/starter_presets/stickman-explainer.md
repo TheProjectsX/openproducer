@@ -5,7 +5,7 @@ archetype: animation
 tier: lean_base_reference
 aspect_ratio: 9:16
 resolution: 1080p
-audio_pathway: separate_audio
+audio_pathway: pathway_b_external_audio
 audio_delivery_mode: separate_script_first
 ---
 

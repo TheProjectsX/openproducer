@@ -1,5 +1,7 @@
 # Specification: `cinematography_audio/` Domain (Optics, Kinematics & Soundscapes)
 
+> **Live audio amendment (2026-11-15):** For external master speech, use the creator's actual time-coded audio to plan edited shot windows; speech may continue across visual cuts, and no per-clip silence buffer is required. Veo clip generation remains 4s/6s/8s/10s by project choice, while manually edited on-screen lengths can be uneven. Audio fields in prompts are generation hints, not a guarantee of a continuous mix. Document manual `mute / selected Foley / native full audio` use and J/L-cut offsets in the scratchbook.
+
 **Status:** ✅ FINALIZED  
 **Domain:** `cinematography_audio/`  
 **Target Engines:** Google Flow (Veo 3.1, Imagen 4, Gemini Omni Flash)
@@ -318,8 +320,8 @@ When videos are exported from Flow for professional assembly in timeline editing
 Before compiling prompts into Google Flow, the automated validator enforces these validation gates from the Master `L-01` to `L-19` Registry:
 
 ### Rule L-01: Descriptive Completeness & Uncapped Prompt Depth
-- **Check:** Video shot prompts must comprehensively specify subject DNA, spatial topology, Z-index depth layering, and optical kinematics. The artificial 100–150 word ceiling card is abolished. Minimum descriptive floor $\ge 50$ words to prevent underspecified prompts. (Spoken dialogue words remain governed by L-14).
-- **Error Message:** `L-01 VIOLATION: Underspecified scene prompt (<50 words). Must comprehensively detail physical scene geometry, subject blocking, and camera kinematics.`
+- **Check:** The current timed cue's subject/place, visible action, framing scale, and necessary continuity are clear. Reuse Flow references for stable details. No prompt word floor or ceiling.
+- **Error Message:** `L-01 REVIEW: Current audio cue, visible event, or subject-to-room scale is unclear.`
 
 ### Rule L-03: Equipment Noun Prohibition
 - **Check:** Creative positive prompt MUST NOT contain any hardware nouns: `tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`. (Note: `NEGATIVE PROMPT:` clauses and audio frequency words like "drone of fluorescent lights" are strictly exempt).
@@ -336,8 +338,8 @@ Before compiling prompts into Google Flow, the automated validator enforces thes
 ### Rule L-14: Dual-Track Speech Word Budget & Silence Buffer
 - **Check:** Spoken dialogue word count must not exceed speech velocity limits:
   - Native Flow (`Pathway A`): Max 5w for 4s, Max 9w for 6s, Max 13w for 8s, Max 18w for 10s.
-  - External TTS (`Pathway B`): Max 8w for 4s, Max 12w for 6s, Max 18w for 8s, Max 22w for 10s; $\text{Clip Duration} - \text{SRT Cue Duration} \ge 1.0\text{s}$ total silence buffer.
-- **Error Message:** `L-14 VIOLATION: Dialogue word count exceeds speech velocity. Risk of mid-sentence dialogue clipping.`
+  - External TTS (`Pathway B`): Use the creator's actual approved audio timestamps; narration may cross visual cuts. These word counts are rough planning aids, not clip limits or a required silence buffer. State the edited interval and trim for each shot.
+- **Error Message:** `L-14 REVIEW: A timed audio cue lacks relevant visual coverage, or the edited interval/trim is unclear.`
 
 ### Rule L-15: Dialogue Biomechanical Restraint Enforcement
 - **Check:** Any prompt containing spoken dialogue (`"..."`) MUST include at least two biomechanical restraint tokens (`minimal jaw displacement`, `subtle lip articulation`, `relaxed jaw`, `subtle mouth movement`, `resting mouth closure`) and colon before quotes.

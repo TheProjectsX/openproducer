@@ -3,10 +3,9 @@ import pc from 'picocolors';
 import { ConfigManager } from '../core/config';
 import {
   TemplateManager,
-  formatMarkdownTemplate,
-  formatStoryMarkdownTemplate
+  formatMarkdownTemplate
 } from '../core/templates';
-import { SeriesTemplate, StoryTemplate } from '../core/types';
+import { SeriesTemplate } from '../core/types';
 import { ensureDir, exists, readFile, writeFile } from '../utils/fs';
 import { logger } from '../utils/logger';
 
@@ -51,6 +50,10 @@ export async function templateCommand(
   }
 
   action = (action || 'list').toLowerCase();
+
+  if (requestedGroup === 'story' && !['list', 'read', 'cat', 'show', 'view'].includes(action)) {
+    throw new Error('Story templates are archived and cannot change a live video project.');
+  }
 
   // Print banner for interactive commands (skip for read/cat to preserve pure stdout formatting)
   if (action !== 'read' && action !== 'cat') {
@@ -147,43 +150,7 @@ export async function templateCommand(
 
     const isStorySave = requestedGroup === 'story' || templateId.startsWith('story-');
     if (isStorySave) {
-      let narrativeArchetype = 'pure_narration';
-      let targetWpm = 135;
-      let voicePersona = 'Expressive, high-retention storyteller';
-
-      const beatsPath = path.join(configMgr.root, 'production', 'story', 'beats.md');
-      if (await exists(beatsPath)) {
-        const beatsContent = await readFile(beatsPath);
-        const fmtMatch = beatsContent.match(/\*\*(?:Format|Archetype):\*\*\s*`?([a-zA-Z0-9_-]+)`?/i);
-        const wpmMatch = beatsContent.match(/\*\*Target WPM:\*\*\s*`?(\d+)`?/i);
-        if (fmtMatch) narrativeArchetype = fmtMatch[1].trim();
-        if (wpmMatch) targetWpm = parseInt(wpmMatch[1], 10) || 135;
-      }
-
-      const scriptPath = path.join(configMgr.root, 'production', 'story', 'script.txt');
-      if (await exists(scriptPath)) {
-        const scriptContent = await readFile(scriptPath);
-        const typeMatch = scriptContent.match(/^Type:\s*([a-zA-Z0-9_-]+)/im);
-        const wpmMatch = scriptContent.match(/^Target Pacing:\s*(\d+)/im);
-        const narratorMatch = scriptContent.match(/^Narrator:\s*(.+)$/im);
-        if (typeMatch) narrativeArchetype = typeMatch[1].trim();
-        if (wpmMatch) targetWpm = parseInt(wpmMatch[1], 10) || targetWpm;
-        if (narratorMatch) voicePersona = narratorMatch[1].trim();
-      }
-
-      const storyTemplate: StoryTemplate = {
-        template_id: templateId,
-        type: 'story',
-        name: `${config.project_name} Story Preset`,
-        narrative_archetype: narrativeArchetype,
-        voice_persona: voicePersona,
-        target_wpm: targetWpm
-      };
-
-      await tm.saveStoryTemplate(storyTemplate);
-      logger.success(`Story template saved globally in story sub-vault: "story/${templateId}.md"`);
-      console.log(`You can now load it with: "openproducer template use ${templateId} --type story"`);
-      console.log('');
+      logger.error('Story templates are archived and are not part of the live video workflow.');
       return;
     }
 
@@ -259,31 +226,8 @@ export async function templateCommand(
     }
 
     if (storyTemplate) {
-      const config = await configMgr.readConfig();
-      config.story_template_id = templateId;
-      await configMgr.writeConfig(config);
-
-      // Mirror template file into local working directory: openproducer/templates/story/<id>.md
-      const localStoryDir = path.join(configMgr.root, 'openproducer', 'templates', 'story');
-      await ensureDir(localStoryDir);
-      const localStoryPath = path.join(localStoryDir, `${templateId}.md`);
-      const storyContent = storyTemplate.raw_content || formatStoryMarkdownTemplate(storyTemplate);
-      await writeFile(localStoryPath, storyContent);
-
-      // Scaffold production/story/beats.md if missing
-      const storyDir = path.join(configMgr.root, 'production', 'story');
-      await ensureDir(storyDir);
-      const beatsPath = path.join(storyDir, 'beats.md');
-      if (!(await exists(beatsPath))) {
-        await writeFile(
-          beatsPath,
-          `# 🗺️ Story Beats: ${storyTemplate.name}\n- **Template:** \`${storyTemplate.template_id}\`\n- **Archetype:** \`${storyTemplate.narrative_archetype}\`\n- **Target WPM:** ${storyTemplate.target_wpm || 135}\n\n## 🪝 Active Story Structure\n*(Story beats and narrative structure)*\n`
-        );
-      }
-
-      logger.success(`Applied Story Template "${pc.yellow(templateId)}" (${storyTemplate.name}) to workspace.`);
-      logger.info(`Mirrored template locally to: ${pc.dim(localStoryPath)}`);
-      logger.info(`Next step: Run "/opp-explore" to brainstorm and develop your story using this template!`);
+      logger.error('Story templates are archived and cannot be activated in the live video workflow.');
+      return;
     }
 
     if (videoTemplate) {
@@ -376,44 +320,7 @@ export async function templateCommand(
     }
 
     if (existingStory) {
-      const changes: string[] = [];
-      const beatsPath = path.join(configMgr.root, 'production', 'story', 'beats.md');
-      if (await exists(beatsPath)) {
-        const beatsContent = await readFile(beatsPath);
-        const fmtMatch = beatsContent.match(/\*\*(?:Format|Archetype):\*\*\s*`?([a-zA-Z0-9_-]+)`?/i);
-        const wpmMatch = beatsContent.match(/\*\*Target WPM:\*\*\s*`?(\d+)`?/i);
-        if (fmtMatch && fmtMatch[1].trim() !== existingStory.narrative_archetype) {
-          changes.push(`Narrative Archetype: "${existingStory.narrative_archetype}" -> "${fmtMatch[1].trim()}"`);
-          existingStory.narrative_archetype = fmtMatch[1].trim();
-        }
-        if (wpmMatch) {
-          const parsedWpm = parseInt(wpmMatch[1], 10);
-          if (parsedWpm && parsedWpm !== existingStory.target_wpm) {
-            changes.push(`Target WPM: ${existingStory.target_wpm} -> ${parsedWpm}`);
-            existingStory.target_wpm = parsedWpm;
-          }
-        }
-      }
-      if (instruction) {
-        changes.push(`Applied creator directive: "${instruction}"`);
-      }
-      // Clear raw_content if fields changed so formatStoryMarkdownTemplate regenerates frontmatter cleanly
-      if (changes.length > 0 && existingStory.raw_content) {
-        existingStory.raw_content = existingStory.raw_content
-          .replace(/^narrative_archetype:.*$/im, `narrative_archetype: "${existingStory.narrative_archetype}"`)
-          .replace(/^target_wpm:.*$/im, `target_wpm: ${existingStory.target_wpm || 135}`);
-      }
-      await tm.saveStoryTemplate(existingStory);
-      logger.success(`Story template "${templateId}" successfully updated in ~/.openproducer/templates/story/${templateId}.md`);
-      if (changes.length > 0) {
-        console.log(pc.bold('Updated Story Template Schema:'));
-        for (const c of changes) {
-          console.log(`  ${pc.green('✔')} ${c}`);
-        }
-      } else {
-        console.log(pc.dim('  Story template schema re-synchronized with current workspace.'));
-      }
-      console.log('');
+      logger.error('Story templates are archived and cannot be updated through the live video workflow.');
       return;
     }
 
@@ -513,14 +420,14 @@ export async function templateCommand(
       instruction && /^(save|commit|lock|apply|sync)$/i.test(instruction.trim())
     );
 
+    if ((requestedGroup === 'story' || templateId.startsWith('story-')) && (action === 'edit' || action === 'refine')) {
+      logger.error('Story-template editing is archived in the live workflow.');
+      process.exit(1);
+    }
+
     if (isSaveCommit) {
-      const synced = await tm.syncProjectTemplatesToGlobal();
-      logger.success(
-        `Promoted and locked refined template "${templateId}" into global vault (${tm.directory}).`
-      );
-      if (synced.length > 0) {
-        console.log(`  ${pc.green('✔')} Synced to global vault: ${synced.join(', ')}`);
-      }
+      const destination = await tm.promoteProjectTemplate(templateId, requestedGroup || 'video');
+      logger.success(`Promoted only "${templateId}" to ${destination}.`);
       console.log('');
       return;
     }
@@ -540,24 +447,13 @@ export async function templateCommand(
     const inProject = isInitialized;
 
     if (storyTemplate) {
-      let localMirrorPath = '';
-      if (inProject && storyTemplate.raw_content) {
-        localMirrorPath = path.join(configMgr.root, 'openproducer', 'templates', 'story', `${templateId}.md`);
-        if (!(await exists(localMirrorPath))) {
-          await writeFile(localMirrorPath, storyTemplate.raw_content);
-        }
-      }
-
-      logger.info(`Loaded Story Template for collaborative editing: ${pc.yellow(templateId)}`);
+      logger.info(`Archived story template: ${pc.yellow(templateId)}`);
       console.log('');
       console.log(pc.bold(pc.yellow(`📖 Story Template: ${storyTemplate.name}`)));
       console.log(`  • Archetype: ${pc.cyan(storyTemplate.narrative_archetype)}`);
       console.log(`  • Target WPM: ${pc.cyan(String(storyTemplate.target_wpm || 135))}`);
       if (storyTemplate.voice_persona) {
         console.log(`  • Voice Persona: ${storyTemplate.voice_persona}`);
-      }
-      if (localMirrorPath) {
-        console.log(`  • Workspace Mirror: ${pc.dim(localMirrorPath)}`);
       }
       console.log('');
       if (storyTemplate.raw_content) {
@@ -566,10 +462,7 @@ export async function templateCommand(
         console.log(pc.dim('─────────────────────────'));
       }
       console.log('');
-      logger.info(`Collaborative editing active in session (current project workspace untouched).`);
-      logger.info(
-        `When producer approves changes, write updates to openproducer/templates/story/${templateId}.md and run "npx openproducer template edit ${templateId} save".`
-      );
+      logger.info('Read-only archive preview. Story-template editing is inactive.');
       console.log('');
     }
 

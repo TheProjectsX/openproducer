@@ -2,6 +2,7 @@ import * as path from 'node:path';
 import * as fsp from 'node:fs/promises';
 import {
   DEFAULT_FLOW_ORCHESTRATION,
+  LINTER_REGISTRY,
   VISUAL_STYLES
 } from './constants';
 import {
@@ -21,8 +22,7 @@ import {
 import { resolveTemplateSources, TemplateSourceResult } from './fetcher';
 import {
   TemplateManager,
-  formatMarkdownTemplate,
-  formatStoryMarkdownTemplate
+  formatMarkdownTemplate
 } from './templates';
 
 export interface ScaffoldResult {
@@ -50,20 +50,17 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
   let audioPathway = options.audio || '';
   let audioDeliveryMode = options.delivery || '';
   let customMasterAnchor = '';
-  let storyTemplateId: string | undefined;
 
   await ensureDir(targetDir);
 
-  // If --template <id> was passed during init, resolve Video and/or Story template presets
+  // Only live video/package presets may initialize a production workspace.
   let loadedVideoPreset: any = null;
-  let loadedStoryPreset: any = null;
   let loadedGenericPreset: any = null;
 
   if (options.template) {
     const tm = new TemplateManager(targetDir);
     const videoPreset = await tm.getTemplate(options.template);
-    const storyPreset = await tm.getStoryTemplate(options.template);
-    const genericPreset = !videoPreset && !storyPreset ? await tm.getGenericTemplate(options.template) : null;
+    const genericPreset = !videoPreset ? await tm.getGenericTemplate(options.template) : null;
 
     if (videoPreset) {
       loadedVideoPreset = videoPreset;
@@ -78,20 +75,9 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
       }
     }
 
-    if (storyPreset) {
-      loadedStoryPreset = storyPreset;
-      storyTemplateId = options.template;
-      const storyDir = path.join(targetDir, 'production', 'story');
-      await ensureDir(storyDir);
-      const beatsPath = path.join(storyDir, 'beats.md');
-      if (!(await exists(beatsPath))) {
-        await writeFile(
-          beatsPath,
-          `# 🗺️ Story Beats: ${storyPreset.name}\n- **Template:** \`${storyPreset.template_id}\`\n- **Archetype:** \`${storyPreset.narrative_archetype}\`\n- **Target WPM:** ${storyPreset.target_wpm || 135}\n\n## 🪝 Active Story Structure\n*(Story beats and narrative structure)*\n`
-        );
-      }
+    if (genericPreset?.group === 'story' || (!videoPreset && options.template.startsWith('story-'))) {
+      throw new Error('Story templates are archived and cannot initialize a live video project.');
     }
-
     if (genericPreset) {
       loadedGenericPreset = genericPreset;
     }
@@ -136,7 +122,6 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
     audio_delivery_mode: audioDeliveryMode,
     language: 'en-US',
     linter_profile: 'strict',
-    ...(storyTemplateId ? { story_template_id: storyTemplateId } : {})
   };
   await writeJson(path.join(openproducerDir, 'config.json'), config);
   filesCreated.push('openproducer/config.json');
@@ -169,32 +154,12 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
 
   // 4. Generate openproducer/manifest.json
   const manifest: OpenProducerManifest = {
-    $comment: 'OpenProducer Pre-Flight Linter Audit Ledger. Validates L-01 through L-19 prior to video generation.',
+    $comment: 'Prompt-side audit ledger. Unimplemented and creator-review checks remain PENDING.',
     project_name: projectName,
-    linter_suite_version: '1.0.0',
+    linter_suite_version: '2.0.0',
     audit_timestamp: new Date().toISOString(),
     certification_status: 'PENDING',
-    linters: {
-      L01_descriptive_completeness: { status: 'PENDING', uncapped_depth_enforced: true, min_words: 50 },
-      L02_equipment_noun_ban: { status: 'PENDING', banned_found: [] },
-      L03_pure_creative_prompt: { status: 'PENDING', technical_tokens_in_text: 0 },
-      L04_asymmetric_token_decay: { status: 'PENDING', framing_in_first_30: false },
-      L05_single_camera_verb: { status: 'PENDING', verbs_per_prompt: 0 },
-      L06_audio_soundscape_closure: { status: 'PENDING', trailing_audio_block: false },
-      L07_photo_first_reference_lock: { status: 'PENDING', ingredient_mapped: false },
-      L08_facial_landmark_invariance: { status: 'PENDING', biometrics_anchored: false },
-      L09_expression_decoupling: { status: 'PENDING', frozen_expression_prevented: false },
-      L10_biomechanical_energy_parity: { status: 'PENDING', motion_energy_calibrated: false },
-      L11_three_plane_depth_rig: { status: 'PENDING', depth_layers_present: false },
-      L12_motivated_lighting_vectors: { status: 'PENDING', specular_shadows_anchored: false },
-      L13_acoustic_ambience_signature: { status: 'PENDING', reverb_profile_defined: false },
-      L14_temporal_quantum_pacing: { status: 'PENDING', clip_durations: [] },
-      L15_multi_character_clean_singles: { status: 'PENDING', clean_singles_enforced: false },
-      L16_spatial_handoff_vectors: { status: 'PENDING', eyeline_vectors_consistent: false },
-      L17_audio_bridge_closure: { status: 'PENDING', dynamic_bgm_handover_enforced: true },
-      L18_pluggable_style_injection: { status: 'PENDING', master_style_injected: false },
-      L19_trust_and_safety_scanner: { status: 'PENDING', policy_triggers_detected: 0 }
-    }
+    linters: Object.fromEntries(LINTER_REGISTRY.map((rule) => [rule.id, { status: 'PENDING', details: 'Not audited yet.' }]))
   };
   await writeJson(path.join(openproducerDir, 'manifest.json'), manifest);
   filesCreated.push('openproducer/manifest.json');
@@ -276,14 +241,6 @@ ARCHIVE ONLY (Not used directly for prompt generation, preserved strictly as a h
       filesCreated.push(`openproducer/templates/video/${options.template}.md`);
     }
 
-    if (loadedStoryPreset) {
-      const localStoryDir = path.join(localTplDir, 'story');
-      await ensureDir(localStoryDir);
-      const storyContent = loadedStoryPreset.raw_content || formatStoryMarkdownTemplate(loadedStoryPreset);
-      const localStoryPath = path.join(localStoryDir, `${options.template}.md`);
-      await writeFile(localStoryPath, storyContent);
-      filesCreated.push(`openproducer/templates/story/${options.template}.md`);
-    }
 
     if (loadedGenericPreset && loadedGenericPreset.raw_content) {
       const targetGroup = (loadedGenericPreset.group || 'generic').toLowerCase();

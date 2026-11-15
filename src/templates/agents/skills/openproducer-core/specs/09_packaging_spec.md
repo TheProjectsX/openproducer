@@ -205,7 +205,7 @@ description_config:
 
 ## 7. Packaging Pre-Flight Quality Linters
 
-The packaging engine runs 5 automated checks before finalizing deliverables:
+The packaging skill applies seven prompt-side review checks. Final chapter timestamps require creator-confirmed edited cut times; generated clip durations are provisional.
 
 | Linter ID | Name | Constraint & Severity |
 |---|---|---|
@@ -213,5 +213,7 @@ The packaging engine runs 5 automated checks before finalizing deliverables:
 | **LINT-PKG-02** | `ThumbnailSafeZoneLinter` | **ERROR** if `thumbnails/` prompt places text or primary focal points in the bottom-right corner (YouTube duration pill collision). |
 | **LINT-PKG-03** | `NonRedundancyLinter` | **WARNING** if the text in `thumbnails/` exactly repeats words from the corresponding title in `titles.txt`. |
 | **LINT-PKG-04** | `InPromptTypographyLinter` | **ERROR** if in-prompt text overlay exceeds 4 words or lacks explicit font styling, color contrast, and negative-space coordinates. |
-| **LINT-PKG-05** | `TimestampZeroOriginLinter` | **ERROR** if `descriptions.txt` does not begin chapters at `0:00` or if chapter timestamps do not mathematically match timeline clip durations. |
+| **LINT-PKG-05** | `TimestampZeroOriginLinter` | **ERROR** if chapters do not begin at `0:00` or do not match creator-confirmed edited cut times; mark planned timestamps provisional. |
+| **LINT-PKG-06** | `FourBlockPromptLinter` | Thumbnail prompt has configuration, input cues, image prompt, and negative prompt blocks. |
+| **LINT-PKG-07** | `UniqueReferenceCueLinter` | Each `[IMAGE N]` slot points to a unique prompt-file cue; lean projects use one cue. The creator selects the corresponding image already in Flow. |
 

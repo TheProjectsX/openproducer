@@ -1,6 +1,6 @@
 ---
 name: openproducer-doctor
-description: Retake Doctor - diagnose runtime generative AI video glitches (G-01 to G-16) and apply surgical prompt patches in ./production/.
+description: Retake Doctor - diagnose creator-observed generative video glitches (G-01 to G-20) and apply focused prompt patches in ./production/.
 ---
 
 # OpenProducer — Retake Doctor Skill
@@ -13,11 +13,12 @@ Diagnose runtime generative AI anomalies across Google Flow, Veo 3.1, and Imagen
 ## Operational Playbook
 1. **Interactive Question Tool First (`ask_question`):**
    - Whenever asking the creator which glitch occurred or presenting the G-14 Trust & Safety 2-Option Resolution Gate, **use your interactive `ask_question` tool** if available rather than asking via plain text.
-2. **Match Symptom Against Diagnostic Codes (G-01 to G-16):**
+2. **Match Symptom Against Diagnostic Codes (G-01 to G-20):**
    - Reference `.agents/skills/openproducer-core/specs/06_retake_doctor_spec.md` (or `agents/skills/openproducer-core/specs/06_retake_doctor_spec.md`).
    - G-15: Word looping / stuttering $\rightarrow$ soft punctuation (`...`).
-   - G-16: Dead-air delay $\rightarrow$ Immediate Vocal Attack on Frame 1.
-   - G-16: Kinetic text spoiler $\rightarrow$ Decouple to `production/motion_graphics.md`.
+   - G-16: Kinetic text spoiler or dead-air transition $\rightarrow$ revise the affected prompt/cut cue; use immediate vocal attack only when the creator wants it.
+   - G-17–G-20: Room topology, depth, viewpoint, or BGM continuity $\rightarrow$ patch only the relevant shot constraint or manual audio-use note.
+   - Wrong character-to-room scale or unrelated visual $\rightarrow$ compare the clip against the exact timed cue in `scratchbook.md`, then repair the first image and motion prompt together.
    - G-14: Trust & Safety block $\rightarrow$ 2-Option Gate via `ask_question` (Option A safe reword / replace elevated ledges with observation terrace & railing vs. Option B silent plate + external lip-sync).
    - G-01: Face drift $\rightarrow$ Strengthen bone structure biometrics.
    - G-09: Equipment visible $\rightarrow$ Purge hardware nouns.

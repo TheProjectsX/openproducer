@@ -40,7 +40,7 @@ When you need deep domain rules, prompt syntax formulas, or linter requirements,
 * [`03_scenery_spec.md`](.agents/skills/openproducer-core/specs/03_scenery_spec.md): Empty 3-plane environment staging (foreground, midground, background) and atmospheric perspective.
 * [`04_cinematography_audio_spec.md`](.agents/skills/openproducer-core/specs/04_cinematography_audio_spec.md): Camera kinematics, perspective verbs, lens focal lengths, and structured 4-field audio syntax.
 * [`05_directors_cut_assembly_spec.md`](.agents/skills/openproducer-core/specs/05_directors_cut_assembly_spec.md): Pacing rules, 4s/6s/8s/10s quantum duration locks, clean singles, 180° eyelines, and master linters L-01 to L-19.
-* [`06_retake_doctor_spec.md`](.agents/skills/openproducer-core/specs/06_retake_doctor_spec.md): Glitch catalog (`G-01` to `G-16`), root cause taxonomy, and surgical prompt patch formulas.
+* [`06_retake_doctor_spec.md`](.agents/skills/openproducer-core/specs/06_retake_doctor_spec.md): Glitch catalog (`G-01` to `G-20`), root cause taxonomy, and surgical prompt patch formulas.
 * [`07_scaffolding_and_workspace_spec.md`](.agents/skills/openproducer-core/specs/07_scaffolding_and_workspace_spec.md): Workspace file contracts, plain-text prompt bracket formatting, and manifest ledger.
 * [`09_packaging_spec.md`](.agents/skills/openproducer-core/specs/09_packaging_spec.md): Delivery packaging, high-CTR titles, structured descriptions with timeline chapters, universal 4-block thumbnails with in-prompt AI typography, and 1-stop publish kits.
 * [`safety_registry.md`](.agents/skills/openproducer-core/specs/safety_registry.md): Multi-pathway gate against platform Trust & Safety trigger words.
@@ -62,7 +62,7 @@ When using, listing, creating, or editing templates (`/opp-template`), templates
    * *Video (`starter_presets/`):* `stickman-explainer.md`, `cinema-short-film.md`, `social-ugc-reel.md`
    * *Story (`starter_presets/`):* `story-stickfigure-rant.md`, `story-true-crime-mystery.md`, `story-youtube-explainer.md`, `story-dialogue-drama.md`
    * *Package (`package/`):* `youtube_dark_scifi.md`, `viral_shorts.md`
-2. **Project Local Templates:** `./openproducer/templates/<group>/` (e.g. `video/`, `story/`, `audio/`, `package/`)
+2. **Project Local Templates:** `./openproducer/templates/<group>/` (live video presets and other explicitly supported groups; story templates are archived).
 3. **Global Workstation Vault:** `~/.openproducer/templates/<group>/` (Shared across all projects on this machine)
 
 ### 2.4 Agent Skills & Slash Workflows
@@ -89,7 +89,7 @@ When using, listing, creating, or editing templates (`/opp-template`), templates
     ├── audio_script.txt            # (If Separate Audio) Clean script for creator to record/generate audio
     ├── clips/
     │   └── clip_xxx/
-    │       ├── image_prompt.txt   # Clip starting frame prompt (Conditioned On: base_image_prompt.txt)
+    │       ├── image_prompt.txt   # Scene root: approved base/scene image; same scene: previous approved clip image
     │       └── video_prompt.txt   # Clip video prompt (Input Seed: production/clips/clip_xxx/image_prompt.txt)
     ├── master_images_prompt.txt   # Creator self-serve reference only (ignored by /opp-guide)
     ├── master_videos_prompt.txt   # Creator self-serve reference only (ignored by /opp-guide)
@@ -132,8 +132,8 @@ When using, listing, creating, or editing templates (`/opp-template`), templates
     │           └── prompt.txt     # Empty 3-plane stage prompt (Conditioned On: base_image_prompt.txt)
     ├── clips/
     │   └── clip_xxx/
-    │       ├── image_prompt.txt   # Keyframe prompt (Conditioned On: subject + environment images)
-    │       └── video_prompt.txt   # Video prompt (Input Seed: production/clips/clip_xxx/image_prompt.txt or LAST_FRAME)
+    │       ├── image_prompt.txt   # Scene root: subject + environment; same scene: previous approved clip image + stable anchors when supported
+    │       └── video_prompt.txt   # Video prompt (Input Seed: this clip's approved image from image_prompt.txt)
     ├── master_images_prompt.txt   # Creator self-serve reference only (ignored by /opp-guide)
     ├── master_videos_prompt.txt   # Creator self-serve reference only (ignored by /opp-guide)
     ├── scratchbook.md             # Timeline pacing math, eyeline vectors & Retake Doctor log
@@ -167,7 +167,7 @@ flowchart TD
     S["3. SYNC (/opp-sync)<br/>• Requires propose_complete == true<br/>• Pre-Produce: syncs ./openproducer/<br/>• Post-Produce: syncs ./openproducer/ + ./production/"]
     PR["4. PRODUCE (/opp-produce)<br/>• Auto-runs Propose first if still in Init or Explore<br/>• Generates creator files on disk inside ./production/ from ./openproducer/"]
     G["5. GUIDE (/opp-guide)<br/>• Step-by-Step interactive co-pilot<br/>• Loops on base_image_prompt.txt until satisfied"]
-    D["6. DOCTOR (/opp-doctor)<br/>• Diagnoses G-01 to G-16 glitches & patches prompts"]
+    D["6. DOCTOR (/opp-doctor)<br/>• Diagnoses G-01 to G-20 creator-observed glitches & patches prompts"]
     PKG["8. PACKAGE (/opp-package)<br/>• High-converting delivery kit in ./production/packaging/<br/>• Titles, descriptions, 4-block thumbnails & publish kits"]
 
     E -->|"/opp-propose"| P
@@ -232,15 +232,16 @@ flowchart TD
   - **Case 2 (When NO Secondary Voice Exists):** Format for Single-Speaker mode using balanced **100–160 word segments** (max 180 words) breaking at natural scene shifts to prevent Gemini TTS from rushing or reading tags aloud (*"less than short pause greater than"*).
   - **Zero Clip Cuts in Script:** Segments/turns represent audio performance beats and speaker handoffs, NEVER video clip cuts (`clip_01`, `clip_02`).
   - **Google AI Studio Cast Presets & System Instructions:** Always specify Cast Presets (e.g. `Fenrir` for narrator, `Orus`/`Kore` for secondary voice) and the master persona prompt.
-  - **40 Official Expression Tags:** 80–90% flow with natural punctuation. Dynamically inject official Google AI Studio tags (`<short pause>`, `<long pause>`, `<breath>`, `<heavy breath>`, `<exhales>`, `<pant>`, `<sigh>`, `<sighs>`, `<gasp>`, `<groan>`, `<grunt>`, `<whimper>`, `<cry>`, `<sob>`, `<chuckle>`, `<laugh>`, `<laughter>`, `<whisper>`, `<whispering>`, `<whispers>`, `<shout>`, `<scream>`, `<phew>`, `<tsk>`, `<growl>`, etc.) on isolated lines (`.\n<tag>\n`); zero square brackets `[...]` in spoken text.
+  - **TTS Direction:** Use a small number of natural, model-supported delivery cues only after checking the selected speech model. Keep setup instructions separate from the text pasted into TTS. Preview generated speech for spoken tags, skipped words, and pacing before using its timestamps.
 * **File Generation from Brain (`./openproducer/config.json`) into `./production/`:**
   * **If `separate_script_first`:**
     - **Pass 1 (Before Timestamps):** Creates `production/audio_script.txt`, `production/base_image_prompt.txt`, `production/scratchbook.md`, and (if Modular Studio) `production/subjects/` & `production/visuals/environments/`. Provides direct tool links ([Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech), [TurboScribe](https://turboscribe.ai/) / [AudioToSRT](https://audiotosrt.com/), [Google Flow](https://flow.google.com)) and waits for creator to give audio timestamps/transcripts.
     - **Pass 2 (After Timestamps Given):**
       - **Context-Driven Cinematography (NOT 1:1 Transcript Slices):** Design clips based on **plot context, visual storytelling, and cinematic coverage** (establishing shots, medium shots, close-ups, macro cutaways, character reactions). Do NOT mechanically map 1 script line to 1 clip!
-      - **Contiguous Audio Timeline Tiling:** Sliced clips must tile the audio timeline contiguously from $00:00$ to $T_{\text{end}}$ ($\sum \text{Clip Durations} == \text{Total Master Audio Duration}$ within $\pm 1\text{s}$). Every clip starts exactly when the previous clip ends with zero gaps.
-      - **Flow Native Durations:** Each clip uses a valid Flow duration (`4s`, `6s`, `8s`, or `10s`) matching its timeline interval ($|\text{Clip Duration} - (\text{End} - \text{Start})| \le 1.0\text{s}$).
+      - **Contiguous Edited Timeline:** Plan edited visual coverage from $00:00$ to $T_{\text{end}}$ using actual audio cue times. Edited clip uses may have uneven lengths; identify source clip, in/out trim, and final timeline start/end. Account for each audio cue, intentional hold, and transition without unexplained gaps.
+      - **Flow Generation Durations:** Request generated source clips in the retained `4s`, `6s`, `8s`, or `10s` choices, subject to the selected Flow model/mode. Generated duration does not have to equal the edited timeline interval; provide adequate footage and explicit trim handles.
       - **Scenery-Voice Context Matching:** Visual prompts depict scenery and actions matching what the voice describes at that exact timestamp window.
+      - **Scene Image Chain:** For the first clip in each location/time scene, cue an approved image generated from the base style and relevant subject/environment references. For the next clip in that scene, cue the **previous approved clip image** already in Flow, plus stable subject/environment images if supported. Record this lineage in `scratchbook.md`. At an environment/time change or after image drift, start a new scene-root image from the stable anchors. Do not propagate a rejected image. The prompt path tells the creator which Flow image to select; no image export, video download, or last-frame extraction is required.
       - **Dialogue Cleansing in Separate Audio:** Set `Dialogue: None;` in all `video_prompt.txt` files to prevent Veo from generating speech over the master track.
       - Creates `production/clips/clip_xxx/[image_prompt.txt, video_prompt.txt]` (with `Conditioned On:` / `Input Seed:` lines), `production/master_images_prompt.txt`, and `production/master_videos_prompt.txt`.
   * **If `embedded` or `separate_all_at_once`:** Creates all creator files in `./production/` in one pass (`base_image_prompt.txt`, `audio_script.txt` if separate, `subjects/` & `visuals/environments/` if Modular Studio, `clips/clip_xxx/`, `master_images_prompt.txt`, `master_videos_prompt.txt`, `scratchbook.md`, `motion_graphics.md`).
@@ -261,19 +262,19 @@ flowchart TD
      - Guide creator to create `production/base_image_prompt.txt` first and **loop until satisfied** (saving changes) $\rightarrow$ if Modular Studio, guide through `production/subjects/` & `production/visuals/environments/`.
   3. **Clip Creation Mode Choice (Ask via `ask_question`):**
      - Ask if the creator needs **Step-by-Step Support** (creating clips one by one) OR **Only Instructions**.
-     - **If Only Instructions:** Provide the complete workflow instructions (open [Google Flow](https://flow.google.com) $\rightarrow$ create Base Image $\rightarrow$ attach Base/Subject/Environment images to generate Clip Images $\rightarrow$ attach Clip Images with the Video Prompts before video generation).
+     - **If Only Instructions:** Provide the complete workflow instructions (open [Google Flow](https://flow.google.com) $\rightarrow$ create Base Image and stable subject/environment images $\rightarrow$ create a scene-root clip image $\rightarrow$ chain each later same-scene clip image from the previous **approved clip image** in Flow $\rightarrow$ reset at scene changes or drift $\rightarrow$ select each clip image as its own video's start image).
      - **If Step-by-Step Support:** Use `ask_question` to give the option to either **(A) Generate all Clip Images first and then Clip Videos one by one**, OR **(B) Go Clip-by-Clip (create Clip Image first then Video for each clip one by one)**.
 
 ---
 
 ### Mode 6: `doctor` (`/opp-doctor` or `/openproducer-doctor`) — Retake Doctor
-* **Action:** Diagnoses runtime AI video glitches (`G-01` to `G-16`) via `.agents/skills/openproducer-core/specs/06_retake_doctor_spec.md` and applies surgical prompt patches to `./production/` and `./openproducer/`.
+* **Action:** Diagnoses observed AI video glitches (`G-01` to `G-20`) via `.agents/skills/openproducer-core/specs/06_retake_doctor_spec.md` and proposes surgical prompt patches. The creator generates and reviews the media manually.
 
 ---
 
-### Mode 7: `template` (`/opp-template` or `/openproducer-template`) — Decoupled Video & Story Preset Vault
+### Mode 7: `template` (`/opp-template` or `/openproducer-template`) — Video Preset Vault
 * **Sandbox-Safe Native CLI Execution:** Always run `npx openproducer template <list|use|save|update|edit>` (use `-p` / `--paths` on `list` to inspect physical disk paths).
-* **Decoupled Video & Story Templates:** Video templates (`templates/video/`) configure visual style, framing, and audio pathway in `./openproducer/`; Story templates (`templates/story/`) configure narrative pacing and hook structures.
+* **Live Video Templates:** Video templates (`templates/video/`) configure visual style, framing, and audio pathway in `./openproducer/`. Story-template operations are archived.
 * **On Load (`use <name>`):** Auto-saves the template's settings into `./openproducer/` without running `propose` or `produce`. In `explore`, skips asking any configuration already present in the template.
 * **On Save / Update (`save <name>` / `update <name>`):**
   - *In `init` Mode (Blank Project):* Interactively drafts or tunes templates through conversational discussion with the producer (zero workspace assets required).
@@ -294,13 +295,13 @@ flowchart TD
 
 ## 5. Master Prompt Linters (L-01 to L-19)
 
-* **L-01 (Word Economy):** Strictly 75–150 words per prompt.
-* **L-02 (Equipment Noun Ban):** NEVER use nouns like `tripod`, `dolly track`, `camera on rig`. ALWAYS use kinematic perspectives (`Locked-off eye-level framing, completely static shot with zero camera movement`).
-* **L-03 (Prompt Purity):** Keep technical parameters (`16:9, 1080p, 24fps`) in the configuration block, NEVER in prompt text tokens.
-* **L-04 (Token Decay):** Place viewport framing & primary subject in tokens 1–30.
-* **L-05 (Single Camera Verb):** Exactly ONE primary camera motion verb per shot.
-* **L-06 (Ingredient & Connection Binding):** Explicitly note `[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`, or `LAST_FRAME` connections beside every prompt.
-* **L-14 (Temporal Quantum Pacing):** Quantize clips to 4s, 6s, 8s (or 10s max).
-* **L-15 (Clean Singles & Soft Punctuation):** Frame clean single-subject shots for dialogue; use ellipsis (`...`) or commas instead of hard punctuation (`?`, `.`) to prevent G-15 speech looping.
-* **L-18 (4-Part Semicolon Audio Block):** `Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...`
-* **L-19 (Trust & Safety Sanitization):** Check against `.agents/skills/openproducer-core/specs/safety_registry.md`.
+**Current rule:** Use the live cue-to-visual contract in `.agents/skills/openproducer-core/specs/05_directors_cut_assembly_spec.md`. Prompt files guide manual Flow generation; prompt checks cannot certify renders. Generation choices are 4s/6s/8s/10s, while edited on-screen lengths may be uneven. The creator selects the image produced by a referenced prompt inside Flow; the `.txt` path is a cue, not an upload.
+
+* **L-01 (Scene and Cue Completeness):** State who/what is visible, where, what changes during the timed cue, and framing scale. No word floor or ceiling; omit repeated constraints that obscure the current action.
+* **L-03/L-04:** Keep physical camera equipment nouns and technical configuration out of the creative body; configuration and negative blocks are separate.
+* **L-05/L-06:** Use a short anti-subtitle negative when relevant and preserve unique prompt-file cues for the intended Flow images.
+* **L-09:** Generate using a project choice of 4s, 6s, 8s, or 10s; manually edited on-screen use may be uneven. Check the chosen Flow model/mode supports the generation setting.
+* **L-14:** Map exact audio cues to relevant visuals and check every local edited interval; external master speech may cross visual cuts.
+* **L-17:** `Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...` is a prompt hint. Note manual mute/Foley/native audio use and cut offsets in `scratchbook.md`.
+* **L-19:** Review safety in context against `.agents/skills/openproducer-core/specs/safety_registry.md`; keyword absence is not certification.
+* **Audit status:** Unimplemented or creator-review checks stay `PENDING`, never automatic `PASS`. `PROMPTS_READY` does not mean clips were rendered or assembled.

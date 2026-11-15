@@ -2,7 +2,7 @@ import * as os from 'node:os';
 import * as path from 'node:path';
 import * as fsp from 'node:fs/promises';
 import { GenericTemplate, SeriesTemplate, StoryTemplate, TemplateInfo } from './types';
-import { ensureDir, exists, findProjectRoot, readFile, readJson, writeFile } from '../utils/fs';
+import { ensureDir, exists, findProjectRoot, readFile, writeFile } from '../utils/fs';
 
 /**
  * Parses human-readable Markdown story template (.md) into a StoryTemplate object.
@@ -51,6 +51,28 @@ export function parseMarkdownTemplate(content: string, templateId: string): Seri
     }
   }
 
+  if (!match) throw new Error(`Template "${templateId}" must start with Markdown frontmatter.`);
+  const required = ['template_id', 'name', 'archetype', 'tier', 'aspect_ratio', 'audio_pathway', 'audio_delivery_mode'];
+  for (const key of required) if (!fm[key]) throw new Error(`Template "${templateId}" is missing ${key}.`);
+  if (fm.template_id !== templateId) throw new Error(`Template ID mismatch: expected "${templateId}", found "${fm.template_id}".`);
+  const allowed: Record<string, string[]> = {
+    tier: ['lean_base_reference', 'modular_studio'],
+    aspect_ratio: ['16:9', '9:16'],
+    audio_pathway: ['separate_audio', 'pathway_a_native_veo', 'pathway_b_external_audio'],
+    audio_delivery_mode: ['embedded', 'separate_script_first', 'separate_all_at_once'],
+    archetype: ['social_ugc', 'animation', 'cinematic', 'cinema', 'commercial', 'documentary', 'explainer', 'music_video']
+  };
+  for (const [key, values] of Object.entries(allowed)) {
+    if (!values.includes(fm[key])) throw new Error(`Template "${templateId}" has unsupported ${key}: ${fm[key]}`);
+  }
+  const externalAudio = ['separate_audio', 'pathway_b_external_audio'].includes(fm.audio_pathway);
+  if (externalAudio && fm.audio_delivery_mode === 'embedded') {
+    throw new Error(`Template "${templateId}" mixes external audio with embedded delivery.`);
+  }
+  if (!externalAudio && fm.audio_delivery_mode !== 'embedded') {
+    throw new Error(`Template "${templateId}" requires embedded delivery for native Veo audio.`);
+  }
+
   // Extract sections
   const getSection = (headingRegex: RegExp): string => {
     const sectionMatch = body.match(headingRegex);
@@ -69,6 +91,13 @@ export function parseMarkdownTemplate(content: string, templateId: string): Seri
     return m ? m[1].trim().replace(/^`([^`]+)`$/, '$1') : '';
   };
 
+  const styleAnchor = getBulletValue(visualSection, 'Master Style Anchor');
+  const clipDuration = Number.parseInt(getBulletValue(pacingSection, 'Default Clip Duration'), 10);
+  const speechPacing = Number.parseFloat(getBulletValue(pacingSection, 'Speech Pacing'));
+  if (!styleAnchor) throw new Error(`Template "${templateId}" is missing Master Style Anchor.`);
+  if (![4, 6, 8, 10].includes(clipDuration)) throw new Error(`Template "${templateId}" needs a 4s, 6s, 8s, or 10s Default Clip Duration.`);
+  if (!Number.isFinite(speechPacing) || speechPacing <= 0) throw new Error(`Template "${templateId}" needs a positive Speech Pacing.`);
+
   return {
     template_id: fm.template_id || templateId,
     name: fm.name || templateId,
@@ -76,11 +105,11 @@ export function parseMarkdownTemplate(content: string, templateId: string): Seri
     tier: fm.tier || 'lean_base_reference',
     aspect_ratio: fm.aspect_ratio || '16:9',
     resolution: fm.resolution || '1080p',
-    audio_pathway: fm.audio_pathway || 'separate_audio',
+    audio_pathway: fm.audio_pathway === 'separate_audio' ? 'pathway_b_external_audio' : fm.audio_pathway,
     audio_delivery_mode: fm.audio_delivery_mode || 'separate_script_first',
     visual_dna: {
       style_id: getBulletValue(visualSection, 'Style ID'),
-      master_style_anchor: getBulletValue(visualSection, 'Master Style Anchor'),
+      master_style_anchor: styleAnchor,
       negative_prompt: getBulletValue(visualSection, 'Negative Prompt')
     },
     subject_dna: {
@@ -96,8 +125,8 @@ export function parseMarkdownTemplate(content: string, templateId: string): Seri
       acoustics: getBulletValue(environmentSection, 'Acoustics')
     },
     pacing_profile: {
-      default_clip_duration: parseInt(getBulletValue(pacingSection, 'Default Clip Duration'), 10) || 6,
-      speech_pacing: parseFloat(getBulletValue(pacingSection, 'Speech Pacing')) || 2.2,
+      default_clip_duration: clipDuration,
+      speech_pacing: speechPacing,
       vocal_attack: getBulletValue(pacingSection, 'Vocal Attack'),
       voice_preset: getBulletValue(pacingSection, 'Voice Preset')
     },
@@ -123,7 +152,7 @@ archetype: ${template.archetype || ''}
 tier: ${template.tier || 'lean_base_reference'}
 aspect_ratio: ${template.aspect_ratio || '16:9'}
 resolution: ${template.resolution || '1080p'}
-audio_pathway: ${template.audio_pathway || 'separate_audio'}
+audio_pathway: ${template.audio_pathway || 'pathway_b_external_audio'}
 audio_delivery_mode: ${template.audio_delivery_mode || 'separate_script_first'}
 ---
 
@@ -314,13 +343,33 @@ export class TemplateManager {
     return synced;
   }
 
+  async promoteProjectTemplate(templateId: string, group = 'video'): Promise<string> {
+    if (!this.projectRoot) throw new Error('Open a project before promoting a template.');
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(templateId)) throw new Error('Invalid template ID.');
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(group)) throw new Error('Invalid template group.');
+    if (group === 'story') throw new Error('Story templates are archived in the live workflow.');
+    const local = group === 'video'
+      ? [path.join(this.projectRoot, 'openproducer', 'templates', 'video', `${templateId}.md`),
+         path.join(this.projectRoot, 'openproducer', 'templates', `${templateId}.md`)]
+      : [path.join(this.projectRoot, 'openproducer', 'templates', group, `${templateId}.md`)];
+    const source = (await Promise.all(local.map(async (candidate) => await exists(candidate) ? candidate : null)))
+      .find((candidate): candidate is string => candidate !== null);
+    if (!source) throw new Error(`Local ${group} template "${templateId}" not found.`);
+    const content = await readFile(source);
+    if (group === 'video') parseMarkdownTemplate(content, templateId);
+    await this.ensureDirectory();
+    const destination = path.join(this.globalDir, group, `${templateId}.md`);
+    await ensureDir(path.dirname(destination));
+    await writeFile(destination, content);
+    return destination;
+  }
+
   async listTemplates(): Promise<string[]> {
     const all = await this.listAllTemplates();
     return Array.from(new Set(all.map((t) => t.id)));
   }
 
   async getTemplate(templateId: string): Promise<SeriesTemplate | null> {
-    await this.syncProjectTemplatesToGlobal();
 
     // 1. Check ~/.openproducer/templates/video/<id>.md
     const globalVideoMd = path.join(this.globalDir, 'video', `${templateId}.md`);
@@ -341,7 +390,7 @@ export class TemplateManager {
     // 3. Check ~/.openproducer/templates/<id>.json
     const jsonPath = path.join(this.globalDir, `${templateId}.json`);
     if (await exists(jsonPath)) {
-      return readJson<SeriesTemplate>(jsonPath);
+      throw new Error(`Legacy JSON template "${templateId}" is not validated. Convert it to a Markdown video template before use.`);
     }
 
     // 4. Check current project local openproducer/templates/video/<id>.md and openproducer/templates/<id>.md
@@ -376,8 +425,15 @@ export class TemplateManager {
   }
 
   async saveTemplate(template: SeriesTemplate): Promise<void> {
+    if (!template.template_id || !template.name || !template.archetype || !template.tier ||
+        !template.aspect_ratio || !template.audio_pathway || !template.audio_delivery_mode ||
+        !template.visual_dna?.master_style_anchor || !template.pacing_profile?.default_clip_duration ||
+        !template.pacing_profile?.speech_pacing) {
+      throw new Error('Video template is missing required identity, format, audio, visual, or pacing fields.');
+    }
     await this.ensureDirectory();
     const mdContent = formatMarkdownTemplate(template);
+    parseMarkdownTemplate(mdContent, template.template_id);
 
     // Save globally (in video/ sub-vault if already there, otherwise root templates/ for backwards compatibility)
     const globalVideoMd = path.join(this.globalDir, 'video', `${template.template_id}.md`);
@@ -459,7 +515,6 @@ export class TemplateManager {
 
   async listAllTemplates(): Promise<TemplateInfo[]> {
     await this.ensureDirectory();
-    await this.syncProjectTemplatesToGlobal();
     const map = new Map<string, TemplateInfo>();
 
     const scanDir = async (baseDir: string, defaultGroup?: string) => {
@@ -527,7 +582,6 @@ export class TemplateManager {
   }
 
   async getGenericTemplate(templateId: string, group?: string): Promise<GenericTemplate | null> {
-    await this.syncProjectTemplatesToGlobal();
     const all = await this.listAllTemplates();
 
     let candidate = all.find(
@@ -572,7 +626,6 @@ export class TemplateManager {
     templateId: string,
     group?: string
   ): Promise<{ id: string; group: string; path: string; content: string } | null> {
-    await this.syncProjectTemplatesToGlobal();
     const all = await this.listAllTemplates();
 
     let candidate = all.find(
@@ -618,7 +671,6 @@ export class TemplateManager {
   }
 
   async getStoryTemplate(templateId: string): Promise<StoryTemplate | null> {
-    await this.syncProjectTemplatesToGlobal();
 
     // 1. Check global story dir ~/.openproducer/templates/story/<id>.md
     const globalStoryMd = path.join(this.globalDir, 'story', `${templateId}.md`);

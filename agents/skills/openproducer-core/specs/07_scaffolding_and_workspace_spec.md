@@ -1,5 +1,19 @@
 # Specification 07: Dynamic Workspace Scaffolding & Creator File Architecture
 
+> **Live amendment (2026-11-15):** `Conditioned On:` and `Input Seed:` paths identify the prompt that produced an image already in the creator's Google Flow project. Select that image in Flow; do not upload the `.txt` file. Exported images are optional. Prompt creation does not imply rendering or assembly. The current cue-to-visual contract in `05_directors_cut_assembly_spec.md` governs clip planning over older examples below.
+
+## Current clip-image lineage
+
+The default is a **scene image chain**. A scene means a continuous location and time with stable visual identity. Its first clip image uses the approved base style and applicable subject/environment images. Each later clip image uses the **previous approved clip image** from the same scene as the local continuity reference, plus the stable subject/environment images when the chosen Flow image workflow allows them. The image prompt changes only what the next timed audio cue requires: framing, pose, expression, visible action, or viewpoint. Do not simply copy the prior composition if the next cue needs a new view.
+
+When the environment or time changes, make a new scene-root clip image from the relevant stable anchors. If identity, room layout, scale, or lighting drifts, reject the bad image and restart from the scene root or stable anchors rather than chaining it forward. Record the image lineage in the existing `scratchbook.md` row (`scene root` or `previous approved clip image` and any reset reason); no new asset inventory or exported image file is required. The `.txt` path is a cue to select the corresponding generated image within Flow. The previous clip **image** is not its rendered video's terminal frame, so the creator still reviews actual cut continuity.
+
+## Current `scratchbook.md` clip ledger
+
+For each planned shot record: `Audio start–end | exact cue | required visible fact | subject/location | literal, reaction, or intentional withhold | shot scale and person-to-room proportion | reveal boundary | image lineage | generation duration (4/6/8/10) | planned edited duration | trim/hold | manual audio use`. Keep rows concise. Edited durations may be uneven. Verify adjacent edited intervals meet and each audio cue maps to a relevant visible event; total duration parity alone is insufficient. If the creator has not supplied actual audio times, label the ledger `PROVISIONAL`. After a re-recording, mark old clip times stale.
+
+`production/audio_script.txt` must clearly separate human setup/cast instructions from the paste-only spoken transcript. Angle-tag behavior is specific to the chosen TTS model and interface; test a short sample before full audio. The creator supplies the final audio duration and time-coded transcript for separate-audio pass 2. No media export is required by this contract.
+
 ## 1. Architectural Philosophy: Brain vs. Creator Deliverables
 
 In OpenProducer, **we do not copy static template folders containing dummy placeholder text**, and **OpenProducer NEVER generates any image on its own** (not even as an example to show the creator) unless the creator explicitly asks it to generate an image.
@@ -54,7 +68,7 @@ graph TD
     │
     ├── clips/                         # 🎬 CREATOR FOLDER: Shot-by-shot plain-text prompts
     │   ├── clip_01/
-    │   │   ├── image_prompt.txt       # Tier 2: Starting frame prompt (Conditioned On: base_image_prompt.txt)
+    │   │   ├── image_prompt.txt       # Scene root: base image; later same-scene clips: previous approved clip image
     │   │   └── video_prompt.txt       # Tier 3: Video prompt (Input Seed: production/clips/clip_01/image_prompt.txt)
     │   ├── clip_02/
     │   │   ├── image_prompt.txt
@@ -105,7 +119,7 @@ graph TD
     │
     ├── clips/                         # 🎬 CREATOR FOLDER: Shot-by-shot plain-text prompts
     │   ├── clip_01/
-    │   │   ├── image_prompt.txt       # Keyframe prompt (Conditioned On: subject + environment images)
+    │   │   ├── image_prompt.txt       # Scene root: subject + environment; later same-scene clips: previous approved clip image + stable anchors when supported
     │   │   └── video_prompt.txt       # Video prompt (Input Seed: production/clips/clip_01/image_prompt.txt)
     │   ├── clip_02/
     │   │   ├── image_prompt.txt
@@ -239,12 +253,12 @@ Audio Timestamp: <00:00:00 - 00:00:06 (6s)>
 Narration / Dialogue Cue: <"Exact transcript or spoken dialogue line for this moment...">
 
 [INPUT SEEDS & INGREDIENTS]
-1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
-2. Persistent Scene DNA:   [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
-3. Optional Hero Prop:     [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
+1. Local continuity: [IMAGE 1] -> previous approved clip image in this scene; for a scene root use the approved base/scene image instead.
+2. Stable identity:  [IMAGE 2] -> production/subjects/<subject_id>/profile_prompt.txt (when available and supported)
+3. Stable room:      [IMAGE 3] -> production/visuals/environments/<env_id>/prompt.txt (when available and supported)
 
 [IMAGE PROMPT]
-<Starting frame composition staging the subject inside the environment with exact camera framing, posture, expression, and lighting.>
+<The exact first visible moment of this clip's audio cue. Change only the needed framing, pose, expression, action, or viewpoint from the selected prior clip image; preserve approved identity, room layout, subject-to-room scale, and light. Do not show a later reveal.>
 
 [NEGATIVE PROMPT]
 <studio gray background bleed, split screen, multiple panels, camera equipment, blurry lines, text, subtitles, watermarks.>
@@ -263,13 +277,13 @@ Audio Timestamp: <00:00:00 - 00:00:06>
 Narration / Dialogue Cue: <"Exact transcript or spoken dialogue line for this moment...">
 
 [INPUT SEEDS & INGREDIENTS]
-1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of production/clips/clip_<XX-1>/video_prompt.txt)
+1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (select the image generated from this prompt in Flow)
 2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
 3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
 4. Optional Hero Prop:       [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
 
 [VIDEO PROMPT]
-Starting directly from the initial image, <Comprehensive descriptive prompt (uncapped depth): Viewport framing, subject DNA, physical room topology, Z-index depth layering (subject positioned strictly behind furniture/props with lower body occluded), motivated lighting vectors, single continuous camera verb, and kinematic action continuation from preceding clip terminal state. Conditioned on [IMAGE 1] for subject facial identity and [IMAGE 2] for scene topology. Trailing block: 4-part semicolon Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: [BGM Continuity: CONTINUATION - SUSTAIN / DECAY / ACCELERATION matching preceding cut volume]....>
+Starting directly from this clip's approved image, <describe the one visible action or change during this audio cue, with only the framing, scale, and continuity details this shot needs>. Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ... .
 
 [NEGATIVE PROMPT]
 <camera equipment, tripod, dolly track, blurry, morphing face, distorted hands, extra fingers, text, subtitles, watermark, ceiling fan, dropped partition walls, structural columns, room dividers, frontal portrait (when rear/profile specified), speech looping, unnatural pauses.>
@@ -285,24 +299,14 @@ Starting directly from the initial image, <Comprehensive descriptive prompt (unc
 2. **The Context-Driven Emotion & Anti-Dead-Air Law (Discussion 47 & 49 — NO TAG SPAMMING):**
    * **Why Tag Spamming Kills Retention:** Putting `<short pause>` after every sentence or paragraph creates robotic dead air that destroys narrative momentum and causes viewers to scroll away immediately.
    * **90% Natural Punctuation Flow:** Standard commas (`,`), periods (`.`), em-dashes (`—`), and paragraph breaks already produce natural 0.3s–0.5s breathing cadences in Google AI Studio TTS. **90%+ of sentences must have ZERO tags.**
-   * **Google AI Studio TTS Expression Catalog (40 Official Tags):**
-     Google AI Studio Speech Playground officially supports 40 inline emotional vocalizations, breathing actions, and cadence markers in `<tag>` format. Proactively incorporate these expressions wherever contextually motivated by the narrative, dialogue, or dramatic mood:
-     - **Cadence & Pauses:** `<short pause>`, `<long pause>`
-     - **Breathing & Respiratory:** `<breath>`, `<heavy breath>`, `<exhales>`, `<pant>`, `<sigh>`, `<sighs>`, `<yawn>`, `<cough>`, `<sneeze>`, `<throat-clearing>`
-     - **Laughter & Amusement:** `<chuckle>`, `<chuckles>`, `<giggle>`, `<laugh>`, `<laughter>`, `<snicker>`, `<snort>`, `<cackle>`
-     - **Fear, Pain, Distress & Grief:** `<gasp>`, `<groan>`, `<grunt>`, `<whimper>`, `<cry>`, `<sob>`, `<moan>`, `<argh>`
-     - **Vocalizations, Whispers & Projections:** `<whisper>`, `<whispering>`, `<whispers>`, `<cheer>`, `<shout>`, `<scream>`, `<shriek>`, `<pff>`, `<phew>`, `<tsk>`
-     - **Hostile, Tension & Animalistic:** `<growl>`, `<grr>`, `<hiss>`
+   * **TTS Delivery Cues:** The available cue syntax depends on the selected model and interface. Keep the default paste-ready script in natural language and punctuation. Add only a few cues that have been tested in that exact speech surface. Preview the generated audio before using its timestamps; remove any cue the model reads aloud, ignores, or turns into silence.
    * **Context-Driven Application Rules:**
-     - **Use Where Fitting & Motivated:** Inject expressions at high-impact narrative beats: terror/horror (`<gasp>`, `<heavy breath>`, `<whimper>`, `<shriek>`), tension/unease (`<breath>`, `<throat-clearing>`, `<short pause>`), combat/effort (`<grunt>`, `<groan>`, `<argh>`, `<pant>`), comedy/satire (`<chuckle>`, `<snicker>`, `<snort>`, `<pff>`, `<tsk>`), sorrow/grief (`<sigh>`, `<sob>`, `<cry>`), and relief (`<phew>`, `<exhales>`).
-     - **80–90% Punctuation / 10–20% Expression Ratio:** Maintain natural momentum. Do not over-tag every single line. Standard punctuation (periods, commas, em-dashes) drives natural flow, while expressions provide emotional punch.
-     - **Clean Line Separation:** Standalone vocalizations (e.g., `<heavy breath>`, `<short pause>`, `<sigh>`) are best placed on their own isolated lines (`.
-<heavy breath>
-`) to prevent token collision or pronunciation glitches.
-     - **Strict Angle Brackets (`< >`):** Always write expressions in angle brackets (`<sigh>`, `<chuckle>`). NEVER use square brackets (`[...]`) in spoken narration text, as Gemini TTS will read the bracketed words aloud literally.
+     - **Use Where Fitting & Motivated:** Direct emotion through the voice setup and ordinary spoken wording first. Use verified inline cues only when they improve a tested sample.
+     - **Natural Flow:** Punctuation and phrasing carry most pacing. Avoid tag quotas, repeated pauses, and rigid line-placement rules.
+     - **Paste-Ready Separation:** Keep configuration and workflow notes outside the spoken input. Avoid bracketed metadata in the text submitted for speech.
    * **Clean Formatting & Meta Tag Rules:**
      - Structure the file using plain-text custom meta tags (`[AUDIO CONFIGURATION]`, `[VOICE CAST & PRESETS]`, `[SYSTEM INSTRUCTIONS]`, `[AUDIO SCRIPT]`, `[DOWNSTREAM WORKFLOW]`).
-     - When you do use `<short pause>`, place `<short pause>` on its own clean line (never write a standalone dot `.` on a line, and never attach `<short pause>` to the end of a sentence line).
+     - Tag placement is model/UI-specific. Test a short sample and use the placement that the chosen TTS surface renders correctly; do not call an isolated-line layout universally official.
      - **Zero Square Brackets (`[...]`) Inside Spoken Narration:** Never use square brackets inside the spoken narration text itself (Gemini TTS reads `[pause]` aloud as literal words). Square brackets are reserved exclusively for structural section tags (`[AUDIO SCRIPT]`, `[Turn 01 - ...]`).
 
 #### Standard Plain-Text Template for Single-Speaker `audio_script.txt`:

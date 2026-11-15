@@ -5,7 +5,7 @@ archetype: cinematic
 tier: modular_studio
 aspect_ratio: 16:9
 resolution: 1080p
-audio_pathway: separate_audio
+audio_pathway: pathway_b_external_audio
 audio_delivery_mode: separate_script_first
 ---
 

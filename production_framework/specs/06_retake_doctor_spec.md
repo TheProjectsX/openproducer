@@ -1,5 +1,7 @@
 # Specification: `retake_doctor/` (Interactive Glitch Diagnostic & Repair Engine)
 
+> **Live diagnostic registry (2026-11-15):** This specification contains **G-01 through G-20**. G-16 covers kinetic text and dead-air transition defects; G-17–G-20 cover room topology, depth, viewpoint, and cross-clip music. Diagnose the creator's observed render and patch only relevant prompts. Prompt checks cannot certify rendered media.
+
 **Status:** 🔒 LOCKED & EMPIRICALLY VALIDATED (Discussions 58, 60, 62, 63, 64)  
 **Domain:** `retake_doctor/`  
 **Target Engines:** Google Flow (Veo 3.1, Imagen 4, Gemini Omni Flash)
@@ -248,7 +250,7 @@ When the creator runs or invokes `/doctor` (or reports a bad clip generation), t
 ┌────────────────────────────────────────────────────────┐
 │ STEP 1: INTAKE & COMPLAINT CLASSIFICATION              │
 │ • Identify target clip ID (e.g. clip_09).              │
-│ • Map creator observation to Diagnostic Code G-01..G-16│
+│ • Map creator observation to Diagnostic Code G-01..G-20│
 └──────────────────────────┬─────────────────────────────┘
                            │
                            ▼

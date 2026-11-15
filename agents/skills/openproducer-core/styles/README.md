@@ -47,7 +47,7 @@ This directory serves as the authoritative, pluggable visual style engine for th
 
 ## 3. Compiler Resolution & Injection Rules
 
-When compiling a Google Flow Veo 3.1 video prompt (100–150 words):
+When compiling a Google Flow video prompt (no fixed word count; prioritize the timed visible event):
 
 1. **Step 1 (Select Medium):** Read `project_intent.md` $\rightarrow$ load Root Medium plugin (e.g. `traditional_2d_anime.md`).
 2. **Step 2 (Determine Dialect):**

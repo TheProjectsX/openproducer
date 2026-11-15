@@ -4,11 +4,14 @@ export type ProjectArchetype =
   | 'social_ugc'
   | 'explainer'
   | 'cinema'
+  | 'cinematic'
   | 'commercial'
+  | 'documentary'
+  | 'animation'
   | 'animation_2d'
   | 'music_video';
 
-export type AspectRatio = '16:9' | '9:16' | '1:1' | '21:9';
+export type AspectRatio = '16:9' | '9:16';
 
 export type VisualStyleId =
   | 'social_ugc_video'
@@ -24,7 +27,7 @@ export type AudioPathway = 'pathway_a_native_veo' | 'pathway_b_external_audio';
 
 export type AudioDeliveryMode = 'separate_script_first' | 'separate_all_at_once' | 'embedded';
 
-export type FlowVideoModel = 'veo-3.1';
+export type FlowVideoModel = 'veo-3.1' | 'omni-flash-1.2';
 export type FlowImageModel = 'imagen-4';
 export type FlowDirectorModel = 'gemini-1.5-pro';
 
@@ -117,6 +120,7 @@ export interface DoctorResult {
   passedCount: number;
   warningCount: number;
   failureCount: number;
+  pendingCount: number;
   results: Array<{
     id: string;
     name: string;

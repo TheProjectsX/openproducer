@@ -75,8 +75,6 @@ export const ASPECT_RATIOS: Array<{
 }> = [
     { value: '9:16', title: '9:16 (Vertical)', description: 'TikTok, Instagram Reels, YouTube Shorts' },
     { value: '16:9', title: '16:9 (Widescreen)', description: 'YouTube, Television, Standard Cinema' },
-    { value: '1:1', title: '1:1 (Square)', description: 'Social Feeds, Square Advertisements' },
-    { value: '21:9', title: '21:9 (Cinematic Ultrawide)', description: 'Epic theatrical anamorphic aspect ratio' }
   ];
 
 export const VISUAL_STYLES: Array<{
@@ -175,25 +173,25 @@ export const AUDIO_DELIVERY_MODES: Array<{
   ];
 
 export const LINTER_REGISTRY = [
-  { id: 'L01', name: 'Descriptive Completeness (Uncapped Depth)', target: 'video_prompt' },
-  { id: 'L02', name: 'Equipment Noun Ban (tripod, dolly, crane)', target: 'all_prompts' },
-  { id: 'L03', name: 'Pure Creative Prompt (no technical config tokens)', target: 'all_prompts' },
-  { id: 'L04', name: 'Asymmetric Token Decay (viewport framing first 30)', target: 'video_prompt' },
-  { id: 'L05', name: 'Single Camera Verb Rule', target: 'video_prompt' },
-  { id: 'L06', name: 'Audio Soundscape Closure (Audio: ...)', target: 'video_prompt' },
-  { id: 'L07', name: 'Photo-First Reference Lock (Ingredient mapping)', target: 'clips' },
-  { id: 'L08', name: 'Facial Landmark Invariance', target: 'character_prompts' },
-  { id: 'L09', name: 'Expression Decoupling Guard', target: 'character_prompts' },
-  { id: 'L10', name: 'Biomechanical Energy Parity', target: 'video_prompt' },
-  { id: 'L11', name: 'Three-Plane Depth Rig', target: 'environment_prompts' },
-  { id: 'L12', name: 'Motivated Lighting Vectors', target: 'all_prompts' },
-  { id: 'L13', name: 'Acoustic Ambience Signature', target: 'audio_script' },
-  { id: 'L14', name: 'Temporal Quantum Pacing (4s/6s/8s/10s)', target: 'scratchbook' },
-  { id: 'L15', name: 'Multi-Character Clean Singles', target: 'clips' },
-  { id: 'L16', name: 'Spatial Handoff Vectors & Eyelines', target: 'clips' },
-  { id: 'L17', name: 'Audio Bridge & BGM Dynamic Handover', target: 'audio_script' },
-  { id: 'L18', name: 'Pluggable Style Injection', target: 'all_prompts' },
-  { id: 'L19', name: 'Trust & Safety False-Positive Guard', target: 'all_prompts' }
+  { id: 'L01', name: 'Scene and cue completeness', target: 'video_prompt' },
+  { id: 'L02', name: 'Subject and framing priority', target: 'video_prompt' },
+  { id: 'L03', name: 'Equipment noun ban', target: 'all_prompts' },
+  { id: 'L04', name: 'Configuration outside creative prompt', target: 'all_prompts' },
+  { id: 'L05', name: 'Anti-subtitle guard', target: 'clips' },
+  { id: 'L06', name: 'Reference cue mapping', target: 'clips' },
+  { id: 'L07', name: 'Prop continuity', target: 'clips' },
+  { id: 'L08', name: 'Room topology and subject scale', target: 'clips' },
+  { id: 'L09', name: '4s/6s/8s/10s generation duration', target: 'clips' },
+  { id: 'L10', name: 'Action and camera clarity', target: 'clips' },
+  { id: 'L11', name: 'Starting frame cue', target: 'clips' },
+  { id: 'L12', name: 'Cut contrast and continuity', target: 'clips' },
+  { id: 'L13', name: 'Screen direction and eyelines', target: 'clips' },
+  { id: 'L14', name: 'Audio cue and edited-time alignment', target: 'scratchbook' },
+  { id: 'L15', name: 'Spoken line and mouth motion', target: 'clips' },
+  { id: 'L16', name: 'Off-screen speaker handling', target: 'clips' },
+  { id: 'L17', name: 'Structured audio and manual mix cue', target: 'clips' },
+  { id: 'L18', name: 'TTS transcript purity', target: 'audio_script' },
+  { id: 'L19', name: 'Safety context review', target: 'all_prompts' }
 ];
 
 export const BANNED_EQUIPMENT_NOUNS = [
@@ -223,7 +221,8 @@ export const BANNED_TECHNICAL_TOKENS = [
   '60fps',
   '8s',
   '6s',
-  '4s'
+  '4s',
+  '10s'
 ];
 
 

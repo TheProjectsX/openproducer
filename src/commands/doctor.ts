@@ -40,7 +40,8 @@ export async function doctorCommand(): Promise<void> {
   console.log(
     `Summary: ${pc.green(`${result.passedCount} Passed`)}, ` +
     `${pc.yellow(`${result.warningCount} Warnings`)}, ` +
-    `${pc.red(`${result.failureCount} Failures`)}`
+    `${pc.red(`${result.failureCount} Failures`)}, ` +
+    `${pc.dim(`${result.pendingCount} Pending Review`)}`
   );
   console.log('');
 
@@ -48,11 +49,9 @@ export async function doctorCommand(): Promise<void> {
   try {
     const manifest = await configMgr.readManifest();
     manifest.audit_timestamp = new Date().toISOString();
-    manifest.certification_status = result.certified
-      ? result.warningCount > 0
-        ? 'WARNINGS'
-        : 'CERTIFIED'
-      : 'FAILED';
+    manifest.certification_status = result.failureCount > 0 ? 'FAILED'
+      : result.pendingCount > 0 ? 'PENDING'
+      : result.warningCount > 0 ? 'WARNINGS' : 'CERTIFIED';
     manifest.linters = suite.manifestSummary(result.results);
     await configMgr.writeManifest(manifest);
     logger.success('openproducer/manifest.json updated with latest audit results.');

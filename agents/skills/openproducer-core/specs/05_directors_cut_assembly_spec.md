@@ -1,5 +1,19 @@
 # Specification: `directors_cut/` & `assembly/` Domain (Temporal Slicing & Multi-Engine Assembly)
 
+> **Live production amendment (2026-11-15):** The cue-to-visual and prompt-economy rules immediately below override older word floors, fixed four-beat cycles, per-clip external-speech buffers, and claims of guaranteed model behavior elsewhere in this document. OpenProducer writes prompts and edit guidance; the creator renders and edits media manually.
+
+## Current script/audio-to-clip contract
+
+1. **Audio clock first.** In `separate_script_first`, request the approved audio duration and time-coded transcript from the creator before writing clip prompts. Without exact cue times, label every clip plan `PROVISIONAL`. A re-recording makes previous clip times stale. In embedded mode, map the approved script's spoken and sound beats before prompt compilation.
+2. **Cue-to-visual ledger before prompts.** Every row in `production/scratchbook.md` records: audio start/end, exact spoken or sound cue, required visible fact, subject and location IDs, literal/reaction/intentional-withhold choice, shot scale, permitted reveal at start/end, Flow generation duration, planned edited on-screen duration, and any trim/hold. Each major visual event must have an approved script cause. An unrelated cutaway is a failure even if stylistically attractive.
+3. **Meaningful, uneven edited lengths.** Choose visual edit boundaries from audio event or reveal changes. The Flow generation choice remains `{4s, 6s, 8s, 10s}`; the creator may trim a generated clip to an uneven edited duration. No fixed clip count, one-line-to-one-clip mapping, or repeating shot rhythm. Adjacent edited intervals must meet without a gap; check each local interval rather than relying on a ±1s grand total.
+4. **Scale and reveal.** State the framing category and approximate subject-to-room scale in one plain sentence when a character is visible. Wide views keep the subject small but legible and preserve room context; medium views show body/action and context; close views let the face or object dominate. Use the selected Flow reference image for stable identity and room proportions. Do not place a future clue, person, action, or sound visualization in a clip's first image before its audio reveal.
+5. **Lean prompt compilation.** Image prompt = exact first visible moment; video prompt = only the change during that audio window. Front-load subject, place, and action. Carry stable style/identity/room facts through approved Flow images and compact cues. Include only shot-relevant invariants and a short targeted negative list; no minimum word count, token-position guarantee, compulsory camera move, or copied wall of rules.
+6. **Two-direction review.** Check every audio cue against a visible event, reaction, or documented withhold, then check every major visual object/action against the script. Review adjacent first/last states, subject scale, room topology, screen direction, and prop continuity. Prompt review is not a claim that rendered clips passed. During guide, ask the creator whether each render matches the cue and scale; record retakes.
+7. **Scene image chain.** For the first clip in a location/time scene, create an approved scene-root image from the base style and relevant subject/environment images. For each following clip in that same scene, create its first-moment image using the **previous approved clip image** as the local continuity reference. Retain the approved subject and environment images as stable identity/layout anchors where the chosen Flow image workflow permits multiple references. If reference slots are limited, use the prior image and check it against those anchors before approval. On a real scene/location/time change, or after visible drift, start a fresh scene-root image from the stable anchors. Never propagate an unapproved image. This is an image-generation lineage; the prior clip image is not the prior rendered video's last frame and cannot by itself guarantee motion continuity at the cut. No download, video-frame extraction, or re-upload is required.
+
+**Minimal ledger row:** `00:41.0–00:47.3 | "You raise your lantern" | keeper raises already-held lantern in stairwell | keeper / stairwell | medium, body about half frame height | hatch not visible yet | image lineage: previous approved stairwell clip image | generate 8s | edit 6.3s | trim 1.7s`. Values are illustrative.
+
 **Status:** 🔒 LOCKED & EMPIRICALLY VALIDATED (Discussions 46, 49, 63, 64)  
 **Domain:** `directors_cut/` / `assembly/`  
 **Target Engines:** Google Flow (Veo 3.1, Imagen 4, Gemini Omni Flash), Seedance/Sora, ElevenLabs
@@ -12,7 +26,7 @@ The `directors_cut/` & `assembly/` domain elevates the production framework from
 
 ### Core Architectural Axioms:
 1. **Intake-First Alignment:** Never assume runtime or pacing. Always establish the creator's target duration, tempo profile, and clip budget upfront.
-2. **Decoupled Word Pacing & Descriptive Completeness:** Spoken dialogue pacing adheres strictly to natural human conversational velocity (~2.0–2.2 words per second via `L-14`) with guaranteed silence buffers to prevent AI lip-sync warping. Meanwhile, visual and environmental prompt descriptions are **uncapped** (abolishing artificial 100–150 word limit cards) to ensure complete spatial, topological, and kinematic specification.
+2. **Audio-Timed Visual Completeness:** Native dialogue must fit its generated clip. External speech follows actual approved audio times and may cross cuts. Visual prompt completeness means the current cue, subject, action, and scale are clear; no word floor or ceiling applies.
 3. **The Single-Motion Law:** Each sliced clip is budgeted for exactly one primary biomechanical action and one continuous optical camera vector to prevent diffusion latent collapse.
 4. **Verbatim Subject DNA Invariance:** Characters and hero subjects must inject their exact immutable description string across all clips where they appear to prevent anatomical mutations.
 5. **Flow Baseline with Dynamic Modality Switching:** Default to native Google Flow, but provide non-destructive switches for still images, monolithic long-takes, external dialogue (ElevenLabs), and custom music.
@@ -135,18 +149,18 @@ $$\mathbf{1 \text{ Clip}} = \mathbf{1 \text{ Camera Trajectory}} + \mathbf{1 \te
 - Every clip must be stripped down to a single calm, unhurried, focused micro-event.
 - Secondary narrative beats (such as an analog wall clock, environmental detail, or prop) **must be isolated into dedicated macro cutaway inserts** rather than compounded into the main subject action.
 
-### 4.3 The Mandatory Context Shift Rule
+### 4.3 Context Shift Review
 Regardless of whether the creator selected a dynamic sync or slow-burn monologue pacing style:
 > **"Whenever the narrative script undergoes a contextual shift, the visual context MUST change."**
 
-A prompt cannot attempt to retain a stale visual context when the story has crossed a narrative boundary. An immediate visual cut is required upon:
+A prompt should not retain a stale visual context after the story changes. Consider a cut, sound bridge, reaction, or intentional hold upon:
 1. **Spatial Boundary Shift:** Transitioning from room interior to hallway, or wide room to close prop.
 2. **Action / Causality Shock:** Shifting from listening to sudden knocks or movement.
 3. **Dialogue / Revelation Shock:** A chilling phrase or supernatural whisper interrupting dialogue.
 4. **Speaker / Entity Shift:** Switching from the on-screen subject to an external or phone voice.
 
-### 4.4 The 4-Beat Visual Rhythm & The Anti-Stagnation Law
-The overriding visual law is **The Anti-Stagnation Law (View Refresh Principle)**: *Never linger too long in a single visual angle or static viewpoint.* To solve "talking head fatigue" and eliminate lip-sync drag, sequential cuts cycle through the standardized **4-Beat Visual Rhythm**:
+### 4.4 Optional 4-Beat Visual Rhythm
+The following is an optional example when the audio supports it. Never add a cutaway or reaction merely to complete a cycle; the current audio cue governs the shot.
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐
@@ -188,8 +202,8 @@ To prevent AI video sequences from feeling like disjointed slideshows, cuts betw
 
 ### 4.7 The 30° Cinematic Contrast & Anti-Jump-Cut Law
 Cutting consecutively between two slightly different Medium Shots of the same subject produces a severe, jittery **AI Jump-Cut** because diffusion models cannot lock exact millimeter chair placement and shoulder angles across separately generated plates.
-- **The 30° Law:** Any straight cut on the same character **MUST shift camera perspective by at least 30 degrees** and/or change focal distance (e.g. Frontal Medium Shot $\rightarrow$ 45° Side Close-Up $\rightarrow$ Screen Macro Insert).
-- **Continuous Alignment Alternative:** If identical framing is required across consecutive clips, the pipeline **MUST use `last_frame` chaining** (feeding the terminal frame of Clip $N$ as the starting seed of Clip $N+1$) rather than generating independent image plates. Enforced via Linter **L-12**.
+- **Practical cut check:** If adjacent views of the same subject are nearly identical, inspect the rendered cut for a visible jump in pose or room geometry. A more distinct angle, scale, or action boundary can help when the story permits it; a fixed angle threshold is not required.
+- **Continuous framing option:** Use the previous approved **clip image** as the next image's local reference, with stable anchors where supported. For a truly continuous action, the creator may instead keep one rendered take and trim it across the edit. Video-frame extraction is optional, never required by L-12.
 
 
 ---
@@ -207,23 +221,8 @@ Never use bare pronouns (*"he"*, *"she"*, *"the figure"*) across cuts. Video dif
 
 ### 5.2 The Two Clip Transition Pathways
 
-```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                       CLIP N TO CLIP N+1 TRANSITIONS                        │
-├──────────────────────────────────────┬──────────────────────────────────────┤
-│ MODE 1: CONTINUOUS SHOT EXTENSION    │ MODE 2: MOTIVATED CUT / ANGLE CHANGE │
-├──────────────────────────────────────┼──────────────────────────────────────┤
-│ • Same continuous camera trajectory. │ • Perspective cut (Wide to MCU/Macro)│
-│ • Uses `last_frame` of Clip N as the │ • CANNOT use `last_frame` (new angle)│
-│   input first-frame seed of Clip N+1.│ • Governed by:                       │
-│ • Velocity matching: Camera speed and│   1. Verbatim Subject DNA Injection  │
-│   trajectory continue without jolt.  │   2. Shared `#E5E5E5` Ingredient Pin │
-│ • Prompt Syntax:                     │   3. 180° Screen Direction Lock      │
-│   "Continuing directly from the      │   4. Identical Motivated Light Vector│
-│   initial frame, the [Subject DNA]   │                                      │
-│   continues the trajectory by..."    │                                      │
-└──────────────────────────────────────┴──────────────────────────────────────┘
-```
+1. **Same-scene image continuation:** Select the previous approved clip image from the Flow project as the local reference for the next image. Use stable identity/room anchors when supported, and specify the next audio cue's first moment. This preserves scene design while allowing a changed angle or pose.
+2. **New scene or drift reset:** Start a new root image from approved base, subject, and environment anchors. Do not chain a rejected image. The creator checks actual rendered endpoints before claiming a motion match. Extracting and uploading a video terminal frame is optional, never required.
 
 ### 5.3 The "Closed-Lip Listener" Rule (Preventing Accidental Lip-Sync)
 In video diffusion engines (Veo 3.1), placing quoted dialogue `"...words..."` in a prompt where a human face is in frame triggers cross-attention lip-sync on that actor's face, even if the text states the voice comes from an earpiece, telephone, or radio.
@@ -268,7 +267,7 @@ To guarantee 100% visual coherence and zero multi-ingredient identity bleed, pro
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ TIER 3: MULTI-CONDITIONED VIDEO GENERATION (clips/clip_XX/video_prompt.txt)│
 │  • Engine: Google Flow / Veo 3.1 (First-Frame Seed + Ingredient Attention) │
-│  • First Frame: Starting Keyframe (`keyframe_XX.png` or LAST_FRAME)        │
+│  • First Frame: Approved image generated for this clip                    │
 │  • Persistent Ingredients (Identity & Scene Anchors):                      │
 │    - [IMAGE 1]: Primary Subject Turnaround (Locks face & clothes on turns) │
 │    - [IMAGE 2]: Empty Stage Plate (Locks room topology when camera pans)   │
@@ -289,7 +288,7 @@ To guarantee 100% visual coherence and zero multi-ingredient identity bleed, pro
 Video diffusion models treat each clip as an isolated pass and will randomly flip character orientation, invent dividing walls, pop characters in front of objects, or reset biomechanical motion across cuts without explicit boundaries. Across **4s to 10s clips**, every sequence must define explicit spatial, kinematic, and topological handoffs:
 
 1. **Visual & Kinematic Action Handover (Terminal-to-Initial Continuation):**
-   Even when generating clips without a chained last-frame seed, consecutive cuts must bridge biomechanical motion. The initial posture and momentum of Clip $B$ must inherit the terminal state of Clip $A$:
+   For an intended continuous action cut, plan Clip $B$ to begin near Clip $A$'s expected ending pose and motion. The image chain conveys stable design but does not reveal the actual terminal video frame. After rendering, inspect the cut and adjust the edit or retake if needed:
    $$\mathbf{Initial\ State(Clip\ B)_{t=0s} \approx Terminal\ State(Clip\ A)_{t=end}}$$
    - *Example:* If Clip $A$ ends with a character reaching their right arm forward toward a brass door handle, Clip $B$ prompt MUST begin:  
      `"Continuing directly from the preceding movement: Starting with the character already standing at the doorway with their right hand firmly grasping the brass handle, the character pushes the door inward..."`
@@ -423,7 +422,7 @@ The production framework operates on a **Flow Native Baseline** by default, but 
 3. **`dialogue_engine` Modality Switching:**
    - **`native_flow` (Default):** Embedded in-clip dialogue with anti-muppet lip restraints (`subtle lip articulation, relaxed jaw`) and Closed-Lip Listener rule if off-screen/phone audio.
    - **`elevenlabs`:** Strips spoken dialogue quotes from video prompts (prevents double-speech audio); generates `dialogue_scripts.md` cue sheet with pre-roll/post-roll silence buffers and voice profiles.
-   - **`gemini_tts`:** Strips speech quotes from video prompts (pure foley and score); generates `narrator_script.md` using official **Angle Bracket `< >` syntax** with Google AI Studio's 40-tag expression catalog (`<short pause>`, `<long pause>`, `<whisper>`, `<sigh>`, `<gasp>`, `<chuckle>`, `<heavy breath>`, `<groan>`, `<whimper>`, etc.) and System Instructions for narrator persona. Strictly bans square brackets `[...]` to avoid TTS reading tags aloud. *Line-Break Formatting Rule:* Pause tags must NEVER be appended to the end of a sentence line (`name. <long pause>`), as the tokenizer will speak the tag words; sentences must terminate with a period and newline (`.\n`), with pause tags placed on their own isolated lines (`<long pause>\n`).
+   - **`gemini_tts`:** Strip speech quotes from video prompts in external-audio mode. Separate human setup/persona instructions from the paste-only spoken transcript. Speaker metadata and momentary vocal tags depend on the chosen TTS model/UI; test a short sample and use only tags and placement verified there. Preserve the approved spoken text. The creator's actual rendered audio times govern subsequent video edits.
 4. **`music_engine: external`:** Purges score prompts from the `Audio:` block (`zero background music, no score`), leaving pure diegetic foley and spatial room tone.
 
 ### 6.5 Dynamic Context-Driven Audio Transitions (J-Cuts, L-Cuts & Sound Bridges)
@@ -530,12 +529,12 @@ Audio Timestamp: [00:00:00 - 00:00:06 (6s)]
 Narration / Dialogue Cue: ["Exact transcript or spoken dialogue line for this moment..."]
 
 [INPUT SEEDS & INGREDIENTS]
-1. Persistent Subject DNA: [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
-2. Persistent Scene DNA:   [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
-3. Optional Hero Prop:     [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
+1. Local continuity: [IMAGE 1] -> previous approved clip image in this scene; for a scene root use the approved base/scene image.
+2. Stable identity:  [IMAGE 2] -> production/subjects/<subject_id>/profile_prompt.txt (when available and supported)
+3. Stable room:      [IMAGE 3] -> production/visuals/environments/<env_id>/prompt.txt (when available and supported)
 
 [IMAGE PROMPT]
-[Multi-Index Lean Reference Anchoring: "The exact same person from [IMAGE 1]..., set inside the exact environment from [IMAGE 2]..." + pure cinematographic description of 3-plane lighting, motivated shadows, subject pose, and pre-materialized props at Frame 1...]
+[Exact first visible moment of this audio cue. Change only the required framing, pose, expression, action, or viewpoint; retain approved identity, room scale, layout, and light. Do not show a future reveal.]
 
 [NEGATIVE PROMPT]
 [Banned visual artifacts, text, subtitles, watermark, blurry...]
@@ -554,7 +553,7 @@ Audio Timestamp: [00:00:00 - 00:00:06]
 Narration / Dialogue Cue: ["Exact transcript or spoken dialogue line for this moment..."]
 
 [INPUT SEEDS & INGREDIENTS]
-1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (or LAST_FRAME of Clip N-1)
+1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (select this clip's generated image in Flow)
 2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
 3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
 4. Optional Hero Prop:       [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
@@ -583,29 +582,29 @@ When explicitly requested by the creator:
 
 ## 8. Master Pre-Flight Linters (Authoritative Registry L-01 to L-19)
 
-Every assembled production must pass these 19 authoritative pre-flight linters before delivery:
+These 19 checks form the shared review registry. The CLI automatically checks only rules it can prove from prompt files; all semantic and creator-render checks remain `PENDING` until reviewed. Prompt readiness never certifies a rendered production.
 
 | Linter ID | Name | Inspection Rule | Failure Condition |
 |---|---|---|---|
-| **L-01** | **Descriptive Completeness & Spatial Locking** | Descriptive prompt body is uncapped (150-word ceiling card abolished) and must comprehensively specify subject DNA, unbroken room topology, Z-index depth layering, and kinematics. Minimum descriptive floor $\ge 50$ words to prevent underspecified prompts. (Spoken dialogue words remain governed by `L-14`). | Underspecified scene prompt (<50 words) lacking spatial/depth bounds, or omitting room topology. |
-| **L-02** | **Attention Front-Loading** | Viewport framing and primary subject anchor appear within Tokens 1–30. | Framing/subject delayed past Token 30. |
+| **L-01** | **Scene and Cue Completeness** | The creative body states the timed cue's subject/place, visible action, framing scale, and shot-relevant continuity. No word floor or ceiling. | Missing cue-to-visual mapping, ambiguous scale, or copied constraints obscuring the current action. |
+| **L-02** | **Subject and Framing Priority** | Lead the creative body with the current subject, setting, and shot scale; no guaranteed token window. | Timed visual action is buried beneath generic style or exclusions. |
 | **L-03** | **Equipment Noun Ban** | Zero physical camera hardware nouns (`tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`) in positive prompt. (Negative prompt clauses exempt). | Any hardware noun in positive creative prompt. |
 | **L-04** | **Config Decoupling** | Zero technical specs (`16:9`, `9:16`, `4:3`, `1080p`, `720p`, `4K`, `24fps`, `60fps`, `320x240`) in creative prompt text. (Creative cadence `on twos`, `12fps` whitelisted; negative prompts exempt). | Technical config token in creative prompt. |
 | **L-05** | **Anti-Subtitle & Non-Render** | Narrative context uses `(REFERENCE ONLY — DO NOT RENDER...)` and negative prompt includes anti-subtitle tokens (`subtitles, closed captions, burned-in text, lower thirds, watermark`). | Context un-isolated or missing anti-subtitle negative clause. |
-| **L-06** | **Subject DNA & Multi-Conditioned Video Ingredients** | Text-conditioned clips inject verbatim `verbatim_anchor.txt`; Tier 2 image prompts bind up to 3 Ingredients (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`) via Lean Reference Anchoring banning competing bone-structure text; Tier 3 video prompts support **Dual Conditioning**: First Frame (`keyframe_XX.png` or `LAST_FRAME`) PLUS persistent reference ingredients (`[IMAGE 1]` Subject Turnaround, `[IMAGE 2]` Empty Stage) to lock facial identity, wardrobe, and scene topology across reveals, turns, walk-ins, and macro cutaways. | Bare pronoun in T2V, over-describing facial bones when `[IMAGE N]` attached, or omitting persistent ingredients on subject reveals/turns. |
+| **L-06** | **Reference Cue Mapping** | Prompt-file paths identify the images the creator selects in Flow. Keep unique slots and choose a model/mode compatible with the selected references. | Missing, duplicate, or conflicting reference cues. |
 | **L-07** | **Pre-Materialized Prop Guard** | Held props declared grasped from Frame 1 to Frame End; zero mid-clip drawing without cutaway; complex scenes declare `Permitted Props: [...]`. | Prompt verbs like *"draws weapon"* or un-materialized prop appear mid-clip. |
-| **L-08** | **Empty Stage & Scene Ground Rules** | Environment reference plates contain zero people/hero products; scene prompts establish Foreground, Midground, Background; mandatory `environments/<id>/ground_rules.md` present defining unbroken room topology (anti-dropped walls), Z-index depth (character occluded behind furniture), and negative bans. | People in environment plates, flat single-plane staging, missing `ground_rules.md`, or omitting topology/Z-index constraints. |
-| **L-09** | **Flow Native Duration Lock** | Clip duration strictly in `{4s, 6s, 8s, 10s}` in Flow Native mode. | Non-Flow duration (`1s, 2s, 3s, 5s, 7s`). |
+| **L-08** | **Room Topology and Subject Scale** | Approved environment image and relevant ground rules preserve room layout and person-to-room proportion. State only the shot's needed occlusion/scale facts. | Subject too large/small, wrong room geometry, or contradictory staging. |
+| **L-09** | **Generation Duration Choice** | Generated clip length is `{4s, 6s, 8s, 10s}`; check Flow model/mode compatibility. Edited use may be uneven. | Other generation length or unsupported selected model/mode. |
 | **L-10** | **Single-Motion & Clock Bracket Ban** | Max 1 primary biomechanical action and 1 continuous camera vector per clip. Numeric clock brackets (`\[\d{2}:\d{2}`) strictly banned; natural temporal phrases permitted. | Multiple sequential actions or clock timestamp in atomic clip. |
-| **L-11** | **Continuity Chaining Syntax** | Mode 1 clips declare `(SEED: LAST_FRAME)` and begin with *"Continuing directly from the initial frame"*; Tier 3 I2V begins with *"Starting directly from the initial image"*. | Missing continuity seed syntax or starting declaration. |
-| **L-12** | **30° Cinematic Contrast** | Consecutive cuts of same subject must shift angle by $\ge 30^\circ$, change focal length, or chain via `last_frame`. | Consecutive similar cuts without 30° shift (AI jump-cut trap). |
+| **L-11** | **Starting Image Cue** | Each video prompt selects its own approved clip image as the start image. Each same-scene image prompt cues the previous approved clip image; scene roots and drift resets cue stable anchors. | Missing or ambiguous image lineage. |
+| **L-12** | **Adjacent Cut Review** | Inspect rendered adjacent clips for pose, scale, layout, light, and action-boundary jumps. Use a distinct view or a longer single take when the cut fails. | Creator reports an unmatched cut or a scene image chain propagates drift. |
 | **L-13** | **180° Screen Direction & Clean Singles** | Conversational cuts preserve complementary 15° eyelines and use Clean Singles (**dirty OTS shots strictly banned**). | Dirty OTS shot or eyeline reversal across 180° axis. |
-| **L-14** | **Dual-Track Speech Word Budget** | Native Flow (`Pathway A`) $\le \{5, 9, 13, 18\}$ words for $\{4\text{s}, 6\text{s}, 8\text{s}, 10\text{s}\}$; External TTS (`Pathway B`) $\le \{8, 12, 18, 22\}$ words; $\text{Clip Duration} - \text{SRT Cue Duration} \ge 1.0\text{s}$ silence buffer. | Spoken words exceed duration ceiling or lack 1.0s buffer. |
+| **L-14** | **Audio Cue and Edited-Time Alignment** | Native clip dialogue uses a checked speech budget. External master audio follows actual cue times and may continue across cuts. Generation duration is 4/6/8/10; edited duration may be uneven and each local interval/trim is explicit. | Cue lacks relevant visual coverage, local interval is unexplained, or generated footage is shorter than the planned edit. |
 | **L-15** | **Anti-Muppet & Phonetic Normalization** | Spoken dialogue uses preceding colon (`says, [modifier]: "..."`), strict sentence case, $\ge 2$ restraint tokens (`relaxed jaw, minimal jaw displacement, subtle lip articulation`), and all numbers/symbols/acronyms in Pathway A written phonetically as spoken English words (`"three fourteen"`, `"twenty-four frames"`). | Dialogue without restraint tokens, ALL CAPS words, or containing unexpanded numeric digits (`\d+`) in spoken quotes. |
 | **L-16** | **Closed-Lip Listener Rule** | Off-screen/phone/narrator speech over visible actor mandates `firmly closed lips, tight jaw, zero mouth movement`. | Visible actor lacking closed-lip restraint during external speech. |
-| **L-17** | **Structured Audio & Dynamic BGM Handover** | Trailing audio block follows `Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...` with music suppression over dialogue AND explicit BGM continuity directives (`[CONTINUATION - SUSTAIN]`, `[CONTINUATION - DECAY]`, etc.) matching preceding clip exit dynamic. | Audio block is unstructured, contains aggressive score over dialogue, or causes unmotivated volume cliff across cuts. |
-| **L-18** | **Gemini TTS Script & Non-Imposition** | `narrator_script.md` isolates `< >` tags on standalone lines (`.\n<long pause>\n`), zero square brackets, zero consecutive `<long pause>` dead air, and never rewrites creator's authored script into 2nd person. | Square brackets, inline pause tags, or overwriting creator's authored voice. |
-| **L-19** | **Trust & Safety Pre-Flight & Multi-Pathway Gate** | Positive prompt, quotes, and negative tokens scanned against [`safety_registry.md`](safety_registry.md) for platform policy triggers (financial fraud/bankruptcy, self-harm translations, inverted trauma negatives). If triggered, must execute the 2-Fork Creator Decision Gate (Option A: Safe Reword vs. Option B: Clean Veo Plate + External Audio Lip-Sync). | Submitting un-sanitized regulatory trigger words directly in Veo text prompts without creator confirmation. |
+| **L-17** | **Structured Audio and Manual Mix Cue** | Audio prompt fields distinguish SFX, ambience, dialogue, and music; scratchbook notes manual mute/selected Foley/native full audio and intended cut offsets. | Double speech, unplanned music, or missing manual audio use cue. |
+| **L-18** | **TTS Transcript Purity** | Separate paste-only spoken text from setup notes; use speaker and tag format verified in the selected TTS model/UI, preserving creator wording. | Setup instructions read aloud, unsupported tags, or altered approved script. |
+| **L-19** | **Safety Context Review** | Review actual positive creative context against [`safety_registry.md`](safety_registry.md); keyword absence is not a pass and negative-list mentions are not automatic violations. | Unreviewed platform-sensitive scene or misleading automated safety claim. |
 
 ---
 
@@ -617,6 +616,6 @@ Every assembled production must pass these 19 authoritative pre-flight linters b
   2. The Dialogue-First Hard Pause Rule and Anti-Dead-Air pacing (~140 wpm).
   3. Pre-materialized closed-set prop bounding (L-07) and Master Linters L-01 through L-19.
   4. Dynamic J-Cut & L-Cut native Veo audio transitions.
-* **Specification Sign-off:** ✅ **COMPLETE & LOCKED FOR PRODUCTION SCALABILITY**.
+* **Current status (2026-11-15):** Prompt architecture remains useful, but prior simulation sign-off did not validate cue-to-visual accuracy, edited clip intervals, or rendered media. Use the live amendment and creator review before treating a sequence as production ready.
 
 

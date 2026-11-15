@@ -1,5 +1,7 @@
 # Production Scratchbook: The Lone Lighthouse Keeper
 
+> **Audit note (2026-11-15):** This is a historical simulation, not a certified edit plan. Fifteen of the 37 rows below have a generation duration that differs from the stated audio timestamp span by one second. A close total does not resolve the local cuts. Before using these prompts, build the current cue-to-visual ledger with exact audio events, subject/room scale, 4/6/8/10 generation choices, uneven edited lengths, and explicit trims or holds. Any interval longer than its generated source requires a new shot, extension, or separately approved hold.
+
 ## ⏱️ Timeline Pacing & Timestamped Sequence Ledger
 
 * **Operating Tier:** `lean_base_reference` (Single Primary Setting & Identity Anchor)
@@ -8,7 +10,7 @@
 * **Total Flow Video Duration:** 330.00 seconds ($\Delta = -0.62\text{s}$, strictly within $\pm 1.0\text{s}$ tolerance)
 * **Master Voice Track:** Google AI Studio Alternating Turns (`Fenrir` & `Orus`)
 * **Clip Count:** 37 Sequentially Quantized Clips (Veo 3.1 6s / 8s / 10s standards)
-* **Status:** ✅ **Pass 2 Complete — All 37 clips mathematically aligned to creator's new audio transcript!**
+* **Status:** ⚠️ **Historical plan; local cue timing and visual relevance require review before generation.**
 
 ---
 

@@ -1,5 +1,7 @@
 # Specification: `visual/` Domain (Visual Style & DNA)
 
+> **Live prompt economy amendment (2026-11-15):** Approved Flow reference images carry stable style. A clip creative body names the current subject, place, and action, then only the light/style detail relevant to that shot. Historical 100–150 word targets and token-position claims below are heuristics, not limits or guarantees. Never pad prompts to a word floor or repeat a long master anchor when it crowds out the timed visual event.
+
 **Status:** ✅ FINALIZED  
 **Domain:** `visual/`  
 **Target Engines:** Google Flow (Veo 3.1, Imagen 4, Gemini Omni Flash)

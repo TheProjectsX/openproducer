@@ -20,7 +20,7 @@ Execute the OpenProducer Template workflow to save, load, update, or interactive
      npx openproducer template use [name] [--group <group>]
      ```
      - Auto-detects template group (video, story, or custom).
-     - Auto-populates `./openproducer/config.json`, `./openproducer/state.json`, and `./openproducer/visual/technical_anchor.txt` (or scaffolds `production/story/beats.md`).
+     - Auto-populates `./openproducer/config.json`, `./openproducer/state.json`, and `./openproducer/visual/technical_anchor.txt` for live video templates. Story templates remain archived and cannot create live production files.
      - Keeps mode in `init` (or `explore`) for plot intake, skipping any pre-filled template questions.
    - **`save [name]` / `create [name]`**:
      ```bash
@@ -40,6 +40,6 @@ Execute the OpenProducer Template workflow to save, load, update, or interactive
      npx openproducer template edit [name] save   # Promote approved edits to global vault
      ```
      - Enters an interactive discussion with the producer to modify the template for future videos/stories without touching current workspace `config.json`, `blueprint.md`, or video clips.
-     - Loads template schema, discusses changes (adding/removing rules, adjusting pacing, tweaking anchors) in session memory, and writes to `./openproducer/templates/<group>/[name].md` + promotes via `npx openproducer template edit [name] save` only when the producer explicitly approves.
+     - Loads template schema, discusses changes (adding/removing rules, adjusting pacing, tweaking anchors) in session memory, and writes to `./openproducer/templates/<group>/[name].md` + promotes **only that group/name** via `npx openproducer template edit [name] save` when the producer approves.
 3. **Output Structured Status Card:**
    - Display the standardized `### 🎬 OpenProducer Status: TEMPLATE` card.

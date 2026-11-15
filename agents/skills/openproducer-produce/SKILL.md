@@ -8,6 +8,7 @@ description: Produce creator deliverables from the brain - auto-runs propose fir
 You are **OpenProducer (Produce Mode)**, the production file factory.
 
 ## Core Guardrails
+0. **Cue-to-Visual Contract:** Follow `openproducer-core/specs/05_directors_cut_assembly_spec.md` current live amendment. Before any clip prompt, write a concise `production/scratchbook.md` row for each audio window: exact cue and times, required visible event, subject/location, shot scale and person-to-room proportion, reveal boundary, Flow generation duration, planned edited duration, trim/hold, and manual audio use. Check audio-to-visual and visual-to-audio coverage. Do not add a generic insert, camera move, or extra event solely for variety. Keep image and video creative bodies lean.
 1. **Auto-Propose First (If Still in `init` or `explore`):**
    - Read `./openproducer/state.json`. If `"stages.propose_complete": false` (still in `init` or `explore`), you **MUST run the `propose` workflow first** (saving `./openproducer/config.json`, `./openproducer/blueprint.md` including the Raw Plot / Brainstormed Plot Points Archive, `./openproducer/visual/technical_anchor.txt`, and setting `propose_complete: true`) before generating creator files!
 2. **Zero Unauthorized Image Generation:**
@@ -34,7 +35,7 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
   1. Generate `production/audio_script.txt` following the **Google AI Studio Alternating-Turn & TTS Anti-Hallucination Standard** (`07_scaffolding_and_workspace_spec.md` Section 4.2):
      - **Structure Fork Based on Secondary Voices:**
        * **Case 1 — When Secondary Voice Exists (Google AI Studio 2-Speaker Alternating Format):**
-         - Google AI Studio Speech Playground strictly enforces a 2-speaker alternating turn layout (`Speaker 1` -> `Speaker 2` -> `Speaker 1`).
+         - Use the chosen Google AI Studio model/UI's tested speaker layout; if alternating turns are required there, group narrator and secondary voice as `Speaker 1` -> `Speaker 2` -> `Speaker 1`.
          - To match this UI 100% and generate **ONE unified master audio file for TurboScribe**, group all narration leading up to each character line into a single `[Narrator]` turn (Speaker 1), followed by the character line in `[Voice B]` (Speaker 2), followed by the next narrative block in `[Narrator]` (Speaker 1):
            `### Turn 01 — [Narrator - Fenrir] (Speaker 1)`
            `### Turn 02 — [Radio Voice / Entity - Orus] (Speaker 2)`
@@ -46,15 +47,15 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
            `### Segment 02 — [Narrator - Fenrir] (~135 words)`
          - Breaking at natural atmospheric shifts prevents Gemini TTS attention context decay, unnatural rushing, and speaking `<short pause>` aloud (*"less than short pause greater than"*).
      - **Never Divide by Video Clips:** Segments/turns represent audio performance beats and speaker handoffs, NEVER video clip cuts (`clip_01`, `clip_02`).
-     - **Configuration Header:** Include direct playground link, Cast & Voice Presets table, and System Instructions / Persona Prompt.
-     - **Context-Driven Expression Catalog:** 80–90% natural punctuation flow. Dynamically utilize Google AI Studio's 40 official expression tags in `<tag>` format wherever contextually motivated:
+     - **Separate paste area:** Put direct playground link, cast/voice presets, and system/persona instructions above a clearly delimited `PASTE-ONLY SPOKEN TRANSCRIPT` section. Never ask the creator to paste setup notes into a verbatim speech field.
+     - **Context-Driven Expression Catalog:** Prefer natural punctuation. Use only angle tags verified in the selected model/UI and test a short sample before a full render; the following catalog is a historical experiment, not a guaranteed official set:
        * **Cadence & Pauses:** `<short pause>`, `<long pause>`
        * **Breathing & Respiratory:** `<breath>`, `<heavy breath>`, `<exhales>`, `<pant>`, `<sigh>`, `<sighs>`, `<yawn>`, `<cough>`, `<sneeze>`, `<throat-clearing>`
        * **Laughter & Amusement:** `<chuckle>`, `<chuckles>`, `<giggle>`, `<laugh>`, `<laughter>`, `<snicker>`, `<snort>`, `<cackle>`
        * **Fear, Pain, Distress & Grief:** `<gasp>`, `<groan>`, `<grunt>`, `<whimper>`, `<cry>`, `<sob>`, `<moan>`, `<argh>`
        * **Vocalizations, Whispers & Projections:** `<whisper>`, `<whispering>`, `<whispers>`, `<cheer>`, `<shout>`, `<scream>`, `<shriek>`, `<pff>`, `<phew>`, `<tsk>`
        * **Hostile & Animalistic:** `<growl>`, `<grr>`, `<hiss>`
-       Place standalone performance beats on their own isolated lines (`.\n<heavy breath>\n` or `.\n<short pause>\n`); zero square brackets `[...]` in spoken text.
+       Place tags only as verified in the selected TTS model/UI; keep setup brackets out of the paste-only spoken transcript.
   2. Generate `production/base_image_prompt.txt` (Master Base Style & Reference prompt).
   3. If `modular_studio`: generate `production/subjects/<subject_id>/[hero_prompt.txt, profile_prompt.txt]` and `production/visuals/environments/<env_id>/prompt.txt` with `Conditioned On:` lines.
   4. Generate `production/scratchbook.md` (initial script breakdown & estimated pacing table).
@@ -64,29 +65,33 @@ You are **OpenProducer (Produce Mode)**, the production file factory.
   1. **Context-Driven Cinematography with Audio Timeline Tiling:**
      - **Clips Are Context-Driven, NOT Transcript-Slices:** Design clips based on **plot context, visual storytelling, and cinematic coverage** (establishing shots, medium shots, close-ups, macro cutaways, character reactions). Do NOT mechanically map 1 script line to 1 clip!
      - **Transcript as Audio Timeline & Scenery Anchor:**
-       - **Contiguous Timeline Tiling:** The sequence of clips must contiguously tile the audio timeline from 00:00 to T_end ($\sum \text{Clip Durations} == \text{Total Master Audio Duration}$ within $\pm 1\text{s}$). Every clip starts exactly when the preceding clip ends, leaving zero gaps on the timeline.
-       - **Flow Native Duration Lock:** Each clip must use a valid discrete Flow duration (`4s`, `6s`, `8s`, or `10s`) that matches its timeline interval ($|\text{Clip Duration} - (\text{End} - \text{Start})| \le 1.0\text{s}$). Plan as many cinematic shots as needed to cover the narrative span.
-       - **Scenery-Voice Context Matching:** Each clip's visual prompt (`image_prompt.txt` + `video_prompt.txt`) depicts scenery, props, and actions that match what the voice is saying or evoking at that exact timestamp window.
+       - Ask the creator for the final approved audio duration and time-coded transcript from that audio render. If either is approximate, mark clips `PROVISIONAL`; a new audio render invalidates old clip times.
+       - Plan edited shot intervals from meaningful audio events and reveal points. Edited intervals may be uneven. Choose a 4s/6s/8s/10s Flow generation long enough for each interval, then state the planned trim or hold. Check every *local* interval and the start/end of the full timeline.
+       - **Contiguous Edited Timeline:** Planned *edited* intervals meet without gaps. Do not use a near-equal sum of untrimmed Flow durations to claim sync.
+       - **Flow Duration Choice:** Generation is `4s`, `6s`, `8s`, or `10s`; the creator's edited on-screen use may be shorter and uneven. State both values and any trim/hold.
+     - **Scenery-Voice Context Matching:** Each clip's image shows the first visible moment of its audio window; the video shows only the change during that window. Record literal/reaction/intentional-withhold rationale. Do not show future reveals early. Specify character-to-room scale when a character is visible.
+     - **Scene Image Chain:** For the first clip in each location/time scene, cue an approved scene-root image from the base style and relevant character/environment references. For the next clip in the same scene, set `Conditioned On:` to the **previous approved clip's `image_prompt.txt`**; this names the already generated image to select in Flow, not a `.txt` upload. Include stable character/environment images as additional references when the selected image workflow supports them. The next image must depict the next cue's first visible moment, not mechanically copy the prior framing. Record `scene root` or `previous approved clip image` in the existing ledger. Restart from stable anchors at an environment/time change or after drift; never propagate a rejected image. Do not require video download, last-frame extraction, or re-upload.
      - **Dialogue Cleansing in Separate Audio:** Set `Dialogue: None;` (or omit spoken dialogue quotes) in all `video_prompt.txt` files to prevent Veo from hallucinating speech or unwanted mouth movements over the master voice track.
      - Ensure each clip has clean plain-text bracket headers with `Conditioned On:` and `Input Seed / Dependencies:` lines.
   2. Generate `production/master_images_prompt.txt` and `production/master_videos_prompt.txt` (strictly for creator self-serve reference).
   3. Update `production/scratchbook.md` with the full contiguous timeline ledger ($\sum \text{Clips} == \text{Audio}$) and `production/motion_graphics.md` (if applicable).
-  4. Audit Linters L-01 to L-19 (strictly verifying L-14 duration parity) in `./openproducer/manifest.json` and set `"current_stage": "produced"`, `"stages.clips_generated": true` in `./openproducer/state.json`.
+  4. Audit only checks actually performed; mark visual relevance, edited timing, scale, and creator render review as pending until reviewed. Set `"current_stage": "produced"`, `"stages.clips_generated": true`, and leave `clips_rendered` / `assembly_complete` false until creator confirmation.
 
 ### 3. Branch B: Embedded Audio OR Separate Audio — All Together (`embedded` or `separate_all_at_once`)
 - Generate the complete creator file structure in `./production/` in one pass:
   1. `production/base_image_prompt.txt` (Master Base Style lock prompt).
-  2. `production/audio_script.txt` (if `separate_all_at_once`: format according to the Google AI Studio Alternating-Turn & 40-Expression-Tag Standard—if secondary voice exists, use 2-speaker alternating turns `[Narrator] (Speaker 1)` -> `[Voice B] (Speaker 2)`; if solo narration, use balanced 100–160 word segments; never divided by video clips. If `embedded`, skip `audio_script.txt` and embed Foley/dialogue into `video_prompt.txt`).
+  2. `production/audio_script.txt` (if `separate_all_at_once`: separate setup notes from paste-only spoken text, use the selected TTS model/UI's verified speaker and tag format, and avoid division by video clips. If `embedded`, skip `audio_script.txt` and embed Foley/dialogue into `video_prompt.txt`).
   3. If `modular_studio`:
      - `production/subjects/<subject_id>/hero_prompt.txt` & `profile_prompt.txt` (with `Conditioned On:` lines).
      - `production/visuals/environments/<environment_id>/prompt.txt` (with `Conditioned On:` line).
      - `production/visuals/environments/<environment_id>/ground_rules.md` (MANDATORY: Architectural topology, Z-index depth layering, and negative bans).
   4. `production/clips/clip_01/` to `clip_xxx/`:
      - `image_prompt.txt` (Starting keyframe prompt + `Conditioned On:` line).
-     - `video_prompt.txt` (Veo 3.1 video prompt with `[INPUT SEEDS & INGREDIENTS]` binding First Frame start seed + persistent reference ingredients `[IMAGE 1]` Subject & `[IMAGE 2]` Environment; enforcing uncapped descriptive depth `L-01`, active `ground_rules.md` topology/Z-index depth, terminal-to-initial kinematic action handover, and `L-17` BGM dynamic continuity).
+     - Within a scene, each `image_prompt.txt` cues the prior approved clip image in Flow, plus stable subject/environment anchors where supported; a new scene or rejected image resets to the approved anchors. Record the image lineage in `scratchbook.md`.
+     - `video_prompt.txt` selects its own generated clip image as the first frame. Keep the video motion and audio instructions relevant to its timed cue; image chaining does not assert a match to the prior video's rendered last frame.
   5. `production/master_images_prompt.txt` & `production/master_videos_prompt.txt` (Creator self-serve reference compilations; not used by `/openproducer-guide`).
-  6. `production/scratchbook.md` (Timeline pacing math & Retake Doctor log) and `production/motion_graphics.md` (if applicable).
-- Run Linters L-01 to L-19, write `./openproducer/manifest.json`, and set `"current_stage": "produced"`, `"stages.produce_complete": true`, `"stages.clips_generated": true` in `./openproducer/state.json`.
+  6. `production/scratchbook.md` (cue-to-visual ledger, uneven edited lengths/trims, manual audio-use cues, Retake Doctor log) and `production/motion_graphics.md` (if applicable).
+- Run implemented prompt linters; leave unimplemented or creator-review checks pending in `./openproducer/manifest.json`. Set `"current_stage": "produced"`, `"stages.produce_complete": true`, `"stages.clips_generated": true`; never set rendered/assembled from prompt creation.
 
 ## Mandatory Structured Output Format
 Always conclude execution with this exact Status Card:

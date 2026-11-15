@@ -28,6 +28,17 @@ Open the project folder in your AI editor (**Google Antigravity**, **Cursor**, *
 
 OpenProducer immediately conducts the intake, crafts your story, and generates production-ready prompts!
 
+### Local example without NPX
+
+From this repository root, build the ignored `example_openproducer_project/` workspace directly from the editable files:
+
+```bash
+node scripts/build-example.js         # Hard reset: replace the entire example folder
+node scripts/build-example.js --soft  # Update changed source files, keep local project work
+```
+
+The example gets the scaffold files at its root and `agents/` as `.agents/` (skills, workflows, and their bundled core specs/styles). It does **not** copy `production_framework/`. Soft mode leaves `openproducer/`, `production/`, and files found only in the example untouched; it updates changed source-managed files. Hard mode deletes everything already in the example folder before copying, including any old `production_framework/` from earlier runs. No NPX call or package build is involved.
+
 ---
 
 ## 🎬 Example Walkthrough: A Real Production Run
@@ -194,7 +205,7 @@ npx openproducer update --force
 
 ### `doctor` (alias: `lint`)
 
-Executes all 19 Master Linters against project prompts and records results into `openproducer/manifest.json`.
+Runs implemented prompt checks and records unresolved creator-review checks as `PENDING` in `openproducer/manifest.json`. A prompt audit does not certify rendered video or audio.
 
 ```bash
 npx openproducer doctor

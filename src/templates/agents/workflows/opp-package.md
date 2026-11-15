@@ -16,9 +16,9 @@ Execute the OpenProducer Packaging workflow (Distribution & Delivery Suite):
    - Targeted asset request (e.g. `/opp-package Create titles...` or `/opp-package Generate thumbnail...`): Generates only the requested asset while keeping existing files intact.
 4. **Generate Delivery Assets in `production/packaging/`:**
    - `production/packaging/titles.txt`: Multi-variant title options with character counts, mobile safe checks (<65 chars), and hashtags.
-   - `production/packaging/descriptions.txt`: Structured description styles with above-the-fold hook, auto-calculated timeline chapters (`0:00`), lore transmission, credits, and links.
+    - `production/packaging/descriptions.txt`: Structured description styles with above-the-fold hook, chapters from creator-confirmed final edited cut times (`0:00`), lore, credits, and links. If only planned times exist, label chapters provisional.
    - `production/packaging/thumbnails/thumb_XX_prompt.txt`: Raw image prompts following the universal 4-block anatomy (`[CONFIGURATION SETTINGS]` -> `[INPUT SEEDS & INGREDIENTS]` -> `[IMAGE PROMPT]` -> `[NEGATIVE PROMPT]`) with embedded AI typography and safe-zone protection.
-5. **Run Master Pre-Flight Packaging Linters PKG-01 through PKG-06:**
+5. **Run Master Pre-Flight Packaging Linters PKG-01 through PKG-07:**
    - Confirm mobile title bounds, safe-zone clearance (no bottom-right corner clutter), non-redundancy between thumbnail and title, and timestamp duration accuracy.
 6. **Output Delivery Summary:**
    - Confirm files created and surface the primary recommended title and thumbnail prompt for immediate use.

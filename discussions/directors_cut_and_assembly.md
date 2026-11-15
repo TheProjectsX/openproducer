@@ -1,8 +1,14 @@
 # Discussion Log: Director's Cut, Temporal Slicing & Multi-Engine Assembly
 
-**Status:** ✅ **COMPLETED & VALIDATED** (Authoritative Specification Locked in `05_directors_cut_assembly_spec.md`)  
+**Status:** Historical discussion summary; current live decisions are in `05_directors_cut_assembly_spec.md`.
 **Target Specification:** [`../production_framework/specs/05_directors_cut_assembly_spec.md`](../production_framework/specs/05_directors_cut_assembly_spec.md)  
 **Raw Archive Reference:** [`_raw/33_directors_cut_temporal_slicing_and_multi_engine_pipelines.md`](./_raw/33_directors_cut_temporal_slicing_and_multi_engine_pipelines.md)
+
+---
+
+## Current decision — scene image chain (2026-11-15)
+
+The creator chose an in-project Flow image chain for clip images. The first clip image in a continuous location/time scene uses the approved base, character, and environment anchors. Each later clip image uses the previous **approved clip image** as its local reference, with stable subject/environment anchors when supported. A new scene or rejected/drifting image resets to stable anchors. This is image lineage, not last-frame extraction from the rendered video, so the creator still checks the actual motion cut. Prompt-file paths are cues to select images already in Flow; no download or re-upload is required. The current audio cue determines what the next image shows. See Discussion 94 and the live specification for the full contract; older terminal-frame and fixed-duration material below is historical.
 
 ---
 

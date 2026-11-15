@@ -138,13 +138,14 @@ Parse the creator's prompt dynamically to determine whether they want the full s
    - If active: Apply channel-specific title rules, thumbnail styling, logo safe-zones, and description boilerplate.
    - If none: Apply universal high-CTR cinema defaults.
 2. **Extract Timeline Data:**
-   - Read `production/timeline.md` or scan `production/clips/` for clip durations.
-   - Calculate cumulative timestamps starting at `0:00`.
+   - Read the planned **edited intervals** in `production/scratchbook.md`, not untrimmed Flow generation durations. Ask the creator for final edit cut times before calling chapters final; otherwise label chapters provisional.
+   - Calculate cumulative timestamps starting at `0:00` from creator-confirmed edited times.
 3. **Draft Deliverables:**
    - Write `production/packaging/titles.txt`.
    - Write `production/packaging/descriptions.txt`.
    - Write `production/packaging/thumbnails/thumb_01_prompt.txt`, `02`, `03` using the universal 4-block anatomy.
 4. **Execute Pre-Flight Packaging Linters:**
-   - Verify PKG-01 through PKG-06.
+   - Verify PKG-01 through PKG-07, including unique prompt-file reference cues for lean and modular projects. The cue points to an image already in Flow, not a `.txt` upload.
+   - Ask the creator to inspect generated thumbnail lettering and platform safe zones before publishing; a prompt-only check cannot guarantee the image text.
 5. **Output Delivery Summary:**
    - Report generated files in `production/packaging/` and highlight top recommended title and thumbnail prompt ready for copy-paste.

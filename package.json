@@ -41,7 +41,8 @@
         "start": "node dist/cli.js",
         "prepare": "npm run build",
         "prepublishOnly": "npm run build",
-        "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:audit": "npm run build && node scripts/test-audit.js"
     },
     "engines": {
         "node": ">=18.0.0"
