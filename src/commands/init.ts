@@ -36,7 +36,8 @@ export async function initCommand(directory?: string, cmdOptions: Partial<InitOp
     interactive: isInteractive,
     force: cmdOptions.force || false,
     offline: cmdOptions.offline || false,
-    token: cmdOptions.token
+    token: cmdOptions.token,
+    realtime: Boolean(cmdOptions.realtime || cmdOptions.refresh || cmdOptions.online)
   };
 
   // Only run interactive questions if explicitly requested via -i / --interactive or --no-yes

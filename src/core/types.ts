@@ -113,6 +113,9 @@ export interface InitOptions {
   force?: boolean;
   offline?: boolean;
   token?: string;
+  realtime?: boolean;
+  online?: boolean;
+  refresh?: boolean;
 }
 
 export interface DoctorResult {
@@ -201,6 +204,7 @@ export interface TemplateInfo {
   id: string;
   path: string;
   group: string;
+  isCustom?: boolean;
 }
 
 export interface GenericTemplate {

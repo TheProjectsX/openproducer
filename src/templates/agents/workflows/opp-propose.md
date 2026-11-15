@@ -20,5 +20,8 @@ Execute the OpenProducer Propose workflow to archive the entire discussion, plot
      3. **Section 3:** Complete structured story, subjects/characters plan, and environments plan.
      4. **Section 4:** Complete drafted script and scene-by-scene 4s/6s/8s shot plan so a brand-new session starting with 0 context can pick up seamlessly without losing a single detail.
    - Write/update `./openproducer/state.json`: set `"current_stage": "proposed"` and `"stages.propose_complete": true`.
-4. **Output Structured Status Card:**
-   - Display the standardized `### 🎬 OpenProducer Status: PROPOSE` card informing the creator that the brain is saved and they can continue discussing (and `/opp-sync`) or run `/opp-produce`.
+4. **Deliver Creative Partner Reflection & Director's Take:**
+   - Speak as an engaged creative co-director and thought partner, not a cold file-saving tool.
+   - Deliver a thoughtful, meaningful reflection (2–3 concise paragraphs) sharing your authentic directorial thoughts on the story's emotional tension, cinematic/sonic opportunities, and standout moments before dropping into the status card.
+5. **Output Structured Status Card:**
+   - Follow immediately with the standardized `### 🎬 OpenProducer Status: PROPOSE` card informing the creator that the brain is saved and detailing next options (`/opp-sync` or `/opp-produce`).

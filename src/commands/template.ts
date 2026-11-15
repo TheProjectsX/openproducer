@@ -109,13 +109,24 @@ export async function templateCommand(
               : groupName === 'package'
               ? pc.green
               : pc.magenta;
-          console.log(`  • ${colorFn(t.id)}`);
+          const isCustom = Boolean(t.isCustom);
+          const customBadge = isCustom ? ` ${pc.magenta('[🛠️]')}` : '';
+          console.log(`  • ${colorFn(t.id)}${customBadge}`);
           if (showPaths) {
-            console.log(`    ${pc.dim(`↳ ${t.path}`)}`);
+            const originTag = isCustom
+              ? pc.magenta('(Custom Vault)')
+              : pc.dim('(Bundled Preset)');
+            console.log(`    ${pc.dim(`↳ ${t.path}`)} ${originTag}`);
           }
         }
         console.log('');
       }
+    }
+
+    const hasAnyCustom = allTemplates.some((t) => t.isCustom);
+    if (hasAnyCustom) {
+      console.log(pc.dim('  • ') + pc.magenta('[🛠️]') + pc.dim(' = Custom user template'));
+      console.log('');
     }
 
     if (!showPaths) {

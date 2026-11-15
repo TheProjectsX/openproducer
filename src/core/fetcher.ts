@@ -3,6 +3,7 @@ import * as os from 'node:os';
 import * as path from 'node:path';
 import * as fsp from 'node:fs/promises';
 import { promisify } from 'node:util';
+import pc from 'picocolors';
 import { copyRecursive, ensureDir, exists, readJson, writeJson } from '../utils/fs';
 import { logger } from '../utils/logger';
 
@@ -18,6 +19,8 @@ export const REMOTE_SOURCE_BRANCH = process.env.OPENPRODUCER_BRANCH || DEFAULT_B
 export interface RemoteFetchOptions {
   offline?: boolean;
   token?: string;
+  realtime?: boolean;
+  maxCacheAgeMs?: number;
 }
 
 export interface TemplateSourceResult {
@@ -224,12 +227,35 @@ export async function resolveTemplateSources(options: RemoteFetchOptions = {}): 
     options.offline ||
     process.env.OPENPRODUCER_OFFLINE === '1' ||
     process.env.OPENPRODUCER_OFFLINE === 'true';
+  const isRealtime = Boolean(options.realtime || process.env.OPENPRODUCER_REALTIME === '1');
+  const maxCacheAgeMs = options.maxCacheAgeMs;
 
   const tempCloneDir = path.join(os.tmpdir(), 'openproducer-cache', 'upstream');
 
-  // 1. Try remote fetch from registry if not forced offline
+  // 1. Check persistent workstation cache window if not forced realtime or offline
+  if (!isRealtime && !isOffline && maxCacheAgeMs !== undefined && maxCacheAgeMs > 0) {
+    const cachedResult = await resolvePersistentCache();
+    if (cachedResult && cachedResult.cachedAt) {
+      const cachedTime = new Date(cachedResult.cachedAt).getTime();
+      const ageMs = Date.now() - cachedTime;
+      if (!isNaN(cachedTime) && ageMs >= 0 && ageMs < maxCacheAgeMs) {
+        const remainingMin = Math.max(1, Math.round((maxCacheAgeMs - ageMs) / 60000));
+        const ageMin = Math.floor(ageMs / 60000);
+        const ageDesc = ageMin < 1 ? 'just now' : `${ageMin}m ago`;
+        logger.info(`Using cached templates from ${ageDesc} (${remainingMin}m remaining in cache window).`);
+        logger.info(`Pass ${pc.cyan('--realtime')} to bypass cache and force a live upstream fetch.`);
+        return cachedResult;
+      }
+    }
+  }
+
+  // 2. Try remote fetch from registry if not forced offline
   if (!isOffline) {
-    logger.info('Connecting to remote registry for latest skills & templates...');
+    if (isRealtime) {
+      logger.info('Realtime flag active: Bypassing cache window to fetch live upstream...');
+    } else {
+      logger.info('Cache window expired or not found. Connecting to remote registry for latest skills & templates...');
+    }
 
     // Tier 1: Git sparse clone
     const gitResult = await tryGitSparseClone(repo, branch, tempCloneDir);

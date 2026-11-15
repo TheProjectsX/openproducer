@@ -94,10 +94,12 @@ export async function scaffoldProject(options: InitOptions): Promise<ScaffoldRes
     }
   }
 
-  // Resolve template sources (remote live upstream registry or local fallback)
+  // Resolve template sources (remote live upstream registry, cached window, or local fallback)
   const templateSource = await resolveTemplateSources({
     offline: options.offline,
-    token: options.token
+    token: options.token,
+    realtime: options.realtime,
+    maxCacheAgeMs: 60 * 60 * 1000 // 1 hour cache window for init
   });
 
   const filesCreated: string[] = [];

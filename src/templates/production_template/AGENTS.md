@@ -213,6 +213,7 @@ flowchart TD
 
 ### Mode 2: `propose` (`/opp-propose` or `/openproducer-propose`) — Save to Brain Only
 * **Action:** Writes everything discussed up to that moment strictly into `./openproducer/` (`config.json`, `blueprint.md`, `visual/technical_anchor.txt`, and sets `propose_complete: true` in `state.json`).
+* **Creative Partner Reflection & Director's Take:** When executing `propose`, the agent must never act like a cold compiler or file-saving robot. It speaks as an invested creative co-director and thought partner, delivering a meaningful, thoughtful reaction (2–3 paragraphs) discussing what makes the story hit emotionally, its cinematic/sonic opportunities, and standout moments before outputting the archival status card.
 * **Raw Plot / Brainstorm Archive:** In Section 2 of `./openproducer/blueprint.md`, also save the **verbatim raw plot** the creator originally gave, or record brainstormed plot points, marked as a historical archive if needed for the future.
 * **Zero Video Deliverables:** Does **not** create any video prompt files in `./production/` or at project root. Guarantees that any new session starting with 0 context can read `./openproducer/` and continue seamlessly.
 

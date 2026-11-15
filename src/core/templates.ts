@@ -516,15 +516,16 @@ export class TemplateManager {
   async listAllTemplates(): Promise<TemplateInfo[]> {
     await this.ensureDirectory();
     const map = new Map<string, TemplateInfo>();
+    const bundledKeys = new Set<string>();
 
-    const scanDir = async (baseDir: string, defaultGroup?: string) => {
+    const scanDir = async (baseDir: string, defaultGroup?: string, isBundled = false) => {
       if (!(await exists(baseDir))) return;
       try {
         const entries = await fsp.readdir(baseDir, { withFileTypes: true });
         for (const entry of entries) {
           if (entry.isDirectory()) {
             // sub-vault group (e.g. story, video, audio, style, motion)
-            await scanDir(path.join(baseDir, entry.name), entry.name);
+            await scanDir(path.join(baseDir, entry.name), entry.name, isBundled);
           } else if (entry.isFile() && (entry.name.endsWith('.md') || entry.name.endsWith('.json'))) {
             const ext = path.extname(entry.name);
             const id = path.basename(entry.name, ext);
@@ -540,7 +541,19 @@ export class TemplateManager {
             }
 
             const key = `${group}:${id}`;
-            map.set(key, { id, path: fullPath, group });
+            if (isBundled) {
+              bundledKeys.add(key);
+              map.set(key, { id, path: fullPath, group, isCustom: false });
+            } else {
+              const isCustom = !bundledKeys.has(key);
+              const existing = map.get(key);
+              map.set(key, {
+                id,
+                path: fullPath,
+                group,
+                isCustom: existing !== undefined ? existing.isCustom : isCustom
+              });
+            }
           }
         }
       } catch {
@@ -550,20 +563,20 @@ export class TemplateManager {
 
     // 1. Starter presets
     for (const presetDir of getStarterPresetsDirs()) {
-      await scanDir(presetDir);
+      await scanDir(presetDir, undefined, true);
     }
 
     // 1b. Bundled package templates
     for (const packageDir of getPackagePresetsDirs()) {
-      await scanDir(packageDir, 'package');
+      await scanDir(packageDir, 'package', true);
     }
 
     // 2. Global directory
-    await scanDir(this.globalDir);
+    await scanDir(this.globalDir, undefined, false);
 
     // 3. Project scope
     if (this.projectRoot) {
-      await scanDir(path.join(this.projectRoot, 'openproducer', 'templates'));
+      await scanDir(path.join(this.projectRoot, 'openproducer', 'templates'), undefined, false);
     }
 
     return Array.from(map.values());

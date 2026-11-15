@@ -1,91 +1,178 @@
 #!/usr/bin/env node
 
-// Build a local OpenProducer workspace from the editable repository sources.
-// Usage: node scripts/build-example.js [--soft]
+/**
+ * sync-example.js — OpenProducer Example Project Synchronization Utility
+ *
+ * Usage:
+ *   node sync-example.js          # Hard transfer: wipes example_openproducer_project and re-scaffolds
+ *   node sync-example.js --soft   # Soft transfer: keeps project state, only updates untouched files (skills, workflows, docs)
+ */
 
-const fs = require('node:fs');
-const path = require('node:path');
+const fs = require("fs");
+const path = require("path");
 
-const repoRoot = fs.realpathSync(path.resolve(__dirname, '..'));
-const exampleName = 'example_openproducer_project'; // Already listed in .gitignore.
-const targetRoot = path.join(repoRoot, exampleName);
+// 1. Resolve paths relative to project root
+const rootDir = fs.realpathSync(path.resolve(__dirname, ".."));
+const agentsDir = path.join(rootDir, "agents");
+const prodTemplateDir = path.join(rootDir, "production_template");
+const destDir = path.join(rootDir, "example_openproducer_project");
+const destAgentsDir = path.join(destDir, ".agents");
+
+// 2. Parse command-line flags
 const args = process.argv.slice(2);
+const isSoft = args.includes("--soft") || args.includes("-s");
+const isHelp = args.includes("--help") || args.includes("-h");
 
-if (args.includes('--help') || args.includes('-h')) {
-  console.log('Usage: node scripts/build-example.js [--soft]');
-  console.log('Default: hard reset the example directory, then copy current sources.');
-  console.log('--soft: copy changed source files; preserve project work and target-only files.');
-  process.exit(0);
-}
-if (args.length > 1 || (args.length === 1 && args[0] !== '--soft')) {
-  console.error('Unknown option. Use --help for usage.');
-  process.exit(1);
+if (isHelp) {
+    console.log(`
+🎬 OpenProducer Example Project Synchronization Utility
+
+Usage:
+  node sync-example.js [options]
+
+Options:
+  --soft, -s    Soft Transfer Mode:
+                Preserves all active project files created or modified by OpenProducer
+                (e.g. openproducer/, production/, clips, custom stories).
+                Only updates files not touched by OpenProducer:
+                  • agents/* -> example_openproducer_project/.agents/ (skills & workflows)
+                  • AGENTS.md, STRUCTURE.md (framework documentation)
+
+  --hard        Explicit Hard Transfer Mode (Default):
+                Cleans and empties example_openproducer_project/, then does a complete fresh copy of:
+                  • production_template/* -> example_openproducer_project/
+                  • agents/* -> example_openproducer_project/.agents/
+
+  --help, -h    Display this help screen.
+`);
+    process.exit(0);
 }
 
-const soft = args[0] === '--soft';
-const existed = fs.existsSync(targetRoot);
-const relativeTarget = path.relative(repoRoot, targetRoot);
-if (relativeTarget !== exampleName || path.dirname(targetRoot) !== repoRoot) {
-  throw new Error('Refusing to write outside the intended example directory.');
-}
-if (existed) {
-  const targetStat = fs.lstatSync(targetRoot);
-  if (targetStat.isSymbolicLink() || !targetStat.isDirectory()) {
-    throw new Error('Refusing to use a linked or non-directory example target.');
-  }
-}
-
-let copied = 0;
-let unchanged = 0;
-
-function copyChanged(source, destination) {
-  const sourceStat = fs.lstatSync(source);
-  if (sourceStat.isSymbolicLink()) {
-    throw new Error(`Refusing to copy linked source: ${source}`);
-  }
-  if (fs.existsSync(destination)) {
-    const destinationStat = fs.lstatSync(destination);
-    if (destinationStat.isSymbolicLink()) {
-      throw new Error(`Refusing to overwrite linked destination: ${destination}`);
+/**
+ * Safely clean a directory across all platforms (handles Windows EBUSY / locks)
+ */
+function cleanDirectory(dir) {
+    if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, { recursive: true });
+        return;
     }
-    if (sourceStat.isDirectory() !== destinationStat.isDirectory()) {
-      throw new Error(`Source/destination type mismatch: ${destination}`);
+
+    try {
+        fs.rmSync(dir, {
+            recursive: true,
+            force: true,
+            maxRetries: 3,
+            retryDelay: 100,
+        });
+        fs.mkdirSync(dir, { recursive: true });
+    } catch (err) {
+        // Fallback: Delete directory contents individually
+        const entries = fs.readdirSync(dir);
+        for (const entry of entries) {
+            const entryPath = path.join(dir, entry);
+            fs.rmSync(entryPath, {
+                recursive: true,
+                force: true,
+                maxRetries: 3,
+                retryDelay: 100,
+            });
+        }
     }
-  }
-  if (sourceStat.isDirectory()) {
-    fs.mkdirSync(destination, { recursive: true });
-    for (const entry of fs.readdirSync(source)) {
-      copyChanged(path.join(source, entry), path.join(destination, entry));
+}
+
+// 3. Execution
+console.log("=".repeat(65));
+console.log(
+    `[OpenProducer] Sync Example Project -> ${isSoft ? "SOFT TRANSFER MODE" : "HARD TRANSFER MODE"}`,
+);
+console.log("=".repeat(65));
+console.log(`Source Agents:    ${agentsDir}`);
+console.log(`Source Template:  ${prodTemplateDir}`);
+console.log(`Destination:      ${destDir}`);
+console.log("");
+
+// Verify sources exist
+if (!fs.existsSync(agentsDir)) {
+    console.error(`❌ Error: agents directory not found at: ${agentsDir}`);
+    process.exit(1);
+}
+if (!fs.existsSync(prodTemplateDir)) {
+    console.error(
+        `❌ Error: production_template directory not found at: ${prodTemplateDir}`,
+    );
+    process.exit(1);
+}
+
+if (!isSoft) {
+    // ==========================================
+    // HARD TRANSFER MODE (Default)
+    // ==========================================
+    console.log("🧹 [1/3] Cleaning example_openproducer_project folder...");
+    cleanDirectory(destDir);
+    console.log("   ✓ Target directory wiped and recreated.");
+
+    console.log(
+        "📋 [2/3] Copying production_template/* -> example_openproducer_project/...",
+    );
+    fs.cpSync(prodTemplateDir, destDir, { recursive: true, force: true });
+    console.log("   ✓ Production template assets copied.");
+
+    console.log(
+        "🤖 [3/3] Copying agents/* -> example_openproducer_project/.agents/...",
+    );
+    fs.mkdirSync(destAgentsDir, { recursive: true });
+    fs.cpSync(agentsDir, destAgentsDir, { recursive: true, force: true });
+    console.log("   ✓ Agent skills and workflows copied to .agents/.");
+
+    console.log("");
+    console.log(
+        "✨ [DONE] Hard transfer complete! Fresh scaffold initialized.",
+    );
+} else {
+    // ==========================================
+    // SOFT TRANSFER MODE (--soft)
+    // ==========================================
+    const destExists = fs.existsSync(destDir);
+    if (!destExists) {
+        console.log(
+            "ℹ Destination does not exist yet. Initializing full scaffold...",
+        );
+        fs.mkdirSync(destDir, { recursive: true });
+        fs.cpSync(prodTemplateDir, destDir, { recursive: true, force: true });
+        fs.mkdirSync(destAgentsDir, { recursive: true });
+        fs.cpSync(agentsDir, destAgentsDir, { recursive: true, force: true });
+        console.log("✨ [DONE] Initial scaffold created.");
+        process.exit(0);
     }
-    return;
-  }
-  if (!sourceStat.isFile()) {
-    throw new Error(`Unsupported source type: ${source}`);
-  }
-  fs.mkdirSync(path.dirname(destination), { recursive: true });
-  if (fs.existsSync(destination) && fs.readFileSync(source).equals(fs.readFileSync(destination))) {
-    unchanged++;
-    return;
-  }
-  fs.copyFileSync(source, destination);
-  copied++;
-}
 
-if (!soft && existed) {
-  // The resolved target is the one fixed, direct child above; never accept a caller path.
-  fs.rmSync(targetRoot, { recursive: true, force: false });
-}
-fs.mkdirSync(targetRoot, { recursive: true });
+    console.log("🛡️  [1/2] Preserving active OpenProducer files...");
+    console.log(
+        "   • Untouched: openproducer/ (configs, state, blueprint, visuals)",
+    );
+    console.log("   • Untouched: production/ (stories, scripts, clips, audio)");
 
-const scaffold = path.join(repoRoot, 'production_template');
-for (const entry of fs.readdirSync(scaffold)) {
-  if (soft && existed && entry === 'openproducer') continue;
-  copyChanged(path.join(scaffold, entry), path.join(targetRoot, entry));
-}
-copyChanged(path.join(repoRoot, 'agents'), path.join(targetRoot, '.agents'));
+    console.log(
+        "🤖 [2/2] Updating untouched components (skills, workflows & documentation)...",
+    );
 
-console.log(`${soft ? 'Soft update' : 'Hard reset'} complete: ${targetRoot}`);
-console.log(`${copied} files copied, ${unchanged} already current.`);
-if (soft && existed) {
-  console.log('Preserved openproducer/, production/, and target-only files.');
+    // A. Copy agents/* -> example_openproducer_project/.agents/
+    fs.mkdirSync(destAgentsDir, { recursive: true });
+    fs.cpSync(agentsDir, destAgentsDir, { recursive: true, force: true });
+    console.log("   ✓ Refreshed .agents/ (skills & workflows updated).");
+
+    // B. Refresh documentation files that are not touched by openproducer runtime
+    const docFiles = ["AGENTS.md", "STRUCTURE.md"];
+    for (const doc of docFiles) {
+        const srcDoc = path.join(prodTemplateDir, doc);
+        const targetDoc = path.join(destDir, doc);
+        if (fs.existsSync(srcDoc)) {
+            fs.cpSync(srcDoc, targetDoc, { force: true });
+            console.log(`   ✓ Refreshed documentation: ${doc}`);
+        }
+    }
+
+    console.log("");
+    console.log(
+        "✨ [DONE] Soft transfer complete! Agent skills and workflows synchronized.",
+    );
 }

@@ -12,6 +12,9 @@ export interface UpdateCommandOptions {
   offline?: boolean;
   token?: string;
   force?: boolean;
+  realtime?: boolean;
+  online?: boolean;
+  refresh?: boolean;
 }
 
 /**
@@ -63,10 +66,12 @@ export async function updateCommand(
 
   logger.info(`Checking and updating OpenProducer project: ${pc.bold(config.project_name)}`);
 
-  // 1. Resolve latest upstream skills, specs and templates
+  // 1. Resolve latest upstream skills, specs and templates (30-minute cache window)
   const templateSource = await resolveTemplateSources({
     offline: options.offline,
-    token: options.token
+    token: options.token,
+    realtime: Boolean(options.realtime || options.refresh || options.online),
+    maxCacheAgeMs: 30 * 60 * 1000 // 30 minutes cache window for update
   });
 
   const changesApplied: string[] = [];

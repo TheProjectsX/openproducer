@@ -31,11 +31,15 @@ program
   .option('--template <id>', 'Load a saved series franchise template')
   .option('--offline', 'Force offline mode: skip remote sync and use local bundled templates')
   .option('--token <token>', 'Access token for private template registry authentication')
+  .option('--realtime', 'Bypass 1-hour cache window and force realtime remote fetch from registry')
+  .option('--online', 'Alias for --realtime')
+  .option('--refresh', 'Alias for --realtime')
   .option('-y, --yes', 'Automatic mode: initialize with clean default templates (default: true)', true)
   .option('--no-yes', 'Disable automatic defaults and prompt for setup')
   .option('-i, --interactive', 'Interactively configure project parameters during initialization')
   .option('-f, --force', 'Force initialization even if directory is not empty')
   .action(async (directory, options) => {
+    if (options.refresh || options.online) options.realtime = true;
     await initCommand(directory, options);
   });
 
@@ -46,8 +50,12 @@ program
   .description('Update skills, workflows, specifications, and schema in an initialized project')
   .option('--offline', 'Force offline mode: skip remote sync and use local bundled templates')
   .option('--token <token>', 'Access token for private template registry authentication')
+  .option('--realtime', 'Bypass 30-minute cache window and force realtime remote fetch from registry')
+  .option('--online', 'Alias for --realtime')
+  .option('--refresh', 'Alias for --realtime')
   .option('-f, --force', 'Force refresh of all framework files')
   .action(async (directory, options) => {
+    if (options.refresh || options.online) options.realtime = true;
     await updateCommand(directory, options);
   });
 
