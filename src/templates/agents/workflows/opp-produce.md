@@ -14,6 +14,7 @@ Execute the OpenProducer Produce workflow to generate all creator deliverables o
    - **Strict Rule:** Never generate any images on your own unless explicitly asked by the creator.
    - **Clean Plain-Text Prompt Format (Zero Markdown Bloat):** All prompt files (`.txt`) must follow the clean plain-text bracket format from `the_314am_doppelganger` (`[TIER ...]`, `Conditioned On:`, `[IMAGE PROMPT]` / `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`) with zero markdown `#` headings or emojis.
    - **Dedicated `./production/` Folder:** All creator deliverables live strictly inside `./production/`. The workspace root stays clean with only `openproducer/` and `production/`.
+   - **Recovery Metadata:** Put `Template ID: video/<id>` near the top of `production/scratchbook.md` when `openproducer/state.json` records a live video template; otherwise use `Template ID: none`. Store only the ID, not the template contents.
    - **Case A — Separate Audio + Script First (`audio_delivery_mode == "separate_script_first"`):**
      - **Pass 1 (Before Timestamps):** Create `production/base_image_prompt.txt`, `production/audio_script.txt` with setup notes separated from paste-only speech, `production/scratchbook.md`, and (if `modular_studio`) subject/environment prompt cues. Set `"produce_complete": true`, `"clips_generated": false`; request the creator's approved audio duration and time-coded transcript before final clip timing. Use only TTS speaker/tag behavior verified in the chosen model/UI.
      - **Pass 2 (After Creator Gives Timestamps):**

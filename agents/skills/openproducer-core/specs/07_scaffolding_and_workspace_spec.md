@@ -10,6 +10,8 @@ When the environment or time changes, make a new scene-root clip image from the 
 
 ## Current `scratchbook.md` clip ledger
 
+At the top of `production/scratchbook.md`, record `Template ID: video/<id>` for the live video template used to establish this project, or `Template ID: none`. The recovery skill uses this pointer if only `production/` is preserved. Keep the template itself in the existing template vault, not in the production folder. If the template is later changed or removed, the ID alone cannot recover its exact historical contents.
+
 For each planned shot record: `Audio start–end | exact cue | required visible fact | subject/location | literal, reaction, or intentional withhold | shot scale and person-to-room proportion | reveal boundary | image lineage | generation duration (4/6/8/10) | planned edited duration | trim/hold | manual audio use`. Keep rows concise. Edited durations may be uneven. Verify adjacent edited intervals meet and each audio cue maps to a relevant visible event; total duration parity alone is insufficient. If the creator has not supplied actual audio times, label the ledger `PROVISIONAL`. After a re-recording, mark old clip times stale.
 
 `production/audio_script.txt` must clearly separate human setup/cast instructions from the paste-only spoken transcript. Angle-tag behavior is specific to the chosen TTS model and interface; test a short sample before full audio. The creator supplies the final audio duration and time-coded transcript for separate-audio pass 2. No media export is required by this contract.

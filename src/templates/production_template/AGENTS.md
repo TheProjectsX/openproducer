@@ -66,8 +66,8 @@ When using, listing, creating, or editing templates (`/opp-template`), templates
 3. **Global Workstation Vault:** `~/.openproducer/templates/<group>/` (Shared across all projects on this machine)
 
 ### 2.4 Agent Skills & Slash Workflows
-* **Skills Directory (`.agents/skills/`):** `openproducer-explore`, `openproducer-propose`, `openproducer-sync`, `openproducer-produce`, `openproducer-guide`, `openproducer-doctor`, `openproducer-template`, `openproducer-package`, `openproducer-core`.
-* **Workflows Directory (`.agents/workflows/`):** `opp-explore.md`, `opp-propose.md`, `opp-sync.md`, `opp-produce.md`, `opp-guide.md`, `opp-doctor.md`, `opp-template.md`, `opp-package.md`.
+* **Skills Directory (`.agents/skills/`):** `openproducer-explore`, `openproducer-propose`, `openproducer-sync`, `openproducer-produce`, `openproducer-guide`, `openproducer-doctor`, `openproducer-template`, `openproducer-package`, `openproducer-recover`, `openproducer-core`.
+* **Workflows Directory (`.agents/workflows/`):** `opp-explore.md`, `opp-propose.md`, `opp-sync.md`, `opp-produce.md`, `opp-guide.md`, `opp-doctor.md`, `opp-template.md`, `opp-package.md`, `opp-recover.md`.
 
 ---
 
@@ -154,7 +154,7 @@ When using, listing, creating, or editing templates (`/opp-template`), templates
 
 ---
 
-## 4. The 8 Operational Modes & State Machine
+## 4. Operational Modes & State Machine
 
 ```mermaid
 flowchart TD
@@ -169,6 +169,7 @@ flowchart TD
     G["5. GUIDE (/opp-guide)<br/>• Step-by-Step interactive co-pilot<br/>• Loops on base_image_prompt.txt until satisfied"]
     D["6. DOCTOR (/opp-doctor)<br/>• Diagnoses G-01 to G-20 creator-observed glitches & patches prompts"]
     PKG["8. PACKAGE (/opp-package)<br/>• High-converting delivery kit in ./production/packaging/<br/>• Titles, descriptions, 4-block thumbnails & publish kits"]
+    R["9. RECOVER (/opp-recover)<br/>• Rebuild brain from saved ./production/<br/>• Resolve template ID from scratchbook"]
 
     E -->|"/opp-propose"| P
     E -->|"/opp-produce (auto-runs propose first)"| PR
@@ -179,6 +180,8 @@ flowchart TD
     G -->|"/opp-doctor"| D
     PR -->|"/opp-package"| PKG
     G -->|"/opp-package"| PKG
+    R -->|"restored project"| S
+    R -->|"resume production"| PR
 ```
 
 ---
@@ -235,6 +238,7 @@ flowchart TD
   - **Google AI Studio Cast Presets & System Instructions:** Always specify Cast Presets (e.g. `Fenrir` for narrator, `Orus`/`Kore` for secondary voice) and the master persona prompt.
   - **TTS Direction:** Use a small number of natural, model-supported delivery cues only after checking the selected speech model. Keep setup instructions separate from the text pasted into TTS. Preview generated speech for spoken tags, skipped words, and pacing before using its timestamps.
 * **File Generation from Brain (`./openproducer/config.json`) into `./production/`:**
+  * **Recovery Pointer:** At the top of `production/scratchbook.md`, include `Template ID: video/<id>` from `openproducer/state.json`, or `Template ID: none` when no video template was used. Do not copy template contents into `production/`.
   * **If `separate_script_first`:**
     - **Pass 1 (Before Timestamps):** Creates `production/audio_script.txt`, `production/base_image_prompt.txt`, `production/scratchbook.md`, and (if Modular Studio) `production/subjects/` & `production/visuals/environments/`. Provides direct tool links ([Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech), [TurboScribe](https://turboscribe.ai/) / [AudioToSRT](https://audiotosrt.com/), [Google Flow](https://flow.google.com)) and waits for creator to give audio timestamps/transcripts.
     - **Pass 2 (After Timestamps Given):**
@@ -291,6 +295,13 @@ flowchart TD
 * **Clean Zero-Jargon Titles & Descriptions (`titles.txt`, `descriptions.txt`):** Provides instant human readability with clean visual section dividers (`====`, `----`) and zero developer audit jargon in prompt deliverables.
 * **1-Stop Publish Kit (`publish_kit/combination_XX.txt`):** Automatically bundled whenever both titles and descriptions exist, pairing Title + Description + Thumbnail prompt into ready-to-paste distribution packages.
 * **Modular Generation:** Supports targeted asset generation (`/opp-package titles`, `/opp-package descriptions`, `/opp-package thumbnails`) or complete turnkey packaging (`/opp-package`).
+
+---
+
+### Mode 9: `recover` (`/opp-recover` or `/openproducer-recover`) — Production Folder Recovery
+* **Action:** Rebuild a missing `openproducer/` brain from a saved `production/` folder to continue the same video.
+* **Template Continuity:** Read the video template ID from `production/scratchbook.md` and resolve it from the available template vault. The saved production choices override template defaults. If the template is unavailable or has changed, report that uncertainty; do not invent its earlier contents.
+* **Evidence:** Reconstruct configuration, blueprint, state, and audits from surviving files. Do not claim renders or assembly are complete based on prompts alone. Preserve the supplied production files while recovering context.
 
 ---
 

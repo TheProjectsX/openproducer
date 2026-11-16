@@ -1185,17 +1185,22 @@ To prevent token bloat while retaining 100% information control:
 - **Verification:** Hard created 479 files. Soft restored one changed copied workflow and retained a local-only file. A second hard reset removed that file. `.gitignore` covers the example. Full record: [`discussions/_raw/95_local_example_workspace_builder.md`](./discussions/_raw/95_local_example_workspace_builder.md).
 - **Correction (2026-11-15):** Creator excluded root `production_framework/` from the example. The script and README were updated; the example was rebuilt to remove the earlier copy. `.agents/skills/openproducer-core/` remains the self-contained framework used by the example workspace.
 
-### 2026-11-15 — Blindspot Narrative Candidate Template Rewrite
+### 2026-11-15 — Personal Video Template Experiments
 
-- **Creator input:** Reviewed the supplied Blindspot Narrative vector-noir preset. Its unsupported `narrative_psychological_thriller` archetype and adaptive duration string failed the current video-template parser. Mandatory camera motion and a fixed four-second stinger also conflicted with the audio-first clip contract.
-- **Staged revision:** [`production_framework/staged/templates/video/blindspot-narrative.md`](./production_framework/staged/templates/video/blindspot-narrative.md) uses the supported `animation` archetype, canonical external-audio pathway, a valid 6s default generation choice, a concise 44-word style anchor, scene-specific palettes, scene-image lineage, and optional audio-timed motion/twist guidance. The original attachment was not modified.
-- **Validation and boundary:** `parseMarkdownTemplate` accepted the staged file. Producer Notes are retained in the Markdown for human/agent reading but are not CLI-parsed settings. This remains a staged candidate; no `src/` or published preset was changed.
+- Blindspot Narrative and StickFigure Noir Shorts were revised as personal local presets. On 2026-11-16 the creator clarified they are not project defaults and requested their removal from this repository. The staged copies were deleted and neither preset was bundled into `src/`.
 
-### 2026-11-15 — StickFigure Noir Shorts Candidate Template Rewrite
+### 2026-11-16 — Production-Folder Recovery and Template Continuity (Discussion 96)
 
-- **Creator direction:** This preset is for Shorts and must have fast visual movement from the opening frames. Fast pacing is expressed through immediate cue-relevant motion, motivated camera/environment movement, and meaningful cuts while the stick figure remains anatomically controlled. No idle opening or unrelated early reveal.
-- **Staged revision:** [`production_framework/staged/templates/video/stickfigure-noir-shorts.md`](./production_framework/staged/templates/video/stickfigure-noir-shorts.md) retains 9:16 framing, optional supporting-character facial marks, opaque fixture direction, and franchise-character reference use. It uses valid parser values, a 4s generation default, actual audio cue times with uneven edited durations, manual continuous music/ambience, and the approved scene-image chain.
-- **Boundary:** The file is a staged candidate; Producer Notes are human/agent guidance rather than CLI-parsed settings. No `src/` or published preset was changed.
+- **Creator requirement:** A future recovery skill should resume a specific video from a saved `production/` folder after its project brain has been deleted. Recovery must also restore the template used for that project so its creative rules continue to apply.
+- **Creator correction:** Do not store a copy of the template in `production/`. Record its name/ID as small metadata in `production/scratchbook.md`; recovery uses that pointer to find and load the template separately.
+- **Current gap:** `template_loaded` lives in `openproducer/state.json`, which may be gone. The existing `template use` command mutates brain settings, so recovery must reconcile template defaults with project-specific choices visible in production files.
+- **Implementation:** Created [`openproducer-recover`](./agents/skills/openproducer-recover/SKILL.md) and [`opp-recover`](./agents/workflows/opp-recover.md). Produce guidance now writes `Template ID: video/<id>` (or `none`) near the top of `production/scratchbook.md`. Recovery uses the template as a baseline and surviving production files as project-specific evidence. Workspace spec and scaffolding guidance were updated. See [`discussions/_raw/96_production_folder_recovery_and_template_continuity.md`](./discussions/_raw/96_production_folder_recovery_and_template_continuity.md).
+- **Initial boundary:** The recovery skill was first created in the base project only. No end-to-end creator-folder recovery has been run yet.
+
+### 2026-11-16 — Recovery Skill Promoted to Package Assets
+
+- **Creator authorization:** Add the missing recovery feature and scratchbook template-ID guidance to `src/`; exclude the two personal video templates and remove their staged project copies.
+- **Package scope:** Synchronize live `agents/` and `production_template/` into `src/templates/` and `dist/templates/` using the existing asset packaging script. No dedicated CLI `recover` command is required for the slash skill workflow.
 
 
 

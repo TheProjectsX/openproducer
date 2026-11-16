@@ -4,6 +4,7 @@ This document serves as the declarative file system contract for OpenProducer.
 - **Zero Unauthorized Image Generation:** OpenProducer NEVER generates any image on its own (not even as an example) unless explicitly asked by the creator.
 - **Plain-Text Prompts (Zero Markdown Bloat):** All prompt files use clean `.txt` format with bracket headers (`[TIER ...]`, `Conditioned On:`, `[IMAGE PROMPT]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`) modeled on `the_314am_doppelganger`.
 - **Clean Root & Dedicated Production Folder:** All creator-facing assets (prompts, scripts, clips, audio, and manifests) live strictly inside the `production/` folder. The workspace root stays clean with only `openproducer/` (Brain) and `production/` (Deliverables).
+- **Recovery Pointer:** `production/scratchbook.md` records `Template ID: video/<id>` or `Template ID: none` near the top. `/opp-recover` uses the ID to reload the template from its vault when only `production/` survives; template contents are not stored here.
 - **Strict Sandbox Boundary & Self-Contained Knowledge:** All specifications, visual styles, starter presets, and agent logic live inside `.agents/` (`.agents/skills/openproducer-core/`). The agent operates strictly inside this project workspace; the only permitted external directory is the global user brain (`~/.openproducer/`). Probing parent directories (`../`) or volunteering external access is strictly prohibited.
 
 ---
