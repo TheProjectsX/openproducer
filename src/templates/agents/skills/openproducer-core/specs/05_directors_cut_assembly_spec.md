@@ -8,9 +8,12 @@
 2. **Cue-to-visual ledger before prompts.** Every row in `production/scratchbook.md` records: audio start/end, exact spoken or sound cue, required visible fact, subject and location IDs, literal/reaction/intentional-withhold choice, shot scale, permitted reveal at start/end, Flow generation duration, planned edited on-screen duration, and any trim/hold. Each major visual event must have an approved script cause. An unrelated cutaway is a failure even if stylistically attractive.
 3. **Meaningful, uneven edited lengths.** Choose visual edit boundaries from audio event or reveal changes. The Flow generation choice remains `{4s, 6s, 8s, 10s}`; the creator may trim a generated clip to an uneven edited duration. No fixed clip count, one-line-to-one-clip mapping, or repeating shot rhythm. Adjacent edited intervals must meet without a gap; check each local interval rather than relying on a ±1s grand total.
 4. **Scale and reveal.** State the framing category and approximate subject-to-room scale in one plain sentence when a character is visible. Wide views keep the subject small but legible and preserve room context; medium views show body/action and context; close views let the face or object dominate. Use the selected Flow reference image for stable identity and room proportions. Do not place a future clue, person, action, or sound visualization in a clip's first image before its audio reveal.
-5. **Lean prompt compilation.** Image prompt = exact first visible moment; video prompt = only the change during that audio window. Front-load subject, place, and action. Carry stable style/identity/room facts through approved Flow images and compact cues. Include only shot-relevant invariants and a short targeted negative list; no minimum word count, token-position guarantee, compulsory camera move, or copied wall of rules.
+5. **Lean prompt compilation.** Image prompt = exact first visible moment; video prompt = only the change during that audio window. Front-load subject and place; use a visible pose in the image and time-directed action in the video. Carry stable style/identity/room facts through approved Flow images and compact cues. Include only shot-relevant invariants and any brief, targeted exclusion; no minimum word count, token-position guarantee, compulsory camera move, or copied wall of rules.
 6. **Two-direction review.** Check every audio cue against a visible event, reaction, or documented withhold, then check every major visual object/action against the script. Review adjacent first/last states, subject scale, room topology, screen direction, and prop continuity. Prompt review is not a claim that rendered clips passed. During guide, ask the creator whether each render matches the cue and scale; record retakes.
 7. **Scene image chain.** For the first clip in a location/time scene, create an approved scene-root image from the base style and relevant subject/environment images. For each following clip in that same scene, create its first-moment image using the **previous approved clip image** as the local continuity reference. Retain the approved subject and environment images as stable identity/layout anchors where the chosen Flow image workflow permits multiple references. If reference slots are limited, use the prior image and check it against those anchors before approval. On a real scene/location/time change, or after visible drift, start a fresh scene-root image from the stable anchors. Never propagate an unapproved image. This is an image-generation lineage; the prior clip image is not the prior rendered video's last frame and cannot by itself guarantee motion continuity at the cut. No download, video-frame extraction, or re-upload is required.
+8. **Contextual video image pointers (2026-11-17 correction).** Every `video_prompt.txt` lists only images actually supplied and explains what each numbered pointer contributes in the first lines of `[VIDEO PROMPT]`. `[IMAGE 1]` has no fixed role: it may be a subject, setting, style, prop, or start source. State `Start Source: [IMAGE N]` only when a particular supplied image is meant to start the clip; otherwise state `Start Source: none`. In Frames mode, put the chosen start image in Flow's dedicated Start Frame control. In Ingredients mode, a text request for an opening composition still needs rendered first-frame review. Do not carry slot roles from an image-generation prompt into its video prompt or name attachments the chosen video mode cannot accept. An input list alone is insufficient.
+9. **Flow paste boundary and targeted exclusions (2026-11-17).** Google Flow's prompt box has no separate negative-prompt field. Each Flow-bound prompt file ends with its `[IMAGE PROMPT]` or `[VIDEO PROMPT]` creative body; do not append `[NEGATIVE PROMPT]` or a keyword exclusion list. The creator pastes only the creative body. State the desired visible result first. When the shot requires something absent, add a short, specific natural-language exclusion in that body (for example, smooth solid white discs with no facial markings, an empty road with no pedestrians, or `do not cut to [IMAGE 2]` when it is reference-only). Avoid repeated lists of forbidden facial parts, anatomy glitches, and equipment nouns. Render review remains necessary.
+10. **Prompt medium separation (2026-11-17).** An `[IMAGE PROMPT]` describes one frozen composition at the first visible moment: subject, pose, place, framing, light, and any visible motion cues such as rain streaks or a running stance. It does not direct a camera move, sequence events with `then`, narrate the next seconds, or request generated sound. A `[VIDEO PROMPT]` uses its selected image as the starting state and specifies what changes during the clip: subject action, environmental motion, one camera vector if motivated, and audio. A deliberately still clip explicitly says what holds steady. Avoid image-generation commands such as `create a still image` in the video body. Before delivery, compare each clip pair to ensure the video continues from the image's depicted state instead of replaying or contradicting it. The medium checker flags obvious crossover but cannot decide scene semantics by itself.
 
 **Minimal ledger row:** `00:41.0–00:47.3 | "You raise your lantern" | keeper raises already-held lantern in stairwell | keeper / stairwell | medium, body about half frame height | hatch not visible yet | image lineage: previous approved stairwell clip image | generate 8s | edit 6.3s | trim 1.7s`. Values are illustrative.
 
@@ -266,13 +269,11 @@ To guarantee 100% visual coherence and zero multi-ingredient identity bleed, pro
                                       ▼
 ┌────────────────────────────────────────────────────────────────────────────┐
 │ TIER 3: MULTI-CONDITIONED VIDEO GENERATION (clips/clip_XX/video_prompt.txt)│
-│  • Engine: Google Flow / Veo 3.1 (First-Frame Seed + Ingredient Attention) │
-│  • First Frame: Approved image generated for this clip                    │
-│  • Persistent Ingredients (Identity & Scene Anchors):                      │
-│    - [IMAGE 1]: Primary Subject Turnaround (Locks face & clothes on turns) │
-│    - [IMAGE 2]: Empty Stage Plate (Locks room topology when camera pans)   │
-│  • Role: Starts with exact pixel layout at t=0, while persistent           │
-│    ingredients prevent identity drift during reveals, turns, and walk-ins! │
+│  • Mode: Frames or Ingredients, according to current Flow support          │
+│  • [IMAGE N] roles follow the actual inputs and current shot context       │
+│  • Start Source: [IMAGE N] when a supplied image starts this clip, else none│
+│  • Any pointer may instead be a subject, scene, style, or prop reference  │
+│  • Prompt body states every supplied image's role before motion direction │
 └────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -534,10 +535,7 @@ Narration / Dialogue Cue: ["Exact transcript or spoken dialogue line for this mo
 3. Stable room:      [IMAGE 3] -> production/visuals/environments/<env_id>/prompt.txt (when available and supported)
 
 [IMAGE PROMPT]
-[Exact first visible moment of this audio cue. Change only the required framing, pose, expression, action, or viewpoint; retain approved identity, room scale, layout, and light. Do not show a future reveal.]
-
-[NEGATIVE PROMPT]
-[Banned visual artifacts, text, subtitles, watermark, blurry...]
+[One frozen composition at this audio cue's first visible moment. Show the required pose, expression, framing, and viewpoint; retain approved identity, room scale, layout, and light. A pose may imply motion, but do not direct an action sequence, camera movement, generated audio, or a future reveal.]
 ```
 
 #### Tier 3 Video Motion & Audio Prompt: `clips/clip_XX/video_prompt.txt`
@@ -553,16 +551,14 @@ Audio Timestamp: [00:00:00 - 00:00:06]
 Narration / Dialogue Cue: ["Exact transcript or spoken dialogue line for this moment..."]
 
 [INPUT SEEDS & INGREDIENTS]
-1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (select this clip's generated image in Flow)
-2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
-3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
-4. Optional Hero Prop:       [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
+Video Input Mode: <Frames to Video | Ingredients to Video>
+Start Source: [IMAGE 2]
+[IMAGE 1] SUBJECT REFERENCE: production/subjects/<subject_id>/profile_prompt.txt
+[IMAGE 2] START: production/clips/clip_<XX>/image_prompt.txt (select its approved generated image; use the Start Frame control in Frames mode)
+[IMAGE 3] ENVIRONMENT / STYLE REFERENCE: production/visuals/environments/<env_id>/prompt.txt (only if attached)
 
 [VIDEO PROMPT]
-Starting directly from the initial image, [Viewport framing & primary subject]. [Biomechanical action & 3-plane lighting]. [Master Style Anchor & single continuous camera verb]. Conditioned on [IMAGE 1] for persistent subject identity and [IMAGE 2] for scene topology. Audio: SFX: [Foley]; Ambience: [Room tone]; Dialogue: [Spoken attribution | None]; Music: [Directive | None].
-
-[NEGATIVE PROMPT]
-[Banned motion glitches, morphing, tripod, camera rig, subtitles...]
+Use [IMAGE 1] for the subject's identity. Start from [IMAGE 2], preserving its opening composition and first visible moment. Use [IMAGE 3] only for the environment and visual style (omit when not attached). [One cue-relevant change from that first state, or an intentional hold; add a camera move only if motivated]. Audio: SFX: [Foley]; Ambience: [Room tone]; Dialogue: [Spoken attribution | None]; Music: [Directive | None].
 ```
 
 ### 7.2 The On-Demand Packaging Suite (Strict Non-Imposition: Only on Explicit Request)
@@ -588,15 +584,15 @@ These 19 checks form the shared review registry. The CLI automatically checks on
 |---|---|---|---|
 | **L-01** | **Scene and Cue Completeness** | The creative body states the timed cue's subject/place, visible action, framing scale, and shot-relevant continuity. No word floor or ceiling. | Missing cue-to-visual mapping, ambiguous scale, or copied constraints obscuring the current action. |
 | **L-02** | **Subject and Framing Priority** | Lead the creative body with the current subject, setting, and shot scale; no guaranteed token window. | Timed visual action is buried beneath generic style or exclusions. |
-| **L-03** | **Equipment Noun Ban** | Zero physical camera hardware nouns (`tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`) in positive prompt. (Negative prompt clauses exempt). | Any hardware noun in positive creative prompt. |
-| **L-04** | **Config Decoupling** | Zero technical specs (`16:9`, `9:16`, `4:3`, `1080p`, `720p`, `4K`, `24fps`, `60fps`, `320x240`) in creative prompt text. (Creative cadence `on twos`, `12fps` whitelisted; negative prompts exempt). | Technical config token in creative prompt. |
-| **L-05** | **Anti-Subtitle & Non-Render** | Narrative context uses `(REFERENCE ONLY — DO NOT RENDER...)` and negative prompt includes anti-subtitle tokens (`subtitles, closed captions, burned-in text, lower thirds, watermark`). | Context un-isolated or missing anti-subtitle negative clause. |
+| **L-03** | **Equipment Noun Ban** | Zero physical camera hardware nouns (`tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`) in the creative prompt. | Any hardware noun in pasted creative text. |
+| **L-04** | **Config Decoupling** | Zero technical specs (`16:9`, `9:16`, `4:3`, `1080p`, `720p`, `4K`, `24fps`, `60fps`, `320x240`) in creative prompt text. Creative cadence `on twos`, `12fps` is whitelisted. | Technical config token in creative prompt. |
+| **L-05** | **Flow Paste Boundary & Render Review** | Flow-bound prompt files end at the creative block; there is no appended `[NEGATIVE PROMPT]` list. The creator reviews the rendered clip for unwanted text/subtitles. | A standalone negative block could be pasted into Flow; render review remains pending. |
 | **L-06** | **Reference Cue Mapping** | Prompt-file paths identify the images the creator selects in Flow. Keep unique slots and choose a model/mode compatible with the selected references. | Missing, duplicate, or conflicting reference cues. |
 | **L-07** | **Pre-Materialized Prop Guard** | Held props declared grasped from Frame 1 to Frame End; zero mid-clip drawing without cutaway; complex scenes declare `Permitted Props: [...]`. | Prompt verbs like *"draws weapon"* or un-materialized prop appear mid-clip. |
 | **L-08** | **Room Topology and Subject Scale** | Approved environment image and relevant ground rules preserve room layout and person-to-room proportion. State only the shot's needed occlusion/scale facts. | Subject too large/small, wrong room geometry, or contradictory staging. |
 | **L-09** | **Generation Duration Choice** | Generated clip length is `{4s, 6s, 8s, 10s}`; check Flow model/mode compatibility. Edited use may be uneven. | Other generation length or unsupported selected model/mode. |
 | **L-10** | **Single-Motion & Clock Bracket Ban** | Max 1 primary biomechanical action and 1 continuous camera vector per clip. Numeric clock brackets (`\[\d{2}:\d{2}`) strictly banned; natural temporal phrases permitted. | Multiple sequential actions or clock timestamp in atomic clip. |
-| **L-11** | **Starting Image Cue** | Each video prompt selects its own approved clip image as the start image. Each same-scene image prompt cues the previous approved clip image; scene roots and drift resets cue stable anchors. | Missing or ambiguous image lineage. |
+| **L-11** | **Optional Start Source Cue** | A video prompt names its start image pointer when it has one, or declares `Start Source: none` for references-only input. Same-scene image prompts cue the previous approved clip image; scene roots and drift resets cue stable anchors. | Missing or ambiguous start declaration or image lineage. |
 | **L-12** | **Adjacent Cut Review** | Inspect rendered adjacent clips for pose, scale, layout, light, and action-boundary jumps. Use a distinct view or a longer single take when the cut fails. | Creator reports an unmatched cut or a scene image chain propagates drift. |
 | **L-13** | **180° Screen Direction & Clean Singles** | Conversational cuts preserve complementary 15° eyelines and use Clean Singles (**dirty OTS shots strictly banned**). | Dirty OTS shot or eyeline reversal across 180° axis. |
 | **L-14** | **Audio Cue and Edited-Time Alignment** | Native clip dialogue uses a checked speech budget. External master audio follows actual cue times and may continue across cuts. Generation duration is 4/6/8/10; edited duration may be uneven and each local interval/trim is explicit. | Cue lacks relevant visual coverage, local interval is unexplained, or generated footage is shorter than the planned edit. |
@@ -605,6 +601,7 @@ These 19 checks form the shared review registry. The CLI automatically checks on
 | **L-17** | **Structured Audio and Manual Mix Cue** | Audio prompt fields distinguish SFX, ambience, dialogue, and music; scratchbook notes manual mute/selected Foley/native full audio and intended cut offsets. | Double speech, unplanned music, or missing manual audio use cue. |
 | **L-18** | **TTS Transcript Purity** | Separate paste-only spoken text from setup notes; use speaker and tag format verified in the selected TTS model/UI, preserving creator wording. | Setup instructions read aloud, unsupported tags, or altered approved script. |
 | **L-19** | **Safety Context Review** | Review actual positive creative context against [`safety_registry.md`](safety_registry.md); keyword absence is not a pass and negative-list mentions are not automatic violations. | Unreviewed platform-sensitive scene or misleading automated safety claim. |
+| **Medium check** | **Image/Video Prompt Separation** | A local advisory checker scans production prompt bodies for camera movement, timed sequences, or audio in image prompts; still-image output instructions or missing temporal direction in video prompts. The agent reviews the paired first state and continuation. | Obvious medium crossover or a video with no stated change/intentional hold. |
 
 ---
 

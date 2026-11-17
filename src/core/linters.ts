@@ -7,7 +7,7 @@ import { exists, readFile } from '../utils/fs';
 type Prompt = { path: string; content: string; type: 'base' | 'image' | 'video' };
 type Check = { status: LinterStatus; details: string };
 
-// Configuration and negative lists are creator instructions, not creative prompt text.
+// Read the creative block separately from configuration and any legacy negative block.
 function block(content: string, name: 'IMAGE PROMPT' | 'VIDEO PROMPT' | 'NEGATIVE PROMPT'): string {
   const match = content.match(new RegExp(`\\[${name}\\]\\s*([\\s\\S]*?)(?=\\n\\[[A-Z][^\\]]*\\]|$)`, 'i'));
   return match?.[1]?.trim() || '';
@@ -74,23 +74,33 @@ export class LinterSuite {
           for (const token of tokens) if (tokenPattern(token).test(body)) failures.push(`${label(prompt)}: ${token}`);
         }
         return failures.length ? { status: 'FAIL', details: failures.join('; ') } :
-          { status: 'PASS', details: 'Creative blocks checked; configuration and negative blocks excluded.' };
+          { status: 'PASS', details: 'Creative blocks checked; configuration and legacy negative blocks excluded.' };
       }
       case 'L05':
         if (!videos.length) return { status: 'PENDING', details: 'No clip video prompts yet.' };
         for (const prompt of videos) {
           const negative = block(prompt.content, 'NEGATIVE PROMPT');
-          if (!/subtitles|closed captions|burned-in text/i.test(negative)) failures.push(label(prompt));
+          if (negative || /^\s*(?:\[NEGATIVE PROMPT\]|NEGATIVE PROMPT:)/im.test(prompt.content)) failures.push(label(prompt));
         }
-        return failures.length ? { status: 'WARN', details: `Anti-subtitle negative missing: ${failures.join(', ')}` } :
-          { status: 'PASS', details: 'Clip negative blocks include an anti-subtitle cue.' };
+        return failures.length ? { status: 'FAIL', details: `Standalone negative block in Flow video prompt: ${failures.join(', ')}` } :
+          { status: 'PENDING', details: 'Flow prompt has no standalone negative block; unwanted text and subtitles require rendered review.' };
       case 'L06':
         if (!videos.length) return { status: 'PENDING', details: 'No clip video prompts yet.' };
         for (const prompt of videos) {
-          if (!/Input Seed|First Frame|LAST_FRAME/i.test(prompt.content)) failures.push(label(prompt));
+          const inputs = prompt.content.match(/\[INPUT SEEDS & INGREDIENTS\]\s*([\s\S]*?)(?=\n\[VIDEO PROMPT\]|$)/i)?.[1] || '';
+          const body = creative(prompt);
+          const roles = [...inputs.matchAll(/^\[IMAGE (\d+)\]\s+([^:\n]+):\s*(.+)$/gmi)];
+          const startSource = inputs.match(/^Start Source:\s*(?:\[IMAGE (\d+)\]|none)\s*$/im);
+          const startId = startSource?.[1];
+          const roleIds = roles.map((match) => match[1]);
+          const uniqueIds = new Set(roleIds);
+          const bodyNamesEveryImage = roles.every((match) => new RegExp(`\\[IMAGE ${match[1]}\\]`, 'i').test(body));
+          const startRole = !startId || roles.some((match) => match[1] === startId && /\bSTART\b/i.test(match[2]));
+          const startDirected = !startId || new RegExp(`\\b(?:start|begin|open)\\b[^.\\n]{0,100}\\[IMAGE ${startId}\\]`, 'i').test(body);
+          if (!roles.length || !startSource || uniqueIds.size !== roleIds.length || !bodyNamesEveryImage || !startRole || !startDirected) failures.push(label(prompt));
         }
-        return failures.length ? { status: 'WARN', details: `Reference cue missing: ${failures.join(', ')}` } :
-          { status: 'PASS', details: 'Prompt-file reference cues found; creator must select corresponding Flow images.' };
+        return failures.length ? { status: 'WARN', details: `Image pointers, contextual roles, or optional start source missing or inconsistent: ${failures.join(', ')}` } :
+          { status: 'PASS', details: 'Video prompts direct the use of every attached image; any start source is explicitly named. Creator must select the corresponding Flow images and review renders.' };
       case 'L09':
         if (!videos.length) return { status: 'PENDING', details: 'No clip video prompts yet.' };
         for (const prompt of videos) {
@@ -102,10 +112,14 @@ export class LinterSuite {
       case 'L11':
         if (!videos.length) return { status: 'PENDING', details: 'No clip video prompts yet.' };
         for (const prompt of videos) {
-          if (!/Input Seed|Starting directly|Continuing directly/i.test(prompt.content)) failures.push(label(prompt));
+          const inputs = prompt.content.match(/\[INPUT SEEDS & INGREDIENTS\]\s*([\s\S]*?)(?=\n\[VIDEO PROMPT\]|$)/i)?.[1] || '';
+          const startSource = inputs.match(/^Start Source:\s*(?:\[IMAGE (\d+)\]|none)\s*$/im);
+          const startId = startSource?.[1];
+          const body = creative(prompt);
+          if (!startSource || (startId && !new RegExp(`\\b(?:start|begin|open)\\b[^.\\n]{0,100}\\[IMAGE ${startId}\\]`, 'i').test(body))) failures.push(label(prompt));
         }
-        return failures.length ? { status: 'WARN', details: `Starting-frame instruction missing: ${failures.join(', ')}` } :
-          { status: 'PASS', details: 'Starting-frame instructions present.' };
+        return failures.length ? { status: 'WARN', details: `Start-source declaration or selected-frame direction missing: ${failures.join(', ')}` } :
+          { status: 'PASS', details: 'Start source is declared, with a matching frame direction when one is used.' };
       case 'L17':
         if (!videos.length) return { status: 'PENDING', details: 'No clip video prompts yet.' };
         for (const prompt of videos) {

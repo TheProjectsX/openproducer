@@ -1,5 +1,7 @@
 # Specification: `environments/` Domain (Universal Environment & Scenery Specification)
 
+> **Flow prompt amendment (2026-11-17):** For Flow-bound files, describe the intended scene first and use a short, specific `no X` clause when an absence matters. Do not append a negative prompt block or keyword list to the creative text. A separate negative field may be used only when the selected target tool actually provides one.
+
 **Status:** ✅ FINALIZED  
 **Domain:** `environments/` (Universal Parent Domain for Narrative Worlds, Commercial Studio Sets, and Biomes)  
 **Target Engines:** Google Flow (Veo 3.1, Imagen 4, Gemini Omni Flash), Runway Gen-3/4.5, Kling AI  
@@ -171,7 +173,7 @@ Before generating environment plates or compiling video prompts, the environment
 - **L-08 (Empty Stage & Scene Ground Rules):** 
   1. The reference plate in `references/empty_stage.png` contains zero human actors, faces, or hero products; prompt explicitly defines motivated foreground, midground, and background planes.
   2. The environment folder MUST contain a verified `ground_rules.md` establishing unbroken room topology (preventing hallucinated dropped walls/partitions), Z-index depth layering (characters occluded behind furniture), and explicit negative bans (e.g. banning ceiling fans, extra doors/windows).
-  3. Positive ground rules are embedded into shot scene descriptions; negative bans are routed to the clip negative prompt block.
+  3. Relevant ground rules are expressed as concise positive shot descriptions for Flow; the internal exclusion notes are not pasted into the Flow prompt box.
 - **L-01 (Descriptive Completeness):** Scene prompts must comprehensively detail environmental boundaries, scale, and lighting without artificial word truncation (100–150 word cap abolished).
 - **L-03 (Equipment Noun Ban):** Zero camera hardware nouns (`tripod`, `dolly track`, `drone`); only perspective and kinematic adjectives allowed in positive prompts.
 - **L-04 (Config Decoupling):** Zero technical configuration specs (`16:9`, `1080p`) inside creative prompt text.

@@ -1,5 +1,7 @@
 # Specification: `retake_doctor/` (Interactive Glitch Diagnostic & Repair Engine)
 
+> **Live Flow amendment (2026-11-17):** Google Flow has no separate negative-prompt box. For Flow-bound retakes, do not add or paste a `[NEGATIVE PROMPT]` list. Describe the intended visual result first; add a short, specific exclusion in the creative body only when essential, then inspect the render. Older negative-token examples below are historical diagnostics, not current Flow paste instructions.
+
 > **Live diagnostic registry (2026-11-15):** This specification contains **G-01 through G-20**. G-16 covers kinetic text and dead-air transition defects; G-17–G-20 cover room topology, depth, viewpoint, and cross-clip music. Diagnose the creator's observed render and patch only relevant prompts. Prompt checks cannot certify rendered media.
 
 **Status:** 🔒 LOCKED & EMPIRICALLY VALIDATED (Discussions 58, 60, 62, 63, 64)  
@@ -139,7 +141,7 @@ The **Retake Doctor** is an autonomous diagnostic engine that eliminates trial-a
 * **Root Cause:** Organic, curving shadow boundaries positioned near circular heads cause diffusion attention to interpret negative space as biological features (pareidolia).
 * **Surgical Patch (Discussion 57):**
   1. Replace organic dipping shadow contours with **geometric planar boundaries**: `"Uniform geometric horizontal shadow boundary descending uniformly across the upper third of the frame."`
-  2. Inject explicit anti-pareidolia tokens into `[NEGATIVE PROMPT]`: `pareidolia, facial features in shadows, nose shape, eyes in dark, monster face, humanoid geometry, organic contours in darkness`.
+  2. For Flow, describe the intended shadow directly: a uniform geometric band with clean straight edges and no character-like silhouette. Keep diagnostic terms such as `pareidolia` in the retake notes, outside the pasted creative prompt.
 
 ---
 

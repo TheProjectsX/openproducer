@@ -1202,5 +1202,25 @@ To prevent token bloat while retaining 100% information control:
 - **Creator authorization:** Add the missing recovery feature and scratchbook template-ID guidance to `src/`; exclude the two personal video templates and remove their staged project copies.
 - **Package scope:** Synchronize live `agents/` and `production_template/` into `src/templates/` and `dist/templates/` using the existing asset packaging script. No dedicated CLI `recover` command is required for the slash skill workflow.
 
+### 2026-11-17 — Explicit Start and Reference Roles in Video Prompts (Discussion 97)
+
+- **Creator finding:** Video generation can confuse which supplied image is the start versus identity, environment, or style reference when the prompt merely lists image paths.
+- **Corrected live rule:** Every `video_prompt.txt` maps each supplied `[IMAGE N]` to a contextual role and repeats its use at the start of `[VIDEO PROMPT]`. `[IMAGE 1]` may be a reference. `Start Source: [IMAGE N]` names a start image only when one is intended; otherwise use `Start Source: none`. Frames mode uses the dedicated Start Frame control for the chosen pointer; Ingredients mode needs rendered first-frame review. Image-generation slot roles do not carry over to video.
+- **Implementation:** Updated live specs, mirrored core specs, produce/guide skills and workflows, scaffold guidance, and CLI `L-06`/`L-11` checks. Full rationale: [`discussions/_raw/97_explicit_video_image_roles.md`](./discussions/_raw/97_explicit_video_image_roles.md).
+- **Creator correction and verification:** The first implementation overconstrained `[IMAGE 1]` as START. Revised specs, skills, scaffolding, and CLI checks now accept any supplied image as the optional start and allow references-only input (`Start Source: none`). Audit fixtures cover `[IMAGE 1]` as a reference. Existing historical simulation prompts were not treated as certified renders; actual first-frame fidelity still needs creator review in Flow.
+
+### 2026-11-17 — Flow Negative Prompt Paste Boundary (Discussion 98)
+
+- **Creator finding:** Copying the creative video text and appended `[NEGATIVE PROMPT]` list into Flow's single prompt box coincided with unwanted facial detail in a featureless stick-figure clip. The exact cause is not proven, but long forbidden-token lists are unsuitable as Flow creative text.
+- **Live rule:** Flow-bound prompt files end with the creative `[IMAGE PROMPT]` or `[VIDEO PROMPT]` body. Copy only that body into Flow; choose inputs and configuration in its controls. No standalone negative block is produced for Flow. Describe the desired result first; include a short, specific `no X` or `do not X` clause in the creative body when an absence is essential, then inspect the render.
+- **Creator clarification:** This rule does not ban all negative wording. It prevents an appended keyword blacklist in a UI with no separate negative field. Google Cloud's Veo guidance includes concise, natural-language exclusions.
+- **Implementation:** Updated live specs, agent guidance, scaffold and package assets, and CLI L-05 to flag legacy negative blocks in Flow video files. Older production files must stop before `[NEGATIVE PROMPT]`. See [`discussions/_raw/98_flow_negative_prompt_paste_boundary.md`](./discussions/_raw/98_flow_negative_prompt_paste_boundary.md).
+
+### 2026-11-17 — Image/Video Prompt Medium Separation (Discussion 99)
+
+- **Creator finding:** Image prompts sometimes contain video-style movement; video prompts sometimes request a static image or lack a time-directed change.
+- **Live rule:** An image body captures one frozen first-moment composition, with a pose or other visible motion cue if useful. Camera movement, unfolding actions, and generated audio belong in the video body. A video body continues from the chosen image with cue-relevant change or an explicit hold, plus applicable audio. Compare each pair before delivery.
+- **Implementation:** Corrected image/video examples, added produce guidance and an advisory medium checker in the skill, and tested crossover cases. See [`discussions/_raw/99_image_video_prompt_medium_separation.md`](./discussions/_raw/99_image_video_prompt_medium_separation.md).
+
 
 

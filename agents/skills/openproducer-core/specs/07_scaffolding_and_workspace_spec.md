@@ -138,15 +138,16 @@ graph TD
 
 ## 4. Exact Plain-Text Prompt File Contracts (Modeled on `the_314am_doppelganger`)
 
-### 4.1 Clean Plain-Text Format (Universal 4-Block Schema)
-All generation prompt files (`.txt`) adhere to the unified 4-block schema: `[CONFIGURATION SETTINGS]`, `[INPUT SEEDS & INGREDIENTS]`, `[IMAGE PROMPT]` or `[VIDEO PROMPT]`, and `[NEGATIVE PROMPT]`. This eliminates format fragmentation, guarantees seamless 1-to-1 slot mapping in Google Flow/Imagen reference slots, and ensures zero markdown bloat.
+### 4.1 Clean Plain-Text Format (Flow 3-Block Schema)
+Flow-bound generation files use three blocks: `[CONFIGURATION SETTINGS]`, `[INPUT SEEDS & INGREDIENTS]`, and `[IMAGE PROMPT]` or `[VIDEO PROMPT]`. The creative block is last, with no `[NEGATIVE PROMPT]` section. Copy only the text below the creative heading into Flow's prompt box; set configuration and select actual generated images in the UI. This keeps the paste boundary clear. Describe the intended result first; when an absence is essential, add a short, specific `no X` or `do not X` clause in the creative body. Do not append comma-separated lists of unwanted objects. Other tools may use a true separate negative field, but that is a different target-specific contract.
 
 > [!IMPORTANT]
 > **The Law of Ingredient Uniqueness & Tier-Adaptive Slot Binding:**
 > 1. **Zero Duplicate Bindings:** A file path may NEVER be bound to more than one slot (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`). Binding the same image file twice is strictly banned as an agent hallucination error.
 > 2. **Tier-Adaptive Slot Binding:**
->    - **In Tier 1 (Lean Projects):** Only `production/base_image_prompt.txt` exists. Therefore, all clip and packaging prompts bind strictly to a single reference: `[IMAGE 1] -> production/base_image_prompt.txt`. There is NO `[IMAGE 2]`.
->    - **In Tier 2 (Modular Studio Projects):** Distinct subject sheets (`production/subjects/...`) and environment plates (`production/visuals/environments/...`) exist. Prompts bind `[IMAGE 1]` to the Subject and `[IMAGE 2]` to the Environment plate.
+>    - **Image and packaging prompts:** In Tier 1, the base image is their single `[IMAGE 1]`; in Tier 2, distinct subject and environment images occupy distinct slots.
+>    - **Video prompts:** Numbering is local to the video and has no default start slot. Map each actually supplied `[IMAGE N]` to its contextual role. `[IMAGE 1]` may be a reference. Do not attach a redundant image merely to fill a slot.
+> 3. **Explicit video-role direction:** In every video prompt, the first sentences of `[VIDEO PROMPT]` say how each supplied `[IMAGE N]` should be used. Declare `Start Source: [IMAGE N]` if an image is intended as the opening frame, or `Start Source: none` if all supplied images are references. The `[INPUT SEEDS & INGREDIENTS]` list alone does not direct the generator. In Flow Frames mode, select the stated start image in the dedicated Start Frame control; in Ingredients mode, request its opening composition in text and verify the rendered first frame. Do not imply that Frames mode also accepts extra references unless the selected model/UI actually does.
 
 #### 1. `base_image_prompt.txt`
 ```text
@@ -161,9 +162,6 @@ Resolution: 1080p
 
 [IMAGE PROMPT]
 <Cinematic framing, subject/scene anchor, lighting vectors, and master visual style anchor string. 100% pure creative description, zero equipment nouns.>
-
-[NEGATIVE PROMPT]
-<photorealistic/cartoon exclusions, blurry, altered style, distorted proportions, cluttered background, harsh flash, watermarks, text, subtitles.>
 ```
 
 #### 2. `subjects/<subject_id_or_name>/hero_prompt.txt` & `profile_prompt.txt` (Modular Studio)
@@ -179,9 +177,6 @@ Resolution: 1080p
 
 [IMAGE PROMPT]
 <Step 1 Genesis Hero Shot prompt locking facial landmarks, wardrobe materiality, and style anchor.>
-
-[NEGATIVE PROMPT]
-<action figure, plastic doll, ball joints, blurry, text, watermarks.>
 ```
 
 ```text
@@ -196,9 +191,6 @@ Resolution: 1080p
 
 [IMAGE PROMPT]
 <Step 2 4-panel character model sheet (Front, Left Profile, Back, Close-up Face) on solid neutral light-gray studio background (#E5E5E5).>
-
-[NEGATIVE PROMPT]
-<changing clothes, facial drift, props in hands, environment background, text, watermarks.>
 ```
 
 #### 3. `visuals/environments/<environment_id_or_name>/prompt.txt` (Modular Studio)
@@ -214,9 +206,6 @@ Resolution: 1080p
 
 [IMAGE PROMPT]
 <Empty 3-plane stage environment (Foreground, Midground stage zone, Background) with motivated lighting vectors and zero characters/people present.>
-
-[NEGATIVE PROMPT]
-<people, characters, crowds, silhouettes, camera equipment, tripod, text, watermarks.>
 ```
 
 #### 4. `visuals/environments/<environment_id_or_name>/ground_rules.md` (Modular Studio)
@@ -260,10 +249,7 @@ Narration / Dialogue Cue: <"Exact transcript or spoken dialogue line for this mo
 3. Stable room:      [IMAGE 3] -> production/visuals/environments/<env_id>/prompt.txt (when available and supported)
 
 [IMAGE PROMPT]
-<The exact first visible moment of this clip's audio cue. Change only the needed framing, pose, expression, action, or viewpoint from the selected prior clip image; preserve approved identity, room layout, subject-to-room scale, and light. Do not show a later reveal.>
-
-[NEGATIVE PROMPT]
-<studio gray background bleed, split screen, multiple panels, camera equipment, blurry lines, text, subtitles, watermarks.>
+<One frozen composition at the first visible moment of this clip's audio cue. Show the required subject pose, expression, framing, and viewpoint; preserve approved identity, room layout, subject-to-room scale, and light. A running stance or rain streaks may imply motion, but do not describe the action unfolding, a camera move, audio, or a later reveal.>
 ```
 
 #### 6. `clips/clip_XX/video_prompt.txt`
@@ -279,16 +265,14 @@ Audio Timestamp: <00:00:00 - 00:00:06>
 Narration / Dialogue Cue: <"Exact transcript or spoken dialogue line for this moment...">
 
 [INPUT SEEDS & INGREDIENTS]
-1. First Frame (Start Seed): production/clips/clip_<XX>/image_prompt.txt (select the image generated from this prompt in Flow)
-2. Persistent Subject DNA:   [IMAGE 1] -> production/subjects/<subject_id>/profile_prompt.txt
-3. Persistent Scene DNA:     [IMAGE 2] -> production/visuals/environments/<env_id>/prompt.txt
-4. Optional Hero Prop:       [IMAGE 3] -> production/subjects/<prop_id>/hero_prompt.txt
+Video Input Mode: <Frames to Video | Ingredients to Video>
+Start Source: [IMAGE 2]
+[IMAGE 1] SUBJECT REFERENCE: production/subjects/<subject_id>/profile_prompt.txt
+[IMAGE 2] START: production/clips/clip_<XX>/image_prompt.txt (select its approved generated image; use the Start Frame control in Frames mode)
+[IMAGE 3] ENVIRONMENT / STYLE REFERENCE: production/visuals/environments/<env_id>/prompt.txt (only if attached)
 
 [VIDEO PROMPT]
-Starting directly from this clip's approved image, <describe the one visible action or change during this audio cue, with only the framing, scale, and continuity details this shot needs>. Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ... .
-
-[NEGATIVE PROMPT]
-<camera equipment, tripod, dolly track, blurry, morphing face, distorted hands, extra fingers, text, subtitles, watermark, ceiling fan, dropped partition walls, structural columns, room dividers, frontal portrait (when rear/profile specified), speech looping, unnatural pauses.>
+Use [IMAGE 1] for the subject's identity. Start from [IMAGE 2], preserving its opening composition and first visible moment. Use [IMAGE 3] only for the environment and visual style (omit when not attached). <Describe the one visible action or change during this audio cue>. Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ... .
 ```
 
 ---

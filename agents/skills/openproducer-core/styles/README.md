@@ -53,5 +53,5 @@ When compiling a Google Flow video prompt (no fixed word count; prioritize the t
 2. **Step 2 (Determine Dialect):**
    * If creator provided **zero dialect customization**: Inject the verbatim **Section 1 Master Style Anchor String** into Tokens 81–130.
    * If creator specified a **dialect** (e.g. *"Studio Ghibli style"*): Substitute/augment Tokens 81–130 with the matched **Dialect Descriptor** from Section 2.
-3. **Step 3 (Bind Negative Prompt):** Append the Base Medium's mandatory negative prompt clause (`Section 7`) combined with any dialect-specific negative tokens to the configuration object.
+3. **Step 3 (Review Exclusions):** Treat Section 7 negative tokens as internal failure-mode notes. For Google Flow, do not append the list to the creative text or output a `[NEGATIVE PROMPT]` block. Describe the intended look first, then add one short, specific exclusion in the creative body if an absence is essential. A different target with a genuine separate negative field may receive target-specific exclusions there.
 4. **Step 4 (Attach Native Foley Soundboard):** Generate trailing `Audio: SFX: [primary foley]; Ambience: [ambient room tone]; Dialogue: [spoken line or None]; Music: None.` using the 4-field semicolon syntax (`L-17`) and vocabulary from `Section 6`.

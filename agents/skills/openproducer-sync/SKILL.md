@@ -36,6 +36,8 @@ Synchronize any new changes (plot updates, character/environment tweaks, orienta
      - `production/audio_script.txt` (if separate audio script changed).
      - `production/subjects/<id>/[hero_prompt.txt, profile_prompt.txt]` and `production/visuals/environments/<id>/prompt.txt` (if Modular Studio assets changed).
      - `production/clips/clip_xxx/[image_prompt.txt, video_prompt.txt]` (if shots, dialogue, or timestamps changed, maintaining `Conditioned On:` / `Input Seed:` connection lines).
+     - For every revised `video_prompt.txt`, preserve each actual `[IMAGE N]` pointer and its contextual role. State `Start Source: [IMAGE N]` only if that image is the intended start, otherwise `Start Source: none`; repeat all supplied image roles in the first lines of `[VIDEO PROMPT]`. Do not inherit image-prompt slot roles.
+     - Flow-bound image and video prompt files end at their creative body. Remove any legacy `[NEGATIVE PROMPT]` block from a revised file. Describe the intended result first; add a short, specific exclusion in that body if an absence is essential.
      - `production/scratchbook.md` (cue-to-visual ledger, edited intervals, trim/hold, manual audio use), `production/master_images_prompt.txt`, and `production/master_videos_prompt.txt`.
   3. **Run Linter Audit (L-01 to L-19):**
      - Verify descriptive completeness (`L-01`, uncapped depth $\ge 50$ words, spatial locking), scene ground rules (`L-08`, topology, Z-index depth, negative bans), BGM dynamic handover (`L-17`), zero equipment nouns (`tripod`, `dolly`), soft punctuation (`...`), and Trust & Safety (`.agents/skills/openproducer-core/specs/safety_registry.md`).

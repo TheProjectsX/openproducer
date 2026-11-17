@@ -1,5 +1,7 @@
 # Specification: `cinematography_audio/` Domain (Optics, Kinematics & Soundscapes)
 
+> **Flow prompt amendment (2026-11-17):** Flow-bound creative text ends with the image or video prompt body. Do not append `NEGATIVE PROMPT:` or `[NEGATIVE PROMPT]` text to Flow's single prompt box. Describe the intended visual result first; add a short, specific exclusion in the body only when essential. Inspect the render for text and other artifacts.
+
 > **Live audio amendment (2026-11-15):** For external master speech, use the creator's actual time-coded audio to plan edited shot windows; speech may continue across visual cuts, and no per-clip silence buffer is required. Veo clip generation remains 4s/6s/8s/10s by project choice, while manually edited on-screen lengths can be uneven. Audio fields in prompts are generation hints, not a guarantee of a continuous mix. Document manual `mute / selected Foley / native full audio` use and J/L-cut offsets in the scratchbook.
 
 **Status:** ✅ FINALIZED  
@@ -289,11 +291,8 @@ All directorial context and script notes embedded in prompt text must be encapsu
 Subject realizes the security feed timestamp is from two minutes in the past.
 ```
 
-### 8.3 Mandatory Anti-Subtitle Negative Invariant
-Every video prompt must include the mandatory negative clause:
-```text
-NEGATIVE PROMPT: subtitles, closed captions, burned-in text, lower thirds, speech bubbles, watermark, floating words, typography, status overlay, text artifacts.
-```
+### 8.3 Flow Text Artifact Review
+Do not append a negative subtitle list to the Flow prompt. If the scene requires a clean image, describe the intended visible scene directly and inspect the generated clip for unwanted text before approval.
 
 ---
 
@@ -324,12 +323,12 @@ Before compiling prompts into Google Flow, the automated validator enforces thes
 - **Error Message:** `L-01 REVIEW: Current audio cue, visible event, or subject-to-room scale is unclear.`
 
 ### Rule L-03: Equipment Noun Prohibition
-- **Check:** Creative positive prompt MUST NOT contain any hardware nouns: `tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`. (Note: `NEGATIVE PROMPT:` clauses and audio frequency words like "drone of fluorescent lights" are strictly exempt).
+- **Check:** Creative prompt MUST NOT contain physical camera hardware nouns: `tripod`, `dolly`, `crane`, `jib`, `rig`, `drone`, `gimbal`, `steadicam`, `slider`, `camera body`. Audio phrases such as "drone of fluorescent lights" are exempt.
 - **Error Message:** `L-03 VIOLATION: Hardware noun detected in positive prompt. Replace with pure optical/kinematic trajectory directive.`
 
 ### Rule L-05: Anti-Subtitle & Non-Render Guardrail
-- **Check:** Any prompt containing narrative context or script lines MUST wrap context in `(REFERENCE ONLY — DO NOT RENDER...)` and include the negative subtitle clause (`subtitles, closed captions, burned-in text, lower thirds, watermark`).
-- **Error Message:** `L-05 VIOLATION: Missing anti-subtitle negative clause. Risk of burned-in caption hallucinations.`
+- **Check:** Flow-bound files must not contain a standalone negative prompt block. Narrative context remains outside the pasted creative body; inspect renders for unwanted text.
+- **Error Message:** `L-05 VIOLATION: Negative prompt block detected in Flow-bound file. Remove the block and review the rendered clip for text artifacts.`
 
 ### Rule L-13: 180° Screen Direction & Clean Singles (OTS Ban)
 - **Check:** Multi-character dialogue scenes must maintain complementary 15° eyelines and use Clean Singles. Dirty OTS shots are strictly banned.

@@ -2,9 +2,11 @@
 
 This document serves as the declarative file system contract for OpenProducer.
 - **Zero Unauthorized Image Generation:** OpenProducer NEVER generates any image on its own (not even as an example) unless explicitly asked by the creator.
-- **Plain-Text Prompts (Zero Markdown Bloat):** All prompt files use clean `.txt` format with bracket headers (`[TIER ...]`, `Conditioned On:`, `[IMAGE PROMPT]`, `[VIDEO PROMPT]`, `[NEGATIVE PROMPT]`) modeled on `the_314am_doppelganger`.
+- **Flow Paste Boundary:** Flow-bound `.txt` files carry configuration and input cues above a final `[IMAGE PROMPT]` or `[VIDEO PROMPT]` body. Paste only that creative body into Flow. No standalone negative block follows it. Describe the intended result first; include a short, specific exclusion in the creative body when an absence is essential.
+- **Prompt Medium Boundary:** Image creative text shows one first-moment still; video creative text describes what changes from it or an intentional hold, with audio. Run the produce skill's medium checker and review every clip pair before delivery.
 - **Clean Root & Dedicated Production Folder:** All creator-facing assets (prompts, scripts, clips, audio, and manifests) live strictly inside the `production/` folder. The workspace root stays clean with only `openproducer/` (Brain) and `production/` (Deliverables).
 - **Recovery Pointer:** `production/scratchbook.md` records `Template ID: video/<id>` or `Template ID: none` near the top. `/opp-recover` uses the ID to reload the template from its vault when only `production/` survives; template contents are not stored here.
+- **Video Image Pointers:** Each `video_prompt.txt` assigns every supplied `[IMAGE N]` a contextual role and repeats those directions in the `[VIDEO PROMPT]` body. `[IMAGE 1]` can be a reference. `Start Source:` names a supplied image only when a start image is intended, otherwise `none`.
 - **Strict Sandbox Boundary & Self-Contained Knowledge:** All specifications, visual styles, starter presets, and agent logic live inside `.agents/` (`.agents/skills/openproducer-core/`). The agent operates strictly inside this project workspace; the only permitted external directory is the global user brain (`~/.openproducer/`). Probing parent directories (`../`) or volunteering external access is strictly prohibited.
 
 ---
@@ -39,7 +41,7 @@ This document serves as the declarative file system contract for OpenProducer.
     └── packaging/                     # 📦 Delivery Packaging & Distribution Suite
         ├── titles.txt                 # High-CTR title variations (Curiosity, Stakes, SEO, Shorts)
         ├── descriptions.txt           # Structured descriptions (Full Chapters, Punchy, Shorts)
-        ├── thumbnails/                # Universal 4-block thumbnail prompts
+        ├── thumbnails/                # Target-specific thumbnail prompts
         │   ├── thumb_01_prompt.txt
         │   ├── thumb_02_prompt.txt
         │   └── thumb_03_prompt.txt
@@ -80,7 +82,7 @@ This document serves as the declarative file system contract for OpenProducer.
     ├── clips/                         # 🎬 Shot-by-shot prompts
     │   └── clip_xxx/
     │       ├── image_prompt.txt       # Keyframe prompt (Conditioned On: subject + environment images)
-    │       └── video_prompt.txt       # Video prompt (Input Seed: production/clips/clip_xxx/image_prompt.txt or LAST_FRAME)
+    │       └── video_prompt.txt       # Video prompt (contextual [IMAGE N] roles and optional Start Source)
     ├── master_images_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
     ├── master_videos_prompt.txt       # 📋 Creator reference compilation only (ignored by /opp-guide)
     ├── scratchbook.md                 # 📝 Timeline pacing math, eyeline vectors & Retake Doctor log
@@ -88,7 +90,7 @@ This document serves as the declarative file system contract for OpenProducer.
     └── packaging/                     # 📦 Delivery Packaging & Distribution Suite
         ├── titles.txt                 # High-CTR title variations (Curiosity, Stakes, SEO, Shorts)
         ├── descriptions.txt           # Structured descriptions (Full Chapters, Punchy, Shorts)
-        ├── thumbnails/                # Universal 4-block thumbnail prompts
+        ├── thumbnails/                # Target-specific thumbnail prompts
         │   ├── thumb_01_prompt.txt
         │   ├── thumb_02_prompt.txt
         │   └── thumb_03_prompt.txt

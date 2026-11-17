@@ -42,7 +42,7 @@ When you need deep domain rules, prompt syntax formulas, or linter requirements,
 * [`05_directors_cut_assembly_spec.md`](.agents/skills/openproducer-core/specs/05_directors_cut_assembly_spec.md): Pacing rules, 4s/6s/8s/10s quantum duration locks, clean singles, 180° eyelines, and master linters L-01 to L-19.
 * [`06_retake_doctor_spec.md`](.agents/skills/openproducer-core/specs/06_retake_doctor_spec.md): Glitch catalog (`G-01` to `G-20`), root cause taxonomy, and surgical prompt patch formulas.
 * [`07_scaffolding_and_workspace_spec.md`](.agents/skills/openproducer-core/specs/07_scaffolding_and_workspace_spec.md): Workspace file contracts, plain-text prompt bracket formatting, and manifest ledger.
-* [`09_packaging_spec.md`](.agents/skills/openproducer-core/specs/09_packaging_spec.md): Delivery packaging, high-CTR titles, structured descriptions with timeline chapters, universal 4-block thumbnails with in-prompt AI typography, and 1-stop publish kits.
+* [`09_packaging_spec.md`](.agents/skills/openproducer-core/specs/09_packaging_spec.md): Delivery packaging, high-CTR titles, structured descriptions with timeline chapters, target-specific thumbnail prompts with in-prompt AI typography, and 1-stop publish kits.
 * [`safety_registry.md`](.agents/skills/openproducer-core/specs/safety_registry.md): Multi-pathway gate against platform Trust & Safety trigger words.
 
 ### 2.2 Pluggable Visual Styles & Dialects (`.agents/skills/openproducer-core/styles/`)
@@ -98,7 +98,7 @@ When using, listing, creating, or editing templates (`/opp-template`), templates
     └── packaging/                 # 📦 Delivery Packaging & Distribution Suite
         ├── titles.txt             # High-CTR title variations (Curiosity, Stakes, SEO, Shorts)
         ├── descriptions.txt       # Structured descriptions (Full Chapters, Punchy, Shorts)
-        ├── thumbnails/            # Universal 4-block thumbnail prompts
+        ├── thumbnails/            # Target-specific thumbnail prompts
         │   ├── thumb_01_prompt.txt
         │   ├── thumb_02_prompt.txt
         │   └── thumb_03_prompt.txt
@@ -141,7 +141,7 @@ When using, listing, creating, or editing templates (`/opp-template`), templates
     └── packaging/                 # 📦 Delivery Packaging & Distribution Suite
         ├── titles.txt             # High-CTR title variations (Curiosity, Stakes, SEO, Shorts)
         ├── descriptions.txt       # Structured descriptions (Full Chapters, Punchy, Shorts)
-        ├── thumbnails/            # Universal 4-block thumbnail prompts
+        ├── thumbnails/            # Target-specific thumbnail prompts
         │   ├── thumb_01_prompt.txt
         │   ├── thumb_02_prompt.txt
         │   └── thumb_03_prompt.txt
@@ -150,7 +150,7 @@ When using, listing, creating, or editing templates (`/opp-template`), templates
             ├── combination_02.txt
             └── combination_03.txt
 ```
-*(Every `.txt` prompt file uses simple plain-text bracket headers like `[TIER 2: CLIP KEYFRAME STARTING PLATE — CLIP 01]`, `Conditioned On:`, `[IMAGE PROMPT]`, `[NEGATIVE PROMPT]` with zero markdown `#` headers or emojis).*
+*(Flow-bound `.txt` files use plain-text configuration and input cues above a final `[IMAGE PROMPT]` or `[VIDEO PROMPT]` body. Copy only that body into Flow; no `[NEGATIVE PROMPT]` block follows it. Other tools with a separate negative field may use their own target-specific format.)*
 
 ---
 
@@ -168,7 +168,7 @@ flowchart TD
     PR["4. PRODUCE (/opp-produce)<br/>• Auto-runs Propose first if still in Init or Explore<br/>• Generates creator files on disk inside ./production/ from ./openproducer/"]
     G["5. GUIDE (/opp-guide)<br/>• Step-by-Step interactive co-pilot<br/>• Loops on base_image_prompt.txt until satisfied"]
     D["6. DOCTOR (/opp-doctor)<br/>• Diagnoses G-01 to G-20 creator-observed glitches & patches prompts"]
-    PKG["8. PACKAGE (/opp-package)<br/>• High-converting delivery kit in ./production/packaging/<br/>• Titles, descriptions, 4-block thumbnails & publish kits"]
+    PKG["8. PACKAGE (/opp-package)<br/>• High-converting delivery kit in ./production/packaging/<br/>• Titles, descriptions, thumbnails & publish kits"]
     R["9. RECOVER (/opp-recover)<br/>• Rebuild brain from saved ./production/<br/>• Resolve template ID from scratchbook"]
 
     E -->|"/opp-propose"| P
@@ -239,6 +239,9 @@ flowchart TD
   - **TTS Direction:** Use a small number of natural, model-supported delivery cues only after checking the selected speech model. Keep setup instructions separate from the text pasted into TTS. Preview generated speech for spoken tags, skipped words, and pacing before using its timestamps.
 * **File Generation from Brain (`./openproducer/config.json`) into `./production/`:**
   * **Recovery Pointer:** At the top of `production/scratchbook.md`, include `Template ID: video/<id>` from `openproducer/state.json`, or `Template ID: none` when no video template was used. Do not copy template contents into `production/`.
+  * **Video Image Pointers:** Every `video_prompt.txt` assigns each actually supplied `[IMAGE N]` a contextual job and states that job in the first lines of `[VIDEO PROMPT]`. `[IMAGE 1]` may be a reference. Declare `Start Source: [IMAGE N]` only when a supplied image starts the clip, or `Start Source: none` when the images are references only. In Frames mode use the dedicated Start Frame control for the selected pointer; in Ingredients mode inspect any requested opening composition in the render. Do not reuse the source image prompt's slot roles.
+  * **Flow Prompt Paste:** End every Flow-bound image/video prompt file after its creative body. Do not append a negative block or keyword blacklist. Describe the intended result first; add a short, specific `no X` or `do not X` clause in that body if an absence matters. Tell the creator to paste only the creative body.
+  * **Image/Video Prompt Split:** Image bodies depict one frozen first-moment composition, including pose and visible motion cues but no camera movement, unfolding action, or generated sound. Video bodies specify the change from that state or an intentional hold, plus applicable audio. Compare every pair and run `node .agents/skills/openproducer-produce/scripts/check_prompt_medium.js` before delivery; inspect each advisory finding.
   * **If `separate_script_first`:**
     - **Pass 1 (Before Timestamps):** Creates `production/audio_script.txt`, `production/base_image_prompt.txt`, `production/scratchbook.md`, and (if Modular Studio) `production/subjects/` & `production/visuals/environments/`. Provides direct tool links ([Google AI Studio Speech Playground](https://aistudio.google.com/generate-speech), [TurboScribe](https://turboscribe.ai/) / [AudioToSRT](https://audiotosrt.com/), [Google Flow](https://flow.google.com)) and waits for creator to give audio timestamps/transcripts.
     - **Pass 2 (After Timestamps Given):**
@@ -290,7 +293,7 @@ flowchart TD
 
 ### Mode 8: `package` (`/opp-package` or `/openproducer-package`) — Delivery & Distribution Suite
 * **Action:** Packages an assembled production into high-converting, platform-ready marketing deliverables inside `./production/packaging/`.
-* **Universal 4-Block Thumbnails (`thumbnails/thumb_XX_prompt.txt`):** Follows the universal schema (`[CONFIGURATION SETTINGS]`, `[INPUT SEEDS & INGREDIENTS]`, `[IMAGE PROMPT]`, `[NEGATIVE PROMPT]`) with embedded in-prompt AI typography, 40% negative space law, and YouTube timestamp badge safe zones.
+* **Target-Specific Thumbnails (`thumbnails/thumb_XX_prompt.txt`):** Flow files end after `[IMAGE PROMPT]`; a negative block is only for a different tool with a separate negative field. Keep in-prompt typography, clean composition space, and YouTube timestamp badge safe zones.
 * **The Law of Ingredient Uniqueness (Linter PKG-07):** Never duplicate identical reference image paths across ingredient slots. Single-reference/lean productions bind strictly to `[IMAGE 1]`.
 * **Clean Zero-Jargon Titles & Descriptions (`titles.txt`, `descriptions.txt`):** Provides instant human readability with clean visual section dividers (`====`, `----`) and zero developer audit jargon in prompt deliverables.
 * **1-Stop Publish Kit (`publish_kit/combination_XX.txt`):** Automatically bundled whenever both titles and descriptions exist, pairing Title + Description + Thumbnail prompt into ready-to-paste distribution packages.
@@ -310,10 +313,11 @@ flowchart TD
 **Current rule:** Use the live cue-to-visual contract in `.agents/skills/openproducer-core/specs/05_directors_cut_assembly_spec.md`. Prompt files guide manual Flow generation; prompt checks cannot certify renders. Generation choices are 4s/6s/8s/10s, while edited on-screen lengths may be uneven. The creator selects the image produced by a referenced prompt inside Flow; the `.txt` path is a cue, not an upload.
 
 * **L-01 (Scene and Cue Completeness):** State who/what is visible, where, what changes during the timed cue, and framing scale. No word floor or ceiling; omit repeated constraints that obscure the current action.
-* **L-03/L-04:** Keep physical camera equipment nouns and technical configuration out of the creative body; configuration and negative blocks are separate.
-* **L-05/L-06:** Use a short anti-subtitle negative when relevant and preserve unique prompt-file cues for the intended Flow images.
+* **L-03/L-04:** Keep physical camera equipment nouns and technical configuration out of the creative body; Flow files have no separate negative block.
+* **L-05/L-06:** Flag a standalone negative block in Flow video files, review renders for unwanted text, and preserve unique prompt-file cues for the intended Flow images. A brief `no on-screen text` clause may be used in the creative body when needed.
 * **L-09:** Generate using a project choice of 4s, 6s, 8s, or 10s; manually edited on-screen use may be uneven. Check the chosen Flow model/mode supports the generation setting.
 * **L-14:** Map exact audio cues to relevant visuals and check every local edited interval; external master speech may cross visual cuts.
 * **L-17:** `Audio: SFX: ...; Ambience: ...; Dialogue: ...; Music: ...` is a prompt hint. Note manual mute/Foley/native audio use and cut offsets in `scratchbook.md`.
 * **L-19:** Review safety in context against `.agents/skills/openproducer-core/specs/safety_registry.md`; keyword absence is not certification.
+* **Medium check:** The produce skill's advisory checker flags obvious image/video crossover. A clean result does not replace reading each clip image beside its video continuation.
 * **Audit status:** Unimplemented or creator-review checks stay `PENDING`, never automatic `PASS`. `PROMPTS_READY` does not mean clips were rendered or assembled.

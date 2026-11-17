@@ -6,9 +6,25 @@
 
 ---
 
+## Current decision — image/video prompt separation (2026-11-17)
+
+Clip image prompts describe one frozen first visible moment, including pose and visible motion cues but no camera move, unfolding action, or generated audio. Clip video prompts describe the change from that state during the cue, or an explicit intentional hold, with relevant audio. Before delivery, compare each pair and run the produce skill's advisory medium checker. See Discussion 99 and the live specs.
+
+---
+
+## Current decision — Flow paste boundary (2026-11-17)
+
+Flow-bound production files end with the creative `[IMAGE PROMPT]` or `[VIDEO PROMPT]` body. The creator pastes only that body into Flow's single prompt field; input images and technical settings are selected in Flow controls. Standalone `[NEGATIVE PROMPT]` lists are not generated for Flow. Describe the intended result first, then add a short, specific `no X` or `do not X` clause in that body when an absence is essential. For instance, use `smooth, solid white circular head with no facial markings` instead of repeating a long list of facial parts. Inspect the render for failures. Legacy prompt files must stop before a negative block. L-05 flags that block in video files. See Discussion 98 and the live specs.
+
+---
+
 ## Current decision — scene image chain (2026-11-15)
 
 The creator chose an in-project Flow image chain for clip images. The first clip image in a continuous location/time scene uses the approved base, character, and environment anchors. Each later clip image uses the previous **approved clip image** as its local reference, with stable subject/environment anchors when supported. A new scene or rejected/drifting image resets to stable anchors. This is image lineage, not last-frame extraction from the rendered video, so the creator still checks the actual motion cut. Prompt-file paths are cues to select images already in Flow; no download or re-upload is required. The current audio cue determines what the next image shows. See Discussion 94 and the live specification for the full contract; older terminal-frame and fixed-duration material below is historical.
+
+## Current decision — explicit video image roles (2026-11-17)
+
+Each video prompt maps every supplied `[IMAGE N]` to its contextual purpose and repeats those directions in the creative body. `[IMAGE 1]` may be a reference. `Start Source: [IMAGE N]` is used only when a supplied image is intended to start the clip; otherwise `Start Source: none`. Frames mode uses the dedicated Start Frame control for the chosen image; Ingredients mode may request an opening composition in text and requires render inspection. Image-generation slot roles do not carry over to video. See Discussion 97 and the live specs.
 
 ---
 

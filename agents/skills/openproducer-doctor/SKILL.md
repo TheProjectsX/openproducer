@@ -24,6 +24,8 @@ Diagnose runtime generative AI anomalies across Google Flow, Veo 3.1, and Imagen
    - G-09: Equipment visible $\rightarrow$ Purge hardware nouns.
 3. **Apply Surgical Patch:**
    - Overwrite affected prompt file in `production/` (`production/clips/clip_XX/video_prompt.txt`, `production/clips/clip_XX/image_prompt.txt`, `production/base_image_prompt.txt`, `production/subjects/<id>/`, or `production/visuals/environments/<id>/`), preserving `Conditioned On:` / `Input Seed:` connection lines.
+   - When patching a video prompt, preserve or repair every `[IMAGE N]` pointer's contextual role, its `Start Source:` declaration, and the corresponding directions in `[VIDEO PROMPT]`.
+   - For a Flow retake, remove any legacy `[NEGATIVE PROMPT]` block from the affected file. Replace a long forbidden-feature list with a concise description of the desired visible result and, if essential, one specific `no X` or `do not X` instruction in the creative body. Keep the pasted body free of metadata headings. If that wording appears to worsen the artifact, test the positive description with a stronger reference image.
    - Re-sync `production/master_videos_prompt.txt` and `production/master_images_prompt.txt`.
    - Log diagnosis and patch in `./openproducer/blueprint.md` and `production/scratchbook.md`.
 

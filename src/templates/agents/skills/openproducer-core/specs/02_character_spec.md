@@ -1,5 +1,7 @@
 # Specification: `characters/` Domain (Character Turnaround & Identity Anchors)
 
+> **Flow prompt amendment (2026-11-17):** For Flow-bound image and video files, describe the intended appearance first; a short, specific exclusion may follow when the absence is essential. Do not generate or paste a standalone negative prompt block or long keyword list into Flow's single text box. Historical negative clauses below are failure-mode notes only.
+
 **Status:** ✅ FINALIZED (Specialized Character Domain Specification)  
 **Parent Universal Specification:** [`02_subject_spec.md`](./02_subject_spec.md)  
 **Domain:** `characters/` (Specialized Human & Stylized Character Domain under `subjects/`)  
@@ -148,7 +150,7 @@ When a creator uploads their photo and requests custom wardrobe, cosplay, or tal
      Once the Tier 2 keyframe is generated, pass **only that single pre-composited keyframe** into Tier 3 Veo 3.1 video generation to prevent multi-sheet identity bleed.
 3. **Expression Decoupling Engine (Clean Winks & Smiles):** Decouple permanent bone geometry from transient emotions. When animating expressions from `[IMAGE 1]`, combine Lean Reference Anchoring with dynamic muscle vectors:
    `The exact same person from [IMAGE 1], retaining 100% identical authentic facial likeness and bone structure from the reference photo. Dynamic expression: while strictly preserving authentic biological landmarks, the face naturally articulates into a relaxed subtle smile with naturally lifted cheeks and soft eye creases. Real living human face, subtle micro-expression, not an exaggerated caricature, no frozen grimace.`
-4. **The 1:7.5 Head-to-Body Anatomical Ratio Lock (Anti-Bobblehead):** Prevent oversized heads and compressed bodies by injecting strict scale constraints: *"Realistic adult human anatomical proportions, strictly natural 1:7.5 head-to-body scale ratio, natural shoulder width proportional to torso height."* Mandate negative prompt clause: `oversized head, giant face, bobblehead, caricature, dwarfism, shrunken torso, chibi proportions, cartoon anatomy, macro face`.
+4. **The 1:7.5 Head-to-Body Anatomical Ratio Lock (Anti-Bobblehead):** Preserve natural adult proportions with a concise positive description: *"Realistic adult anatomy with a natural head-to-body scale and shoulder width proportional to torso height."* The historical exclusion terms (`oversized head`, `bobblehead`, `chibi proportions`) are diagnostic notes, not Flow prompt text.
 5. **The 2-Step Angle Normalizer (For Posed / Neck-Tilted Photos):** If the source image is non-frontal (angled 3/4, tilted head, turned neck), NEVER attempt to simultaneously un-rotate the head, extrapolate a full body, change clothes, and animate expressions in one step.
    - *Step 1A (Pose Normalization):* Generate a clean, eye-level frontal headshot portrait on `#E5E5E5` whose sole goal is straightening head angle and locking 1:1 facial likeness with zero wardrobe or expression changes.
    - *Step 1B (Character Activation):* Condition on the straightened Step 1A plate to generate full-body tailoring, dynamic expressions, and environment staging.

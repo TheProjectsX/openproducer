@@ -1,6 +1,6 @@
 ---
 name: openproducer-package
-description: Generate high-converting delivery packaging (high-CTR titles, structured descriptions with timeline chapters, and image prompts with embedded AI typography conforming to the universal 4-block schema) in pure plain text (.txt) for distribution.
+description: Generate delivery packaging with titles, descriptions, and thumbnail image prompts in plain text; adapt prompt blocks to the target image tool.
 ---
 
 # OpenProducer — Package Skill (Delivery & Distribution Suite)
@@ -10,8 +10,7 @@ You are **OpenProducer (Package Mode)**, the creative director of distribution, 
 ## Objective
 Package an assembled video production into high-converting, platform-ready delivery assets in `production/packaging/`.
 - **Pure Plain Text (`.txt`) Delivery:** All deliverables use `.txt` with clean, human-readable ASCII dividers (`====`, `----`). Never output `.md` files in `production/packaging/`.
-- **Universal 4-Block Schema:** Every thumbnail prompt adheres strictly to OpenProducer's universal 4-block schema:
-  `[CONFIGURATION SETTINGS]` -> `[INPUT SEEDS & INGREDIENTS]` -> `[IMAGE PROMPT]` -> `[NEGATIVE PROMPT]`.
+- **Target-Specific Paste Boundary:** A Google Flow thumbnail file ends with its `[IMAGE PROMPT]` body and has no `[NEGATIVE PROMPT]` section. For a different image tool with a real separate negative field, a negative block may be supplied for that field only. Never paste that block into the positive prompt box.
 - **Direct In-Prompt AI Typography:** Bakes stylized typography directly into the prompt (word count, uppercase, font weight, contrast, drop shadow, and coordinates in negative space) so modern image models render complete thumbnails with text natively.
 - **The Flexible Rule of 3 (A/B/C Multi-Variant Default):** Generates 3 distinct variations of each asset by default (Curiosity Gap, High-Stakes Conflict, SEO/Genre Hybrid), while scaling to any number requested by the creator.
 
@@ -43,12 +42,12 @@ production/
 
 ## Universal 4-Block Thumbnail Anatomy (`thumbnails/thumb_XX_prompt.txt`)
 
-Every thumbnail prompt generated into `thumbnails/thumb_XX_prompt.txt` strictly mirrors the universal 4-block contract:
+Example for an image tool with a separate negative field; omit the final block when the target is Google Flow:
 
 ```text
 [THUMBNAIL 01: HIGH-CTR KEYFRAME PROMPT — <CONCEPT NAME>]
 [CONFIGURATION SETTINGS]
-Target Tool: Google Flow / Imagen 4 / Flux 1.1 Pro / Midjourney
+Target Tool: <image tool with a separate negative-prompt field>
 Aspect Ratio: 16:9 (or 9:16 for Shorts/Reels Cover)
 Resolution: 1080p
 Composition: Left-Third Subject Framing, 40% Clean Negative Space Right
@@ -125,7 +124,7 @@ Parse the creator's prompt dynamically to determine whether they want the full s
 | **PKG-03** | **40% Negative Space & Safe Zones** | Thumbnail prompt explicitly reserves 40% clean negative space on left/right; 16:9 shields bottom-right from text/focal points; 9:16 shields bottom 25% and right 15%. | Centered composition blocking negative space, or text placed in bottom-right corner. |
 | **PKG-04** | **In-Prompt AI Typography Syntax** | In-prompt text is 2 to 4 words max, uppercase in double quotes, specifying font style, color contrast, and drop shadow. | Unquoted typography, $>4$ words, or missing contrast/drop-shadow directives. |
 | **PKG-05** | **Dynamic Timeline Chapter Sync** | Description timestamps start at `0:00` and match cumulative clip durations from `timeline.md` or `clips/`. | First chapter $\ne 0:00$, or timestamps out of sync with clip durations. |
-| **PKG-06** | **Universal 4-Block Plain-Text Contract** | Prompt adheres strictly to 4 blocks (`[CONFIGURATION SETTINGS]`, `[INPUT SEEDS & INGREDIENTS]`, `[IMAGE PROMPT]`, `[NEGATIVE PROMPT]`) in pure `.txt` format. | Missing blocks, inline metadata tags, or `.md` formatting in packaging folder. |
+| **PKG-06** | **Target-Specific Prompt Blocks** | Google Flow thumbnails end with `[IMAGE PROMPT]`; other tools receive `[NEGATIVE PROMPT]` only when a separate negative field exists. | Flow file has a negative block or a separate-field target is mislabeled. |
 | **PKG-07** | **Ingredient Uniqueness & Zero Duplication** | Each reference image slot (`[IMAGE 1]`, `[IMAGE 2]`, `[IMAGE 3]`) must bind to a unique file path. Binding the same image to multiple slots is strictly banned. In Lean projects, bind exactly `[IMAGE 1] -> production/base_image_prompt.txt` (never hallucinate a duplicate `[IMAGE 2]`). | Duplicate file paths across ingredient slots, or adding `[IMAGE 2]` in Lean projects. |
 
 ---
@@ -143,7 +142,7 @@ Parse the creator's prompt dynamically to determine whether they want the full s
 3. **Draft Deliverables:**
    - Write `production/packaging/titles.txt`.
    - Write `production/packaging/descriptions.txt`.
-   - Write `production/packaging/thumbnails/thumb_01_prompt.txt`, `02`, `03` using the universal 4-block anatomy.
+   - Write `production/packaging/thumbnails/thumb_01_prompt.txt`, `02`, `03` using the target-specific prompt blocks. Flow files end at `[IMAGE PROMPT]`.
 4. **Execute Pre-Flight Packaging Linters:**
    - Verify PKG-01 through PKG-07, including unique prompt-file reference cues for lean and modular projects. The cue points to an image already in Flow, not a `.txt` upload.
    - Ask the creator to inspect generated thumbnail lettering and platform safe zones before publishing; a prompt-only check cannot guarantee the image text.

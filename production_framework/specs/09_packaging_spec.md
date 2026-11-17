@@ -1,5 +1,7 @@
 # Specification 09: Delivery Packaging Engine (`opp-package`), Pure Text Deliverables & Channel Templates
 
+> **Flow paste amendment (2026-11-17):** When a thumbnail targets Google Flow, its file ends at `[IMAGE PROMPT]` with no standalone negative block. For another tool with a real separate negative field, that block is field-specific and is never pasted into the positive prompt box. The four-block examples below describe only tools with such a separate field.
+
 ## 1. Core Architectural Philosophy: Packaging as Distribution Delivery
 
 In OpenProducer, **Packaging constitutes Phase Final (Post-Production Delivery)**. 
@@ -46,7 +48,7 @@ production/
 |---|---|---|---|
 | `titles.txt` | Human Producer & Platform | Clean ASCII blocks with Title on isolated line, mobile char count, and tags | Fast A/B/C title selection without debug clutter. |
 | `descriptions.txt` | Human Producer & Platform | Clean ASCII blocks with Hook, Auto-Calculated Chapters (`0:00`), Lore, Credits, Links | 3 distinct description styles ready for copy-paste. |
-| `thumbnails/thumb_XX_prompt.txt` | AI Image Generators | Universal 4-block schema with embedded AI typography and safe zones | 1-click copy-paste ready image prompt for Imagen 4 / Flux. |
+| `thumbnails/thumb_XX_prompt.txt` | AI Image Generators | Flow uses three blocks; tools with a separate negative field may use four. Typography and safe zones remain in the image body. | Copy only `[IMAGE PROMPT]` text into the positive prompt field. |
 | `publish_kit/combination_XX.txt` | Creator / Publisher | Unified 1-stop kit pairing Title + Description + Matching Thumbnail | Instant upload form matching YouTube Studio / TikTok inputs. |
 
 ### 2.2 The Publish Kit (`publish_kit/combination_XX.txt`)
@@ -58,12 +60,12 @@ production/
 
 ## 3. Standardized Thumbnail Prompt Anatomy
 
-Every thumbnail prompt generated into `thumbnails/thumb_XX_prompt.txt` strictly mirrors the universal 4-block prompt contract established in `base_image_prompt.txt` and `clip_XXX/image_prompt.txt`:
+The example below is for an image tool with a separate negative-prompt field. For Google Flow, omit the final negative block and copy only `[IMAGE PROMPT]` text:
 
 ```text
 [THUMBNAIL 01: HIGH-CTR KEYFRAME PROMPT — <CONCEPT NAME>]
 [CONFIGURATION SETTINGS]
-Target Tool: Google Flow / Imagen 4 / Flux 1.1 Pro / Midjourney
+Target Tool: <image tool with a separate negative-prompt field>
 Aspect Ratio: 16:9 (or 9:16 for Shorts/Reels Cover)
 Resolution: 1080p
 Composition: Left-Third Subject Framing, 40% Clean Negative Space Right
@@ -214,6 +216,6 @@ The packaging skill applies seven prompt-side review checks. Final chapter times
 | **LINT-PKG-03** | `NonRedundancyLinter` | **WARNING** if the text in `thumbnails/` exactly repeats words from the corresponding title in `titles.txt`. |
 | **LINT-PKG-04** | `InPromptTypographyLinter` | **ERROR** if in-prompt text overlay exceeds 4 words or lacks explicit font styling, color contrast, and negative-space coordinates. |
 | **LINT-PKG-05** | `TimestampZeroOriginLinter` | **ERROR** if chapters do not begin at `0:00` or do not match creator-confirmed edited cut times; mark planned timestamps provisional. |
-| **LINT-PKG-06** | `FourBlockPromptLinter` | Thumbnail prompt has configuration, input cues, image prompt, and negative prompt blocks. |
+| **LINT-PKG-06** | `TargetPromptBlockLinter` | Flow thumbnails end at the image prompt; other targets use a negative block only when a separate field exists. |
 | **LINT-PKG-07** | `UniqueReferenceCueLinter` | Each `[IMAGE N]` slot points to a unique prompt-file cue; lean projects use one cue. The creator selects the corresponding image already in Flow. |
 
