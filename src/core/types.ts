@@ -53,6 +53,7 @@ export interface OpenProducerConfig {
   linter_profile: string;
   story_template_id?: string;
   package_template_id?: string;
+  structure_template_id?: string;
 }
 
 export interface StageTracker {

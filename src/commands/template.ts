@@ -30,7 +30,10 @@ export async function templateCommand(
     'refine',
     'show',
     'view',
-    'list'
+    'list',
+    'delete',
+    'rm',
+    'remove'
   ];
 
   // Handle group-first syntax: e.g. "openproducer template package read xxxx-xxxx"
@@ -98,6 +101,8 @@ export async function templateCommand(
             ? '🎙️'
             : groupName === 'package'
             ? '📦'
+            : groupName === 'structure'
+            ? '🏗️'
             : '📁';
         console.log(pc.bold(`${icon} ${groupName.toUpperCase()} Templates:`));
         for (const t of templates) {
@@ -108,6 +113,8 @@ export async function templateCommand(
               ? pc.yellow
               : groupName === 'package'
               ? pc.green
+              : groupName === 'structure'
+              ? pc.blue
               : pc.magenta;
           const isCustom = Boolean(t.isCustom);
           const customBadge = isCustom ? ` ${pc.magenta('[🛠️]')}` : '';
@@ -162,6 +169,22 @@ export async function templateCommand(
     const isStorySave = requestedGroup === 'story' || templateId.startsWith('story-');
     if (isStorySave) {
       logger.error('Story templates are archived and are not part of the live video workflow.');
+      return;
+    }
+
+    if (requestedGroup && requestedGroup !== 'video') {
+      const localGroupFile = path.join(configMgr.root, 'openproducer', 'templates', requestedGroup, `${templateId}.md`);
+      let content = (await exists(localGroupFile)) ? await readFile(localGroupFile) : '';
+      if (!content && requestedGroup === 'structure') {
+        content = `---\ntemplate_id: ${templateId}\nname: ${templateId}\ngroup: structure\ntarget_engine: custom\nclip_image_mode: required\nreference_style: image_pointers\nallow_negative_block: false\ninject_settings_in_prompt: false\nmaster_compilation: separate_masters\n---\n\n# 🏗️ Structure: ${templateId}\n> Custom production prompt and file-layout structure.\n\n## 📁 Production File Layout\n- Define which files exist in \`./production/\`.\n\n## 🔗 Reference & Pointer Rules\n- Define how subjects, environments, and continuity are referenced.\n\n## 🧱 Prompt Block Format\n- Define exact plain-text headers and block order.\n\n## 📜 Provider-Specific Prompt & Constraint Rules\n- Define provider rules (settings in prompt, character counts, anti-morphing, movement speed).\n\n## 🔄 Reconstruction Mapping (From Google Flow Default)\n- Define how \`/openproducer-reconstruct\` converts default Google Flow prompts into this structure.\n`;
+      }
+      if (!content) {
+        logger.info(`No local ${requestedGroup} template found at ${localGroupFile}. Create or discuss it in session, then save to ~/.openproducer/templates/${requestedGroup}/${templateId}.md.`);
+        return;
+      }
+      await tm.saveGenericTemplate(requestedGroup, templateId, content);
+      logger.success(`${requestedGroup} template saved globally as Markdown: "${templateId}.md"`);
+      console.log('');
       return;
     }
 
@@ -280,7 +303,10 @@ export async function templateCommand(
     if (genericTemplate) {
       const config = await configMgr.readConfig();
       if (genericTemplate.group === 'package') {
-        (config as any).package_template_id = templateId;
+        config.package_template_id = templateId;
+        await configMgr.writeConfig(config);
+      } else if (genericTemplate.group === 'structure') {
+        config.structure_template_id = templateId;
         await configMgr.writeConfig(config);
       }
 
@@ -321,13 +347,27 @@ export async function templateCommand(
       return;
     }
 
-    const existingVideo = requestedGroup === 'story' ? null : await tm.getTemplate(templateId);
-    const existingStory = !existingVideo && requestedGroup !== 'video' ? await tm.getStoryTemplate(templateId) : null;
+    const existingVideo = requestedGroup && requestedGroup !== 'video' ? null : await tm.getTemplate(templateId).catch(() => null);
+    const existingStory = !existingVideo && (!requestedGroup || requestedGroup === 'story') ? await tm.getStoryTemplate(templateId) : null;
+    const existingGeneric = !existingVideo && !existingStory ? await tm.getGenericTemplate(templateId, requestedGroup) : null;
 
-    if (!existingVideo && !existingStory) {
+    if (!existingVideo && !existingStory && !existingGeneric) {
       logger.error(`Template "${templateId}" not found in ${tm.directory}`);
       logger.info('To create a new template from this project, use: "openproducer template save ' + templateId + '"');
       process.exit(1);
+    }
+
+    if (existingGeneric) {
+      const targetGroup = (existingGeneric.group || requestedGroup || 'generic').toLowerCase();
+      const localGenericFile = path.join(configMgr.root, 'openproducer', 'templates', targetGroup, `${templateId}.md`);
+      let updatedContent = (await exists(localGenericFile)) ? await readFile(localGenericFile) : (existingGeneric.raw_content || '');
+      if (instruction) {
+        updatedContent = updatedContent.trimEnd() + `\n\n<!-- Update Directive: ${instruction} -->\n`;
+      }
+      await tm.saveGenericTemplate(targetGroup, templateId, updatedContent);
+      logger.success(`${targetGroup} template "${templateId}" updated in ~/.openproducer/templates/${targetGroup}/${templateId}.md`);
+      console.log('');
+      return;
     }
 
     if (existingStory) {
@@ -512,15 +552,28 @@ export async function templateCommand(
     }
 
     if (genericTemplate) {
-      logger.info(`Loaded ${genericTemplate.group.toUpperCase()} Template for editing: ${pc.magenta(templateId)}`);
+      const targetGroup = (genericTemplate.group || requestedGroup || 'generic').toLowerCase();
+      let localMirrorPath = '';
+      if (inProject && genericTemplate.raw_content) {
+        localMirrorPath = path.join(configMgr.root, 'openproducer', 'templates', targetGroup, `${templateId}.md`);
+        if (!(await exists(localMirrorPath))) {
+          await writeFile(localMirrorPath, genericTemplate.raw_content);
+        }
+      }
+      logger.info(`Loaded ${targetGroup.toUpperCase()} Template for editing: ${pc.magenta(templateId)}`);
       console.log('');
-      console.log(pc.bold(pc.magenta(`📁 ${genericTemplate.group.toUpperCase()} Template: ${genericTemplate.name}`)));
-      console.log(`  • Group: ${genericTemplate.group}`);
+      console.log(pc.bold(pc.magenta(`📁 ${targetGroup.toUpperCase()} Template: ${genericTemplate.name}`)));
+      console.log(`  • Group: ${targetGroup}`);
+      if (localMirrorPath) {
+        console.log(`  • Workspace Mirror: ${pc.dim(localMirrorPath)}`);
+      }
       if (genericTemplate.raw_content) {
         console.log(pc.dim('── Raw Content Preview ──'));
         console.log(genericTemplate.raw_content.trim());
         console.log(pc.dim('─────────────────────────'));
       }
+      console.log('');
+      logger.info(`When producer approves changes, write updates to openproducer/templates/${targetGroup}/${templateId}.md and run "npx openproducer template edit ${templateId} save --group ${targetGroup}".`);
       console.log('');
     }
 
@@ -545,5 +598,43 @@ export async function templateCommand(
     return tpl.content;
   }
 
-  logger.error(`Unknown template action "${action}". Available: list, save, use, update, edit, read.`);
+  // 7. Action: delete / rm / remove
+  if (action === 'delete' || action === 'rm' || action === 'remove') {
+    if (!templateId) {
+      logger.error('Please specify a template name to delete: "openproducer template delete <template-name> [--group <group>]"');
+      process.exit(1);
+    }
+
+    const deleted = await tm.deleteTemplate(templateId, requestedGroup);
+    if (deleted.length === 0) {
+      const groupHint = requestedGroup ? ` in group "${requestedGroup}"` : '';
+      logger.error(`Custom template "${templateId}" not found${groupHint} in vault or workspace.`);
+      process.exit(1);
+    }
+
+    if (isInitialized) {
+      const config = await configMgr.readConfig();
+      let configChanged = false;
+      if (config.structure_template_id === templateId && (!requestedGroup || requestedGroup === 'structure')) {
+        delete config.structure_template_id;
+        configChanged = true;
+      }
+      if (config.package_template_id === templateId && (!requestedGroup || requestedGroup === 'package')) {
+        delete config.package_template_id;
+        configChanged = true;
+      }
+      if (configChanged) {
+        await configMgr.writeConfig(config);
+      }
+    }
+
+    logger.success(`Deleted template "${templateId}" (${deleted.length} file(s) removed):`);
+    for (const filePath of deleted) {
+      console.log(`  • ${pc.dim(filePath)}`);
+    }
+    console.log('');
+    return;
+  }
+
+  logger.error(`Unknown template action "${action}". Available: list, save, use, update, edit, read, delete.`);
 }

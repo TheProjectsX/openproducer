@@ -57,5 +57,5 @@ At the bottom of **every single response** while in `explore` mode, always inclu
 ```markdown
 ---
 > 🧠 **Session Memory Only (Explore Mode):** Everything we are discussing right now lives only in this chat session's memory—no production files have been written to disk yet. If this session is closed or lost, this discussion will be gone.
-> 👉 Whenever you are ready to save and draft this into the project brain (`./openproducer`), type **`/openproducer-propose`** (or `/opp-propose`)!
+> 👉 Whenever you are ready to save and draft this into the project brain (`./openproducer`), type **`/openproducer-propose`**!
 ```

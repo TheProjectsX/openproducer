@@ -79,11 +79,11 @@ program
 // Command: template [action] [templateId] [instruction...]
 program
   .command('template [action] [templateId] [instruction...]')
-  .description('Manage global series franchise presets (list, save <id>, use <id>, update <id>, edit <id>, read <id>)')
+  .description('Manage global series franchise presets (list, save <id>, use <id>, update <id>, edit <id>, read <id>, delete <id>)')
   .option('-p, --paths', 'Display physical file paths for listed templates')
   .option('-v, --verbose', 'Verbose mode: display template file paths and details')
-  .option('-g, --group <group>', 'Template group / sub-vault (video | story | audio | style | etc.)')
-  .option('-t, --type <type>', 'Template vault type alias (video | story | etc.)')
+  .option('-g, --group <group>', 'Template group / sub-vault (video | structure | package | story | etc.)')
+  .option('-t, --type <type>', 'Template vault type alias (video | structure | package | story | etc.)')
   .action(async (action, templateId, instruction, commandObj) => {
     let opts = commandObj?.opts ? commandObj.opts() : commandObj;
     let instr = instruction;

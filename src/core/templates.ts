@@ -256,6 +256,16 @@ function getPackagePresetsDirs(): string[] {
   ];
 }
 
+function getStructurePresetsDirs(): string[] {
+  return [
+    path.join(__dirname, '..', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'structure'),
+    path.join(__dirname, '..', '..', 'src', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'structure'),
+    path.join(__dirname, '..', '..', 'dist', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'structure'),
+    path.join(__dirname, '..', '..', 'templates', 'agents', 'skills', 'openproducer-core', 'templates', 'structure'),
+    path.join(__dirname, '..', '..', 'agents', 'skills', 'openproducer-core', 'templates', 'structure')
+  ];
+}
+
 export class TemplateManager {
   private globalDir: string;
   private projectRoot: string | null;
@@ -338,6 +348,8 @@ export class TemplateManager {
       await syncDirPair(dir, this.globalDir);
       await syncDirPair(path.join(dir, 'story'), path.join(this.globalDir, 'story'));
       await syncDirPair(path.join(dir, 'video'), path.join(this.globalDir, 'video'));
+      await syncDirPair(path.join(dir, 'package'), path.join(this.globalDir, 'package'));
+      await syncDirPair(path.join(dir, 'structure'), path.join(this.globalDir, 'structure'));
     }
 
     return synced;
@@ -571,6 +583,11 @@ export class TemplateManager {
       await scanDir(packageDir, 'package', true);
     }
 
+    // 1c. Bundled structure templates
+    for (const structureDir of getStructurePresetsDirs()) {
+      await scanDir(structureDir, 'structure', true);
+    }
+
     // 2. Global directory
     await scanDir(this.globalDir, undefined, false);
 
@@ -681,6 +698,41 @@ export class TemplateManager {
       await ensureDir(localGroupDir);
       await writeFile(path.join(localGroupDir, `${templateId}.md`), markdownContent);
     }
+  }
+
+  async deleteTemplate(templateId: string, group?: string): Promise<string[]> {
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(templateId)) {
+      throw new Error('Invalid template ID.');
+    }
+    if (group && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/i.test(group)) {
+      throw new Error('Invalid template group.');
+    }
+
+    const deleted: string[] = [];
+    const targetGroups = group ? [group.toLowerCase()] : ['video', 'structure', 'package'];
+    const roots = [this.globalDir];
+    if (this.projectRoot) {
+      roots.push(path.join(this.projectRoot, 'openproducer', 'templates'));
+    }
+
+    const candidates: string[] = [];
+    for (const rootDir of roots) {
+      if (!group) {
+        candidates.push(path.join(rootDir, `${templateId}.md`), path.join(rootDir, `${templateId}.json`));
+      }
+      for (const grp of targetGroups) {
+        candidates.push(path.join(rootDir, grp, `${templateId}.md`), path.join(rootDir, grp, `${templateId}.json`));
+      }
+    }
+
+    for (const filePath of candidates) {
+      if (await exists(filePath)) {
+        await fsp.unlink(filePath);
+        deleted.push(filePath);
+      }
+    }
+
+    return deleted;
   }
 
   async getStoryTemplate(templateId: string): Promise<StoryTemplate | null> {

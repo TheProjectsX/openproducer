@@ -23,10 +23,10 @@ Diagnose runtime generative AI anomalies across Google Flow, Veo 3.1, and Imagen
    - G-01: Face drift $\rightarrow$ Strengthen bone structure biometrics.
    - G-09: Equipment visible $\rightarrow$ Purge hardware nouns.
 3. **Apply Surgical Patch:**
-   - Overwrite affected prompt file in `production/` (`production/clips/clip_XX/video_prompt.txt`, `production/clips/clip_XX/image_prompt.txt`, `production/base_image_prompt.txt`, `production/subjects/<id>/`, or `production/visuals/environments/<id>/`), preserving `Conditioned On:` / `Input Seed:` connection lines.
-   - When patching a video prompt, preserve or repair every `[IMAGE N]` pointer's contextual role, its `Start Source:` declaration, and the corresponding directions in `[VIDEO PROMPT]`.
-   - For a Flow retake, remove any legacy `[NEGATIVE PROMPT]` block from the affected file. Replace a long forbidden-feature list with a concise description of the desired visible result and, if essential, one specific `no X` or `do not X` instruction in the creative body. Keep the pasted body free of metadata headings. If that wording appears to worsen the artifact, test the positive description with a stronger reference image.
-   - Re-sync `production/master_videos_prompt.txt` and `production/master_images_prompt.txt`.
+   - **Structure Template Check (1:1 Strict Precedence):** Read `structure_template_id` in `./openproducer/config.json`. If a custom `structure` template is active (`./openproducer/templates/structure/<id>.md`), **follow that structure template 1:1** when patching—only edit files present in its layout, preserve its reference syntax (`@Name` / natural name / `[IMAGE N]`), preserve its block headers, enforce its `Provider-Specific Prompt & Constraint Rules` (e.g., `inject_settings_in_prompt`, character counts, anti-morphing, movement speed), and respect its `allow_negative_block` and `master_compilation` settings.
+   - Overwrite affected prompt file in `production/` (e.g. `production/clips/clip_XX/video_prompt.txt`, or `image_prompt.txt`, `base_image_prompt.txt`, `subjects/<id>/`, `visuals/environments/<id>/` when present in the active structure).
+   - *(Google Flow Default only):* Preserve `Conditioned On:` / `Input Seed:` lines, every `[IMAGE N]` pointer's contextual role, `Start Source:`, and opening directions in `[VIDEO PROMPT]`, and remove any legacy `[NEGATIVE PROMPT]` block.
+   - Re-sync master prompt files according to the active structure's `master_compilation` (`master_videos_prompt.txt` / `master_images_prompt.txt` by default).
    - Log diagnosis and patch in `./openproducer/blueprint.md` and `production/scratchbook.md`.
 
 ## Mandatory Structured Output Format

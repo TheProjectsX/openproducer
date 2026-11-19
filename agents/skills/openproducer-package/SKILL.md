@@ -34,7 +34,7 @@ production/
 ```
 
 ### The Publish Kit (`publish_kit/combination_XX.txt`)
-- **Condition:** Generated automatically whenever **both titles and descriptions are created** (full `/opp-package` or when both exist).
+- **Condition:** Generated automatically whenever **both titles and descriptions are created** (full `/openproducer-package` or when both exist).
 - **Format:** High-visibility, zero-jargon sections (`[TITLE]`, `[DESCRIPTION]`, `[RECOMMENDED THUMBNAIL]`, `[TAGS]`) formatted for instant copy-pasting directly into YouTube Studio, TikTok, or Reels upload forms.
 - **Creator Freedom:** Creators can choose between mix-and-matching individual files (`titles.txt`, `descriptions.txt`) or grabbing a complete pre-paired bundle from `publish_kit/`.
 
@@ -64,6 +64,7 @@ AI Typography: "<PUNCHY TEXT>" (<Font Style>, <Color Contrast>, <Drop Shadow / P
 [NEGATIVE PROMPT]
 blurry text, misspelled typography, illegible letters, deformed text, messy font, cluttered background, action figure, doll, deformed hands, extra fingers, cartoon, 3D CGI plastic, waxy skin, camera rig, tripod, centered composition blocking negative space, bottom-right corner clutter.
 ```
+*(Note: If `structure_template_id` is active in `./openproducer/config.json` and defines a custom reference syntax or block format for image prompts, adapt thumbnail prompt references and blocks to match the active structure 1:1 when targeting that same engine.)*
 
 ---
 
@@ -71,22 +72,22 @@ blurry text, misspelled typography, illegible letters, deformed text, messy font
 
 Parse the creator's prompt dynamically to determine whether they want the full suite or a targeted single asset:
 
-### 1. Full Packaging Kit (`/opp-package` or bare invocation)
+### 1. Full Packaging Kit (`/openproducer-package` or bare invocation)
 - Reads project state (`production/base_image_prompt.txt`, `production/subjects/`, `production/timeline.md` or `production/clips/`).
 - Generates `production/packaging/titles.txt` (3 variations across Curiosity, Stakes, SEO).
 - Generates `production/packaging/descriptions.txt` (3 styles: Story/Lore, Punchy CTR, Full YouTube Chapters with auto-calculated timestamps).
 - Generates `production/packaging/thumbnails/thumb_01_prompt.txt`, `02`, `03` (16:9 and/or 9:16).
 
 ### 2. Title-Focused Invocation
-- Example: `"/opp-package Create me 5 titles that spark deep curiosity"`
+- Example: `"/openproducer-package Create me 5 titles that spark deep curiosity"`
 - Generates or updates `production/packaging/titles.txt` with the requested count and angle, adhering to the <65 character mobile limit.
 
 ### 3. Thumbnail-Focused Invocation
-- Example: `"/opp-package Generate thumbnail for this. Use 'LOOK DOWN' as thumb text"`
+- Example: `"/openproducer-package Generate thumbnail for this. Use 'LOOK DOWN' as thumb text"`
 - Generates or updates `production/packaging/thumbnails/thumb_XX_prompt.txt`, applying the 40% Negative Space Law, mobile squint test, subject reference image binding (`[IMAGE 1]`), and in-prompt typography specifying `"LOOK DOWN"`.
 
 ### 4. Description-Focused Invocation
-- Example: `"/opp-package Write description for the story. Add hashtags: #scifi #horror"`
+- Example: `"/openproducer-package Write description for the story. Add hashtags: #scifi #horror"`
 - Generates or updates `production/packaging/descriptions.txt`, auto-calculating chapters from clip durations, writing above-the-fold hook and story lore, and appending the requested hashtags.
 
 ---

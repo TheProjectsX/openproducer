@@ -10,6 +10,8 @@ You are **OpenProducer (Template Mode)**, the configuration and series preset ma
 ## Extensible Template Architecture & Sub-Vault Groups
 OpenProducer templates are stored as **human-readable Markdown (`.md`) files** with YAML frontmatter. Templates are organized into **dynamic sub-vault groups** (`~/.openproducer/templates/<group>/` and `./openproducer/templates/<group>/`) so creators can maintain presets across multiple domains without collision:
 - **`video/`**: Cinematography DNA, Master Style Anchors, Aspect Ratio, Operating Tier, Pacing, and Motion Graphics.
+- **`structure/`**: Production prompt & file-structure blueprints (e.g., whether clip images are omitted, `@Name` vs `[IMAGE N]` references, block headers, and negative prompt rules). Google Flow remains the default when no structure template is active.
+- **`package/`**: High-CTR packaging, thumbnail, title, and channel delivery presets.
 - **`story/` (archived)**: Historical narrative presets; do not create, load, update, or promote them in the live workflow.
 - **Future Custom Groups (e.g. `audio/`, `style/`, `motion/`)**: Any new folder inside `templates/<group>/` is automatically discovered as a valid template group!
 
@@ -94,6 +96,9 @@ Story templates remain in the historical archive only. Live template commands op
   - Writes the `Master Style Anchor` to `./openproducer/visual/technical_anchor.txt`.
   - Records `"template_loaded": "<name>"` in `./openproducer/state.json`.
   - Keeps `"current_stage": "init"` (or `"explore"`) and `"stages.propose_complete": false` until the plot is explored and proposed.
+- **If Structure Template (`--group structure`):**
+  - Sets `"structure_template_id": "<name>"` in `./openproducer/config.json` and mirrors the template into `./openproducer/templates/structure/<name>.md`.
+  - All subsequent `/openproducer-produce`, `/openproducer-sync`, `/openproducer-guide`, and `/openproducer-doctor` runs will follow this structure template 1:1 instead of the Google Flow default.
 - **Smart Question Skipping in `explore`:**
   - When continuing into `explore`, inspect what was populated in `./openproducer/config.json`:
     - If `visual_style` is set $\rightarrow$ **do NOT ask for style.**

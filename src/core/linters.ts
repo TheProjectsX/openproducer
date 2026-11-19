@@ -2,10 +2,17 @@ import * as path from 'node:path';
 import * as fsp from 'node:fs/promises';
 import { DoctorResult, LinterEntry, LinterStatus } from './types';
 import { BANNED_EQUIPMENT_NOUNS, BANNED_TECHNICAL_TOKENS, LINTER_REGISTRY } from './constants';
-import { exists, readFile } from '../utils/fs';
+import { TemplateManager } from './templates';
+import { exists, readFile, readJson } from '../utils/fs';
 
 type Prompt = { path: string; content: string; type: 'base' | 'image' | 'video' };
 type Check = { status: LinterStatus; details: string };
+type StructureFlags = {
+  id: string;
+  referenceStyle: string;
+  allowNegativeBlock: boolean;
+  injectSettingsInPrompt: boolean;
+};
 
 // Read the creative block separately from configuration and any legacy negative block.
 function block(content: string, name: 'IMAGE PROMPT' | 'VIDEO PROMPT' | 'NEGATIVE PROMPT'): string {
@@ -31,9 +38,10 @@ export class LinterSuite {
 
   async runAll(): Promise<DoctorResult> {
     const prompts = await this.collectPromptFiles();
+    const structure = await this.loadStructureFlags();
     const results: DoctorResult['results'] = [];
     for (const rule of LINTER_REGISTRY) {
-      const check = this.evaluateRule(rule.id, prompts);
+      const check = this.evaluateRule(rule.id, prompts, structure);
       results.push({ id: rule.id, name: rule.name, ...check });
     }
     const passedCount = results.filter((r) => r.status === 'PASS').length;
@@ -42,6 +50,32 @@ export class LinterSuite {
     const pendingCount = results.filter((r) => r.status === 'PENDING').length;
     return { certified: failureCount === 0 && warningCount === 0 && pendingCount === 0,
       passedCount, warningCount, failureCount, pendingCount, results };
+  }
+
+  private async loadStructureFlags(): Promise<StructureFlags> {
+    const defaults: StructureFlags = {
+      id: 'google-flow-default',
+      referenceStyle: 'image_pointers',
+      allowNegativeBlock: false,
+      injectSettingsInPrompt: false
+    };
+    const configPath = path.join(this.projectRoot, 'openproducer', 'config.json');
+    if (!(await exists(configPath))) return defaults;
+    try {
+      const config = await readJson<{ structure_template_id?: string }>(configPath);
+      const structureId = config?.structure_template_id;
+      if (!structureId || structureId === 'google-flow-default') return defaults;
+      const tpl = await new TemplateManager(this.projectRoot).getGenericTemplate(structureId, 'structure');
+      if (!tpl?.metadata) return { ...defaults, id: structureId };
+      return {
+        id: structureId,
+        referenceStyle: tpl.metadata.reference_style || 'image_pointers',
+        allowNegativeBlock: tpl.metadata.allow_negative_block === 'true',
+        injectSettingsInPrompt: tpl.metadata.inject_settings_in_prompt === 'true'
+      };
+    } catch {
+      return defaults;
+    }
   }
 
   private async collectPromptFiles(): Promise<Prompt[]> {
@@ -60,16 +94,19 @@ export class LinterSuite {
     return files;
   }
 
-  private evaluateRule(id: string, prompts: Prompt[]): Check {
+  private evaluateRule(id: string, prompts: Prompt[], structure: StructureFlags): Check {
     const videos = prompts.filter((p) => p.type === 'video');
     if (prompts.length === 0) return { status: 'PENDING', details: 'No production prompts exist.' };
     const failures: string[] = [];
     switch (id) {
       case 'L03':
       case 'L04': {
+        if (id === 'L04' && structure.injectSettingsInPrompt) {
+          return { status: 'PASS', details: `Active structure "${structure.id}" requires settings inside prompt text.` };
+        }
         const tokens = id === 'L03' ? BANNED_EQUIPMENT_NOUNS : BANNED_TECHNICAL_TOKENS;
         for (const prompt of prompts) {
-          const body = creative(prompt);
+          const body = creative(prompt) || (structure.id !== 'google-flow-default' ? prompt.content : '');
           if (!body) { failures.push(`${label(prompt)}: missing creative prompt block`); continue; }
           for (const token of tokens) if (tokenPattern(token).test(body)) failures.push(`${label(prompt)}: ${token}`);
         }
@@ -78,6 +115,9 @@ export class LinterSuite {
       }
       case 'L05':
         if (!videos.length) return { status: 'PENDING', details: 'No clip video prompts yet.' };
+        if (structure.allowNegativeBlock) {
+          return { status: 'PASS', details: `Active structure "${structure.id}" permits [NEGATIVE PROMPT] blocks.` };
+        }
         for (const prompt of videos) {
           const negative = block(prompt.content, 'NEGATIVE PROMPT');
           if (negative || /^\s*(?:\[NEGATIVE PROMPT\]|NEGATIVE PROMPT:)/im.test(prompt.content)) failures.push(label(prompt));
@@ -86,6 +126,9 @@ export class LinterSuite {
           { status: 'PENDING', details: 'Flow prompt has no standalone negative block; unwanted text and subtitles require rendered review.' };
       case 'L06':
         if (!videos.length) return { status: 'PENDING', details: 'No clip video prompts yet.' };
+        if (structure.referenceStyle !== 'image_pointers') {
+          return { status: 'PASS', details: `Active structure "${structure.id}" uses "${structure.referenceStyle}" instead of [IMAGE N] pointers.` };
+        }
         for (const prompt of videos) {
           const inputs = prompt.content.match(/\[INPUT SEEDS & INGREDIENTS\]\s*([\s\S]*?)(?=\n\[VIDEO PROMPT\]|$)/i)?.[1] || '';
           const body = creative(prompt);
@@ -111,6 +154,9 @@ export class LinterSuite {
           { status: 'PASS', details: 'Generation durations use project choices; Flow model/mode compatibility needs creator check.' };
       case 'L11':
         if (!videos.length) return { status: 'PENDING', details: 'No clip video prompts yet.' };
+        if (structure.referenceStyle !== 'image_pointers') {
+          return { status: 'PASS', details: `Active structure "${structure.id}" uses "${structure.referenceStyle}" instead of Start Source: [IMAGE N].` };
+        }
         for (const prompt of videos) {
           const inputs = prompt.content.match(/\[INPUT SEEDS & INGREDIENTS\]\s*([\s\S]*?)(?=\n\[VIDEO PROMPT\]|$)/i)?.[1] || '';
           const startSource = inputs.match(/^Start Source:\s*(?:\[IMAGE (\d+)\]|none)\s*$/im);
